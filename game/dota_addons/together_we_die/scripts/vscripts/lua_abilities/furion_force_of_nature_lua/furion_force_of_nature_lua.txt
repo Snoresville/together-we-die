@@ -1,0 +1,61 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Furion: Force of Nature Lua
+	//=================================================================================================================
+	"furion_force_of_nature_lua"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"BaseClass"					"ability_lua"
+		"AbilityTextureName"				"furion_force_of_nature_lua"
+		"ScriptFile"					"lua_abilities/furion_force_of_nature_lua/furion_force_of_nature_lua"
+		"MaxLevel"						"4"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+		"AbilityCastRange"				"750"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"37"
+		"AbilityManaCost"				"160"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"area_of_effect"		"150 225 300 375"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_treants"			"3 5 7 9"
+				"LinkedSpecialBonus"	"special_bonus_unique_furion_2"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"30 45 60 80"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"treant_health_tooltip"				"550"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"treant_min_dmg_tooltip"				"30 40 60 90"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"treant_max_dmg_tooltip"				"40 50 70 100"
+			}
+		}
+	}
+}

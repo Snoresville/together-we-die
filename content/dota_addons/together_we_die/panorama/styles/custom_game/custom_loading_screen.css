@@ -1,0 +1,14 @@
+.TogetherWeDieLoadingRoot {
+    width: 100%;
+    height: 100%;
+}
+
+#SplashArt {
+    width: 100%;
+	height: 100%;
+
+	background-image: url("file://{resources}/images/interface/loading_screen.jpg");
+	background-position: center;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}

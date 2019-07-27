@@ -1,0 +1,272 @@
+// Dota Heroes File
+// NOTE: This isn't for creating new heroes, this is for taking a currently existing hero as a template and overriding
+// the specified key-value combinations.  Use override_hero <hero_to_override> for this.
+"DOTAHeroes"
+{
+	//=================================================================================================================
+	// HERO: Axe
+	//=================================================================================================================
+	"npc_dota_hero_axe_holdout"
+	{
+		"override_hero"			"npc_dota_hero_axe"
+
+		"AttributeBaseStrength" "35"
+		"AttributeStrengthGain" "3.2"
+		
+		"Ability1"				"axe_berserkers_call_lua"
+		"Ability2"				"axe_battle_rage"
+		"Ability3"				"axe_counter_helix_lua"
+		"Ability6"				"axe_culling_blade_lua"
+		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
+	}
+
+	//=================================================================================================================
+	// HERO: Centuar
+	//=================================================================================================================
+	"npc_dota_hero_centaur_holdout"
+	{
+		"override_hero"			"npc_dota_hero_centaur"
+
+		"AttributeBaseStrength" "35"
+		"AttributeStrengthGain" "5.5"
+
+		"Ability3"				"centaur_warrunner_return_lua"
+
+		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
+	}
+
+	//=================================================================================================================
+	// HERO: Windrunner
+	//=================================================================================================================
+	"npc_dota_hero_windrunner_holdout"
+	{
+		"override_hero"			"npc_dota_hero_windrunner"
+		"Ability2"				"windranger_powershot_lua"
+		"Ability4"				"holdout_focusfire"
+		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
+	}
+
+	//=================================================================================================================
+	// HERO: Omniknight
+	//=================================================================================================================
+	"npc_dota_hero_omniknight_holdout"
+	{
+		"override_hero"			"npc_dota_hero_omniknight"
+		"Ability1"				"omniknight_purification_lua"
+		"Ability3"				"holdout_degen_aura"
+		"Ability6"				"holdout_guardian_angel"
+		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
+
+	}
+
+	//=================================================================================================================
+	// HERO: Drow Ranger
+	//=================================================================================================================
+	"npc_dota_hero_drow_ranger_holdout"
+	{
+		"override_hero"			"npc_dota_hero_drow_ranger"
+		"Ability6"				"drow_ranger_agility_strike_lua"
+		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
+	}
+
+	//=================================================================================================================
+	// HERO: Juggernaut
+	//=================================================================================================================
+	"npc_dota_hero_juggernaut_holdout"
+	{
+		"override_hero"			"npc_dota_hero_juggernaut"
+		"Ability1"				"holdout_blade_fury"
+		"Ability4"				"holdout_omnislash"
+		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
+	}
+
+	//=================================================================================================================
+	// HERO: Sven
+	//=================================================================================================================
+	"npc_dota_hero_sven_holdout"
+	{
+		"override_hero"			"npc_dota_hero_sven"
+		"Ability1"				"holdout_storm_bolt"
+		"Ability3"				"sven_warcry_lua"
+		"Ability6"				"holdout_gods_strength"
+		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
+	}
+
+	//=================================================================================================================
+	// HERO: Leigon Commander
+	//=================================================================================================================
+	"npc_dota_hero_legion_commander_holdout"
+	{
+		"override_hero"			"npc_dota_hero_legion_commander"
+		
+		"Ability4"					"holdout_gladiators_unite"
+		"Ability6"					"holdout_duel"
+
+		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
+	}
+
+	//=================================================================================================================
+	// HERO: Lina
+	//=================================================================================================================
+	"npc_dota_hero_lina_holdout"
+	{
+		"override_hero"				"npc_dota_hero_lina"
+		
+		"Ability1"					"lina_dragon_slave_lua"
+		"Ability2"					"lina_light_strike_array_lua"
+		"Ability6"					"lina_laguna_blade_lua"
+
+		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
+	}
+
+	//=================================================================================================================
+	// HERO: Crystal Maiden
+	//=================================================================================================================
+	"npc_dota_hero_crystal_maiden_holdout"
+	{
+		"override_hero"				"npc_dota_hero_crystal_maiden"
+		
+		"Ability3"					"holdout_arcane_aura"				
+		"Ability6"					"crystal_maiden_freezing_field_lua"
+
+		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
+	}
+
+	//=================================================================================================================
+	// HERO: Queen of Pain
+	//=================================================================================================================
+	"npc_dota_hero_queen_of_pain_holdout"
+	{
+		"override_hero"				"npc_dota_hero_queenofpain"
+
+		"Ability1"					"queen_of_pain_shadow_strike_lua"
+		"Ability2"					"holdout_qop_blink"
+		"Ability3"					"queen_of_pain_scream_of_pain_lua"
+		"Ability6"					"queen_of_pain_sonic_wave_lua"
+
+		"VisionNighttimeRange"		"1800"
+	}
+
+	//=================================================================================================================
+	// HERO: Tinker
+	//=================================================================================================================
+	"npc_dota_hero_tinker_holdout"
+	{
+		"override_hero"			"npc_dota_hero_tinker"
+		"Ability1"				"tinker_laser_lua"
+		"Ability2"				"tinker_heat_seeking_missile_lua"
+		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
+	}
+
+	"npc_dota_hero_dazzle_holdout"
+	{
+		"override_hero"			"npc_dota_hero_dazzle"
+		"Ability1"				"dazzle_poison_touch_lua"
+		"Ability3"				"dazzle_shadow_wave_lua"
+		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
+	}
+
+	"npc_dota_hero_phanthom_assassin_holdout"
+	{
+		"override_hero"			"npc_dota_hero_phantom_assassin"
+		"Ability1"				"phantom_assassin_stifling_dagger_lua"
+		"Ability6"				"phantom_assassin_coup_de_grace_lua"
+		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
+	}
+
+	"npc_dota_hero_phantom_lancer_holdout"
+	{
+		"override_hero"			"npc_dota_hero_phantom_lancer"
+
+		"AttributeBaseAgility" 	"42"
+		"AttributeAgilityGain" 	"5.6"
+
+		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
+	}
+
+	"npc_dota_hero_luna_holdout"
+	{
+		"override_hero"				"npc_dota_hero_luna"
+		
+		"Ability1"					"luna_lucent_beam_lua"
+		"Ability6"					"luna_eclipse_lua"
+
+		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
+	}
+
+	"npc_dota_hero_dark_willow_holdout"
+	{
+		"override_hero"				"npc_dota_hero_dark_willow"
+		
+		"Ability1"					"dark_willow_bramble_maze_lua"
+		"Ability2"					"dark_willow_shadow_realm_lua"
+		"Ability4"					"dark_willow_bedlam_lua"
+
+		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
+	}
+
+	"npc_dota_hero_leshrac_holdout"
+	{
+		"override_hero"				"npc_dota_hero_leshrac"
+
+		"Ability6"					"leshrac_pulse_nova_lua"
+
+		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
+	}
+
+	//=================================================================================================================
+	// HERO: Lion
+	//=================================================================================================================
+	"npc_dota_hero_lion_holdout"
+	{
+		"override_hero"			"npc_dota_hero_lion"
+		"Ability1"				"lion_earth_spike_lua"
+		"Ability6"				"lion_finger_of_death_lua"
+
+		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
+
+	}
+
+	//=================================================================================================================
+	// HERO: Furion
+	//=================================================================================================================
+	"npc_dota_hero_furion_holdout"
+	{
+		"override_hero"			"npc_dota_hero_furion"
+		"Ability3"				"furion_force_of_nature_lua"
+		"Ability6"				"furion_wrath_of_nature_lua"
+
+		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
+	}
+
+	//=================================================================================================================
+	// HERO: Earthshaker
+	//=================================================================================================================
+	"npc_dota_hero_earthshaker_holdout"
+	{
+		"override_hero"			"npc_dota_hero_earthshaker"
+		"Ability3"				"earthshaker_aftershock_lua"
+		"Ability6"				"earthshaker_echo_slam_lua"
+
+		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
+	}
+
+	"npc_dota_hero_arc_warden_holdout"
+	{
+		"override_hero"			"npc_dota_hero_arc_warden"
+		"Ability6"				"arc_warden_tempest_double_lua"
+
+		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
+	}
+
+	"npc_dota_hero_sniper_holdout"
+	{
+		"override_hero"			"npc_dota_hero_sniper"
+		"Ability1"				"sniper_shrapnel_lua"
+		"Ability2"				"sniper_headshot_lua"
+		"Ability3"				"sniper_take_aim_lua"
+		"Ability6"				"sniper_assassinate_lua"
+
+		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
+	}
+}

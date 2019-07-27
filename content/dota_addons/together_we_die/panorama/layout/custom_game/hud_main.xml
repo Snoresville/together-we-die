@@ -1,0 +1,56 @@
+<root>
+  <styles>
+  	<include src="file://{resources}/styles/dotastyles.css" />
+    <include src="file://{resources}/styles/hudstyles.css"/>
+    <include src="file://{resources}/styles/custom_game/hud_main.css"/>
+    <include src="file://{resources}/styles/custom_game/difficulty.css"/>
+  </styles>
+  <scripts>
+  	<include src="file://{resources}/scripts/custom_game/hud_main.js" />
+    <include src="file://{resources}/scripts/custom_game/difficulty.js" />
+  </scripts>
+
+  <Panel hittest="false" class="CustomHudRoot">
+    <Panel hittest="false" class="CustomHudContents">
+
+      <Panel hittest="false" id="HoldoutState">
+        <Panel id="RoundNumberContainer" hittest="false" class="TopBottomFlow">
+          <Label id="Round" hittest="false" class="HoldoutLabelSmall" text="#DOTA_HUD_Round"/>
+          <Label id="RoundNumber" hittest="false" class="HoldoutLabelLarge MonoNumbersFont" text="1"/>
+        </Panel>
+      </Panel>
+
+      <Panel id="RoundStartPanel" hittest="false">
+        <Panel id="RoundStartStrip"  hittest="false"/>
+        <Panel id="RoundArt" hittest="false"/>
+        <Panel id="RoundStartLabels" hittest="false">
+         <Label hittest="false" id="RoundStartLabel" class="HoldoutLabelHeader" text="#DOTA_HUD_RoundStart"/>
+         <Label hittest="false" id="RoundNameLabel" class="HoldoutLabelHeader" text="ROUND NAME"/> 
+       </Panel>
+       <Label hittest="false" id="RoundDescriptionLabel" class="HoldoutLabelHeader" text=""/>
+     </Panel>
+
+     <Panel id="DifficultyPanel" hittest="false" class="Visible">
+      <Label hittest="false" id="DifficultyLabel" class="HoldoutLabelHeader" text="#DOTA_HUD_Difficulty"/>
+      <Button id="EasyButton" class="DifficultyButton" onactivate="SelectDifficulty(1);">
+        <Label text="#DOTA_HUD_Difficulty_Easy" />
+      </Button>
+      <Button id="NormalButton" class="DifficultyButton" onactivate="SelectDifficulty(2);">
+        <Label text="#DOTA_HUD_Difficulty_Normal" />
+      </Button>
+      <Button id="HardButton" class="DifficultyButton" onactivate="SelectDifficulty(3);">
+        <Label text="#DOTA_HUD_Difficulty_Hard" />
+      </Button>
+      <Button id="ImpossibleButton" class="DifficultyButton" onactivate="SelectDifficulty(4);">
+        <Label text="#DOTA_HUD_Difficulty_Impossible" />
+      </Button>
+     </Panel>
+
+     <Panel id="DifficultyVoteOutcomePanel" hittest="false" class="">
+      <Label hittest="false" id="DifficultyVoteOutcomeLabel" class="HoldoutLabelHeader" text="#DOTA_HUD_Difficulty"/>
+      <Label hittest="false" id="DifficultyVoteOutcomeDescriptionLabel" class="HoldoutLabelHeader" text="#DOTA_HUD_Difficulty_Easy"/>
+    </Panel>
+
+    </Panel>
+  </Panel>
+</root>

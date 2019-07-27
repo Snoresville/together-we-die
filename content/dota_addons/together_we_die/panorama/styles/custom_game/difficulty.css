@@ -1,0 +1,106 @@
+#DifficultyPanel.Visible {
+    width: 50%;
+    height: 70%;
+    vertical-align: center;
+    horizontal-align: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 5%;
+}
+
+#DifficultyPanel,
+#DifficultyVoteOutcomePanel
+{
+	visibility: collapse;
+}
+
+#DifficultyPanel.Visible,
+#DifficultyVoteOutcomePanel.Visible
+{
+	visibility: visible;
+}
+
+#DifficultyLabel,
+#DifficultyVoteOutcomeLabel
+{
+    margin-top: 3%;
+    horizontal-align: center;
+    color: orange;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px 2.0 #00000011;
+
+    font-size: 50px;
+    letter-spacing: 2.5px;
+}
+
+#EasyButton {
+    margin-top: 25%;
+    margin-left: 10%;
+}
+
+#EasyButton Label {
+    color: #66BB6A;
+}
+
+#NormalButton {
+    margin-top: 25%;
+    margin-left: 60%;
+}
+
+#NormalButton Label {
+    color: #FFEE58;
+}
+
+#HardButton {
+    margin-top: 60%;
+    margin-left: 10%;
+}
+
+#HardButton Label {
+    color: #FFA726;
+}
+
+
+#ImpossibleButton {
+    margin-top: 60%;
+    margin-left: 60%;
+}
+
+#ImpossibleButton Label {
+    color: #E57373;
+}
+
+.DifficultyButton {
+    z-index: 15;
+    width: 25%;
+    height: 25%;
+
+    background-color: rgba(0, 0, 0, 0.95);
+    border-radius: 15%;
+}
+
+.DifficultyButton Label {
+    font-size: 30px;
+    vertical-align: center;
+    horizontal-align: center;
+}
+
+#DifficultyVoteOutcomePanel.Visible {
+    width: 40%;
+    height: 35%;
+    vertical-align: center;
+    horizontal-align: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 5%;
+}
+
+#DifficultyVoteOutcomeDescriptionLabel {
+    margin-top: 22%;
+    horizontal-align: center;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px 2.0 #00000011;
+
+    font-size: 42px;
+    letter-spacing: 2.5px;
+}

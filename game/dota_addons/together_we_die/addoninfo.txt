@@ -1,0 +1,11 @@
+"AddonInfo"
+{
+	addontitle "Together We Die"
+	addonversion 1.0
+	addonauthor "GIANT_CRAB"
+
+	"together_we_die"
+	{
+		"MaxPlayers"		"5"
+	}
+}

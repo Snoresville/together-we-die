@@ -1,0 +1,60 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Summon stone buff
+	//=================================================================================================================
+	"summoning_stone_lua"
+	{
+		// Ability Technical Aspect
+		// base script folder	: scripts/vscripts
+		// base texture folder	: resource/flash3/images/spellicons
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"lua_abilities/summoning_stone_lua/summoning_stone_lua"
+		"AbilityTextureName"			"summoning_stone_lua"
+		"FightRecapLevel"				"2"
+		"MaxLevel"						"11"
+		
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+
+		// Ability Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1500"
+
+		// Ability Resource
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Damage
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius"			"1500"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"200 400 600 800 1000 1200 1500 1800 2300 2800 4000"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"5 8 10 15 20 25 30 40 55 80 120"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health"			"1000 2000 4000 8000 12000 15000 20000 25000 31000 40000 52000"
+			}
+		}
+	}
+}
