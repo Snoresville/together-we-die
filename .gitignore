@@ -1,0 +1,26 @@
+# Cache crap that Valve autogenerates
+*.bin
+*.cfg
+
+# Compiled formats
+*.vpcf_c
+*.vtex_c
+*.vsndevts_c
+*.vsnd_c
+*.vmat_c
+*.vjs_c
+*.vxml_c
+*.vcss_c
+
+# Commit panorama compiled textures
+!game/dota_addons/dotacraft/panorama/images/*.vtex_c
+!game/dota_addons/dotacraft/panorama/images/custom_game/*.vtex_c
+!game/dota_addons/dotacraft/materials/overviews/*
+
+# Map overviews
+content/dota_addons/dotacraft/materials/overviews/*.vmat
+content/dota_addons/dotacraft/materials/overviews/*.txt
+game/dota_addons/dotacraft/resource/overviews/*
+
+#Github dump
+*.stackdump
