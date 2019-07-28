@@ -35,7 +35,6 @@
 
 		// Ability Resource
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"135"
 		"AbilityManaCost"				"250 360 500"
 
 		// Damage
@@ -73,14 +72,19 @@
 			"06"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"cooldown_scepter"	"40"
+				"cooldown"			"135"
 			}
 			"07"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cooldown_scepter"	"40"
+			}
+			"08"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"damage_scepter"	"600 800 1000"
 			}
-			"08"
+			"09"
 			{
 				"var_type"			"FIELD_FLOAT"
 				"int_multiplier"	"1.5 2.5 3.5"

@@ -49,7 +49,7 @@ function queen_of_pain_sonic_wave_lua:GetCooldown( iLevel )
 	if self:GetCaster():HasScepter() then
 		return self:GetSpecialValueFor("cooldown_scepter")
 	else
-		return 135
+		return self:GetSpecialValueFor("cooldown")
 	end
 end
 
