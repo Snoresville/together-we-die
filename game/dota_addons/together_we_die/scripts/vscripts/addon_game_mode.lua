@@ -174,15 +174,6 @@ function CHoldoutGameMode:OnGameRulesStateChange()
 		--
 	elseif nNewState == DOTA_GAMERULES_STATE_STRATEGY_TIME then
 		self.ForceAssignHeroes()
-		local maxHeroLevel = 99
-		local xpTable = {}
-		for i = 1, maxHeroLevel, 1 do
-			xpTable[i] = i * i * 20
-		end
-		GameRules:GetGameModeEntity():SetUseCustomHeroLevels( true )
-		GameRules:GetGameModeEntity():SetCustomXPRequiredToReachNextLevel( xpTable )
-		local respawnTime = 17.5
-		GameRules:GetGameModeEntity():SetFixedRespawnTime( respawnTime )
 	elseif nNewState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
 		self._flPrepTimeEnd = GameRules:GetGameTime() + self._flPrepTimeBetweenRounds
 	end
@@ -237,30 +228,57 @@ end
 
 function CHoldoutGameMode:_CalculateAndApplyDifficulty()
 	local difficultyNumberOfVotes = self:_GetDifficultyNumberOfVotes()
+	local difficultyScore = 1
 	if difficultyNumberOfVotes ~= 0 then
-		local difficultyScore = math.floor(self:_GetDifficultyVote() / difficultyNumberOfVotes)
-
-		local difficultyAbility = self._entAncient:FindAbilityByName( "holdout_difficulty_aura" )
-		if difficultyAbility then
-			difficultyAbility:SetLevel( difficultyScore )
-		end
-
-		local difficultyTitle = "DOTA_HUD_Difficulty_Easy"
-		if difficultyScore == 2 then
-			difficultyTitle = "DOTA_HUD_Difficulty_Normal"
-		elseif difficultyScore == 3 then
-			difficultyTitle = "DOTA_HUD_Difficulty_Hard"
-		elseif difficultyScore == 4 then
-			difficultyTitle = "DOTA_HUD_Difficulty_Impossible"
-		end
-
-		local event_data =
-		{
-			difficulty_title = difficultyTitle,
-		}
-
-		CustomGameEventManager:Send_ServerToAllClients( "show_difficulty_vote_outcome", event_data )
+		difficultyScore = math.floor(self:_GetDifficultyVote() / difficultyNumberOfVotes)
 	end
+
+	local difficultyAbility = self._entAncient:FindAbilityByName( "holdout_difficulty_aura" )
+	if difficultyAbility then
+		difficultyAbility:SetLevel( difficultyScore )
+	end
+
+	local difficultyTitle = "DOTA_HUD_Difficulty_Easy"
+	if difficultyScore == 1 then
+		self._nTowerRewardAmount = self._nTowerRewardAmount * 2
+		self._nTowerScalingRewardPerRound = self._nTowerScalingRewardPerRound * 2
+		GameRules:GetGameModeEntity():SetLoseGoldOnDeath( false )
+	elseif difficultyScore == 2 then
+		difficultyTitle = "DOTA_HUD_Difficulty_Normal"
+	elseif difficultyScore == 3 then
+		difficultyTitle = "DOTA_HUD_Difficulty_Hard"
+		self._nTowerRewardAmount = math.floor( self._nTowerRewardAmount / 2 )
+		self._nTowerScalingRewardPerRound = math.floor( self._nTowerScalingRewardPerRound / 2 )
+	elseif difficultyScore == 4 then
+		difficultyTitle = "DOTA_HUD_Difficulty_Impossible"
+		self._nTowerRewardAmount = math.floor( self._nTowerRewardAmount / 4 )
+		self._nTowerScalingRewardPerRound = math.floor( self._nTowerScalingRewardPerRound / 4 )
+	end
+
+	self:_SetExpAndRespawn( difficultyScore )
+
+	local event_data = {
+		difficulty_title = difficultyTitle,
+	}
+
+	CustomGameEventManager:Send_ServerToAllClients( "show_difficulty_vote_outcome", event_data )
+end
+
+function CHoldoutGameMode:_SetExpAndRespawn( difficultyScore )
+	difficultyScore = difficultyScore or 1
+	local maxHeroLevel = 129
+	local expConst = 10 * difficultyScore
+	local xpTable = {}
+	local goldTickTime = 0.5 * difficultyScore
+	local respawnTime = 9.5 * difficultyScore
+
+	for i = 1, maxHeroLevel, 1 do
+		xpTable[i] = i * i * expConst
+	end
+	GameRules:SetGoldTickTime( goldTickTime )
+	GameRules:GetGameModeEntity():SetUseCustomHeroLevels( true )
+	GameRules:GetGameModeEntity():SetCustomXPRequiredToReachNextLevel( xpTable )
+	GameRules:GetGameModeEntity():SetFixedRespawnTime( respawnTime )
 end
 
 function CHoldoutGameMode:_CheckForAlliance()
