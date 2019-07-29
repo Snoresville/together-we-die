@@ -6635,6 +6635,72 @@
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
 
+	"creature_spirit_breaker_greater_bash"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"spirit_breaker_greater_bash"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"AbilitySound"					"Hero_Spirit_Breaker.GreaterBash"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0.1"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportBonus"	"40"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"chance_pct"			"40"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"25000"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.5"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"knockback_duration"	"0.8"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"knockback_distance"	"150"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"knockback_height"		"50"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_movespeed_pct"	"40"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"movespeed_duration"	"3.0"
+			}
+		}
+	}
+
 	//=================================================================================================================
 	// Roshan: Slam
 	//=================================================================================================================
@@ -8296,3 +8362,5 @@
 #base "../vscripts/lua_abilities/axe_berserkers_call_lua/axe_berserkers_call_lua.txt"
 #base "../vscripts/lua_abilities/axe_counter_helix_lua/axe_counter_helix_lua.txt"
 #base "../vscripts/lua_abilities/axe_culling_blade_lua/axe_culling_blade_lua.txt"
+
+#base "../vscripts/lua_abilities/boss_morphling_block_lua/boss_morphling_block_lua.txt"

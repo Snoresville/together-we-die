@@ -1547,8 +1547,8 @@
 	"Round21" // Enigma
 	{
 		"round_title"				"#DOTA_Holdout_Round_Enigma_Title"
-		"MaxGold"					"45500"
-		"BagCount"					"75"
+		"MaxGold"					"75500"
+		"BagCount"					"85"
 		"BagVariance"				"30"
 		"FixedXP"					"60000"
 
@@ -1557,22 +1557,45 @@
 			"NPCName"				"npc_dota_creature_enigma"
 			"TotalUnitsToSpawn"		"36"
 			"UnitsPerSpawn"			"4"
-			"SpawnInterval"			"24"
+			"SpawnInterval"			"12"
 		}
 		"Unit2"
 		{
 			"NPCName"				"npc_dota_creature_enigma"
 			"TotalUnitsToSpawn"		"36"
 			"UnitsPerSpawn"			"4"
-			"SpawnInterval"			"22"
+			"SpawnInterval"			"10"
+		}
+		"Unit3"
+		{
+			"NPCName"				"npc_dota_creature_enigma"
+			"TotalUnitsToSpawn"		"36"
+			"UnitsPerSpawn"			"4"
+			"SpawnInterval"			"9"
 		}
 	}
 
-	"Round22" // Roshan Queen
+	"Round22" // Morphling
+	{
+		"round_title"				"#DOTA_Holdout_Round_Morphling_Title"
+		"MaxGold"					"91550"
+		"BagCount"					"1"
+		"BagVariance"				"30"
+		"FixedXP"					"80000"
+
+		"UnitMelee_1"
+		{
+			"NPCName"				"npc_dota_creature_boss_morphling"
+			"TotalUnitsToSpawn"		"1"
+			"UnitsPerSpawn"			"1"
+		}
+	}
+
+	"Round23" // Roshan Queen
 	{
 		"round_title"				"#DOTA_Holdout_Round_Roshan_Queen_Title"
 		"MaxGold"					"41550"
-		"BagCount"					"75"
+		"BagCount"					"1"
 		"BagVariance"				"30"
 		"FixedXP"					"80000"
 
