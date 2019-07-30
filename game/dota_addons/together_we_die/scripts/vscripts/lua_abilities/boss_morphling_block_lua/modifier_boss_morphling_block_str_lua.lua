@@ -47,6 +47,9 @@ function modifier_boss_morphling_block_str_lua:GetModifierIncomingDamage_Percent
 		-- allow only strength hero to deal damage
 		if attacker:IsHero() and attacker:GetPrimaryAttribute() == 0 then
 			reduction = 0
+		else
+			-- kill the attacker
+			attacker:ForceKill()
 		end
 
 		return reduction

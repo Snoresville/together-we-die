@@ -46,5 +46,7 @@ end
 --------------------------------------------------------------------------------
 -- Interval Effects
 function modifier_sniper_take_aim_lua:OnIntervalThink()
-	self.bonus_attack_range = self:GetAbility():GetSpecialValueFor( "bonus_attack_range" ) + math.floor(self:GetParent():GetAgility() * self:GetAbility():GetSpecialValueFor( "agi_multiplier" )) -- special value
+	if IsServer() then
+		self.bonus_attack_range = self:GetAbility():GetSpecialValueFor( "bonus_attack_range" ) + math.floor(self:GetParent():GetAgility() * self:GetAbility():GetSpecialValueFor( "agi_multiplier" )) -- special value
+	end
 end

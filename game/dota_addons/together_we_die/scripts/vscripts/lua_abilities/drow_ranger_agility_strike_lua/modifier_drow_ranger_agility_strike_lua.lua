@@ -16,13 +16,13 @@ end
 function modifier_drow_ranger_agility_strike_lua:OnCreated( kv )
 	-- references
 	self.crit_chance = self:GetAbility():GetSpecialValueFor( "crit_chance" )
-	self.crit_bonus = self:GetAbility():GetSpecialValueFor( "agi_multiplier" ) * self:GetCaster():GetAgility()
+	self.agi_multiplier = self:GetAbility():GetSpecialValueFor( "agi_multiplier" )
 end
 
 function modifier_drow_ranger_agility_strike_lua:OnRefresh( kv )
 	-- references
 	self.crit_chance = self:GetAbility():GetSpecialValueFor( "crit_chance" )
-	self.crit_bonus = self:GetAbility():GetSpecialValueFor( "agi_multiplier" ) * self:GetCaster():GetAgility()
+	self.agi_multiplier = self:GetAbility():GetSpecialValueFor( "agi_multiplier" )
 end
 
 function modifier_drow_ranger_agility_strike_lua:OnDestroy( kv )
@@ -43,8 +43,9 @@ end
 function modifier_drow_ranger_agility_strike_lua:GetModifierPreAttack_CriticalStrike( params )
 	if IsServer() and (not self:GetParent():PassivesDisabled()) then
 		if self:RollChance( self.crit_chance ) then
+			local crit_bonus = 100 + self.agi_multiplier * self:GetCaster():GetAgility()
 			self.record = params.record
-			return self.crit_bonus
+			return crit_bonus
 		end
 	end
 end

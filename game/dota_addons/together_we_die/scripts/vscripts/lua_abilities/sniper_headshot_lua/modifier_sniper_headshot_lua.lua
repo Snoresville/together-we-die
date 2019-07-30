@@ -18,9 +18,6 @@ function modifier_sniper_headshot_lua:OnCreated( kv )
 	self.slow_duration = self:GetAbility():GetSpecialValueFor( "slow_duration" ) -- special value
 	self.slow = self:GetAbility():GetSpecialValueFor( "slow" ) -- special value
 	self.agi_multiplier = self:GetAbility():GetSpecialValueFor( "agi_multiplier" ) -- special value
-	if IsServer() then
-		self.damage = self:GetAbility():GetAbilityDamage() + (self:GetParent():GetAgility() * self.agi_multiplier)
-	end
 end
 
 function modifier_sniper_headshot_lua:OnRefresh( kv )
@@ -29,9 +26,6 @@ function modifier_sniper_headshot_lua:OnRefresh( kv )
 	self.slow_duration = self:GetAbility():GetSpecialValueFor( "slow_duration" ) -- special value
 	self.slow = self:GetAbility():GetSpecialValueFor( "slow" ) -- special value
 	self.agi_multiplier = self:GetAbility():GetSpecialValueFor( "agi_multiplier" ) -- special value
-	if IsServer() then
-		self.damage = self:GetAbility():GetAbilityDamage() + (self:GetParent():GetAgility() * self.agi_multiplier)
-	end
 end
 
 function modifier_sniper_headshot_lua:OnDestroy( kv )
@@ -52,6 +46,7 @@ function modifier_sniper_headshot_lua:GetModifierProcAttack_BonusDamage_Physical
 	if IsServer() then
 		-- roll dice
 		if RandomInt(1,100)<=self.proc_chance then
+			local headshotDamage = self:GetAbility():GetAbilityDamage() + (self:GetParent():GetAgility() * self.agi_multiplier)
 			params.target:AddNewModifier(
 				self:GetParent(), -- player source
 				self, -- ability source
@@ -61,7 +56,7 @@ function modifier_sniper_headshot_lua:GetModifierProcAttack_BonusDamage_Physical
 					slow = self.slow, 
 				} -- kv
 			)
-			return self.damage
+			return headshotDamage
 		end
 	end
 end

@@ -48,7 +48,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"agi_multiplier"				"2.5 2.3 1.8"
+				"agi_multiplier"				"2.3"
 			}
 		}
 	}

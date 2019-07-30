@@ -48,7 +48,7 @@ function modifier_phantom_assassin_coup_de_grace_lua:GetModifierPreAttack_Critic
 			-- roll again
 			if self:RollChance( self.crit_chance ) then
 				-- roll successful, apply super AGI damage that is randomized
-				return (self.crit_bonus + (self.agility * (math.random() * 30)))
+				return (self.crit_bonus + (self.agility * (math.random() * 10)))
 			else
 				return self.crit_bonus
 			end
