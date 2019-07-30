@@ -44,12 +44,12 @@ function modifier_boss_morphling_block_agi_lua:GetModifierIncomingDamage_Percent
 		local attacker = params.attacker
 		local reduction = -100
 
-		-- allow only agi hero to deal damage
-		if attacker:IsHero() and attacker:GetPrimaryAttribute() == 1 then
+		-- allow only buildings or agi hero to deal damage
+		if attacker:IsBuilding() or attacker:IsHero() and attacker:GetPrimaryAttribute() == 1 then
 			reduction = 0
 		else
 			-- kill the attacker
-			attacker:ForceKill()
+			attacker:ForceKill( true )
 		end
 
 		return reduction

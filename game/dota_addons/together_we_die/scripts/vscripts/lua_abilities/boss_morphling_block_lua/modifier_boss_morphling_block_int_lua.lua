@@ -45,11 +45,11 @@ function modifier_boss_morphling_block_int_lua:GetModifierIncomingDamage_Percent
 		local reduction = -100
 
 		-- allow only int hero to deal damage
-		if attacker:IsHero() and attacker:GetPrimaryAttribute() == 2 then
+		if attacker:IsBuilding() or attacker:IsHero() and attacker:GetPrimaryAttribute() == 2 then
 			reduction = 0
 		else
 			-- kill the attacker
-			attacker:ForceKill()
+			attacker:ForceKill( true )
 		end
 
 		return reduction
