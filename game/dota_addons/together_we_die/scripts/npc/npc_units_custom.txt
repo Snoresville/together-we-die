@@ -4401,7 +4401,7 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"creature_melee_smash"			// Ability 1
+		"Ability1"					"creature_ogre_smash_lua"			// Ability 1
 		"Ability2"					"generic_gold_bag_fountain_200"			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
@@ -4494,9 +4494,9 @@
 			{
 				"Ability1"
 				{
-					"Name"				"creature_melee_smash"
+					"Name"				"creature_ogre_smash_lua"
 					"AOE"				"1"
-					"Radius"			"150"
+					"Radius"			"225"
 					"MinimumTargets"	"1"
 				}
 			}
