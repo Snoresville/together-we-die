@@ -73,7 +73,7 @@ function modifier_leshrac_pulse_nova_lua:OnIntervalThink()
 	-- check mana
 	local mana = self.parent:GetMana()
 	local manaCost = self:GetAbility():GetSpecialValueFor( "mana_cost_per_second" ) + (self.parent:GetIntellect() * self:GetAbility():GetSpecialValueFor("int_mana_cost_multiplier"))
-	if mana < self.manacost then
+	if mana < manaCost then
 		-- turn off
 		if self:GetAbility():GetToggleState() then
 			self:GetAbility():ToggleAbility()
@@ -95,7 +95,7 @@ function modifier_leshrac_pulse_nova_lua:Burn()
 	else
 		damage = damage + self:GetAbility():GetSpecialValueFor( "damage" )
 	end
-	 
+	self.damageTable.damage = damage
 
 	-- find enemies
 	local enemies = FindUnitsInRadius(
@@ -113,7 +113,7 @@ function modifier_leshrac_pulse_nova_lua:Burn()
 	for _,enemy in pairs(enemies) do
 		-- apply damage
 		self.damageTable.victim = enemy
-		ApplyDamage( damage )
+		ApplyDamage( self.damageTable )
 
 		-- play effects
 		self:PlayEffects( enemy )
