@@ -34,9 +34,7 @@ end
 function modifier_leshrac_pulse_nova_lua:OnCreated( kv )
 	if not IsServer() then return end
 	-- references
-	local damage = self:GetAbility():GetSpecialValueFor( "damage" ) + (self:GetParent():GetIntellect() * self:GetAbility():GetSpecialValueFor("int_multiplier"))
 	self.radius = self:GetAbility():GetSpecialValueFor( "radius" )
-	self.manacost = self:GetAbility():GetSpecialValueFor( "mana_cost_per_second" ) + (self:GetParent():GetIntellect() * self:GetAbility():GetSpecialValueFor("int_mana_cost_multiplier"))
 	local interval = 1
 
 	-- precache
@@ -44,11 +42,9 @@ function modifier_leshrac_pulse_nova_lua:OnCreated( kv )
 	self.damageTable = {
 		-- victim = target,
 		attacker = self:GetParent(),
-		damage = damage,
 		damage_type = self:GetAbility():GetAbilityDamageType(),
 		ability = self:GetAbility(), --Optional.
 	}
-	-- ApplyDamage(damageTable)
 
 	-- Start interval
 	self:Burn()
@@ -76,12 +72,16 @@ end
 function modifier_leshrac_pulse_nova_lua:OnIntervalThink()
 	-- check mana
 	local mana = self.parent:GetMana()
+	local manaCost = self:GetAbility():GetSpecialValueFor( "mana_cost_per_second" ) + (self.parent:GetIntellect() * self:GetAbility():GetSpecialValueFor("int_mana_cost_multiplier"))
 	if mana < self.manacost then
 		-- turn off
 		if self:GetAbility():GetToggleState() then
 			self:GetAbility():ToggleAbility()
 		end
 		return
+	else
+		-- spend mana
+		self.parent:SpendMana( manaCost, self:GetAbility() )
 	end
 
 	-- damage
@@ -89,8 +89,13 @@ function modifier_leshrac_pulse_nova_lua:OnIntervalThink()
 end
 
 function modifier_leshrac_pulse_nova_lua:Burn()
-	-- spend mana
-	self.parent:SpendMana( self.manacost, self:GetAbility() )
+	local damage = self.parent:GetIntellect() * self:GetAbility():GetSpecialValueFor("int_multiplier")
+	if self.parent:HasScepter() then
+		damage = damage + self:GetAbility():GetSpecialValueFor( "damage_scepter" )
+	else
+		damage = damage + self:GetAbility():GetSpecialValueFor( "damage" )
+	end
+	 
 
 	-- find enemies
 	local enemies = FindUnitsInRadius(
@@ -108,7 +113,7 @@ function modifier_leshrac_pulse_nova_lua:Burn()
 	for _,enemy in pairs(enemies) do
 		-- apply damage
 		self.damageTable.victim = enemy
-		ApplyDamage( self.damageTable )
+		ApplyDamage( damage )
 
 		-- play effects
 		self:PlayEffects( enemy )

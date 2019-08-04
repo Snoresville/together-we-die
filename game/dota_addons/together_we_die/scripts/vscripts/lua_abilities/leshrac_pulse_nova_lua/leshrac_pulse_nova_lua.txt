@@ -14,6 +14,7 @@
 		"AbilityTextureName"			"leshrac_pulse_nova_lua"
 		"FightRecapLevel"				"2"
 		"MaxLevel"						"5"
+		"HasScepterUpgrade"				"1"
 		"precache"
 		{
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_leshrac.vsndevts"
@@ -38,8 +39,8 @@
 
 		// Ability Resource
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"1.0 1.0 1.0 1.0"
-		"AbilityManaCost"				"70 90 110 130 150"
+		"AbilityCooldown"				"5.0"
+		"AbilityManaCost"				"70 90 130 180 250"
 
 		// Damage
 		//-------------------------------------------------------------------------------------------------------------
@@ -66,17 +67,17 @@
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage_scepter"	"200 400 600 800 1000"
+				"damage_scepter"	"200 400 600 800 1200"
 			}
 			"05"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"int_multiplier"	"1.8 2.8 3.8 4.8 5.8"
+				"int_multiplier"	"2.5 3.5 4.5 5.5 6.5"
 			}
 			"06"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"int_mana_cost_multiplier"	"0.3"
+				"int_mana_cost_multiplier"	"0.45"
 			}
 		}
 	}
