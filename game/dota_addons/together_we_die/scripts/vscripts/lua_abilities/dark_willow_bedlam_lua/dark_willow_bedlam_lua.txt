@@ -13,7 +13,7 @@
 		"ScriptFile"					"lua_abilities/dark_willow_bedlam_lua/dark_willow_bedlam_lua"
 		"AbilityTextureName"			"dark_willow_bedlam_lua"
 		"FightRecapLevel"				"1"
-		"MaxLevel"						"3"
+		"MaxLevel"						"5"
 		"LinkedAbility"					"dark_willow_terrorize_lua"
 
 		"precache"
@@ -39,7 +39,7 @@
 		// Ability Resource
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"30"
-		"AbilityManaCost"				"100 150 200"
+		"AbilityManaCost"				"100 200 400 800 1600"
 
 		// Damage
 		//-------------------------------------------------------------------------------------------------------------
@@ -51,12 +51,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"attack_damage"			"100 200 400"
+				"attack_damage"			"100 200 400 700 1200"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"attack_interval"		"0.15"
+				"attack_interval"		"0.15 0.12 0.1 0.08 0.06"
 			}
 			"03"
 			{
@@ -66,12 +66,12 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"attack_targets"			"3 6 9"
+				"attack_targets"			"1"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"roaming_radius"			"250"
+				"roaming_radius"			"225"
 			}
 			"06"
 			{
@@ -86,7 +86,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"int_multiplier"		"4.5 6.5 8.5"
+				"int_multiplier"		"4.5 5.5 6.5 7.5 8.5"
 			}
 		}
 	}

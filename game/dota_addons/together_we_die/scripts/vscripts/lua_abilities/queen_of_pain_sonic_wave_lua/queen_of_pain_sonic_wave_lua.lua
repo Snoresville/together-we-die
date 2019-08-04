@@ -56,10 +56,11 @@ end
 --------------------------------------------------------------------------------
 -- Projectile
 function queen_of_pain_sonic_wave_lua:OnProjectileHit( target, location )
+	local screamDamage = self:GetCaster():GetIntellect() * self:GetSpecialValueFor( "int_multiplier" )
 	if self:GetCaster():HasScepter() then
-		local screamDamage = self:GetSpecialValueFor("damage") + (self:GetCaster():GetIntellect() * self:GetSpecialValueFor( "int_multiplier" ))
+		screamDamage = self:GetSpecialValueFor("damage") + screamDamage
 	else
-		local screamDamage = self:GetSpecialValueFor("damage_scepter") + (self:GetCaster():GetIntellect() * self:GetSpecialValueFor( "int_multiplier" ))
+		screamDamage = self:GetSpecialValueFor("damage_scepter") + screamDamage
 	end
 
 	-- Apply Damage	 

@@ -13,7 +13,7 @@
 		"ScriptFile"					"lua_abilities/crystal_maiden_freezing_field_lua/crystal_maiden_freezing_field_lua"
 		"AbilityTextureName"			"crystal_maiden_freezing_field_lua"
 		"FightRecapLevel"				"1"
-		"MaxLevel"						"3"
+		"MaxLevel"						"8"
 		"precache"
 		{
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts"
@@ -33,13 +33,13 @@
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_4"
 		"AbilityCastPoint"				"0"
-		"AbilityChannelTime"			"10"
-		"AbilityDuration"				"10.0"
+		"AbilityChannelTime"			"8"
+		"AbilityDuration"				"8.0"
 
 		// Ability Resource
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"110 100 90"
-		"AbilityManaCost"				"200 400 600"
+		"AbilityCooldown"				"90"
+		"AbilityManaCost"				"200 400 600 1000 1400 1800 2500 3500"
 
 		"HasScepterUpgrade"			"1"
 
@@ -93,13 +93,13 @@
 			"10"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"150 300 600"
+				"damage"			"150 300 600 1000 1500 2000 2600 3200"
 				"LinkedSpecialBonus"	"special_bonus_unique_crystal_maiden_3"
 			}
 			"11"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"duration_tooltip"	"10"
+				"duration_tooltip"	"8"
 			}
 			"12"
 			{
@@ -109,7 +109,7 @@
 			"13"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"int_multiplier"		"4.5 6.5 8.5"
+				"int_multiplier"		"4 6 8 10 12 14 16 18"
 			}
 		}
 	}
