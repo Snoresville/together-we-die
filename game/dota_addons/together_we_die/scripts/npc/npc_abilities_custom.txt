@@ -8201,6 +8201,9 @@
 	}
 }
 
+#base "../vscripts/lua_abilities/crystal_maiden_frostbite_lua/crystal_maiden_frostbite_lua.txt"
+#base "../vscripts/lua_abilities/crystal_maiden_crystal_nova_lua/crystal_maiden_crystal_nova_lua.txt"
+#base "../vscripts/lua_abilities/crystal_maiden_arcane_aura_lua/crystal_maiden_arcane_aura_lua.txt"
 #base "../vscripts/lua_abilities/crystal_maiden_freezing_field_lua/crystal_maiden_freezing_field_lua.txt"
 
 #base "../vscripts/lua_abilities/drow_ranger_agility_strike_lua/drow_ranger_agility_strike_lua.txt"

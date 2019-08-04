@@ -127,7 +127,9 @@
 	{
 		"override_hero"				"npc_dota_hero_crystal_maiden"
 		
-		"Ability3"					"holdout_arcane_aura"				
+		"Ability1"					"crystal_maiden_frostbite_lua"
+		"Ability2"					"crystal_maiden_crystal_nova_lua"
+		"Ability3"					"crystal_maiden_arcane_aura_lua"
 		"Ability6"					"crystal_maiden_freezing_field_lua"
 
 		"VisionNighttimeRange"		"1800"									// Range of vision at night time.

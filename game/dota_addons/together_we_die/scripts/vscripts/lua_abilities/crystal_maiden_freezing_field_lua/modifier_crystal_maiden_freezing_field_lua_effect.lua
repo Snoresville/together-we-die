@@ -20,16 +20,40 @@ function modifier_crystal_maiden_freezing_field_lua_effect:OnCreated( kv )
 	-- references
 	self.ms_slow = self:GetAbility():GetSpecialValueFor( "movespeed_slow" )
 	self.as_slow = self:GetAbility():GetSpecialValueFor( "attack_slow" )
+	self.delay = self:GetAbility():GetSpecialValueFor( "scepter_delay" )
+
+	if not IsServer() then return end
+	if self:GetCaster():HasScepter() then
+		local interval = 0.5
+		self.count = 0
+		self:StartIntervalThink( interval )
+	end
 end
 
 function modifier_crystal_maiden_freezing_field_lua_effect:OnRefresh( kv )
 	-- references
 	self.ms_slow = self:GetAbility():GetSpecialValueFor( "movespeed_slow" )
 	self.as_slow = self:GetAbility():GetSpecialValueFor( "attack_slow" )	
+	self.delay = self:GetAbility():GetSpecialValueFor( "scepter_delay" )
 end
 
 function modifier_crystal_maiden_freezing_field_lua_effect:OnDestroy( kv )
 
+end
+
+function modifier_crystal_maiden_freezing_field_lua_effect:OnIntervalThink()
+	self.count = self.count + 0.5
+	if self.count >= self.delay then
+		local caster = self:GetCaster()
+		local victim = self:GetParent()
+		self.count = 0
+
+		local frostBite = caster:FindAbilityByName( "crystal_maiden_frostbite_lua" )
+		if (frostBite) then
+			caster:SetCursorCastTarget( victim )
+			frostBite:OnSpellStart()
+		end
+	end
 end
 
 --------------------------------------------------------------------------------

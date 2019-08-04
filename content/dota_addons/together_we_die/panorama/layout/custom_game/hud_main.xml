@@ -11,7 +11,7 @@
   </scripts>
 
   <Panel hittest="false" class="CustomHudRoot">
-    <Panel hittest="false" class="CustomHudContents">
+    <Panel hittest="false" id="CustomHudContents" class="CustomHudContents">
 
       <Panel hittest="false" id="HoldoutState">
         <Panel id="RoundNumberContainer" hittest="false" class="TopBottomFlow">

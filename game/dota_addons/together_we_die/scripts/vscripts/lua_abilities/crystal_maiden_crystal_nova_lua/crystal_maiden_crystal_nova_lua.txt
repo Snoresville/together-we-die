@@ -1,47 +1,42 @@
-"DOTAAbilites"
+"DOTAAbilities"
 {
 	//=================================================================================================================
-	// Crystal Maiden: Freezing Field (Lua version)
+	// Crystal Maiden: Crystal Nova (Lua version)
 	//=================================================================================================================
-	"crystal_maiden_freezing_field_lua"
+	"crystal_maiden_crystal_nova_lua"
 	{
 		// Ability Technical Aspect
 		// base script folder	: scripts/vscripts
 		// base texture folder	: resource/flash3/images/spellicons
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_lua"
-		"ScriptFile"					"lua_abilities/crystal_maiden_freezing_field_lua/crystal_maiden_freezing_field_lua"
-		"AbilityTextureName"			"crystal_maiden_freezing_field_lua"
+		"ScriptFile"					"lua_abilities/crystal_maiden_crystal_nova_lua/crystal_maiden_crystal_nova_lua"
+		"AbilityTextureName"			"crystal_maiden_crystal_nova_lua"
 		"FightRecapLevel"				"1"
-		"MaxLevel"						"3"
+		"MaxLevel"						"4"
 		"precache"
 		{
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts"
-			"particle"	"particles/units/heroes/hero_crystalmaiden/maiden_freezing_field_explosion.vpcf"
-			"particle"	"particles/units/heroes/hero_crystalmaiden/maiden_freezing_field_snow.vpcf"
+			"particle"	"particles/units/heroes/hero_crystalmaiden/maiden_crystal_nova.vpcf"
 		}
 		
 		// Ability General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 
 		// Ability Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
-		"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_4"
-		"AbilityCastPoint"				"0"
-		"AbilityChannelTime"			"10"
-		"AbilityDuration"				"10.0"
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
 
 		// Ability Resource
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"110 100 90"
-		"AbilityManaCost"				"200 400 600"
-
-		"HasScepterUpgrade"			"1"
+		"AbilityCooldown"				"12 11 10 9"
+		"AbilityManaCost"				"100 120 140 160"
 
 		// Damage
 		//-------------------------------------------------------------------------------------------------------------
@@ -53,63 +48,38 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"radius"			"835"
-			}		
+				"radius"			"425"
+			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"explosion_radius"	"300"
+				"movespeed_slow"	"-20 -30 -40 -50"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"attackspeed_slow"	"-20 -30 -40 -50"
 			}
 			"04"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"explosion_interval"	"0.1"
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"4.5"
 			}
 			"05"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"movespeed_slow"	"-60"
+				"var_type"			"FIELD_FLOAT"
+				"vision_duration"	"6.0"
 			}
 			"06"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"attack_slow"	"-60"
+				"var_type"				"FIELD_INTEGER"
+				"nova_damage"			"100 150 200 250"
+				"LinkedSpecialBonus"	"special_bonus_unique_crystal_maiden_2"
 			}
 			"07"
 			{
-				"var_type"			"FIELD_FLOAT"
-				"slow_duration"		"1.0"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"explosion_min_dist"	"195"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"explosion_max_dist"	"785"
-			}
-			"10"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"150 300 600"
-				"LinkedSpecialBonus"	"special_bonus_unique_crystal_maiden_3"
-			}
-			"11"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"duration_tooltip"	"10"
-			}
-			"12"
-			{
 				"var_type"				"FIELD_FLOAT"
-				"scepter_delay"	"2.5"
-			}
-			"13"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"int_multiplier"		"4.5 6.5 8.5"
+				"int_multiplier"		"1.3 1.8 2.3 3.5"
 			}
 		}
 	}
