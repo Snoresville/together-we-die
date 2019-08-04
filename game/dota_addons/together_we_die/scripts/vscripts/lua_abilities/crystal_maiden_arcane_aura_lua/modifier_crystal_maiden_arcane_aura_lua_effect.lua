@@ -43,8 +43,8 @@ function modifier_crystal_maiden_arcane_aura_lua_effect:DeclareFunctions()
 	return funcs
 end
 function modifier_crystal_maiden_arcane_aura_lua_effect:GetModifierConstantManaRegen()
-	local selfRegen = self.regen_self * (self:GetCaster():GetIntellect() * self:GetAbility():GetSpecialValueFor("int_multiplier"))
-	local allyRegen = self.regen_ally * (self:GetCaster():GetIntellect() * self:GetAbility():GetSpecialValueFor("int_multiplier"))
+	local selfRegen = self.regen_self + (self:GetCaster():GetIntellect() * self:GetAbility():GetSpecialValueFor("int_multiplier"))
+	local allyRegen = self.regen_ally + (self:GetCaster():GetIntellect() * self:GetAbility():GetSpecialValueFor("int_multiplier"))
 
 	if self:GetParent()==self:GetCaster() then 
 		return selfRegen

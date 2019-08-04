@@ -7561,17 +7561,17 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage_reduction"		"-40 0 50 100"
+				"damage_reduction"		"-30 0 25 50"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage_pct"				"40 0 -25 -50"
+				"bonus_damage_pct"				"30 0 -15 -30"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor_bonus"				"10 0 -5 -10"
+				"armor_bonus"				"5 0 -3 -7"
 			}
 		}
 	}

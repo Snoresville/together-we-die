@@ -240,19 +240,19 @@ function CHoldoutGameMode:_CalculateAndApplyDifficulty()
 
 	local difficultyTitle = "DOTA_HUD_Difficulty_Easy"
 	if difficultyScore == 1 then
-		self._nTowerRewardAmount = self._nTowerRewardAmount * 2
-		self._nTowerScalingRewardPerRound = self._nTowerScalingRewardPerRound * 2
+		self._nTowerRewardAmount = self._nTowerRewardAmount * 1.35
+		self._nTowerScalingRewardPerRound = self._nTowerScalingRewardPerRound * 1.35
 		GameRules:GetGameModeEntity():SetLoseGoldOnDeath( false )
 	elseif difficultyScore == 2 then
 		difficultyTitle = "DOTA_HUD_Difficulty_Normal"
 	elseif difficultyScore == 3 then
 		difficultyTitle = "DOTA_HUD_Difficulty_Hard"
-		self._nTowerRewardAmount = math.floor( self._nTowerRewardAmount / 2 )
-		self._nTowerScalingRewardPerRound = math.floor( self._nTowerScalingRewardPerRound / 2 )
+		self._nTowerRewardAmount = math.floor( self._nTowerRewardAmount * 0.75 )
+		self._nTowerScalingRewardPerRound = math.floor( self._nTowerScalingRewardPerRound * 0.75 )
 	elseif difficultyScore == 4 then
 		difficultyTitle = "DOTA_HUD_Difficulty_Impossible"
-		self._nTowerRewardAmount = math.floor( self._nTowerRewardAmount / 4 )
-		self._nTowerScalingRewardPerRound = math.floor( self._nTowerScalingRewardPerRound / 4 )
+		self._nTowerRewardAmount = math.floor( self._nTowerRewardAmount * 0.5 )
+		self._nTowerScalingRewardPerRound = math.floor( self._nTowerScalingRewardPerRound * 0.5 )
 	end
 
 	self:_SetExpAndRespawn( difficultyScore )
