@@ -16,14 +16,12 @@ function modifier_phantom_assassin_coup_de_grace_lua:OnCreated( kv )
 	-- references
 	self.crit_chance = self:GetAbility():GetSpecialValueFor( "crit_chance" )
 	self.crit_bonus = self:GetAbility():GetSpecialValueFor( "crit_bonus" )
-	self.agility = self:GetParent():GetAgility()
 end
 
 function modifier_phantom_assassin_coup_de_grace_lua:OnRefresh( kv )
 	-- references
 	self.crit_chance = self:GetAbility():GetSpecialValueFor( "crit_chance" )
 	self.crit_bonus = self:GetAbility():GetSpecialValueFor( "crit_bonus" )
-	self.agility = self:GetParent():GetAgility()
 end
 
 function modifier_phantom_assassin_coup_de_grace_lua:OnDestroy( kv )
@@ -48,7 +46,7 @@ function modifier_phantom_assassin_coup_de_grace_lua:GetModifierPreAttack_Critic
 			-- roll again
 			if self:RollChance( self.crit_chance ) then
 				-- roll successful, apply super AGI damage that is randomized
-				return (self.crit_bonus + (self.agility * (math.random() * 10)))
+				return (self.crit_bonus + (self:GetParent():GetAgility() * (math.random() * 10)))
 			else
 				return self.crit_bonus
 			end
