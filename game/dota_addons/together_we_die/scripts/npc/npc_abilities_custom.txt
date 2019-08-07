@@ -8075,6 +8075,7 @@
 #base "../vscripts/lua_abilities/skywrath_mage_mystic_flare_lua/skywrath_mage_mystic_flare_lua.txt"
 #base "../vscripts/lua_abilities/roshan_sun_strike_lua/roshan_sun_strike_lua.txt"
 #base "../vscripts/lua_abilities/creature_ogre_smash_lua/creature_ogre_smash_lua.txt"
+#base "../vscripts/lua_abilities/boss_morphling_block_lua/boss_morphling_block_lua.txt"
 
 #base "../vscripts/lua_abilities/lina_dragon_slave_lua/lina_dragon_slave_lua.txt"
 #base "../vscripts/lua_abilities/lina_light_strike_array_lua/lina_light_strike_array_lua.txt"
@@ -8114,6 +8115,7 @@
 #base "../vscripts/lua_abilities/omniknight_purification_lua/omniknight_purification_lua.txt"
 
 #base "../vscripts/lua_abilities/summoning_stone_lua/summoning_stone_lua.txt"
+#base "../vscripts/lua_abilities/intelligence_magic_scale_lua/intelligence_magic_scale_lua.txt"
 
 #base "../vscripts/lua_abilities/furion_force_of_nature_lua/furion_force_of_nature_lua.txt"
 #base "../vscripts/lua_abilities/furion_wrath_of_nature_lua/furion_wrath_of_nature_lua.txt"
@@ -8131,5 +8133,3 @@
 #base "../vscripts/lua_abilities/axe_berserkers_call_lua/axe_berserkers_call_lua.txt"
 #base "../vscripts/lua_abilities/axe_counter_helix_lua/axe_counter_helix_lua.txt"
 #base "../vscripts/lua_abilities/axe_culling_blade_lua/axe_culling_blade_lua.txt"
-
-#base "../vscripts/lua_abilities/boss_morphling_block_lua/boss_morphling_block_lua.txt"

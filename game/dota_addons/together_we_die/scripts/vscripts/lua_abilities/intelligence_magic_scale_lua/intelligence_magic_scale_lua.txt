@@ -1,0 +1,47 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Intelligence Magic Scale (Lua version)
+	//=================================================================================================================
+	"intelligence_magic_scale_lua"
+	{
+		// Ability Technical Aspect
+		// base script folder	: scripts/vscripts
+		// base texture folder	: resource/flash3/images/spellicons
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"lua_abilities/intelligence_magic_scale_lua/intelligence_magic_scale_lua"
+		"AbilityTextureName"			"intelligence_magic_scale_lua"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"10"
+		"precache"
+		{
+		}
+		
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+
+		// Ability Casting
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Ability Resource
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Damage
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"int_multiplier"			"0.02 0.04 0.06 0.08 0.1 0.12 0.14 0.16 0.18 0.2"
+			}
+		}
+	}
+}
