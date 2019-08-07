@@ -48,7 +48,15 @@ function modifier_boss_morphling_block_agi_lua:GetModifierIncomingDamage_Percent
 		if attacker:IsBuilding() or attacker:IsHero() and attacker:GetPrimaryAttribute() == 1 then
 			reduction = 0
 		else
-			-- kill the attacker
+			-- kill the attacker and heal morphling instantly
+			local baseHealth = parent:GetMaxHealth()
+			if attacker:IsHero() then
+				-- Increase health of morphling if is hero
+				local newHealth = baseHealth + (10 * attacker:GetAgility())
+				parent:SetBaseMaxHealth(newHealth)
+			end
+
+			parent:Heal( parent:GetMaxHealth(), parent )
 			attacker:ForceKill( true )
 		end
 
