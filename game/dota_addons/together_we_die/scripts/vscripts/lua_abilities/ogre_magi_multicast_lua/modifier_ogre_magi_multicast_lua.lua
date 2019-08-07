@@ -132,6 +132,20 @@ function modifier_ogre_magi_multicast_lua:OnAbilityFullyCast( params )
 					single = single,
 				} -- kv
 			)
+		else
+			-- Don't allow non-targetting items as spells purchased can be activated
+			if params.ability:IsItem() then return end
+
+			self:GetCaster():AddNewModifier(
+				self:GetCaster(), -- player source
+				self:GetAbility(), -- ability source
+				"modifier_ogre_magi_multicast_lua_self_cast_proc", -- modifier name
+				{
+					ability = params.ability:entindex(),
+					multicast = casts,
+					delay = delay,
+				} -- kv
+			)
 		end
 	end
 end

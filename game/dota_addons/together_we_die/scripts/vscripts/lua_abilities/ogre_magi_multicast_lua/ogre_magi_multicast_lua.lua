@@ -12,6 +12,7 @@ Ability checklist (erase if done/checked):
 ogre_magi_multicast_lua = class({})
 LinkLuaModifier( "modifier_ogre_magi_multicast_lua", "lua_abilities/ogre_magi_multicast_lua/modifier_ogre_magi_multicast_lua", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_ogre_magi_multicast_lua_proc", "lua_abilities/ogre_magi_multicast_lua/modifier_ogre_magi_multicast_lua_proc", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_ogre_magi_multicast_lua_self_cast_proc", "lua_abilities/ogre_magi_multicast_lua/modifier_ogre_magi_multicast_lua_self_cast_proc", LUA_MODIFIER_MOTION_NONE )
 
 --------------------------------------------------------------------------------
 -- Passive Modifier
