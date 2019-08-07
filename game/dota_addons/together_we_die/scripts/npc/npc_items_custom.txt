@@ -1396,7 +1396,6 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_HEALTH_BONUS" "%bonus_health"
-					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE" "%health_regen_rate"
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "%bonus_strength"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS" "%bonus_all_stats"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "%bonus_all_stats"
@@ -1413,29 +1412,24 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"700"
+				"bonus_strength"		"720"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"8000"
+				"bonus_health"			"12000"
 			}
 			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"health_regen_rate"		"3"
-			}
-			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bonus_all_stats"		"20"
 			}
-			"05"
+			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bonus_armor"			"20"
 			}
-			"06"
+			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"block_damage"			"300"
@@ -7309,6 +7303,176 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
+		}
+	}
+
+	//=================================================================================================================
+	// Recipe: Heart 4
+	//=================================================================================================================
+	"item_recipe_heart4"
+	{
+		"ID"							"1151"
+
+		"BaseClass"						"item_recipe_heart"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"10000"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_heart4"
+		"ItemRequirements"
+		{
+			"01"						"item_heart3;item_heart3;item_heart3"
+		}
+	}
+
+	//=================================================================================================================
+	// Heart 4
+	//=================================================================================================================
+	"item_heart4"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"						"1152"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_heart"
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"7.0"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"94600"
+		"ItemShopTags"					"str;regen_health;health_pool"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"hot;heart of tarrasque 4"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"700"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health"			"12000"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_regen_amp"			"50"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"health_regen_rate"		"5"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cooldown_melee"		"5"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cooldown_ranged_tooltip"		"7"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Recipe: Heart Of Regeneration
+	//=================================================================================================================
+	"item_recipe_heart_of_regeneration"
+	{
+		"ID"							"1153"
+
+		"BaseClass"						"item_recipe_heart"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"10000"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_heart_of_regeneration"
+		"ItemRequirements"
+		{
+			"01"						"item_heart3;item_heart3;item_slippers_of_halcyon;item_guardian_greaves"
+		}
+	}
+
+	//=================================================================================================================
+	// Heart Of Regeneration
+	//=================================================================================================================
+	"item_heart_of_regeneration"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"						"1154"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_heart"
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"7.0"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"73950"
+		"ItemShopTags"					"str;regen_health;health_pool"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"hot;heart of tarrasque 4"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"420"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health"			"8000"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_regen_amp"			"60"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"health_regen_rate"		"10"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cooldown_melee"		"5"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cooldown_ranged_tooltip"		"7"
+			}
 		}
 	}
 }
