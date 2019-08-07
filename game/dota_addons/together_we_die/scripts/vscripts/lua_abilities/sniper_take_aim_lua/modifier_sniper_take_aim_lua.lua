@@ -21,7 +21,7 @@ end
 
 function modifier_sniper_take_aim_lua:OnRefresh( kv )
 	-- references
-	self.bonus_attack_range = self:GetAbility():GetSpecialValueFor( "bonus_attack_range" ) + math.floor(self:GetParent():GetAgility() * self:GetAbility():GetSpecialValueFor( "agi_multiplier" )) -- special value
+	self:OnIntervalThink()
 end
 
 function modifier_sniper_take_aim_lua:OnDestroy( kv )
