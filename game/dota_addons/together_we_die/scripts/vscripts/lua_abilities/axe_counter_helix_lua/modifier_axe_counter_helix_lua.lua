@@ -18,13 +18,10 @@ function modifier_axe_counter_helix_lua:OnCreated( kv )
 	self.chance = self:GetAbility():GetSpecialValueFor( "trigger_chance" )
 
 	if IsServer() then
-		local damage = self:GetAbility():GetSpecialValueFor("damage") + (self:GetCaster():GetStrength() * self:GetAbility():GetSpecialValueFor("str_multiplier"))
-
 		-- precache damage
 		self.damageTable = {
 			-- victim = target,
 			attacker = self:GetCaster(),
-			damage = damage,
 			damage_type = DAMAGE_TYPE_PURE,
 			ability = self:GetAbility(), --Optional.
 			damage_flags = DOTA_DAMAGE_FLAG_NONE, --Optional.
@@ -34,11 +31,7 @@ function modifier_axe_counter_helix_lua:OnCreated( kv )
 end
 
 function modifier_axe_counter_helix_lua:OnRefresh( kv )
-	if IsServer() then
-		local damage = self:GetAbility():GetSpecialValueFor("damage") + (self:GetCaster():GetStrength() * self:GetAbility():GetSpecialValueFor("str_multiplier"))
 
-		self.damageTable.damage = damage
-	end
 end
 
 function modifier_axe_counter_helix_lua:OnDestroy( kv )
