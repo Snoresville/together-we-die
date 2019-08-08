@@ -4,9 +4,12 @@ LinkLuaModifier( "modifier_sniper_assassinate_lua", "lua_abilities/sniper_assass
 --------------------------------------------------------------------------------
 -- Custom KV
 -- AOE Radius
--- function sniper_assassinate_lua:GetAOERadius()
--- 	return self:GetSpecialValueFor( "radius" )
--- end
+function sniper_assassinate_lua:GetAOERadius()
+	if self:GetCaster():HasScepter() then
+		return self:GetSpecialValueFor( "scepter_radius" )
+	end
+	return 0
+end
 
 --------------------------------------------------------------------------------
 -- Ability Phase Start
@@ -18,6 +21,10 @@ function sniper_assassinate_lua:OnAbilityPhaseInterrupted()
 		end
 		self.modifier = nil
 	end
+end
+
+function sniper_assassinate_lua:GetCastPoint()
+	return self:GetSpecialValueFor( "total_cast_time_tooltip" )
 end
 
 function sniper_assassinate_lua:OnAbilityPhaseStart()
@@ -82,18 +89,41 @@ function sniper_assassinate_lua:OnProjectileHit_ExtraData( target, location, ext
 	end
 
 	-- apply damage
-	local damage = self:GetAbilityDamage() + (self:GetCaster():GetAgility() * self:GetSpecialValueFor('agi_multiplier'))
-	local damageTable = {
-		victim = target,
-		attacker = self:GetCaster(),
-		damage = damage,
-		damage_type = DAMAGE_TYPE_MAGICAL,
-		ability = self, --Optional.
-	}
-	ApplyDamage(damageTable)
+	local caster = self:GetCaster()
+	local damage = self:GetAbilityDamage() + (caster:GetAgility() * self:GetSpecialValueFor('agi_multiplier'))
+	local targets = {}
+	if caster:HasScepter() then
+		damage = damage + (caster:GetAverageTrueAttackDamage(target) * (self:GetSpecialValueFor('scepter_crit_bonus') / 100))
 
-	-- stun
-	target:Interrupt()
+		local search = self:GetSpecialValueFor( "scepter_radius" )
+		targets = FindUnitsInRadius(
+			caster:GetTeamNumber(),	-- int, your team number
+			target:GetOrigin(),	-- point, center point
+			nil,	-- handle, cacheUnit. (not known)
+			search,	-- float, radius. or use FIND_UNITS_EVERYWHERE
+			DOTA_UNIT_TARGET_TEAM_ENEMY,	-- int, team filter
+			DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	-- int, type filter
+			0,	-- int, flag filter
+			0,	-- int, order filter
+			false	-- bool, can grow cache
+		)
+	else
+		table.insert(targets,target)
+	end
+
+	for _,enemy in pairs(targets) do
+		local damageTable = {
+			victim = enemy,
+			attacker = caster,
+			damage = damage,
+			damage_type = DAMAGE_TYPE_MAGICAL,
+			ability = self, --Optional.
+		}
+		ApplyDamage(damageTable)
+		-- stun
+		enemy:Interrupt()
+	end
+
 	local modifier = self:RetATValue( extradata.modifier )
 	if not modifier:IsNull() then
 		modifier:Destroy()
