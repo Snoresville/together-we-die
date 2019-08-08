@@ -103,8 +103,8 @@
 	"Round1" // Kobolds
 	{
 		"round_title"				"#DOTA_Holdout_Round_Kobolds_Title"
-		"MaxGold"					"5600"
-		"BagCount"					"50"
+		"MaxGold"					"6500"
+		"BagCount"					"60"
 		"BagVariance"				"30"
 		"FixedXP"					"5500"
 		
@@ -239,8 +239,8 @@
 	"Round2" // Corpselords, Volatile Zombies
 	{
 		"round_title"				"#DOTA_Holdout_Round_Zombies_Title"
-		"MaxGold"					"9150"
-		"BagCount"					"60"
+		"MaxGold"					"11150"
+		"BagCount"					"70"
 		"BagVariance"				"30"
 		"FixedXP"					"8500"
 		
@@ -482,8 +482,8 @@
 	"Round3" // Ogres
 	{
 		"round_title"				"#DOTA_Holdout_Round_Ogre_Title"
-		"MaxGold"					"8000" //600g from gold fountain ability
-		"BagCount"					"20"
+		"MaxGold"					"15000" //600g from gold fountain ability
+		"BagCount"					"50"
 		"BagVariance"				"75"
 		"FixedXP"					"12000"
 		
@@ -503,6 +503,15 @@
 			"NPCName"				"npc_dota_creature_ogre_magi"
 			"TotalUnitsToSpawn"		"4"
 			"UnitsPerSpawn"			"4"
+		}
+
+		"UnitOgreTank_1"
+		{
+			"GroupWithUnit"			"UnitMelee_1"
+			
+			"NPCName"				"npc_dota_creature_ogre_tank"
+			"TotalUnitsToSpawn"		"6"
+			"UnitsPerSpawn"			"2"
 		}
 		
 		// Stage 2 ================================================
@@ -527,6 +536,15 @@
 		}
 		
 		"UnitOgreTank_2"
+		{
+			"GroupWithUnit"			"UnitMelee_2"
+			
+			"NPCName"				"npc_dota_creature_ogre_tank"
+			"TotalUnitsToSpawn"		"6"
+			"UnitsPerSpawn"			"2"
+		}
+
+		"UnitOgreTank_3"
 		{
 			"GroupWithUnit"			"UnitMelee_2"
 			
@@ -580,8 +598,8 @@
 	"Round4" // Slar*
 	{
 		"round_title"				"#DOTA_Holdout_Round_Slithereen_Title"
-		"MaxGold"					"15150"
-		"BagCount"					"60"
+		"MaxGold"					"22000"
+		"BagCount"					"70"
 		"BagVariance"				"50"
 		"FixedXP"					"14500"
 
@@ -589,8 +607,8 @@
 		"UnitJumper_1"
 		{
 			"NPCName"				"npc_dota_creature_lesser_nightcrawler"
-			"TotalUnitsToSpawn"		"12"
-			"UnitsPerSpawn"			"6"
+			"TotalUnitsToSpawn"		"24"
+			"UnitsPerSpawn"			"12"
 			"SpawnInterval"			"6"
 		}
 		
@@ -607,8 +625,8 @@
 		"UnitJumper_1b"
 		{
 			"NPCName"				"npc_dota_creature_lesser_nightcrawler"
-			"TotalUnitsToSpawn"		"12"
-			"UnitsPerSpawn"			"6"
+			"TotalUnitsToSpawn"		"24"
+			"UnitsPerSpawn"			"12"
 			"SpawnInterval"			"6"
 		}
 		
@@ -624,8 +642,8 @@
 		"UnitJumper_1c"
 		{
 			"NPCName"				"npc_dota_creature_lesser_nightcrawler"
-			"TotalUnitsToSpawn"		"18"
-			"UnitsPerSpawn"			"6"
+			"TotalUnitsToSpawn"		"24"
+			"UnitsPerSpawn"			"8"
 			"SpawnInterval"			"6"
 		}
 		
@@ -653,8 +671,8 @@
 			"WaitForTime"			"20"
 			
 			"NPCName"				"npc_dota_creature_lesser_nightcrawler"
-			"TotalUnitsToSpawn"		"8"
-			"UnitsPerSpawn"			"4"
+			"TotalUnitsToSpawn"		"24"
+			"UnitsPerSpawn"			"12"
 			"SpawnInterval"			"12"
 			
 			"SpawnerName"			"spawner1"
@@ -667,8 +685,8 @@
 			"WaitForTime"			"20"
 			
 			"NPCName"				"npc_dota_creature_lesser_nightcrawler"
-			"TotalUnitsToSpawn"		"8"
-			"UnitsPerSpawn"			"4"
+			"TotalUnitsToSpawn"		"24"
+			"UnitsPerSpawn"			"12"
 			"SpawnInterval"			"8"
 			
 			"SpawnerName"			"spawner2"
@@ -681,8 +699,8 @@
 			"WaitForTime"			"20"
 			
 			"NPCName"				"npc_dota_creature_lesser_nightcrawler"
-			"TotalUnitsToSpawn"		"8"
-			"UnitsPerSpawn"			"4"
+			"TotalUnitsToSpawn"		"24"
+			"UnitsPerSpawn"			"12"
 			"SpawnInterval"			"8"
 			
 			"SpawnerName"			"spawner3"
@@ -695,8 +713,8 @@
 			"WaitForTime"			"20"
 			
 			"NPCName"				"npc_dota_creature_lesser_nightcrawler"
-			"TotalUnitsToSpawn"		"8"
-			"UnitsPerSpawn"			"4"
+			"TotalUnitsToSpawn"		"24"
+			"UnitsPerSpawn"			"12"
 			"SpawnInterval"			"8"
 			
 			"SpawnerName"			"spawner4"
@@ -718,8 +736,8 @@
 	"Round5" // Trees
 	{
 		"round_title"				"#DOTA_Holdout_Round_Trees_Title"
-		"MaxGold"					"5700" //2000g from gold fountain ability (king_treant)
-		"BagCount"					"15"
+		"MaxGold"					"13000"
+		"BagCount"					"35"
 		"BagVariance"				"50"
 		"FixedXP"					"16500"
 
@@ -758,14 +776,28 @@
 			"TotalUnitsToSpawn"		"10"
 			"UnitsPerSpawn"			"2"
 			"SpawnInterval"			"10"
-		}	
+		}
+		"Unit6"
+		{
+			"NPCName"				"npc_dota_creature_king_treant"
+			"TotalUnitsToSpawn"		"10"
+			"UnitsPerSpawn"			"2"
+			"SpawnInterval"			"10"
+		}
+		"Unit7"
+		{
+			"NPCName"				"npc_dota_creature_king_treant"
+			"TotalUnitsToSpawn"		"10"
+			"UnitsPerSpawn"			"2"
+			"SpawnInterval"			"10"
+		}
 	}
 	
 	"Round6" // Broodqueen
 	{
 		"round_title"				"#DOTA_Holdout_Round_Broodking_Title"
-		"MaxGold"					"0" // 8300 from gold fountain ability
-		"BagCount"					"0"
+		"MaxGold"					"10000"
+		"BagCount"					"1"
 		"BagVariance"				"0"
 		"FixedXP"					"12500"
 
@@ -782,8 +814,8 @@
 	"Round7" // Roshan, Leshrac
 	{
 		"round_title"				"#DOTA_Holdout_Round_Roshan_Title"
-		"MaxGold"					"4300" //4500 from gold bag fountain ability
-		"BagCount"					"12"
+		"MaxGold"					"19300"
+		"BagCount"					"45"
 		"BagVariance"				"150"
 		"FixedXP"					"16000"
 
@@ -834,8 +866,8 @@
 	"Round8" // Splitters
 	{
 		"round_title"				"#DOTA_Holdout_Round_Splitter_Title"
-		"MaxGold"					"13350"
-		"BagCount"					"15"
+		"MaxGold"					"24350"
+		"BagCount"					"45"
 		"BagVariance"				"40"
 		"FixedXP"					"15500"
 
@@ -898,8 +930,8 @@
 	"Round9" // Bears!
 	{
 		"round_title"				"#DOTA_Holdout_Round_BearForceOne_Title"
-		"MaxGold"					"9900"
-		"BagCount"					"45"
+		"MaxGold"					"19900"
+		"BagCount"					"75"
 		"BagVariance"				"100"
 		"FixedXP"					"18000"
 
@@ -1067,7 +1099,7 @@
 	"Round11" // Gyrocopter
 	{
 		"round_title"				"#DOTA_Holdout_Round_Gyrocopter"
-		"MaxGold"					"12000"
+		"MaxGold"					"22000"
 		"BagCount"					"100"
 		"BagVariance"				"20"
 		"FixedXP"					"24000"
@@ -1161,8 +1193,8 @@
 	"Round12" // AA, MiniLich, Fodder
 	{
 		"round_title"				"#DOTA_Holdout_Round_StayFrosty_Title"
-		"MaxGold"					"11550"
-		"BagCount"					"55"
+		"MaxGold"					"23550"
+		"BagCount"					"125"
 		"BagVariance"				"30"
 		"FixedXP"					"21500"
 		
@@ -1172,8 +1204,8 @@
 			"WaitForTime"			"20"
 			
 			"NPCName"				"npc_dota_creature_ancient_apparition"
-			"TotalUnitsToSpawn"		"3"
-			"UnitsPerSpawn"			"1"
+			"TotalUnitsToSpawn"		"6"
+			"UnitsPerSpawn"			"2"
 			"SpawnInterval"			"25"
 			"DontGiveGoal"			"1"
 		}
@@ -1181,8 +1213,8 @@
 		"UnitMelee_1"
 		{
 			"NPCName"				"npc_dota_creature_snow_creep_melee"
-			"TotalUnitsToSpawn"		"12"
-			"UnitsPerSpawn"			"4"
+			"TotalUnitsToSpawn"		"45"
+			"UnitsPerSpawn"			"15"
 			"SpawnInterval"			"15"
 		}
 		
@@ -1214,9 +1246,9 @@
 			"WaitForTime"			"20"
 			
 			"NPCName"				"npc_dota_creature_snow_creep_melee"
-			"TotalUnitsToSpawn"		"20"
-			"UnitsPerSpawn"			"10"
-			"SpawnInterval"			"30"
+			"TotalUnitsToSpawn"		"45"
+			"UnitsPerSpawn"			"15"
+			"SpawnInterval"			"12"
 			
 			"SpawnerName"			"spawner1"
 			"Waypoint"				"path_invader1_1"
@@ -1237,9 +1269,9 @@
 			"WaitForTime"			"20"
 			
 			"NPCName"				"npc_dota_creature_snow_creep_melee"
-			"TotalUnitsToSpawn"		"26"
-			"UnitsPerSpawn"			"13"
-			"SpawnInterval"			"30"
+			"TotalUnitsToSpawn"		"45"
+			"UnitsPerSpawn"			"15"
+			"SpawnInterval"			"12"
 			
 			"SpawnerName"			"spawner2"
 			"Waypoint"				"path_invader2_1"
@@ -1260,9 +1292,9 @@
 			"WaitForTime"			"20"
 			
 			"NPCName"				"npc_dota_creature_snow_creep_melee"
-			"TotalUnitsToSpawn"		"16"
-			"UnitsPerSpawn"			"8"
-			"SpawnInterval"			"30"
+			"TotalUnitsToSpawn"		"45"
+			"UnitsPerSpawn"			"15"
+			"SpawnInterval"			"12"
 			
 			"SpawnerName"			"spawner3"
 			"Waypoint"				"path_invader3_1"
@@ -1283,9 +1315,9 @@
 			"WaitForTime"			"20"
 			
 			"NPCName"				"npc_dota_creature_snow_creep_melee"
-			"TotalUnitsToSpawn"		"24"
-			"UnitsPerSpawn"			"8"
-			"SpawnInterval"			"30"
+			"TotalUnitsToSpawn"		"45"
+			"UnitsPerSpawn"			"15"
+			"SpawnInterval"			"12"
 			
 			"SpawnerName"			"spawner4"
 			"Waypoint"				"path_invader4_1"
@@ -1304,7 +1336,7 @@
 	"Round13" // Roshan army
 	{
 		"round_title"				"#DOTA_Holdout_Round_Roshan_Army_Title"
-		"MaxGold"					"11550"
+		"MaxGold"					"21550"
 		"BagCount"					"45"
 		"BagVariance"				"30"
 		"FixedXP"					"30000"
@@ -1372,8 +1404,8 @@
 	"Round15" // Greater Kobold
 	{
 		"round_title"				"#DOTA_Holdout_Round_Greater_Kobolds_Title"
-		"MaxGold"					"21550"
-		"BagCount"					"75"
+		"MaxGold"					"34550"
+		"BagCount"					"105"
 		"BagVariance"				"30"
 		"FixedXP"					"30000"
 
@@ -1410,8 +1442,8 @@
 	"Round16" // Tidehunter
 	{
 		"round_title"				"#DOTA_Holdout_Round_Tidehunter_Title"
-		"MaxGold"					"25500"
-		"BagCount"					"75"
+		"MaxGold"					"35500"
+		"BagCount"					"95"
 		"BagVariance"				"30"
 		"FixedXP"					"40000"
 
