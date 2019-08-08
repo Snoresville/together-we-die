@@ -37,7 +37,7 @@ function modifier_auto_laguna_blade_lua:OnIntervalThink()
 
 	local modifierParent = self:GetParent()
 	local selfAbility = self:GetAbility()
-	if not modifierParent:PassivesDisabled() and selfAbility:IsCooldownReady() then
+	if modifierParent:IsAlive() and not modifierParent:PassivesDisabled() and selfAbility:IsCooldownReady() then
 		local lagunaBlade = modifierParent:FindAbilityByName( "lina_laguna_blade_lua" )
 		if (lagunaBlade) then
 			local targetTeam = DOTA_UNIT_TARGET_TEAM_ENEMY
