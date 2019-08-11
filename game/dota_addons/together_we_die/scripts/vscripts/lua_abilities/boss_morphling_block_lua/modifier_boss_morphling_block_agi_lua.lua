@@ -52,11 +52,11 @@ function modifier_boss_morphling_block_agi_lua:GetModifierIncomingDamage_Percent
 			local baseHealth = parent:GetMaxHealth()
 			if attacker:IsHero() and attacker:IsAlive() then
 				-- Heal  morphling if is hero
-				local healHealth = parent:GetMaxHealth() * 0.1
+				local healHealth = parent:GetMaxHealth() * 0.05
 				parent:Heal( healHealth, parent )
 			end
 
-			local damageToDeal = attacker:GetMaxHealth() * 0.25
+			local damageToDeal = math.floor(attacker:GetMaxHealth() * 0.25)
 			local damageTable = {
 				victim = attacker,
 				attacker = parent,
