@@ -57,7 +57,15 @@ function modifier_boss_morphling_block_str_lua:GetModifierIncomingDamage_Percent
 			end
 
 			parent:Heal( parent:GetMaxHealth(), parent )
-			attacker:ForceKill( true )
+			local damageToDeal = attacker:GetMaxHealth() * 0.25
+			local damageTable = {
+				victim = attacker,
+				attacker = parent,
+				damage = damageToDeal,
+				damage_type = DAMAGE_TYPE_PURE,
+				damage_flags = DOTA_DAMAGE_FLAG_NONE, --Optional.
+			}
+			ApplyDamage( damageTable )
 		end
 
 		return reduction
