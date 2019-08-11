@@ -8125,6 +8125,7 @@
 #base "../vscripts/lua_abilities/omniknight_purification_lua/omniknight_purification_lua.txt"
 
 #base "../vscripts/lua_abilities/summoning_stone_lua/summoning_stone_lua.txt"
+#base "../vscripts/lua_abilities/pure_strike_lua/pure_strike_lua.txt"
 #base "../vscripts/lua_abilities/intelligence_magic_scale_lua/intelligence_magic_scale_lua.txt"
 #base "../vscripts/lua_abilities/auto_laguna_blade_lua/auto_laguna_blade_lua.txt"
 
