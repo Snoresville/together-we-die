@@ -12,6 +12,7 @@ Holdout Example
 
 require( "holdout_game_round" )
 require( "holdout_game_spawner" )
+require( "libraries/notifications" )
 
 
 if CHoldoutGameMode == nil then
@@ -42,6 +43,7 @@ function CHoldoutGameMode:InitGameMode()
 	self._difficultyVote = 0
 	self._difficultyNumberOfVotes = 0
 	self._nRoundNumber = 1
+	self._lives = 3
 	self._currentRound = nil
 	self._flLastThinkGameTime = nil
 	self._entAncient = Entities:FindByName( nil, "dota_goodguys_fort" )
@@ -247,10 +249,12 @@ function CHoldoutGameMode:_CalculateAndApplyDifficulty()
 		difficultyTitle = "DOTA_HUD_Difficulty_Normal"
 	elseif difficultyScore == 3 then
 		difficultyTitle = "DOTA_HUD_Difficulty_Hard"
+		self._lives = 2
 		self._nTowerRewardAmount = math.floor( self._nTowerRewardAmount * 0.75 )
 		self._nTowerScalingRewardPerRound = math.floor( self._nTowerScalingRewardPerRound * 0.75 )
 	elseif difficultyScore == 4 then
 		difficultyTitle = "DOTA_HUD_Difficulty_Impossible"
+		self._lives = 1
 		self._nTowerRewardAmount = math.floor( self._nTowerRewardAmount * 0.5 )
 		self._nTowerScalingRewardPerRound = math.floor( self._nTowerScalingRewardPerRound * 0.5 )
 	end
@@ -404,9 +408,32 @@ function CHoldoutGameMode:_CheckForDefeat()
 		return
 	end
 
-	if not self._entAncient or self._entAncient:GetHealth() <= 0 then
-		GameRules:MakeTeamLose( DOTA_TEAM_GOODGUYS )
-		return
+	if not self._entAncient or self._entAncient:GetHealth() <= 5 then
+		self._lives = self._lives - 1
+		if self._lives <= 0 then
+			self._entAncient:ForceKill( true )
+			GameRules:MakeTeamLose( DOTA_TEAM_GOODGUYS )
+			return
+		else
+			-- Restart round and respawn buildings
+			Notifications:TopToAll({text="Lives Left: " .. self._lives, duration=5.0})
+			if self._currentRound ~= nil then
+				self._currentRound:End()
+				self._currentRound = nil
+			end
+		
+			for _,item in pairs( Entities:FindAllByClassname( "dota_item_drop")) do
+				local containedItem = item:GetContainedItem()
+				if containedItem then
+					UTIL_RemoveImmediate( containedItem )
+				end
+				UTIL_RemoveImmediate( item )
+			end
+		
+			self._flPrepTimeEnd = GameRules:GetGameTime() + self._flPrepTimeBetweenRounds
+			self:_RefreshPlayers()
+			self:_RespawnBuildings( true )
+		end
 	end
 end
 
@@ -496,7 +523,6 @@ function CHoldoutGameMode:GetDifficultyString()
 end
 
 function CHoldoutGameMode:ForceAssignHeroes()
-	print( "ForceAssignHeroes()" )
 	for nPlayerID = 0, DOTA_MAX_TEAM_PLAYERS-1 do
 		if PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_GOODGUYS then
 			local hPlayer = PlayerResource:GetPlayer( nPlayerID )
@@ -600,7 +626,8 @@ end
 
 --------------------------------------------------------------------------------
 
-function CHoldoutGameMode:_RespawnBuildings()
+function CHoldoutGameMode:_RespawnBuildings(lostLife)
+	lostLife = lostLife or false
 	-- Respawn all the towers.
 	self:_PhaseAllUnits( true )
 
@@ -618,8 +645,8 @@ function CHoldoutGameMode:_RespawnBuildings()
 			building:SetOriginalModel( sModelName )
 			building:SetModel( sModelName )
 			local vOrigin = building:GetOrigin()
-			if building:IsAlive() then
-				-- Increase health of tower if alive
+			if building:IsAlive() and not lostLife then
+				-- Increase health of tower if alive AND round was not lost
 				local baseHealth = building:GetMaxHealth()
 				local newHealth = baseHealth + (400 * self._nRoundNumber)
 				building:SetBaseMaxHealth(newHealth)
@@ -662,11 +689,6 @@ function CHoldoutGameMode:_TestRoundConsoleCommand( cmdName, roundNumber, delay 
 	if nRoundToTest <= 0 or nRoundToTest > #self._vRounds then
 		Msg( string.format( "Cannot test invalid round %d", nRoundToTest ) )
 		return
-	end
-
-	if self._entPrepTimeQuest then
-		UTIL_RemoveImmediate( self._entPrepTimeQuest )
-		self._entPrepTimeQuest = nil
 	end
 
 	if self._currentRound ~= nil then

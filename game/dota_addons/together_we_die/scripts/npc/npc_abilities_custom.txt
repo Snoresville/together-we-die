@@ -7535,6 +7535,16 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"Modifiers"
 		{
+			"modifier_ancient_no_death"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MIN_HEALTH"				"1"
+				}
+			}
+
 			"modifier_holdout_difficulty_aura_aura"
 			{
 				"Passive"               "1"
