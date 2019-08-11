@@ -17,6 +17,39 @@
 		"item"		"item_spell_ogre_magi_multicast_lua"
 		"item"		"item_spell_spectre_dispersion"
 		"item"		"item_spell_earthshaker_aftershock_lua"
+		"item"		"item_spell_holdout_gods_strength"
+		"item"		"item_spell_drow_ranger_agility_strike_lua"
+		"item"		"item_spell_holdout_focusfire"
+		"item"		"item_spell_windrunner_focusfire"
+		"item"		"item_spell_riki_permanent_invisibility"
+		"item"		"item_spell_riki_tricks_of_the_trade"
+		"item"		"item_spell_templar_assassin_refraction"
+		"item"		"item_spell_templar_assassin_meld"
+		"item"		"item_spell_templar_assassin_psi_blades"
+		"item"		"item_spell_sniper_shrapnel_lua"
+		"item"		"item_spell_sniper_take_aim_lua"
+		"item"		"item_spell_sniper_assassinate_lua"
+		"item"		"item_spell_axe_berserkers_call_lua"
+		"item"		"item_spell_axe_counter_helix_lua"
+		"item"		"item_spell_axe_culling_blade_lua"
+		"item"		"item_spell_crystal_maiden_frostbite_lua"
+		"item"		"item_spell_crystal_maiden_crystal_nova_lua"
+		"item"		"item_spell_crystal_maiden_arcane_aura_lua"
+		"item"		"item_spell_intelligence_magic_scale_lua"
+		"item"		"item_spell_auto_laguna_blade_lua"
+		"item"		"item_spell_pure_strike_lua"
+		"item"		"item_spell_juggernaut_omni_slash"
+		"item"		"item_spell_phantom_assassin_stifling_dagger_lua"
+		"item"		"item_spell_phantom_assassin_phantom_strike"
+		"item"		"item_spell_phantom_assassin_blur"
+		"item"		"item_spell_phantom_assassin_coup_de_grace_lua"
+		"item"		"item_spell_special_bonus_unique_medusa_4"
+		"item"		"item_spell_arc_warden_tempest_double_lua"
+		"item"		"item_spell_earthshaker_aftershock_lua"
+		"item"		"item_spell_earthshaker_echo_slam_lua"
+		"item"		"item_spell_dark_willow_bramble_maze_lua"
+		"item"		"item_spell_dark_willow_shadow_realm_lua"
+		"item"		"item_spell_dark_willow_bedlam_lua"
 	}
 
 	"attributes"
@@ -36,10 +69,6 @@
 		"item"		"item_spell_queen_of_pain_shadow_strike_lua"
 		"item"		"item_spell_queen_of_pain_scream_of_pain_lua"
 		"item"		"item_spell_queen_of_pain_sonic_wave_lua"
-	}
-
-	"weapons_armor"
-	{
 		"item"		"item_spell_lina_dragon_slave_lua"
 		"item"		"item_spell_lina_light_strike_array_lua"
 		"item"		"item_spell_lina_laguna_blade_lua"
@@ -55,25 +84,33 @@
 		"item"		"item_spell_furion_wrath_of_nature_lua"
 		"item"		"item_spell_alchemist_acid_spray"
 		"item"		"item_spell_alchemist_unstable_concoction"
-	}
-	
-	"misc"
-	{
 		"item"		"item_spell_alchemist_goblins_greed"
 		"item"		"item_spell_alchemist_chemical_rage"
 		"item"		"item_spell_holdout_blade_fury"
 		"item"		"item_spell_juggernaut_healing_ward"
 		"item"		"item_spell_juggernaut_blade_dance"
 		"item"		"item_spell_holdout_omnislash"
-		"item"		"item_spell_juggernaut_omni_slash"
-		"item"		"item_spell_phantom_assassin_stifling_dagger_lua"
-		"item"		"item_spell_phantom_assassin_phantom_strike"
-		"item"		"item_spell_phantom_assassin_blur"
-		"item"		"item_spell_phantom_assassin_coup_de_grace_lua"
-		"item"		"item_spell_special_bonus_unique_medusa_4"
-		"item"		"item_spell_arc_warden_tempest_double_lua"
-		"item"		"item_spell_earthshaker_aftershock_lua"
-		"item"		"item_spell_earthshaker_echo_slam_lua"
+		"item"		"item_spell_luna_lucent_beam_lua"
+		"item"		"item_spell_luna_eclipse_lua"
+		"item"		"item_spell_phantom_lancer_juxtapose"
+		"item"		"item_spell_tidehunter_kraken_shell"
+		"item"		"item_spell_tidehunter_anchor_smash"
+		"item"		"item_spell_tidehunter_ravage"
+		"item"		"item_spell_dazzle_poison_touch_lua"
+		"item"		"item_spell_dazzle_shallow_grave"
+		"item"		"item_spell_dazzle_shadow_wave_lua"
+		"item"		"item_spell_dazzle_bad_juju"
+		"item"		"item_spell_crystal_maiden_freezing_field_lua"
+		"item"		"item_spell_holdout_gladiators_unite"
+		"item"		"item_spell_holdout_duel"
+	}
+
+	"weapons_armor"
+	{
+	}
+	
+	"misc"
+	{
 	}	
 	
 	// Level 1 - Green Recipes
@@ -211,20 +248,6 @@
 	
 	"secretshop"
 	{
-		"item"		"item_spell_dark_willow_bramble_maze_lua"
-		"item"		"item_spell_dark_willow_shadow_realm_lua"
-		"item"		"item_spell_dark_willow_bedlam_lua"
-		"item"		"item_spell_luna_lucent_beam_lua"
-		"item"		"item_spell_luna_eclipse_lua"
-		"item"		"item_spell_phantom_lancer_juxtapose"
-		"item"		"item_spell_tidehunter_kraken_shell"
-		"item"		"item_spell_tidehunter_anchor_smash"
-		"item"		"item_spell_tidehunter_ravage"
-		"item"		"item_spell_dazzle_poison_touch_lua"
-		"item"		"item_spell_dazzle_shallow_grave"
-		"item"		"item_spell_dazzle_shadow_wave_lua"
-		"item"		"item_spell_dazzle_bad_juju"
-		"item"		"item_spell_crystal_maiden_freezing_field_lua"
-		"item"		"item_spell_holdout_gladiators_unite"
+		
 	}
 }
