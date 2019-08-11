@@ -48,10 +48,8 @@ function modifier_boss_morphling_block_int_lua:GetModifierIncomingDamage_Percent
 		if attacker:IsBuilding() or attacker:IsHero() and attacker:GetPrimaryAttribute() == 2 then
 			reduction = 0
 		else
-			-- kill the attacker and heal morphling instantly
-			local baseHealth = parent:GetMaxHealth()
 			if attacker:IsHero() and attacker:IsAlive() then
-				-- Heal  morphling if is hero
+				-- Heal morphling if is hero
 				local healHealth = parent:GetMaxHealth() * 0.05
 				parent:Heal( healHealth, parent )
 			end
@@ -62,7 +60,7 @@ function modifier_boss_morphling_block_int_lua:GetModifierIncomingDamage_Percent
 				attacker = parent,
 				damage = damageToDeal,
 				damage_type = DAMAGE_TYPE_PURE,
-				damage_flags = DOTA_DAMAGE_FLAG_NONE, --Optional.
+				damage_flags = DOTA_DAMAGE_FLAG_REFLECTION,
 			}
 			ApplyDamage( damageTable )
 		end
