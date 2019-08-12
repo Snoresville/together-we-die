@@ -1628,8 +1628,8 @@
 			"GroupWithUnit"			"UnitMelee_1"
 			
 			"NPCName"				"npc_dota_creature_keeper_of_the_light"
-			"TotalUnitsToSpawn"		"6"
-			"UnitsPerSpawn"			"2"
+			"TotalUnitsToSpawn"		"3"
+			"UnitsPerSpawn"			"1"
 		}
 		
 		// Stage 2 ================================================
@@ -1649,8 +1649,8 @@
 			"GroupWithUnit"			"UnitMelee_2"
 			
 			"NPCName"				"npc_dota_creature_keeper_of_the_light"
-			"TotalUnitsToSpawn"		"6"
-			"UnitsPerSpawn"			"2"
+			"TotalUnitsToSpawn"		"3"
+			"UnitsPerSpawn"			"1"
 		}
 		
 		// Stage 3 ================================================
@@ -1673,8 +1673,8 @@
 			"GroupWithUnit"			"UnitMelee_3a"
 			
 			"NPCName"				"npc_dota_creature_keeper_of_the_light"
-			"TotalUnitsToSpawn"		"6"
-			"UnitsPerSpawn"			"2"
+			"TotalUnitsToSpawn"		"3"
+			"UnitsPerSpawn"			"1"
 		}
 		
 		"UnitMelee_3b"
@@ -1696,8 +1696,8 @@
 			"GroupWithUnit"			"UnitMelee_3b"
 			
 			"NPCName"				"npc_dota_creature_keeper_of_the_light"
-			"TotalUnitsToSpawn"		"9"
-			"UnitsPerSpawn"			"3"
+			"TotalUnitsToSpawn"		"3"
+			"UnitsPerSpawn"			"1"
 		}
 		
 		"UnitMelee_3c"
@@ -1719,8 +1719,8 @@
 			"GroupWithUnit"			"UnitMelee_3c"
 			
 			"NPCName"				"npc_dota_creature_keeper_of_the_light"
-			"TotalUnitsToSpawn"		"9"
-			"UnitsPerSpawn"			"3"
+			"TotalUnitsToSpawn"		"3"
+			"UnitsPerSpawn"			"1"
 		}
 		
 		"UnitMelee_3d"
@@ -1742,8 +1742,8 @@
 			"GroupWithUnit"			"UnitMelee_3d"
 			
 			"NPCName"				"npc_dota_creature_keeper_of_the_light"
-			"TotalUnitsToSpawn"		"9"
-			"UnitsPerSpawn"			"3"
+			"TotalUnitsToSpawn"		"3"
+			"UnitsPerSpawn"			"1"
 		}
 
 		"UnitMelee_3e"
@@ -1765,8 +1765,8 @@
 			"GroupWithUnit"			"UnitMelee_3e"
 			
 			"NPCName"				"npc_dota_creature_keeper_of_the_light"
-			"TotalUnitsToSpawn"		"6"
-			"UnitsPerSpawn"			"2"
+			"TotalUnitsToSpawn"		"3"
+			"UnitsPerSpawn"			"1"
 		}
 	}
 
