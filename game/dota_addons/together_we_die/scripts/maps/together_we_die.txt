@@ -1660,9 +1660,9 @@
 			"WaitForTime"			"10"
 			
 			"NPCName"				"npc_dota_creature_chaos_knight"
-			"TotalUnitsToSpawn"		"30"
-			"UnitsPerSpawn"			"10"
-			"SpawnInterval"			"5"
+			"TotalUnitsToSpawn"		"45"
+			"UnitsPerSpawn"			"15"
+			"SpawnInterval"			"8"
 			
 			"SpawnerName"			"spawner1"
 			"Waypoint"				"path_invader1_1"
@@ -1683,9 +1683,9 @@
 			"WaitForTime"			"10"
 			
 			"NPCName"				"npc_dota_creature_chaos_knight"
-			"TotalUnitsToSpawn"		"30"
-			"UnitsPerSpawn"			"10"
-			"SpawnInterval"			"5"
+			"TotalUnitsToSpawn"		"45"
+			"UnitsPerSpawn"			"15"
+			"SpawnInterval"			"8"
 			
 			"SpawnerName"			"spawner2"
 			"Waypoint"				"path_invader2_1"
@@ -1708,7 +1708,7 @@
 			"NPCName"				"npc_dota_creature_chaos_knight"
 			"TotalUnitsToSpawn"		"45"
 			"UnitsPerSpawn"			"15"
-			"SpawnInterval"			"12"
+			"SpawnInterval"			"8"
 			
 			"SpawnerName"			"spawner3"
 			"Waypoint"				"path_invader3_1"
@@ -1731,7 +1731,7 @@
 			"NPCName"				"npc_dota_creature_chaos_knight"
 			"TotalUnitsToSpawn"		"45"
 			"UnitsPerSpawn"			"15"
-			"SpawnInterval"			"12"
+			"SpawnInterval"			"8"
 			
 			"SpawnerName"			"spawner4"
 			"Waypoint"				"path_invader4_1"
@@ -1754,7 +1754,7 @@
 			"NPCName"				"npc_dota_creature_chaos_knight"
 			"TotalUnitsToSpawn"		"45"
 			"UnitsPerSpawn"			"15"
-			"SpawnInterval"			"12"
+			"SpawnInterval"			"8"
 			
 			"SpawnerName"			"spawner3_alternate"
 			"Waypoint"				"path_invader3alt_1"

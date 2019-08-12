@@ -3289,7 +3289,7 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"creature_keeper_of_the_light_will_o_wisp"			// Ability 1
+		"Ability1"					"creature_omniknight_guardian_angel"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
@@ -3369,10 +3369,7 @@
 			{
 				"Ability1"				
 				{
-					"Name"				"creature_keeper_of_the_light_will_o_wisp"
-					"AOE"				"1"
-					"Radius"			"725"
-					"MinimumTargets"	"1"
+					"Name"				"creature_omniknight_guardian_angel"
 				}
 			}
 

@@ -1,49 +1,49 @@
 "DOTAAbilities"
 {
 	//=================================================================================================================
-	// Leshrac: Pulse Nova (Lua version)
+	// Leshrac: Split Earth (Lua version)
 	//=================================================================================================================
-	"leshrac_pulse_nova_lua"
+	"leshrac_split_earth_lua"
 	{
 		// Ability Technical Aspect
 		// base script folder	: scripts/vscripts
 		// base texture folder	: resource/flash3/images/spellicons
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_lua"
-		"ScriptFile"					"lua_abilities/leshrac_pulse_nova_lua/leshrac_pulse_nova_lua"
-		"AbilityTextureName"			"leshrac_pulse_nova_lua"
-		"FightRecapLevel"				"2"
-		"MaxLevel"						"5"
-		"HasScepterUpgrade"				"1"
+		"ScriptFile"					"lua_abilities/leshrac_split_earth_lua/leshrac_split_earth_lua"
+		"AbilityTextureName"			"leshrac_split_earth_lua"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"4"
 		"precache"
 		{
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_leshrac.vsndevts"
-			"particle"	"particles/units/heroes/hero_leshrac/leshrac_pulse_nova_ambient.vpcf"
-			"particle"	"particles/units/heroes/hero_leshrac/leshrac_pulse_nova.vpcf"
+			"particle"	"particles/units/heroes/hero_leshrac/leshrac_split_earth.vpcf"
 		}
 		
 		// Ability General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 
 		// Ability Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"450"
-		"AbilityCastPoint"				"0"
+		"AbilityCastRange"				"650"
+		"AbilityCastPoint"				"0.7 0.7 0.7 0.7"
+		"AbilityDuration"				"2 2 2 2"
 
 		// Ability Resource
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"5.0"
-		"AbilityManaCost"				"70 90 130 180 250"
+		"AbilityCooldown"				"9 9 9 9"
+		"AbilityManaCost"				"80 100 120 140"
 
 		// Damage
 		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"120 180 240 300"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -51,35 +51,23 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"mana_cost_per_second"	"20 40 60 80 100"
+				"var_type"			"FIELD_FLOAT"
+				"delay"				"0.35"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"radius"			"450"
+				"radius"			"150 175 200 225"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"100 200 400 600 800"
-				"LinkedSpecialBonus"	"special_bonus_unique_leshrac_3"
+				"duration"			"2"
 			}
 			"04"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"damage_scepter"	"200 400 600 800 1200"
-				"LinkedSpecialBonus"	"special_bonus_unique_leshrac_3"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"int_multiplier"	"2.5 3.5 4.5 5.5 6.5"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"int_mana_cost_multiplier"	"0.1 0.2 0.3 0.4 0.5"
+				"var_type"				"FIELD_FLOAT"
+				"int_multiplier"		"1.75 2.0 2.25 2.5"
 			}
 		}
 	}
