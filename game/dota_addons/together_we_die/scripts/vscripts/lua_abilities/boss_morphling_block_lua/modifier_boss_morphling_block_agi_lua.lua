@@ -17,7 +17,10 @@ end
 --------------------------------------------------------------------------------
 -- Initializations
 function modifier_boss_morphling_block_agi_lua:OnCreated( kv )
-
+	if IsServer() then
+		local parent = self:GetParent()
+		parent:SetRenderColor( 0, 255, 0 )
+	end
 end
 
 function modifier_boss_morphling_block_agi_lua:OnRefresh( kv )

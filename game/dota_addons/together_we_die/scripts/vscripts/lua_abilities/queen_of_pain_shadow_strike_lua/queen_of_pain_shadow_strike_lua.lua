@@ -2,6 +2,11 @@ queen_of_pain_shadow_strike_lua = class({})
 LinkLuaModifier( "modifier_queen_of_pain_shadow_strike_lua", "lua_abilities/queen_of_pain_shadow_strike_lua/modifier_queen_of_pain_shadow_strike_lua", LUA_MODIFIER_MOTION_NONE )
 
 --------------------------------------------------------------------------------
+
+function queen_of_pain_shadow_strike_lua:GetAOERadius()
+	return self:GetSpecialValueFor( "aoe_radius" )
+end
+
 -- Ability Start
 function queen_of_pain_shadow_strike_lua:OnSpellStart()
 	-- unit identifier
@@ -11,17 +16,42 @@ function queen_of_pain_shadow_strike_lua:OnSpellStart()
 	-- Create Projectile
 	local projectile_name = "particles/units/heroes/hero_queenofpain/queen_shadow_strike.vpcf"
 	local projectile_speed = self:GetSpecialValueFor( "projectile_speed" )
-	local info = {
-		Target = target,
-		Source = caster,
-		Ability = self,	
-		EffectName = projectile_name,
-		iMoveSpeed = projectile_speed,
-		bReplaceExisting = false,                         -- Optional
-		bProvidesVision = false,                           -- Optional
-	}
-	ProjectileManager:CreateTrackingProjectile(info)
 
+	local targets = {}
+	print ("caster has ability")
+	print(self:GetSpecialValueFor("aoe_radius"))
+	if self:GetSpecialValueFor("aoe_radius") ~= 0 then
+		local search = self:GetSpecialValueFor( "aoe_radius" )
+		print(search)
+		targets = FindUnitsInRadius(
+			caster:GetTeamNumber(),	-- int, your team number
+			target:GetOrigin(),	-- point, center point
+			nil,	-- handle, cacheUnit. (not known)
+			search,	-- float, radius. or use FIND_UNITS_EVERYWHERE
+			DOTA_UNIT_TARGET_TEAM_ENEMY,	-- int, team filter
+			DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	-- int, type filter
+			0,	-- int, flag filter
+			0,	-- int, order filter
+			false	-- bool, can grow cache
+		)
+	else
+		table.insert(targets,target)
+	end
+
+	for _,enemy in pairs(targets) do
+		local info = {
+			Target = target,
+			Source = caster,
+			Ability = self,	
+			EffectName = projectile_name,
+			iMoveSpeed = projectile_speed,
+			bReplaceExisting = false,                         -- Optional
+			bProvidesVision = false,                           -- Optional
+		}
+		ProjectileManager:CreateTrackingProjectile(info)
+	end
+
+	
 	-- Play effects
 	local sound_cast = "Hero_QueenOfPain.ShadowStrike"
 	EmitSoundOn( sound_cast, caster )

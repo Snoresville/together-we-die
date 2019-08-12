@@ -1607,7 +1607,170 @@
 		}
 	}
 
-	"Round22" // Morphling
+	"Round22" // Chaos Ensues
+	{
+		"round_title"				"#DOTA_Holdout_Round_Chaos_Knight_Mage_Title"
+		"MaxGold"					"93550"
+		"BagCount"					"125"
+		"BagVariance"				"30"
+		"FixedXP"					"80000"
+		
+		"UnitMelee_1"
+		{
+			"NPCName"				"npc_dota_creature_chaos_knight"
+			"TotalUnitsToSpawn"		"30"
+			"UnitsPerSpawn"			"10"
+			"SpawnInterval"			"5"
+		}
+		
+		"UnitAreaEffect_1"
+		{
+			"GroupWithUnit"			"UnitMelee_1"
+			
+			"NPCName"				"npc_dota_creature_keeper_of_the_light"
+			"TotalUnitsToSpawn"		"6"
+			"UnitsPerSpawn"			"2"
+		}
+		
+		// Stage 2 ================================================
+		"UnitMelee_2"
+		{
+			"WaitForUnit"			"UnitMelee_1"
+			"WaitForTime"			"10"
+			
+			"NPCName"				"npc_dota_creature_chaos_knight"
+			"TotalUnitsToSpawn"		"30"
+			"UnitsPerSpawn"			"10"
+			"SpawnInterval"			"5"
+		}
+
+		"UnitAreaEffect_2"
+		{
+			"GroupWithUnit"			"UnitMelee_2"
+			
+			"NPCName"				"npc_dota_creature_keeper_of_the_light"
+			"TotalUnitsToSpawn"		"6"
+			"UnitsPerSpawn"			"2"
+		}
+		
+		// Stage 3 ================================================
+		"UnitMelee_3a"
+		{
+			"WaitForUnit"			"UnitMelee_2"
+			"WaitForTime"			"10"
+			
+			"NPCName"				"npc_dota_creature_chaos_knight"
+			"TotalUnitsToSpawn"		"30"
+			"UnitsPerSpawn"			"10"
+			"SpawnInterval"			"5"
+			
+			"SpawnerName"			"spawner1"
+			"Waypoint"				"path_invader1_1"
+		}
+		
+		"UnitAreaEffect_3a"
+		{
+			"GroupWithUnit"			"UnitMelee_3a"
+			
+			"NPCName"				"npc_dota_creature_keeper_of_the_light"
+			"TotalUnitsToSpawn"		"6"
+			"UnitsPerSpawn"			"2"
+		}
+		
+		"UnitMelee_3b"
+		{
+			"WaitForUnit"			"UnitMelee_2"
+			"WaitForTime"			"10"
+			
+			"NPCName"				"npc_dota_creature_chaos_knight"
+			"TotalUnitsToSpawn"		"30"
+			"UnitsPerSpawn"			"10"
+			"SpawnInterval"			"5"
+			
+			"SpawnerName"			"spawner2"
+			"Waypoint"				"path_invader2_1"
+		}
+		
+		"UnitAreaEffect_3b"
+		{
+			"GroupWithUnit"			"UnitMelee_3b"
+			
+			"NPCName"				"npc_dota_creature_keeper_of_the_light"
+			"TotalUnitsToSpawn"		"9"
+			"UnitsPerSpawn"			"3"
+		}
+		
+		"UnitMelee_3c"
+		{
+			"WaitForUnit"			"UnitMelee_2"
+			"WaitForTime"			"10"
+			
+			"NPCName"				"npc_dota_creature_chaos_knight"
+			"TotalUnitsToSpawn"		"45"
+			"UnitsPerSpawn"			"15"
+			"SpawnInterval"			"12"
+			
+			"SpawnerName"			"spawner3"
+			"Waypoint"				"path_invader3_1"
+		}
+		
+		"UnitAreaEffect_3c"
+		{
+			"GroupWithUnit"			"UnitMelee_3c"
+			
+			"NPCName"				"npc_dota_creature_keeper_of_the_light"
+			"TotalUnitsToSpawn"		"9"
+			"UnitsPerSpawn"			"3"
+		}
+		
+		"UnitMelee_3d"
+		{
+			"WaitForUnit"			"UnitMelee_2"
+			"WaitForTime"			"10"
+			
+			"NPCName"				"npc_dota_creature_chaos_knight"
+			"TotalUnitsToSpawn"		"45"
+			"UnitsPerSpawn"			"15"
+			"SpawnInterval"			"12"
+			
+			"SpawnerName"			"spawner4"
+			"Waypoint"				"path_invader4_1"
+		}
+		
+		"UnitAreaEffect_3d"
+		{
+			"GroupWithUnit"			"UnitMelee_3d"
+			
+			"NPCName"				"npc_dota_creature_keeper_of_the_light"
+			"TotalUnitsToSpawn"		"9"
+			"UnitsPerSpawn"			"3"
+		}
+
+		"UnitMelee_3e"
+		{
+			"WaitForUnit"			"UnitMelee_2"
+			"WaitForTime"			"10"
+			
+			"NPCName"				"npc_dota_creature_chaos_knight"
+			"TotalUnitsToSpawn"		"45"
+			"UnitsPerSpawn"			"15"
+			"SpawnInterval"			"12"
+			
+			"SpawnerName"			"spawner3_alternate"
+			"Waypoint"				"path_invader3alt_1"
+		}
+		
+		"UnitAreaEffect_3e"
+		{
+			"GroupWithUnit"			"UnitMelee_3e"
+			
+			"NPCName"				"npc_dota_creature_keeper_of_the_light"
+			"TotalUnitsToSpawn"		"6"
+			"UnitsPerSpawn"			"2"
+		}
+	}
+
+	"Round23" // Morphling
 	{
 		"round_title"				"#DOTA_Holdout_Round_Morphling_Title"
 		"MaxGold"					"91550"
@@ -1623,7 +1786,7 @@
 		}
 	}
 
-	"Round23" // Roshan Queen
+	"Round24" // Roshan Queen
 	{
 		"round_title"				"#DOTA_Holdout_Round_Roshan_Queen_Title"
 		"MaxGold"					"41550"
