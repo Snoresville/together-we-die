@@ -14,14 +14,18 @@ end
 -- Initializations
 function modifier_sniper_take_aim_lua:OnCreated( kv )
 	-- start interval
-	local interval = 1
-	self:StartIntervalThink( interval )
-	self:OnIntervalThink()
+	if IsServer() then
+		self:OnIntervalThink()
+		local interval = 1
+		self:StartIntervalThink( interval )
+	end
 end
 
 function modifier_sniper_take_aim_lua:OnRefresh( kv )
 	-- references
-	self:OnIntervalThink()
+	if IsServer() then
+		self:OnIntervalThink()
+	end
 end
 
 function modifier_sniper_take_aim_lua:OnDestroy( kv )
@@ -46,7 +50,5 @@ end
 --------------------------------------------------------------------------------
 -- Interval Effects
 function modifier_sniper_take_aim_lua:OnIntervalThink()
-	if IsServer() then
-		self.bonus_attack_range = self:GetAbility():GetSpecialValueFor( "bonus_attack_range" ) + math.floor(self:GetParent():GetAgility() * self:GetAbility():GetSpecialValueFor( "agi_multiplier" )) -- special value
-	end
+	self.bonus_attack_range = self:GetAbility():GetSpecialValueFor( "bonus_attack_range" ) + math.floor(self:GetParent():GetAgility() * self:GetAbility():GetSpecialValueFor( "agi_multiplier" )) -- special value
 end
