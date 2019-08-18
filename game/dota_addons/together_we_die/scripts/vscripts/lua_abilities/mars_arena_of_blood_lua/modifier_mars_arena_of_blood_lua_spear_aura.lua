@@ -32,7 +32,7 @@ function modifier_mars_arena_of_blood_lua_spear_aura:OnCreated( kv )
 	self.radius = self:GetAbility():GetSpecialValueFor( "radius" )
 	self.width = self:GetAbility():GetSpecialValueFor( "spear_distance_from_wall" )
 	self.duration = self:GetAbility():GetSpecialValueFor( "spear_attack_interval" )
-	self.damage = self:GetAbility():GetSpecialValueFor( "spear_damage" )
+	self.damage = self:GetAbility():GetSpecialValueFor( "spear_damage" ) + (self:GetCaster():GetStrength() * self:GetAbility():GetSpecialValueFor("str_multiplier"))
 	self.knockback_duration = 0.2
 
 	self.parent = self:GetParent()

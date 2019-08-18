@@ -119,7 +119,7 @@ function mars_spear_of_mars_lua:OnProjectileHitHandle( target, location, iProjec
 
 	-- get stun and damage
 	local stun = self:GetSpecialValueFor("stun_duration")
-	local damage = self:GetSpecialValueFor("damage")
+	local damage = self:GetSpecialValueFor("damage") + (self:GetCaster():GetStrength() * self:GetSpecialValueFor("str_multiplier"))
 
 	-- apply damage
 	local damageTable = {
@@ -132,8 +132,8 @@ function mars_spear_of_mars_lua:OnProjectileHitHandle( target, location, iProjec
 	}
 	ApplyDamage(damageTable)
 
-	-- check if it has skewered a unit, or target is not a hero
-	if (not target:IsHero()) or self.projectiles[iProjectileHandle].unit then
+	-- check if it has skewered a unit, or target is not considered a hero
+	if (not target:IsConsideredHero()) or self.projectiles[iProjectileHandle].unit then
 		-- calculate knockback direction
 		local direction = self.projectiles[iProjectileHandle].direction
 		local proj_angle = VectorToAngles( direction ).y

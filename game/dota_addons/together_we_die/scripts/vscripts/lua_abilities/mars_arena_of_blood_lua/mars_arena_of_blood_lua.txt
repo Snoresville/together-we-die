@@ -103,6 +103,11 @@
 				"var_type"			"FIELD_FLOAT"
 				"warrior_fade_max_dist"	"450.0"
 			}
+			"12"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"str_multiplier"	"3.5 4.5 5.5"
+			}
 		}
 	}
 }

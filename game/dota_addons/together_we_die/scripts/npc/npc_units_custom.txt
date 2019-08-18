@@ -7102,3 +7102,5 @@
 		"VisionNighttimeRange"		"500"		// Range of vision at night time.
 	}
 }
+
+#base "../vscripts/lua_abilities/mars_arena_of_blood_lua/mars_arena_of_blood_lua_units.txt"

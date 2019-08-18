@@ -95,6 +95,11 @@
 				"var_type"				"FIELD_FLOAT"
 				"knockback_distance"	"75"
 			}
+			"10"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"str_multiplier"	"2.5 3.5 4.5 5.5"
+			}
 		}
 	}
 }
