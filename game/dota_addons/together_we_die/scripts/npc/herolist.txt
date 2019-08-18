@@ -27,7 +27,6 @@
 	"npc_dota_hero_arc_warden"		"1"
 	"npc_dota_hero_furion"			"1"
 	"npc_dota_hero_sniper"			"1"
-	"npc_dota_hero_life_stealer"	"1"
 	"npc_dota_hero_dark_willow"	"1"
 	"npc_dota_hero_mars"	"1"
 	"npc_dota_hero_riki"		"1"
