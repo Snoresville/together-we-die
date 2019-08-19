@@ -110,13 +110,29 @@ function modifier_leshrac_pulse_nova_lua:Burn()
 		false	-- bool, can grow cache
 	)
 
-	for _,enemy in pairs(enemies) do
-		-- apply damage
-		self.damageTable.victim = enemy
-		ApplyDamage( self.damageTable )
+	if self.parent:HasScepter() and self.parent:FindAbilityByName( "leshrac_lightning_storm_lua" ) then
+		local lightningStorm = self.parent:FindAbilityByName( "leshrac_lightning_storm_lua" )
+		for _,enemy in pairs(enemies) do
+			self.parent:SetCursorCastTarget( enemy )
+			lightningStorm:OnSpellStart()
+			if enemy:IsAlive() and not enemy:IsNull() then
+				-- apply damage
+				self.damageTable.victim = enemy
+				ApplyDamage( self.damageTable )
 
-		-- play effects
-		self:PlayEffects( enemy )
+				-- play effects
+				self:PlayEffects( enemy )
+			end
+		end
+	else
+		for _,enemy in pairs(enemies) do
+			-- apply damage
+			self.damageTable.victim = enemy
+			ApplyDamage( self.damageTable )
+	
+			-- play effects
+			self:PlayEffects( enemy )
+		end
 	end
 end
 
