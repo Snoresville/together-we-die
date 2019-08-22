@@ -1,0 +1,32 @@
+"DOTAAbilities"
+{
+    //=================================================================================================================
+	// Ability: Pudge Flesh Heap Lua
+	//=================================================================================================================
+	"pudge_flesh_heap_lua"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"AbilityTextureName"					"pudge_flesh_heap_lua"
+		"ScriptFile"						"lua_abilities/pudge_flesh_heap_lua/pudge_flesh_heap_lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"flesh_heap_damage_bonus"		"2 4 6 8"
+			}
+			"02"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"flesh_heap_strength_buff_amount"	"0.2 0.4 0.6 0.8"
+			}
+		}
+	}
+}

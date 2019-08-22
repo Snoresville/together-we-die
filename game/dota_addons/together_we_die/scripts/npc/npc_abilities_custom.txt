@@ -8203,3 +8203,7 @@
 
 #base "../vscripts/lua_abilities/mars_spear_of_mars_lua/mars_spear_of_mars_lua.txt"
 #base "../vscripts/lua_abilities/mars_arena_of_blood_lua/mars_arena_of_blood_lua.txt"
+
+#base "../vscripts/lua_abilities/pudge_meat_hook_lua/pudge_meat_hook_lua.txt"
+#base "../vscripts/lua_abilities/pudge_rot_lua/pudge_rot_lua.txt"
+#base "../vscripts/lua_abilities/pudge_flesh_heap_lua/pudge_flesh_heap_lua.txt"

@@ -1630,6 +1630,59 @@
 	}
 
 	//=================================================================================================================
+	// Ability: Pudge Dismember
+	//=================================================================================================================
+	"pudge_dismember"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dismember_damage"		"60 90 120"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"strength_damage"		"2.5 3.6 4.9"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"ticks"		"3"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"pull_units_per_second"		"75"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"pull_distance_limit"		"125"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"animation_rate"		"1.5"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dismember_duration_tooltip"		"3.0 3.0 3.0"
+				"LinkedSpecialBonus"		"special_bonus_unique_pudge_3"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"creep_dismember_duration_tooltip"		"6.0 6.0 6.0"
+				"LinkedSpecialBonus"		"special_bonus_unique_pudge_3"
+			}
+		}
+	}
+
+	//=================================================================================================================
 	// Witch Doctor: Maledict
 	//=================================================================================================================
 	"witch_doctor_maledict"
