@@ -13,6 +13,7 @@ end
 --------------------------------------------------------------------------------
 -- Initializations
 function modifier_sniper_take_aim_lua:OnCreated( kv )
+	self.bonus_attack_range = self:GetAbility():GetSpecialValueFor( "bonus_attack_range" )
 	-- start interval
 	if IsServer() then
 		self:OnIntervalThink()
