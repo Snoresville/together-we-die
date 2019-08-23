@@ -5707,13 +5707,13 @@
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"80"		// Physical protection.
-		"MagicalResistance"			"50"		// Magical protection.
+		"MagicalResistance"			"60"		// Magical protection.
 
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"445"		// Damage range min.
-		"AttackDamageMax"			"850"		// Damage range max.
+		"AttackDamageMin"			"645"		// Damage range min.
+		"AttackDamageMax"			"950"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"0.85"		// Speed of attack.
 		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
@@ -5741,8 +5741,8 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"35000"		// Base health.
-		"StatusHealthRegen"			"45.0"		// Health regeneration rate.
+		"StatusHealth"				"38000"		// Base health.
+		"StatusHealthRegen"			"65.0"		// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0"			// Mana regeneration rate.
 
@@ -5800,7 +5800,7 @@
 
 		"Ability1"					"creature_hatch_broodmother"
 
-		"ArmorPhysical"				"0"
+		"ArmorPhysical"				"5"
 		"MagicalResistance"			"75"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
@@ -5821,7 +5821,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"800"		// Base health.
+		"StatusHealth"				"2000"		// Base health.
 		"StatusHealthRegen"			"1"			// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0"			// Mana regeneration rate.
@@ -5881,7 +5881,7 @@
 		"AttackDamageMin"			"190"		// Damage range min.
 		"AttackDamageMax"			"275"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"				"1.35"		// Speed of attack.
+		"AttackRate"				"1.85"		// Speed of attack.
 		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
 		"AttackRange"				"100"		// Range within a target can be attacked.
@@ -5907,7 +5907,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1600"		// Base health.
+		"StatusHealth"				"3600"		// Base health.
 		"StatusHealthRegen"			"21.0"		// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0"			// Mana regeneration rate.
