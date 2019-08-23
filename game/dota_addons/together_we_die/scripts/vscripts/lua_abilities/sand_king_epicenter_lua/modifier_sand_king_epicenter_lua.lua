@@ -27,7 +27,7 @@ end
 function modifier_sand_king_epicenter_lua:OnCreated( kv )
 	-- references
 	self.pulses = self:GetAbility():GetSpecialValueFor( "epicenter_pulses" ) -- special value
-	self.damage = self:GetAbility():GetSpecialValueFor( "epicenter_damage" ) -- special value
+	self.damage = self:GetAbility():GetSpecialValueFor( "epicenter_damage" ) + (self:GetCaster():GetStrength() * self:GetAbility():GetSpecialValueFor("str_multiplier")) -- special value
 	self.slow = self:GetAbility():GetSpecialValueFor( "epicenter_slow_duration_tooltip" ) -- special value
 
 	if IsServer() then

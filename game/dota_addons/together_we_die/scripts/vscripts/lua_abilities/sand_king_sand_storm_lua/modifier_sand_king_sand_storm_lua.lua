@@ -18,7 +18,7 @@ end
 -- Initializations
 function modifier_sand_king_sand_storm_lua:OnCreated( kv )
 	-- references
-	self.damage = self:GetAbility():GetSpecialValueFor( "sand_storm_damage" ) -- special value
+	self.damage = self:GetAbility():GetSpecialValueFor( "sand_storm_damage" ) + (self:GetCaster():GetStrength() * self:GetAbility():GetSpecialValueFor("str_multiplier")) -- special value
 	self.radius = self:GetAbility():GetSpecialValueFor( "sand_storm_radius" ) -- special value
 	self.interval = 0.5
 
@@ -44,7 +44,7 @@ end
 
 function modifier_sand_king_sand_storm_lua:OnRefresh( kv )
 	-- references
-	self.damage = self:GetAbility():GetSpecialValueFor( "sand_storm_damage" ) -- special value
+	self.damage = self:GetAbility():GetSpecialValueFor( "sand_storm_damage" ) + (self:GetCaster():GetStrength() * self:GetAbility():GetSpecialValueFor("str_multiplier")) -- special value
 	self.radius = self:GetAbility():GetSpecialValueFor( "sand_storm_radius" ) -- special value
 
 	if IsServer() then

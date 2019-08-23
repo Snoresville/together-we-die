@@ -1,49 +1,48 @@
 "DOTAAbilities"
 {
 	//=================================================================================================================
-	// Sand King: Epicenter (Lua version)
+	// Sand King: Burrowstrike (Lua version)
 	//=================================================================================================================
-	"sand_king_epicenter_lua"
+	"sand_king_burrowstrike_lua"
 	{
 		// Ability Technical Aspect
 		// base script folder	: scripts/vscripts
 		// base texture folder	: resource/flash3/images/spellicons
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_lua"
-		"ScriptFile"					"lua_abilities/sand_king_epicenter_lua/sand_king_epicenter_lua"
-		"AbilityTextureName"			"sand_king_epicenter_lua"
-		"FightRecapLevel"				"2"
-		"MaxLevel"						"3"
+		"ScriptFile"					"lua_abilities/sand_king_burrowstrike_lua/sand_king_burrowstrike_lua"
+		"AbilityTextureName"			"sand_king_burrowstrike_lua"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"4"
 		"precache"
 		{
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_sandking.vsndevts"
-			"particle"	"particles/units/heroes/hero_sandking/sandking_epicenter.vpcf"
+			"particle"	"particles/units/heroes/hero_sandking/sandking_burrowstrike.vpcf"
 		}
 		
 		// Ability General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 
 		// Ability Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0"
-		"AbilityChannelTime"			"2.0"
-		"AbilityDuration"				"3.0"
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
-		"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_4"
+		"AbilityCastRange"				"350 450 550 650"
+		"AbilityCastPoint"				"0.0"
 
 		// Ability Resource
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"120 110 100"
-		"AbilityManaCost"				"150 225 300"
+		"AbilityCooldown"				"14 13 12 11"
+		"AbilityManaCost"				"110 120 130 140"
 
 		// Damage
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"100 200 300 400"
+		"AbilityDamage"					"85 150 215 280"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -52,39 +51,42 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"epicenter_radius"	"275 325 375 425 475 525 575 650 675 700 725 750 775 800"
+				"burrow_width"		"150"
 			}
 			"02"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"epicenter_pulses"	"6 8 10"
-				"LinkedSpecialBonus"	"special_bonus_unique_sand_king"
+				"var_type"			"FIELD_FLOAT"
+				"burrow_duration"	"1.9 2.0 2.1 2.2"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"epicenter_damage"	"110 110 110"
+				"burrow_speed"		"2000"
 			}
 			"04"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"epicenter_slow"	"-30 -30 -30"
+				"var_type"			"FIELD_FLOAT"
+				"burrow_anim_time"	"0.52"
 			}
 			"05"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"epicenter_slow_as"		"-30"
-				"LinkedSpecialBonus"	"special_bonus_unique_sand_king_3"
+				"var_type"			"FIELD_INTEGER"
+				"tooltip_range"		"350 450 550 650"
 			}
 			"06"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"epicenter_slow_duration_tooltip"	"3"
+				"cast_range_scepter"		"700 900 1100 1300"
 			}
 			"07"
 			{
+				"var_type"			"FIELD_INTEGER"
+				"burrow_speed_scepter"		"3000"
+			}
+			"08"
+			{
 				"var_type"			"FIELD_FLOAT"
-				"str_multiplier"	"2.5 3.5 4.5 5.5"
+				"str_multiplier"	"1.5 2.0 2.5 3.0"
 			}
 		}
 	}
