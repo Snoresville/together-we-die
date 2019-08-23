@@ -50,13 +50,14 @@ end
 
 function modifier_axe_counter_helix_lua:OnAttackLanded( params )
 	local abilityCaster = self:GetCaster()
-	if IsServer() and (not abilityCaster:PassivesDisabled()) and abilityCaster == params.target and abilityCaster:GetTeamNumber()~=params.attacker:GetTeamNumber() then
+	local selfAbility = self:GetAbility()
+	if IsServer() and (not abilityCaster:PassivesDisabled()) and abilityCaster == params.target and abilityCaster:GetTeamNumber()~=params.attacker:GetTeamNumber() and selfAbility:IsCooldownReady() then
 		if params.attacker:IsOther() then return end
 
 		-- roll dice
 		if RandomInt(1,100)>self.chance then return end
 
-		local damage = self:GetAbility():GetSpecialValueFor("damage") + (abilityCaster:GetStrength() * self:GetAbility():GetSpecialValueFor("str_multiplier"))
+		local damage = selfAbility:GetSpecialValueFor("damage") + (abilityCaster:GetStrength() * selfAbility:GetSpecialValueFor("str_multiplier"))
 		self.damageTable.damage = damage
 
 		-- find enemies
@@ -79,7 +80,7 @@ function modifier_axe_counter_helix_lua:OnAttackLanded( params )
 		end
 
 		-- cooldown
-		self:GetAbility():UseResources( false, false, true )
+		selfAbility:UseResources( false, false, true )
 
 		-- effects
 		self:PlayEffects()
@@ -92,6 +93,8 @@ function modifier_axe_counter_helix_lua:PlayEffects()
 	-- Get Resources
 	local particle_cast = "particles/units/heroes/hero_axe/axe_counterhelix.vpcf"
 	local sound_cast = "Hero_Axe.CounterHelix"
+	self:GetParent():FadeGesture( ACT_DOTA_CAST_ABILITY_3 )
+	self:GetParent():StartGesture( ACT_DOTA_CAST_ABILITY_3 )
 
 	-- Create Particle
 	local effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
