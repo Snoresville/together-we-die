@@ -19,6 +19,18 @@ end
 
 --------------------------------------------------------------------------------
 
+function modifier_pudge_meat_hook_lua:GetPriority()
+	return MODIFIER_PRIORITY_HIGH
+end
+
+--------------------------------------------------------------------------------
+
+function modifier_pudge_meat_hook_lua:IsPurgable()
+	return true
+end
+
+--------------------------------------------------------------------------------
+
 function modifier_pudge_meat_hook_lua:OnCreated( kv )
 	if IsServer() then
 		if self:ApplyHorizontalMotionController() == false then 
@@ -50,7 +62,9 @@ function modifier_pudge_meat_hook_lua:CheckState()
 		if self:GetCaster() ~= nil and self:GetParent() ~= nil then
 			if self:GetCaster():GetTeamNumber() ~= self:GetParent():GetTeamNumber() and ( not self:GetParent():IsMagicImmune() ) then
 				local state = {
-				[MODIFIER_STATE_STUNNED] = true,
+					[MODIFIER_STATE_NO_UNIT_COLLISION] = true,
+					[MODIFIER_STATE_STUNNED] = true,
+					[MODIFIER_STATE_INVISIBLE] = false,
 				}
 
 				return state
@@ -88,4 +102,10 @@ function modifier_pudge_meat_hook_lua:OnHorizontalMotionInterrupted()
 			self:Destroy()
 		end
 	end
+end
+
+function modifier_pudge_meat_hook_lua:OnRemoved()
+	if not IsServer() then return end
+	-- Compulsory interrupt
+	self:GetParent():InterruptMotionControllers( false )
 end
