@@ -49,7 +49,7 @@ function modifier_roshan_sun_strike_lua_thinker:OnDestroy( kv )
 		for _,enemy in pairs(enemies) do
 			damageTable.victim = enemy
 			if enemy:IsHero() then
-				damageTable.damage = self.damage/#enemies + (enemy:GetIntellect() * 50)
+				damageTable.damage = self.damage/#enemies + (enemy:GetPrimaryStatValue() * 50)
 				enemy:ReduceMana( damageTable.damage )
 			else
 				damageTable.damage = self.damage/#enemies
