@@ -36,7 +36,7 @@ end
 --------------------------------------------------------------------------------
 
 function modifier_creature_chaos_protect_light_lua:GetAuraSearchType()
-	return DOTA_UNIT_TARGET_ALL
+	return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC
 end
 
 --------------------------------------------------------------------------------
