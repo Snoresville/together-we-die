@@ -1,5 +1,7 @@
 queen_of_pain_sonic_wave_lua = class({})
 
+LinkLuaModifier( "modifier_generic_knockback_lua", "lua_abilities/generic/modifier_generic_knockback_lua", LUA_MODIFIER_MOTION_BOTH )
+
 --------------------------------------------------------------------------------
 -- Ability Start
 function queen_of_pain_sonic_wave_lua:OnSpellStart()
@@ -56,6 +58,8 @@ end
 --------------------------------------------------------------------------------
 -- Projectile
 function queen_of_pain_sonic_wave_lua:OnProjectileHit( target, location )
+	if not target or target:IsNull() or target == null or not target:IsAlive() then return end
+
 	local screamDamage = self:GetCaster():GetIntellect() * self:GetSpecialValueFor( "int_multiplier" )
 	if self:GetCaster():HasScepter() then
 		screamDamage = self:GetSpecialValueFor("damage") + screamDamage
@@ -68,10 +72,26 @@ function queen_of_pain_sonic_wave_lua:OnProjectileHit( target, location )
 		victim = target,
 		attacker = self:GetCaster(),
 		damage = screamDamage,
-		damage_type = DAMAGE_TYPE_PURE,
+		damage_type = self:GetAbilityDamageType(),
 		ability = self, --Optional.
 	}
 	ApplyDamage(damageTable)
+
+	local enemyOrigin = target:GetOrigin()
+
+	-- knockback
+	target:AddNewModifier(
+		self:GetCaster(), -- player source
+		self, -- ability source
+		"modifier_generic_knockback_lua", -- modifier name
+		{
+			duration = 1.75,
+			distance = self:GetSpecialValueFor( "knockback_distance" ),
+			height = 30,
+			direction_x = enemyOrigin.x - location.x,
+			direction_y = enemyOrigin.y - location.y,
+		} -- kv
+	)
 end
 
 function queen_of_pain_sonic_wave_lua:PlayProjectile( info )
