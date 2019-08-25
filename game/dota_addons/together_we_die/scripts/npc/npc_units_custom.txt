@@ -3678,8 +3678,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"6000"		// Damage range min.
-		"AttackDamageMax"			"10000"		// Damage range max.
+		"AttackDamageMin"			"12000"		// Damage range min.
+		"AttackDamageMax"			"18000"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"0.1"			// Speed of attack.
 		"AttackAnimationPoint"		"0.1"		// Normalized time in animation cycle to attack.
@@ -3747,13 +3747,9 @@
 			{
 				"Ability1"
 				{
-					"Name"				"roshan_sun_strike_lua"
-				}
-				"Ability2"
-				{
 					"Name"				"creature_roshan_queen_slam"
 				}
-				"Ability3"				
+				"Ability2"				
 				{
 					"Name"				"roshan_overpower"
 				}
@@ -3867,10 +3863,6 @@
 			{
 				"Ability1"
 				{
-					"Name"				"roshan_sun_strike_lua"
-				}
-				"Ability2"
-				{
 					"Name"				"creature_roshan_queen_slam"
 				}
 			}
@@ -3898,24 +3890,24 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"creature_roshan_queen_slam"	// Ability 1.
-		"Ability2"					"creature_greater_armor_reduction_aura"			// Ability 2.
-		"Ability3"					"roshan_spectre_dispersion"			// Ability 3.
+		"Ability2"					"creature_chaos_knight_chaos_strike"			// Ability 2.
+		"Ability3"					"roshan_defective_aura_lua"			// Ability 3.
 		"Ability4"					"roshan_sun_strike_lua"			// Ability 4.
 		"Ability5"					"creature_pure_strike_lua"			// Ability 5.
-		"Ability6"					"special_bonus_truestrike"			// Ability 6 - Extra.
-		"Ability7"					"creature_spirit_breaker_greater_bash"			// Ability 7 - Extra.
+		"Ability6"					"roshan_overpower"			// Ability 6 - Extra.
+		"Ability7"					""			// Ability 7 - Extra.
 		"Ability8"					""			// Ability 8 - Extra.
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"190"			// Physical protection.
-		"MagicalResistance"			"85"		// Magical protection (percentage).
+		"ArmorPhysical"				"140"			// Physical protection.
+		"MagicalResistance"			"90"		// Magical protection (percentage).
 
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"6000"		// Damage range min.
-		"AttackDamageMax"			"10000"		// Damage range max.
+		"AttackDamageMin"			"2000"		// Damage range min.
+		"AttackDamageMax"			"5000"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"0.05"			// Speed of attack.
 		"AttackAnimationPoint"		"0.1"		// Normalized time in animation cycle to attack.
@@ -3945,7 +3937,7 @@
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"900000"		// Base health.
-		"StatusHealthRegen"			"20000"		// Health regeneration rate.
+		"StatusHealthRegen"			"1000"		// Health regeneration rate.
 		"StatusMana"				"50000"		// Base mana.
 		"StatusManaRegen"			"1000"			// Mana regeneration rate.
 
@@ -3981,9 +3973,9 @@
 
 			"OffensiveAbilities"
 			{
-				"Ability1"
+				"Ability1"				
 				{
-					"Name"				"roshan_sun_strike_lua"
+					"Name"				"roshan_overpower"
 				}
 				"Ability2"
 				{
@@ -3991,7 +3983,7 @@
 				}
 			}
 
-			"DisableResistance"			"100.0"
+			"DisableResistance"			"33.3"
 		}
 	}
 
