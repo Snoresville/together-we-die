@@ -1,0 +1,90 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Acid Death
+	//=================================================================================================================
+	"creature_acid_death_lua"
+	{
+		// Ability Technical Aspect
+		// base script folder	: scripts/vscripts
+		// base texture folder	: resource/flash3/images/spellicons
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"lua_abilities/creature_acid_death_lua/creature_acid_death_lua"
+		"AbilityTextureName"			"creature_acid_death_lua"
+		"FightRecapLevel"				"2"
+		"MaxLevel"						"1"
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_alchemist.vsndevts"
+			"particle"	"particles/econ/generic/generic_buff_1/generic_buff_1.vpcf"
+			"particle"	"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
+			"particle"	"particles/units/heroes/hero_alchemist/alchemist_acid_spray.vpcf"
+			"particle"	"particles/units/heroes/hero_alchemist/alchemist_acid_spray_debuff.vpcf"
+		}
+		
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+
+		// Ability Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"350"
+
+		// Ability Resource
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+
+		// Damage
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius"			"350"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"explosion_damage"			"350"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tick_damage"			"8"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"tick_interval"			"0.1"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"knockback_distance"	"150.0"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"knockback_duration"	"0.4"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor_reduction"		"-5"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"5.0"
+			}
+		}
+	}
+}

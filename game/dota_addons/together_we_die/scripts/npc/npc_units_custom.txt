@@ -961,7 +961,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		
-		"Ability1"					"creature_acid_spray"			// Ability 1.
+		"Ability1"					"creature_acid_death_lua"			// Ability 1.
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
