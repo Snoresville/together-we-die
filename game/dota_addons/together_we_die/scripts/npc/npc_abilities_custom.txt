@@ -7914,6 +7914,7 @@
 #base "../vscripts/lua_abilities/creature_chaos_protect_light_lua/creature_chaos_protect_light_lua.txt"
 #base "../vscripts/lua_abilities/boss_morphling_block_lua/boss_morphling_block_lua.txt"
 #base "../vscripts/lua_abilities/creature_acid_death_lua/creature_acid_death_lua.txt"
+#base "../vscripts/lua_abilities/tower_spawn_protection/tower_spawn_protection.txt"
 
 #base "../vscripts/lua_abilities/lina_dragon_slave_lua/lina_dragon_slave_lua.txt"
 #base "../vscripts/lua_abilities/lina_light_strike_array_lua/lina_light_strike_array_lua.txt"

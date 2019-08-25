@@ -185,8 +185,8 @@
 		
 		// Vision
 		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"1900"		// Range of vision during day light.
-		"VisionNighttimeRange"		"1600"		// Range of vision at night time.
+		"VisionDaytimeRange"		"1200"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1200"		// Range of vision at night time.
 	}
 
 	//=================================================================================
@@ -279,8 +279,8 @@
 		
 		// Vision
 		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"1900"		// Range of vision during day light.
-		"VisionNighttimeRange"		"1600"		// Range of vision at night time.
+		"VisionDaytimeRange"		"1200"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1200"		// Range of vision at night time.
 	}
 
 	//=================================================================================
@@ -301,8 +301,8 @@
 		//----------------------------------------------------------------
 		
 		"Ability1"					"roshan_fury_swipes"	// Ability 1.
-		"Ability2"					""	// Ability 2.
-		"Ability3"					""	// Ability 3.
+		"Ability2"					"tower_spawn_protection"	// Ability 2.
+		"Ability3"					"special_bonus_truestrike"	// Ability 3.
 		"Ability4"					""	// Ability 4.
 		"Ability5"					""	// Ability 5.
 		"Ability6"					""	// Ability 6 - Extra.
@@ -395,8 +395,8 @@
 		//----------------------------------------------------------------
 		
 		"Ability1"					"roshan_fury_swipes"	// Ability 1.
-		"Ability2"					""	// Ability 2.
-		"Ability3"					""	// Ability 3.
+		"Ability2"					"tower_spawn_protection"	// Ability 2.
+		"Ability3"					"special_bonus_truestrike"	// Ability 3.
 		"Ability4"					""	// Ability 4.
 		"Ability5"					""	// Ability 5.
 		"Ability6"					""	// Ability 6 - Extra.
