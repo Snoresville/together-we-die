@@ -61,6 +61,16 @@
 				"var_type"					"FIELD_FLOAT"
 				"agi_multiplier"			"0.8 1.2 1.5 1.8"
 			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"knockback_distance"		"20 40 60 80"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"knockback_agi_multiplier"			"0.15 0.2 0.25 0.3"
+			}
 		}
 	}
 }

@@ -18,6 +18,8 @@ function modifier_sniper_headshot_lua:OnCreated( kv )
 	self.slow_duration = self:GetAbility():GetSpecialValueFor( "slow_duration" ) -- special value
 	self.slow = self:GetAbility():GetSpecialValueFor( "slow" ) -- special value
 	self.agi_multiplier = self:GetAbility():GetSpecialValueFor( "agi_multiplier" ) -- special value
+	self.knockback_distance = self:GetAbility():GetSpecialValueFor( "knockback_distance" )
+	self.knockback_agi_multiplier = self:GetAbility():GetSpecialValueFor( "knockback_agi_multiplier" )
 end
 
 function modifier_sniper_headshot_lua:OnRefresh( kv )
@@ -26,6 +28,8 @@ function modifier_sniper_headshot_lua:OnRefresh( kv )
 	self.slow_duration = self:GetAbility():GetSpecialValueFor( "slow_duration" ) -- special value
 	self.slow = self:GetAbility():GetSpecialValueFor( "slow" ) -- special value
 	self.agi_multiplier = self:GetAbility():GetSpecialValueFor( "agi_multiplier" ) -- special value
+	self.knockback_distance = self:GetAbility():GetSpecialValueFor( "knockback_distance" )
+	self.knockback_agi_multiplier = self:GetAbility():GetSpecialValueFor( "knockback_agi_multiplier" )
 end
 
 function modifier_sniper_headshot_lua:OnDestroy( kv )
@@ -46,7 +50,8 @@ function modifier_sniper_headshot_lua:GetModifierProcAttack_BonusDamage_Physical
 	if IsServer() then
 		-- roll dice
 		if RandomInt(1,100)<=self.proc_chance then
-			local headshotDamage = self:GetAbility():GetAbilityDamage() + (self:GetParent():GetAgility() * self.agi_multiplier)
+			local attackerAgility = self:GetParent():GetAgility()
+			local headshotDamage = self:GetAbility():GetAbilityDamage() + (attackerAgility * self.agi_multiplier)
 			params.target:AddNewModifier(
 				self:GetParent(), -- player source
 				self, -- ability source
@@ -54,6 +59,23 @@ function modifier_sniper_headshot_lua:GetModifierProcAttack_BonusDamage_Physical
 				{ 
 					duration = self.slow_duration,
 					slow = self.slow, 
+				} -- kv
+			)
+
+			local enemyOrigin = params.target:GetOrigin()
+			local attackerOrigin =self:GetParent():GetOrigin()
+
+			-- knockback
+			params.target:AddNewModifier(
+				self:GetParent(), -- player source
+				self, -- ability source
+				"modifier_generic_knockback_lua", -- modifier name
+				{
+					duration = self.slow_duration,
+					distance = self.knockback_distance + (attackerAgility * self.knockback_agi_multiplier),
+					height = 30,
+					direction_x = enemyOrigin.x - attackerOrigin.x,
+					direction_y = enemyOrigin.y - attackerOrigin.y,
 				} -- kv
 			)
 			return headshotDamage
