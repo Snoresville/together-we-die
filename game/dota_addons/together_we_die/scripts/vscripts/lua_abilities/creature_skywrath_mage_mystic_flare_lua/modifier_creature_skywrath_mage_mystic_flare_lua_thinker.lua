@@ -9,11 +9,11 @@ Ability checklist (erase if done/checked):
 - Stolen behavior
 ]]
 --------------------------------------------------------------------------------
-modifier_skywrath_mage_mystic_flare_lua_thinker = class({})
+modifier_creature_skywrath_mage_mystic_flare_lua_thinker = class({})
 
 --------------------------------------------------------------------------------
 -- Initializations
-function modifier_skywrath_mage_mystic_flare_lua_thinker:OnCreated( kv )
+function modifier_creature_skywrath_mage_mystic_flare_lua_thinker:OnCreated( kv )
 	-- references
 	local interval = self:GetAbility():GetSpecialValueFor( "damage_interval" )
 	self.damage = self:GetAbility():GetSpecialValueFor( "damage" )
@@ -26,7 +26,7 @@ function modifier_skywrath_mage_mystic_flare_lua_thinker:OnCreated( kv )
 			-- victim = target,
 			attacker = self:GetCaster(),
 			-- damage = damage,
-			damage_type = DAMAGE_TYPE_MAGICAL,
+			damage_type = self:GetAbility():GetAbilityDamageType(),
 			ability = self:GetAbility(), --Optional.
 			-- damage_flags = DOTA_DAMAGE_FLAG_NONE, --Optional.
 		}
@@ -40,10 +40,10 @@ function modifier_skywrath_mage_mystic_flare_lua_thinker:OnCreated( kv )
 	end
 end
 
-function modifier_skywrath_mage_mystic_flare_lua_thinker:OnRemoved()
+function modifier_creature_skywrath_mage_mystic_flare_lua_thinker:OnRemoved()
 end
 
-function modifier_skywrath_mage_mystic_flare_lua_thinker:OnDestroy()
+function modifier_creature_skywrath_mage_mystic_flare_lua_thinker:OnDestroy()
 	if IsServer() then
 		UTIL_Remove( self:GetParent() )
 	end
@@ -51,7 +51,7 @@ end
 
 --------------------------------------------------------------------------------
 -- Interval Effects
-function modifier_skywrath_mage_mystic_flare_lua_thinker:OnIntervalThink()
+function modifier_creature_skywrath_mage_mystic_flare_lua_thinker:OnIntervalThink()
 	-- find heroes
 	local heroes = FindUnitsInRadius(
 		self:GetCaster():GetTeamNumber(),	-- int, your team number
@@ -68,14 +68,14 @@ function modifier_skywrath_mage_mystic_flare_lua_thinker:OnIntervalThink()
 	if #heroes<1 then return end
 	for _,hero in pairs(heroes) do
 		self.damageTable.victim = hero
-		self.damageTable.damage = (self.damage + (hero:GetHealthRegen()/12))/#heroes  + (hero:GetStrength() * 4)
+		self.damageTable.damage = (self.damage + (hero:GetStrength() * 8))/#heroes
 		ApplyDamage( self.damageTable )
 	end
 end
 
 --------------------------------------------------------------------------------
 -- Graphics & Animations
-function modifier_skywrath_mage_mystic_flare_lua_thinker:PlayEffects( radius, duration, interval )
+function modifier_creature_skywrath_mage_mystic_flare_lua_thinker:PlayEffects( radius, duration, interval )
 	-- Get Resources
 	local particle_cast = "particles/units/heroes/hero_skywrath_mage/skywrath_mage_mystic_flare_ambient.vpcf"
 	local sound_cast = "Hero_SkywrathMage.MysticFlare"

@@ -2058,16 +2058,16 @@
 		"precache"
 		{
 			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_skywrath_mage.vsndevts"
-			"particle_folder" "particles/units/heroes/hero_skywrath_mage"
+			"particle_folder"		"particles/units/heroes/hero_skywrath_mage"
 		}
 		
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"skywrath_mage_mystic_flare_lua"	// Ability 1.
+		"Ability1"					"creature_skywrath_mage_mystic_flare_lua"	// Ability 1.
 		"Ability2"					"roshan_spell_block"			// Ability 2.
 		"Ability3"					"tidehunter_kraken_shell"			// Ability 3.
-		"Ability4"					"creature_elder_titan_natural_order_spirit"			// Ability 4.
-		"Ability5"					"generic_gold_bag_fountain_500"			// Ability 5.
+		"Ability4"					"generic_gold_bag_fountain_500"			// Ability 4.
+		"Ability5"					""			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
 		"Ability7"					""			// Ability 7 - Extra.
 		"Ability8"					""			// Ability 8 - Extra.
@@ -2079,7 +2079,7 @@
 
 		// Attack
 		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"			"900"		// Damage range min.
 		"AttackDamageMax"			"1200"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"

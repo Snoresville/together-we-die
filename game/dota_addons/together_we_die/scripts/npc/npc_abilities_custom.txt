@@ -5983,42 +5983,6 @@
 		}			
 	}
 
-	//=================================================================================================================
-	// Elder Titan: Natural Order Spirit
-	//=================================================================================================================
-	"creature_elder_titan_natural_order_spirit"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"elder_titan_natural_order_spirit"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
- 		"AbilityCastAnimation"			"ACT_INVALID"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"radius"					"550 650"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"armor_reduction_pct"	    "80 120"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"magic_resistance_pct"		"80 120"
-			}
-		}
-	}
-
 	"creature_armor_reduction_aura"
 	{
 		// General
@@ -7942,7 +7906,7 @@
 
 #base "../vscripts/lua_abilities/drow_ranger_agility_strike_lua/drow_ranger_agility_strike_lua.txt"
 
-#base "../vscripts/lua_abilities/skywrath_mage_mystic_flare_lua/skywrath_mage_mystic_flare_lua.txt"
+#base "../vscripts/lua_abilities/creature_skywrath_mage_mystic_flare_lua/creature_skywrath_mage_mystic_flare_lua.txt"
 #base "../vscripts/lua_abilities/roshan_sun_strike_lua/roshan_sun_strike_lua.txt"
 #base "../vscripts/lua_abilities/roshan_defective_aura_lua/roshan_defective_aura_lua.txt"
 #base "../vscripts/lua_abilities/creature_ogre_smash_lua/creature_ogre_smash_lua.txt"

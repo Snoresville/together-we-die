@@ -3,17 +3,17 @@
 	//=================================================================================================================
 	// Skywrath Mage: Mystic Flare (Lua version)
 	//=================================================================================================================
-	"skywrath_mage_mystic_flare_lua"
+	"creature_skywrath_mage_mystic_flare_lua"
 	{
 		// Ability Technical Aspect
 		// base script folder	: scripts/vscripts
 		// base texture folder	: resource/flash3/images/spellicons
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_lua"
-		"ScriptFile"					"lua_abilities/skywrath_mage_mystic_flare_lua/skywrath_mage_mystic_flare_lua"
+		"ScriptFile"					"lua_abilities/creature_skywrath_mage_mystic_flare_lua/creature_skywrath_mage_mystic_flare_lua"
 		"AbilityTextureName"			"skywrath_mage_mystic_flare_lua"
 		"FightRecapLevel"				"2"
-		"MaxLevel"						"3"
+		"MaxLevel"						"1"
 		"precache"
 		{
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_skywrath_mage.vsndevts"
@@ -25,9 +25,8 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"HasScepterUpgrade"			"1"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 
 		// Ability Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -37,7 +36,7 @@
 		// Ability Resource
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"12.0"
-		"AbilityManaCost"				"500 1250 3000"
+		"AbilityManaCost"				"5000"
 
 		// Damage
 		//-------------------------------------------------------------------------------------------------------------
@@ -49,7 +48,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"350"
+				"radius"				"225"
 			}
 			"02"
 			{
@@ -59,17 +58,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"1400 3000 6000"
+				"damage"				"500"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"damage_interval"		"0.1"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"scepter_radius"		"700"
 			}
 		}
 	}
