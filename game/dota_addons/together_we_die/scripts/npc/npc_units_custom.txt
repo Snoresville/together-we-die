@@ -2149,9 +2149,9 @@
 			{
 				"Ability1"				
 				{
-					"Name"				"skywrath_mage_mystic_flare_lua"
+					"Name"				"creature_skywrath_mage_mystic_flare_lua"
 					"AOE"				"1"
-					"Radius"			"350"
+					"Radius"			"225"
 					"MinimumTargets"	"1"
 				}
 			}
