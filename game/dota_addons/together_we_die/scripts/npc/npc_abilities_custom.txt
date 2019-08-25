@@ -7940,6 +7940,7 @@
 
 #base "../vscripts/lua_abilities/tinker_laser_lua/tinker_laser_lua.txt"
 #base "../vscripts/lua_abilities/tinker_heat_seeking_missile_lua/tinker_heat_seeking_missile_lua.txt"
+#base "../vscripts/lua_abilities/tinker_march_of_the_machines_lua/tinker_march_of_the_machines_lua.txt"
 
 #base "../vscripts/lua_abilities/queen_of_pain_shadow_strike_lua/queen_of_pain_shadow_strike_lua.txt"
 #base "../vscripts/lua_abilities/queen_of_pain_scream_of_pain_lua/queen_of_pain_scream_of_pain_lua.txt"

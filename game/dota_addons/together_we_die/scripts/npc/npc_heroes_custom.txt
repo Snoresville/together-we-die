@@ -158,6 +158,7 @@
 		"override_hero"			"npc_dota_hero_tinker"
 		"Ability1"				"tinker_laser_lua"
 		"Ability2"				"tinker_heat_seeking_missile_lua"
+		"Ability3"				"tinker_march_of_the_machines_lua"
 		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
 	}
 
