@@ -96,6 +96,10 @@ function modifier_sven_gods_strength_lua:OnCreated( kv )
 		ParticleManager:SetParticleControlEnt( nFXIndex, 0, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_weapon" , self:GetParent():GetOrigin(), true )
 		ParticleManager:SetParticleControlEnt( nFXIndex, 2, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_head" , self:GetParent():GetOrigin(), true )
 		self:AddParticle( nFXIndex, false, false, -1, false, true )
+
+		-- deactivate ability
+		local ability = self:GetCaster():FindAbilityByName( "sven_gods_strength_lua" )
+		if ability then ability:SetActivated( false ) end
 	end
 end
 
@@ -111,6 +115,15 @@ function modifier_sven_gods_strength_lua:OnRefresh( kv )
 end
 
 --------------------------------------------------------------------------------
+
+
+function modifier_sven_gods_strength_lua:OnDestroy()
+	if not IsServer() then return end
+
+	-- reactivate ability
+	local ability = self:GetCaster():FindAbilityByName( "sven_gods_strength_lua" )
+	if ability then ability:SetActivated( true ) end
+end
 
 function modifier_sven_gods_strength_lua:DeclareFunctions()
 	local funcs = {
