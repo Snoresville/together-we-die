@@ -38,7 +38,7 @@
 
 		// Ability Resource
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"30"
+		"AbilityCooldown"				"40"
 		"AbilityManaCost"				"100 200 400 800 1600"
 
 		// Damage
@@ -56,7 +56,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"attack_interval"		"0.15 0.12 0.1 0.08 0.06"
+				"attack_interval"		"0.15 0.14 0.13 0.12 0.1"
 			}
 			"03"
 			{
