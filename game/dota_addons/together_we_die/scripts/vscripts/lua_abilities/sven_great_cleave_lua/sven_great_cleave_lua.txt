@@ -25,12 +25,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"ending_width"		"300.0"
+				"ending_width"		"300.0 325.0 350.0 375.0"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"distance"			"300.0 325.0 350.0 375.0"
+				"distance"			"375.0 425.0 475.0 525.0"
 			}
 			"04"
 			{

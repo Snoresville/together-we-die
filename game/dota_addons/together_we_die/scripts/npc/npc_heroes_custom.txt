@@ -90,7 +90,7 @@
 		"Ability1"				"sven_storm_bolt_lua"
 		"Ability2"				"sven_great_cleave_lua"
 		"Ability3"				"sven_warcry_lua"
-		"Ability6"				"holdout_gods_strength"
+		"Ability6"				"sven_gods_strength_lua"
 		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
 	}
 

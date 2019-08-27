@@ -6438,57 +6438,6 @@
 	}
 
 	//=================================================================================================================
-	// Holdout: God's Strength
-	//=================================================================================================================
-	"holdout_gods_strength"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityTextureName"			"sven_gods_strength"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.3 0.3 0.3"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"120.0"
-		"AbilityDuration"				"45.0"
-	
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"125"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"25 40 65"		
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"model_scale"			"25"		
-			}
-			"03"
-			{
-				"var_type"								"FIELD_FLOAT"
-				"cooldown_reduction_per_kill"			"1.0 1.5 2.0"		
-			}
-			"04"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"gods_strength_damage"			"150 275 400"		
-			}
-		}
-	}
-
-	//=================================================================================================================
 	// Holdout: Omnislash
 	//=================================================================================================================
 	"holdout_omnislash"
@@ -7782,6 +7731,7 @@
 #base "../vscripts/lua_abilities/sven_storm_bolt_lua/sven_storm_bolt_lua.txt"
 #base "../vscripts/lua_abilities/sven_great_cleave_lua/sven_great_cleave_lua.txt"
 #base "../vscripts/lua_abilities/sven_warcry_lua/sven_warcry_lua.txt"
+#base "../vscripts/lua_abilities/sven_gods_strength_lua/sven_gods_strength_lua.txt"
 
 #base "../vscripts/lua_abilities/crystal_maiden_frostbite_lua/crystal_maiden_frostbite_lua.txt"
 #base "../vscripts/lua_abilities/crystal_maiden_crystal_nova_lua/crystal_maiden_crystal_nova_lua.txt"
