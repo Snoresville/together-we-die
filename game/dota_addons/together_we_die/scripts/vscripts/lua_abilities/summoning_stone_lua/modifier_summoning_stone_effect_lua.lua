@@ -80,7 +80,6 @@ end
 
 function modifier_summoning_stone_effect_lua:OnIntervalThink()
 	self.cached_stat_result = math.floor(self.primary_stat_multiplier * self:GetCaster():GetPrimaryStatValue())
-	self:ForceRefresh()
 end
 
 
