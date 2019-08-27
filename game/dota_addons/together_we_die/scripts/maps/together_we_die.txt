@@ -1611,15 +1611,15 @@
 	{
 		"round_title"				"#DOTA_Holdout_Round_Chaos_Knight_Mage_Title"
 		"MaxGold"					"93550"
-		"BagCount"					"125"
+		"BagCount"					"95"
 		"BagVariance"				"30"
 		"FixedXP"					"80000"
 		
 		"UnitMelee_1"
 		{
 			"NPCName"				"npc_dota_creature_chaos_knight"
-			"TotalUnitsToSpawn"		"30"
-			"UnitsPerSpawn"			"10"
+			"TotalUnitsToSpawn"		"24"
+			"UnitsPerSpawn"			"8"
 			"SpawnInterval"			"5"
 		}
 		
@@ -1639,8 +1639,8 @@
 			"WaitForTime"			"10"
 			
 			"NPCName"				"npc_dota_creature_chaos_knight"
-			"TotalUnitsToSpawn"		"30"
-			"UnitsPerSpawn"			"10"
+			"TotalUnitsToSpawn"		"24"
+			"UnitsPerSpawn"			"8"
 			"SpawnInterval"			"5"
 		}
 
@@ -1660,8 +1660,8 @@
 			"WaitForTime"			"10"
 			
 			"NPCName"				"npc_dota_creature_chaos_knight"
-			"TotalUnitsToSpawn"		"45"
-			"UnitsPerSpawn"			"15"
+			"TotalUnitsToSpawn"		"24"
+			"UnitsPerSpawn"			"8"
 			"SpawnInterval"			"8"
 			
 			"SpawnerName"			"spawner1"
@@ -1683,8 +1683,8 @@
 			"WaitForTime"			"10"
 			
 			"NPCName"				"npc_dota_creature_chaos_knight"
-			"TotalUnitsToSpawn"		"45"
-			"UnitsPerSpawn"			"15"
+			"TotalUnitsToSpawn"		"24"
+			"UnitsPerSpawn"			"8"
 			"SpawnInterval"			"8"
 			
 			"SpawnerName"			"spawner2"
@@ -1706,8 +1706,8 @@
 			"WaitForTime"			"10"
 			
 			"NPCName"				"npc_dota_creature_chaos_knight"
-			"TotalUnitsToSpawn"		"45"
-			"UnitsPerSpawn"			"15"
+			"TotalUnitsToSpawn"		"24"
+			"UnitsPerSpawn"			"8"
 			"SpawnInterval"			"8"
 			
 			"SpawnerName"			"spawner3"
@@ -1729,8 +1729,8 @@
 			"WaitForTime"			"10"
 			
 			"NPCName"				"npc_dota_creature_chaos_knight"
-			"TotalUnitsToSpawn"		"45"
-			"UnitsPerSpawn"			"15"
+			"TotalUnitsToSpawn"		"24"
+			"UnitsPerSpawn"			"8"
 			"SpawnInterval"			"8"
 			
 			"SpawnerName"			"spawner4"
@@ -1752,8 +1752,8 @@
 			"WaitForTime"			"10"
 			
 			"NPCName"				"npc_dota_creature_chaos_knight"
-			"TotalUnitsToSpawn"		"45"
-			"UnitsPerSpawn"			"15"
+			"TotalUnitsToSpawn"		"24"
+			"UnitsPerSpawn"			"8"
 			"SpawnInterval"			"8"
 			
 			"SpawnerName"			"spawner3_alternate"
@@ -1789,8 +1789,8 @@
 	"Round24" // Roshan Queen
 	{
 		"round_title"				"#DOTA_Holdout_Round_Roshan_Queen_Title"
-		"MaxGold"					"41550"
-		"BagCount"					"1"
+		"MaxGold"					"91550"
+		"BagCount"					"3"
 		"BagVariance"				"30"
 		"FixedXP"					"80000"
 
