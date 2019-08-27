@@ -66,7 +66,7 @@ end
 --------------------------------------------------------------------------------
 
 function modifier_pudge_flesh_heap_lua:GetModifierPreAttack_BonusDamage( params )
-	return self.flesh_heap_damage_bonus
+	return self:GetStackCount() * self.flesh_heap_damage_bonus
 end
 
 --------------------------------------------------------------------------------
