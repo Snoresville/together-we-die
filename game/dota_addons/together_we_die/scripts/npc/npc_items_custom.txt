@@ -4668,7 +4668,7 @@
 	//=================================================================================================================
 	// Ability: Acid Spray
 	//=================================================================================================================
-	"item_spell_alchemist_acid_spray"
+	"item_spell_alchemist_acid_spray_lua"
 	{
 		"ID"							"1096"
 
@@ -4676,7 +4676,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_spell_alchemist_acid_spray"
+		"AbilityTextureName"			"item_spell_alchemist_acid_spray_lua"
 		"ItemKillable"					"0"
 
 		// Stats
@@ -4701,7 +4701,7 @@
 			{
 				"ScriptFile" "holdout_give_spell.lua"
 				"Function"   "GiveSpell"
-				"spell_name_to_give"	"alchemist_acid_spra"
+				"spell_name_to_give"	"alchemist_acid_spray_lua"
 			}
 			"SpendCharge"
 			{}
@@ -4717,7 +4717,7 @@
 	//=================================================================================================================
 	// Ability: Unstable Concoction
 	//=================================================================================================================
-	"item_spell_alchemist_unstable_concoction"
+	"item_spell_alchemist_unstable_concoction_lua"
 	{
 		"ID"							"1097"
 
@@ -4725,7 +4725,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_spell_alchemist_unstable_concoction"
+		"AbilityTextureName"			"item_spell_alchemist_unstable_concoction_lua"
 		"ItemKillable"					"0"
 
 		// Stats
@@ -4750,7 +4750,7 @@
 			{
 				"ScriptFile" "holdout_give_spell.lua"
 				"Function"   "GiveSpell"
-				"spell_name_to_give"	"alchemist_unstable_concoction"
+				"spell_name_to_give"	"alchemist_unstable_concoction_lua"
 			}
 			"SpendCharge"
 			{}
@@ -4764,9 +4764,9 @@
 	}
 
 	//=================================================================================================================
-	// Ability: Goblins Greed
+	// Ability: Greevils Greed
 	//=================================================================================================================
-	"item_spell_alchemist_goblins_greed"
+	"item_spell_alchemist_greevils_greed_lua"
 	{
 		"ID"							"1098"
 
@@ -4774,7 +4774,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_spell_alchemist_goblins_greed"
+		"AbilityTextureName"			"item_spell_alchemist_greevils_greed_lua"
 		"ItemKillable"					"0"
 
 		// Stats
@@ -4799,7 +4799,7 @@
 			{
 				"ScriptFile" "holdout_give_spell.lua"
 				"Function"   "GiveSpell"
-				"spell_name_to_give"	"alchemist_goblins_greed"
+				"spell_name_to_give"	"alchemist_greevils_greed_lua"
 			}
 			"SpendCharge"
 			{}
@@ -4815,7 +4815,7 @@
 	//=================================================================================================================
 	// Ability: Chemical Rage
 	//=================================================================================================================
-	"item_spell_alchemist_chemical_rage"
+	"item_spell_alchemist_chemical_rage_lua"
 	{
 		"ID"							"1099"
 
@@ -4823,7 +4823,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_spell_alchemist_chemical_rage"
+		"AbilityTextureName"			"item_spell_alchemist_chemical_rage_lua"
 		"ItemKillable"					"0"
 
 		// Stats
@@ -4848,7 +4848,7 @@
 			{
 				"ScriptFile" "holdout_give_spell.lua"
 				"Function"   "GiveSpell"
-				"spell_name_to_give"	"alchemist_chemical_rage"
+				"spell_name_to_give"	"alchemist_chemical_rage_lua"
 			}
 			"SpendCharge"
 			{}

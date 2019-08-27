@@ -7774,6 +7774,11 @@
 #base "../vscripts/lua_abilities/intelligence_magic_scale_lua/intelligence_magic_scale_lua.txt"
 #base "../vscripts/lua_abilities/auto_laguna_blade_lua/auto_laguna_blade_lua.txt"
 
+#base "../vscripts/lua_abilities/alchemist_acid_spray_lua/alchemist_acid_spray_lua.txt"
+#base "../vscripts/lua_abilities/alchemist_unstable_concoction_lua/alchemist_unstable_concoction_lua.txt"
+#base "../vscripts/lua_abilities/alchemist_greevils_greed_lua/alchemist_greevils_greed_lua.txt"
+#base "../vscripts/lua_abilities/alchemist_chemical_rage_lua/alchemist_chemical_rage_lua.txt"
+
 #base "../vscripts/lua_abilities/sven_storm_bolt_lua/sven_storm_bolt_lua.txt"
 #base "../vscripts/lua_abilities/sven_great_cleave_lua/sven_great_cleave_lua.txt"
 #base "../vscripts/lua_abilities/sven_warcry_lua/sven_warcry_lua.txt"

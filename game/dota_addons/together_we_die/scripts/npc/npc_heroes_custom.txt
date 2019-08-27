@@ -309,4 +309,15 @@
 
 		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
 	}
+
+	"npc_dota_hero_alchemist_holdout"
+	{
+		"override_hero"				"npc_dota_hero_alchemist"
+		"Ability1"					"alchemist_acid_spray_lua"
+		"Ability2"					"alchemist_unstable_concoction_lua"
+		"Ability3"					"alchemist_greevils_greed_lua"
+		"Ability4"					"alchemist_unstable_concoction_throw_lua"
+		"Ability6"					"alchemist_chemical_rage_lua"
+	}
+
 }
