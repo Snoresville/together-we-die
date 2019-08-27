@@ -5752,16 +5752,16 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"600"
+		"AbilityCastRange"				"800"
 		"AbilityCastPoint"				"0.56"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"20"
+		"AbilityCooldown"				"3"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"75"
+		"AbilityManaCost"				"30"
 
 		"precache"
 		{
@@ -5787,13 +5787,13 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"	"10 12 14 16"
+				"bonus_movement_speed"	"20"
 			}
 
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"120 140 160 180"
+				"bonus_attack_speed"	"300"
 			}
 		}
 	}

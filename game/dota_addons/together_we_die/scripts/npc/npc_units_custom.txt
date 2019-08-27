@@ -3100,13 +3100,13 @@
 			//"CanRespawn"				"0"
 			
 			//Level Up
-			"HPGain"					"125"
-			"DamageGain"				"2"
-			"ArmorGain"					"0.25"
+			"HPGain"					"8000"
+			"DamageGain"				"1000"
+			"ArmorGain"					"8.25"
 			"MagicResistGain"			"0.1"
 			"MoveSpeedGain"				"1"
 			"BountyGain"				"2"
-			"XPGain"					"13"
+			"XPGain"					"130"
 
 			"OffensiveAbilities"
 			{
@@ -3697,12 +3697,11 @@
 		// Bounds
 		//----------------------------------------------------------------
 		"BoundsHullName"			"DOTA_HULL_SIZE_HUGE"			// Hull type used for navigation/locomotion.
-		"RingRadius"				"60"
-		"HealthBarOffset"			"200"
+		"HealthBarOffset"			"140"
 
 		// Movement
 		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"			// Type of locomotion - ground, air
 		"MovementSpeed"				"320"		// Speed
 		"MovementTurnRate"			"1.0"		// Turning rate.
 
@@ -3794,8 +3793,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"6000"		// Damage range min.
-		"AttackDamageMax"			"10000"		// Damage range max.
+		"AttackDamageMin"			"9000"		// Damage range min.
+		"AttackDamageMax"			"17000"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"0.1"			// Speed of attack.
 		"AttackAnimationPoint"		"0.1"		// Normalized time in animation cycle to attack.
@@ -3813,12 +3812,11 @@
 		// Bounds
 		//----------------------------------------------------------------
 		"BoundsHullName"			"DOTA_HULL_SIZE_HUGE"			// Hull type used for navigation/locomotion.
-		"RingRadius"				"60"
-		"HealthBarOffset"			"200"
+		"HealthBarOffset"			"140"
 
 		// Movement
 		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"			// Type of locomotion - ground, air
 		"MovementSpeed"				"320"		// Speed
 		"MovementTurnRate"			"1.0"		// Turning rate.
 
@@ -3889,12 +3887,12 @@
 		
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"creature_roshan_queen_slam"	// Ability 1.
-		"Ability2"					"creature_chaos_knight_chaos_strike"			// Ability 2.
-		"Ability3"					"roshan_defective_aura_lua"			// Ability 3.
-		"Ability4"					"roshan_sun_strike_lua"			// Ability 4.
-		"Ability5"					"creature_pure_strike_lua"			// Ability 5.
-		"Ability6"					"roshan_overpower"			// Ability 6 - Extra.
+		"Ability1"					"creature_chaos_knight_chaos_strike"	// Ability 1.
+		"Ability2"					"roshan_defective_aura_lua"			// Ability 2.
+		"Ability3"					"roshan_sun_strike_lua"			// Ability 3.
+		"Ability4"					"creature_pure_strike_lua"			// Ability 4.
+		"Ability5"					""			// Ability 5.
+		"Ability6"					""			// Ability 6 - Extra.
 		"Ability7"					""			// Ability 7 - Extra.
 		"Ability8"					""			// Ability 8 - Extra.
 
@@ -3906,11 +3904,11 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"2000"		// Damage range min.
-		"AttackDamageMax"			"5000"		// Damage range max.
+		"AttackDamageMin"			"8000"		// Damage range min.
+		"AttackDamageMax"			"15000"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"				"0.05"			// Speed of attack.
-		"AttackAnimationPoint"		"0.1"		// Normalized time in animation cycle to attack.
+		"AttackRate"				"0.02"			// Speed of attack.
+		"AttackAnimationPoint"		"0.05"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
 		"AttackRange"				"128"		// Range within a target can be attacked.
 		"ProjectileModel"			"particles/base_attacks/ranged_goodguy.vpcf" // Particle system model for projectile.
@@ -3925,18 +3923,17 @@
 		// Bounds
 		//----------------------------------------------------------------
 		"BoundsHullName"			"DOTA_HULL_SIZE_HUGE"			// Hull type used for navigation/locomotion.
-		"RingRadius"				"60"
-		"HealthBarOffset"			"200"
+		"HealthBarOffset"			"140"
 
 		// Movement
 		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"			// Type of locomotion - ground, air
 		"MovementSpeed"				"320"		// Speed
 		"MovementTurnRate"			"1.0"		// Turning rate.
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"900000"		// Base health.
+		"StatusHealth"				"1200000"		// Base health.
 		"StatusHealthRegen"			"1000"		// Health regeneration rate.
 		"StatusMana"				"50000"		// Base mana.
 		"StatusManaRegen"			"1000"			// Mana regeneration rate.
@@ -3973,14 +3970,6 @@
 
 			"OffensiveAbilities"
 			{
-				"Ability1"				
-				{
-					"Name"				"roshan_overpower"
-				}
-				"Ability2"
-				{
-					"Name"				"creature_roshan_queen_slam"
-				}
 			}
 
 			"DisableResistance"			"33.3"
