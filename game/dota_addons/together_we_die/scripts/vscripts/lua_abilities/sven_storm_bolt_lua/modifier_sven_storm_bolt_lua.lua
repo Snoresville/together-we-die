@@ -11,6 +11,10 @@ function modifier_sven_storm_bolt_lua:IsStunDebuff()
 	return true
 end
 
+function modifier_sven_storm_bolt_lua:IsPurgable()
+	return true
+end
+
 --------------------------------------------------------------------------------
 
 function modifier_sven_storm_bolt_lua:GetEffectName()
@@ -50,3 +54,9 @@ function modifier_sven_storm_bolt_lua:CheckState()
 end
 
 --------------------------------------------------------------------------------
+
+function modifier_sven_storm_bolt_lua:OnRemoved()
+	if not IsServer() then return end
+	-- Compulsory interrupt
+	self:GetParent():InterruptMotionControllers( false )
+end
