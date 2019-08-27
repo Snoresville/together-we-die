@@ -1,0 +1,52 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Ability: Great Cleave Lua
+	//=================================================================================================================
+	"sven_great_cleave_lua"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"AbilityTextureName"					"sven_great_cleave_lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"ScriptFile"					"lua_abilities/sven_great_cleave_lua/sven_great_cleave_lua"
+				
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"starting_width"	"125.0 135.0 145.0 155.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"ending_width"		"300.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"distance"			"300.0 325.0 350.0 375.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"great_cleave_damage"	"20 35 50 65"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"		"10 15 20 25"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"str_multiplier"		"0.8 1.2 1.5 1.8"
+			}
+		}
+	}
+}

@@ -6556,90 +6556,6 @@
 	}
 
 	//=================================================================================================================
-	// Holdout: Storm Bolt
-	//=================================================================================================================
-	"holdout_storm_bolt"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"sven_storm_bolt"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-		
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"600"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"13.0"
-
-		// Damage.
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"100 175 250 325"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bolt_speed"			"1000"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bolt_stun_duration"	"2.0 2.5 3.0 3.5"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bolt_aoe"				"255 255 255 255"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"vision_radius"			"225"
-			}
-		}
-	}
-	
-	//=================================================================================================================
-	// Holdout Great Cleave
-	//=================================================================================================================
-	"holdout_great_cleave"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"great_cleave_radius"	"300.0"
-			}
-			
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"great_cleave_damage"	"20 35 50 65"
-			}
-		}
-	}
-
-	//=================================================================================================================
 	// Holdout: Scourge Ward Venomous Gale
 	//=================================================================================================================
 	"holdout_scourge_venomous_gale"
@@ -7841,70 +7757,7 @@
 			}
 		}
 	}
-
-	//=================================================================================================================
-	// Ability: Warcry Lua
-	//=================================================================================================================
-	"sven_warcry_lua"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"ability_lua"
-		"AbilityTextureName"					"sven_warcry_lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"ScriptFile"					"sven_warcry_lua"
-		
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"32.0 28.0 24.0 20.0"
-	
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"25 25 25 25"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"warcry_armor"		"10 8 6 4"		
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"warcry_movespeed"	"12"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"warcry_radius"		"900"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"warcry_duration"	"8.0"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"str_multiplier"	"0.04 0.06 0.08 0.1"
-			}
-		}
-	}
 }
-
-#base "../vscripts/lua_abilities/crystal_maiden_frostbite_lua/crystal_maiden_frostbite_lua.txt"
-#base "../vscripts/lua_abilities/crystal_maiden_crystal_nova_lua/crystal_maiden_crystal_nova_lua.txt"
-#base "../vscripts/lua_abilities/crystal_maiden_arcane_aura_lua/crystal_maiden_arcane_aura_lua.txt"
-#base "../vscripts/lua_abilities/crystal_maiden_freezing_field_lua/crystal_maiden_freezing_field_lua.txt"
-
-#base "../vscripts/lua_abilities/drow_ranger_agility_strike_lua/drow_ranger_agility_strike_lua.txt"
 
 #base "../vscripts/lua_abilities/creature_skywrath_mage_mystic_flare_lua/creature_skywrath_mage_mystic_flare_lua.txt"
 #base "../vscripts/lua_abilities/roshan_sun_strike_lua/roshan_sun_strike_lua.txt"
@@ -7915,6 +7768,22 @@
 #base "../vscripts/lua_abilities/boss_morphling_block_lua/boss_morphling_block_lua.txt"
 #base "../vscripts/lua_abilities/creature_acid_death_lua/creature_acid_death_lua.txt"
 #base "../vscripts/lua_abilities/tower_spawn_protection/tower_spawn_protection.txt"
+
+#base "../vscripts/lua_abilities/summoning_stone_lua/summoning_stone_lua.txt"
+#base "../vscripts/lua_abilities/pure_strike_lua/pure_strike_lua.txt"
+#base "../vscripts/lua_abilities/intelligence_magic_scale_lua/intelligence_magic_scale_lua.txt"
+#base "../vscripts/lua_abilities/auto_laguna_blade_lua/auto_laguna_blade_lua.txt"
+
+#base "../vscripts/lua_abilities/sven_storm_bolt_lua/sven_storm_bolt_lua.txt"
+#base "../vscripts/lua_abilities/sven_great_cleave_lua/sven_great_cleave_lua.txt"
+#base "../vscripts/lua_abilities/sven_warcry_lua/sven_warcry_lua.txt"
+
+#base "../vscripts/lua_abilities/crystal_maiden_frostbite_lua/crystal_maiden_frostbite_lua.txt"
+#base "../vscripts/lua_abilities/crystal_maiden_crystal_nova_lua/crystal_maiden_crystal_nova_lua.txt"
+#base "../vscripts/lua_abilities/crystal_maiden_arcane_aura_lua/crystal_maiden_arcane_aura_lua.txt"
+#base "../vscripts/lua_abilities/crystal_maiden_freezing_field_lua/crystal_maiden_freezing_field_lua.txt"
+
+#base "../vscripts/lua_abilities/drow_ranger_agility_strike_lua/drow_ranger_agility_strike_lua.txt"
 
 #base "../vscripts/lua_abilities/lina_dragon_slave_lua/lina_dragon_slave_lua.txt"
 #base "../vscripts/lua_abilities/lina_light_strike_array_lua/lina_light_strike_array_lua.txt"
@@ -7956,11 +7825,6 @@
 #base "../vscripts/lua_abilities/leshrac_pulse_nova_lua/leshrac_pulse_nova_lua.txt"
 
 #base "../vscripts/lua_abilities/omniknight_purification_lua/omniknight_purification_lua.txt"
-
-#base "../vscripts/lua_abilities/summoning_stone_lua/summoning_stone_lua.txt"
-#base "../vscripts/lua_abilities/pure_strike_lua/pure_strike_lua.txt"
-#base "../vscripts/lua_abilities/intelligence_magic_scale_lua/intelligence_magic_scale_lua.txt"
-#base "../vscripts/lua_abilities/auto_laguna_blade_lua/auto_laguna_blade_lua.txt"
 
 #base "../vscripts/lua_abilities/furion_force_of_nature_lua/furion_force_of_nature_lua.txt"
 #base "../vscripts/lua_abilities/furion_wrath_of_nature_lua/furion_wrath_of_nature_lua.txt"

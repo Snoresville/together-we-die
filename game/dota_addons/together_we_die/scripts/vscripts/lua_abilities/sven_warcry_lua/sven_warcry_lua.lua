@@ -1,5 +1,5 @@
 sven_warcry_lua = class({})
-LinkLuaModifier( "modifier_sven_warcry_lua", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_sven_warcry_lua", "lua_abilities/sven_warcry_lua/modifier_sven_warcry_lua", LUA_MODIFIER_MOTION_NONE )
 
 --------------------------------------------------------------------------------
 

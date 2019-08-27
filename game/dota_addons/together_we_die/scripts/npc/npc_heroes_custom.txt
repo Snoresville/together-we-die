@@ -87,7 +87,8 @@
 	"npc_dota_hero_sven_holdout"
 	{
 		"override_hero"			"npc_dota_hero_sven"
-		"Ability1"				"holdout_storm_bolt"
+		"Ability1"				"sven_storm_bolt_lua"
+		"Ability2"				"sven_great_cleave_lua"
 		"Ability3"				"sven_warcry_lua"
 		"Ability6"				"holdout_gods_strength"
 		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
