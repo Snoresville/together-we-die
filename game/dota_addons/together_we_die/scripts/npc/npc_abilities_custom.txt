@@ -7717,6 +7717,8 @@
 #base "../vscripts/lua_abilities/boss_morphling_block_lua/boss_morphling_block_lua.txt"
 #base "../vscripts/lua_abilities/creature_acid_death_lua/creature_acid_death_lua.txt"
 #base "../vscripts/lua_abilities/tower_spawn_protection/tower_spawn_protection.txt"
+#base "../vscripts/lua_abilities/creature_dark_willow_shadow_realm_lua/creature_dark_willow_shadow_realm_lua.txt"
+#base "../vscripts/lua_abilities/creature_dark_willow_bedlam_lua/creature_dark_willow_bedlam_lua.txt"
 
 #base "../vscripts/lua_abilities/summoning_stone_lua/summoning_stone_lua.txt"
 #base "../vscripts/lua_abilities/pure_strike_lua/pure_strike_lua.txt"

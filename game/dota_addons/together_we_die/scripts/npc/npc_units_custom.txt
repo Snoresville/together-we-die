@@ -3535,6 +3535,139 @@
 	}
 
 	//=================================================================================
+	// Creature: Dark Willow
+	//=================================================================================
+	"npc_dota_creature_boss_dark_willow"
+	{										
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/heroes/dark_willow/dark_willow.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"Hero_DarkWillow"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_dark_willow.vsndevts"
+		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_dark_willow.vsndevts"
+		"Level"						"1"
+		"ModelScale" 				"1.3"
+		"ConsideredHero"			"1"
+		"precache"
+		{
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_dark_willow.vsndevts"
+			"particle_folder" 		"particles/units/heroes/hero_dark_willow"
+		}
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"creature_dark_willow_bedlam_lua"
+		"Ability2"					"creature_dark_willow_shadow_realm_lua"
+		"Ability3"					"special_bonus_truestrike"
+		"Ability4"					""
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"200"			// Physical protection.
+		"MagicalResistance"			"85"		// Magical protection (percentage).
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"19000"		// Damage range min.
+		"AttackDamageMax"			"25000"		// Damage range max.	
+		"AttackRate"				"0.05"		// Speed of attack.
+		"AttackAnimationPoint"		"0.1"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"1400"		// Range within a target can be acquired.
+		"AttackRange"				"1500"		// Range within a target can be attacked.
+		"ProjectileModel"			"particles/units/heroes/hero_dark_willow/dark_willow_base_attack.vpcf"
+		"ProjectileSpeed"			"1200" 
+
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"40"
+		"HealthBarOffset"			"150"
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"95000"		// Experience earn.
+		"BountyGoldMin"				"0"		// Gold earned min.
+		"BountyGoldMax"				"0"		// Gold earned max.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"285"		// Speed.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"950000"		// Base health.
+		"StatusHealthRegen"			"0.0"		// Health regeneration rate.
+		"StatusMana"				"10000"			// Base mana.
+		"StatusManaRegen"			"1000.0"		// Mana regeneration rate.		 
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1800"		// Range of vision at night time.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_BADGUYS"							// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		
+		// Creature Data
+		//----------------------------------------------------------------------------------------------------------------------
+		"Creature"
+		{
+		//	"Aggression"				"50.0"
+		//	"Avoidance"					"0.0"
+		//	"Support"					"30.0"
+			//"CanRespawn"				"0"
+			
+			//Level Up
+			"HPGain"					"125"
+			"DamageGain"				"2"
+			"ArmorGain"					"0.25"
+			"MagicResistGain"			"0.1"
+			"MoveSpeedGain"				"1"
+			"BountyGain"				"2"
+			"XPGain"					"13"
+
+			"OffensiveAbilities"
+			{
+			}
+
+			"AttachWearables"
+			{
+				"Wearable0"
+				{
+					"ItemDef"			"640"
+				}
+				"Wearable1"
+				{
+					"ItemDef"			"642"
+				}
+				"Wearable2"
+				{
+					"ItemDef"			"646"
+				}
+				"Wearable3"
+				{
+					"ItemDef"			"641"
+				}
+				"Wearable4"
+				{
+					"ItemDef"			"651"
+				}
+				"Wearable6"
+				{
+					"ItemDef"			"653"
+				}
+			}
+		}
+	}
+
+	//=================================================================================
 	// Creature: Strong Roshan
 	//=================================================================================
 	"npc_dota_creature_strong_roshan"
@@ -3678,8 +3811,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"12000"		// Damage range min.
-		"AttackDamageMax"			"18000"		// Damage range max.
+		"AttackDamageMin"			"18000"		// Damage range min.
+		"AttackDamageMax"			"28000"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"0.1"			// Speed of attack.
 		"AttackAnimationPoint"		"0.1"		// Normalized time in animation cycle to attack.
@@ -3793,8 +3926,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"9000"		// Damage range min.
-		"AttackDamageMax"			"17000"		// Damage range max.
+		"AttackDamageMin"			"19000"		// Damage range min.
+		"AttackDamageMax"			"27000"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"0.1"			// Speed of attack.
 		"AttackAnimationPoint"		"0.1"		// Normalized time in animation cycle to attack.

@@ -1786,7 +1786,23 @@
 		}
 	}
 
-	"Round24" // Roshan Queen
+	"Round24" // Morphling
+	{
+		"round_title"				"#DOTA_Holdout_Round_Dark_Willow_Title"
+		"MaxGold"					"91550"
+		"BagCount"					"1"
+		"BagVariance"				"30"
+		"FixedXP"					"80000"
+
+		"UnitMelee_1"
+		{
+			"NPCName"				"npc_dota_creature_boss_dark_willow"
+			"TotalUnitsToSpawn"		"1"
+			"UnitsPerSpawn"			"1"
+		}
+	}
+
+	"Round25" // Roshan Queen
 	{
 		"round_title"				"#DOTA_Holdout_Round_Roshan_Queen_Title"
 		"MaxGold"					"91550"

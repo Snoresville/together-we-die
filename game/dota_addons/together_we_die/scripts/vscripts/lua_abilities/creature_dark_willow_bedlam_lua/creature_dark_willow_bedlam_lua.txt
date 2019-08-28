@@ -1,0 +1,83 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Dark Willow: Bedlam (Lua version)
+	//=================================================================================================================
+	"creature_dark_willow_bedlam_lua"
+	{
+		// Ability Technical Aspect
+		// base script folder	: scripts/vscripts
+		// base texture folder	: resource/flash3/images/spellicons
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"lua_abilities/creature_dark_willow_bedlam_lua/creature_dark_willow_bedlam_lua"
+		"AbilityTextureName"			"dark_willow_bedlam_lua"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"5"
+		"LinkedAbility"					"dark_willow_terrorize_lua"
+
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_dark_willow.vsndevts"
+			"particle"	"particles/units/heroes/hero_dark_willow/dark_willow_wisp_aoe.vpcf"
+			"particle"	"particles/units/heroes/hero_dark_willow/dark_willow_wisp_aoe_cast.vpcf"
+			"particle"	"particles/units/heroes/hero_dark_willow/dark_willow_willowisp_base_attack.vpcf"
+			"particle"	"particles/units/heroes/hero_dark_willow/dark_willow_willowisp_ambient.vpcf"
+		}
+		
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+
+		// Ability Casting
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Damage
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attack_damage"			"1500"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"attack_interval"		"0.1"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attack_radius"			"300"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attack_targets"			"1"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"roaming_radius"			"225"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"roaming_seconds_per_rotation"				"1.8"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bedlam_debuff_duration"				"0.75"
+			}
+		}
+	}
+}

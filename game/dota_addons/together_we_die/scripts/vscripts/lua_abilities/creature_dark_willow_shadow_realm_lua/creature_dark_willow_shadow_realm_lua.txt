@@ -1,0 +1,56 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Dark Willow: Shadow Realm (Lua version)
+	//=================================================================================================================
+	"creature_dark_willow_shadow_realm_lua"
+	{
+		// Ability Technical Aspect
+		// base script folder	: scripts/vscripts
+		// base texture folder	: resource/flash3/images/spellicons
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"lua_abilities/creature_dark_willow_shadow_realm_lua/creature_dark_willow_shadow_realm_lua"
+		"AbilityTextureName"			"dark_willow_shadow_realm_lua"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"6"
+
+		"HasScepterUpgrade"			"1"
+
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_dark_willow.vsndevts"
+			"particle"	"particles/status_fx/status_effect_dark_willow_shadow_realm.vpcf"
+			"particle"	"particles/units/heroes/hero_dark_willow/dark_willow_shadow_realm.vpcf"
+			"particle"	"particles/units/heroes/hero_dark_willow/dark_willow_shadow_attack.vpcf"
+			"particle"	"particles/units/heroes/hero_dark_willow/dark_willow_shadow_attack_dummy.vpcf"
+		}
+		
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+
+		// Damage
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage"						"50"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"attack_range_bonus"			"600"
+			}
+		}
+	}
+}
