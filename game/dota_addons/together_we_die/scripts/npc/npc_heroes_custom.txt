@@ -334,4 +334,26 @@
 		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
 	}
 
+	"npc_dota_hero_ogre_magi_holdout"
+	{
+		"override_hero"					"npc_dota_hero_ogre_magi"
+		"Ability1"				"ogre_magi_fireblast_lua"
+		"Ability2"				"ogre_magi_ignite_lua"
+		"Ability3"				"ogre_magi_bloodlust_lua"
+		"Ability4"				"ogre_magi_unrefined_fireblast_lua"
+		"Ability6"				"ogre_magi_multicast_lua"
+
+		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
+	}
+
+	"npc_dota_hero_bristleback_holdout"
+	{
+		"override_hero"					"npc_dota_hero_bristleback"
+		"Ability1"				"bristleback_viscous_nasal_goo_lua"
+		"Ability2"				"bristleback_quill_spray_lua"
+		"Ability3"				"bristleback_bristleback_lua"
+		"Ability6"				"bristleback_warpath_lua"
+
+		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
+	}
 }

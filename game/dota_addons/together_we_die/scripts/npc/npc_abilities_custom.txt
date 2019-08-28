@@ -7730,6 +7730,11 @@
 #base "../vscripts/lua_abilities/alchemist_greevils_greed_lua/alchemist_greevils_greed_lua.txt"
 #base "../vscripts/lua_abilities/alchemist_chemical_rage_lua/alchemist_chemical_rage_lua.txt"
 
+#base "../vscripts/lua_abilities/bristleback_viscous_nasal_goo_lua/bristleback_viscous_nasal_goo_lua_base.txt"
+#base "../vscripts/lua_abilities/bristleback_quill_spray_lua/bristleback_quill_spray_lua_base.txt"
+#base "../vscripts/lua_abilities/bristleback_bristleback_lua/bristleback_bristleback_lua_base.txt"
+#base "../vscripts/lua_abilities/bristleback_warpath_lua/bristleback_warpath_lua_base.txt"
+
 #base "../vscripts/lua_abilities/sven_storm_bolt_lua/sven_storm_bolt_lua.txt"
 #base "../vscripts/lua_abilities/sven_great_cleave_lua/sven_great_cleave_lua.txt"
 #base "../vscripts/lua_abilities/sven_warcry_lua/sven_warcry_lua.txt"

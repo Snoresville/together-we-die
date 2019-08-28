@@ -34,4 +34,5 @@
 	"npc_dota_hero_leshrac"			"1"
 	"npc_dota_hero_pudge"			"1"
 	"npc_dota_hero_ogre_magi"		"1"
+	"npc_dota_hero_bristleback"		"1"
 }

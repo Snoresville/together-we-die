@@ -1786,7 +1786,7 @@
 		}
 	}
 
-	"Round24" // Morphling
+	"Round24" // Dark willow
 	{
 		"round_title"				"#DOTA_Holdout_Round_Dark_Willow_Title"
 		"MaxGold"					"91550"

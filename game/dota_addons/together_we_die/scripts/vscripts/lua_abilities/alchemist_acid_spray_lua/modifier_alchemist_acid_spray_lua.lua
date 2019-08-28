@@ -90,7 +90,8 @@ function modifier_alchemist_acid_spray_lua:DeclareFunctions()
 end
 
 function modifier_alchemist_acid_spray_lua:GetModifierPhysicalArmorBonus()
-	return -self.armor
+	local MAX_ARMOR_REDUCTION = -150
+	return math.max(-self.armor, MAX_ARMOR_REDUCTION)
 end
 
 --------------------------------------------------------------------------------
