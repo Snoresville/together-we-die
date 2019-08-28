@@ -13,7 +13,7 @@
 		"ScriptFile"					"lua_abilities/creature_dark_willow_shadow_realm_lua/creature_dark_willow_shadow_realm_lua"
 		"AbilityTextureName"			"dark_willow_shadow_realm_lua"
 		"FightRecapLevel"				"1"
-		"MaxLevel"						"6"
+		"MaxLevel"						"1"
 
 		"HasScepterUpgrade"			"1"
 

@@ -106,8 +106,8 @@ function modifier_creature_dark_willow_bedlam_lua:OnDestroy()
 	if not IsServer() then return end
 
 	-- kill the wisp
-	UTIL_Remove( self.wisp )
-	-- self.wisp:ForceKill( false )
+	-- UTIL_Remove( self.wisp )
+	self.wisp:ForceKill( false )
 end
 
 --------------------------------------------------------------------------------
