@@ -154,6 +154,6 @@ end
 function modifier_alchemist_greevils_greed_lua:OnIntervalThink()
 	local strengthBonusEffect = self:GetParent():GetStrength() * self:GetAbility():GetSpecialValueFor( "str_multiplier" )
 	self.base_gold = self:GetAbility():GetSpecialValueFor( "bonus_gold" ) + (strengthBonusEffect / 10)
-	self.bonus_gold = self:GetAbility():GetSpecialValueFor( "bonus_bonus_gold" ) + (strengthBonusEffect / 10)
+	self.bonus_gold = self:GetAbility():GetSpecialValueFor( "bonus_bonus_gold" ) + (strengthBonusEffect / 15)
 	self.max_gold = self:GetAbility():GetSpecialValueFor( "bonus_gold_cap" ) + strengthBonusEffect
 end
