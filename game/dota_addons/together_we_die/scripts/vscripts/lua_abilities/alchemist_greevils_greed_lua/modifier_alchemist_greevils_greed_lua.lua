@@ -85,7 +85,7 @@ function modifier_alchemist_greevils_greed_lua:OnDeath( params )
 	if params.attacker~=self:GetParent() then return end
 	if self:GetCaster():GetTeamNumber()==params.unit:GetTeamNumber() then return end
 	if params.unit:IsBuilding() then return end
-	if self:GetParent():PassivesDisabled() then return end
+	if self:GetParent():PassivesDisabled() or not self:GetParent():IsAlive() then return end
 
 	-- gib gold
 	local gold = self:GetStackCount()
