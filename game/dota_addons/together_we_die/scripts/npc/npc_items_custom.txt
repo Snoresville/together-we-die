@@ -5746,7 +5746,7 @@
 	//=================================================================================================================
 	// Ability: Phantom Lancer Juxtapose
 	//=================================================================================================================
-	"item_spell_phantom_lancer_juxtapose"
+	"item_spell_phantom_lancer_juxtapose_lua"
 	{
 		"ID"							"1118"
 
@@ -5754,7 +5754,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_spell_phantom_lancer_juxtapose"
+		"AbilityTextureName"			"item_spell_phantom_lancer_juxtapose_lua"
 		"ItemKillable"					"0"
 
 		// Stats
@@ -5779,7 +5779,7 @@
 			{
 				"ScriptFile" "holdout_give_spell.lua"
 				"Function"   "GiveSpell"
-				"spell_name_to_give"	"phantom_lancer_juxtapose"
+				"spell_name_to_give"	"phantom_lancer_juxtapose_lua"
 			}
 			"SpendCharge"
 			{}
