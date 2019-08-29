@@ -21,7 +21,6 @@ function modifier_bristleback_warpath_lua:OnCreated( kv )
 	self.stack_damage = self:GetAbility():GetSpecialValueFor("damage_per_stack") + (self:GetParent():GetStrength() * self:GetAbility():GetSpecialValueFor("str_multiplier"))
 	self.stack_movespeed = self:GetAbility():GetSpecialValueFor("move_speed_per_stack")
 	self.stack_duration = self:GetAbility():GetSpecialValueFor("stack_duration")
-	self.stack_actual = 0
 	self.stack_size = 5
 
 	if IsServer() then
@@ -34,8 +33,6 @@ function modifier_bristleback_warpath_lua:OnRefresh( kv )
 	self.stack_damage = self:GetAbility():GetSpecialValueFor("damage_per_stack")
 	self.stack_movespeed = self:GetAbility():GetSpecialValueFor("move_speed_per_stack")
 	self.stack_duration = self:GetAbility():GetSpecialValueFor("stack_duration")
-
-	self:SetStackCount( math.min(self.stack_actual,self.stack_max) )
 end
 
 function modifier_bristleback_warpath_lua:OnDestroy( kv )
@@ -50,8 +47,7 @@ function modifier_bristleback_warpath_lua:DeclareFunctions()
 	local funcs = {
 		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
 		MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
-		MODIFIER_EVENT_ON_ABILITY_EXECUTED,
-
+		MODIFIER_EVENT_ON_ABILITY_FULLY_CAST,
 		MODIFIER_PROPERTY_MODEL_SCALE,
 	}
 
@@ -63,19 +59,12 @@ end
 function modifier_bristleback_warpath_lua:GetModifierPreAttack_BonusDamage()
 	return self.stack_damage * self:GetStackCount()
 end
-function modifier_bristleback_warpath_lua:OnAbilityExecuted( params )
+function modifier_bristleback_warpath_lua:OnAbilityFullyCast( params )
 	if IsServer() then
-		-- filter
-		local pass = false
-		if params.unit==self:GetParent() then
-			pass=true
-		end
-
-		-- logic
-		if pass then
+		if params.unit==self:GetParent() and not self:GetParent():PassivesDisabled() then
 			-- check item ability
 			local hAbility = params.ability
-			if hAbility ~= nil and ( not hAbility:IsItem() ) and ( not hAbility:IsToggle() ) and ( not self:GetParent():PassivesDisabled() ) then
+			if hAbility ~= nil and ( not hAbility:IsItem() ) and ( not hAbility:IsToggle() ) then
 				self:AddStack()
 			end
 		end
@@ -88,26 +77,22 @@ end
 --------------------------------------------------------------------------------
 -- Helper
 function modifier_bristleback_warpath_lua:AddStack()
-	-- get AT value
-	local at = self:GetAbility():AddATValue( self )
-
-	-- Add stack
-	self:GetParent():AddNewModifier(
-		self:GetCaster(),
-		self:GetAbility(),
-		"modifier_bristleback_warpath_lua_stack",
-		{
-			duration = self.stack_duration,
-			modifier = at,
-		}
+	-- add stack
+	local modifier = self:GetParent():AddNewModifier(
+		self:GetParent(), -- player source
+		self:GetAbility(), -- ability source
+		"modifier_bristleback_warpath_stack_lua", -- modifier name
+		{ duration = self.stack_duration } -- kv
 	)
 
-	self.stack_actual = self.stack_actual + 1
-	self:SetStackCount( math.min(self.stack_actual,self.stack_max) )
+	modifier.parent_modifier = self
+
+	self:GetAbility():IncrementStackCount()
+	self:SetStackCount( math.min(self:GetAbility():GetStackCount(),self.stack_max) )
 end
 function modifier_bristleback_warpath_lua:RemoveStack()
-	self.stack_actual = self.stack_actual - 1
-	self:SetStackCount( math.min(self.stack_actual,self.stack_max) )
+	self:GetAbility():DecrementStackCount()
+	self:SetStackCount( math.min(self:GetAbility():GetStackCount(),self.stack_max) )
 end
 
 --------------------------------------------------------------------------------

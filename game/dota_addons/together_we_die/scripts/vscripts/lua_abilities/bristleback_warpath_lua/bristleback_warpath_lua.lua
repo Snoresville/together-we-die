@@ -1,6 +1,6 @@
 bristleback_warpath_lua = class({})
 LinkLuaModifier( "modifier_bristleback_warpath_lua", "lua_abilities/bristleback_warpath_lua/modifier_bristleback_warpath_lua", LUA_MODIFIER_MOTION_NONE )
-LinkLuaModifier( "modifier_bristleback_warpath_lua_stack", "lua_abilities/bristleback_warpath_lua/modifier_bristleback_warpath_lua_stack", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_bristleback_warpath_stack_lua", "lua_abilities/bristleback_warpath_lua/modifier_bristleback_warpath_stack_lua", LUA_MODIFIER_MOTION_NONE )
 
 --------------------------------------------------------------------------------
 -- Passive Modifier
@@ -9,33 +9,17 @@ function bristleback_warpath_lua:GetIntrinsicModifierName()
 end
 
 --------------------------------------------------------------------------------
--- Helper
-function bristleback_warpath_lua:GetAT()
-	if self.abilityTable==nil then
-		self.abilityTable = {}
+function bristleback_warpath_lua:GetStackCount()
+	if self.stack_count == nil then
+		self.stack_count = 0
 	end
-	return self.abilityTable
+	return self.stack_count
 end
 
-function bristleback_warpath_lua:GetATEmptyKey()
-	local table = self:GetAT()
-	local i = 1
-	while table[i]~=nil do
-		i = i+1
-	end
-	return i
+function bristleback_warpath_lua:IncrementStackCount()
+	self.stack_count = self:GetStackCount() + 1
 end
 
-function bristleback_warpath_lua:AddATValue( value )
-	local table = self:GetAT()
-	local i = self:GetATEmptyKey()
-	table[i] = value
-	return i
-end
-
-function bristleback_warpath_lua:RetATValue( key )
-	local table = self:GetAT()
-	local ret = table[key]
-	table[key] = nil
-	return ret
+function bristleback_warpath_lua:DecrementStackCount()
+	self.stack_count = self:GetStackCount() - 1
 end
