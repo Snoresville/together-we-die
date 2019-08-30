@@ -2,18 +2,19 @@ LinkLuaModifier( "arc_warden_tempest_double_lua_modifier", "lua_abilities/arc_wa
 
 arc_warden_tempest_double_lua = class({})
 
+function arc_warden_tempest_double_lua:GetManaCost()
+	return self:GetCaster():GetMaxMana() * (self:GetSpecialValueFor("mana_cost") / 100)
+end
+
 function arc_warden_tempest_double_lua:OnSpellStart()
 	local caster = self:GetCaster()
 	local spawn_location = caster:GetOrigin()
 	local health_cost = 1 - (self:GetSpecialValueFor("health_cost") / 100)
-	local mana_cost = 1 - (self:GetSpecialValueFor("mana_cost") / 100)
 	local duration = self:GetSpecialValueFor("duration")
-	local health_after_cast = caster:GetHealth() * mana_cost
-	local mana_after_cast = caster:GetMana() * health_cost
+	local health_after_cast = caster:GetHealth() * health_cost
 	local hasScepter = caster:HasScepter()
 
 	caster:SetHealth(health_after_cast)
-	caster:SetMana(mana_after_cast)
 	local double = CreateUnitByName( caster:GetUnitName(), spawn_location, true, caster, caster:GetOwner(), caster:GetTeamNumber())
 	double:SetControllableByPlayer(caster:GetPlayerID(), false)
 
@@ -61,7 +62,6 @@ function arc_warden_tempest_double_lua:OnSpellStart()
 	end
 
 	double:SetHealth(health_after_cast)
-	double:SetMana(mana_after_cast)
 
 	double:SetMaximumGoldBounty(0)
 	double:SetMinimumGoldBounty(0)

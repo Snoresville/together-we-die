@@ -47,12 +47,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_cost"			"20 15 10"
+				"health_cost"			"60 50 40"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mana_cost"				"20 15 10"
+				"mana_cost"				"60 50 40"
 			}
 		}
 	}
