@@ -16,22 +16,6 @@ end
 function modifier_roshan_defective_aura_effect_lua:OnRefresh( kv )
 end
 
-
---------------------------------------------------------------------------------
-
-function modifier_roshan_defective_aura_effect_lua:DeclareFunctions()
-	local funcs = {
-		MODIFIER_PROPERTY_DISABLE_HEALING,
-	}
-	return funcs
-end
-
---------------------------------------------------------------------------------
-
-function modifier_roshan_defective_aura_effect_lua:GetDisableHealing()
-	return true
-end
-
 --------------------------------------------------------------------------------
 
 function modifier_roshan_defective_aura_effect_lua:CheckState()
