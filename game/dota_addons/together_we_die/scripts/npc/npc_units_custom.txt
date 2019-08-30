@@ -3801,7 +3801,7 @@
 		"Ability5"					"roshan_spectre_dispersion"			// Ability 5.
 		"Ability6"					"roshan_sun_strike_lua"			// Ability 6 - Extra.
 		"Ability7"					"creature_split_queen_roshan"			// Ability 7 - Extra.
-		"Ability8"					""			// Ability 8 - Extra.
+		"Ability8"					"creature_disable_healing_aura_lua"			// Ability 8 - Extra.
 
 		// Armor
 		//----------------------------------------------------------------
@@ -3840,8 +3840,8 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"580000"		// Base health.
-		"StatusHealthRegen"			"10000"		// Health regeneration rate.
+		"StatusHealth"				"980000"		// Base health.
+		"StatusHealthRegen"			"15000"		// Health regeneration rate.
 		"StatusMana"				"50000"		// Base mana.
 		"StatusManaRegen"			"1000"			// Mana regeneration rate.
 
@@ -4024,7 +4024,7 @@
 		"Ability2"					"roshan_defective_aura_lua"			// Ability 2.
 		"Ability3"					"roshan_sun_strike_lua"			// Ability 3.
 		"Ability4"					"creature_pure_strike_lua"			// Ability 4.
-		"Ability5"					""			// Ability 5.
+		"Ability5"					"creature_disable_healing_aura_lua"			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
 		"Ability7"					""			// Ability 7 - Extra.
 		"Ability8"					""			// Ability 8 - Extra.
@@ -4067,7 +4067,7 @@
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"1200000"		// Base health.
-		"StatusHealthRegen"			"1000"		// Health regeneration rate.
+		"StatusHealthRegen"			"3000"		// Health regeneration rate.
 		"StatusMana"				"50000"		// Base mana.
 		"StatusManaRegen"			"1000"			// Mana regeneration rate.
 
