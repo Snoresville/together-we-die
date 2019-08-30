@@ -32,6 +32,11 @@
 		"ItemKillable"					"0"
 	}
 
+	"item_heart"
+	{
+		"ItemPurchasable"				"0"
+	}
+
 	//=================================================================================================================
 	// Greater Clarity
 	//=================================================================================================================
@@ -571,176 +576,6 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"replenish_amount"		"250"
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Recipe: Heart 2
-	//=================================================================================================================
-	"item_recipe_heart2"
-	{
-		"ID"							"1007"
-
-		"BaseClass"						"item_recipe_heart"
-
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2800"	
-		"ItemShopTags"					""
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_heart2"
-		"ItemRequirements"
-		{
-			"01"						"item_heart;item_heart"
-		}
-	}
-
-	//=================================================================================================================
-	// Heart 2
-	//=================================================================================================================
-	"item_heart2"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"						"1008"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"						"item_heart"
-
-		// Stats		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"7.0"
-
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"12200"
-		"ItemShopTags"					"str;regen_health;health_pool"
-		"ItemQuality"					"epic"
-		"ItemAliases"					"hot;heart of tarrasque 2"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		"ShouldBeSuggested"				"1"
-		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"100"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"1800"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"hp_regen_amp"			"50"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"health_regen_rate"		"5"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cooldown_melee"		"5"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cooldown_ranged_tooltip"		"7"
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Recipe: Heart 3
-	//=================================================================================================================
-	"item_recipe_heart3"
-	{
-		"ID"							"1009"
-
-		"BaseClass"						"item_recipe_heart"
-
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"3800"	
-		"ItemShopTags"					""
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_heart3"
-		"ItemRequirements"
-		{
-			"01"						"item_heart2;item_heart2"
-		}
-	}
-
-	//=================================================================================================================
-	// Heart 3
-	//=================================================================================================================
-	"item_heart3"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"						"1010"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"						"item_heart"
-
-		// Stats		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"7.0"
-
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"28200"
-		"ItemShopTags"					"str;regen_health;health_pool"
-		"ItemQuality"					"epic"
-		"ItemAliases"					"hot;heart of tarrasque 3"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		"ShouldBeSuggested"				"1"
-		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"210"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"4000"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"hp_regen_amp"			"50"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"health_regen_rate"		"5"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cooldown_melee"		"5"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cooldown_ranged_tooltip"		"7"
 			}
 		}
 	}
@@ -1361,7 +1196,7 @@
 		"ItemResult"					"item_heart_shield"
 		"ItemRequirements"
 		{
-			"01"						"item_heart3;item_grand_guard"
+			"01"						"item_heart_of_tarrasque_3_lua;item_grand_guard"
 		}
 	}
 
@@ -7306,176 +7141,6 @@
 		}
 	}
 
-	//=================================================================================================================
-	// Recipe: Heart 4
-	//=================================================================================================================
-	"item_recipe_heart4"
-	{
-		"ID"							"1151"
-
-		"BaseClass"						"item_recipe_heart"
-
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"10000"	
-		"ItemShopTags"					""
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_heart4"
-		"ItemRequirements"
-		{
-			"01"						"item_heart3;item_heart3;item_heart3"
-		}
-	}
-
-	//=================================================================================================================
-	// Heart 4
-	//=================================================================================================================
-	"item_heart4"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"						"1152"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"						"item_heart"
-
-		// Stats		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"7.0"
-
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"94600"
-		"ItemShopTags"					"str;regen_health;health_pool"
-		"ItemQuality"					"epic"
-		"ItemAliases"					"hot;heart of tarrasque 4"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		"ShouldBeSuggested"				"1"
-		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"700"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"12000"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"hp_regen_amp"			"50"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"health_regen_rate"		"5"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cooldown_melee"		"5"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cooldown_ranged_tooltip"		"7"
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Recipe: Heart Of Regeneration
-	//=================================================================================================================
-	"item_recipe_heart_of_regeneration"
-	{
-		"ID"							"1153"
-
-		"BaseClass"						"item_recipe_heart"
-
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"10000"	
-		"ItemShopTags"					""
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_heart_of_regeneration"
-		"ItemRequirements"
-		{
-			"01"						"item_heart3;item_heart3;item_slippers_of_halcyon;item_guardian_greaves"
-		}
-	}
-
-	//=================================================================================================================
-	// Heart Of Regeneration
-	//=================================================================================================================
-	"item_heart_of_regeneration"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"						"1154"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"						"item_heart"
-
-		// Stats		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"7.0"
-
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"73950"
-		"ItemShopTags"					"str;regen_health;health_pool"
-		"ItemQuality"					"epic"
-		"ItemAliases"					"hot;heart of tarrasque 4"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		"ShouldBeSuggested"				"1"
-		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"420"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"8000"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"hp_regen_amp"			"60"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"health_regen_rate"		"10"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cooldown_melee"		"5"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cooldown_ranged_tooltip"		"7"
-			}
-		}
-	}
-
 	"item_recipe_spell_pure_strike_lua"
 	{
 		// General
@@ -8478,3 +8143,9 @@
 		}
 	}
 }
+
+#base "../vscripts/lua_abilities/item_heart_of_tarrasque_lua/item_heart_of_tarrasque_lua.txt"
+#base "../vscripts/lua_abilities/item_heart_of_tarrasque_lua/item_heart_of_tarrasque_2_lua.txt"
+#base "../vscripts/lua_abilities/item_heart_of_tarrasque_lua/item_heart_of_tarrasque_3_lua.txt"
+#base "../vscripts/lua_abilities/item_heart_of_tarrasque_lua/item_heart_of_tarrasque_4_lua.txt"
+#base "../vscripts/lua_abilities/item_heart_of_tarrasque_lua/item_heart_of_regeneration_lua.txt"

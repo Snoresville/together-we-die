@@ -1,0 +1,89 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Heart Of Regeneration
+	//=================================================================================================================
+	"item_heart_of_regeneration_lua"
+	{
+		// Ability Technical Aspect
+		// base script folder	: scripts/vscripts
+		// base texture folder	: resource/flash3/images/spellicons
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"1154"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"lua_abilities/item_heart_of_tarrasque_lua/item_heart_of_regeneration_lua.lua"
+		"AbilityTextureName"			"item_heart_of_tarrasque_lua"
+		"precache"
+		{
+		}
+
+		"ItemCost"						"73950"
+		"ItemShopTags"					"str;regen_health;health_pool"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"hot;heart of regeneration"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Ability Resource
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"6.0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"420"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health"			"8000"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_regen_amp"			"60"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"health_regen_rate"		"10"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"hurt_cooldown"			"6.0"
+			}
+		}
+	}
+
+	"item_recipe_heart_of_regeneration_lua"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "item_datadriven"
+        "ID"                            "1153"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "10000"   
+        "ItemShopTags"                  ""
+
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_heart_of_regeneration_lua"
+        "ItemRequirements"
+        {
+            "01"                        "item_heart_of_tarrasque_3_lua;item_heart_of_tarrasque_3_lua;item_slippers_of_halcyon;item_guardian_greaves"
+        }
+	}
+}
