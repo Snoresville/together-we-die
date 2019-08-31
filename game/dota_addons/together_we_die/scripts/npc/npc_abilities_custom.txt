@@ -7827,3 +7827,8 @@
 
 #base "../vscripts/lua_abilities/wraith_king_wraithfire_blast_lua/wraith_king_wraithfire_blast_lua.txt"
 #base "../vscripts/lua_abilities/wraith_king_mortal_strike_lua/wraith_king_mortal_strike_lua.txt"
+
+#base "../vscripts/lua_abilities/huskar_inner_vitality_lua/huskar_inner_vitality_lua.txt"
+#base "../vscripts/lua_abilities/huskar_burning_spear_lua/huskar_burning_spear_lua.txt"
+#base "../vscripts/lua_abilities/huskar_berserkers_blood_lua/huskar_berserkers_blood_lua.txt"
+#base "../vscripts/lua_abilities/huskar_life_break_lua/huskar_life_break_lua.txt"
