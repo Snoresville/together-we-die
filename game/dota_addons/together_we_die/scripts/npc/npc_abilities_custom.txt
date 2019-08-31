@@ -7823,3 +7823,6 @@
 #base "../vscripts/lua_abilities/sand_king_epicenter_lua/sand_king_epicenter_lua.txt"
 
 #base "../vscripts/lua_abilities/phantom_lancer_juxtapose_lua/phantom_lancer_juxtapose_lua.txt"
+
+#base "../vscripts/lua_abilities/wraith_king_wraithfire_blast_lua/wraith_king_wraithfire_blast_lua.txt"
+#base "../vscripts/lua_abilities/wraith_king_mortal_strike_lua/wraith_king_mortal_strike_lua.txt"

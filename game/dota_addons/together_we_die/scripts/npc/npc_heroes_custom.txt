@@ -358,4 +358,13 @@
 
 		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
 	}
+
+	"npc_dota_hero_skeleton_king_holdout"
+	{
+		"override_hero"					"npc_dota_hero_skeleton_king"
+		"Ability1"				"wraith_king_wraithfire_blast_lua"
+		"Ability3"				"wraith_king_mortal_strike_lua"
+
+		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
+	}
 }

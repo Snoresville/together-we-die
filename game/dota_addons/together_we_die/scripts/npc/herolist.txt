@@ -15,6 +15,7 @@
 	"npc_dota_hero_legion_commander"	"1"
 	"npc_dota_hero_lina"			"1"
 	"npc_dota_hero_sand_king"		"1"
+	"npc_dota_hero_skeleton_king"	"1"
 	"npc_dota_hero_alchemist"		"1"
 	"npc_dota_hero_queenofpain"		"1"
 	"npc_dota_hero_tinker"			"1"
