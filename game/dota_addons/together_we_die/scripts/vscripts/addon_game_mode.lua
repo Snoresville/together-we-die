@@ -44,6 +44,7 @@ function CHoldoutGameMode:InitGameMode()
 	self._difficultyNumberOfVotes = 0
 	self._nRoundNumber = 1
 	self._lives = 3
+	self._playerCount = 0
 	self._currentRound = nil
 	self._flLastThinkGameTime = nil
 	self._entAncient = Entities:FindByName( nil, "dota_goodguys_fort" )
@@ -240,6 +241,14 @@ function CHoldoutGameMode:_CalculateAndApplyDifficulty()
 		difficultyAbility:SetLevel( difficultyScore )
 	end
 
+	for nPlayerID = 0, DOTA_MAX_TEAM_PLAYERS-1 do
+		if PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_GOODGUYS then
+			if PlayerResource:GetPlayer( nPlayerID ) then
+				self._playerCount = self._playerCount + 1
+			end
+		end
+	end
+
 	local difficultyTitle = "DOTA_HUD_Difficulty_Easy"
 	if difficultyScore == 1 then
 		self._nTowerRewardAmount = self._nTowerRewardAmount * 1.35
@@ -270,8 +279,8 @@ end
 
 function CHoldoutGameMode:_SetExpAndRespawn( difficultyScore )
 	difficultyScore = difficultyScore or 1
-	local maxHeroLevel = 129
-	local expConst = 10 * difficultyScore
+	local maxHeroLevel = 150
+	local expConst = math.floor((20 * difficultyScore) / self._playerCount)
 	local xpTable = {}
 	local goldTickTime = 0.5 * difficultyScore
 	local respawnTime = 9.5 * difficultyScore
@@ -621,7 +630,7 @@ end
 
 function CHoldoutGameMode:ComputeTowerBonusGold( nTowersTotal, nTowersStanding )
 	local nRewardPerTower = self._nTowerRewardAmount + self._nTowerScalingRewardPerRound * (self._nRoundNumber - 1)
-	return nRewardPerTower * nTowersStanding
+	return nRewardPerTower * nTowersStanding * self._playerCount
 end
 
 --------------------------------------------------------------------------------
