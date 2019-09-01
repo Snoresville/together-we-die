@@ -24,7 +24,7 @@
 		// Ability General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -49,7 +49,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"health_cost"					"15"
+				"health_cost"					"20 40 60 80"
 			}
 			"02"
 			{
@@ -60,6 +60,11 @@
 			{
 				"var_type"						"FIELD_FLOAT"
 				"str_multiplier"				"0.5 0.75 1.0 1.25"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"radius"						"150 175 200 225"
 			}
 		}
 	}

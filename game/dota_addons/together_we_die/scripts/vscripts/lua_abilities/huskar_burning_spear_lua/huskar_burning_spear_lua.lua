@@ -21,6 +21,13 @@ function huskar_burning_spear_lua:GetIntrinsicModifierName()
 end
 
 --------------------------------------------------------------------------------
+
+-- AOE Radius
+function huskar_burning_spear_lua:GetAOERadius()
+	return self:GetSpecialValueFor( "radius" )
+end
+
+--------------------------------------------------------------------------------
 -- Orb Effects
 function huskar_burning_spear_lua:GetProjectileName()
 	return "particles/units/heroes/hero_huskar/huskar_burning_spear.vpcf"
@@ -41,17 +48,34 @@ end
 
 function huskar_burning_spear_lua:OnOrbImpact( params )
 	local duration = self:GetDuration()
+	local caster = self:GetCaster()
+	local target = params.target
 
-	params.target:AddNewModifier(
-		self:GetCaster(), -- player source
-		self, -- ability source
-		"modifier_huskar_burning_spear_lua", -- modifier name
-		{ duration = duration } -- kv
+	local search = self:GetSpecialValueFor( "radius" )
+	targets = FindUnitsInRadius(
+		caster:GetTeamNumber(),	-- int, your team number
+		target:GetOrigin(),	-- point, center point
+		nil,	-- handle, cacheUnit. (not known)
+		search,	-- float, radius. or use FIND_UNITS_EVERYWHERE
+		DOTA_UNIT_TARGET_TEAM_ENEMY,	-- int, team filter
+		DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	-- int, type filter
+		0,	-- int, flag filter
+		0,	-- int, order filter
+		false	-- bool, can grow cache
 	)
+
+	for _,enemy in pairs(targets) do
+		enemy:AddNewModifier(
+			caster, -- player source
+			self, -- ability source
+			"modifier_huskar_burning_spear_lua", -- modifier name
+			{ duration = duration } -- kv
+		)
+	end
 
 	-- play effects
 	local sound_cast = "Hero_Huskar.Burning_Spear.Cast"
-	EmitSoundOn( sound_cast, self:GetCaster() )
+	EmitSoundOn( sound_cast, caster )
 end
 
 --------------------------------------------------------------------------------

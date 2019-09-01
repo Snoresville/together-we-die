@@ -23,6 +23,11 @@ function huskar_life_break_lua:GetCooldown( level )
 	return self.BaseClass.GetCooldown( self, level )
 end
 
+-- AOE Radius
+function huskar_life_break_lua:GetAOERadius()
+	return self:GetSpecialValueFor( "radius" )
+end
+
 -- --------------------------------------------------------------------------------
 -- -- Ability Cast Filter
 -- function huskar_life_break_lua:CastFilterResultTarget( hTarget )
@@ -58,7 +63,6 @@ function huskar_life_break_lua:OnSpellStart()
 	-- unit identifier
 	local caster = self:GetCaster()
 	local target = self:GetCursorTarget()
-	local health_after_cast = caster:GetHealth() * self:GetSpecialValueFor("health_cost_percent")
 
 	-- load data
 	local duration = 5
@@ -83,9 +87,6 @@ function huskar_life_break_lua:OnSpellStart()
 	-- play effects
 	local sound_cast = "Hero_Huskar.Life_Break"
 	EmitSoundOn( sound_cast, caster )
-
-	-- remove health
-	caster:SetHealth( health_after_cast )
 end
 
 --------------------------------------------------------------------------------

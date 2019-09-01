@@ -24,7 +24,7 @@
 		// Ability General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"		
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
@@ -104,6 +104,11 @@
 			{
 				"var_type"					"FIELD_FLOAT"
 				"str_multiplier"			"3.5 4.5 5.5"
+			}
+			"12"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"radius"					"175.0 225.0 275.0"
 			}
 		}
 	}

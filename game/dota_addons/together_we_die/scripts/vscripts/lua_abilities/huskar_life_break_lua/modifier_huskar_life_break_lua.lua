@@ -76,31 +76,47 @@ function modifier_huskar_life_break_lua:OnDestroy()
 
 		if not self.success then return end
 
-		-- percentage enemy damage
-		local total_damage = self.damage_pct * self.target:GetHealth() + self.str_damage
+		local search = self:GetAbility():GetSpecialValueFor( "radius" )
+		local caster = self:GetCaster()
+		targets = FindUnitsInRadius(
+			caster:GetTeamNumber(),	-- int, your team number
+			self.target:GetOrigin(),	-- point, center point
+			nil,	-- handle, cacheUnit. (not known)
+			search,	-- float, radius. or use FIND_UNITS_EVERYWHERE
+			DOTA_UNIT_TARGET_TEAM_ENEMY,	-- int, team filter
+			DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	-- int, type filter
+			0,	-- int, flag filter
+			0,	-- int, order filter
+			false	-- bool, can grow cache
+		)
+
 		local damageTable = {
-			victim = self.target,
-			attacker = self:GetCaster(),
-			damage = total_damage,
+			attacker = caster,
 			damage_type = DAMAGE_TYPE_MAGICAL,
 			ability = self:GetAbility(), --Optional.
 			damage_flags = DOTA_DAMAGE_FLAG_NONE, --Optional.
 		}
-		ApplyDamage(damageTable)
+
+		for _, enemy in pairs(targets) do
+			-- percentage enemy damage
+			damageTable.victim = enemy
+			damageTable.damage = self.damage_pct * enemy:GetHealth() + self.str_damage
+			ApplyDamage(damageTable)
+			-- apply debuff
+			enemy:AddNewModifier(
+				caster, -- player source
+				self:GetAbility(), -- ability source
+				"modifier_huskar_life_break_lua_debuff", -- modifier name
+				{ duration = self:GetAbility():GetDuration() } -- kv
+			)
+		end
 
 		-- percentage self damage
-		damageTable.victim = self:GetCaster()
-		damageTable.damage = self.cost_pct * self:GetCaster():GetHealth()
+		damageTable.victim = caster
+		damageTable.damage = self.cost_pct * caster:GetHealth()
+		damageTable.damage_type = DAMAGE_TYPE_PURE
 		damageTable.damage_flags = DOTA_DAMAGE_FLAG_NON_LETHAL
 		ApplyDamage(damageTable)
-
-		-- apply debuff
-		self.target:AddNewModifier(
-			self:GetCaster(), -- player source
-			self:GetAbility(), -- ability source
-			"modifier_huskar_life_break_lua_debuff", -- modifier name
-			{ duration = self:GetAbility():GetDuration() } -- kv
-		)
 
 		-- play effects
 		self:PlayEffects()
