@@ -89,7 +89,8 @@ end
 function modifier_bristleback_bristleback_lua:ThresholdLogic( damage )
 	self.threshold = self.threshold + damage
 	if self.threshold > self.max_threshold then
-		local numberOfCasts = math.floor(self.threshold / self.max_threshold)
+		-- set the max to 10
+		local numberOfCasts = math.min(math.floor(math.floor(self.threshold) / self.max_threshold), 10)
 		-- reset threshold
 		self.threshold = 0
 
