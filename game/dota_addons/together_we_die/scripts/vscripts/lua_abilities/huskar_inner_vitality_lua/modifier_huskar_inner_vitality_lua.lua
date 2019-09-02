@@ -71,12 +71,7 @@ function modifier_huskar_inner_vitality_lua:GetModifierConstantHealthRegen()
 			heal = self.heal_base + self.heal_hurt*attrib
 		end
 
-		-- for client info
-		self:SetStackCount( heal )
-
 		return heal
-	else
-		return self:GetStackCount()
 	end
 end
 

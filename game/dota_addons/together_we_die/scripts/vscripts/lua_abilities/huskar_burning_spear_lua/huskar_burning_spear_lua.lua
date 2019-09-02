@@ -22,6 +22,19 @@ end
 
 --------------------------------------------------------------------------------
 
+function huskar_burning_spear_lua:CastFilterResultTarget( hTarget )
+	if hTarget ~= nil and hTarget.GetUnitName ~= nil then
+		return UnitFilter(
+					hTarget,
+					self:GetAbilityTargetTeam(),
+					self:GetAbilityTargetType(),
+					self:GetAbilityTargetFlags(),
+					self:GetCaster():GetTeamNumber()
+				)
+	end
+	return UF_FAIL_OTHER
+end
+
 -- AOE Radius
 function huskar_burning_spear_lua:GetAOERadius()
 	return self:GetSpecialValueFor( "radius" )
@@ -44,6 +57,10 @@ function huskar_burning_spear_lua:OnOrbFire( params )
 		damage_flags = DOTA_DAMAGE_FLAG_NON_LETHAL + DOTA_DAMAGE_FLAG_HPLOSS + DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS, --Optional.
 	}
 	ApplyDamage(damageTable)
+
+	-- play effects
+	local sound_cast = "Hero_Huskar.Burning_Spear.Cast"
+	EmitSoundOn( sound_cast, caster )
 end
 
 function huskar_burning_spear_lua:OnOrbImpact( params )
@@ -74,11 +91,6 @@ function huskar_burning_spear_lua:OnOrbImpact( params )
 	end
 
 	-- play effects
-	local sound_cast = "Hero_Huskar.Burning_Spear.Cast"
-	EmitSoundOn( sound_cast, caster )
-end
-
---------------------------------------------------------------------------------
--- Ability Start
-function huskar_burning_spear_lua:OnSpellStart()
+	local sound_cast = "Hero_Huskar.Burning_Spear"
+	EmitSoundOn( sound_cast, target )
 end
