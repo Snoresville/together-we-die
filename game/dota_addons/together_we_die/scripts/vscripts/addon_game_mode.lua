@@ -232,6 +232,7 @@ end
 function CHoldoutGameMode:_CalculateAndApplyDifficulty()
 	local difficultyNumberOfVotes = self:_GetDifficultyNumberOfVotes()
 	local difficultyScore = 1
+	local startingGold = 0
 	if difficultyNumberOfVotes ~= 0 then
 		difficultyScore = math.floor(self:_GetDifficultyVote() / difficultyNumberOfVotes)
 	end
@@ -253,19 +254,29 @@ function CHoldoutGameMode:_CalculateAndApplyDifficulty()
 	if difficultyScore == 1 then
 		self._nTowerRewardAmount = self._nTowerRewardAmount * 1.35
 		self._nTowerScalingRewardPerRound = self._nTowerScalingRewardPerRound * 1.35
+		startingGold = math.floor(10000 / self._playerCount)
 		GameRules:GetGameModeEntity():SetLoseGoldOnDeath( false )
 	elseif difficultyScore == 2 then
 		difficultyTitle = "DOTA_HUD_Difficulty_Normal"
+		startingGold = math.floor(5000 / self._playerCount)
 	elseif difficultyScore == 3 then
 		difficultyTitle = "DOTA_HUD_Difficulty_Hard"
 		self._lives = 2
 		self._nTowerRewardAmount = math.floor( self._nTowerRewardAmount * 0.75 )
 		self._nTowerScalingRewardPerRound = math.floor( self._nTowerScalingRewardPerRound * 0.75 )
+		startingGold = math.floor(2000 / self._playerCount)
 	elseif difficultyScore == 4 then
 		difficultyTitle = "DOTA_HUD_Difficulty_Impossible"
 		self._lives = 1
 		self._nTowerRewardAmount = math.floor( self._nTowerRewardAmount * 0.5 )
 		self._nTowerScalingRewardPerRound = math.floor( self._nTowerScalingRewardPerRound * 0.5 )
+		startingGold = math.floor(500 / self._playerCount)
+	end
+
+	for nPlayerID = 0, DOTA_MAX_TEAM_PLAYERS-1 do
+		if PlayerResource:HasSelectedHero( nPlayerID ) then
+			PlayerResource:ModifyGold( nPlayerID, startingGold, true, DOTA_ModifyGold_Unspecified )
+		end
 	end
 
 	self:_SetExpAndRespawn( difficultyScore )
@@ -630,7 +641,7 @@ end
 
 function CHoldoutGameMode:ComputeTowerBonusGold( nTowersTotal, nTowersStanding )
 	local nRewardPerTower = self._nTowerRewardAmount + self._nTowerScalingRewardPerRound * (self._nRoundNumber - 1)
-	return nRewardPerTower * nTowersStanding * self._playerCount
+	return nRewardPerTower * nTowersStanding
 end
 
 --------------------------------------------------------------------------------
