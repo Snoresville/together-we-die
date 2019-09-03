@@ -4699,7 +4699,7 @@
 	//=================================================================================================================
 	// Ability: Blade Fury
 	//=================================================================================================================
-	"item_spell_holdout_blade_fury"
+	"item_spell_juggernaut_blade_fury_lua"
 	{
 		"ID"							"1100"
 
@@ -4707,7 +4707,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_spell_holdout_blade_fury"
+		"AbilityTextureName"			"item_spell_juggernaut_blade_fury_lua"
 		"ItemKillable"					"0"
 
 		// Stats
@@ -4732,7 +4732,7 @@
 			{
 				"ScriptFile" "holdout_give_spell.lua"
 				"Function"   "GiveSpell"
-				"spell_name_to_give"	"holdout_blade_fury"
+				"spell_name_to_give"	"juggernaut_blade_fury_lua"
 			}
 			"SpendCharge"
 			{}

@@ -77,7 +77,7 @@
 	"npc_dota_hero_juggernaut_holdout"
 	{
 		"override_hero"			"npc_dota_hero_juggernaut"
-		"Ability1"				"holdout_blade_fury"
+		"Ability1"				"juggernaut_blade_fury_lua"
 		"Ability4"				"holdout_omnislash"
 		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
 	}
