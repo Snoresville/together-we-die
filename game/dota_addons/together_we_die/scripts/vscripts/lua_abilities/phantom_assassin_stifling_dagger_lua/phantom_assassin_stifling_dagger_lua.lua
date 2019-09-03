@@ -3,6 +3,11 @@ LinkLuaModifier( "modifier_phantom_assassin_stifling_dagger_lua", "lua_abilities
 LinkLuaModifier( "modifier_phantom_assassin_stifling_dagger_lua_attack", "lua_abilities/phantom_assassin_stifling_dagger_lua/modifier_phantom_assassin_stifling_dagger_lua_attack", LUA_MODIFIER_MOTION_NONE )
 
 --------------------------------------------------------------------------------
+-- AOE Radius
+function phantom_assassin_stifling_dagger_lua:GetAOERadius()
+	return self:GetSpecialValueFor( "radius" )
+end
+
 -- Ability Start
 function phantom_assassin_stifling_dagger_lua:OnSpellStart()
 	-- unit identifier
@@ -14,19 +19,34 @@ function phantom_assassin_stifling_dagger_lua:OnSpellStart()
 	local projectile_speed = self:GetSpecialValueFor("dagger_speed")
 	local projectile_vision = 450
 
-	-- Create Projectile
-	local info = {
-		Target = target,
-		Source = caster,
-		Ability = self,	
-		EffectName = projectile_name,
-		iMoveSpeed = projectile_speed,
-		bReplaceExisting = false,                         -- Optional
-		bProvidesVision = true,                           -- Optional
-		iVisionRadius = projectile_vision,				-- Optional
-		iVisionTeamNumber = caster:GetTeamNumber()        -- Optional
-	}
-	ProjectileManager:CreateTrackingProjectile(info)
+	local search = self:GetSpecialValueFor( "radius" )
+	targets = FindUnitsInRadius(
+		caster:GetTeamNumber(),	-- int, your team number
+		target:GetOrigin(),	-- point, center point
+		nil,	-- handle, cacheUnit. (not known)
+		search,	-- float, radius. or use FIND_UNITS_EVERYWHERE
+		DOTA_UNIT_TARGET_TEAM_ENEMY,	-- int, team filter
+		DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	-- int, type filter
+		0,	-- int, flag filter
+		0,	-- int, order filter
+		false	-- bool, can grow cache
+	)
+
+	for _,enemy in pairs(targets) do
+		-- Create Projectile
+		local info = {
+			Target = enemy,
+			Source = caster,
+			Ability = self,	
+			EffectName = projectile_name,
+			iMoveSpeed = projectile_speed,
+			bReplaceExisting = false,                         -- Optional
+			bProvidesVision = true,                           -- Optional
+			iVisionRadius = projectile_vision,				-- Optional
+			iVisionTeamNumber = caster:GetTeamNumber()        -- Optional
+		}
+		ProjectileManager:CreateTrackingProjectile(info)
+	end
 
 	self:PlayEffects1()
 end
