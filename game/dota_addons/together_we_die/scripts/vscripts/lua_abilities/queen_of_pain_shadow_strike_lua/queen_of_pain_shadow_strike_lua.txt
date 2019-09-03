@@ -82,13 +82,12 @@
 			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"int_multiplier"		"1.5 2.5 3.5 4.5"
+				"int_multiplier"		"1.5 2.0 2.5 3.0"
 			}
 			"08"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"aoe_radius"			"0"
-				"LinkedSpecialBonus"	"special_bonus_unique_queen_of_pain"
+				"var_type"				"FIELD_FLOAT"
+				"radius"				"225 275 325 400"
 			}
 		}
 	}

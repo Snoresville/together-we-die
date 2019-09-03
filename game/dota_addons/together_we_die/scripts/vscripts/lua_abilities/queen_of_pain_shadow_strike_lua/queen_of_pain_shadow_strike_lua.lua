@@ -4,7 +4,7 @@ LinkLuaModifier( "modifier_queen_of_pain_shadow_strike_lua", "lua_abilities/quee
 --------------------------------------------------------------------------------
 
 function queen_of_pain_shadow_strike_lua:GetAOERadius()
-	return self:GetSpecialValueFor( "aoe_radius" )
+	return self:GetSpecialValueFor( "radius" )
 end
 
 -- Ability Start
@@ -17,26 +17,18 @@ function queen_of_pain_shadow_strike_lua:OnSpellStart()
 	local projectile_name = "particles/units/heroes/hero_queenofpain/queen_shadow_strike.vpcf"
 	local projectile_speed = self:GetSpecialValueFor( "projectile_speed" )
 
-	local targets = {}
-	print ("caster has ability")
-	print(self:GetSpecialValueFor("aoe_radius"))
-	if self:GetSpecialValueFor("aoe_radius") ~= 0 then
-		local search = self:GetSpecialValueFor( "aoe_radius" )
-		print(search)
-		targets = FindUnitsInRadius(
-			caster:GetTeamNumber(),	-- int, your team number
-			target:GetOrigin(),	-- point, center point
-			nil,	-- handle, cacheUnit. (not known)
-			search,	-- float, radius. or use FIND_UNITS_EVERYWHERE
-			DOTA_UNIT_TARGET_TEAM_ENEMY,	-- int, team filter
-			DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	-- int, type filter
-			0,	-- int, flag filter
-			0,	-- int, order filter
-			false	-- bool, can grow cache
-		)
-	else
-		table.insert(targets,target)
-	end
+	local search = self:GetSpecialValueFor( "radius" )
+	local targets = FindUnitsInRadius(
+		caster:GetTeamNumber(),	-- int, your team number
+		target:GetOrigin(),	-- point, center point
+		nil,	-- handle, cacheUnit. (not known)
+		search,	-- float, radius. or use FIND_UNITS_EVERYWHERE
+		DOTA_UNIT_TARGET_TEAM_ENEMY,	-- int, team filter
+		DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	-- int, type filter
+		0,	-- int, flag filter
+		0,	-- int, order filter
+		false	-- bool, can grow cache
+	)
 
 	for _,enemy in pairs(targets) do
 		local info = {
