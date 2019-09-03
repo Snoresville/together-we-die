@@ -2652,8 +2652,8 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"creature_split_med_roshan"	// Ability 1.
-		"Ability2"					"creature_disable_healing_aura_lua"			// Ability 2.
-		"Ability3"					"tidehunter_kraken_shell"			// Ability 3.
+		"Ability2"					"tidehunter_kraken_shell"			// Ability 2.
+		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
 		"Ability5"					""			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
@@ -2662,7 +2662,7 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"30"			// Physical protection.
+		"ArmorPhysical"				"40"			// Physical protection.
 		"MagicalResistance"			"75"		// Magical protection (percentage).
 
 		// Attack
@@ -3684,7 +3684,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"tidehunter_kraken_shell"	// Ability 1.
-		"Ability2"					"creature_disable_healing_aura_lua"			// Ability 2.
+		"Ability2"					""			// Ability 2.
 		"Ability3"					"roshan_fury_swipes"			// Ability 3.
 		"Ability4"					"roshan_overpower"			// Ability 4.
 		"Ability5"					""			// Ability 5.
