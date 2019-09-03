@@ -26,6 +26,10 @@ function modifier_bristleback_bristleback_lua:OnCreated( kv )
 	self.ability_proc = "bristleback_quill_spray_lua"
 
 	self.threshold = 0
+	-- start interval
+	self:OnIntervalThink()
+	local interval = 1
+	self:StartIntervalThink( interval )
 end
 
 function modifier_bristleback_bristleback_lua:OnRefresh( kv )
@@ -35,6 +39,7 @@ function modifier_bristleback_bristleback_lua:OnRefresh( kv )
 	self.angle_back = self:GetAbility():GetSpecialValueFor( "back_angle" )
 	self.angle_side = self:GetAbility():GetSpecialValueFor( "side_angle" )
 	self.max_threshold = self:GetAbility():GetSpecialValueFor( "quill_release_threshold" )
+	self:OnIntervalThink()
 end
 
 function modifier_bristleback_bristleback_lua:OnDestroy( kv )
@@ -88,9 +93,9 @@ end
 -- helper
 function modifier_bristleback_bristleback_lua:ThresholdLogic( damage )
 	self.threshold = self.threshold + damage
-	if self.threshold > self.max_threshold then
+	if self.threshold > self.calculated_max_threshold then
 		-- set the max to 10
-		local numberOfCasts = math.min(math.floor(math.floor(self.threshold) / self.max_threshold), 10)
+		local numberOfCasts = math.min(math.floor(math.floor(self.threshold) / self.calculated_max_threshold), 10)
 		-- reset threshold
 		self.threshold = 0
 
@@ -139,4 +144,10 @@ function modifier_bristleback_bristleback_lua:PlayEffects( bBack, direction )
 
 	end
 	ParticleManager:ReleaseParticleIndex( effect_cast )
+end
+
+--------------------------------------------------------------------------------
+-- Interval Effects
+function modifier_bristleback_bristleback_lua:OnIntervalThink()
+	self.calculated_max_threshold = self.max_threshold + math.floor(self:GetParent():GetStrength() * self:GetAbility():GetSpecialValueFor("str_multiplier")) -- special value
 end
