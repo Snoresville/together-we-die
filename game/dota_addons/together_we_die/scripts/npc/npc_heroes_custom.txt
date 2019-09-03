@@ -145,7 +145,7 @@
 		"override_hero"				"npc_dota_hero_queenofpain"
 
 		"Ability1"					"queen_of_pain_shadow_strike_lua"
-		"Ability2"					"holdout_qop_blink"
+		"Ability2"					"queen_of_pain_blink_lua"
 		"Ability3"					"queen_of_pain_scream_of_pain_lua"
 		"Ability6"					"queen_of_pain_sonic_wave_lua"
 
