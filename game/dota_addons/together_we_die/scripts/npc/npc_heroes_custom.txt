@@ -30,6 +30,7 @@
 		"AttributeBaseStrength" "35"
 		"AttributeStrengthGain" "5.5"
 
+		"Ability1"				"centaur_warrunner_hoof_stomp_lua"
 		"Ability3"				"centaur_warrunner_return_lua"
 
 		"VisionNighttimeRange"		"1800"									// Range of vision at night time.

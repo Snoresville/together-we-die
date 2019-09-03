@@ -683,6 +683,62 @@
 	}
 
 	//=================================================================================================================
+	// Centaur: Stampede
+	//=================================================================================================================
+	"centaur_stampede"
+	{
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"4.0 6.0 8.0"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"base_damage"		"0"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"strength_damage"	"4.0 5.0 6.0"
+				"CalculateSpellDamageTooltip"	"1"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"slow_duration"		"2.5"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"150"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"slow_movement_speed"			"100"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_reduction"	"60"
+				"RequiresScepter"	"1"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_reduction_tooltip_scepter"	"60"
+				"RequiresScepter"	"1"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
 	// Wisp: Tether
 	//=================================================================================================================
 	"wisp_tether"
