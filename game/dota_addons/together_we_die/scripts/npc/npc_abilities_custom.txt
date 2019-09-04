@@ -6600,6 +6600,7 @@
 #base "../vscripts/lua_abilities/phantom_assassin_coup_de_grace_lua/phantom_assassin_coup_de_grace_lua.txt"
 
 #base "../vscripts/lua_abilities/luna_lucent_beam_lua/luna_lucent_beam_lua.txt"
+#base "../vscripts/lua_abilities/luna_moon_glaive_lua/luna_moon_glaive_lua.txt"
 #base "../vscripts/lua_abilities/luna_eclipse_lua/luna_eclipse_lua.txt"
 
 #base "../vscripts/lua_abilities/dark_willow_bramble_maze_lua/dark_willow_bramble_maze_lua.txt"

@@ -198,6 +198,7 @@
 		"override_hero"				"npc_dota_hero_luna"
 		
 		"Ability1"					"luna_lucent_beam_lua"
+		"Ability2"					"luna_moon_glaive_lua"
 		"Ability6"					"luna_eclipse_lua"
 		"Ability17"					"special_bonus_agility_100"
 
