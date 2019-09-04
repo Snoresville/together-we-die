@@ -32,7 +32,7 @@ function queen_of_pain_shadow_strike_lua:OnSpellStart()
 
 	for _,enemy in pairs(targets) do
 		local info = {
-			Target = target,
+			Target = enemy,
 			Source = caster,
 			Ability = self,	
 			EffectName = projectile_name,
