@@ -13,7 +13,7 @@
 		"ScriptFile"					"lua_abilities/luna_lucent_beam_lua/luna_lucent_beam_lua"
 		"AbilityTextureName"			"luna_lucent_beam_lua"
 		"FightRecapLevel"				"1"
-		"MaxLevel"						"10"
+		"MaxLevel"						"6"
 		"precache"
 		{
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_luna.vsndevts"
@@ -39,7 +39,7 @@
 		// Ability Resource
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"6.0"
-		"AbilityManaCost"				"90 100 110 120 130 140 150 160 170 180"
+		"AbilityManaCost"				"90 100 110 120 130 140"
 
 		// Damage
 		//-------------------------------------------------------------------------------------------------------------
@@ -56,12 +56,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"beam_damage"			"75 150 225 300 360 420 500 575 650 750"
+				"beam_damage"			"75 150 225 300 360 420"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"agi_multiplier"		"1.75 2.25 2.75 3.25"
+				"agi_multiplier"		"1.75 2.25 2.75 3.25 3.75 4.25"
 			}
 		}
 	}
