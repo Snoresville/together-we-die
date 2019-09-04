@@ -3841,7 +3841,7 @@
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"980000"		// Base health.
-		"StatusHealthRegen"			"15000"		// Health regeneration rate.
+		"StatusHealthRegen"			"10000"		// Health regeneration rate.
 		"StatusMana"				"50000"		// Base mana.
 		"StatusManaRegen"			"1000"			// Mana regeneration rate.
 
@@ -4031,7 +4031,7 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"140"			// Physical protection.
+		"ArmorPhysical"				"100"			// Physical protection.
 		"MagicalResistance"			"90"		// Magical protection (percentage).
 
 		// Attack
@@ -4061,13 +4061,13 @@
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"			// Type of locomotion - ground, air
-		"MovementSpeed"				"320"		// Speed
-		"MovementTurnRate"			"1.0"		// Turning rate.
+		"MovementSpeed"				"230"		// Speed
+		"MovementTurnRate"			"0.08"		// Turning rate.
 
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"1200000"		// Base health.
-		"StatusHealthRegen"			"3000"		// Health regeneration rate.
+		"StatusHealthRegen"			"0"		// Health regeneration rate.
 		"StatusMana"				"50000"		// Base mana.
 		"StatusManaRegen"			"1000"			// Mana regeneration rate.
 
