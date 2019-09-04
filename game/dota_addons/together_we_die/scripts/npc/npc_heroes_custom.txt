@@ -199,6 +199,7 @@
 		
 		"Ability1"					"luna_lucent_beam_lua"
 		"Ability2"					"luna_moon_glaive_lua"
+		"Ability3"					"luna_lunar_blessing_lua"
 		"Ability6"					"luna_eclipse_lua"
 		"Ability17"					"special_bonus_agility_100"
 
