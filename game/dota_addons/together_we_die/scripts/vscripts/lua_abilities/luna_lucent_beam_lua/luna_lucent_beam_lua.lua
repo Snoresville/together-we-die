@@ -25,6 +25,12 @@ function luna_lucent_beam_lua:OnAbilityPhaseStart()
 end
 
 --------------------------------------------------------------------------------
+-- AOE Radius
+function luna_lucent_beam_lua:GetAOERadius()
+	return self:GetSpecialValueFor( "radius" )
+end
+
+--------------------------------------------------------------------------------
 -- Ability Start
 function luna_lucent_beam_lua:OnSpellStart()
 	-- unit identifier
@@ -47,18 +53,35 @@ function luna_lucent_beam_lua:OnSpellStart()
 		ability = self, --Optional.
 		damage_flags = DOTA_DAMAGE_FLAG_NONE, --Optional.
 	}
-	ApplyDamage(damageTable)
 
-	-- stun
-	target:AddNewModifier(
-		caster, -- player source
-		self, -- ability source
-		"modifier_generic_stunned_lua", -- modifier name
-		{ duration = duration } -- kv
+	local search = self:GetSpecialValueFor( "radius" )
+	targets = FindUnitsInRadius(
+		caster:GetTeamNumber(),	-- int, your team number
+		target:GetOrigin(),	-- point, center point
+		nil,	-- handle, cacheUnit. (not known)
+		search,	-- float, radius. or use FIND_UNITS_EVERYWHERE
+		DOTA_UNIT_TARGET_TEAM_ENEMY,	-- int, team filter
+		DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	-- int, type filter
+		DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS,	-- int, flag filter
+		0,	-- int, order filter
+		false	-- bool, can grow cache
 	)
 
-	-- effects
-	self:PlayEffects2( target )
+	for _,enemy in pairs(targets) do
+		damageTable.victim = enemy
+		ApplyDamage(damageTable)
+
+		-- stun
+		enemy:AddNewModifier(
+			caster, -- player source
+			self, -- ability source
+			"modifier_generic_stunned_lua", -- modifier name
+			{ duration = duration } -- kv
+		)
+
+		-- effects
+		self:PlayEffects2( enemy )
+	end
 end
 
 --------------------------------------------------------------------------------

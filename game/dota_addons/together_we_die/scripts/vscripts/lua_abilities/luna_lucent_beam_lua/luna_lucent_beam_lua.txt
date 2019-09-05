@@ -24,7 +24,7 @@
 		// Ability General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -39,7 +39,7 @@
 		// Ability Resource
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"6.0"
-		"AbilityManaCost"				"90 100 110 120 130 140"
+		"AbilityManaCost"				"110 130 150 170 190 210"
 
 		// Damage
 		//-------------------------------------------------------------------------------------------------------------
@@ -62,6 +62,11 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"agi_multiplier"		"1.75 2.25 2.75 3.25 3.75 4.25"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"radius"				"150 175 200 225 250 275"
 			}
 		}
 	}
