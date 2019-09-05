@@ -9,12 +9,20 @@ end
 function arc_warden_tempest_double_lua:OnSpellStart()
 	local caster = self:GetCaster()
 	local spawn_location = caster:GetOrigin()
-	local health_cost = 1 - (self:GetSpecialValueFor("health_cost") / 100)
+	local health_cost = self:GetSpecialValueFor("health_cost") / 100
 	local duration = self:GetSpecialValueFor("duration")
-	local health_after_cast = caster:GetHealth() * health_cost
 	local hasScepter = caster:HasScepter()
 
-	caster:SetHealth(health_after_cast)
+	-- health cost
+	local damageTable = {
+		victim = caster,
+		attacker = caster,
+		damage = caster:GetHealth() * health_cost,
+		damage_type = DAMAGE_TYPE_PURE,
+		ability = self, --Optional.
+		damage_flags = DOTA_DAMAGE_FLAG_NON_LETHAL + DOTA_DAMAGE_FLAG_HPLOSS + DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS, --Optional.
+	}
+	ApplyDamage(damageTable)
 	local double = CreateUnitByName( caster:GetUnitName(), spawn_location, true, caster, caster:GetOwner(), caster:GetTeamNumber())
 	double:SetControllableByPlayer(caster:GetPlayerID(), false)
 
