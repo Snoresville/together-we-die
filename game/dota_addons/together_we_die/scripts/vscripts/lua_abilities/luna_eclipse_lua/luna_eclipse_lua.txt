@@ -56,7 +56,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"hit_count"					"15"
+				"hit_count"					"15 25 50"
 			}
 			"03"
 			{
