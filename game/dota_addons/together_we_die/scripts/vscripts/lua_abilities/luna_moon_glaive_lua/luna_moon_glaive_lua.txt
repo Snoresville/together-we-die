@@ -57,7 +57,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"lucent_beam_chance"		"8"
+				"lucent_beam_chance"		"6"
 			}
 			"05"
 			{
