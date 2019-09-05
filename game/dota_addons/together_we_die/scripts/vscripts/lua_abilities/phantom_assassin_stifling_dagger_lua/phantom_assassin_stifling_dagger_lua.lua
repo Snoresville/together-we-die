@@ -27,7 +27,7 @@ function phantom_assassin_stifling_dagger_lua:OnSpellStart()
 		search,	-- float, radius. or use FIND_UNITS_EVERYWHERE
 		DOTA_UNIT_TARGET_TEAM_ENEMY,	-- int, team filter
 		DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	-- int, type filter
-		0,	-- int, flag filter
+		DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS,	-- int, flag filter
 		0,	-- int, order filter
 		false	-- bool, can grow cache
 	)
