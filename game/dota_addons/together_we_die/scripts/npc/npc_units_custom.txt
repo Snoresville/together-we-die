@@ -300,7 +300,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		
-		"Ability1"					"roshan_fury_swipes"	// Ability 1.
+		"Ability1"					"tower_increase_dmg_lua"	// Ability 1.
 		"Ability2"					"tower_spawn_protection"	// Ability 2.
 		"Ability3"					"special_bonus_truestrike"	// Ability 3.
 		"Ability4"					""	// Ability 4.
@@ -317,10 +317,10 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"500"						// Damage range min.
-		"AttackDamageMax"			"1500"						// Damage range max.
+		"AttackDamageMin"			"1"						// Damage range min.
+		"AttackDamageMax"			"1"						// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"				"0.03"						// Speed of attack.
+		"AttackRate"				"0.01"						// Speed of attack.
 		"AttackAnimationPoint"		"0.3"						// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"900"						// Range within a target can be acquired.
 		"AttackRange"				"900"						// Range within a target can be attacked.
@@ -394,7 +394,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		
-		"Ability1"					"roshan_fury_swipes"	// Ability 1.
+		"Ability1"					"tower_increase_dmg_lua"	// Ability 1.
 		"Ability2"					"tower_spawn_protection"	// Ability 2.
 		"Ability3"					"special_bonus_truestrike"	// Ability 3.
 		"Ability4"					""	// Ability 4.
@@ -411,8 +411,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"1500"						// Damage range min.
-		"AttackDamageMax"			"2500"						// Damage range max.
+		"AttackDamageMin"			"1"						// Damage range min.
+		"AttackDamageMax"			"1"						// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"0.01"						// Speed of attack.
 		"AttackAnimationPoint"		"0.3"						// Normalized time in animation cycle to attack.
