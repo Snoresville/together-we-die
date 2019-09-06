@@ -17,10 +17,10 @@ function arc_warden_tempest_double_lua:OnSpellStart()
 	local damageTable = {
 		victim = caster,
 		attacker = caster,
-		damage = caster:GetHealth() * health_cost,
+		damage = math.ceil(caster:GetHealth() * health_cost),
 		damage_type = DAMAGE_TYPE_PURE,
 		ability = self, --Optional.
-		damage_flags = DOTA_DAMAGE_FLAG_NON_LETHAL + DOTA_DAMAGE_FLAG_HPLOSS + DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS, --Optional.
+		damage_flags = DOTA_DAMAGE_FLAG_HPLOSS + DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS, --Optional.
 	}
 	ApplyDamage(damageTable)
 	local double = CreateUnitByName( caster:GetUnitName(), spawn_location, true, caster, caster:GetOwner(), caster:GetTeamNumber())
@@ -69,7 +69,7 @@ function arc_warden_tempest_double_lua:OnSpellStart()
 		end
 	end
 
-	double:SetHealth(health_after_cast)
+	double:SetHealth(caster:GetHealth())
 
 	double:SetMaximumGoldBounty(0)
 	double:SetMinimumGoldBounty(0)
