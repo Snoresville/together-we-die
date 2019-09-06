@@ -2385,7 +2385,7 @@
 	//=================================================================================================================
 	// Ability: Ursa Enrage
 	//=================================================================================================================
-	"item_spell_ursa_enrage"
+	"item_spell_ursa_enrage_lua"
 	{
 		"ID"							"1050"
 
@@ -2393,7 +2393,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_spell_ursa_enrage"
+		"AbilityTextureName"			"item_spell_ursa_enrage_lua"
 		"ItemKillable"					"0"
 
 		// Stats
@@ -2418,7 +2418,7 @@
 			{
 				"ScriptFile" "holdout_give_spell.lua"
 				"Function"   "GiveSpell"
-				"spell_name_to_give"	"ursa_enrage"
+				"spell_name_to_give"	"ursa_enrage_lua"
 			}
 			"SpendCharge"
 			{}
@@ -2432,9 +2432,9 @@
 	}
 
 	//=================================================================================================================
-	// Ability: Ursa Enrage
+	// Ability: Ursa Fury swipes
 	//=================================================================================================================
-	"item_spell_ursa_fury_swipes"
+	"item_spell_ursa_fury_swipes_lua"
 	{
 		"ID"							"1051"
 
@@ -2442,7 +2442,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_spell_ursa_fury_swipes"
+		"AbilityTextureName"			"item_spell_ursa_fury_swipes_lua"
 		"ItemKillable"					"0"
 
 		// Stats
@@ -2467,7 +2467,7 @@
 			{
 				"ScriptFile" "holdout_give_spell.lua"
 				"Function"   "GiveSpell"
-				"spell_name_to_give"	"ursa_fury_swipes"
+				"spell_name_to_give"	"ursa_fury_swipes_lua"
 			}
 			"SpendCharge"
 			{}
@@ -2483,7 +2483,7 @@
 	//=================================================================================================================
 	// Ability: Ursa OverPower
 	//=================================================================================================================
-	"item_spell_ursa_overpower"
+	"item_spell_ursa_overpower_lua"
 	{
 		"ID"							"1052"
 
@@ -2491,7 +2491,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_spell_ursa_overpower"
+		"AbilityTextureName"			"item_spell_ursa_overpower_lua"
 		"ItemKillable"					"0"
 
 		// Stats
@@ -2516,7 +2516,7 @@
 			{
 				"ScriptFile" "holdout_give_spell.lua"
 				"Function"   "GiveSpell"
-				"spell_name_to_give"	"ursa_overpower"
+				"spell_name_to_give"	"ursa_overpower_lua"
 			}
 			"SpendCharge"
 			{}
