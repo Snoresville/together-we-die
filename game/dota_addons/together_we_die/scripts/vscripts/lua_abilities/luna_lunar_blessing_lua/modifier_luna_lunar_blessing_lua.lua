@@ -48,7 +48,7 @@ if IsServer() then
 
 		if caster:PassivesDisabled() then return end
 
-		if self:GetParent() == params.target and self:GetParent():GetTeamNumber() ~= params.attacker:GetTeamNumber() then
+		if self:GetParent() == params.target and self:GetParent():GetTeamNumber() ~= params.attacker:GetTeamNumber() and self:GetAbility():IsCooldownReady() then
 			-- roll chance for lucent beam
 			if self:RollChance( self.lucent_beam_chance ) then
 				local lucent_beam_ability = caster:FindAbilityByName( "luna_lucent_beam_lua" )
@@ -56,6 +56,8 @@ if IsServer() then
 					-- cast to attacker
 					caster:SetCursorCastTarget( params.attacker )
 					lucent_beam_ability:OnSpellStart()
+					-- cooldown
+					self:GetAbility():UseResources( false, false, true )
 				end
 			end
 		end

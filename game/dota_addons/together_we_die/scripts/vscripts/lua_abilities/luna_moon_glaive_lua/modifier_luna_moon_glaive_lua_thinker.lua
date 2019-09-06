@@ -114,12 +114,14 @@ function modifier_luna_moon_glaive_lua_thinker:GetModifierProcAttack_Feedback( p
 	)
 	self:GetAbility().outgoing = 0
 	-- roll chance for lucent beam
-	if self:RollChance( self.lucent_beam_chance + self.lucent_beam_chance_per_bounce * self.bounce ) then
+	if self:GetAbility():IsCooldownReady() and self:RollChance( self.lucent_beam_chance + self.lucent_beam_chance_per_bounce * self.bounce ) then
 		local lucent_beam_ability = self.caster:FindAbilityByName( "luna_lucent_beam_lua" )
 		if ( lucent_beam_ability and lucent_beam_ability:GetLevel() ~= 0 ) then
 			-- cast to target
 			self.caster:SetCursorCastTarget( params.target )
 			lucent_beam_ability:OnSpellStart()
+			-- cooldown
+			self:GetAbility():UseResources( false, false, true )
 		end
 	end
 
