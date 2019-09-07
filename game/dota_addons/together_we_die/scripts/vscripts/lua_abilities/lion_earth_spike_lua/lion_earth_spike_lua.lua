@@ -13,13 +13,7 @@ function lion_earth_spike_lua:OnSpellStart()
 	-- unit identifier
 	local caster = self:GetCaster()
 	local target = self:GetCursorTarget()
-	local point = self:GetCursorPosition()
-
-	-- load data
-	if target then
-		point = target:GetOrigin()
-	end
-
+	local point = target:GetOrigin()
 	local search = self:GetSpecialValueFor( "radius" )
 	targets = FindUnitsInRadius(
 		caster:GetTeamNumber(),	-- int, your team number
