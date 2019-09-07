@@ -53,7 +53,17 @@ function sven_storm_bolt_lua:OnProjectileHit( hTarget, vLocation )
 		local bolt_damage = self:GetSpecialValueFor( "bolt_damage" ) + (self:GetCaster():GetStrength() * self:GetSpecialValueFor("str_multiplier"))
 		local bolt_stun_duration = self:GetSpecialValueFor( "bolt_stun_duration" )
 
-		local enemies = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), hTarget:GetOrigin(), hTarget, bolt_aoe, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false )
+		local enemies = FindUnitsInRadius( 
+			self:GetCaster():GetTeamNumber(), 
+			hTarget:GetOrigin(), 
+			nil, 
+			bolt_aoe, 
+			DOTA_UNIT_TARGET_TEAM_ENEMY, 
+			DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 
+			0, 
+			0, 
+			false 
+		)
 		if #enemies > 0 then
 			for _,enemy in pairs(enemies) do
 				if enemy ~= nil and ( not enemy:IsMagicImmune() ) and ( not enemy:IsInvulnerable() ) then
@@ -62,7 +72,7 @@ function sven_storm_bolt_lua:OnProjectileHit( hTarget, vLocation )
 						victim = enemy,
 						attacker = self:GetCaster(),
 						damage = bolt_damage,
-						damage_type = DAMAGE_TYPE_MAGICAL,
+						damage_type = self:GetAbilityDamageType(),
 					}
 
 					ApplyDamage( damage )
