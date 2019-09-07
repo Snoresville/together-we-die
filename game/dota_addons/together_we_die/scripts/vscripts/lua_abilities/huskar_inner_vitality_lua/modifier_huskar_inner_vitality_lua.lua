@@ -33,10 +33,7 @@ function modifier_huskar_inner_vitality_lua:OnCreated( kv )
 	self.heal_attrib = self:GetAbility():GetSpecialValueFor( "attrib_bonus" )
 	self.heal_hurt = self:GetAbility():GetSpecialValueFor( "hurt_attrib_bonus" )
 	self.hurt_threshold = self:GetAbility():GetSpecialValueFor( "hurt_percent" ) * 100
-
-	if IsServer() then
-		self.primary = self:GetParent():GetPrimaryAttribute()
-	end
+	self.caster_strength = self:GetCaster():GetStrength()
 end
 
 function modifier_huskar_inner_vitality_lua:OnRefresh( kv )
@@ -44,7 +41,8 @@ function modifier_huskar_inner_vitality_lua:OnRefresh( kv )
 	self.heal_base = self:GetAbility():GetSpecialValueFor( "heal" )
 	self.heal_attrib = self:GetAbility():GetSpecialValueFor( "attrib_bonus" )
 	self.heal_hurt = self:GetAbility():GetSpecialValueFor( "hurt_attrib_bonus" )
-	self.hurt_threshold = self:GetAbility():GetSpecialValueFor( "hurt_percent" )	
+	self.hurt_threshold = self:GetAbility():GetSpecialValueFor( "hurt_percent" )
+	self.caster_strength = self:GetCaster():GetStrength()
 end
 
 function modifier_huskar_inner_vitality_lua:OnRemoved()
@@ -64,15 +62,13 @@ function modifier_huskar_inner_vitality_lua:DeclareFunctions()
 end
 
 function modifier_huskar_inner_vitality_lua:GetModifierConstantHealthRegen()
-	if IsServer() then
-		local attrib = self:GetParent():GetPrimaryStatValue()
-		local heal = self.heal_base + self.heal_attrib*attrib
-		if self:GetParent():GetHealthPercent()<self.hurt_threshold then
-			heal = self.heal_base + self.heal_hurt*attrib
-		end
+	local heal = self.heal_base + self.heal_attrib*self.caster_strength
 
-		return heal
+	if self:GetParent():GetHealthPercent()<self.hurt_threshold then
+		heal = self.heal_base + self.heal_hurt*self.caster_strength
 	end
+
+	return heal
 end
 
 --------------------------------------------------------------------------------
