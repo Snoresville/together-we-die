@@ -1444,7 +1444,7 @@
 	//=================================================================================================================
 	// Ability: Split shot
 	//=================================================================================================================
-	"item_spell_medusa_split_shot"
+	"item_spell_medusa_split_shot_lua"
 	{
 		"ID"							"1030"
 
@@ -1477,7 +1477,7 @@
 			{
 				"ScriptFile" "holdout_give_spell.lua"
 				"Function"   "GiveSpell"
-				"spell_name_to_give"	"medusa_split_shot"
+				"spell_name_to_give"	"medusa_split_shot_lua"
 			}
 			"SpendCharge"
 			{}
@@ -2586,7 +2586,7 @@
 	//=================================================================================================================
 	// Ability: Medusa Mana Shield
 	//=================================================================================================================
-	"item_spell_medusa_mana_shield"
+	"item_spell_medusa_mana_shield_lua"
 	{
 		"ID"							"1054"
 
@@ -2594,7 +2594,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_spell_medusa_mana_shield"
+		"AbilityTextureName"			"item_spell_medusa_mana_shield_lua"
 		"ItemKillable"					"0"
 
 		// Stats
@@ -2619,7 +2619,7 @@
 			{
 				"ScriptFile" "holdout_give_spell.lua"
 				"Function"   "GiveSpell"
-				"spell_name_to_give"	"medusa_mana_shield"
+				"spell_name_to_give"	"medusa_mana_shield_lua"
 			}
 			"SpendCharge"
 			{}
@@ -5145,7 +5145,7 @@
 	//=================================================================================================================
 	// Ability: Split shot uses modifiers
 	//=================================================================================================================
-	"item_spell_special_bonus_unique_medusa_4"
+	"item_spell_medusa_split_shot_uses_modifiers_lua"
 	{
 		"ID"							"1109"
 
@@ -5153,7 +5153,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_spell_special_bonus_unique_medusa_4"
+		"AbilityTextureName"			"item_spell_medusa_split_shot_uses_modifiers_lua"
 		"ItemKillable"					"0"
 
 		// Stats
@@ -5178,7 +5178,7 @@
 			{
 				"ScriptFile" "holdout_give_spell.lua"
 				"Function"   "GiveSpell"
-				"spell_name_to_give"	"special_bonus_unique_medusa_4"
+				"spell_name_to_give"	"medusa_split_shot_uses_modifiers_lua"
 			}
 			"SpendCharge"
 			{}

@@ -413,4 +413,16 @@
 
 		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
 	}
+
+	"npc_dota_hero_medusa_holdout"
+	{
+		"override_hero"				"npc_dota_hero_medusa"
+		"Ability1"				"medusa_mystic_snake_lua"
+		"Ability2"				"medusa_mana_shield_lua"
+		"Ability3"				"medusa_split_shot_lua"
+		"Ability4"				"medusa_split_shot_uses_modifiers_lua"
+		"Ability6"				"medusa_stone_gaze_lua"
+
+		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
+	}
 }
