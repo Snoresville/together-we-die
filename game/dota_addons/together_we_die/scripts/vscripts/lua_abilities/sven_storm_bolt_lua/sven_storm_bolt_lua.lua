@@ -1,5 +1,5 @@
 sven_storm_bolt_lua = class({})
-LinkLuaModifier( "modifier_sven_storm_bolt_lua", "lua_abilities/storm_bolt_lua/modifier_sven_storm_bolt_lua", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_generic_stunned_lua", "lua_abilities/generic/modifier_generic_stunned_lua", LUA_MODIFIER_MOTION_NONE )
 
 --------------------------------------------------------------------------------
 
@@ -76,7 +76,7 @@ function sven_storm_bolt_lua:OnProjectileHit( hTarget, vLocation )
 					}
 
 					ApplyDamage( damage )
-					enemy:AddNewModifier( self:GetCaster(), self, "modifier_sven_storm_bolt_lua", { duration = bolt_stun_duration } )
+					enemy:AddNewModifier( self:GetCaster(), self, "modifier_generic_stunned_lua", { duration = bolt_stun_duration } )
 				end
 			end
 		end
