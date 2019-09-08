@@ -8147,6 +8147,135 @@
 		{
 		}
 	}
+
+	//=================================================================================================================
+	// Book of Strength
+	//=================================================================================================================
+	"item_book_of_strength_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"						"1155"
+		"BaseClass"					"item_book_of_strength"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+	
+		"Model"							"models/gameplay/attrib_tome_str.vmdl"
+		"AbilityTextureName"			"item_book_of_strength"
+		"skin" "1"
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0.0"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"40000"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemPurchasable"				"1"
+		"ItemStackable"					"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"ItemDisplayCharges"			"1"
+
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_stat"			"300"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Book of Agility
+	//=================================================================================================================
+	"item_book_of_agility_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"ID"						"1156"
+		"BaseClass"					"item_book_of_agility"
+																		
+		"Model"							"models/gameplay/attrib_tome_agi.vmdl"
+		"AbilityTextureName"			"item_book_of_agility"
+		"skin" "2"
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0.0"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"40000"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemPurchasable"				"1"
+		"ItemStackable"					"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"ItemDisplayCharges"			"1"
+
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_stat"			"300"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Book of Intelligence
+	//=================================================================================================================
+	"item_book_of_intelligence_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"						"1157"
+		"BaseClass"					"item_book_of_intelligence"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"Model"							"models/gameplay/attrib_tome_int.vmdl"
+		"AbilityTextureName"			"item_book_of_intelligence"
+																																																																												 
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0.0"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"40000"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemPurchasable"				"1"
+		"ItemStackable"					"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"ItemDisplayCharges"			"1"
+
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_stat"			"300"
+			}
+		}
+	}
 }
 
 #base "../vscripts/lua_abilities/item_heart_of_tarrasque_lua/item_heart_of_tarrasque_lua.txt"
