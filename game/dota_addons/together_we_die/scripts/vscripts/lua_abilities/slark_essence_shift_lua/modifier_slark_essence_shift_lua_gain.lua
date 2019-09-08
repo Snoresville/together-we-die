@@ -26,7 +26,14 @@ function modifier_slark_essence_shift_lua_gain:OnRefresh( kv )
 end
 
 function modifier_slark_essence_shift_lua_gain:OnDestroy( kv )
+end
 
+function modifier_slark_essence_shift_lua_gain:RemoveOnDeath()
+	return false
+end
+
+function modifier_slark_essence_shift_lua_gain:GetAttributes()
+	return MODIFIER_ATTRIBUTE_PERMANENT
 end
 
 --------------------------------------------------------------------------------
