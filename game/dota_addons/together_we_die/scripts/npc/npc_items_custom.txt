@@ -8155,7 +8155,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"						"1155"
+		"ID"						"1178"
 		"BaseClass"					"item_book_of_strength"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 	
@@ -8200,7 +8200,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"ID"						"1156"
+		"ID"						"1179"
 		"BaseClass"					"item_book_of_agility"
 																		
 		"Model"							"models/gameplay/attrib_tome_agi.vmdl"
@@ -8242,7 +8242,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"						"1157"
+		"ID"						"1180"
 		"BaseClass"					"item_book_of_intelligence"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"Model"							"models/gameplay/attrib_tome_int.vmdl"
