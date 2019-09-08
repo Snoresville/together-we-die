@@ -4025,13 +4025,13 @@
 		"Ability3"					"roshan_sun_strike_lua"			// Ability 3.
 		"Ability4"					"creature_pure_strike_lua"			// Ability 4.
 		"Ability5"					"creature_disable_healing_aura_lua"			// Ability 5.
-		"Ability6"					""			// Ability 6 - Extra.
+		"Ability6"					"roshan_last_word_lua"			// Ability 6 - Extra.
 		"Ability7"					""			// Ability 7 - Extra.
 		"Ability8"					""			// Ability 8 - Extra.
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"100"			// Physical protection.
+		"ArmorPhysical"				"150"			// Physical protection.
 		"MagicalResistance"			"90"		// Magical protection (percentage).
 
 		// Attack
@@ -4066,7 +4066,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1200000"		// Base health.
+		"StatusHealth"				"1600000"		// Base health.
 		"StatusHealthRegen"			"0"		// Health regeneration rate.
 		"StatusMana"				"50000"		// Base mana.
 		"StatusManaRegen"			"1000"			// Mana regeneration rate.
