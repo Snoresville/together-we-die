@@ -22,18 +22,7 @@ function modifier_roshan_defective_aura_effect_lua:CheckState()
 	local state = {}
 
 	if IsServer() and not self:GetCaster():PassivesDisabled() then
-		if self:GetParent():IsHero() and self:GetParent():GetPrimaryAttribute() ~= 2 then
-			-- not intelligence, silence them
-			state = {
-				[MODIFIER_STATE_MUTED] = true,
-				[MODIFIER_STATE_INVISIBLE] = false,
-				[MODIFIER_STATE_BLOCK_DISABLED] = true,
-				[MODIFIER_STATE_EVADE_DISABLED] = true,
-				[MODIFIER_STATE_PASSIVES_DISABLED] = true,
-				[MODIFIER_STATE_SILENCED] = true,
-			}
-		else
-			-- is intelligence, dont silence
+		if self:GetParent():IsHero() then
 			state = {
 				[MODIFIER_STATE_MUTED] = true,
 				[MODIFIER_STATE_INVISIBLE] = false,
