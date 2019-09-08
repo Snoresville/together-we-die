@@ -56,7 +56,7 @@ function sven_storm_bolt_lua:OnProjectileHit( hTarget, vLocation )
 		local enemies = FindUnitsInRadius( 
 			self:GetCaster():GetTeamNumber(), 
 			hTarget:GetOrigin(), 
-			nil, 
+			hTarget, 
 			bolt_aoe, 
 			DOTA_UNIT_TARGET_TEAM_ENEMY, 
 			DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 
