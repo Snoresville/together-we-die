@@ -47,7 +47,7 @@ function modifier_sniper_headshot_lua:DeclareFunctions()
 end
 
 function modifier_sniper_headshot_lua:GetModifierProcAttack_BonusDamage_Physical( params )
-	if IsServer() then
+	if IsServer() and not self:GetParent():PassivesDisabled() then
 		-- roll dice
 		if RandomInt(1,100)<=self.proc_chance then
 			local attackerAgility = self:GetParent():GetAgility()
