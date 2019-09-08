@@ -90,6 +90,9 @@ function modifier_ogre_magi_multicast_lua:OnAbilityFullyCast( params )
 	--if bit.band( params.ability:GetBehavior(), DOTA_ABILITY_BEHAVIOR_POINT ) ~= 0 then return end
 	--if bit.band( params.ability:GetBehavior(), DOTA_ABILITY_BEHAVIOR_OPTIONAL_UNIT_TARGET ) ~= 0 then return end
 
+	-- Ensure it is not a passive ability
+	if bit.band( params.ability:GetBehavior(), DOTA_ABILITY_BEHAVIOR_PASSIVE ) ~= 0 then return end
+
 	-- roll multicasts
 	local casts = 1
 	if RandomInt( 0,100 ) < self.chance_2 then casts = 2 end
