@@ -38,4 +38,5 @@
 	"npc_dota_hero_bristleback"		"1"
 	"npc_dota_hero_huskar"			"1"
 	"npc_dota_hero_ursa"			"1"
+	"npc_dota_hero_slark"			"1"
 }

@@ -6675,3 +6675,6 @@
 #base "../vscripts/lua_abilities/ursa_overpower_lua/ursa_overpower_lua.txt"
 #base "../vscripts/lua_abilities/ursa_fury_swipes_lua/ursa_fury_swipes_lua.txt"
 #base "../vscripts/lua_abilities/ursa_enrage_lua/ursa_enrage_lua.txt"
+
+#base "../vscripts/lua_abilities/slark_dark_pact_lua/slark_dark_pact_lua.txt"
+#base "../vscripts/lua_abilities/slark_essence_shift_lua/slark_essence_shift_lua.txt"
