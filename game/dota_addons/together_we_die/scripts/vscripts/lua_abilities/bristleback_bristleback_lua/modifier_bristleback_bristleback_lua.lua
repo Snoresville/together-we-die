@@ -51,7 +51,6 @@ end
 function modifier_bristleback_bristleback_lua:DeclareFunctions()
 	local funcs = {
 		MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE,
-		-- MODIFIER_EVENT_ON_TAKEDAMAGE,
 	}
 
 	return funcs

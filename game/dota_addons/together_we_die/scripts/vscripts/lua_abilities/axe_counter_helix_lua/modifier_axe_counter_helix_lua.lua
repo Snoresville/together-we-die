@@ -31,7 +31,9 @@ function modifier_axe_counter_helix_lua:OnCreated( kv )
 end
 
 function modifier_axe_counter_helix_lua:OnRefresh( kv )
-
+	-- references
+	self.radius = self:GetAbility():GetSpecialValueFor( "radius" )
+	self.chance = self:GetAbility():GetSpecialValueFor( "trigger_chance" )
 end
 
 function modifier_axe_counter_helix_lua:OnDestroy( kv )
@@ -53,37 +55,39 @@ function modifier_axe_counter_helix_lua:OnAttackLanded( params )
 	local selfAbility = self:GetAbility()
 	if IsServer() and (not abilityCaster:PassivesDisabled()) and abilityCaster == params.target and abilityCaster:GetTeamNumber()~=params.attacker:GetTeamNumber() and selfAbility:IsCooldownReady() then
 		if params.attacker:IsOther() then return end
+		print ('call')
 
 		-- roll dice
-		if RandomInt(1,100)>self.chance then return end
+		if self:RollChance( self.chance ) then
+			print ('proc')
+			local damage = selfAbility:GetSpecialValueFor("damage") + (abilityCaster:GetStrength() * selfAbility:GetSpecialValueFor("str_multiplier"))
+			self.damageTable.damage = damage
 
-		local damage = selfAbility:GetSpecialValueFor("damage") + (abilityCaster:GetStrength() * selfAbility:GetSpecialValueFor("str_multiplier"))
-		self.damageTable.damage = damage
+			-- find enemies
+			local enemies = FindUnitsInRadius(
+				abilityCaster:GetTeamNumber(),	-- int, your team number
+				abilityCaster:GetOrigin(),	-- point, center point
+				nil,	-- handle, cacheUnit. (not known)
+				self.radius,	-- float, radius. or use FIND_UNITS_EVERYWHERE
+				DOTA_UNIT_TARGET_TEAM_ENEMY,	-- int, team filter
+				DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	-- int, type filter
+				DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,	-- int, flag filter
+				0,	-- int, order filter
+				false	-- bool, can grow cache
+			)
 
-		-- find enemies
-		local enemies = FindUnitsInRadius(
-			abilityCaster:GetTeamNumber(),	-- int, your team number
-			abilityCaster:GetOrigin(),	-- point, center point
-			nil,	-- handle, cacheUnit. (not known)
-			self.radius,	-- float, radius. or use FIND_UNITS_EVERYWHERE
-			DOTA_UNIT_TARGET_TEAM_ENEMY,	-- int, team filter
-			DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	-- int, type filter
-			DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,	-- int, flag filter
-			0,	-- int, order filter
-			false	-- bool, can grow cache
-		)
+			-- damage
+			for _,enemy in pairs(enemies) do
+				self.damageTable.victim = enemy
+				ApplyDamage( self.damageTable )
+			end
 
-		-- damage
-		for _,enemy in pairs(enemies) do
-			self.damageTable.victim = enemy
-			ApplyDamage( self.damageTable )
+			-- cooldown
+			selfAbility:UseResources( false, false, true )
+
+			-- effects
+			self:PlayEffects()
 		end
-
-		-- cooldown
-		selfAbility:UseResources( false, false, true )
-
-		-- effects
-		self:PlayEffects()
 	end
 end
 
@@ -102,4 +106,12 @@ function modifier_axe_counter_helix_lua:PlayEffects()
 
 	-- Create Sound
 	EmitSoundOn( sound_cast, self:GetParent() )
+end
+
+function modifier_axe_counter_helix_lua:RollChance( chance )
+	local rand = math.random()
+	if rand<chance/100 then
+		return true
+	end
+	return false
 end
