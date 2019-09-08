@@ -1542,7 +1542,7 @@
 	//=================================================================================================================
 	// Ability: bristleback_bristleback
 	//=================================================================================================================
-	"item_spell_bristleback_bristleback"
+	"item_spell_bristleback_bristleback_lua"
 	{
 		"ID"							"1032"
 
@@ -1575,7 +1575,7 @@
 			{
 				"ScriptFile" "holdout_give_spell.lua"
 				"Function"   "GiveSpell"
-				"spell_name_to_give"	"bristleback_bristleback"
+				"spell_name_to_give"	"bristleback_bristleback_lua"
 			}
 			"SpendCharge"
 			{}
