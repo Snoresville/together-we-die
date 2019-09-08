@@ -8276,6 +8276,1133 @@
 			}
 		}
 	}
+
+	//=================================================================================================================
+	// Ability: Wraith King Wraithfire blast
+	//=================================================================================================================
+	"item_spell_wraith_king_wraithfire_blast_lua"
+	{
+		"ID"							"1181"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_spell_wraith_king_wraithfire_blast_lua"
+		"ItemKillable"					"0"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5000"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"SideShop"						"1"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile" "holdout_give_spell.lua"
+				"Function"   "GiveSpell"
+				"spell_name_to_give"	"wraith_king_wraithfire_blast_lua"
+			}
+			"SpendCharge"
+			{}
+		}
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Wraith King Mortal strike
+	//=================================================================================================================
+	"item_spell_wraith_king_mortal_strike_lua"
+	{
+		"ID"							"1182"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_spell_wraith_king_mortal_strike_lua"
+		"ItemKillable"					"0"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5000"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"SideShop"						"1"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile" "holdout_give_spell.lua"
+				"Function"   "GiveSpell"
+				"spell_name_to_give"	"wraith_king_mortal_strike_lua"
+			}
+			"SpendCharge"
+			{}
+		}
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Huskar
+	//=================================================================================================================
+	"item_spell_huskar_inner_vitality_lua"
+	{
+		"ID"							"1183"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_spell_huskar_inner_vitality_lua"
+		"ItemKillable"					"0"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5000"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"SideShop"						"1"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile" "holdout_give_spell.lua"
+				"Function"   "GiveSpell"
+				"spell_name_to_give"	"huskar_inner_vitality_lua"
+			}
+			"SpendCharge"
+			{}
+		}
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Huskar
+	//=================================================================================================================
+	"item_spell_huskar_burning_spear_lua"
+	{
+		"ID"							"1184"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_spell_huskar_burning_spear_lua"
+		"ItemKillable"					"0"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5000"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"SideShop"						"1"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile" "holdout_give_spell.lua"
+				"Function"   "GiveSpell"
+				"spell_name_to_give"	"huskar_burning_spear_lua"
+			}
+			"SpendCharge"
+			{}
+		}
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Huskar
+	//=================================================================================================================
+	"item_spell_huskar_berserkers_blood_lua"
+	{
+		"ID"							"1185"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_spell_huskar_berserkers_blood_lua"
+		"ItemKillable"					"0"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5000"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"SideShop"						"1"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile" "holdout_give_spell.lua"
+				"Function"   "GiveSpell"
+				"spell_name_to_give"	"huskar_berserkers_blood_lua"
+			}
+			"SpendCharge"
+			{}
+		}
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Huskar
+	//=================================================================================================================
+	"item_spell_huskar_life_break_lua"
+	{
+		"ID"							"1186"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_spell_huskar_life_break_lua"
+		"ItemKillable"					"0"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"10000"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"SideShop"						"1"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile" "holdout_give_spell.lua"
+				"Function"   "GiveSpell"
+				"spell_name_to_give"	"huskar_life_break_lua"
+			}
+			"SpendCharge"
+			{}
+		}
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Bristleback
+	//=================================================================================================================
+	"item_spell_bristleback_viscous_nasal_goo_lua"
+	{
+		"ID"							"1187"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_spell_bristleback_viscous_nasal_goo_lua"
+		"ItemKillable"					"0"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5000"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"SideShop"						"1"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile" "holdout_give_spell.lua"
+				"Function"   "GiveSpell"
+				"spell_name_to_give"	"bristleback_viscous_nasal_goo_lua"
+			}
+			"SpendCharge"
+			{}
+		}
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Bristleback
+	//=================================================================================================================
+	"item_spell_bristleback_quill_spray_lua"
+	{
+		"ID"							"1188"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_spell_bristleback_quill_spray_lua"
+		"ItemKillable"					"0"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5000"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"SideShop"						"1"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile" "holdout_give_spell.lua"
+				"Function"   "GiveSpell"
+				"spell_name_to_give"	"bristleback_quill_spray_lua"
+			}
+			"SpendCharge"
+			{}
+		}
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Bristleback
+	//=================================================================================================================
+	"item_spell_bristleback_warpath_lua"
+	{
+		"ID"							"1189"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_spell_bristleback_warpath_lua"
+		"ItemKillable"					"0"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"10000"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"SideShop"						"1"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile" "holdout_give_spell.lua"
+				"Function"   "GiveSpell"
+				"spell_name_to_give"	"bristleback_warpath_lua"
+			}
+			"SpendCharge"
+			{}
+		}
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Luna
+	//=================================================================================================================
+	"item_spell_luna_moon_glaive_lua"
+	{
+		"ID"							"1190"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_spell_luna_moon_glaive_lua"
+		"ItemKillable"					"0"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5000"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"SideShop"						"1"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile" "holdout_give_spell.lua"
+				"Function"   "GiveSpell"
+				"spell_name_to_give"	"luna_moon_glaive_lua"
+			}
+			"SpendCharge"
+			{}
+		}
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Luna
+	//=================================================================================================================
+	"item_spell_luna_lunar_blessing_lua"
+	{
+		"ID"							"1191"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_spell_luna_lunar_blessing_lua"
+		"ItemKillable"					"0"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5000"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"SideShop"						"1"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile" "holdout_give_spell.lua"
+				"Function"   "GiveSpell"
+				"spell_name_to_give"	"luna_lunar_blessing_lua"
+			}
+			"SpendCharge"
+			{}
+		}
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Slark
+	//=================================================================================================================
+	"item_spell_slark_dark_pact_lua"
+	{
+		"ID"							"1192"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_spell_slark_dark_pact_lua"
+		"ItemKillable"					"0"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5000"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"SideShop"						"1"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile" "holdout_give_spell.lua"
+				"Function"   "GiveSpell"
+				"spell_name_to_give"	"slark_dark_pact_lua"
+			}
+			"SpendCharge"
+			{}
+		}
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Slark
+	//=================================================================================================================
+	"item_spell_slark_essence_shift_lua"
+	{
+		"ID"							"1193"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_spell_slark_essence_shift_lua"
+		"ItemKillable"					"0"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5000"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"SideShop"						"1"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile" "holdout_give_spell.lua"
+				"Function"   "GiveSpell"
+				"spell_name_to_give"	"slark_essence_shift_lua"
+			}
+			"SpendCharge"
+			{}
+		}
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Viper
+	//=================================================================================================================
+	"item_spell_viper_poison_attack_lua"
+	{
+		"ID"							"1194"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_spell_viper_poison_attack_lua"
+		"ItemKillable"					"0"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5000"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"SideShop"						"1"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile" "holdout_give_spell.lua"
+				"Function"   "GiveSpell"
+				"spell_name_to_give"	"viper_poison_attack_lua"
+			}
+			"SpendCharge"
+			{}
+		}
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Viper
+	//=================================================================================================================
+	"item_spell_viper_nethertoxin_lua"
+	{
+		"ID"							"1195"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_spell_viper_nethertoxin_lua"
+		"ItemKillable"					"0"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5000"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"SideShop"						"1"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile" "holdout_give_spell.lua"
+				"Function"   "GiveSpell"
+				"spell_name_to_give"	"viper_nethertoxin_lua"
+			}
+			"SpendCharge"
+			{}
+		}
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Viper
+	//=================================================================================================================
+	"item_spell_viper_corrosive_skin_lua"
+	{
+		"ID"							"1196"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_spell_viper_corrosive_skin_lua"
+		"ItemKillable"					"0"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5000"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"SideShop"						"1"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile" "holdout_give_spell.lua"
+				"Function"   "GiveSpell"
+				"spell_name_to_give"	"viper_corrosive_skin_lua"
+			}
+			"SpendCharge"
+			{}
+		}
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Viper
+	//=================================================================================================================
+	"item_spell_viper_viper_strike_lua"
+	{
+		"ID"							"1197"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_spell_viper_viper_strike_lua"
+		"ItemKillable"					"0"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"10000"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"SideShop"						"1"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile" "holdout_give_spell.lua"
+				"Function"   "GiveSpell"
+				"spell_name_to_give"	"viper_viper_strike_lua"
+			}
+			"SpendCharge"
+			{}
+		}
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Medusa
+	//=================================================================================================================
+	"item_spell_medusa_mystic_snake_lua"
+	{
+		"ID"							"1198"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_spell_medusa_mystic_snake_lua"
+		"ItemKillable"					"0"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5000"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"SideShop"						"1"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile" "holdout_give_spell.lua"
+				"Function"   "GiveSpell"
+				"spell_name_to_give"	"medusa_mystic_snake_lua"
+			}
+			"SpendCharge"
+			{}
+		}
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Medusa
+	//=================================================================================================================
+	"item_spell_medusa_stone_gaze_lua"
+	{
+		"ID"							"1199"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_spell_medusa_stone_gaze_lua"
+		"ItemKillable"					"0"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"10000"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"SideShop"						"1"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile" "holdout_give_spell.lua"
+				"Function"   "GiveSpell"
+				"spell_name_to_give"	"medusa_stone_gaze_lua"
+			}
+			"SpendCharge"
+			{}
+		}
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Ogre
+	//=================================================================================================================
+	"item_spell_ogre_magi_fireblast_lua"
+	{
+		"ID"							"1200"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_spell_ogre_magi_fireblast_lua"
+		"ItemKillable"					"0"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5000"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"SideShop"						"1"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile" "holdout_give_spell.lua"
+				"Function"   "GiveSpell"
+				"spell_name_to_give"	"ogre_magi_fireblast_lua"
+			}
+			"SpendCharge"
+			{}
+		}
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Ogre
+	//=================================================================================================================
+	"item_spell_ogre_magi_ignite_lua"
+	{
+		"ID"							"1201"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_spell_ogre_magi_ignite_lua"
+		"ItemKillable"					"0"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5000"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"SideShop"						"1"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile" "holdout_give_spell.lua"
+				"Function"   "GiveSpell"
+				"spell_name_to_give"	"ogre_magi_ignite_lua"
+			}
+			"SpendCharge"
+			{}
+		}
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Ogre
+	//=================================================================================================================
+	"item_spell_ogre_magi_bloodlust_lua"
+	{
+		"ID"							"1202"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_spell_ogre_magi_bloodlust_lua"
+		"ItemKillable"					"0"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5000"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"SideShop"						"1"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile" "holdout_give_spell.lua"
+				"Function"   "GiveSpell"
+				"spell_name_to_give"	"ogre_magi_bloodlust_lua"
+			}
+			"SpendCharge"
+			{}
+		}
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Centaur
+	//=================================================================================================================
+	"item_spell_centaur_warrunner_hoof_stomp_lua"
+	{
+		"ID"							"1203"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_spell_centaur_warrunner_hoof_stomp_lua"
+		"ItemKillable"					"0"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5000"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"SideShop"						"1"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile" "holdout_give_spell.lua"
+				"Function"   "GiveSpell"
+				"spell_name_to_give"	"centaur_warrunner_hoof_stomp_lua"
+			}
+			"SpendCharge"
+			{}
+		}
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+		}
+	}
 }
 
 #base "../vscripts/lua_abilities/item_heart_of_tarrasque_lua/item_heart_of_tarrasque_lua.txt"
