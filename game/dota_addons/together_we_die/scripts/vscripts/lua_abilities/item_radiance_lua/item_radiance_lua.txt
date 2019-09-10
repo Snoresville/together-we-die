@@ -1,0 +1,95 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Radiance
+	//=================================================================================================================
+	"item_radiance_lua"
+	{
+		// Ability Technical Aspect
+		// base script folder	: scripts/vscripts
+		// base texture folder	: resource/flash3/images/spellicons
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"1204"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"lua_abilities/item_radiance_lua/item_radiance_lua.lua"
+		"AbilityTextureName"			"item_radiance"
+		"precache"
+		{
+		}
+
+		"ItemCost"						"7000"
+		"ItemShopTags"					"damage"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"radiance"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Ability Resource
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange" 				"700"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"65"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_damage"			"60"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"primary_attr_multiplier"			"0.5"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blind_pct"				"17"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius"			"700"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_tick"			"0.1"
+			}
+		}
+	}
+
+	"item_recipe_radiance_lua"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "item_datadriven"
+        "ID"                            "1205"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "3200"   
+        "ItemShopTags"                  ""
+
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_radiance_lua"
+        "ItemRequirements"
+        {
+            "01"                        "item_relic"
+        }
+	}
+}

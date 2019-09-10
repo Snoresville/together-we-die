@@ -42,6 +42,16 @@
 		"ItemPurchasable"				"0"
 	}
 
+	"item_recipe_radiance"
+	{
+		"ItemPurchasable"				"0"
+	}
+
+	"item_radiance"
+	{
+		"ItemPurchasable"				"0"
+	}
+
 	//=================================================================================================================
 	// Greater Clarity
 	//=================================================================================================================
@@ -9410,3 +9420,5 @@
 #base "../vscripts/lua_abilities/item_heart_of_tarrasque_lua/item_heart_of_tarrasque_3_lua.txt"
 #base "../vscripts/lua_abilities/item_heart_of_tarrasque_lua/item_heart_of_tarrasque_4_lua.txt"
 #base "../vscripts/lua_abilities/item_heart_of_tarrasque_lua/item_heart_of_regeneration_lua.txt"
+
+#base "../vscripts/lua_abilities/item_radiance_lua/item_radiance_lua.txt"
