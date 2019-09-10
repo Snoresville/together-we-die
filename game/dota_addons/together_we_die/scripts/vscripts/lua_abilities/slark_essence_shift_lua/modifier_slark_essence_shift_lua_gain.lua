@@ -18,11 +18,17 @@ end
 function modifier_slark_essence_shift_lua_gain:OnCreated( kv )
 	-- references
 	self.permanent_agi_gain = self:GetAbility():GetSpecialValueFor( "permanent_agi_gain" )
+	if IsServer() then
+		self:GetParent():CalculateStatBonus()
+	end
 end
 
 function modifier_slark_essence_shift_lua_gain:OnRefresh( kv )
 	-- references
 	self.permanent_agi_gain = self:GetAbility():GetSpecialValueFor( "permanent_agi_gain" )
+	if IsServer() then
+		self:GetParent():CalculateStatBonus()
+	end
 end
 
 function modifier_slark_essence_shift_lua_gain:OnDestroy( kv )
