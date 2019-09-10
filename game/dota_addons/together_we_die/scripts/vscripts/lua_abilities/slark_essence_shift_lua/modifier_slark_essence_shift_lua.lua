@@ -20,7 +20,7 @@ function modifier_slark_essence_shift_lua:OnCreated( kv )
 	-- references
 	self.agi_gain = self:GetAbility():GetSpecialValueFor( "agi_gain" )
 	self.duration = self:GetAbility():GetSpecialValueFor( "duration" )
-	self.permanent_agi_gain = self:GetAbility():GetSpecialValueFor( "permanent_agi_gain" )
+	self.permanent_agi_gain_modifier_name = "modifier_slark_essence_shift_lua_gain"
 	if IsServer() then
 		self:GetParent():CalculateStatBonus()
 	end
@@ -30,9 +30,11 @@ function modifier_slark_essence_shift_lua:OnRefresh( kv )
 	-- references
 	self.agi_gain = self:GetAbility():GetSpecialValueFor( "agi_gain" )
 	self.duration = self:GetAbility():GetSpecialValueFor( "duration" )
-	self.permanent_agi_gain = self:GetAbility():GetSpecialValueFor( "permanent_agi_gain" )
 	if IsServer() then
-		self:GetParent():CalculateStatBonus()
+		local permanent_agi_gain_modifier = self:GetParent():FindModifierByName( self.permanent_agi_gain_modifier_name )
+		if permanent_agi_gain_modifier then
+			permanent_agi_gain_modifier:ForceRefresh()
+		end
 	end
 end
 
@@ -85,7 +87,7 @@ function modifier_slark_essence_shift_lua:OnDeath( event )
 	if event.unit:GetTeamNumber() ~= self:GetParent():GetTeamNumber() and self:GetParent():IsAlive() and event.attacker == self:GetParent() then
 		self:GetAbility():IncrementEssenceShiftKills()
 
-		local permanent_agi_gain_modifier = self:GetParent():FindModifierByName( "modifier_slark_essence_shift_lua_gain" )
+		local permanent_agi_gain_modifier = self:GetParent():FindModifierByName( self.permanent_agi_gain_modifier_name )
 		if not permanent_agi_gain_modifier then
 			permanent_agi_gain_modifier = self:GetParent():AddNewModifier(
 				self:GetParent(),
@@ -95,7 +97,7 @@ function modifier_slark_essence_shift_lua:OnDeath( event )
 			)
 		end
 		permanent_agi_gain_modifier:SetStackCount( self:GetAbility():GetEssenceShiftKills() )
-		self:GetParent():CalculateStatBonus()
+		permanent_agi_gain_modifier:ForceRefresh()
 	end
 end
 
