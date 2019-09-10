@@ -224,7 +224,7 @@
 		"item"		"item_invis_sword"
 		"item"		"item_bfury"
 		"item"		"item_ethereal_blade"
-		"item"		"item_radiance"
+		"item"		"item_radiance_lua"
 		"item"		"item_monkey_king_bar"
 		"item"		"item_greater_crit"
 		"item"		"item_butterfly"
