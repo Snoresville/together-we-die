@@ -4031,8 +4031,8 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"150"			// Physical protection.
-		"MagicalResistance"			"90"		// Magical protection (percentage).
+		"ArmorPhysical"				"130"			// Physical protection.
+		"MagicalResistance"			"80"		// Magical protection (percentage).
 
 		// Attack
 		//----------------------------------------------------------------
@@ -4061,7 +4061,7 @@
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"			// Type of locomotion - ground, air
-		"MovementSpeed"				"230"		// Speed
+		"MovementSpeed"				"190"		// Speed
 		"MovementTurnRate"			"0.08"		// Turning rate.
 
 		// Status
