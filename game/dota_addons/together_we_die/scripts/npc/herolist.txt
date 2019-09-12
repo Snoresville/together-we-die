@@ -41,4 +41,5 @@
 	"npc_dota_hero_slark"			"1"
 	"npc_dota_hero_viper"			"1"
 	"npc_dota_hero_medusa"			"1"
+	"npc_dota_hero_silencer"		"1"
 }

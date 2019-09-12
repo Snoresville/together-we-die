@@ -5722,3 +5722,8 @@
 #base "../vscripts/lua_abilities/medusa_split_shot_lua/medusa_split_shot_lua.txt"
 #base "../vscripts/lua_abilities/medusa_split_shot_uses_modifiers_lua/medusa_split_shot_uses_modifiers_lua.txt"
 #base "../vscripts/lua_abilities/medusa_stone_gaze_lua/medusa_stone_gaze_lua.txt"
+
+#base "../vscripts/lua_abilities/silencer_arcane_curse_lua/silencer_arcane_curse_lua.txt"
+#base "../vscripts/lua_abilities/silencer_glaives_of_wisdom_lua/silencer_glaives_of_wisdom_lua.txt"
+#base "../vscripts/lua_abilities/silencer_last_word_lua/silencer_last_word_lua.txt"
+#base "../vscripts/lua_abilities/silencer_global_silence_lua/silencer_global_silence_lua.txt"
