@@ -1,0 +1,84 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Kaya III
+	//=================================================================================================================
+	"item_kaya3_lua"
+	{
+		// Ability Technical Aspect
+		// base script folder	: scripts/vscripts
+		// base texture folder	: resource/flash3/images/spellicons
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"1043"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"lua_abilities/item_kaya_lua/item_kaya3_lua.lua"
+		"AbilityTextureName"			"item_kaya"
+		"precache"
+		{
+		}
+
+		"ItemCost"						"8200"
+		"ItemShopTags"					"int;mana"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"ky;kaya"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
+		"ShouldBeSuggested"				"1"
+		
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Ability Resource
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"			"180"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spell_amp"				"20"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strength_reduction"		"-60"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agility_reduction"		"-60"
+			}
+		}
+	}
+
+	"item_recipe_kaya2_lua"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "item_datadriven"
+        "ID"                            "1042"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "0"   
+        "ItemShopTags"                  ""
+
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"                    "1"
+        "ItemResult"					"item_kaya3_lua"
+		"ItemRequirements"
+		{
+			"01"						"item_kaya2_lua;item_kaya2_lua"
+		}
+	}
+}
