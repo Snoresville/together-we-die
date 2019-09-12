@@ -14,6 +14,11 @@ LinkLuaModifier( "modifier_generic_silenced_lua", "lua_abilities/generic/modifie
 LinkLuaModifier( "modifier_generic_break_lua", "lua_abilities/generic/modifier_generic_break_lua", LUA_MODIFIER_MOTION_NONE )
 
 --------------------------------------------------------------------------------
+function silencer_global_silence_lua:GetManaCost()
+	return self:GetCaster():GetMaxMana() * (self:GetSpecialValueFor("mana_cost") / 100) + self:GetSpecialValueFor("base_mana_cost")
+end
+
+--------------------------------------------------------------------------------
 -- Ability Start
 function silencer_global_silence_lua:OnSpellStart()
 	-- unit identifier
