@@ -1611,15 +1611,15 @@
 	{
 		"round_title"				"#DOTA_Holdout_Round_Chaos_Knight_Mage_Title"
 		"MaxGold"					"93550"
-		"BagCount"					"95"
+		"BagCount"					"45"
 		"BagVariance"				"30"
 		"FixedXP"					"80000"
 		
 		"UnitMelee_1"
 		{
 			"NPCName"				"npc_dota_creature_chaos_knight"
-			"TotalUnitsToSpawn"		"24"
-			"UnitsPerSpawn"			"8"
+			"TotalUnitsToSpawn"		"6"
+			"UnitsPerSpawn"			"6"
 			"SpawnInterval"			"5"
 		}
 		
@@ -1628,7 +1628,7 @@
 			"GroupWithUnit"			"UnitMelee_1"
 			
 			"NPCName"				"npc_dota_creature_keeper_of_the_light"
-			"TotalUnitsToSpawn"		"3"
+			"TotalUnitsToSpawn"		"1"
 			"UnitsPerSpawn"			"1"
 		}
 		
@@ -1639,8 +1639,8 @@
 			"WaitForTime"			"10"
 			
 			"NPCName"				"npc_dota_creature_chaos_knight"
-			"TotalUnitsToSpawn"		"24"
-			"UnitsPerSpawn"			"8"
+			"TotalUnitsToSpawn"		"6"
+			"UnitsPerSpawn"			"6"
 			"SpawnInterval"			"5"
 		}
 
@@ -1649,7 +1649,7 @@
 			"GroupWithUnit"			"UnitMelee_2"
 			
 			"NPCName"				"npc_dota_creature_keeper_of_the_light"
-			"TotalUnitsToSpawn"		"3"
+			"TotalUnitsToSpawn"		"1"
 			"UnitsPerSpawn"			"1"
 		}
 		
@@ -1660,7 +1660,7 @@
 			"WaitForTime"			"10"
 			
 			"NPCName"				"npc_dota_creature_chaos_knight"
-			"TotalUnitsToSpawn"		"24"
+			"TotalUnitsToSpawn"		"8"
 			"UnitsPerSpawn"			"8"
 			"SpawnInterval"			"8"
 			
@@ -1673,7 +1673,7 @@
 			"GroupWithUnit"			"UnitMelee_3a"
 			
 			"NPCName"				"npc_dota_creature_keeper_of_the_light"
-			"TotalUnitsToSpawn"		"3"
+			"TotalUnitsToSpawn"		"1"
 			"UnitsPerSpawn"			"1"
 		}
 		
@@ -1683,7 +1683,7 @@
 			"WaitForTime"			"10"
 			
 			"NPCName"				"npc_dota_creature_chaos_knight"
-			"TotalUnitsToSpawn"		"24"
+			"TotalUnitsToSpawn"		"8"
 			"UnitsPerSpawn"			"8"
 			"SpawnInterval"			"8"
 			
@@ -1696,7 +1696,7 @@
 			"GroupWithUnit"			"UnitMelee_3b"
 			
 			"NPCName"				"npc_dota_creature_keeper_of_the_light"
-			"TotalUnitsToSpawn"		"3"
+			"TotalUnitsToSpawn"		"1"
 			"UnitsPerSpawn"			"1"
 		}
 		
@@ -1706,7 +1706,7 @@
 			"WaitForTime"			"10"
 			
 			"NPCName"				"npc_dota_creature_chaos_knight"
-			"TotalUnitsToSpawn"		"24"
+			"TotalUnitsToSpawn"		"8"
 			"UnitsPerSpawn"			"8"
 			"SpawnInterval"			"8"
 			
@@ -1719,7 +1719,7 @@
 			"GroupWithUnit"			"UnitMelee_3c"
 			
 			"NPCName"				"npc_dota_creature_keeper_of_the_light"
-			"TotalUnitsToSpawn"		"3"
+			"TotalUnitsToSpawn"		"1"
 			"UnitsPerSpawn"			"1"
 		}
 		
@@ -1729,7 +1729,7 @@
 			"WaitForTime"			"10"
 			
 			"NPCName"				"npc_dota_creature_chaos_knight"
-			"TotalUnitsToSpawn"		"24"
+			"TotalUnitsToSpawn"		"8"
 			"UnitsPerSpawn"			"8"
 			"SpawnInterval"			"8"
 			
@@ -1742,7 +1742,7 @@
 			"GroupWithUnit"			"UnitMelee_3d"
 			
 			"NPCName"				"npc_dota_creature_keeper_of_the_light"
-			"TotalUnitsToSpawn"		"3"
+			"TotalUnitsToSpawn"		"1"
 			"UnitsPerSpawn"			"1"
 		}
 
@@ -1752,7 +1752,7 @@
 			"WaitForTime"			"10"
 			
 			"NPCName"				"npc_dota_creature_chaos_knight"
-			"TotalUnitsToSpawn"		"24"
+			"TotalUnitsToSpawn"		"8"
 			"UnitsPerSpawn"			"8"
 			"SpawnInterval"			"8"
 			
@@ -1765,7 +1765,7 @@
 			"GroupWithUnit"			"UnitMelee_3e"
 			
 			"NPCName"				"npc_dota_creature_keeper_of_the_light"
-			"TotalUnitsToSpawn"		"3"
+			"TotalUnitsToSpawn"		"1"
 			"UnitsPerSpawn"			"1"
 		}
 	}

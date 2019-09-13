@@ -3171,7 +3171,7 @@
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"170"			// Physical protection.
-		"MagicalResistance"			"80"		// Magical protection (percentage).
+		"MagicalResistance"			"90"		// Magical protection (percentage).
 
 		// Attack
 		//----------------------------------------------------------------
@@ -3199,19 +3199,19 @@
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"290"		// Speed.
+		"MovementSpeed"				"270"		// Speed.
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"80000"		// Base health.
-		"StatusHealthRegen"			"900.0"		// Health regeneration rate.
+		"StatusHealth"				"600000"		// Base health.
+		"StatusHealthRegen"			"1000.0"		// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
 		
 		// Vision
 		//----------------------------------------------------------------
 		"VisionDaytimeRange"		"1200"		// Range of vision during day light.
-		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+		"VisionNighttimeRange"		"1200"		// Range of vision at night time.
 
 		// Team
 		//----------------------------------------------------------------
@@ -3296,8 +3296,8 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"150"			// Physical protection.
-		"MagicalResistance"			"75"		// Magical protection (percentage).
+		"ArmorPhysical"				"170"			// Physical protection.
+		"MagicalResistance"			"95"		// Magical protection (percentage).
 
 		// Attack
 		//----------------------------------------------------------------
@@ -3325,12 +3325,12 @@
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"290"		// Speed.
+		"MovementSpeed"				"250"		// Speed.
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"20000"		// Base health.
-		"StatusHealthRegen"			"600.0"		// Health regeneration rate.
+		"StatusHealth"				"200000"		// Base health.
+		"StatusHealthRegen"			"1000.0"		// Health regeneration rate.
 		"StatusMana"				"10000"			// Base mana.
 		"StatusManaRegen"			"100.0"		// Mana regeneration rate.		 
 		
