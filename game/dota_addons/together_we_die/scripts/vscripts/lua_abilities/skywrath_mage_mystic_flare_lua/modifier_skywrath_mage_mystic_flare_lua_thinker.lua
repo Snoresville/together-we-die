@@ -27,7 +27,7 @@ function modifier_skywrath_mage_mystic_flare_lua_thinker:OnCreated( kv )
 			-- victim = target,
 			attacker = caster,
 			-- damage = damage,
-			damage_type = self:GetAbilityDamageType(),
+			damage_type = self:GetAbility():GetAbilityDamageType(),
 			ability = self:GetAbility(), --Optional.
 			-- damage_flags = DOTA_DAMAGE_FLAG_NONE, --Optional.
 		}
