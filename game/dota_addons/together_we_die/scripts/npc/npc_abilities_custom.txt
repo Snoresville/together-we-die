@@ -5727,3 +5727,8 @@
 #base "../vscripts/lua_abilities/silencer_glaives_of_wisdom_lua/silencer_glaives_of_wisdom_lua.txt"
 #base "../vscripts/lua_abilities/silencer_last_word_lua/silencer_last_word_lua.txt"
 #base "../vscripts/lua_abilities/silencer_global_silence_lua/silencer_global_silence_lua.txt"
+
+#base "../vscripts/lua_abilities/skywrath_mage_arcane_bolt_lua/skywrath_mage_arcane_bolt_lua.txt"
+#base "../vscripts/lua_abilities/skywrath_mage_concussive_shot_lua/skywrath_mage_concussive_shot_lua.txt"
+#base "../vscripts/lua_abilities/skywrath_mage_ancient_seal_lua/skywrath_mage_ancient_seal_lua.txt"
+#base "../vscripts/lua_abilities/skywrath_mage_mystic_flare_lua/skywrath_mage_mystic_flare_lua.txt"
