@@ -58,6 +58,10 @@
 		"item"		"item_spell_viper_nethertoxin_lua"
 		"item"		"item_spell_viper_corrosive_skin_lua"
 		"item"		"item_spell_viper_viper_strike_lua"
+		"item"		"item_spell_skywrath_mage_arcane_bolt_lua"
+		"item"		"item_spell_skywrath_mage_concussive_shot_lua"
+		"item"		"item_spell_skywrath_mage_ancient_seal_lua"
+		"item"		"item_spell_skywrath_mage_mystic_flare_lua"
 	}
 
 	"attributes"
@@ -128,6 +132,10 @@
 		"item"		"item_spell_huskar_burning_spear_lua"
 		"item"		"item_spell_huskar_berserkers_blood_lua"
 		"item"		"item_spell_huskar_life_break_lua"
+		"item"		"item_spell_silencer_arcane_curse_lua"
+		"item"		"item_spell_silencer_glaives_of_wisdom_lua"
+		"item"		"item_spell_silencer_last_word_lua"
+		"item"		"item_spell_silencer_global_silence_lua"
 	}
 
 	"weapons_armor"
