@@ -3176,9 +3176,9 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"4400"		// Damage range min.
-		"AttackDamageMax"			"12500"		// Damage range max.	
-		"AttackRate"				"0.85"		// Speed of attack.
+		"AttackDamageMin"			"1400"		// Damage range min.
+		"AttackDamageMax"			"5000"		// Damage range max.	
+		"AttackRate"				"1.45"		// Speed of attack.
 		"AttackAnimationPoint"		"0.38"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
 		"AttackRange"				"100"		// Range within a target can be attacked.
@@ -3302,10 +3302,10 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"3400"		// Damage range min.
-		"AttackDamageMax"			"8500"		// Damage range max.	
-		"AttackRate"				"0.85"		// Speed of attack.
-		"AttackAnimationPoint"		"0.38"		// Normalized time in animation cycle to attack.
+		"AttackDamageMin"			"13400"		// Damage range min.
+		"AttackDamageMax"			"18500"		// Damage range max.	
+		"AttackRate"				"0.35"		// Speed of attack.
+		"AttackAnimationPoint"		"0.08"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
 		"AttackRange"				"800"		// Range within a target can be attacked.
 		"ProjectileModel"			"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_base_attack.vpcf"			// Particle system model for projectile.
