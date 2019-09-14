@@ -1,0 +1,91 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Radiance
+	//=================================================================================================================
+	"item_octarine_core2_lua"
+	{
+		// Ability Technical Aspect
+		// base script folder	: scripts/vscripts
+		// base texture folder	: resource/flash3/images/spellicons
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"1039"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"lua_abilities/item_octarine_core_lua/item_octarine_core2_lua.lua"
+		"AbilityTextureName"			"item_octarine_core"
+		"precache"
+		{
+			"particle"					"particles/items3_fx/octarine_core_lifesteal.vpcf"
+		}
+
+		"ItemCost"						"12900"
+		"ItemShopTags"					"boost_mana;mana_pool"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"mana;mb;octarine core"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"ShouldBeSuggested"				"1"
+		
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Ability Resource
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intelligence"	"50"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health"			"1000"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana"			"1000"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_cooldown"		"50"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"creep_lifesteal"		"10"
+			}
+		}
+	}
+
+	"item_recipe_octarine_core2_lua"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "item_datadriven"
+        "ID"							"1038"
+		"AbilityTextureName"			"item_recipe_octarine_core"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+
+        // Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"900"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_octarine_core2_lua"
+		"ItemRequirements"
+		{
+			"01"						"item_octarine_core;item_octarine_core"
+		}
+	}
+}

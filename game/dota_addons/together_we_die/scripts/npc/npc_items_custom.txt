@@ -36,7 +36,6 @@
 	{
 		"ItemPurchasable"				"0"
 	}
-
 	"item_recipe_heart"
 	{
 		"ItemPurchasable"				"0"
@@ -46,8 +45,16 @@
 	{
 		"ItemPurchasable"				"0"
 	}
-
 	"item_radiance"
+	{
+		"ItemPurchasable"				"0"
+	}
+
+	"item_recipe_octarine_core"
+	{
+		"ItemPurchasable"				"0"
+	}
+	"item_octarine_core"
 	{
 		"ItemPurchasable"				"0"
 	}
@@ -1840,94 +1847,6 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
-		}
-	}
-
-	//=================================================================================================================
-	// Recipe: Octarine Core 2
-	//=================================================================================================================
-	"item_recipe_octarine_core2"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1038"
-		"BaseClass"						"item_recipe_octarine_core"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"900"	
-		"ItemShopTags"					""
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_octarine_core2"
-		"ItemRequirements"
-		{
-			"01"						"item_octarine_core;item_octarine_core"
-		}
-	}
-	
-	//=================================================================================================================
-	// Octarine Core 2
-	//=================================================================================================================
-	"item_octarine_core2"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1039"
-		"BaseClass"						"item_octarine_core"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"12900"
-		"ItemShopTags"					"move_speed;boost_mana;mana_pool"
-		"ItemQuality"					"rare"
-		"ItemAliases"					"mana;mb;octarine core"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"ShouldBeSuggested"				"1"
-		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_intelligence"	"50"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"1000"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"1000"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_cooldown"		"50"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hero_lifesteal"		"30"
-			}			
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"creep_lifesteal"		"10"
-			}	
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"active_duration"		"7"
-			}
 		}
 	}
 
@@ -9544,6 +9463,10 @@
 #base "../vscripts/lua_abilities/item_heart_of_tarrasque_lua/item_heart_of_regeneration_lua.txt"
 
 #base "../vscripts/lua_abilities/item_radiance_lua/item_radiance_lua.txt"
+
+#base "../vscripts/lua_abilities/item_octarine_core_lua/item_octarine_core_lua.txt"
+#base "../vscripts/lua_abilities/item_octarine_core_lua/item_octarine_core2_lua.txt"
+
 #base "../vscripts/lua_abilities/item_kaya_lua/item_kaya2_lua.txt"
 #base "../vscripts/lua_abilities/item_kaya_lua/item_kaya3_lua.txt"
 #base "../vscripts/lua_abilities/item_kaya_lua/item_kaya4_lua.txt"
