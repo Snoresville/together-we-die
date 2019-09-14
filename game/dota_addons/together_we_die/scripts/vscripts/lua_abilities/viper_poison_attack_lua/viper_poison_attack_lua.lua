@@ -20,7 +20,7 @@ function viper_poison_attack_lua:GetIntrinsicModifierName()
 end
 
 function viper_poison_attack_lua:CastFilterResultTarget( hTarget )
-	if hTarget ~= nil and hTarget.GetUnitName ~= nil then
+	if IsServer() and hTarget ~= nil and hTarget.GetUnitName ~= nil then
 		return UnitFilter(
 					hTarget,
 					self:GetAbilityTargetTeam(),

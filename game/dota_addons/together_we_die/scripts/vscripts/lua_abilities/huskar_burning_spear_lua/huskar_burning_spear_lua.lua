@@ -23,7 +23,7 @@ end
 --------------------------------------------------------------------------------
 
 function huskar_burning_spear_lua:CastFilterResultTarget( hTarget )
-	if hTarget ~= nil and hTarget.GetUnitName ~= nil then
+	if IsServer() and hTarget ~= nil and hTarget.GetUnitName ~= nil then
 		return UnitFilter(
 					hTarget,
 					self:GetAbilityTargetTeam(),
