@@ -1618,8 +1618,8 @@
 		"UnitMelee_1"
 		{
 			"NPCName"				"npc_dota_creature_chaos_knight"
-			"TotalUnitsToSpawn"		"6"
-			"UnitsPerSpawn"			"6"
+			"TotalUnitsToSpawn"		"3"
+			"UnitsPerSpawn"			"3"
 			"SpawnInterval"			"5"
 		}
 		
@@ -1639,8 +1639,8 @@
 			"WaitForTime"			"10"
 			
 			"NPCName"				"npc_dota_creature_chaos_knight"
-			"TotalUnitsToSpawn"		"6"
-			"UnitsPerSpawn"			"6"
+			"TotalUnitsToSpawn"		"3"
+			"UnitsPerSpawn"			"3"
 			"SpawnInterval"			"5"
 		}
 
@@ -1660,8 +1660,8 @@
 			"WaitForTime"			"10"
 			
 			"NPCName"				"npc_dota_creature_chaos_knight"
-			"TotalUnitsToSpawn"		"8"
-			"UnitsPerSpawn"			"8"
+			"TotalUnitsToSpawn"		"4"
+			"UnitsPerSpawn"			"4"
 			"SpawnInterval"			"8"
 			
 			"SpawnerName"			"spawner1"
@@ -1683,8 +1683,8 @@
 			"WaitForTime"			"10"
 			
 			"NPCName"				"npc_dota_creature_chaos_knight"
-			"TotalUnitsToSpawn"		"8"
-			"UnitsPerSpawn"			"8"
+			"TotalUnitsToSpawn"		"4"
+			"UnitsPerSpawn"			"4"
 			"SpawnInterval"			"8"
 			
 			"SpawnerName"			"spawner2"
@@ -1706,8 +1706,8 @@
 			"WaitForTime"			"10"
 			
 			"NPCName"				"npc_dota_creature_chaos_knight"
-			"TotalUnitsToSpawn"		"8"
-			"UnitsPerSpawn"			"8"
+			"TotalUnitsToSpawn"		"4"
+			"UnitsPerSpawn"			"4"
 			"SpawnInterval"			"8"
 			
 			"SpawnerName"			"spawner3"
@@ -1729,8 +1729,8 @@
 			"WaitForTime"			"10"
 			
 			"NPCName"				"npc_dota_creature_chaos_knight"
-			"TotalUnitsToSpawn"		"8"
-			"UnitsPerSpawn"			"8"
+			"TotalUnitsToSpawn"		"4"
+			"UnitsPerSpawn"			"4"
 			"SpawnInterval"			"8"
 			
 			"SpawnerName"			"spawner4"
@@ -1752,8 +1752,8 @@
 			"WaitForTime"			"10"
 			
 			"NPCName"				"npc_dota_creature_chaos_knight"
-			"TotalUnitsToSpawn"		"8"
-			"UnitsPerSpawn"			"8"
+			"TotalUnitsToSpawn"		"4"
+			"UnitsPerSpawn"			"4"
 			"SpawnInterval"			"8"
 			
 			"SpawnerName"			"spawner3_alternate"
