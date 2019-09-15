@@ -1,9 +1,8 @@
 modifier_slark_essence_shift_lua = class({})
-local tempTable = require("util/tempTable")
 --------------------------------------------------------------------------------
 -- Classifications
 function modifier_slark_essence_shift_lua:IsHidden()
-	return false
+	return true
 end
 
 function modifier_slark_essence_shift_lua:IsDebuff()
@@ -18,7 +17,6 @@ end
 -- Initializations
 function modifier_slark_essence_shift_lua:OnCreated( kv )
 	-- references
-	self.agi_gain = self:GetAbility():GetSpecialValueFor( "agi_gain" )
 	self.duration = self:GetAbility():GetSpecialValueFor( "duration" )
 	self.permanent_agi_gain_modifier_name = "modifier_slark_essence_shift_lua_gain"
 	if IsServer() then
@@ -28,7 +26,6 @@ end
 
 function modifier_slark_essence_shift_lua:OnRefresh( kv )
 	-- references
-	self.agi_gain = self:GetAbility():GetSpecialValueFor( "agi_gain" )
 	self.duration = self:GetAbility():GetSpecialValueFor( "duration" )
 	if IsServer() then
 		local permanent_agi_gain_modifier = self:GetParent():FindModifierByName( self.permanent_agi_gain_modifier_name )
@@ -53,6 +50,7 @@ function modifier_slark_essence_shift_lua:DeclareFunctions()
 
 	return funcs
 end
+
 function modifier_slark_essence_shift_lua:GetModifierProcAttack_Feedback( params )
 	if IsServer() and (not self:GetParent():PassivesDisabled()) then
 		-- filter enemy
@@ -62,17 +60,24 @@ function modifier_slark_essence_shift_lua:GetModifierProcAttack_Feedback( params
 		end
 
 		-- Apply debuff to enemy
-		local debuff = params.target:AddNewModifier(
+		params.target:AddNewModifier(
 			self:GetParent(),
 			self:GetAbility(),
 			"modifier_slark_essence_shift_lua_debuff",
 			{
-				stack_duration = self.duration,
+				duration = self.duration,
 			}
 		)
 
 		-- Apply buff to self
-		self:AddStack( duration )
+		self:GetParent():AddNewModifier(
+			self:GetParent(),
+			self:GetAbility(),
+			"modifier_slark_essence_shift_lua_stack",
+			{
+				duration = self.duration,
+			}
+		)
 
 		-- Play effects
 		self:PlayEffects( params.target )
@@ -101,32 +106,6 @@ function modifier_slark_essence_shift_lua:OnDeath( event )
 	end
 end
 
-function modifier_slark_essence_shift_lua:GetModifierBonusStats_Agility()
-	return self:GetStackCount() * self.agi_gain
-end
-
---------------------------------------------------------------------------------
--- Helper
-function modifier_slark_essence_shift_lua:AddStack( duration )
-	-- Add counter
-	local parent = tempTable:AddATValue( self )
-	self:GetParent():AddNewModifier(
-		self:GetParent(),
-		self:GetAbility(),
-		"modifier_slark_essence_shift_lua_stack",
-		{
-			duration = self.duration,
-			modifier = parent,
-		}
-	)
-
-	-- Add stack
-	self:IncrementStackCount()
-end
-
-function modifier_slark_essence_shift_lua:RemoveStack()
-	self:DecrementStackCount()
-end
 --------------------------------------------------------------------------------
 -- Graphics & Animations
 function modifier_slark_essence_shift_lua:PlayEffects( target )
