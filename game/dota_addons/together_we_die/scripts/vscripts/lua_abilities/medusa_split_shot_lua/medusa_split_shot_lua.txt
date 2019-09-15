@@ -53,7 +53,7 @@
 			"03"
 			{	
 				"var_type"					"FIELD_INTEGER"
-				"arrow_count"				"3 4 5 6"
+				"arrow_count"				"3 3 3 4"
 			}
 			"04"
 			{

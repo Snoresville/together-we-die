@@ -48,12 +48,12 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bounces"					"2 4 6 8"
+				"bounces"					"2 2 2 3"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_reduction_percent"	"35"
+				"damage_reduction_percent"	"35 30 25 20"
 			}
 			"04"
 			{
