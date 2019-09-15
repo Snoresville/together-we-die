@@ -3153,12 +3153,12 @@
 		"SoundSet"					"Hero_ChaosKnight"
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_chaos_knight.vsndevts"
 		"Level"						"1"
-		"ModelScale" 				"0.7"
+		"ModelScale" 				"0.5"
 		"ConsideredHero"			"1"
 		"precache"
 		{
 			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_chaos_knight.vsndevts"
-			"particle_folder" "particles/units/heroes/hero_chaos_knight"
+			"particle_folder"	 	"particles/units/heroes/hero_chaos_knight"
 		}
 
 		// Abilities
@@ -3170,14 +3170,14 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"170"			// Physical protection.
-		"MagicalResistance"			"90"		// Magical protection (percentage).
+		"ArmorPhysical"				"140"			// Physical protection.
+		"MagicalResistance"			"85"		// Magical protection (percentage).
 
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"1400"		// Damage range min.
-		"AttackDamageMax"			"5000"		// Damage range max.	
+		"AttackDamageMin"			"5400"		// Damage range min.
+		"AttackDamageMax"			"8000"		// Damage range max.	
 		"AttackRate"				"1.45"		// Speed of attack.
 		"AttackAnimationPoint"		"0.38"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
@@ -3199,12 +3199,12 @@
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"270"		// Speed.
+		"MovementSpeed"				"570"		// Speed.
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"500000"		// Base health.
-		"StatusHealthRegen"			"1000.0"		// Health regeneration rate.
+		"StatusHealth"				"10000"		// Base health.
+		"StatusHealthRegen"			"2000.0"		// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
 		
@@ -3284,7 +3284,8 @@
 		"precache"
 		{
 			"soundfile"				"soundevents/game_sounds_heroes/keeper_of_the_light.vsndevts"
-			"particle_folder" "particles/units/heroes/hero_keeper_of_the_light"
+			"particle_folder" 		"particles/units/heroes/hero_keeper_of_the_light"
+			"particle_folder"	 	"particles/units/heroes/hero_chaos_knight"
 		}
 
 		// Abilities
@@ -3296,18 +3297,18 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"170"			// Physical protection.
-		"MagicalResistance"			"95"		// Magical protection (percentage).
+		"ArmorPhysical"				"150"			// Physical protection.
+		"MagicalResistance"			"90"		// Magical protection (percentage).
 
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"13400"		// Damage range min.
-		"AttackDamageMax"			"18500"		// Damage range max.	
+		"AttackDamageMin"			"10400"		// Damage range min.
+		"AttackDamageMax"			"16500"		// Damage range max.	
 		"AttackRate"				"0.35"		// Speed of attack.
 		"AttackAnimationPoint"		"0.08"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
-		"AttackRange"				"800"		// Range within a target can be attacked.
+		"AttackAcquisitionRange"	"1900"		// Range within a target can be acquired.
+		"AttackRange"				"2000"		// Range within a target can be attacked.
 		"ProjectileModel"			"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_base_attack.vpcf"			// Particle system model for projectile.
 		"ProjectileSpeed"			"900"			// Speed of projectile.		   
 
@@ -3325,11 +3326,11 @@
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"250"		// Speed.
+		"MovementSpeed"				"450"		// Speed.
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"200000"		// Base health.
+		"StatusHealth"				"30000"		// Base health.
 		"StatusHealthRegen"			"1000.0"		// Health regeneration rate.
 		"StatusMana"				"10000"			// Base mana.
 		"StatusManaRegen"			"100.0"		// Mana regeneration rate.		 
