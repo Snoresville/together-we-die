@@ -5732,3 +5732,8 @@
 #base "../vscripts/lua_abilities/skywrath_mage_concussive_shot_lua/skywrath_mage_concussive_shot_lua.txt"
 #base "../vscripts/lua_abilities/skywrath_mage_ancient_seal_lua/skywrath_mage_ancient_seal_lua.txt"
 #base "../vscripts/lua_abilities/skywrath_mage_mystic_flare_lua/skywrath_mage_mystic_flare_lua.txt"
+
+#base "../vscripts/lua_abilities/timbersaw_whirling_death_lua/timbersaw_whirling_death_lua.txt"
+#base "../vscripts/lua_abilities/timbersaw_timber_chain_lua/timbersaw_timber_chain_lua.txt"
+#base "../vscripts/lua_abilities/timbersaw_reactive_armor_lua/timbersaw_reactive_armor_lua.txt"
+#base "../vscripts/lua_abilities/timbersaw_chakram_lua/timbersaw_chakram_lua.txt"

@@ -447,4 +447,18 @@
 
 		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
 	}
+
+	"npc_dota_hero_shredder_holdout"
+	{
+		"override_hero"				"npc_dota_hero_shredder"
+		"Ability1"				"timbersaw_whirling_death_lua"
+		"Ability2"				"timbersaw_timber_chain_lua"
+		"Ability3"				"timbersaw_reactive_armor_lua"
+		"Ability4"				"timbersaw_chakram_2_lua"
+		"Ability6"				"timbersaw_chakram_lua"
+		"Ability7"				"timbersaw_return_chakram_lua"
+		"Ability8"				"timbersaw_return_chakram_2_lua"
+
+		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
+	}
 }
