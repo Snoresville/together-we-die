@@ -29,8 +29,10 @@ function ogre_magi_multicast_lua:OnInventoryContentsChanged( params )
 	local scepter = caster:HasScepter()
 	local ability = caster:FindAbilityByName( "ogre_magi_unrefined_fireblast_lua" )
 
-	-- if there's no ability, why bother
-	if not ability then return end
+	-- if there's no ability, then add it
+	if not ability then 
+		ability = caster:AddAbility( "ogre_magi_unrefined_fireblast_lua" )
+	end
 
 	ability:SetActivated( scepter )
 	ability:SetHidden( not scepter )
