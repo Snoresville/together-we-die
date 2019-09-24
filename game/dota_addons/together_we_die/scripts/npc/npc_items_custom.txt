@@ -1608,7 +1608,7 @@
 	//=================================================================================================================
 	// Ability: Reactive Armor
 	//=================================================================================================================
-	"item_spell_shredder_reactive_armor"
+	"item_spell_timbersaw_reactive_armor_lua"
 	{
 		"ID"							"1033"
 
@@ -1616,7 +1616,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_spell_shredder_reactive_armor"
+		"AbilityTextureName"			"item_spell_timbersaw_reactive_armor_lua"
 		"ItemKillable"					"0"
 
 		// Stats
@@ -1641,7 +1641,7 @@
 			{
 				"ScriptFile" "holdout_give_spell.lua"
 				"Function"   "GiveSpell"
-				"spell_name_to_give"	"shredder_reactive_armor"
+				"spell_name_to_give"	"timbersaw_reactive_armor_lua"
 			}
 			"SpendCharge"
 			{}

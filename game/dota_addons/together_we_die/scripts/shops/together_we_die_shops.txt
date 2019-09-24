@@ -11,7 +11,7 @@
 		"item"		"item_spell_mars_spear_of_mars_lua"
 		"item"		"item_spell_mars_bulwark"
 		"item"		"item_spell_mars_arena_of_blood_lua"
-		"item"		"item_spell_shredder_reactive_armor"
+		"item"		"item_spell_timbersaw_reactive_armor_lua"
 		"item"		"item_spell_kunkka_tidebringer"
 		"item"		"item_spell_slardar_bash"
 		"item"		"item_spell_faceless_void_time_lock"
