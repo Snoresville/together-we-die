@@ -13,6 +13,10 @@ ogre_magi_fireblast_lua = class({})
 LinkLuaModifier( "modifier_generic_stunned_lua", "lua_abilities/generic/modifier_generic_stunned_lua", LUA_MODIFIER_MOTION_NONE )
 
 --------------------------------------------------------------------------------
+function ogre_magi_fireblast_lua:GetAOERadius()
+	return self:GetSpecialValueFor( "radius" )
+end
+--------------------------------------------------------------------------------
 -- Ability Start
 function ogre_magi_fireblast_lua:OnSpellStart()
 	-- unit identifier
@@ -27,6 +31,20 @@ function ogre_magi_fireblast_lua:OnSpellStart()
 	-- load data
 	local duration = self:GetSpecialValueFor( "stun_duration" )
 	local damage = self:GetSpecialValueFor( "fireblast_damage" ) + (self:GetCaster():GetIntellect() * self:GetSpecialValueFor( "int_multiplier" ))
+	local radius = self:GetSpecialValueFor( "radius" )
+
+	-- find enemies
+	local enemies = FindUnitsInRadius(
+		caster:GetTeamNumber(),	-- int, your team number
+		target:GetOrigin(),	-- point, center point
+		target,	-- handle, cacheUnit. (not known)
+		radius,	-- float, radius. or use FIND_UNITS_EVERYWHERE
+		DOTA_UNIT_TARGET_TEAM_ENEMY,	-- int, team filter
+		DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	-- int, type filter
+		0,	-- int, flag filter
+		0,	-- int, order filter
+		false	-- bool, can grow cache
+	)
 
 	-- Apply damage
 	local damageTable = {
@@ -36,18 +54,23 @@ function ogre_magi_fireblast_lua:OnSpellStart()
 		damage_type = self:GetAbilityDamageType(),
 		ability = self, --Optional.
 	}
-	ApplyDamage( damageTable )
+	for _,enemy in pairs(enemies) do
+		if not enemy:TriggerSpellAbsorb( self ) then
+			damageTable.victim = enemy
+			ApplyDamage( damageTable )
 
-	-- stun
-	target:AddNewModifier(
-		self:GetCaster(),
-		self, 
-		"modifier_generic_stunned_lua", 
-		{duration = duration}
-	)
+			-- stun
+			enemy:AddNewModifier(
+				self:GetCaster(),
+				self, 
+				"modifier_generic_stunned_lua", 
+				{duration = duration}
+			)
 
-	-- play effects
-	self:PlayEffects( target )
+			-- play effects
+			self:PlayEffects( enemy )
+		end
+	end
 
 end
 

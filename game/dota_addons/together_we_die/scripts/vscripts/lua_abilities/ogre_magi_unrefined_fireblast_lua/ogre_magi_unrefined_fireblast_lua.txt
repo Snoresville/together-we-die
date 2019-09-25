@@ -73,7 +73,7 @@
 			"05"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"int_multiplier"			"5.25"
+				"int_multiplier"			"8.0"
 			}
 		}
 	}
