@@ -1499,20 +1499,41 @@
 		}
 	}
 
-	"Round18" // Skywrath
+	"Round18" // Timbersaw
 	{
-		"round_title"				"#DOTA_Holdout_Round_Many_Skywrath_Title"
-		"MaxGold"					"21550"
-		"BagCount"					"6"
+		"round_title"				"#DOTA_Holdout_Round_Timbersaw_Title"
+		"MaxGold"					"31550"
+		"BagCount"					"16"
 		"BagVariance"				"30"
 		"FixedXP"					"50000"
 
 		"Unit1"
 		{
-			"NPCName"				"npc_dota_creature_skywrath_mage_boss"
-			"TotalUnitsToSpawn"		"8"
-			"UnitsPerSpawn"			"8"
-			"SpawnInterval"			"5"
+			"NPCName"				"npc_dota_creature_timbersaw"
+			"TotalUnitsToSpawn"		"4"
+			"UnitsPerSpawn"			"2"
+			"SpawnInterval"			"8"
+		}
+		"Unit2"
+		{
+			"NPCName"				"npc_dota_creature_timbersaw"
+			"TotalUnitsToSpawn"		"4"
+			"UnitsPerSpawn"			"2"
+			"SpawnInterval"			"8"
+		}
+		"Unit3"
+		{
+			"NPCName"				"npc_dota_creature_timbersaw"
+			"TotalUnitsToSpawn"		"4"
+			"UnitsPerSpawn"			"2"
+			"SpawnInterval"			"8"
+		}
+		"Unit4"
+		{
+			"NPCName"				"npc_dota_creature_timbersaw"
+			"TotalUnitsToSpawn"		"4"
+			"UnitsPerSpawn"			"2"
+			"SpawnInterval"			"8"
 		}
 	}
 
