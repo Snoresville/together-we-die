@@ -462,4 +462,15 @@
 
 		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
 	}
+
+	"npc_dota_hero_slardar_holdout"
+	{
+		"override_hero"				"npc_dota_hero_slardar"
+		"Ability1"				"slardar_guardian_sprint_lua"
+		"Ability2"				"slardar_slithereen_crush_lua"
+		"Ability3"				"slardar_bash_of_the_deep_lua"
+		"Ability6"				"slardar_corrosive_haze_lua"
+
+		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
+	}
 }

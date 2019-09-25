@@ -5739,3 +5739,8 @@
 #base "../vscripts/lua_abilities/timbersaw_timber_chain_lua/timbersaw_timber_chain_lua.txt"
 #base "../vscripts/lua_abilities/timbersaw_reactive_armor_lua/timbersaw_reactive_armor_lua.txt"
 #base "../vscripts/lua_abilities/timbersaw_chakram_lua/timbersaw_chakram_lua.txt"
+
+#base "../vscripts/lua_abilities/slardar_guardian_sprint_lua/slardar_guardian_sprint_lua.txt"
+#base "../vscripts/lua_abilities/slardar_slithereen_crush_lua/slardar_slithereen_crush_lua.txt"
+#base "../vscripts/lua_abilities/slardar_bash_of_the_deep_lua/slardar_bash_of_the_deep_lua.txt"
+#base "../vscripts/lua_abilities/slardar_corrosive_haze_lua/slardar_corrosive_haze_lua.txt"
