@@ -5665,6 +5665,7 @@
 #base "../vscripts/lua_abilities/furion_force_of_nature_lua/furion_force_of_nature_lua.txt"
 #base "../vscripts/lua_abilities/furion_wrath_of_nature_lua/furion_wrath_of_nature_lua.txt"
 
+#base "../vscripts/lua_abilities/earthshaker_fissure_lua/earthshaker_fissure_lua.txt"
 #base "../vscripts/lua_abilities/earthshaker_aftershock_lua/earthshaker_aftershock_lua.txt"
 #base "../vscripts/lua_abilities/earthshaker_echo_slam_lua/earthshaker_echo_slam_lua.txt"
 

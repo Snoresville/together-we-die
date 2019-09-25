@@ -1459,4 +1459,60 @@
 	{
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 	}
+
+	"earthshaker_enchant_totem"
+	{
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"totem_damage_percentage"	"200 350 550 700"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"tooltip_duration"			"14.0 14.0 14.0 14.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"distance_scepter"			"1100"
+				"RequiresScepter"		"1"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"0.75"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"aftershock_range"			"300"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"scepter_height"			"950"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"scepter_height_arcbuffer"	"100"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"scepter_acceleration_z"	"4000"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"scepter_acceleration_horizontal"	"3000"
+			}
+		}
+	}
 }

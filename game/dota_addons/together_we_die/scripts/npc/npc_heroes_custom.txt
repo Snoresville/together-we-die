@@ -260,6 +260,7 @@
 	"npc_dota_hero_earthshaker_holdout"
 	{
 		"override_hero"			"npc_dota_hero_earthshaker"
+		"Ability1				"earthshaker_fissure_lua"
 		"Ability3"				"earthshaker_aftershock_lua"
 		"Ability6"				"earthshaker_echo_slam_lua"
 
