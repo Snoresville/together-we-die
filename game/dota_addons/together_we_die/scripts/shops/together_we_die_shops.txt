@@ -48,7 +48,6 @@
 		"item"		"item_spell_intelligence_magic_scale_lua"
 		"item"		"item_spell_auto_laguna_blade_lua"
 		"item"		"item_spell_pure_strike_lua"
-		"item"		"item_spell_juggernaut_omni_slash"
 		"item"		"item_spell_phantom_assassin_stifling_dagger_lua"
 		"item"		"item_spell_phantom_assassin_phantom_strike"
 		"item"		"item_spell_phantom_assassin_blur"
