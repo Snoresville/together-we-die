@@ -56,6 +56,11 @@
 				"var_type"				"FIELD_INTEGER"
 				"treant_max_dmg_tooltip"				"40 50 70 100"
 			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"int_multiplier"				"1.5 2.0 2.5 3.0"
+			}
 		}
 	}
 }
