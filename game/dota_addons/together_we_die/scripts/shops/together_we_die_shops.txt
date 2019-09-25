@@ -36,6 +36,7 @@
 		"item"		"item_spell_templar_assassin_meld"
 		"item"		"item_spell_templar_assassin_psi_blades"
 		"item"		"item_spell_sniper_shrapnel_lua"
+		"item"		"item_spell_sniper_headshot_lua"
 		"item"		"item_spell_sniper_take_aim_lua"
 		"item"		"item_spell_sniper_assassinate_lua"
 		"item"		"item_spell_axe_berserkers_call_lua"
