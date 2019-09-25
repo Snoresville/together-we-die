@@ -18,10 +18,12 @@ end
 -- Initializations
 function modifier_lion_finger_of_death_lua:OnCreated( kv )
 	-- references
+	local stack_count = self:GetCaster():GetModifierStackCount("modifier_lion_finger_of_death_lua_stack", self:GetCaster()) or 0
+	local total_int_multiplier = self:GetAbility():GetSpecialValueFor("int_multiplier") + self:GetAbility():GetSpecialValueFor( "int_multiplier_per_stack" ) * stack_count
 	if self:GetCaster():HasScepter() then
-		self.damage = self:GetAbility():GetSpecialValueFor( "damage_scepter" ) + (self:GetCaster():GetIntellect() * self:GetAbility():GetSpecialValueFor("int_multiplier")) -- special value
+		self.damage = self:GetAbility():GetSpecialValueFor( "damage_scepter" ) + self:GetCaster():GetIntellect() * total_int_multiplier -- special value
 	else
-		self.damage = self:GetAbility():GetSpecialValueFor( "damage" ) + (self:GetCaster():GetIntellect() * self:GetAbility():GetSpecialValueFor("int_multiplier")) -- special value
+		self.damage = self:GetAbility():GetSpecialValueFor( "damage" ) + self:GetCaster():GetIntellect() * total_int_multiplier -- special value
 	end
 end
 
@@ -49,5 +51,15 @@ function modifier_lion_finger_of_death_lua:OnDestroy( kv )
 			ability = self:GetAbility(), --Optional.
 		}
 		ApplyDamage(damageTable)
+
+		if not self:GetParent():IsAlive() then
+			-- add stack modifier
+			self:GetCaster():AddNewModifier(
+				self:GetCaster(), -- player source
+				self:GetAbility(), -- ability source
+				"modifier_lion_finger_of_death_lua_stack", -- modifier name
+				{}
+			)
+		end
 	end
 end
