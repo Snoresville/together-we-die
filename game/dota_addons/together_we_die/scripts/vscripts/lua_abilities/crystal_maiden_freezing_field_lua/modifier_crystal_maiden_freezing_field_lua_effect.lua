@@ -14,6 +14,10 @@ function modifier_crystal_maiden_freezing_field_lua_effect:IsPurgable()
 	return true
 end
 
+function modifier_crystal_maiden_freezing_field_lua_effect:GetAttributes()
+	return MODIFIER_ATTRIBUTE_MULTIPLE
+end
+
 --------------------------------------------------------------------------------
 -- Initializations
 function modifier_crystal_maiden_freezing_field_lua_effect:OnCreated( kv )

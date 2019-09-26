@@ -14,6 +14,10 @@ function modifier_crystal_maiden_freezing_field_lua:IsPurgable()
 	return false
 end
 
+function modifier_crystal_maiden_freezing_field_lua:GetAttributes()
+	return MODIFIER_ATTRIBUTE_MULTIPLE
+end
+
 --------------------------------------------------------------------------------
 -- Aura
 function modifier_crystal_maiden_freezing_field_lua:IsAura()

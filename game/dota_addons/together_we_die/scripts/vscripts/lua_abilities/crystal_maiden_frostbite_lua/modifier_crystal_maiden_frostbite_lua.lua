@@ -18,6 +18,10 @@ function modifier_crystal_maiden_frostbite_lua:IsPurgable()
 	return true
 end
 
+function modifier_crystal_maiden_frostbite_lua:GetAttributes()
+	return MODIFIER_ATTRIBUTE_MULTIPLE
+end
+
 --------------------------------------------------------------------------------
 -- Initializations
 function modifier_crystal_maiden_frostbite_lua:OnCreated( kv )
