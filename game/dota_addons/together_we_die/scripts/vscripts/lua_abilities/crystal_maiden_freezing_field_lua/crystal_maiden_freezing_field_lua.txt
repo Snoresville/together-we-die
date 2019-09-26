@@ -13,7 +13,7 @@
 		"ScriptFile"					"lua_abilities/crystal_maiden_freezing_field_lua/crystal_maiden_freezing_field_lua"
 		"AbilityTextureName"			"crystal_maiden_freezing_field_lua"
 		"FightRecapLevel"				"1"
-		"MaxLevel"						"8"
+		"MaxLevel"						"6"
 		"precache"
 		{
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts"
@@ -37,7 +37,7 @@
 		// Ability Resource
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"120"
-		"AbilityManaCost"				"200 400 600 800 1000 1200 1400 1600"
+		"AbilityManaCost"				"200 400 600 800 1000 1200"
 
 		"HasScepterUpgrade"			"1"
 
@@ -91,7 +91,7 @@
 			"10"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"100 200 300 400 500 600 700 800"
+				"damage"			"100 200 300 400 500 600"
 				"LinkedSpecialBonus"	"special_bonus_unique_crystal_maiden_3"
 			}
 			"11"
@@ -107,7 +107,7 @@
 			"13"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"int_multiplier"		"4.0 5.0 6.0 7.0 8.0 9.0 10.0 11.0"
+				"int_multiplier"		"4.5 5.0 5.5 6.0 6.5 7.0"
 			}
 		}
 	}
