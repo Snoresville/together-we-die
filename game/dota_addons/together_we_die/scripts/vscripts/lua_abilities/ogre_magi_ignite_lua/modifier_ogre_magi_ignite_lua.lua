@@ -29,6 +29,10 @@ function modifier_ogre_magi_ignite_lua:IsPurgable()
 	return true
 end
 
+function modifier_ogre_magi_ignite_lua:GetAttributes()
+	return MODIFIER_ATTRIBUTE_MULTIPLE
+end
+
 --------------------------------------------------------------------------------
 -- Initializations
 function modifier_ogre_magi_ignite_lua:OnCreated( kv )
