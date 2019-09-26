@@ -117,6 +117,7 @@
 		
 		"Ability1"					"lina_dragon_slave_lua"
 		"Ability2"					"lina_light_strike_array_lua"
+		"Ability3"					"lina_fiery_soul_lua"
 		"Ability6"					"lina_laguna_blade_lua"
 
 		"VisionNighttimeRange"		"1800"									// Range of vision at night time.

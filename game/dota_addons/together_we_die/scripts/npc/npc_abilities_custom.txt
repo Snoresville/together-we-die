@@ -5616,6 +5616,7 @@
 
 #base "../vscripts/lua_abilities/lina_dragon_slave_lua/lina_dragon_slave_lua.txt"
 #base "../vscripts/lua_abilities/lina_light_strike_array_lua/lina_light_strike_array_lua.txt"
+#base "../vscripts/lua_abilities/lina_fiery_soul_lua/lina_fiery_soul_lua.txt"
 #base "../vscripts/lua_abilities/lina_laguna_blade_lua/lina_laguna_blade_lua.txt"
 
 #base "../vscripts/lua_abilities/centaur_warrunner_hoof_stomp_lua/centaur_warrunner_hoof_stomp_lua.txt"
