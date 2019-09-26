@@ -1,5 +1,6 @@
 tower_spawn_protection = class({})
 LinkLuaModifier( "modifier_tower_spawn_protection", "lua_abilities/tower_spawn_protection/modifier_tower_spawn_protection", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_tower_spawn_protection_effect", "lua_abilities/tower_spawn_protection/modifier_tower_spawn_protection_effect", LUA_MODIFIER_MOTION_NONE )
 
 --------------------------------------------------------------------------------
 -- Passive Modifier
