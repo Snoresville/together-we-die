@@ -30,6 +30,9 @@ end
 function modifier_sniper_shrapnel_lua_thinker:GetAuraSearchType()
 	return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC
 end
+function modifier_sniper_shrapnel_lua_thinker:GetAttributes()
+	return MODIFIER_ATTRIBUTE_MULTIPLE
+end
 
 --------------------------------------------------------------------------------
 -- Initializations
