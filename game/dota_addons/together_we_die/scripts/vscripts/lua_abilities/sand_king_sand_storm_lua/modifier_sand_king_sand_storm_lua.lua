@@ -14,6 +14,10 @@ function modifier_sand_king_sand_storm_lua:IsPurgable()
 	return false
 end
 
+function modifier_sand_king_sand_storm_lua:GetAttributes()
+	return MODIFIER_ATTRIBUTE_MULTIPLE
+end
+
 --------------------------------------------------------------------------------
 -- Initializations
 function modifier_sand_king_sand_storm_lua:OnCreated( kv )

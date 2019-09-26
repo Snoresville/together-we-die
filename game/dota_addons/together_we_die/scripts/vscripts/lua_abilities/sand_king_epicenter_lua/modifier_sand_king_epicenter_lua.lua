@@ -22,6 +22,10 @@ function modifier_sand_king_epicenter_lua:RemoveOnDeath()
 	return false
 end
 
+function modifier_sand_king_epicenter_lua:GetAttributes()
+	return MODIFIER_ATTRIBUTE_MULTIPLE
+end
+
 --------------------------------------------------------------------------------
 -- Initializations
 function modifier_sand_king_epicenter_lua:OnCreated( kv )
