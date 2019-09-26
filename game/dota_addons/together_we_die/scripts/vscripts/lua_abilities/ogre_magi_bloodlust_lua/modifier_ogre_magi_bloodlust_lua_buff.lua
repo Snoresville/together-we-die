@@ -34,7 +34,7 @@ function modifier_ogre_magi_bloodlust_lua_buff:OnCreated( kv )
 	self.as_bonus = self:GetAbility():GetSpecialValueFor( "bonus_attack_speed" )
 	self.int_multiplier = self:GetAbility():GetSpecialValueFor( "int_multiplier" )
 	self.damage_bonus = self:GetCaster():GetIntellect() * self.int_multiplier
-	local as_self = self:GetAbility():GetSpecialValueFor( "self_bonus" )
+	self.as_self = self:GetAbility():GetSpecialValueFor( "self_bonus" )
 
 	if self:GetParent()==self:GetCaster() then
 		self.as_bonus = self.as_self
@@ -75,10 +75,10 @@ function modifier_ogre_magi_bloodlust_lua_buff:DeclareFunctions()
 end
 
 function modifier_ogre_magi_bloodlust_lua_buff:GetModifierMoveSpeedBonus_Percentage()
-	return self.as_bonus
+	return self.ms_bonus
 end
 function modifier_ogre_magi_bloodlust_lua_buff:GetModifierAttackSpeedBonus_Constant()
-	return self.ms_bonus
+	return self.as_bonus
 end
 
 function modifier_ogre_magi_bloodlust_lua_buff:GetModifierModelScale()
