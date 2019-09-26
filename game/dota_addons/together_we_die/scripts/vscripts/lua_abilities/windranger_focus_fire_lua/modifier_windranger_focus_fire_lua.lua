@@ -1,14 +1,3 @@
--- Created by Elfansoer
---[[
-Ability checklist (erase if done/checked):
-- Scepter Upgrade
-- Break behavior
-- Linken/Reflect behavior
-- Spell Immune/Invulnerable/Invisible behavior
-- Illusion behavior
-- Stolen behavior
-]]
---------------------------------------------------------------------------------
 modifier_windranger_focus_fire_lua = class({})
 
 --------------------------------------------------------------------------------
@@ -32,22 +21,30 @@ end
 --------------------------------------------------------------------------------
 -- Initializations
 function modifier_windranger_focus_fire_lua:OnCreated( kv )
-	if not IsServer() then return end
 	-- references
+	self.int_multiplier = self:GetAbility():GetSpecialValueFor( "int_multiplier" )
 	self.bonus = self:GetAbility():GetSpecialValueFor( "bonus_attack_speed" )
-	self.reduction = self:GetAbility():GetSpecialValueFor( "focusfire_damage_reduction" )
+	self.auto_interval = math.max(self:GetAbility():GetSpecialValueFor( "auto_interval" ) - self.int_multiplier * self:GetCaster():GetIntellect() / 50, 0.02)
+	self.target_count = self:GetAbility():GetSpecialValueFor( "target_count" )
+	if self:GetCaster():HasScepter() then
+		self.target_count = self:GetAbility():GetSpecialValueFor( "scepter_target_count" )
+	end
 
-	self.target = EntIndexToHScript( kv.target )
-
-	self:StartIntervalThink( 0.05 )
+	self:StartIntervalThink( self.auto_interval )
 	self:OnIntervalThink()
 end
 
 function modifier_windranger_focus_fire_lua:OnRefresh( kv )
-	if not IsServer() then return end
 	-- references
+	self.int_multiplier = self:GetAbility():GetSpecialValueFor( "int_multiplier" )
 	self.bonus = self:GetAbility():GetSpecialValueFor( "bonus_attack_speed" )
-	self.reduction = self:GetAbility():GetSpecialValueFor( "focusfire_damage_reduction" )
+	self.auto_interval = math.max(self:GetAbility():GetSpecialValueFor( "auto_interval" ) - self.int_multiplier * self:GetCaster():GetIntellect() / 50, 0.02)
+	self.target_count = self:GetAbility():GetSpecialValueFor( "target_count" )
+	if self:GetCaster():HasScepter() then
+		self.target_count = self:GetAbility():GetSpecialValueFor( "scepter_target_count" )
+	end
+
+	self:StartIntervalThink( self.auto_interval )
 end
 
 function modifier_windranger_focus_fire_lua:OnRemoved()
@@ -62,88 +59,53 @@ function modifier_windranger_focus_fire_lua:DeclareFunctions()
 	local funcs = {
 		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
 		MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE,
-
-		MODIFIER_EVENT_ON_ORDER,
 	}
 
 	return funcs
 end
 
 function modifier_windranger_focus_fire_lua:GetModifierAttackSpeedBonus_Constant()
-	if not IsServer() then return end
-	local aggro = self:GetParent():GetAggroTarget()
-	if aggro and aggro~=self.target then return end
-
 	return self.bonus
-end
-function modifier_windranger_focus_fire_lua:GetModifierDamageOutgoing_Percentage()
-	if not IsServer() then return end
-	local aggro = self:GetParent():GetAggroTarget()
-	if aggro and aggro~=self.target then return end
-
-	return self.reduction
-end
-
-function modifier_windranger_focus_fire_lua:OnOrder( params )
-	if not IsServer() then return end
-	if params.unit~=self:GetParent() then return end
-
-	-- if ordered to attack target, move to target instead
-	if params.order_type==DOTA_UNIT_ORDER_ATTACK_TARGET and params.target==self.target then
-		-- chase instead
-		self.follow = true
-	else
-		self.follow = false
-	end
-
-	-- specific order to stop autoattack
-	if params.order_type==DOTA_UNIT_ORDER_ATTACK_TARGET and params.target~=self.target then
-		self.attacking = false
-	elseif params.order_type==DOTA_UNIT_ORDER_HOLD_POSITION then
-		self.attacking = false
-	elseif params.order_type==DOTA_UNIT_ORDER_CONTINUE then
-		self.attacking = false
-	elseif params.order_type==DOTA_UNIT_ORDER_STOP then
-		self.attacking = false
-	elseif params.order_type==DOTA_UNIT_ORDER_MOVE_TO_DIRECTION then
-		self.attacking = false
-
-	-- other order resumes attack
-	else
-		self.attacking = true
-	end
 end
 --------------------------------------------------------------------------------
 -- Interval Effects
 function modifier_windranger_focus_fire_lua:OnIntervalThink()
-	if self.target:IsNull() then
-		-- if dead and not respawn, just stop
-		self:StartIntervalThink(-1)
-		return
-	end
+	local parent = self:GetParent()
+	local range = parent:Script_GetAttackRange()
 
-	-- check target within range
-	local distance = (self.target:GetOrigin()-self:GetParent():GetOrigin()):Length2D()
-	local range = self:GetParent():Script_GetAttackRange(  )
+	-- find other target units
+	local enemies = FindUnitsInRadius(
+		parent:GetTeamNumber(),	-- int, your team number
+		parent:GetOrigin(),	-- point, center point
+		nil,	-- handle, cacheUnit. (not known)
+		range,	-- float, radius. or use FIND_UNITS_EVERYWHERE
+		DOTA_UNIT_TARGET_TEAM_ENEMY,	-- int, team filter
+		DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_COURIER,	-- int, type filter
+		DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,	-- int, flag filter
+		0,	-- int, order filter
+		false	-- bool, can grow cache
+	)
 
-	self.inRange = distance<=range
+	-- get targets
+	local count = 0
+	for _,enemy in pairs(enemies) do
+		-- not target itself
+		if enemy~=target then
 
-	if self.inRange and self.attacking and self.target:IsAlive() then
-		if self.follow then
-			-- TODO: not immediately follow target
-			self:GetParent():MoveToNPC( self.target )
+			-- perform attack
+			parent:PerformAttack(
+				enemy, -- hTarget
+				true, -- bUseCastAttackOrb
+				true, -- bProcessProcs use modifiers
+				true, -- bSkipCooldown
+				false, -- bIgnoreInvis
+				true, -- bUseProjectile
+				false, -- bFakeAttack
+				false -- bNeverMiss
+			)
+
+			count = count + 1
+			if count>=self.target_count then break end
 		end
-
-		-- bombard target, but respect attack speed cooldown
-		self:GetParent():PerformAttack(
-			self.target,
-			true,
-			true,
-			false,
-			false,
-			true,
-			false,
-			false
-		)
 	end
 end

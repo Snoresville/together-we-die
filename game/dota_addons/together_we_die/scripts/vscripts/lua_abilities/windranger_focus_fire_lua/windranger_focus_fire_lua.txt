@@ -14,6 +14,7 @@
 		"AbilityTextureName"			"windranger_focus_fire_lua"
 		"FightRecapLevel"				"2"
 		"MaxLevel"						"3"
+		"HasScepterUpgrade"				"1"
 		"precache"
 		{
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_windrunner.vsndevts"
@@ -22,7 +23,7 @@
 		// Ability General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
@@ -31,14 +32,12 @@
 
 		// Ability Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"600"
 		"AbilityCastPoint"				"0"
-		"AbilityDuration"				"20.0 20.0 20.0"
 
 		// Ability Resource
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"70 50 30"
-		"AbilityManaCost"				"75 100 125"
+		"AbilityCooldown"				"130.0"
+		"AbilityManaCost"				"200 400 600"
 
 		// Damage
 		//-------------------------------------------------------------------------------------------------------------
@@ -50,22 +49,32 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_attack_speed"			"450"
+				"bonus_attack_speed"			"200"
 			}
 			"02"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"focusfire_damage_reduction"	"-50 -40 -30"
-			}						
+				"var_type"						"FIELD_FLOAT"
+				"focusfire_duration_tooltip"	"8.0"
+			}
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"focusfire_duration_tooltip"	"20"
+				"target_count"					"1 2 3"
 			}
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"focusfire_fire_on_the_move"	"1"
+				"scepter_target_count"				"2 3 4"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"auto_interval"					"1.1 1.0 0.9"
+			}
+			"06"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"int_multiplier"				"0.01"
 			}
 		}
 	}

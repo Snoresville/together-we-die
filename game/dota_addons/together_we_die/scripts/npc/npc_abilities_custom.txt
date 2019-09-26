@@ -5629,6 +5629,7 @@
 #base "../vscripts/lua_abilities/ogre_magi_multicast_lua/ogre_magi_multicast_lua.txt"
 
 #base "../vscripts/lua_abilities/windranger_powershot_lua/windranger_powershot_lua.txt"
+#base "../vscripts/lua_abilities/windranger_focus_fire_lua/windranger_focus_fire_lua.txt"
 
 #base "../vscripts/lua_abilities/dazzle_poison_touch_lua/dazzle_poison_touch_lua.txt"
 #base "../vscripts/lua_abilities/dazzle_shadow_wave_lua/dazzle_shadow_wave_lua.txt"

@@ -5882,7 +5882,7 @@
 	//=================================================================================================================
 	// Ability: Windranger Zephr
 	//=================================================================================================================
-	"item_spell_holdout_focusfire"
+	"item_spell_windranger_focus_fire_lua"
 	{
 		"ID"							"1131"
 
@@ -5890,7 +5890,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_spell_holdout_focusfire"
+		"AbilityTextureName"			"item_spell_windranger_focus_fire_lua"
 		"ItemKillable"					"0"
 
 		// Stats
@@ -5915,56 +5915,7 @@
 			{
 				"ScriptFile" "holdout_give_spell.lua"
 				"Function"   "GiveSpell"
-				"spell_name_to_give"	"holdout_focusfire"
-			}
-			"SpendCharge"
-			{}
-		}
-
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Windranger Focus Fire
-	//=================================================================================================================
-	"item_spell_windrunner_focusfire"
-	{
-		"ID"							"1132"
-
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_spell_windrunner_focusfire"
-		"ItemKillable"					"0"
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"10000"
-		"ItemShopTags"					"consumable"
-		"ItemQuality"					"consumable"
-		"ItemStackable"					"0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
-		"ItemPermanent"					"0"
-		"ItemInitialCharges"			"1"
-		"SideShop"						"1"
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile" "holdout_give_spell.lua"
-				"Function"   "GiveSpell"
-				"spell_name_to_give"	"windrunner_focusfire"
+				"spell_name_to_give"	"windranger_focus_fire_lua"
 			}
 			"SpendCharge"
 			{}
