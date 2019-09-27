@@ -1704,9 +1704,9 @@
 	}
 
 	//=================================================================================================================
-	// Ability: Slardar Bash
+	// Ability: Slardar
 	//=================================================================================================================
-	"item_spell_slardar_bash"
+	"item_spell_slardar_bash_of_the_deep_lua"
 	{
 		"ID"							"1035"
 
@@ -1714,7 +1714,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_spell_slardar_bash"
+		"AbilityTextureName"			"item_spell_slardar_bash_of_the_deep_lua"
 		"ItemKillable"					"0"
 
 		// Stats
@@ -1739,7 +1739,7 @@
 			{
 				"ScriptFile" "holdout_give_spell.lua"
 				"Function"   "GiveSpell"
-				"spell_name_to_give"	"slardar_bash"
+				"spell_name_to_give"	"slardar_bash_of_the_deep_lua"
 			}
 			"SpendCharge"
 			{}
@@ -9688,6 +9688,153 @@
 				"ScriptFile" "holdout_give_spell.lua"
 				"Function"   "GiveSpell"
 				"spell_name_to_give"	"lina_fiery_soul_lua"
+			}
+			"SpendCharge"
+			{}
+		}
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Slardar
+	//=================================================================================================================
+	"item_spell_slardar_guardian_sprint_lua"
+	{
+		"ID"							"1222"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_spell_slardar_guardian_sprint_lua"
+		"ItemKillable"					"0"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5000"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"SideShop"						"1"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile" "holdout_give_spell.lua"
+				"Function"   "GiveSpell"
+				"spell_name_to_give"	"slardar_guardian_sprint_lua"
+			}
+			"SpendCharge"
+			{}
+		}
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Slardar
+	//=================================================================================================================
+	"item_spell_slardar_slithereen_crush_lua"
+	{
+		"ID"							"1223"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_spell_slardar_slithereen_crush_lua"
+		"ItemKillable"					"0"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5000"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"SideShop"						"1"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile" "holdout_give_spell.lua"
+				"Function"   "GiveSpell"
+				"spell_name_to_give"	"slardar_slithereen_crush_lua"
+			}
+			"SpendCharge"
+			{}
+		}
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Slardar
+	//=================================================================================================================
+	"item_spell_slardar_corrosive_haze_lua"
+	{
+		"ID"							"1224"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_spell_slardar_corrosive_haze_lua"
+		"ItemKillable"					"0"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"10000"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"SideShop"						"1"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile" "holdout_give_spell.lua"
+				"Function"   "GiveSpell"
+				"spell_name_to_give"	"slardar_corrosive_haze_lua"
 			}
 			"SpendCharge"
 			{}

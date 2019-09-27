@@ -9,7 +9,7 @@
 		// base script folder	: scripts/vscripts
 		// base texture folder	: resource/flash3/images/spellicons
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1215"
+		"ID"							"1221"
 		"BaseClass"						"item_lua"
 		"ScriptFile"					"lua_abilities/item_octarine_core_lua/item_octarine_core_lua.lua"
 		"AbilityTextureName"			"item_octarine_core"
@@ -70,7 +70,7 @@
         // General
         //-------------------------------------------------------------------------------------------------------------
         "BaseClass"                     "item_datadriven"
-        "ID"							"1214"
+        "ID"							"1220"
 		"AbilityTextureName"			"item_recipe_octarine_core"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 
