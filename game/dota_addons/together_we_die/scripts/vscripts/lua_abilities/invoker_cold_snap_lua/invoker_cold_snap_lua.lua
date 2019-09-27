@@ -3,6 +3,10 @@ LinkLuaModifier( "modifier_invoker_cold_snap_lua", "lua_abilities/invoker_cold_s
 LinkLuaModifier( "modifier_generic_stunned_lua", "lua_abilities/generic/modifier_generic_stunned_lua", LUA_MODIFIER_MOTION_NONE )
 
 --------------------------------------------------------------------------------
+-- AOE Radius
+function invoker_cold_snap_lua:GetAOERadius()
+	return self:GetSpecialValueFor( "radius" )
+end
 -- Ability Start
 function invoker_cold_snap_lua:OnSpellStart()
 	-- unit identifier
@@ -11,16 +15,30 @@ function invoker_cold_snap_lua:OnSpellStart()
 
 	-- load data
 	local duration = self:GetOrbSpecialValueFor("duration", "q") + self:GetCaster():GetIntellect() * self:GetOrbSpecialValueFor( "int_multiplier", "q" )/20
+	local search = self:GetSpecialValueFor( "radius" )
 
 	-- logic
-	target:AddNewModifier(
-		caster, -- player source
-		self, -- ability source
-		"modifier_invoker_cold_snap_lua", -- modifier name
-		{ duration = duration } -- kv
+	targets = FindUnitsInRadius(
+		caster:GetTeamNumber(),	-- int, your team number
+		target:GetOrigin(),	-- point, center point
+		target,	-- handle, cacheUnit. (not known)
+		search,	-- float, radius. or use FIND_UNITS_EVERYWHERE
+		DOTA_UNIT_TARGET_TEAM_ENEMY,	-- int, team filter
+		DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	-- int, type filter
+		0,	-- int, flag filter
+		0,	-- int, order filter
+		false	-- bool, can grow cache
 	)
 
-	self:PlayEffects( target )
+	for _,enemy in pairs(targets) do
+		enemy:AddNewModifier(
+			caster, -- player source
+			self, -- ability source
+			"modifier_invoker_cold_snap_lua", -- modifier name
+			{ duration = duration } -- kv
+		)
+		self:PlayEffects( enemy )
+	end
 end
 
 --------------------------------------------------------------------------------
