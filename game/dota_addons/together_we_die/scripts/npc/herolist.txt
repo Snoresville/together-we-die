@@ -43,6 +43,7 @@
 	"npc_dota_hero_medusa"			"1"
 	"npc_dota_hero_silencer"		"1"
 	"npc_dota_hero_skywrath_mage"	"1"
-	"npc_dota_hero_shredder"	"1"
+	"npc_dota_hero_shredder"		"1"
 	"npc_dota_hero_slardar"			"1"
+	"npc_dota_hero_invoker"			"1"
 }

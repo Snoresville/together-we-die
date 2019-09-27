@@ -18,7 +18,10 @@ modifier_ogre_magi_multicast_lua.singles = {
 }
 modifier_ogre_magi_multicast_lua.banned = {
 	["item_blink"] = true,
-	["holdout_qop_blink"] = true,
+	["invoker_quas_lua"] = true,
+	["invoker_wex_lua"] = true,
+	["invoker_exort_lua"] = true,
+	["invoker_invoke_lua"] = true,
 	["item_tpscroll"] = true,
 	["item_travel_boots"] = true,
 	["item_travel_boots_2"] = true,

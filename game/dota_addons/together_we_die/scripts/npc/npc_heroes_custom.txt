@@ -474,4 +474,17 @@
 
 		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
 	}
+
+	"npc_dota_hero_invoker_holdout"
+	{
+		"override_hero"				"npc_dota_hero_invoker"
+		"Ability1"				"invoker_quas_lua"
+		"Ability2"				"invoker_wex_lua"
+		"Ability3"				"invoker_exort_lua"
+		"Ability4"				"invoker_empty_1_lua"
+		"Ability5"				"invoker_empty_2_lua"
+		"Ability6"				"invoker_invoke_lua"
+
+		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
+	}
 }
