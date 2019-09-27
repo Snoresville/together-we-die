@@ -39,11 +39,13 @@
 	"item_recipe_heart"
 	{
 		"ItemPurchasable"				"0"
+		"ItemRecipe"					"0"
 	}
 
 	"item_recipe_radiance"
 	{
 		"ItemPurchasable"				"0"
+		"ItemRecipe"					"0"
 	}
 	"item_radiance"
 	{
@@ -52,10 +54,15 @@
 
 	"item_recipe_octarine_core"
 	{
+		"ID"							"228"
+
 		"ItemPurchasable"				"0"
+		"ItemRecipe"					"0"
 	}
 	"item_octarine_core"
 	{
+		"ID"							"235"
+
 		"ItemPurchasable"				"0"
 	}
 
