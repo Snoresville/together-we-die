@@ -36,20 +36,18 @@ end
 -- Modifier Effects
 function modifier_intelligence_magic_scale_lua:DeclareFunctions()
 	local funcs = {
-		MODIFIER_PROPERTY_MAGICDAMAGEOUTGOING_PERCENTAGE,
+		MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
 	}
 
 	return funcs
 end
 
-function modifier_intelligence_magic_scale_lua:GetModifierMagicDamageOutgoing_Percentage( params )
-	if IsServer() and (not self:GetParent():PassivesDisabled()) then
+function modifier_intelligence_magic_scale_lua:GetModifierSpellAmplify_Percentage( params )
+	if not self:GetParent():PassivesDisabled() then
 		return self.bonus_magic_pct
 	end
 end
 
 function modifier_intelligence_magic_scale_lua:OnIntervalThink()
-	if IsServer() then
-		self.bonus_magic_pct = math.floor(self:GetParent():GetIntellect() * self.int_multiplier) -- special value
-	end
+	self.bonus_magic_pct = math.floor(self:GetParent():GetIntellect() * self.int_multiplier) -- special value
 end
