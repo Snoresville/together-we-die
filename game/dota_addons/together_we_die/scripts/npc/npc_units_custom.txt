@@ -2213,7 +2213,7 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"50"			// Physical protection.
+		"ArmorPhysical"				"80"			// Physical protection.
 		"MagicalResistance"			"85"		// Magical protection (percentage).
 
 		// Attack
@@ -2246,10 +2246,10 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"120000"		// Base health.
+		"StatusHealth"				"130000"		// Base health.
 		"StatusHealthRegen"			"0.0"		// Health regeneration rate.
-		"StatusMana"				"0"			// Base mana.
-		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
+		"StatusMana"				"80000"			// Base mana.
+		"StatusManaRegen"			"1000.0"		// Mana regeneration rate.		 
 		
 		// Vision
 		//----------------------------------------------------------------
@@ -2342,13 +2342,13 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"20"			// Physical protection.
+		"ArmorPhysical"				"90"			// Physical protection.
 
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"940"		// Damage range min.
-		"AttackDamageMax"			"1250"		// Damage range max.	
+		"AttackDamageMin"			"1040"		// Damage range min.
+		"AttackDamageMax"			"1450"		// Damage range max.	
 		"AttackRate"				"0.35"		// Speed of attack.
 		"AttackAnimationPoint"		"0.38"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
@@ -2374,9 +2374,9 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"12000"		// Base health.
-		"StatusHealthRegen"			"50.0"		// Health regeneration rate.
-		"StatusMana"				"0"			// Base mana.
+		"StatusHealth"				"15000"		// Base health.
+		"StatusHealthRegen"			"90.0"		// Health regeneration rate.
+		"StatusMana"				"8000"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
 		
 		// Vision
@@ -2436,14 +2436,14 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"30"			// Physical protection.
+		"ArmorPhysical"				"50"			// Physical protection.
 
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"1850"		// Damage range min.
-		"AttackDamageMax"			"7000"		// Damage range max.
-		"AttackRate"				"0.5"		// Speed of attack.
+		"AttackDamageMin"			"5850"		// Damage range min.
+		"AttackDamageMax"			"9000"		// Damage range max.
+		"AttackRate"				"0.45"		// Speed of attack.
 		"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
 		"AttackRange"				"500"		// Range within a target can be attacked.
@@ -2468,9 +2468,9 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"8500"		// Base health.
+		"StatusHealth"				"9500"		// Base health.
 		"StatusHealthRegen"			"150"		// Health regeneration rate.
-		"StatusMana"				"0"			// Base mana.
+		"StatusMana"				"5000"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
 		
 		// Vision
@@ -2530,14 +2530,14 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"50"			// Physical protection.
+		"ArmorPhysical"				"80"			// Physical protection.
 		"MagicalResistance"			"75"		// Magical protection (percentage).
 
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"1340"		// Damage range min.
-		"AttackDamageMax"			"1850"		// Damage range max.	
+		"AttackDamageMin"			"2340"		// Damage range min.
+		"AttackDamageMax"			"2850"		// Damage range max.	
 		"AttackRate"				"0.85"		// Speed of attack.
 		"AttackAnimationPoint"		"0.38"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
@@ -2565,8 +2565,8 @@
 		//----------------------------------------------------------------
 		"StatusHealth"				"30000"		// Base health.
 		"StatusHealthRegen"			"60.0"		// Health regeneration rate.
-		"StatusMana"				"0"			// Base mana.
-		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
+		"StatusMana"				"10000"			// Base mana.
+		"StatusManaRegen"			"100.0"		// Mana regeneration rate.		 
 		
 		// Vision
 		//----------------------------------------------------------------
@@ -2692,10 +2692,10 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"23000"		// Base health.
+		"StatusHealth"				"33000"		// Base health.
 		"StatusHealthRegen"			"20.0"		// Health regeneration rate.
-		"StatusMana"				"1000"			// Base mana.
-		"StatusManaRegen"			"10.0"		// Mana regeneration rate.		 
+		"StatusMana"				"10000"			// Base mana.
+		"StatusManaRegen"			"100.0"		// Mana regeneration rate.		 
 		
 		// Vision
 		//----------------------------------------------------------------
@@ -2834,8 +2834,8 @@
 		//----------------------------------------------------------------
 		"StatusHealth"				"24000"		// Base health.
 		"StatusHealthRegen"			"150"		// Health regeneration rate.
-		"StatusMana"				"1000"		// Base mana.
-		"StatusManaRegen"			"5"			// Mana regeneration rate.
+		"StatusMana"				"10000"		// Base mana.
+		"StatusManaRegen"			"50"			// Mana regeneration rate.
 
 		// Team
 		//----------------------------------------------------------------
@@ -2935,7 +2935,7 @@
 		//----------------------------------------------------------------
 		"StatusHealth"				"200000"		// Base health.
 		"StatusHealthRegen"			"400.0"		// Health regeneration rate.
-		"StatusMana"				"10000"			// Base mana.
+		"StatusMana"				"80000"			// Base mana.
 		"StatusManaRegen"			"1000.0"		// Mana regeneration rate.		 
 		
 		// Vision
@@ -3077,7 +3077,7 @@
 		//----------------------------------------------------------------
 		"StatusHealth"				"480000"		// Base health.
 		"StatusHealthRegen"			"2000.0"		// Health regeneration rate.
-		"StatusMana"				"10000"			// Base mana.
+		"StatusMana"				"100000"			// Base mana.
 		"StatusManaRegen"			"1000.0"		// Mana regeneration rate.		 
 		
 		// Vision
@@ -3173,7 +3173,7 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"60"			// Physical protection.
+		"ArmorPhysical"				"80"			// Physical protection.
 		"MagicalResistance"			"75"		// Magical protection (percentage).
 
 		// Attack
@@ -3304,7 +3304,7 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"140"			// Physical protection.
+		"ArmorPhysical"				"150"			// Physical protection.
 		"MagicalResistance"			"85"		// Magical protection (percentage).
 
 		// Attack
@@ -3337,9 +3337,9 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"10000"		// Base health.
-		"StatusHealthRegen"			"2000.0"		// Health regeneration rate.
-		"StatusMana"				"0"			// Base mana.
+		"StatusHealth"				"50000"		// Base health.
+		"StatusHealthRegen"			"800.0"		// Health regeneration rate.
+		"StatusMana"				"10000"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
 		
 		// Vision
@@ -3466,8 +3466,8 @@
 		//----------------------------------------------------------------
 		"StatusHealth"				"30000"		// Base health.
 		"StatusHealthRegen"			"1000.0"		// Health regeneration rate.
-		"StatusMana"				"10000"			// Base mana.
-		"StatusManaRegen"			"100.0"		// Mana regeneration rate.		 
+		"StatusMana"				"20000"			// Base mana.
+		"StatusManaRegen"			"1000.0"		// Mana regeneration rate.		 
 		
 		// Vision
 		//----------------------------------------------------------------
@@ -3601,8 +3601,8 @@
 		//----------------------------------------------------------------
 		"StatusHealth"				"450000"		// Base health.
 		"StatusHealthRegen"			"0.0"		// Health regeneration rate.
-		"StatusMana"				"10000"			// Base mana.
-		"StatusManaRegen"			"1000.0"		// Mana regeneration rate.		 
+		"StatusMana"				"100000"			// Base mana.
+		"StatusManaRegen"			"10000.0"		// Mana regeneration rate.		 
 		
 		// Vision
 		//----------------------------------------------------------------
@@ -3734,8 +3734,8 @@
 		//----------------------------------------------------------------
 		"StatusHealth"				"950000"		// Base health.
 		"StatusHealthRegen"			"0.0"		// Health regeneration rate.
-		"StatusMana"				"10000"			// Base mana.
-		"StatusManaRegen"			"1000.0"		// Mana regeneration rate.		 
+		"StatusMana"				"100000"			// Base mana.
+		"StatusManaRegen"			"2000.0"		// Mana regeneration rate.		 
 		
 		// Vision
 		//----------------------------------------------------------------
@@ -3836,7 +3836,7 @@
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"3300"		// Damage range min.
-		"AttackDamageMax"			"6600"		// Damage range max.
+		"AttackDamageMax"			"9600"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"0.3"			// Speed of attack.
 		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
@@ -3866,9 +3866,9 @@
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"70000"		// Base health.
-		"StatusHealthRegen"			"250"		// Health regeneration rate.
-		"StatusMana"				"1000"		// Base mana.
-		"StatusManaRegen"			"5"			// Mana regeneration rate.
+		"StatusHealthRegen"			"350"		// Health regeneration rate.
+		"StatusMana"				"10000"		// Base mana.
+		"StatusManaRegen"			"500"			// Mana regeneration rate.
 
 		// Team
 		//----------------------------------------------------------------
@@ -3976,7 +3976,7 @@
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"980000"		// Base health.
-		"StatusHealthRegen"			"10000"		// Health regeneration rate.
+		"StatusHealthRegen"			"100000"		// Health regeneration rate.
 		"StatusMana"				"50000"		// Base mana.
 		"StatusManaRegen"			"1000"			// Mana regeneration rate.
 
@@ -4090,9 +4090,9 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"580000"		// Base health.
+		"StatusHealth"				"650000"		// Base health.
 		"StatusHealthRegen"			"10000"		// Health regeneration rate.
-		"StatusMana"				"50000"		// Base mana.
+		"StatusMana"				"100000"		// Base mana.
 		"StatusManaRegen"			"1000"			// Mana regeneration rate.
 
 		// Team
@@ -4148,7 +4148,7 @@
 		"Model"						"models/creeps/roshan/roshan.vmdl"	// Model.
 		"SoundSet"					"Roshan"					// Name of sound set.
 		"ModelScale"				"1.85"
-		"Level"						"2"
+		"Level"						"12"
 		"ConsideredHero"			"1"
 		"MinimapIcon"				"minimap_roshancamp"
 		"MinimapIconSize"			"400"
@@ -4201,10 +4201,10 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1600000"		// Base health.
+		"StatusHealth"				"1900000"		// Base health.
 		"StatusHealthRegen"			"0"		// Health regeneration rate.
-		"StatusMana"				"50000"		// Base mana.
-		"StatusManaRegen"			"1000"			// Mana regeneration rate.
+		"StatusMana"				"500000"		// Base mana.
+		"StatusManaRegen"			"10000"			// Mana regeneration rate.
 
 		// Team
 		//----------------------------------------------------------------
