@@ -275,13 +275,17 @@ function ability_manager:InvokeNew( ability )
 		-- add ability at tail
 		table.insert(self.ability_slot,ability)
 	else
+		local old_ability_name = self.ability_slot[#self.ability_slot]:GetAbilityName()
 		-- swap the last ability with the summoned
 		self.caster:SwapAbilities( 
 			ability:GetAbilityName(),
-			self.ability_slot[#self.ability_slot]:GetAbilityName(),
+			old_ability_name,
 			true,
 			false
 		)
+
+		-- remove it
+		self.caster:RemoveAbility( old_ability_name )
 
 		-- sync slot
 		self.ability_slot[#self.ability_slot] = ability
@@ -296,17 +300,15 @@ function ability_manager:GetAbilityHandle( ability_name )
 	local ability = self.abilities[ability_name]
 
 	-- if handle not exist, get one existing
-	if not ability then
+	if not ability or ability:IsNull() then
 		ability = self.caster:FindAbilityByName( ability_name )
-		self.abilities[ability_name] = ability
-		
 		-- if not exist, create one
 		if not ability then
 			ability = self.caster:AddAbility( ability_name )
-			self.abilities[ability_name] = ability
 		end
 
-		-- ability:SetLevel(1)
+		self.abilities[ability_name] = ability
+
 		self:InitAbility( ability )
 	end
 
