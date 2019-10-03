@@ -53,42 +53,55 @@ end
 function modifier_axe_counter_helix_lua:OnAttackLanded( params )
 	local abilityCaster = self:GetCaster()
 	local selfAbility = self:GetAbility()
-	if IsServer() and (not abilityCaster:PassivesDisabled()) and abilityCaster == params.target and abilityCaster:GetTeamNumber()~=params.attacker:GetTeamNumber() and selfAbility:IsCooldownReady() then
+	if IsServer() and (not abilityCaster:PassivesDisabled()) and selfAbility:IsCooldownReady()  then
 		if params.attacker:IsOther() then return end
-		print ('call')
-
-		-- roll dice
-		if self:RollChance( self.chance ) then
-			print ('proc')
-			local damage = selfAbility:GetSpecialValueFor("damage") + (abilityCaster:GetStrength() * selfAbility:GetSpecialValueFor("str_multiplier"))
-			self.damageTable.damage = damage
-
-			-- find enemies
-			local enemies = FindUnitsInRadius(
-				abilityCaster:GetTeamNumber(),	-- int, your team number
-				abilityCaster:GetOrigin(),	-- point, center point
-				nil,	-- handle, cacheUnit. (not known)
-				self.radius,	-- float, radius. or use FIND_UNITS_EVERYWHERE
-				DOTA_UNIT_TARGET_TEAM_ENEMY,	-- int, team filter
-				DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	-- int, type filter
-				DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,	-- int, flag filter
-				0,	-- int, order filter
-				false	-- bool, can grow cache
-			)
-
-			-- damage
-			for _,enemy in pairs(enemies) do
-				self.damageTable.victim = enemy
-				ApplyDamage( self.damageTable )
+		if abilityCaster == params.target then
+			-- roll dice
+			if self:RollChance( self.chance ) then
+				self:ProcDamage()
 			end
+		end
 
-			-- cooldown
-			selfAbility:UseResources( false, false, true )
-
-			-- effects
-			self:PlayEffects()
+		if abilityCaster == params.attacker then
+			-- roll dice
+			if self:RollChance( self.chance / 3 ) then
+				self:ProcDamage()
+			end
 		end
 	end
+end
+
+--------------------------------------------------------------------------------
+function modifier_axe_counter_helix_lua:ProcDamage()
+	local abilityCaster = self:GetCaster()
+	local selfAbility = self:GetAbility()
+	local damage = selfAbility:GetSpecialValueFor("damage") + (abilityCaster:GetStrength() * selfAbility:GetSpecialValueFor("str_multiplier"))
+	self.damageTable.damage = damage
+
+	-- find enemies
+	local enemies = FindUnitsInRadius(
+		abilityCaster:GetTeamNumber(),	-- int, your team number
+		abilityCaster:GetOrigin(),	-- point, center point
+		nil,	-- handle, cacheUnit. (not known)
+		self.radius,	-- float, radius. or use FIND_UNITS_EVERYWHERE
+		DOTA_UNIT_TARGET_TEAM_ENEMY,	-- int, team filter
+		DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	-- int, type filter
+		DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,	-- int, flag filter
+		0,	-- int, order filter
+		false	-- bool, can grow cache
+	)
+
+	-- damage
+	for _,enemy in pairs(enemies) do
+		self.damageTable.victim = enemy
+		ApplyDamage( self.damageTable )
+	end
+
+	-- cooldown
+	selfAbility:UseResources( false, false, true )
+
+	-- effects
+	self:PlayEffects()
 end
 
 --------------------------------------------------------------------------------
