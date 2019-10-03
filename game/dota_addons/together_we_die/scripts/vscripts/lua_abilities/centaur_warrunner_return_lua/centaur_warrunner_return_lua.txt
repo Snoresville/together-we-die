@@ -48,7 +48,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"strength_pct"				"60 90 110 150"
+				"strength_pct"				"50 100 150 200"
 			}
 		}
 	}
