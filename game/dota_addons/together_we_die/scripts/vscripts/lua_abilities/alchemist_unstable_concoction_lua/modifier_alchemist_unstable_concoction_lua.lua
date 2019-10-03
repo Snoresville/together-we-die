@@ -36,8 +36,8 @@ function modifier_alchemist_unstable_concoction_lua:OnCreated( kv )
 	self.str_multiplier = self:GetAbility():GetSpecialValueFor( "str_multiplier" )
 	self.min_stun = self:GetAbility():GetSpecialValueFor( "min_stun" )
 	self.max_stun = self:GetAbility():GetSpecialValueFor( "max_stun" )
-	self.min_damage = self:GetAbility():GetSpecialValueFor( "min_damage" ) + (self:GetParent():GetStrength() * self.str_multiplier)
-	self.max_damage = self:GetAbility():GetSpecialValueFor( "max_damage" ) + (self:GetParent():GetStrength() * self.str_multiplier)
+	self.min_damage = self:GetAbility():GetSpecialValueFor( "min_damage" ) + (self:GetCaster():GetStrength() * self.str_multiplier)
+	self.max_damage = self:GetAbility():GetSpecialValueFor( "max_damage" ) + (self:GetCaster():GetStrength() * self.str_multiplier)
 	self.radius = self:GetAbility():GetSpecialValueFor( "radius" )
 
 	if not IsServer() then return end
