@@ -29,6 +29,10 @@ function modifier_alchemist_acid_spray_lua:IsPurgable()
 	return false
 end
 
+function modifier_alchemist_acid_spray_lua:GetAttributes()
+	return MODIFIER_ATTRIBUTE_MULTIPLE
+end
+
 --------------------------------------------------------------------------------
 -- Initializations
 function modifier_alchemist_acid_spray_lua:OnCreated( kv )
