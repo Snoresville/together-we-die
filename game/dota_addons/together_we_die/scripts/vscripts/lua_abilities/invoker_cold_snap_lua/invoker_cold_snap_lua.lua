@@ -14,7 +14,7 @@ function invoker_cold_snap_lua:OnSpellStart()
 	local target = self:GetCursorTarget()
 
 	-- load data
-	local duration = self:GetOrbSpecialValueFor("duration", "q") + self:GetCaster():GetIntellect() * self:GetOrbSpecialValueFor( "int_multiplier", "q" )/20
+	local duration = self:GetOrbSpecialValueFor("duration", "q") + self:GetCaster():GetIntellect() * self:GetOrbSpecialValueFor( "int_multiplier", "q" )/100
 	local search = self:GetSpecialValueFor( "radius" )
 
 	-- logic

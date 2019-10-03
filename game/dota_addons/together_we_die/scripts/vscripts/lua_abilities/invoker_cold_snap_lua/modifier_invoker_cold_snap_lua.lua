@@ -27,7 +27,6 @@ function modifier_invoker_cold_snap_lua:OnCreated( kv )
 		self.duration = self:GetAbility():GetOrbSpecialValueFor( "freeze_duration", "q" )
 		self.cooldown = self:GetAbility():GetOrbSpecialValueFor( "freeze_cooldown", "q" )
 		self.threshold = self:GetAbility():GetOrbSpecialValueFor( "damage_trigger", "q" )
-
 		self.onCooldown = false
 
 		-- Start interval
@@ -74,7 +73,6 @@ end
 -- Interval Effects
 function modifier_invoker_cold_snap_lua:OnIntervalThink()
 	self.onCooldown = false
-	self:StartIntervalThink(-1)
 end
 
 --------------------------------------------------------------------------------
