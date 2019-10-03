@@ -14,6 +14,12 @@ end
 
 --------------------------------------------------------------------------------
 
+function modifier_creature_acid_death_effect_lua:GetAttributes()
+	return MODIFIER_ATTRIBUTE_MULTIPLE
+end
+
+--------------------------------------------------------------------------------
+
 function modifier_creature_acid_death_effect_lua:OnCreated( kv )
 	self.armor_reduction = self:GetAbility():GetSpecialValueFor( "armor_reduction" )
 	self.tick_damage = self:GetAbility():GetSpecialValueFor( "tick_damage" )
@@ -50,9 +56,7 @@ end
 --------------------------------------------------------------------------------
 
 function modifier_creature_acid_death_effect_lua:GetModifierPhysicalArmorBonus( params )
-	if IsServer() then
-		return self.armor_reduction
-	end
+	return self.armor_reduction
 end
 
 --------------------------------------------------------------------------------
