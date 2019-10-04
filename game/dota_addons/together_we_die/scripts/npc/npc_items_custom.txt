@@ -9853,6 +9853,202 @@
 		{
 		}
 	}
+
+	//=================================================================================================================
+	// Ability: Dragon Knight
+	//=================================================================================================================
+	"item_spell_dragon_knight_breathe_fire_lua"
+	{
+		"ID"							"1225"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_spell_dragon_knight_breathe_fire_lua"
+		"ItemKillable"					"0"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5000"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"SideShop"						"1"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile" "holdout_give_spell.lua"
+				"Function"   "GiveSpell"
+				"spell_name_to_give"	"dragon_knight_breathe_fire_lua"
+			}
+			"SpendCharge"
+			{}
+		}
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Dragon Knight
+	//=================================================================================================================
+	"item_spell_dragon_knight_dragon_tail_lua"
+	{
+		"ID"							"1226"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_spell_dragon_knight_dragon_tail_lua"
+		"ItemKillable"					"0"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5000"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"SideShop"						"1"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile" "holdout_give_spell.lua"
+				"Function"   "GiveSpell"
+				"spell_name_to_give"	"dragon_knight_dragon_tail_lua"
+			}
+			"SpendCharge"
+			{}
+		}
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Dragon Knight
+	//=================================================================================================================
+	"item_spell_dragon_knight_dragon_blood_lua"
+	{
+		"ID"							"1227"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_spell_dragon_knight_dragon_blood_lua"
+		"ItemKillable"					"0"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5000"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"SideShop"						"1"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile" "holdout_give_spell.lua"
+				"Function"   "GiveSpell"
+				"spell_name_to_give"	"dragon_knight_dragon_blood_lua"
+			}
+			"SpendCharge"
+			{}
+		}
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Dragon Knight
+	//=================================================================================================================
+	"item_spell_dragon_knight_elder_dragon_form_lua"
+	{
+		"ID"							"1228"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_spell_dragon_knight_elder_dragon_form_lua"
+		"ItemKillable"					"0"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"10000"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"SideShop"						"1"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile" "holdout_give_spell.lua"
+				"Function"   "GiveSpell"
+				"spell_name_to_give"	"dragon_knight_elder_dragon_form_lua"
+			}
+			"SpendCharge"
+			{}
+		}
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+		}
+	}
 }
 
 #base "../vscripts/lua_abilities/item_heart_of_tarrasque_lua/item_heart_of_tarrasque_lua.txt"
