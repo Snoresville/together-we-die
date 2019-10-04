@@ -44,19 +44,14 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"bonus_reset_time"				"20"
+				"bonus_reset_time"				"15"
 			}
 			"02"
 			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_reset_time_roshan"		"6"
+				"var_type"						"FIELD_INTEGER"
+				"damage_per_stack"				"15 25 35 45"
 			}
 			"03"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"damage_per_stack"				"15 20 25 30"
-			}
-			"04"
 			{
 				"var_type"						"FIELD_FLOAT"
 				"agi_multiplier"				"0.05 0.1 0.15 0.2"

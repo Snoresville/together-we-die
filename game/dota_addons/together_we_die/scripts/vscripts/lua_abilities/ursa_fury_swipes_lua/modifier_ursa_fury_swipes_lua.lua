@@ -20,7 +20,6 @@ function modifier_ursa_fury_swipes_lua:OnCreated( kv )
 		-- get reference
 		self.damage_per_stack = self:GetAbility():GetSpecialValueFor("damage_per_stack") + self:GetCaster():GetAgility() * self:GetAbility():GetSpecialValueFor("agi_multiplier")
 		self.bonus_reset_time = self:GetAbility():GetSpecialValueFor("bonus_reset_time")
-		self.bonus_reset_time_roshan = self:GetAbility():GetSpecialValueFor("bonus_reset_time_roshan")
 	end
 end
 
@@ -29,7 +28,6 @@ function modifier_ursa_fury_swipes_lua:OnRefresh( kv )
 		-- get reference
 		self.damage_per_stack = self:GetAbility():GetSpecialValueFor("damage_per_stack") + self:GetCaster():GetAgility() * self:GetAbility():GetSpecialValueFor("agi_multiplier")
 		self.bonus_reset_time = self:GetAbility():GetSpecialValueFor("bonus_reset_time")
-		self.bonus_reset_time_roshan = self:GetAbility():GetSpecialValueFor("bonus_reset_time_roshan")
 	end
 end
 --------------------------------------------------------------------------------
@@ -46,45 +44,21 @@ end
 
 function modifier_ursa_fury_swipes_lua:GetModifierProcAttack_BonusDamage_Physical( params )
 	if IsServer() then
+		if self:GetParent():PassivesDisabled() then return end
 		-- get target
 		local target = params.target if target==nil then target = params.unit end
-		if target:GetTeamNumber()==self:GetParent():GetTeamNumber() then
-			return 0
-		end
 
 		-- get modifier stack
 		local stack = 0
-		local modifier = target:FindModifierByNameAndCaster("modifier_ursa_fury_swipes_debuff_lua", self:GetAbility():GetCaster())
-
-		-- add stack if not
-		if modifier==nil then
-			-- if does not have break
-			if not self:GetParent():PassivesDisabled() then
-				-- determine duration if roshan/not
-				local _duration = self.bonus_reset_time
-				if params.target:GetUnitName()=="npc_dota_roshan" then
-					_duration = self.bonus_reset_time_roshan
-				end
-
-				-- add modifier
-				target:AddNewModifier(
-					self:GetAbility():GetCaster(),
-					self:GetAbility(),
-					"modifier_ursa_fury_swipes_debuff_lua",
-					{ duration = _duration }
-				)
-
-				-- get stack number
-				stack = 1
-			end
-		else
-			-- increase stack
-			modifier:IncrementStackCount()
-			modifier:ForceRefresh()
-
-			-- get stack number
-			stack = modifier:GetStackCount()
-		end
+		-- add modifier
+		local modifier = target:AddNewModifier(
+			self:GetAbility():GetCaster(),
+			self:GetAbility(),
+			"modifier_ursa_fury_swipes_debuff_lua",
+			{ duration = self.bonus_reset_time }
+		)
+		-- get stack number
+		stack = modifier:GetStackCount()
 
 		-- return damage bonus
 		return stack * self.damage_per_stack
