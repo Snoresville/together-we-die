@@ -1,0 +1,93 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Invoker: Forge Spirit (Lua version)
+	//=================================================================================================================
+	"invoker_forge_spirit_lua"
+	{
+		// Ability Technical Aspect
+		// base script folder	: scripts/vscripts
+		// base texture folder	: resource/flash3/images/spellicons
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"lua_abilities/invoker_forge_spirit_lua/invoker_forge_spirit_lua"
+		"AbilityTextureName"			"invoker_forge_spirit_lua"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
+		}
+		
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+
+		// Ability Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.05"
+		"AbilityCastAnimation"			"ACT_INVALID"
+
+		// Ability Resource
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"75"
+
+		// Damage
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"spirit_damage"			"22 32 42 52 62 72 82 92"
+				"levelkey"				"exortlevel"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spirit_mana"			"100 150 200 250 300 350 400 450"
+				"levelkey"				"exortlevel"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spirit_armor"			"0 1 2 3 4 5 6 7"
+				"levelkey"				"exortlevel"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"spirit_attack_range"	"300 365 430 495 560 625 690 755"
+				"levelkey"				"quaslevel"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spirit_hp"				"300 400 500 600 700 800 900 1000"
+				"levelkey"				"quaslevel"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"spirit_duration"		"20 25 30 35 40 45 50 55"
+				"levelkey"				"quaslevel"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"health_int_multiplier"		"1.25 2.0 2.75 3.5 4.25 5.0 5.75 6.5"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_int_multiplier"		"0.25 0.5 0.75 1.0 1.25 1.5 1.75 2.0"
+			}
+		}
+	}
+}

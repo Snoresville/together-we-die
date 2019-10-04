@@ -5756,6 +5756,7 @@
 #base "../vscripts/lua_abilities/invoker_emp_lua/invoker_emp_lua.txt"
 #base "../vscripts/lua_abilities/invoker_deafening_blast_lua/invoker_deafening_blast_lua.txt"
 #base "../vscripts/lua_abilities/invoker_tornado_lua/invoker_tornado_lua.txt"
+#base "../vscripts/lua_abilities/invoker_forge_spirit_lua/invoker_forge_spirit_lua.txt"
 #base "../vscripts/lua_abilities/invoker_alacrity_lua/invoker_alacrity_lua.txt"
 #base "../vscripts/lua_abilities/invoker_sun_strike_lua/invoker_sun_strike_lua.txt"
 #base "../vscripts/lua_abilities/invoker_chaos_meteor_lua/invoker_chaos_meteor_lua.txt"

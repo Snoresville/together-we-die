@@ -16,7 +16,7 @@ orb_manager.invoke_list = {
 	["qww"] = "invoker_tornado_lua",
 	["wwe"] = "invoker_alacrity_lua",
 	["eee"] = "invoker_sun_strike_lua",
-	["qee"] = "invoker_sun_strike_lua",
+	["qee"] = "invoker_forge_spirit_lua",
 	["wee"] = "invoker_chaos_meteor_lua",
 	["qwe"] = "invoker_deafening_blast_lua",
 }
