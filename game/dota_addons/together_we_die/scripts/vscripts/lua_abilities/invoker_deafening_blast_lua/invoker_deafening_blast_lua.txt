@@ -98,6 +98,11 @@
 				"var_type"				"FIELD_FLOAT"
 				"int_multiplier"		"1.25 2.0 2.75 3.5 4.25 5.0 5.75 6.5"
 			}
+			"11"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"multicast_delay"	"0.3"
+			}
 		}
 	}
 }
