@@ -45,6 +45,6 @@
 	"npc_dota_hero_skywrath_mage"	"1"
 	"npc_dota_hero_shredder"		"1"
 	"npc_dota_hero_slardar"			"1"
-	"npc_dota_hero_invoker"			"1"
+	"npc_dota_hero_invoker"			"-1"
 	"npc_dota_hero_dragon_knight"	"1"
 }
