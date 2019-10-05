@@ -14,6 +14,7 @@
 		"AbilityTextureName"			"invoker_sun_strike_lua"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"HasScepterUpgrade"				"1"
 		"precache"
 		{
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
