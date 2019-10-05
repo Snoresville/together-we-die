@@ -14,24 +14,25 @@ end
 -- Initializations
 function modifier_phantom_lancer_juxtapose_lua:OnCreated( kv )
 	-- references
+	if not IsServer() then return end
 	local ability = self:GetAbility()
-	local ability_name = ability:GetAbilityName()
-	self.player = self:GetParent():GetPlayerID()
-	self.original_hero = PlayerResource:GetSelectedHeroEntity(self.player)
-	self.original_ability = self.original_hero:FindAbilityByName(ability_name)
 	self.max_illusions = ability:GetSpecialValueFor( "max_illusions" )
 	self.illusion_duration = ability:GetSpecialValueFor( "illusion_duration" )
 	self.illusion_outgoing_damage = ability:GetSpecialValueFor( "illusion_outgoing_damage" )
 	self.illusion_incoming_damage = ability:GetSpecialValueFor( "illusion_incoming_damage" )
 	if self:GetParent():IsIllusion() then
 		self.proc_chance = ability:GetSpecialValueFor( "illusion_proc_chance" )
+		self.original_hero = self:GetParent():GetOwner()
 	else
 		self.proc_chance = ability:GetSpecialValueFor( "hero_proc_chance" )
+		self.original_hero = self:GetParent()
 	end
+	self.original_ability = self.original_hero:FindAbilityByName( ability:GetAbilityName() )
 end
 
 function modifier_phantom_lancer_juxtapose_lua:OnRefresh( kv )
 	-- references
+	if not IsServer() then return end
 	local ability = self:GetAbility()
 	self.max_illusions = ability:GetSpecialValueFor( "max_illusions" )
 	self.illusion_duration = ability:GetSpecialValueFor( "illusion_duration" )
@@ -70,11 +71,17 @@ function modifier_phantom_lancer_juxtapose_lua:OnAttackLanded( params )
 					local modifier_parent = self:GetParent()
 					local unit_name = self.original_hero:GetUnitName()
 					local origin = target:GetAbsOrigin() + RandomVector(100)
-					-- handle_UnitOwner needs to be nil, else it will crash the game.
-					local illusion = CreateUnitByName(unit_name, origin, true, modifier_parent, nil, modifier_parent:GetTeamNumber())
-					illusion:SetPlayerID(self.player)
-					illusion:SetControllableByPlayer(self.player, true)
-				
+					local illusion = CreateUnitByName( unit_name, origin, true, modifier_parent, nil, modifier_parent:GetTeamNumber() )
+					illusion:SetOwner( self.original_hero )
+					illusion:SetControllableByPlayer( modifier_parent:GetPlayerID(), false )
+
+					-- Set the unit as an illusion
+					-- modifier_illusion controls many illusion properties like +Green damage not adding to the unit damage, not being able to cast spells and the team-only blue particle
+					illusion:AddNewModifier(self.original_hero, self.original_ability, "modifier_illusion", { duration = self.illusion_duration, outgoing_damage = self.illusion_outgoing_damage, incoming_damage = self.illusion_incoming_damage })
+					illusion:AddNewModifier(self.original_hero, self.original_ability, "modifier_phantom_lancer_juxtapose_illusion_lua", { duration = self.illusion_duration })
+					-- Without MakeIllusion the unit counts as a hero, e.g. if it dies to neutrals it says killed by neutrals, it respawns, etc.
+					illusion:MakeIllusion()
+
 					-- Level Up the unit to the casters level
 					local casterLevel = self.original_hero:GetLevel()
 					for i = 2, casterLevel do
@@ -89,15 +96,17 @@ function modifier_phantom_lancer_juxtapose_lua:OnAttackLanded( params )
 					for ability_id = 0, maxAbilities do
 						local ability = self.original_hero:GetAbilityByIndex(ability_id)
 						if ability then
-							local illusionAbility = illusion:GetAbilityByIndex(ability_id)
 							local abilityLevel = ability:GetLevel()
-							if illusionAbility then
-								illusionAbility:SetLevel(abilityLevel)
-							else
-								-- Add ability
-								local abilityName = ability:GetAbilityName()
-								local newAbility = illusion:AddAbility(abilityName)
-								newAbility:SetLevel(abilityLevel)
+							if abilityLevel ~= 0 then
+								local illusionAbility = illusion:GetAbilityByIndex(ability_id)
+								if illusionAbility then
+									illusionAbility:SetLevel(abilityLevel)
+								else
+									-- Add ability
+									local abilityName = ability:GetAbilityName()
+									local newAbility = illusion:AddAbility(abilityName)
+									newAbility:SetLevel(abilityLevel)
+								end
 							end
 						end
 					end
@@ -111,13 +120,6 @@ function modifier_phantom_lancer_juxtapose_lua:OnAttackLanded( params )
 							illusion:AddItem(newItem)
 						end
 					end
-
-					-- Set the unit as an illusion
-					-- modifier_illusion controls many illusion properties like +Green damage not adding to the unit damage, not being able to cast spells and the team-only blue particle
-					illusion:AddNewModifier(self.original_hero, self.original_ability, "modifier_illusion", { duration = self.illusion_duration, outgoing_damage = self.illusion_outgoing_damage, incoming_damage = self.illusion_incoming_damage })
-					illusion:AddNewModifier(self.original_hero, self.original_ability, "modifier_phantom_lancer_juxtapose_illusion_lua", { duration = self.illusion_duration })
-					-- Without MakeIllusion the unit counts as a hero, e.g. if it dies to neutrals it says killed by neutrals, it respawns, etc.
-					illusion:MakeIllusion()
 
 					self.original_ability:IncrementSpawnedIllusionsCount()
 				end
