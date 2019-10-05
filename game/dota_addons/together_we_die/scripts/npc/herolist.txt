@@ -47,4 +47,5 @@
 	"npc_dota_hero_slardar"			"1"
 	"npc_dota_hero_invoker"			"-1"
 	"npc_dota_hero_dragon_knight"	"1"
+	"npc_dota_hero_antimage"		"1"
 }
