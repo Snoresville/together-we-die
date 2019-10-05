@@ -38,7 +38,7 @@
 
 		// Ability Resource
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"16 14 12 10"
+		"AbilityCooldown"				"20"
 		"AbilityManaCost"				"80 90 100 110"
 
 		// Damage
@@ -67,7 +67,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"str_multiplier"			"0.1 0.15 0.2 0.25"
+				"str_multiplier"			"0.15"
 			}
 		}
 	}
