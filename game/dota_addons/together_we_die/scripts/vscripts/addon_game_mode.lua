@@ -323,33 +323,39 @@ function CHoldoutGameMode:_CheckForAlliance()
 		["npc_dota_hero_drow_ranger"] = true,
 		["npc_dota_hero_legion_commander"] = true,
 		["npc_dota_hero_lina"] = true,
-		["npc_dota_hero_queen_of_pain"] = true,
 		["npc_dota_hero_dark_willow"] = true,
 		["npc_dota_hero_luna"] = true,
-		["npc_dota_hero_templar_assassin"] = true,
+		["npc_dota_hero_medusa"] = true,
+		["npc_dota_hero_queenofpain"] = true,
 	}
 
 	local warriorAllianceHeroes = {
 		["npc_dota_hero_legion_commander"] = true,
 		["npc_dota_hero_mars"] = true,
-		["npc_dota_hero_tiny"] = true,
 		["npc_dota_hero_axe"] = true,
 		["npc_dota_hero_sven"] = true,
 		["npc_dota_hero_juggernaut"] = true,
 		["npc_dota_hero_centaur"] = true,
-		["npc_dota_hero_tidehunter"] = true,
 		["npc_dota_hero_skeleton_king"] = true,
-		["npc_dota_hero_elder_titan"] = true,
 		["npc_dota_hero_phantom_lancer"] = true,
 		["npc_dota_hero_sand_king"] = true,
+		["npc_dota_hero_huskar"] = true,
+		["npc_dota_hero_bristleback"] = true,
 	}
 
 	local natureAllianceHeroes = {
-		["npc_dota_hero_treant"] = true,
 		["npc_dota_hero_windrunner"] = true,
-		["npc_dota_hero_lone_druid"] = true,
 		["npc_dota_hero_furion"] = true,
-		["npc_dota_hero_elder_titan"] = true,
+		["npc_dota_hero_enchantress"] = true,
+		["npc_dota_hero_ursa"] = true,
+		["npc_dota_hero_leshrac"] = true,
+		["npc_dota_hero_dark_willow"] = true,
+	}
+
+	local scaleAllianceHeroes = {
+		["npc_dota_hero_slardar"] = true,
+		["npc_dota_hero_medusa"] = true,
+		["npc_dota_hero_slark"] = true,
 	}
 
 	for nPlayerID = 0, DOTA_MAX_TEAM_PLAYERS-1 do
