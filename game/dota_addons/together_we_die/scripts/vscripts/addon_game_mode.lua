@@ -288,7 +288,7 @@ end
 
 function CHoldoutGameMode:_SetExpAndRespawn( difficultyScore )
 	difficultyScore = difficultyScore or 1
-	local maxHeroLevel = 150
+	local maxHeroLevel = 250
 	local playerCount = PlayerResource:GetPlayerCountForTeam( DOTA_TEAM_GOODGUYS )
 	local expConst = math.floor((20 * difficultyScore) / playerCount)
 	local xpTable = {}
