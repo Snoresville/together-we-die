@@ -387,8 +387,7 @@ function CHoldoutGameMode:_CheckForAlliance()
 	if allianceCount["female"] >= MIN_COMBO_FOR_ALLIANCE then
 		for _,hero in pairs( foundAllianceHeroes["female"] ) do
 			local heroEntity = EntIndexToHScript(hero)
-			heroEntity:AddAbility("alliance_female")
-			local femaleAllianceAbility = heroEntity:FindAbilityByName( "alliance_female" )
+			local femaleAllianceAbility = heroEntity:AddAbility("alliance_female")
 			femaleAllianceAbility:SetLevel( 1 )
 		end
 	end
@@ -396,8 +395,7 @@ function CHoldoutGameMode:_CheckForAlliance()
 	if allianceCount["warrior"] >= MIN_COMBO_FOR_ALLIANCE then
 		for _,hero in pairs( foundAllianceHeroes["warrior"] ) do
 			local heroEntity = EntIndexToHScript(hero)
-			heroEntity:AddAbility("alliance_warrior")
-			local warriorAllianceAbility = heroEntity:FindAbilityByName( "alliance_warrior" )
+			local warriorAllianceAbility = heroEntity:AddAbility("alliance_warrior")
 			warriorAllianceAbility:SetLevel( 1 )
 		end
 	end
@@ -405,8 +403,7 @@ function CHoldoutGameMode:_CheckForAlliance()
 	if allianceCount["nature"] >= MIN_COMBO_FOR_ALLIANCE then
 		for _,hero in pairs( foundAllianceHeroes["nature"] ) do
 			local heroEntity = EntIndexToHScript(hero)
-			heroEntity:AddAbility("alliance_nature")
-			local natureAllianceAbility = heroEntity:FindAbilityByName( "alliance_nature" )
+			local natureAllianceAbility = heroEntity:AddAbility("alliance_nature")
 			natureAllianceAbility:SetLevel( 1 )
 		end
 	end
