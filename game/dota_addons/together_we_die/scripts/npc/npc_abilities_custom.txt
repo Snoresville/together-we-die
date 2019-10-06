@@ -5771,3 +5771,8 @@
 #base "../vscripts/lua_abilities/antimage_blink_lua/antimage_blink_lua.txt"
 #base "../vscripts/lua_abilities/antimage_spell_shield_lua/antimage_spell_shield_lua.txt"
 #base "../vscripts/lua_abilities/antimage_mana_void_lua/antimage_mana_void_lua.txt"
+
+#base "../vscripts/lua_abilities/enchantress_untouchable_lua/enchantress_untouchable_lua.txt"
+#base "../vscripts/lua_abilities/enchantress_enchant_lua/enchantress_enchant_lua.txt"
+#base "../vscripts/lua_abilities/enchantress_natures_attendants_lua/enchantress_natures_attendants_lua.txt"
+#base "../vscripts/lua_abilities/enchantress_impetus_lua/enchantress_impetus_lua.txt"
