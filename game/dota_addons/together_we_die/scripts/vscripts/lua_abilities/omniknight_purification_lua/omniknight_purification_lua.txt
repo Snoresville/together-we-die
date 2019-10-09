@@ -13,7 +13,7 @@
 		"ScriptFile"					"lua_abilities/omniknight_purification_lua/omniknight_purification_lua"
 		"AbilityTextureName"			"omniknight_purification_lua"
 		"FightRecapLevel"				"1"
-		"MaxLevel"						"8"
+		"MaxLevel"						"4"
 		"precache"
 		{
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
