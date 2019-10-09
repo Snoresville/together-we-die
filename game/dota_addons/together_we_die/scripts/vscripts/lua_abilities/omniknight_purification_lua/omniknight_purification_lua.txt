@@ -20,6 +20,7 @@
 			"particle"	"particles/units/heroes/hero_omniknight/omniknight_purification.vpcf"
 			"particle"	"particles/units/heroes/hero_omniknight/omniknight_purification_cast.vpcf"
 			"particle"	"particles/units/heroes/hero_omniknight/omniknight_purification_hit.vpcf"
+			"particle"	"particles/units/heroes/hero_omniknight/omniknight_repel_buff.vpcf"
 		}
 		
 		// Ability General
@@ -40,12 +41,12 @@
 
 		// Ability Resource
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"11.0"
+		"AbilityCooldown"				"10.0"
 		"AbilityManaCost"				"130"
 
 		// Damage
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"100 200 300 400 500 600 700 800"
+		"AbilityDamage"					"100 200 300 400"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -54,8 +55,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"heal"					"100 200 300 400 500 600 700 800"
-				"LinkedSpecialBonus"	"special_bonus_unique_omniknight_1"
+				"heal"					"100 200 300 400"
 			}
 			"02"
 			{
@@ -65,7 +65,17 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"str_multiplier"		"1.5 1.8 2.3 2.8 3.5 4.0 4.5 5.2"
+				"duration"				"3.5 4.0 4.5 5.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"armor_str_multiplier"			"0.1"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"heal_str_multiplier"		"2.5 3.0 3.5 4.0"
 			}
 		}
 	}

@@ -1,4 +1,5 @@
 omniknight_purification_lua = class({})
+LinkLuaModifier( "modifier_omniknight_purification_lua", "lua_abilities/omniknight_purification_lua/modifier_omniknight_purification_lua", LUA_MODIFIER_MOTION_NONE )
 
 --------------------------------------------------------------------------------
 -- AOE Radius
@@ -14,11 +15,24 @@ function omniknight_purification_lua:OnSpellStart()
 	local target = self:GetCursorTarget()
 
 	-- load data
-	local heal = self:GetSpecialValueFor("heal") + (caster:GetStrength() * self:GetSpecialValueFor("str_multiplier"))
-	local radius = self:GetSpecialValueFor("radius")
+	local caster_str = caster:GetStrength()
+	local heal = self:GetSpecialValueFor( "heal" ) + (caster_str * self:GetSpecialValueFor("heal_str_multiplier"))
+	local radius = self:GetSpecialValueFor( "radius" )
+	local bonus_armor = caster_str * self:GetSpecialValueFor( "armor_str_multiplier" )
+	local duration = self:GetSpecialValueFor( "duration" )
 
 	-- heal
 	target:Heal( heal, self )
+	-- apply buff
+	target:AddNewModifier(
+		self:GetCaster(),
+		self, 
+		"modifier_omniknight_purification_lua", 
+		{
+			duration = duration,
+			armor = bonus_armor
+		}
+	)
 
 	-- Find Units in Radius
 	local enemies = FindUnitsInRadius(
@@ -37,7 +51,7 @@ function omniknight_purification_lua:OnSpellStart()
 	local damageTable = {
 		attacker = caster,
 		damage = heal,
-		damage_type = DAMAGE_TYPE_MAGICAL,
+		damage_type = self:GetAbilityDamageType(),
 		ability = self, --Optional.
 	}
 	for _,enemy in pairs(enemies) do
