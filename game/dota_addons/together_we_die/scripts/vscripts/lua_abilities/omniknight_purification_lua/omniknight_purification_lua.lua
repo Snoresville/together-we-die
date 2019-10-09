@@ -15,10 +15,8 @@ function omniknight_purification_lua:OnSpellStart()
 	local target = self:GetCursorTarget()
 
 	-- load data
-	local caster_str = caster:GetStrength()
-	local heal = self:GetSpecialValueFor( "heal" ) + (caster_str * self:GetSpecialValueFor("heal_str_multiplier"))
+	local heal = self:GetSpecialValueFor( "heal" ) + (caster:GetStrength() * self:GetSpecialValueFor("heal_str_multiplier"))
 	local radius = self:GetSpecialValueFor( "radius" )
-	local bonus_armor = caster_str * self:GetSpecialValueFor( "armor_str_multiplier" )
 	local duration = self:GetSpecialValueFor( "duration" )
 
 	-- heal
@@ -29,8 +27,7 @@ function omniknight_purification_lua:OnSpellStart()
 		self, 
 		"modifier_omniknight_purification_lua", 
 		{
-			duration = duration,
-			armor = bonus_armor
+			duration = duration
 		}
 	)
 

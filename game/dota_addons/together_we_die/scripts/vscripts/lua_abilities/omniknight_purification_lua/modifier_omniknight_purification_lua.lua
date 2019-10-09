@@ -19,13 +19,13 @@ end
 -- Initializations
 function modifier_omniknight_purification_lua:OnCreated( kv )
 	-- references
-	self.armor = kv.armor
+	self.armor = self:GetCaster():GetStrength() * self:GetAbility():GetSpecialValueFor( "armor_str_multiplier" )
 	self:SetStackCount(1)
 end
 
 function modifier_omniknight_purification_lua:OnRefresh( kv )
 	-- references
-	self.armor = kv.armor
+	self.armor = self:GetCaster():GetStrength() * self:GetAbility():GetSpecialValueFor( "armor_str_multiplier" )
 	self:IncrementStackCount()
 end
 
