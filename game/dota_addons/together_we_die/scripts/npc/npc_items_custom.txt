@@ -3534,7 +3534,7 @@
 	//=================================================================================================================
 	// Ability: Repel
 	//=================================================================================================================
-	"item_spell_omniknight_repel"
+	"item_spell_omniknight_repel_lua"
 	{
 		"ID"							"1083"
 
@@ -3542,7 +3542,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_spell_omniknight_repel"
+		"AbilityTextureName"			"item_spell_omniknight_repel_lua"
 		"ItemKillable"					"0"
 
 		// Stats
@@ -3567,7 +3567,7 @@
 			{
 				"ScriptFile" "holdout_give_spell.lua"
 				"Function"   "GiveSpell"
-				"spell_name_to_give"	"omniknight_repel"
+				"spell_name_to_give"	"omniknight_repel_lua"
 			}
 			"SpendCharge"
 			{}
@@ -3583,7 +3583,7 @@
 	//=================================================================================================================
 	// Ability: Degen aura
 	//=================================================================================================================
-	"item_spell_omniknight_degen_aura"
+	"item_spell_omniknight_degen_aura_lua"
 	{
 		"ID"							"1084"
 
@@ -3591,7 +3591,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_spell_omniknight_degen_aura"
+		"AbilityTextureName"			"item_spell_omniknight_degen_aura_lua"
 		"ItemKillable"					"0"
 
 		// Stats
@@ -3616,7 +3616,7 @@
 			{
 				"ScriptFile" "holdout_give_spell.lua"
 				"Function"   "GiveSpell"
-				"spell_name_to_give"	"omniknight_degen_aura"
+				"spell_name_to_give"	"omniknight_degen_aura_lua"
 			}
 			"SpendCharge"
 			{}
@@ -3632,7 +3632,7 @@
 	//=================================================================================================================
 	// Ability: Guardian Angel
 	//=================================================================================================================
-	"item_spell_holdout_guardian_angel"
+	"item_spell_omniknight_guardian_angel_lua"
 	{
 		"ID"							"1085"
 
@@ -3640,7 +3640,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_spell_holdout_guardian_angel"
+		"AbilityTextureName"			"item_spell_omniknight_guardian_angel_lua"
 		"ItemKillable"					"0"
 
 		// Stats
@@ -3665,7 +3665,7 @@
 			{
 				"ScriptFile" "holdout_give_spell.lua"
 				"Function"   "GiveSpell"
-				"spell_name_to_give"	"holdout_guardian_angel"
+				"spell_name_to_give"	"omniknight_guardian_angel_lua"
 			}
 			"SpendCharge"
 			{}
