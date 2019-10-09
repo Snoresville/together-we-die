@@ -5665,6 +5665,9 @@
 #base "../vscripts/lua_abilities/leshrac_pulse_nova_lua/leshrac_pulse_nova_lua.txt"
 
 #base "../vscripts/lua_abilities/omniknight_purification_lua/omniknight_purification_lua.txt"
+#base "../vscripts/lua_abilities/omniknight_repel_lua/omniknight_repel_lua.txt"
+#base "../vscripts/lua_abilities/omniknight_degen_aura_lua/omniknight_degen_aura_lua.txt"
+#base "../vscripts/lua_abilities/omniknight_guardian_angel_lua/omniknight_guardian_angel_lua.txt"
 
 #base "../vscripts/lua_abilities/furion_force_of_nature_lua/furion_force_of_nature_lua.txt"
 #base "../vscripts/lua_abilities/furion_wrath_of_nature_lua/furion_wrath_of_nature_lua.txt"

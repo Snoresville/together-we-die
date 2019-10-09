@@ -78,8 +78,9 @@
 	{
 		"override_hero"			"npc_dota_hero_omniknight"
 		"Ability1"				"omniknight_purification_lua"
-		"Ability3"				"holdout_degen_aura"
-		"Ability6"				"holdout_guardian_angel"
+		"Ability2"				"omniknight_repel_lua"
+		"Ability3"				"omniknight_degen_aura_lua"
+		"Ability6"				"omniknight_guardian_angel_lua"
 		"Ability10"		""
 		"Ability11"		""
 		"Ability12"		""
