@@ -21,7 +21,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"14 13 12 11"
+		"AbilityCooldown"				"8"
 
 
 		// Cost
@@ -45,7 +45,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"hook_distance"		"1000 1100 1200 1300"
+				"hook_distance"		"1000 1200 1400 1600"
 			}
 			"04"
 			{
@@ -70,7 +70,7 @@
 			"08"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"str_multiplier"	"2.5 3.5 4.5 5.5"
+				"str_multiplier"	"4.0 6.0 8.0 10.0"
 			}
 		}
 	}
