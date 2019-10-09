@@ -143,8 +143,7 @@
 		"item"		"item_spell_silencer_glaives_of_wisdom_lua"
 		"item"		"item_spell_silencer_last_word_lua"
 		"item"		"item_spell_silencer_global_silence_lua"
-		"item"		"item_spell_holdout_gladiators_unite"
-		"item"		"item_spell_holdout_duel"
+		"item"		"item_spell_legion_commander_duel_lua"
 	}
 
 	"weapons_armor"

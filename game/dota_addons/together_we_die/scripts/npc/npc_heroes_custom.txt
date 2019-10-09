@@ -157,9 +157,7 @@
 	"npc_dota_hero_legion_commander_holdout"
 	{
 		"override_hero"			"npc_dota_hero_legion_commander"
-		
-		"Ability4"					"holdout_gladiators_unite"
-		"Ability6"					"holdout_duel"
+		"Ability6"					"legion_commander_duel_lua"
 		"Ability10"		""
 		"Ability11"		""
 		"Ability12"		""

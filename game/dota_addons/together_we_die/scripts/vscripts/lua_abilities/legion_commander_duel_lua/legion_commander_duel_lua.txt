@@ -1,0 +1,36 @@
+"DOTAAbilities"
+{
+    //=================================================================================================================
+	// Ability: Legion Commander Duel
+	//=================================================================================================================
+	"legion_commander_duel_lua"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"AbilityTextureName"					"legion_commander_duel_lua"
+		"ScriptFile"						"lua_abilities/legion_commander_duel_lua/legion_commander_duel_lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"MaxLevel"						"3"
+		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage_bonus"					"5 10 15"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"str_multiplier"				"0.005"
+			}
+		}
+	}
+}

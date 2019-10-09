@@ -5742,7 +5742,7 @@
 	//=================================================================================================================
 	// Ability: Legion Commander Duel
 	//=================================================================================================================
-	"item_spell_holdout_duel"
+	"item_spell_legion_commander_duel_lua"
 	{
 		"ID"							"1128"
 
@@ -5750,7 +5750,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_spell_holdout_duel"
+		"AbilityTextureName"			"item_spell_legion_commander_duel_lua"
 		"ItemKillable"					"0"
 
 		// Stats
@@ -5775,7 +5775,7 @@
 			{
 				"ScriptFile" "holdout_give_spell.lua"
 				"Function"   "GiveSpell"
-				"spell_name_to_give"	"holdout_duel"
+				"spell_name_to_give"	"legion_commander_duel_lua"
 			}
 			"SpendCharge"
 			{}
