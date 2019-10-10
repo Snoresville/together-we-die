@@ -21,6 +21,7 @@ function modifier_generic_invisible_lua:OnCreated( kv )
 	self.delay = kv.delay or 0
 	self.attack_reveal = kv.attack_reveal or true
 	self.ability_reveal = kv.ability_reveal or true
+	self.true_sight_immuned = kv.true_sight_immuned or false
 
 	self.hidden = false
 
@@ -35,6 +36,7 @@ function modifier_generic_invisible_lua:OnRefresh( kv )
 	self.delay = kv.delay or 0
 	self.attack_reveal = kv.attack_reveal or true
 	self.ability_reveal = kv.ability_reveal or true
+	self.true_sight_immuned = kv.true_sight_immuned or false
 
 	self.hidden = false
 
@@ -86,6 +88,7 @@ end
 function modifier_generic_invisible_lua:CheckState()
 	local state = {
 		[MODIFIER_STATE_INVISIBLE] = self.hidden,
+		[MODIFIER_STATE_TRUESIGHT_IMMUNE] = self.true_sight_immuned,
 	}
 
 	return state
