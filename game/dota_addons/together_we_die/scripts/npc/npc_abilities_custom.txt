@@ -5462,6 +5462,7 @@
 #base "../vscripts/lua_abilities/creature_disable_healing_aura_lua/creature_disable_healing_aura_lua.txt"
 #base "../vscripts/lua_abilities/creature_timbersaw_reactive_armor_lua/creature_timbersaw_reactive_armor_lua.txt"
 #base "../vscripts/lua_abilities/creature_enchantress_untouchable_lua/creature_enchantress_untouchable_lua.txt"
+#base "../vscripts/lua_abilities/creature_bounty_hunter_invisibility_lua/creature_bounty_hunter_invisibility_lua.txt"
 
 #base "../vscripts/lua_abilities/summoning_stone_lua/summoning_stone_lua.txt"
 #base "../vscripts/lua_abilities/pure_strike_lua/pure_strike_lua.txt"
