@@ -60,7 +60,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"hurt_cooldown"			"5.0"
+				"hurt_cooldown"			"2.0"
 			}
 		}
 	}
