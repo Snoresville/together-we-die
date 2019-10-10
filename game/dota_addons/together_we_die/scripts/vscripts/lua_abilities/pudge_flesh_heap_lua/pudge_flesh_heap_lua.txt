@@ -20,12 +20,12 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"flesh_heap_damage_bonus"		"2 4 6 8"
+				"flesh_heap_regen_bonus"		"1 2 4 6"
 			}
 			"02"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"flesh_heap_strength_buff_amount"	"0.2 0.25 0.3 0.35"
+				"flesh_heap_strength_buff_amount"	"0.25 0.3 0.35 0.4"
 			}
 		}
 	}

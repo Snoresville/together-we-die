@@ -16,7 +16,7 @@ end
 --------------------------------------------------------------------------------
 
 function modifier_pudge_flesh_heap_lua:OnCreated( kv )
-	self.flesh_heap_damage_bonus = self:GetAbility():GetSpecialValueFor( "flesh_heap_damage_bonus" )
+	self.flesh_heap_regen_bonus = self:GetAbility():GetSpecialValueFor( "flesh_heap_regen_bonus" )
 	self.flesh_heap_strength_buff_amount = self:GetAbility():GetSpecialValueFor( "flesh_heap_strength_buff_amount" )
 	if IsServer() then
 		self:SetStackCount( self:GetAbility():GetFleshHeapKills() )
@@ -27,7 +27,7 @@ end
 --------------------------------------------------------------------------------
 
 function modifier_pudge_flesh_heap_lua:OnRefresh( kv )
-	self.flesh_heap_damage_bonus = self:GetAbility():GetSpecialValueFor( "flesh_heap_damage_bonus" )
+	self.flesh_heap_regen_bonus = self:GetAbility():GetSpecialValueFor( "flesh_heap_regen_bonus" )
 	self.flesh_heap_strength_buff_amount = self:GetAbility():GetSpecialValueFor( "flesh_heap_strength_buff_amount" )
 	if IsServer() then
 		self:GetParent():CalculateStatBonus()
@@ -39,7 +39,7 @@ end
 function modifier_pudge_flesh_heap_lua:DeclareFunctions()
 	local funcs = {
 		MODIFIER_EVENT_ON_DEATH,
-		MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
+		MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
 		MODIFIER_PROPERTY_STATS_STRENGTH_BONUS
 	}
 
@@ -65,8 +65,8 @@ end
 
 --------------------------------------------------------------------------------
 
-function modifier_pudge_flesh_heap_lua:GetModifierPreAttack_BonusDamage( params )
-	return self:GetStackCount() * self.flesh_heap_damage_bonus
+function modifier_pudge_flesh_heap_lua:GetModifierConstantHealthRegen( params )
+	return self:GetStackCount() * self.flesh_heap_regen_bonus
 end
 
 --------------------------------------------------------------------------------
