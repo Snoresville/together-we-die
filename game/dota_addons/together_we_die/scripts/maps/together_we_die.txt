@@ -1876,8 +1876,8 @@
 			"WaitForTime"			"15"
 			
 			"NPCName"				"npc_dota_creature_enchantress_treant"
-			"TotalUnitsToSpawn"		"6"
-			"UnitsPerSpawn"			"6"
+			"TotalUnitsToSpawn"		"8"
+			"UnitsPerSpawn"			"8"
 			"SpawnInterval"			"8"
 			
 			"SpawnerName"			"spawner1"
@@ -1899,8 +1899,8 @@
 			"WaitForTime"			"15"
 			
 			"NPCName"				"npc_dota_creature_enchantress_treant"
-			"TotalUnitsToSpawn"		"6"
-			"UnitsPerSpawn"			"6"
+			"TotalUnitsToSpawn"		"8"
+			"UnitsPerSpawn"			"8"
 			"SpawnInterval"			"8"
 			
 			"SpawnerName"			"spawner2"
@@ -1922,8 +1922,8 @@
 			"WaitForTime"			"15"
 			
 			"NPCName"				"npc_dota_creature_enchantress_treant"
-			"TotalUnitsToSpawn"		"6"
-			"UnitsPerSpawn"			"6"
+			"TotalUnitsToSpawn"		"8"
+			"UnitsPerSpawn"			"8"
 			"SpawnInterval"			"8"
 			
 			"SpawnerName"			"spawner3"
@@ -1945,8 +1945,8 @@
 			"WaitForTime"			"15"
 			
 			"NPCName"				"npc_dota_creature_enchantress_treant"
-			"TotalUnitsToSpawn"		"6"
-			"UnitsPerSpawn"			"6"
+			"TotalUnitsToSpawn"		"8"
+			"UnitsPerSpawn"			"8"
 			"SpawnInterval"			"8"
 			
 			"SpawnerName"			"spawner4"
@@ -1968,8 +1968,8 @@
 			"WaitForTime"			"15"
 			
 			"NPCName"				"npc_dota_creature_enchantress_treant"
-			"TotalUnitsToSpawn"		"6"
-			"UnitsPerSpawn"			"6"
+			"TotalUnitsToSpawn"		"8"
+			"UnitsPerSpawn"			"8"
 			"SpawnInterval"			"8"
 			
 			"SpawnerName"			"spawner3_alternate"
