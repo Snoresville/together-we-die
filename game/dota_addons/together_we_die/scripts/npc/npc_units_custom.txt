@@ -1659,6 +1659,10 @@
 		"Level"						"1"
 		"CanBeDominated"			"0"
 
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"creature_explosive_death_lua"			// Ability 1.
+
 		// Armor
 		//-------------------------------------------------------------------------------------------------------------
 		"ArmorPhysical"				"55"								// Physical protection.

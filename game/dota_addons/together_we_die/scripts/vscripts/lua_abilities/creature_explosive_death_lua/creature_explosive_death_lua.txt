@@ -1,0 +1,47 @@
+"DOTAAbilities"
+{
+    //=================================================================================================================
+	// Ability: Explosive Death
+	//=================================================================================================================
+	"creature_explosive_death_lua"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"AbilityTextureName"					"creature_explosive_death_lua"
+		"ScriptFile"						"lua_abilities/creature_explosive_death_lua/creature_explosive_death_lua"
+		"MaxLevel"						"2"
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_techies.vsndevts"
+			"particle"	"particles/units/heroes/hero_techies/techies_suicide.vpcf"
+		}
+
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+
+		// Ability Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"350"
+		"AbilityDamage"					"650 5000"
+
+		// Ability Resource
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"radius"							"350"
+			}
+		}
+	}
+}
