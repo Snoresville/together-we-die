@@ -7,3 +7,5 @@ LinkLuaModifier( "modifier_item_radiance_effect_lua", "lua_abilities/item_radian
 function item_radiance_lua:GetIntrinsicModifierName()
 	return "modifier_item_radiance_lua"
 end
+
+item_radiance2_lua = class(item_radiance_lua)

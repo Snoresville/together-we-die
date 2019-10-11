@@ -10499,6 +10499,7 @@
 #base "../vscripts/lua_abilities/item_heart_of_tarrasque_lua/item_heart_of_regeneration_lua.txt"
 
 #base "../vscripts/lua_abilities/item_radiance_lua/item_radiance_lua.txt"
+#base "../vscripts/lua_abilities/item_radiance_lua/item_radiance2_lua.txt"
 
 #base "../vscripts/lua_abilities/item_octarine_core_lua/item_octarine_core_lua.txt"
 #base "../vscripts/lua_abilities/item_octarine_core_lua/item_octarine_core2_lua.txt"
