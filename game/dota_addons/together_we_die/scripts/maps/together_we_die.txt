@@ -1578,7 +1578,7 @@
 	"Round20" // Bounty Hunter
 	{
 		"round_title"				"#DOTA_Holdout_Round_Hunter_Title"
-		"MaxGold"					"41550"
+		"MaxGold"					"51550"
 		"BagCount"					"2"
 		"BagVariance"				"30"
 		"FixedXP"					"80000"
@@ -1586,10 +1586,22 @@
 		"UnitMelee_1"
 		{
 			"NPCName"				"npc_dota_creature_bounty_hunter"
+			"TotalUnitsToSpawn"		"2"
+			"UnitsPerSpawn"			"2"
+		}
+		"UnitMelee_2"
+		{
+			"NPCName"				"npc_dota_creature_bounty_hunter"
 			"TotalUnitsToSpawn"		"1"
 			"UnitsPerSpawn"			"1"
 		}
-		"UnitMelee_2"
+		"UnitMelee_3"
+		{
+			"NPCName"				"npc_dota_creature_bounty_hunter"
+			"TotalUnitsToSpawn"		"1"
+			"UnitsPerSpawn"			"1"
+		}
+		"UnitMelee_4"
 		{
 			"NPCName"				"npc_dota_creature_bounty_hunter"
 			"TotalUnitsToSpawn"		"1"
