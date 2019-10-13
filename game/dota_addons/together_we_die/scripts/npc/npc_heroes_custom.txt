@@ -337,7 +337,9 @@
 		
 		"Ability1"					"dark_willow_bramble_maze_lua"
 		"Ability2"					"dark_willow_shadow_realm_lua"
+		"Ability3"					"dark_willow_cursed_crown_lua"
 		"Ability4"					"dark_willow_bedlam_lua"
+		"Ability6"					"dark_willow_terrorize_lua"
 		"Ability10"		""
 		"Ability11"		""
 		"Ability12"		""

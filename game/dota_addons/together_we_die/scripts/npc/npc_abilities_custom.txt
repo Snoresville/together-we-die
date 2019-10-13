@@ -5522,7 +5522,9 @@
 
 #base "../vscripts/lua_abilities/dark_willow_bramble_maze_lua/dark_willow_bramble_maze_lua.txt"
 #base "../vscripts/lua_abilities/dark_willow_shadow_realm_lua/dark_willow_shadow_realm_lua.txt"
+#base "../vscripts/lua_abilities/dark_willow_cursed_crown_lua/dark_willow_cursed_crown_lua.txt"
 #base "../vscripts/lua_abilities/dark_willow_bedlam_lua/dark_willow_bedlam_lua.txt"
+#base "../vscripts/lua_abilities/dark_willow_terrorize_lua/dark_willow_terrorize_lua.txt"
 
 #base "../vscripts/lua_abilities/tinker_laser_lua/tinker_laser_lua.txt"
 #base "../vscripts/lua_abilities/tinker_heat_seeking_missile_lua/tinker_heat_seeking_missile_lua.txt"
