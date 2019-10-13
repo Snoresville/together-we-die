@@ -66,6 +66,17 @@ end
 
 --------------------------------------------------------------------------------
 
+function modifier_tower_spawn_protection:GetAuraEntityReject( hEntity )
+	-- prevent units spawned that cannot move from being invulnerable
+	if self:GetCaster() ~= hEntity and not hEntity:HasMovementCapability() then
+		return true
+	end
+
+	return false
+end
+
+--------------------------------------------------------------------------------
+
 function modifier_tower_spawn_protection:GetAuraRadius()
 	return self.radius
 end
