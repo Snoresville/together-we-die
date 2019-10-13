@@ -93,22 +93,18 @@ function modifier_dark_willow_bramble_maze_lua_bramble:OnIntervalThink()
 
 	local target = nil
 	for _,enemy in pairs(enemies) do
-		-- find the first occurence
-		target = enemy
+		-- root all enemies
+		enemy:AddNewModifier(
+			self:GetCaster(), -- player source
+			self:GetAbility(), -- ability source
+			"modifier_dark_willow_bramble_maze_lua_debuff", -- modifier name
+			{
+				duration = self.root,
+				damage = self.damage,
+			} -- kv
+		)
 		break
 	end
-	if not target then return end
-
-	-- root target
-	target:AddNewModifier(
-		self:GetCaster(), -- player source
-		self:GetAbility(), -- ability source
-		"modifier_dark_willow_bramble_maze_lua_debuff", -- modifier name
-		{
-			duration = self.root,
-			damage = self.damage,
-		} -- kv
-	)
 
 	self:Destroy()
 end
