@@ -107,7 +107,7 @@
 			"13"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"int_multiplier"		"4.5 5.0 5.5 6.0 6.5 7.0"
+				"int_multiplier"		"3.5 4.0 4.5 5.0 5.5 6.0"
 			}
 		}
 	}
