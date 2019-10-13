@@ -43,12 +43,12 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"crit_chance"				"8 15 25"
+				"crit_chance"				"10 20 30"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"agi_multiplier"				"2.3"
+				"agi_multiplier"				"1.0"
 			}
 		}
 	}
