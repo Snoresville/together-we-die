@@ -26,6 +26,7 @@ function modifier_bristleback_bristleback_lua:OnCreated( kv )
 	self.ability_proc = "bristleback_quill_spray_lua"
 
 	self.threshold = 0
+	if not IsServer() then return end
 	-- start interval
 	self:OnIntervalThink()
 	local interval = 1
@@ -39,6 +40,7 @@ function modifier_bristleback_bristleback_lua:OnRefresh( kv )
 	self.angle_back = self:GetAbility():GetSpecialValueFor( "back_angle" )
 	self.angle_side = self:GetAbility():GetSpecialValueFor( "side_angle" )
 	self.max_threshold = self:GetAbility():GetSpecialValueFor( "quill_release_threshold" )
+	if not IsServer() then return end
 	self:OnIntervalThink()
 end
 
@@ -74,14 +76,15 @@ function modifier_bristleback_bristleback_lua:GetModifierIncomingDamage_Percenta
 		angle_diff = math.abs(angle_diff)
 
 		-- calculate damage reduction
-		if angle_diff > (180-self.angle_back) then
+		if parent == attacker or angle_diff > (180-self.angle_side) then
+			-- side damage
+			reduction = self.reduction_side
+			self:PlayEffects( false, attacker_vector )
+		elseif angle_diff > (180-self.angle_back) then
+			-- back damage
 			reduction = self.reduction_back
 			self:ThresholdLogic( params.damage )
 			self:PlayEffects( true, attacker_vector )
-
-		elseif angle_diff > (180-self.angle_side) then
-			reduction = self.reduction_side
-			self:PlayEffects( false, attacker_vector )
 		end
 
 		return -reduction
