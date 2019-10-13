@@ -110,6 +110,7 @@ function modifier_pudge_rot_lua:OnIntervalThink()
 			if self:GetParent() == self:GetCaster() then
 				damage.damage_type = DAMAGE_TYPE_PURE
 				damage.damage =  flDamagePerTick  * self.self_damage_multiplier
+				damage.damage_flags = DOTA_DAMAGE_FLAG_HPLOSS + DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS
 			end
 
 			ApplyDamage( damage )
