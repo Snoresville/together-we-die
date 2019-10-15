@@ -68,6 +68,10 @@ function modifier_bristleback_bristleback_lua:GetModifierIncomingDamage_Percenta
 			return 0
 		end
 
+		if parent == attacker then
+			return self.reduction_side
+		end
+
 		-- Check target position
 		local facing_direction = parent:GetAnglesAsVector().y
 		local attacker_vector = (attacker:GetOrigin() - parent:GetOrigin()):Normalized()
@@ -76,15 +80,14 @@ function modifier_bristleback_bristleback_lua:GetModifierIncomingDamage_Percenta
 		angle_diff = math.abs(angle_diff)
 
 		-- calculate damage reduction
-		if parent == attacker or angle_diff > (180-self.angle_side) then
-			-- side damage
-			reduction = self.reduction_side
-			self:PlayEffects( false, attacker_vector )
-		elseif angle_diff > (180-self.angle_back) then
+		if angle_diff > (180-self.angle_back) then
 			-- back damage
 			reduction = self.reduction_back
 			self:ThresholdLogic( params.damage )
 			self:PlayEffects( true, attacker_vector )
+		elseif angle_diff > (180-self.angle_side) then
+			reduction = self.reduction_side
+			self:PlayEffects( false, attacker_vector )
 		end
 
 		return -reduction
