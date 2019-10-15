@@ -5536,6 +5536,8 @@
 #base "../vscripts/lua_abilities/queen_of_pain_sonic_wave_lua/queen_of_pain_sonic_wave_lua.txt"
 
 #base "../vscripts/lua_abilities/lion_earth_spike_lua/lion_earth_spike_lua.txt"
+#base "../vscripts/lua_abilities/lion_hex_lua/lion_hex_lua.txt"
+#base "../vscripts/lua_abilities/lion_mana_drain_lua/lion_mana_drain_lua.txt"
 #base "../vscripts/lua_abilities/lion_finger_of_death_lua/lion_finger_of_death_lua.txt"
 
 #base "../vscripts/lua_abilities/leshrac_split_earth_lua/leshrac_split_earth_lua.txt"
