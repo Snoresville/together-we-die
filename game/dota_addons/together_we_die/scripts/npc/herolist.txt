@@ -49,4 +49,5 @@
 	"npc_dota_hero_dragon_knight"	"1"
 	"npc_dota_hero_antimage"		"1"
 	"npc_dota_hero_enchantress"		"1"
+	"npc_dota_hero_vengefulspirit"	"1"
 }

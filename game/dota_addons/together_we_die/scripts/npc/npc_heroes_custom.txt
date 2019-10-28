@@ -862,4 +862,25 @@
 
 		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
 	}
+
+	"npc_dota_hero_vengefulspirit_holdout"
+	{
+		"override_hero"				"npc_dota_hero_vengefulspirit"
+		"Ability1"					"vengefulspirit_magic_missile_lua"
+		"Ability2"					"vengefulspirit_wave_of_terror_lua"
+		"Ability3"					"vengefulspirit_command_aura_lua"
+		"Ability4"		""
+		"Ability5"		""
+		"Ability6"					"vengefulspirit_nether_swap_lua"
+		"Ability10"		""
+		"Ability11"		""
+		"Ability12"		""
+		"Ability13"		""
+		"Ability14"		""
+		"Ability15"		""
+		"Ability16"		""
+		"Ability17"		""
+
+		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
+	}
 }
