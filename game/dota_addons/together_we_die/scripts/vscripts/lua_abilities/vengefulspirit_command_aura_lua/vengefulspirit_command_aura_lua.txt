@@ -13,7 +13,7 @@
 		"ScriptFile"					"lua_abilities/vengefulspirit_command_aura_lua/vengefulspirit_command_aura_lua"
 		"AbilityTextureName"			"vengefulspirit_command_aura_lua"
 		"FightRecapLevel"				"2"
-		"MaxLevel"						"11"
+		"MaxLevel"						"4"
 		
 		// Ability General
 		//-------------------------------------------------------------------------------------------------------------
