@@ -21,13 +21,13 @@ end
 --------------------------------------------------------------------------------
 
 function modifier_vengefulspirit_wave_of_terror_lua:OnCreated( kv )
-	self.armor_reduction = self:GetAbility():GetSpecialValueFor( "armor_reduction" ) + self:GetAbility():GetSpecialValueFor( "armor_agi_multiplier" ) * self:GetCaster():GetAgility()
+	self.armor_reduction = self:GetAbility():GetSpecialValueFor( "armor_reduction" ) + math.floor(self:GetAbility():GetSpecialValueFor( "armor_agi_multiplier" ) * self:GetCaster():GetAgility())
 end
 
 --------------------------------------------------------------------------------
 
 function modifier_vengefulspirit_wave_of_terror_lua:OnRefresh( kv )
-	self.armor_reduction = self:GetAbility():GetSpecialValueFor( "armor_reduction" ) + self:GetAbility():GetSpecialValueFor( "armor_agi_multiplier" ) * self:GetCaster():GetAgility()
+	self.armor_reduction = self:GetAbility():GetSpecialValueFor( "armor_reduction" ) + math.floor(self:GetAbility():GetSpecialValueFor( "armor_agi_multiplier" ) * self:GetCaster():GetAgility())
 end
 
 --------------------------------------------------------------------------------
