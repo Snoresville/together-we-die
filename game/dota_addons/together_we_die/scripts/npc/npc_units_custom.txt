@@ -4144,10 +4144,9 @@
 		"Ability2"					"roshan_overpower"			// Ability 2.
 		"Ability3"					"roshan_fury_swipes"			// Ability 3.
 		"Ability4"					"creature_greater_armor_reduction_aura"			// Ability 4.
-		"Ability5"					"roshan_spectre_dispersion"			// Ability 5.
-		"Ability6"					"roshan_sun_strike_lua"			// Ability 6 - Extra.
-		"Ability7"					"creature_split_queen_roshan"			// Ability 7 - Extra.
-		"Ability8"					"creature_disable_healing_aura_lua"			// Ability 8 - Extra.
+		"Ability5"					"roshan_sun_strike_lua"			// Ability 5.
+		"Ability6"					"creature_split_queen_roshan"			// Ability 6 - Extra.
+		"Ability7"					"creature_disable_healing_aura_lua"			// Ability 7 - Extra.
 
 		// Armor
 		//----------------------------------------------------------------
@@ -4259,9 +4258,9 @@
 		"Ability2"					"creature_finest_warrior"			// Ability 2.
 		"Ability3"					"tidehunter_kraken_shell"			// Ability 3.
 		"Ability4"					"creature_greater_armor_reduction_aura"			// Ability 4.
-		"Ability5"					"roshan_spectre_dispersion"			// Ability 5.
-		"Ability6"					"roshan_sun_strike_lua"			// Ability 6 - Extra.
-		"Ability7"					"creature_split_queen_roshan_two"			// Ability 7 - Extra.
+		"Ability5"					"roshan_sun_strike_lua"			// Ability 5.
+		"Ability6"					"creature_split_queen_roshan_two"			// Ability 6 - Extra.
+		"Ability7"					""			// Ability 7 - Extra.
 		"Ability8"					""			// Ability 8 - Extra.
 
 		// Armor
