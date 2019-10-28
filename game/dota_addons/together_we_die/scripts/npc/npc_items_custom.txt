@@ -2203,7 +2203,7 @@
 	//=================================================================================================================
 	// Ability: Vengeful spirit command aura
 	//=================================================================================================================
-	"item_spell_vengefulspirit_command_aura"
+	"item_spell_vengefulspirit_command_aura_lua"
 	{
 		"ID"							"1053"
 
@@ -2211,7 +2211,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_spell_vengefulspirit_command_aura"
+		"AbilityTextureName"			"item_spell_vengefulspirit_command_aura_lua"
 		"ItemKillable"					"0"
 
 		// Stats
@@ -2236,7 +2236,7 @@
 			{
 				"ScriptFile" "holdout_give_spell.lua"
 				"Function"   "GiveSpell"
-				"spell_name_to_give"	"vengefulspirit_command_aura"
+				"spell_name_to_give"	"vengefulspirit_command_aura_lua"
 			}
 			"SpendCharge"
 			{}
@@ -10479,6 +10479,153 @@
 				"ScriptFile" "holdout_give_spell.lua"
 				"Function"   "GiveSpell"
 				"spell_name_to_give"	"enchantress_impetus_lua"
+			}
+			"SpendCharge"
+			{}
+		}
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Vengeful Spirit
+	//=================================================================================================================
+	"item_vengefulspirit_magic_missile_lua"
+	{
+		"ID"							"1240"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"spell_vengefulspirit_magic_missile_lua"
+		"ItemKillable"					"0"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5000"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"SideShop"						"1"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile" "holdout_give_spell.lua"
+				"Function"   "GiveSpell"
+				"spell_name_to_give"	"vengefulspirit_magic_missile_lua"
+			}
+			"SpendCharge"
+			{}
+		}
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Vengeful Spirit
+	//=================================================================================================================
+	"item_vengefulspirit_wave_of_terror_lua"
+	{
+		"ID"							"1241"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"spell_vengefulspirit_wave_of_terror_lua"
+		"ItemKillable"					"0"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5000"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"SideShop"						"1"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile" "holdout_give_spell.lua"
+				"Function"   "GiveSpell"
+				"spell_name_to_give"	"vengefulspirit_wave_of_terror_lua"
+			}
+			"SpendCharge"
+			{}
+		}
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Vengeful Spirit
+	//=================================================================================================================
+	"item_vengefulspirit_nether_swap_lua"
+	{
+		"ID"							"1242"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"spell_vengefulspirit_nether_swap_lua"
+		"ItemKillable"					"0"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"10000"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"SideShop"						"1"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile" "holdout_give_spell.lua"
+				"Function"   "GiveSpell"
+				"spell_name_to_give"	"vengefulspirit_nether_swap_lua"
 			}
 			"SpendCharge"
 			{}

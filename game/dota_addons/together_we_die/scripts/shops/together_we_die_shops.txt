@@ -79,7 +79,7 @@
 		"item"		"item_spell_ursa_enrage"
 		"item"		"item_spell_ursa_fury_swipes"
 		"item"		"item_spell_ursa_overpower"
-		"item"		"item_spell_vengefulspirit_command_aura"
+		"item"		"item_spell_vengefulspirit_command_aura_lua"
 		"item"		"item_spell_medusa_mystic_snake_lua"
 		"item"		"item_spell_medusa_split_shot"
 		"item"		"item_spell_medusa_split_shot_uses_modifiers_lua"
