@@ -1,0 +1,49 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Vengeful Spirit Command Aura
+	//=================================================================================================================
+	"vengefulspirit_command_aura_lua"
+	{
+		// Ability Technical Aspect
+		// base script folder	: scripts/vscripts
+		// base texture folder	: resource/flash3/images/spellicons
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"lua_abilities/vengefulspirit_command_aura_lua/vengefulspirit_command_aura_lua"
+		"AbilityTextureName"			"vengefulspirit_command_aura_lua"
+		"FightRecapLevel"				"2"
+		"MaxLevel"						"11"
+		
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"900"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage_pct"	"12 20 28 36"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"aura_radius"		"900"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"agi_multiplier"	"0.02 0.04 0.06 0.08"
+			}
+		}
+	}
+}
