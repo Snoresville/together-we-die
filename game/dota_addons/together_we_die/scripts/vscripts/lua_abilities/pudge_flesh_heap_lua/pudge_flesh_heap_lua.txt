@@ -19,8 +19,8 @@
 		{
 			"01"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"flesh_heap_regen_bonus"		"1 2 4 6"
+				"var_type"						"FIELD_FLOAT"
+				"flesh_heap_regen_bonus"		"0.5 1.0 1.5 2.0"
 			}
 			"02"
 			{
