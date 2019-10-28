@@ -66,7 +66,7 @@ if IsServer() then
 				-- apply buff
 				target:AddNewModifier(
 					self:GetCaster(),
-					self, 
+					self:GetAbility(), 
 					self.cooldown_modifier_name, 
 					{
 						duration = self.repel_cooldown

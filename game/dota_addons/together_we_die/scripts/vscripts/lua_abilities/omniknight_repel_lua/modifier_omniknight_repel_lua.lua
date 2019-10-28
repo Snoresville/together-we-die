@@ -3,9 +3,7 @@ modifier_omniknight_repel_lua = class({})
 --------------------------------------------------------------------------------
 -- Classifications
 function modifier_omniknight_repel_lua:IsHidden()
-	-- cancel if break
-	if self:GetCaster():PassivesDisabled() then return true end
-	return false
+	return true
 end
 
 function modifier_omniknight_repel_lua:IsDebuff()
