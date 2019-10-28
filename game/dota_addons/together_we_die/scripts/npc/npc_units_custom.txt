@@ -4256,10 +4256,10 @@
 		//----------------------------------------------------------------
 		"Ability1"					"creature_roshan_queen_slam"	// Ability 1.
 		"Ability2"					"creature_finest_warrior"			// Ability 2.
-		"Ability3"					"tidehunter_kraken_shell"			// Ability 3.
-		"Ability4"					"creature_greater_armor_reduction_aura"			// Ability 4.
-		"Ability5"					"roshan_sun_strike_lua"			// Ability 5.
-		"Ability6"					"creature_split_queen_roshan_two"			// Ability 6 - Extra.
+		"Ability3"					"creature_greater_armor_reduction_aura"			// Ability 3.
+		"Ability4"					"roshan_sun_strike_lua"			// Ability 4.
+		"Ability5"					"creature_split_queen_roshan_two"			// Ability 5.
+		"Ability6"					""			// Ability 6 - Extra.
 		"Ability7"					""			// Ability 7 - Extra.
 		"Ability8"					""			// Ability 8 - Extra.
 
