@@ -16,7 +16,7 @@
 		"MaxLevel"						"4"
 		"precache"
 		{
-//			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_<hero>.vsndevts"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
 			"particle"	"particles/items2_fx/urn_of_shadows_heal_d.vpcf"
 		}
 		
@@ -27,7 +27,6 @@
 
 		// Ability Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"4.5"
 		"AbilityCastRange"				"900"
 
 		// Ability Resource
@@ -48,9 +47,14 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"repel_chance"				"7"
+				"repel_chance"				"7 8 9 10"
 			}
 			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"repel_cooldown"			"4.5 4.0 3.5 2.0"
+			}
+			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
 				"heal_str_multiplier"		"1.5 2.0 2.5 3.0"
