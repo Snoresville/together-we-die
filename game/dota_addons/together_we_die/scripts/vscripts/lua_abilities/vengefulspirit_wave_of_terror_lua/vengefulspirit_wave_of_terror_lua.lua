@@ -1,5 +1,5 @@
 vengefulspirit_wave_of_terror_lua = class({})
-LinkLuaModifier( "modifier_vengefulspirit_wave_of_terror_lua", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_vengefulspirit_wave_of_terror_lua", "lua_abilities/vengefulspirit_wave_of_terror_lua/modifier_vengefulspirit_wave_of_terror_lua", LUA_MODIFIER_MOTION_NONE )
 
 --------------------------------------------------------------------------------
 
