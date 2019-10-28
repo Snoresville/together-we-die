@@ -1,0 +1,54 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Ability: Vengefulspirit Nether Swap Lua
+	//=================================================================================================================
+	"vengefulspirit_nether_swap_lua"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CUSTOM"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"FightRecapLevel"				"2"
+		"BaseClass"					"ability_lua"
+		"AbilityTextureName"				"vengefulspirit_nether_swap_lua"
+		"ScriptFile"					"lua_abilities/vengefulspirit_nether_swap_lua/vengefulspirit_nether_swap_lua"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"700 950 1200"
+		"AbilityCastPoint"				"0.3 0.3 0.3"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"45.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100 150 200"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"tooltip_range"					"700 950 1200"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"nether_swap_cooldown_scepter"	"10"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"radius"						"325"
+			}
+		}
+	}
+}

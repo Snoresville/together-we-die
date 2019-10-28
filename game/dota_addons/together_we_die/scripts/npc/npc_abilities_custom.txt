@@ -5665,3 +5665,4 @@
 
 #base "../vscripts/lua_abilities/vengefulspirit_magic_missile_lua/vengefulspirit_magic_missile_lua.txt"
 #base "../vscripts/lua_abilities/vengefulspirit_command_aura_lua/vengefulspirit_command_aura_lua.txt"
+#base "../vscripts/lua_abilities/vengefulspirit_nether_swap_lua/vengefulspirit_nether_swap_lua.txt"
