@@ -5667,3 +5667,8 @@
 #base "../vscripts/lua_abilities/vengefulspirit_wave_of_terror_lua/vengefulspirit_wave_of_terror_lua.txt"
 #base "../vscripts/lua_abilities/vengefulspirit_command_aura_lua/vengefulspirit_command_aura_lua.txt"
 #base "../vscripts/lua_abilities/vengefulspirit_nether_swap_lua/vengefulspirit_nether_swap_lua.txt"
+
+#base "../vscripts/lua_abilities/bane_enfeeble_lua/bane_enfeeble_lua.txt"
+#base "../vscripts/lua_abilities/bane_brain_sap_lua/bane_brain_sap_lua.txt"
+#base "../vscripts/lua_abilities/bane_nightmare_lua/bane_nightmare_lua.txt"
+#base "../vscripts/lua_abilities/bane_fiends_grip_lua/bane_fiends_grip_lua.txt"
