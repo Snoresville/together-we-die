@@ -5661,6 +5661,7 @@
 #base "../vscripts/lua_abilities/enchantress_natures_attendants_lua/enchantress_natures_attendants_lua.txt"
 #base "../vscripts/lua_abilities/enchantress_impetus_lua/enchantress_impetus_lua.txt"
 
+#base "../vscripts/lua_abilities/legion_commander_press_the_attack_lua/legion_commander_press_the_attack_lua.txt"
 #base "../vscripts/lua_abilities/legion_commander_duel_lua/legion_commander_duel_lua.txt"
 
 #base "../vscripts/lua_abilities/vengefulspirit_magic_missile_lua/vengefulspirit_magic_missile_lua.txt"
