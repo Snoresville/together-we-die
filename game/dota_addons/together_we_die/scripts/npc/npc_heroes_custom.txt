@@ -170,6 +170,7 @@
 	"npc_dota_hero_legion_commander_holdout"
 	{
 		"override_hero"			"npc_dota_hero_legion_commander"
+		"Ability1"		"legion_commander_overwhelming_odds_lua"
 		"Ability2"		"legion_commander_press_the_attack_lua"
 		"Ability4"		""
 		"Ability5"		""
