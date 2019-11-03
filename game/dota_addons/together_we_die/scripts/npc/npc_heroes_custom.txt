@@ -982,4 +982,25 @@
 
 		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
 	}
+
+	"npc_dota_hero_chaos_knight_holdout"
+	{
+		"override_hero"				"npc_dota_hero_chaos_knight"
+		"Ability1"					"chaos_knight_chaos_bolt_lua"
+		"Ability2"					"chaos_knight_reality_rift_lua"
+		"Ability3"					"chaos_knight_chaos_strike_lua"
+		"Ability4"		""
+		"Ability5"		""
+		"Ability6"					"chaos_knight_phantasm_lua"
+		"Ability10"		""
+		"Ability11"		""
+		"Ability12"		""
+		"Ability13"		""
+		"Ability14"		""
+		"Ability15"		""
+		"Ability16"		""
+		"Ability17"		""
+
+		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
+	}
 }

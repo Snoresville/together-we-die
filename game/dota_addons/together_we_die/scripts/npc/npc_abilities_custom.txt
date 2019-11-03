@@ -5674,3 +5674,8 @@
 #base "../vscripts/lua_abilities/bane_brain_sap_lua/bane_brain_sap_lua.txt"
 #base "../vscripts/lua_abilities/bane_nightmare_lua/bane_nightmare_lua.txt"
 #base "../vscripts/lua_abilities/bane_fiends_grip_lua/bane_fiends_grip_lua.txt"
+
+#base "../vscripts/lua_abilities/chaos_knight_chaos_bolt_lua/chaos_knight_chaos_bolt_lua.txt"
+#base "../vscripts/lua_abilities/chaos_knight_reality_rift_lua/chaos_knight_reality_rift_lua.txt"
+#base "../vscripts/lua_abilities/chaos_knight_chaos_strike_lua/chaos_knight_chaos_strike_lua.txt"
+#base "../vscripts/lua_abilities/chaos_knight_phantasm_lua/chaos_knight_phantasm_lua.txt"
