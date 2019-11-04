@@ -48,10 +48,10 @@ function modifier_boss_morphling_block_agi_lua:GetModifierIncomingDamage_Percent
 		local reduction = -100
 
 		-- allow only buildings or agi hero to deal damage
-		if attacker:IsBuilding() or attacker:IsHero() and attacker:GetPrimaryAttribute() == 1 then
+		if attacker:IsBuilding() or attacker:IsRealHero() and attacker:GetPrimaryAttribute() == 1 then
 			reduction = 0
 		else
-			if attacker:IsHero() and attacker:IsAlive() then
+			if attacker:IsRealHero() and attacker:IsAlive() then
 				-- Heal morphling if is hero
 				local healHealth = parent:GetMaxHealth() * 0.05
 				parent:Heal( healHealth, parent )
