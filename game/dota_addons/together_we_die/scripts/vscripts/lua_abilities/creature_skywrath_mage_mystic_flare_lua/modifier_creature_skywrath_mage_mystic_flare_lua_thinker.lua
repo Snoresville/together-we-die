@@ -68,8 +68,10 @@ function modifier_creature_skywrath_mage_mystic_flare_lua_thinker:OnIntervalThin
 	if #heroes<1 then return end
 	for _,hero in pairs(heroes) do
 		self.damageTable.victim = hero
-		self.damageTable.damage = (self.damage + (hero:GetStrength() * 8))/#heroes
-		ApplyDamage( self.damageTable )
+		if hero:IsRealHero() then
+			self.damageTable.damage = (self.damage + (hero:GetStrength() * 8))/#heroes
+			ApplyDamage( self.damageTable )
+		end
 	end
 end
 
