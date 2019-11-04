@@ -33,7 +33,8 @@ end
 -- Initializations
 function modifier_medusa_mana_shield_lua:OnCreated( kv )
 	-- references
-	self.damage_per_mana = self:GetAbility():GetSpecialValueFor( "damage_per_mana" ) + math.floor(self:GetParent():GetAgility() * self:GetAbility():GetSpecialValueFor( "agi_multiplier" ))
+	self.agi_multiplier = self:GetAbility():GetSpecialValueFor( "agi_multiplier" )
+	self.damage_per_mana = self:GetAbility():GetSpecialValueFor( "damage_per_mana" )
 	self.absorb_pct = self:GetAbility():GetSpecialValueFor( "absorption_tooltip" )/100
 
 	if not IsServer() then return end
@@ -44,7 +45,8 @@ end
 
 function modifier_medusa_mana_shield_lua:OnRefresh( kv )
 	-- references
-	self.damage_per_mana = self:GetAbility():GetSpecialValueFor( "damage_per_mana" ) + math.floor(self:GetParent():GetAgility() * self:GetAbility():GetSpecialValueFor( "agi_multiplier" ))
+	self.agi_multiplier = self:GetAbility():GetSpecialValueFor( "agi_multiplier" )
+	self.damage_per_mana = self:GetAbility():GetSpecialValueFor( "damage_per_mana" )
 	self.absorb_pct = self:GetAbility():GetSpecialValueFor( "absorption_tooltip" )	
 end
 
@@ -73,7 +75,7 @@ function modifier_medusa_mana_shield_lua:GetModifierIncomingDamage_Percentage( p
 
 	-- calculate mana spent
 	local damage_absorbed = params.damage * self.absorb_pct
-	local manacost = damage_absorbed/self.damage_per_mana
+	local manacost = damage_absorbed/(self.damage_per_mana + math.floor(self:GetParent():GetAgility() * self.agi_multiplier))
 	local mana = self:GetParent():GetMana()
 
 	-- if not enough mana, calculate damage blocked by remaining mana
@@ -82,6 +84,11 @@ function modifier_medusa_mana_shield_lua:GetModifierIncomingDamage_Percentage( p
 		absorb = -damage_absorbed/params.damage*100
 
 		manacost = mana
+
+		-- turn off
+		if self:GetAbility():GetToggleState() then
+			self:GetAbility():ToggleAbility()
+		end
 	end
 
 	-- spend mana
