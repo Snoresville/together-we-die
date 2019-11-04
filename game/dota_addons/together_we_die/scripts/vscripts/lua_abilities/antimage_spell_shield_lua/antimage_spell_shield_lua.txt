@@ -47,6 +47,11 @@
 				"var_type"				"FIELD_INTEGER"
 				"bonus_resist_pct"		"20 30 40 50"
 			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cooldown_scepter"		"8"
+			}
 		}
 	}
 }
