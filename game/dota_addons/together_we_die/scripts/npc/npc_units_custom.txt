@@ -6843,6 +6843,132 @@
 		}
 	}
 
+	//=================================================================================
+	// Creature: Greater Ogre Magi
+	//=================================================================================
+	"npc_dota_creature_greater_ogre_magi"
+	{
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/heroes/ogre_magi/ogre_magi.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"n_creep_Melee"
+		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
+		"Level"						"1"
+		"ConsideredHero"			"1"
+		"ModelScale" 				"1.45"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"creature_ogre_magi_fireblast_lua"	// Ability 1
+		"Ability2"					"creature_ogre_magi_hex_lua"			// Ability 2
+		"Ability3"					"creature_ogre_magi_multicast_lua"		// Ability 3
+		"Ability4"					""								// Ability 4
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"110"			// Physical protection.
+		"MagicalResistance"			"66"		// Magical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"6300"		// Damage range min.
+		"AttackDamageMax"			"9100"		// Damage range max.	
+		"AttackRate"				"1.55"		// Speed of attack.
+		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
+		"AttackRange"				"100"		// Range within a target can be attacked.
+		"ProjectileModel"			""			// Particle system model for projectile.
+		"ProjectileSpeed"			"0"			// Speed of projectile.		   
+
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"60"
+		"HealthBarOffset"			"210"
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"36000"		// Experience earn.
+		"BountyGoldMin"				"43"		// Gold earned min.
+		"BountyGoldMax"				"61"		// Gold earned max.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"245"		// Speed.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"85500"		// Base health.
+		"StatusHealthRegen"			"200.0"		// Health regeneration rate.
+		"StatusMana"				"8000"		// Base mana.
+		"StatusManaRegen"			"10.0"		// Mana regeneration rate.		 
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_BADGUYS"							// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_ogre_magi.vsndevts"
+		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_ogre_magi.vsndevts"
+		
+		// Creature Data
+		//----------------------------------------------------------------
+		"Creature"
+		{
+			//Basic AI State
+			//-----------------------------------------------------------------
+			"DefaultState"			"Invade"
+			"States"
+			{
+				"Invade"
+				{
+					"Name"			"Invade"
+					"Aggression"	"100.0"
+					"Avoidance"		"0.0"
+				}
+			}
+			
+			//Level Up Parameters
+			//-----------------------------------------------------------------
+			"HPGain"					"75"
+			"DamageGain"				"5"
+			"ArmorGain"					"0.25"
+			"MagicResistGain"			"0.1"
+			"MoveSpeedGain"				"1"
+			"BountyGain"				"3"
+			"XPGain"					"13"
+			
+
+			"OffensiveAbilities"
+			{
+				"Ability1"				
+				{
+					"Name"				"creature_ogre_magi_fireblast_lua"
+					"Radius"			"225"
+				}
+				"Ability2"
+				{
+					"Name"				"creature_ogre_magi_hex_lua"
+					"Radius"			"325"
+				}
+			}
+			
+			"AttachWearables"
+			{
+				"Wearable1" { "ItemDef" "105" }
+			}
+		}
+	}
+
 	"npc_dota_furion_holdout_treant_1"
 	{
 		// General

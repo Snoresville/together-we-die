@@ -5464,6 +5464,9 @@
 #base "../vscripts/lua_abilities/creature_enchantress_untouchable_lua/creature_enchantress_untouchable_lua.txt"
 #base "../vscripts/lua_abilities/creature_bounty_hunter_invisibility_lua/creature_bounty_hunter_invisibility_lua.txt"
 #base "../vscripts/lua_abilities/creature_explosive_death_lua/creature_explosive_death_lua.txt"
+#base "../vscripts/lua_abilities/creature_ogre_magi_fireblast_lua/creature_ogre_magi_fireblast_lua.txt"
+#base "../vscripts/lua_abilities/creature_ogre_magi_hex_lua/creature_ogre_magi_hex_lua.txt"
+#base "../vscripts/lua_abilities/creature_ogre_magi_multicast_lua/creature_ogre_magi_multicast_lua.txt"
 
 #base "../vscripts/lua_abilities/summoning_stone_lua/summoning_stone_lua.txt"
 #base "../vscripts/lua_abilities/pure_strike_lua/pure_strike_lua.txt"

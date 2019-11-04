@@ -1,0 +1,88 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Ogre Magi: Fireblast (Lua version)
+	//=================================================================================================================
+	"creature_ogre_magi_fireblast_lua"
+	{
+		// Ability Technical Aspect
+		// base script folder	: scripts/vscripts
+		// base texture folder	: resource/flash3/images/spellicons
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"lua_abilities/creature_ogre_magi_fireblast_lua/creature_ogre_magi_fireblast_lua"
+		"AbilityTextureName"			"ogre_magi_fireblast_lua"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_ogre_magi.vsndevts"
+			"particle"	"particles/units/heroes/hero_ogre_magi/ogre_magi_fireblast.vpcf"
+			"particle"	"particles/units/heroes/hero_keeper_of_the_light/keeper_mana_leak.vpcf"
+		}
+
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+
+		// Ability Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1200"
+		"AbilityCastPoint"				"0.45"
+
+		// Ability Resource
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"8"
+		"AbilityManaCost"				"400"
+
+		// Damage
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stun_duration"		"1.3"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"multicast_delay"	"0.5"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"fireblast_damage"		"2000"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"str_multiplier"			"3.0"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"radius"			"225"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"mana_loss"			"-200"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"mana_loss_duration"			"5.0"
+			}
+		}
+	}
+}

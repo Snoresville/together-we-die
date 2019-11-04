@@ -1803,7 +1803,38 @@
 		}
 	}
 
-	"Round23" // Morphling
+	"Round23" // Greater Ogre
+	{
+		"round_title"				"#DOTA_Holdout_Round_Greater_Ogre_Magi_Title"
+		"MaxGold"					"95500"
+		"BagCount"					"85"
+		"BagVariance"				"30"
+		"FixedXP"					"60000"
+
+		"Unit1"
+		{
+			"NPCName"				"npc_dota_creature_greater_ogre_magi"
+			"TotalUnitsToSpawn"		"36"
+			"UnitsPerSpawn"			"6"
+			"SpawnInterval"			"13"
+		}
+		"Unit2"
+		{
+			"NPCName"				"npc_dota_creature_greater_ogre_magi"
+			"TotalUnitsToSpawn"		"36"
+			"UnitsPerSpawn"			"6"
+			"SpawnInterval"			"13"
+		}
+		"Unit3"
+		{
+			"NPCName"				"npc_dota_creature_greater_ogre_magi"
+			"TotalUnitsToSpawn"		"36"
+			"UnitsPerSpawn"			"6"
+			"SpawnInterval"			"13"
+		}
+	}
+
+	"Round24" // Morphling
 	{
 		"round_title"				"#DOTA_Holdout_Round_Morphling_Title"
 		"MaxGold"					"91550"
@@ -1819,7 +1850,7 @@
 		}
 	}
 
-	"Round24" // Dark willow
+	"Round25" // Dark willow
 	{
 		"round_title"				"#DOTA_Holdout_Round_Dark_Willow_Title"
 		"MaxGold"					"91550"
@@ -1835,7 +1866,7 @@
 		}
 	}
 
-	"Round25" // Enchantress
+	"Round26" // Enchantress
 	{
 		"round_title"				"#DOTA_Holdout_Round_Enchantress_Title"
 		"MaxGold"					"125000"
@@ -1957,8 +1988,8 @@
 			"WaitForTime"			"15"
 			
 			"NPCName"				"npc_dota_creature_enchantress_treant"
-			"TotalUnitsToSpawn"		"8"
-			"UnitsPerSpawn"			"8"
+			"TotalUnitsToSpawn"		"16"
+			"UnitsPerSpawn"			"16"
 			"SpawnInterval"			"8"
 			
 			"SpawnerName"			"spawner4"
@@ -1980,8 +2011,8 @@
 			"WaitForTime"			"15"
 			
 			"NPCName"				"npc_dota_creature_enchantress_treant"
-			"TotalUnitsToSpawn"		"8"
-			"UnitsPerSpawn"			"8"
+			"TotalUnitsToSpawn"		"16"
+			"UnitsPerSpawn"			"16"
 			"SpawnInterval"			"8"
 			
 			"SpawnerName"			"spawner3_alternate"
@@ -1993,12 +2024,12 @@
 			"GroupWithUnit"			"UnitMelee_3e"
 			
 			"NPCName"				"npc_dota_creature_enchantress"
-			"TotalUnitsToSpawn"		"1"
-			"UnitsPerSpawn"			"1"
+			"TotalUnitsToSpawn"		"3"
+			"UnitsPerSpawn"			"3"
 		}
 	}
 
-	"Round26" // Roshan Queen
+	"Round27" // Roshan Queen
 	{
 		"round_title"				"#DOTA_Holdout_Round_Roshan_Queen_Title"
 		"MaxGold"					"91550"
