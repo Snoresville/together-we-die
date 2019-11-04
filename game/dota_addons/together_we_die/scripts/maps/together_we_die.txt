@@ -1814,22 +1814,22 @@
 		"Unit1"
 		{
 			"NPCName"				"npc_dota_creature_greater_ogre_magi"
-			"TotalUnitsToSpawn"		"36"
-			"UnitsPerSpawn"			"6"
+			"TotalUnitsToSpawn"		"30"
+			"UnitsPerSpawn"			"5"
 			"SpawnInterval"			"13"
 		}
 		"Unit2"
 		{
 			"NPCName"				"npc_dota_creature_greater_ogre_magi"
-			"TotalUnitsToSpawn"		"36"
-			"UnitsPerSpawn"			"6"
+			"TotalUnitsToSpawn"		"30"
+			"UnitsPerSpawn"			"5"
 			"SpawnInterval"			"13"
 		}
 		"Unit3"
 		{
 			"NPCName"				"npc_dota_creature_greater_ogre_magi"
-			"TotalUnitsToSpawn"		"36"
-			"UnitsPerSpawn"			"6"
+			"TotalUnitsToSpawn"		"30"
+			"UnitsPerSpawn"			"5"
 			"SpawnInterval"			"13"
 		}
 	}
