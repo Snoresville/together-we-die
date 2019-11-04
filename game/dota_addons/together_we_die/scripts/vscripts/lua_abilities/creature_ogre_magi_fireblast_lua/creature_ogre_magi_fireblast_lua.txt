@@ -33,7 +33,7 @@
 
 		// Ability Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"1200"
+		"AbilityCastRange"				"600"
 		"AbilityCastPoint"				"0.45"
 
 		// Ability Resource
@@ -51,7 +51,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"stun_duration"		"1.3"
+				"stun_duration"		"0.9"
 			}
 			"02"
 			{

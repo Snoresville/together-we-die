@@ -6877,7 +6877,7 @@
 		"AttackDamageMax"			"9100"		// Damage range max.	
 		"AttackRate"				"1.55"		// Speed of attack.
 		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
+		"AttackAcquisitionRange"	"1800"		// Range within a target can be acquired.
 		"AttackRange"				"100"		// Range within a target can be attacked.
 		"ProjectileModel"			""			// Particle system model for projectile.
 		"ProjectileSpeed"			"0"			// Speed of projectile.		   
@@ -6950,15 +6950,13 @@
 
 			"OffensiveAbilities"
 			{
-				"Ability1"				
-				{
-					"Name"				"creature_ogre_magi_fireblast_lua"
-					"Radius"			"225"
-				}
-				"Ability2"
+				"Ability1"
 				{
 					"Name"				"creature_ogre_magi_hex_lua"
-					"Radius"			"325"
+				}
+				"Ability2"				
+				{
+					"Name"				"creature_ogre_magi_fireblast_lua"
 				}
 			}
 			
