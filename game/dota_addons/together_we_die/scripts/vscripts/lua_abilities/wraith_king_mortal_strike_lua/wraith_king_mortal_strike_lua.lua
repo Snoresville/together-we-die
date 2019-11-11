@@ -1,6 +1,7 @@
 wraith_king_mortal_strike_lua = class({})
 LinkLuaModifier( "modifier_wraith_king_mortal_strike_lua", "lua_abilities/wraith_king_mortal_strike_lua/modifier_wraith_king_mortal_strike_lua", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_generic_summon_timer", "lua_abilities/generic/modifier_generic_summon_timer", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_wraith_king_mortal_strike_lua_spawn", "lua_abilities/wraith_king_mortal_strike_lua/modifier_wraith_king_mortal_strike_lua_spawn", LUA_MODIFIER_MOTION_NONE )
 
 --------------------------------------------------------------------------------
 -- Passive Modifier
@@ -51,6 +52,7 @@ function wraith_king_mortal_strike_lua:OnSpellStart()
 		summoned_unit:SetControllableByPlayer( caster:GetPlayerID(), false ) -- (playerID, bSkipAdjustingPosition)
 		summoned_unit:SetOwner( caster )
 		summoned_unit:AddNewModifier( caster, self, "modifier_generic_summon_timer", {duration = unit_duration} )
+		summoned_unit:AddNewModifier( caster, self, "modifier_wraith_king_mortal_strike_lua_spawn", {} )
 
 		-- delay
 		

@@ -3,7 +3,7 @@ modifier_wraith_king_mortal_strike_lua_spawn = class({})
 --------------------------------------------------------------------------------
 -- Classifications
 function modifier_wraith_king_mortal_strike_lua_spawn:IsHidden()
-	return false
+	return true
 end
 
 function modifier_wraith_king_mortal_strike_lua_spawn:IsDebuff()
@@ -14,40 +14,7 @@ function modifier_wraith_king_mortal_strike_lua_spawn:IsStunDebuff()
 	return false
 end
 
-function modifier_wraith_king_mortal_strike_lua_spawn:GetAttributes()
-	return MODIFIER_ATRRIBUTE_XX + MODIFIER_ATRRIBUTE_YY 
-end
-
 function modifier_wraith_king_mortal_strike_lua_spawn:IsPurgable()
-	return true
-end
---------------------------------------------------------------------------------
--- Aura
-function modifier_wraith_king_mortal_strike_lua_spawn:IsAura()
-	return true
-end
-
-function modifier_wraith_king_mortal_strike_lua_spawn:GetModifierAura()
-	return "modifier_wraith_king_mortal_strike_lua_spawn_effect"
-end
-
-function modifier_wraith_king_mortal_strike_lua_spawn:GetAuraRadius()
-	return float
-end
-
-function modifier_wraith_king_mortal_strike_lua_spawn:GetAuraSearchTeam()
-	return DOTA_UNIT_TARGET_TEAM_XX
-end
-
-function modifier_wraith_king_mortal_strike_lua_spawn:GetAuraSearchType()
-	return DOTA_UNIT_TARGET_XX + DOTA_UNIT_TARGET_YY + ...
-end
-
-function modifier_wraith_king_mortal_strike_lua_spawn:GetAuraEntityReject( hEntity )
-	if IsServer() then
-		
-	end
-
 	return false
 end
 
@@ -55,11 +22,13 @@ end
 -- Initializations
 function modifier_wraith_king_mortal_strike_lua_spawn:OnCreated( kv )
 	-- references
-	self.special_value = self:GetAbility():GetSpecialValueFor( "special_value" ) -- special value
+	self.current_target = nil
 
 	-- Start interval
-	self:StartIntervalThink( self.interval )
-	self:OnIntervalThink()
+	if IsServer() then
+		self:StartIntervalThink( 0.5 )
+		self:OnIntervalThink()
+	end
 end
 
 function modifier_wraith_king_mortal_strike_lua_spawn:OnRefresh( kv )
@@ -71,21 +40,11 @@ function modifier_wraith_king_mortal_strike_lua_spawn:OnDestroy( kv )
 end
 
 --------------------------------------------------------------------------------
--- Modifier Effects
-function modifier_wraith_king_mortal_strike_lua_spawn:DeclareFunctions()
-	local funcs = {
-		MODIFIER_PROPERTY_XX,
-		MODIFIER_EVENT_YY,
-	}
-
-	return funcs
-end
-
---------------------------------------------------------------------------------
 -- Status Effects
 function modifier_wraith_king_mortal_strike_lua_spawn:CheckState()
 	local state = {
-	[MODIFIER_STATE_XX] = true,
+		[MODIFIER_STATE_COMMAND_RESTRICTED] = true,
+		[MODIFIER_STATE_NO_UNIT_COLLISION] = true
 	}
 
 	return state
@@ -94,14 +53,24 @@ end
 --------------------------------------------------------------------------------
 -- Interval Effects
 function modifier_wraith_king_mortal_strike_lua_spawn:OnIntervalThink()
-end
+	if self.current_target == nil or EntIndexToHScript( self.current_target ) == nil or not EntIndexToHScript( self.current_target ):IsAlive() then
+		-- Find Units in Radius
+		local enemies = FindUnitsInRadius(
+			self:GetParent():GetTeamNumber(),	-- int, your team number
+			self:GetParent():GetOrigin(),	-- point, center point
+			nil,	-- handle, cacheUnit. (not known)
+			FIND_UNITS_EVERYWHERE,	-- float, radius. or use FIND_UNITS_EVERYWHERE
+			DOTA_UNIT_TARGET_TEAM_ENEMY,	-- int, team filter
+			DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	-- int, type filter
+			DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_NO_INVIS,	-- int, flag filter
+			FIND_CLOSEST,	-- int, order filter
+			false	-- bool, can grow cache
+		)
 
---------------------------------------------------------------------------------
--- Graphics & Animations
-function modifier_wraith_king_mortal_strike_lua_spawn:GetEffectName()
-	return "particles/string/here.vpcf"
-end
-
-function modifier_wraith_king_mortal_strike_lua_spawn:GetEffectAttachType()
-	return PATTACH_ABSORIGIN_FOLLOW
+		for _,enemy in pairs(enemies) do
+			self:GetParent():MoveToTargetToAttack( enemy )
+			self.current_target = enemy:entindex()
+			break
+		end
+	end
 end
