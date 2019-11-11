@@ -10,6 +10,7 @@ end
 function wraith_king_wraithfire_blast_lua:OnSpellStart()
 	-- get references
 	local target = self:GetCursorTarget()
+	local caster = self:GetCaster()
 	local projectile_speed = self:GetSpecialValueFor("blast_speed")
 	local projectile_name = "particles/units/heroes/hero_skeletonking/skeletonking_hellfireblast.vpcf"
 
@@ -34,7 +35,7 @@ function wraith_king_wraithfire_blast_lua:OnSpellStart()
 			EffectName = projectile_name,
 			Ability = self,
 			iMoveSpeed = projectile_speed,
-			Source = self:GetCaster(),
+			Source = caster,
 			Target = enemy,
 			iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_2
 		}
