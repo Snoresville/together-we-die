@@ -66,6 +66,16 @@
 		"ItemPurchasable"				"0"
 	}
 
+	"item_recipe_assault"
+	{
+		"ItemPurchasable"				"0"
+		"ItemRecipe"					"0"
+	}
+	"item_assault"
+	{
+		"ItemPurchasable"				"0"
+	}
+
 	//=================================================================================================================
 	// Greater Clarity
 	//=================================================================================================================
@@ -11046,3 +11056,6 @@
 #base "../vscripts/lua_abilities/item_kaya_lua/item_kaya2_lua.txt"
 #base "../vscripts/lua_abilities/item_kaya_lua/item_kaya3_lua.txt"
 #base "../vscripts/lua_abilities/item_kaya_lua/item_kaya4_lua.txt"
+
+#base "../vscripts/lua_abilities/item_assault_lua/item_assault_lua.txt"
+#base "../vscripts/lua_abilities/item_assault_lua/item_assault2_lua.txt"
