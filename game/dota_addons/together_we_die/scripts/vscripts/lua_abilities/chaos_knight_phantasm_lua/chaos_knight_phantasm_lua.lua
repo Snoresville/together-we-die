@@ -16,7 +16,7 @@ function chaos_knight_phantasm_lua:GetCooldown( iLevel )
 		return self:GetSpecialValueFor( "cooldown_scepter" )
 	end
 
-	return self.BaseClass.GetCooldown( self, level )
+	return self.BaseClass.GetCooldown( self, iLevel )
 end
 
 --------------------------------------------------------------------------------
