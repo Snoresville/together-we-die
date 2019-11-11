@@ -18,7 +18,8 @@ end
 function modifier_ursa_fury_swipes_lua:OnCreated( kv )
 	if IsServer() then
 		-- get reference
-		self.damage_per_stack = self:GetAbility():GetSpecialValueFor("damage_per_stack") + self:GetCaster():GetAgility() * self:GetAbility():GetSpecialValueFor("agi_multiplier")
+		self.agi_multiplier = self:GetAbility():GetSpecialValueFor("agi_multiplier")
+		self.damage_per_stack = self:GetAbility():GetSpecialValueFor("damage_per_stack")
 		self.bonus_reset_time = self:GetAbility():GetSpecialValueFor("bonus_reset_time")
 	end
 end
@@ -26,7 +27,8 @@ end
 function modifier_ursa_fury_swipes_lua:OnRefresh( kv )
 	if IsServer() then
 		-- get reference
-		self.damage_per_stack = self:GetAbility():GetSpecialValueFor("damage_per_stack") + self:GetCaster():GetAgility() * self:GetAbility():GetSpecialValueFor("agi_multiplier")
+		self.agi_multiplier = self:GetAbility():GetSpecialValueFor("agi_multiplier")
+		self.damage_per_stack = self:GetAbility():GetSpecialValueFor("damage_per_stack")
 		self.bonus_reset_time = self:GetAbility():GetSpecialValueFor("bonus_reset_time")
 	end
 end
@@ -61,6 +63,6 @@ function modifier_ursa_fury_swipes_lua:GetModifierProcAttack_BonusDamage_Physica
 		stack = modifier:GetStackCount()
 
 		-- return damage bonus
-		return stack * self.damage_per_stack
+		return stack * (self.damage_per_stack + self:GetCaster():GetAgility() * self.agi_multiplier)
 	end
 end
