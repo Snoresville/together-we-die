@@ -50,8 +50,8 @@ function creature_ogre_magi_fireblast_lua:OnSpellStart()
 		if not enemy:TriggerSpellAbsorb( self ) then
 			damageTable.victim = enemy
 			local additional_damage = 0
-			if (enemy:IsRealHero()) then
-				additional_damage =  enemy:GetStrength() * self:GetSpecialValueFor( "strength_multiplier" )
+			if enemy:IsRealHero() then
+				additional_damage = enemy:GetStrength() * self:GetSpecialValueFor( "str_multiplier" )
 			end
 			damageTable.damage = damage + additional_damage
 			ApplyDamage( damageTable )
