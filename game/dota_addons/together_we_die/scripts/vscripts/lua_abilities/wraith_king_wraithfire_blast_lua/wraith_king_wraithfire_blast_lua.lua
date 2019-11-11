@@ -2,22 +2,44 @@ wraith_king_wraithfire_blast_lua = class({})
 LinkLuaModifier("modifier_generic_stunned_lua", "lua_abilities/generic/modifier_generic_stunned_lua", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier("modifier_wraith_king_wraithfire_blast_lua_slow", "lua_abilities/wraith_king_wraithfire_blast_lua/modifier_wraith_king_wraithfire_blast_lua_slow", LUA_MODIFIER_MOTION_NONE )
 
+--------------------------------------------------------------------------------
+function wraith_king_wraithfire_blast_lua:GetAOERadius()
+	return self:GetSpecialValueFor( "radius" )
+end
+
 function wraith_king_wraithfire_blast_lua:OnSpellStart()
 	-- get references
 	local target = self:GetCursorTarget()
 	local projectile_speed = self:GetSpecialValueFor("blast_speed")
 	local projectile_name = "particles/units/heroes/hero_skeletonking/skeletonking_hellfireblast.vpcf"
 
-	-- create tracking projectile
-	local info = {
-		EffectName = projectile_name,
-		Ability = self,
-		iMoveSpeed = projectile_speed,
-		Source = self:GetCaster(),
-		Target = target,
-		iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_2
-	}
-	ProjectileManager:CreateTrackingProjectile( info )
+	local radius = self:GetSpecialValueFor( "radius" )
+
+	-- find enemies
+	local enemies = FindUnitsInRadius(
+		caster:GetTeamNumber(),	-- int, your team number
+		target:GetOrigin(),	-- point, center point
+		target,	-- handle, cacheUnit. (not known)
+		radius,	-- float, radius. or use FIND_UNITS_EVERYWHERE
+		DOTA_UNIT_TARGET_TEAM_ENEMY,	-- int, team filter
+		DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	-- int, type filter
+		0,	-- int, flag filter
+		0,	-- int, order filter
+		false	-- bool, can grow cache
+	)
+
+	for _,enemy in pairs(enemies) do
+		-- create tracking projectile
+		local info = {
+			EffectName = projectile_name,
+			Ability = self,
+			iMoveSpeed = projectile_speed,
+			Source = self:GetCaster(),
+			Target = enemy,
+			iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_2
+		}
+		ProjectileManager:CreateTrackingProjectile( info )
+	end
 
 	self:PlayEffects1()
 end
@@ -34,7 +56,7 @@ function wraith_king_wraithfire_blast_lua:OnProjectileHit( hTarget, vLocation )
 			victim = hTarget,
 			attacker = self:GetCaster(),
 			damage = stun_damage,
-			damage_type = DAMAGE_TYPE_MAGICAL,
+			damage_type = self:GetAbilityDamageType(),
 			ability = self
 		}
 		ApplyDamage( damage )
