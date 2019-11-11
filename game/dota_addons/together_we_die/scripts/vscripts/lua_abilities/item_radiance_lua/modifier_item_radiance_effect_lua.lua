@@ -58,7 +58,7 @@ end
 
 function modifier_item_radiance_effect_lua:OnIntervalThink()
 	if IsServer() then
-		local flDamagePerTick = self.damage_tick * (self.aura_damage + (self:GetCaster():GetPrimaryStatValue() * self:GetAbility():GetSpecialValueFor( "primary_attr_multiplier" )))
+		local flDamagePerTick = self.damage_tick * (self.aura_damage + (self:GetCaster():GetPrimaryStatValue() * self.primary_attr_multiplier))
 
 		if self:GetCaster():IsAlive() then
 			local damage = {
