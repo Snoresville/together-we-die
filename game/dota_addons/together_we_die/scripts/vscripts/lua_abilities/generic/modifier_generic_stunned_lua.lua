@@ -10,11 +10,15 @@ function modifier_generic_stunned_lua:IsStunDebuff()
 	return true
 end
 
+function modifier_generic_stunned_lua:IsPurgable()
+	return true
+end
+
 --------------------------------------------------------------------------------
 
 function modifier_generic_stunned_lua:CheckState()
 	local state = {
-	[MODIFIER_STATE_STUNNED] = true,
+		[MODIFIER_STATE_STUNNED] = true,
 	}
 
 	return state
