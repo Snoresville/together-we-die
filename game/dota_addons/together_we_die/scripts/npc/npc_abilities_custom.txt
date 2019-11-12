@@ -5578,6 +5578,7 @@
 #base "../vscripts/lua_abilities/pudge_meat_hook_lua/pudge_meat_hook_lua.txt"
 #base "../vscripts/lua_abilities/pudge_rot_lua/pudge_rot_lua.txt"
 #base "../vscripts/lua_abilities/pudge_flesh_heap_lua/pudge_flesh_heap_lua.txt"
+#base "../vscripts/lua_abilities/pudge_dismember_lua/pudge_dismember_lua.txt"
 
 #base "../vscripts/lua_abilities/sand_king_burrowstrike_lua/sand_king_burrowstrike_lua.txt"
 #base "../vscripts/lua_abilities/sand_king_sand_storm_lua/sand_king_sand_storm_lua.txt"

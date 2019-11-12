@@ -544,6 +544,7 @@
 		"Ability3"				"pudge_flesh_heap_lua"
 		"Ability4"		""
 		"Ability5"		""
+		"Ability6"				"pudge_dismember_lua"
 		"Ability10"		""
 		"Ability11"		""
 		"Ability12"		""

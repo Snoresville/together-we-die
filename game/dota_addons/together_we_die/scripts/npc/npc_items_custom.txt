@@ -7386,7 +7386,7 @@
 	//=================================================================================================================
 	// Ability: Pudge Dismember
 	//=================================================================================================================
-	"item_spell_pudge_dismember"
+	"item_spell_pudge_dismember_lua"
 	{
 		"ID"							"1168"
 
@@ -7394,7 +7394,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_spell_pudge_dismember"
+		"AbilityTextureName"			"item_spell_pudge_dismember_lua"
 		"ItemKillable"					"0"
 
 		// Stats
@@ -7419,7 +7419,7 @@
 			{
 				"ScriptFile" "holdout_give_spell.lua"
 				"Function"   "GiveSpell"
-				"spell_name_to_give"	"pudge_dismember"
+				"spell_name_to_give"	"pudge_dismember_lua"
 			}
 			"SpendCharge"
 			{}
