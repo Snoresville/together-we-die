@@ -5683,3 +5683,8 @@
 #base "../vscripts/lua_abilities/chaos_knight_reality_rift_lua/chaos_knight_reality_rift_lua.txt"
 #base "../vscripts/lua_abilities/chaos_knight_chaos_strike_lua/chaos_knight_chaos_strike_lua.txt"
 #base "../vscripts/lua_abilities/chaos_knight_phantasm_lua/chaos_knight_phantasm_lua.txt"
+
+#base "../vscripts/lua_abilities/outworld_devourer_arcane_orb_lua/outworld_devourer_arcane_orb_lua.txt"
+#base "../vscripts/lua_abilities/outworld_devourer_astral_imprisonment_lua/outworld_devourer_astral_imprisonment_lua.txt"
+#base "../vscripts/lua_abilities/outworld_devourer_equilibrium_lua/outworld_devourer_equilibrium_lua.txt"
+#base "../vscripts/lua_abilities/outworld_devourer_sanitys_eclipse_lua/outworld_devourer_sanitys_eclipse_lua.txt"
