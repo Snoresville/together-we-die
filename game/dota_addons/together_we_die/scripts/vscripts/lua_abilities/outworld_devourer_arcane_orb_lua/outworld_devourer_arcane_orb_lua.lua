@@ -20,6 +20,25 @@ function outworld_devourer_arcane_orb_lua:GetIntrinsicModifierName()
 end
 
 --------------------------------------------------------------------------------
+function outworld_devourer_arcane_orb_lua:CastFilterResultTarget( hTarget )
+	if IsServer() and hTarget ~= nil and hTarget.GetUnitName ~= nil then
+		return UnitFilter(
+					hTarget,
+					self:GetAbilityTargetTeam(),
+					self:GetAbilityTargetType(),
+					self:GetAbilityTargetFlags(),
+					self:GetCaster():GetTeamNumber()
+				)
+	end
+	return UF_FAIL_OTHER
+end
+
+-- AOE Radius
+function outworld_devourer_arcane_orb_lua:GetAOERadius()
+	return self:GetSpecialValueFor( "radius" )
+end
+
+--------------------------------------------------------------------------------
 -- Ability Start
 function outworld_devourer_arcane_orb_lua:OnSpellStart()
 end
