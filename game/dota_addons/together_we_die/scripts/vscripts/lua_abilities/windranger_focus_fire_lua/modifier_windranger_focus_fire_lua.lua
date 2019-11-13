@@ -30,6 +30,7 @@ function modifier_windranger_focus_fire_lua:OnCreated( kv )
 		self.target_count = self:GetAbility():GetSpecialValueFor( "scepter_target_count" )
 	end
 
+	if not IsServer() then return end
 	self:StartIntervalThink( self.auto_interval )
 	self:OnIntervalThink()
 end
@@ -44,6 +45,7 @@ function modifier_windranger_focus_fire_lua:OnRefresh( kv )
 		self.target_count = self:GetAbility():GetSpecialValueFor( "scepter_target_count" )
 	end
 
+	if not IsServer() then return end
 	self:StartIntervalThink( self.auto_interval )
 end
 
@@ -95,7 +97,7 @@ function modifier_windranger_focus_fire_lua:OnIntervalThink()
 			-- perform attack
 			parent:PerformAttack(
 				enemy, -- hTarget
-				true, -- bUseCastAttackOrb
+				false, -- bUseCastAttackOrb
 				true, -- bProcessProcs use modifiers
 				true, -- bSkipCooldown
 				false, -- bIgnoreInvis
