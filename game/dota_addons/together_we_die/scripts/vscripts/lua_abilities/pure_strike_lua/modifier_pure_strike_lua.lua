@@ -15,13 +15,13 @@ end
 function modifier_pure_strike_lua:OnCreated( kv )
 	-- references
 	self.crit_chance = self:GetAbility():GetSpecialValueFor( "crit_chance" )
-	self.agi_multiplier = self:GetAbility():GetSpecialValueFor( "agi_multiplier" )
+	self.pri_attr_multiplier = self:GetAbility():GetSpecialValueFor( "pri_attr_multiplier" )
 end
 
 function modifier_pure_strike_lua:OnRefresh( kv )
 	-- references
 	self.crit_chance = self:GetAbility():GetSpecialValueFor( "crit_chance" )
-	self.agi_multiplier = self:GetAbility():GetSpecialValueFor( "agi_multiplier" )
+	self.pri_attr_multiplier = self:GetAbility():GetSpecialValueFor( "pri_attr_multiplier" )
 end
 
 function modifier_pure_strike_lua:OnDestroy( kv )
@@ -42,7 +42,7 @@ end
 function modifier_pure_strike_lua:GetModifierProcAttack_BonusDamage_Pure( params )
 	if IsServer() and (not self:GetParent():PassivesDisabled()) and self:GetAbility():IsCooldownReady() then
 		if self:RollChance( self.crit_chance ) then
-			local damage_bonus = self:GetParent():GetAverageTrueAttackDamage( params.target ) + self.agi_multiplier * self:GetParent():GetAgility()
+			local damage_bonus = math.floor(self.pri_attr_multiplier * self:GetParent():GetPrimaryStatValue())
 			self.record = params.record
 			-- cooldown
 			self:GetAbility():UseResources( false, false, true )
