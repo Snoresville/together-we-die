@@ -226,6 +226,24 @@ function CHoldoutGameMode:OnThink()
 	return 1
 end
 
+function CHoldoutGameMode:OnGoldInterval()
+	local goldPerTick = 1
+	local currentGameState = GameRules:State_Get()
+
+	if currentGameState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
+		for nPlayerID = 0, DOTA_MAX_TEAM_PLAYERS-1 do
+			if PlayerResource:HasSelectedHero( nPlayerID ) then
+				-- unreliable gold
+				PlayerResource:ModifyGold( nPlayerID, goldPerTick, false, DOTA_ModifyGold_GameTick )
+			end
+		end
+	elseif currentGameState >= DOTA_GAMERULES_STATE_POST_GAME then		-- Safe guard catching any state that may exist beyond DOTA_GAMERULES_STATE_POST_GAME
+		return nil
+	end
+	
+	return 1
+end
+
 function CHoldoutGameMode:_GameStartCheck()
 	self:_CheckForAlliance()
 	self:_CalculateAndApplyDifficulty()
@@ -306,14 +324,13 @@ function CHoldoutGameMode:_SetExpAndRespawn( difficultyScore )
 	local expConst = math.floor((20 * difficultyScore) / playerCount)
 	local xpTable = {}
 	local goldTickTime = 0.5 * difficultyScore
-	local goldPerTick = 1
 	local respawnTime = 9.5 * difficultyScore
 
 	for i = 1, maxHeroLevel, 1 do
 		xpTable[i] = i * i * expConst
 	end
-	GameRules:SetGoldTickTime( goldTickTime )
-	GameRules:SetGoldPerTick( goldPerTick )
+
+	GameRules:GetGameModeEntity():SetThink( "OnGoldInterval", self, goldTickTime )
 	GameRules:GetGameModeEntity():SetUseCustomHeroLevels( true )
 	GameRules:GetGameModeEntity():SetCustomXPRequiredToReachNextLevel( xpTable )
 	GameRules:GetGameModeEntity():SetFixedRespawnTime( respawnTime )
