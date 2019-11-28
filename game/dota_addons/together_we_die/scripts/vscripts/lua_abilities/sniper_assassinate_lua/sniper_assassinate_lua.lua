@@ -24,7 +24,6 @@ function sniper_assassinate_lua:OnAbilityPhaseInterrupted()
 end
 
 function sniper_assassinate_lua:GetCastPoint()
-	print(self:GetSpecialValueFor( "total_cast_time_tooltip" ))
 	return self:GetSpecialValueFor( "total_cast_time_tooltip" )
 end
 
