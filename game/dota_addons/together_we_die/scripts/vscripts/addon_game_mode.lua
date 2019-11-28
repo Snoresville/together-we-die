@@ -274,6 +274,19 @@ function CHoldoutGameMode:_CalculateAndApplyDifficulty()
 	for nPlayerID = 0, DOTA_MAX_TEAM_PLAYERS-1 do
 		if PlayerResource:HasSelectedHero( nPlayerID ) then
 			PlayerResource:ModifyGold( nPlayerID, startingGold, true, DOTA_ModifyGold_Unspecified )
+			-- Create courier
+			local player = PlayerResource:GetPlayer( nPlayerID );
+			local player_hero = player:GetAssignedHero();
+			local courier = CreateUnitByName(
+				"npc_dota_courier", -- szUnitName
+				player_hero:GetOrigin(), -- vLocation,
+				true, -- bFindClearSpace,
+				player_hero, -- hNPCOwner,
+				player, -- hUnitOwner,
+				player:GetTeamNumber() -- iTeamNumber
+			)
+			courier:SetControllableByPlayer( nPlayerID, false ) -- (playerID, bSkipAdjustingPosition)
+			courier:SetOwner( player )
 		end
 	end
 
