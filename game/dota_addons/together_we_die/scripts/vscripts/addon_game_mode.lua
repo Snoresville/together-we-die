@@ -293,12 +293,14 @@ function CHoldoutGameMode:_SetExpAndRespawn( difficultyScore )
 	local expConst = math.floor((20 * difficultyScore) / playerCount)
 	local xpTable = {}
 	local goldTickTime = 0.5 * difficultyScore
+	local goldPerTick = 1
 	local respawnTime = 9.5 * difficultyScore
 
 	for i = 1, maxHeroLevel, 1 do
 		xpTable[i] = i * i * expConst
 	end
 	GameRules:SetGoldTickTime( goldTickTime )
+	GameRules:SetGoldPerTick( goldPerTick )
 	GameRules:GetGameModeEntity():SetUseCustomHeroLevels( true )
 	GameRules:GetGameModeEntity():SetCustomXPRequiredToReachNextLevel( xpTable )
 	GameRules:GetGameModeEntity():SetFixedRespawnTime( respawnTime )
