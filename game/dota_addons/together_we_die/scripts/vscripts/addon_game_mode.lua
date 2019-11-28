@@ -62,6 +62,7 @@ function CHoldoutGameMode:InitGameMode()
 
 	self:_ReadGameConfiguration()
 	GameRules:SetTimeOfDay( 0.75 )
+	GameRules:SetStartingGold( 0 )
 	GameRules:SetHeroRespawnEnabled( true )
 	GameRules:SetUseUniversalShopMode( true )
 	--GameRules:SetHeroSelectionTime( 30.0 )
@@ -231,16 +232,19 @@ function CHoldoutGameMode:OnGoldInterval()
 	local currentGameState = GameRules:State_Get()
 
 	if currentGameState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
-		for nPlayerID = 0, DOTA_MAX_TEAM_PLAYERS-1 do
-			if PlayerResource:HasSelectedHero( nPlayerID ) then
-				-- unreliable gold
-				PlayerResource:ModifyGold( nPlayerID, goldPerTick, false, DOTA_ModifyGold_GameTick )
+		if not GameRules:IsGamePaused() then
+			-- no gold while paused
+			for nPlayerID = 0, DOTA_MAX_TEAM_PLAYERS-1 do
+				if PlayerResource:HasSelectedHero( nPlayerID ) then
+					-- unreliable gold
+					PlayerResource:ModifyGold( nPlayerID, goldPerTick, false, DOTA_ModifyGold_GameTick )
+				end
 			end
 		end
 	elseif currentGameState >= DOTA_GAMERULES_STATE_POST_GAME then		-- Safe guard catching any state that may exist beyond DOTA_GAMERULES_STATE_POST_GAME
 		return nil
 	end
-	
+
 	return 1
 end
 
