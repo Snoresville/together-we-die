@@ -6,6 +6,6 @@
 
 	"together_we_die"
 	{
-		"MaxPlayers"		"5"
+		"MaxPlayers"		"6"
 	}
 }
