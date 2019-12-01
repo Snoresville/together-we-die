@@ -73,7 +73,7 @@ function CHoldoutGameMode:InitGameMode()
 	GameRules:GetGameModeEntity():SetTopBarTeamValuesOverride( true )
 	GameRules:GetGameModeEntity():SetTopBarTeamValuesVisible( false )
 	-- Configure EXP
-	local MAX_HERO_LEVEL = 250
+	local MAX_HERO_LEVEL = 350
 	local EXP_CONST = 20
 	local xpTable = {}
 	for i = 1, MAX_HERO_LEVEL, 1 do
