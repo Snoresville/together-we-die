@@ -1,7 +1,12 @@
-function SelectDifficulty(difficultyLevel)
+function SelectDifficulty( difficultyLevel )
 {
     GameEvents.SendCustomGameEventToServer( "select_difficulty", { "difficulty" : difficultyLevel } );
     HideDifficultyDisplay();
+}
+
+function ShowDifficultyDisplay()
+{
+    $( "#DifficultyPanel" ).SetHasClass( "Visible", true );
 }
 
 function HideDifficultyDisplay()
@@ -27,4 +32,5 @@ function HideDifficultyVoteOutcome()
     $( "#DifficultyVoteOutcomePanel" ).SetHasClass( "Visible", false );
 }
 
+GameEvents.Subscribe( "show_difficulty_vote", ShowDifficultyDisplay );
 GameEvents.Subscribe( "show_difficulty_vote_outcome", ShowDifficultyVoteOutcome );

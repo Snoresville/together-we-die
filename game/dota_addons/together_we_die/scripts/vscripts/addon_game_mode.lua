@@ -68,7 +68,7 @@ function CHoldoutGameMode:InitGameMode()
 	--GameRules:SetHeroSelectionTime( 30.0 )
 	GameRules:SetStrategyTime( 0.0 )
 	GameRules:SetShowcaseTime( 0.0 )
-	GameRules:SetPreGameTime( 10.0 )
+	GameRules:SetPreGameTime( 1.0 )
 	GameRules:SetPostGameTime( 60.0 )
 	GameRules:SetTreeRegrowTime( 60.0 )
 	GameRules:SetHeroMinimapIconScale( 0.7 )
@@ -187,11 +187,10 @@ end
 -- When game state changes set state in script
 function CHoldoutGameMode:OnGameRulesStateChange()
 	local nNewState = GameRules:State_Get()
-	if nNewState == DOTA_GAMERULES_STATE_PRE_GAME then
-		--
-	elseif nNewState == DOTA_GAMERULES_STATE_STRATEGY_TIME then
+	if nNewState == DOTA_GAMERULES_STATE_STRATEGY_TIME then
 		self.ForceAssignHeroes()
 	elseif nNewState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
+		self._BeginDifficultyVote()
 		self._flPrepTimeEnd = GameRules:GetGameTime() + self._flPrepTimeBetweenRounds
 	end
 end
@@ -264,10 +263,15 @@ function CHoldoutGameMode:_GameStartCheck()
 	self._gameStartChecked = true
 end
 
+function CHoldoutGameMode:_BeginDifficultyVote()
+	CustomGameEventManager:Send_ServerToAllClients( "show_difficulty_vote", {} )
+end
+
 function CHoldoutGameMode:_CalculateAndApplyDifficulty()
 	local difficultyNumberOfVotes = self:_GetDifficultyNumberOfVotes()
 	local difficultyScore = 1
 	local startingGold = 0
+	local difficultyAbility = nil
 	if difficultyNumberOfVotes ~= 0 then
 		difficultyScore = math.floor(self:_GetDifficultyVote() / difficultyNumberOfVotes)
 	end
@@ -281,30 +285,32 @@ function CHoldoutGameMode:_CalculateAndApplyDifficulty()
 
 	local difficultyTitle = "DOTA_HUD_Difficulty_Easy"
 	if difficultyScore == 1 then
-		self._entAncient:AddAbility( "easy_difficulty_lua" )
+		difficultyAbility = self._entAncient:AddAbility( "easy_difficulty_lua" )
 		self._nTowerRewardAmount = self._nTowerRewardAmount * 1.35
 		self._nTowerScalingRewardPerRound = self._nTowerScalingRewardPerRound * 1.35
 		startingGold = math.floor(10000 / playerCount)
 		GameRules:GetGameModeEntity():SetLoseGoldOnDeath( false )
 	elseif difficultyScore == 2 then
-		self._entAncient:AddAbility( "normal_difficulty_lua" )
+		difficultyAbility = self._entAncient:AddAbility( "normal_difficulty_lua" )
 		difficultyTitle = "DOTA_HUD_Difficulty_Normal"
 		startingGold = math.floor(5000 / playerCount)
 	elseif difficultyScore == 3 then
-		self._entAncient:AddAbility( "hard_difficulty_lua" )
+		difficultyAbility = self._entAncient:AddAbility( "hard_difficulty_lua" )
 		difficultyTitle = "DOTA_HUD_Difficulty_Hard"
 		self._lives = 2
 		self._nTowerRewardAmount = math.floor( self._nTowerRewardAmount * 0.75 )
 		self._nTowerScalingRewardPerRound = math.floor( self._nTowerScalingRewardPerRound * 0.75 )
 		startingGold = math.floor(2000 / playerCount)
 	elseif difficultyScore == 4 then
-		self._entAncient:AddAbility( "impossible_difficulty_lua" )
+		difficultyAbility = self._entAncient:AddAbility( "impossible_difficulty_lua" )
 		difficultyTitle = "DOTA_HUD_Difficulty_Impossible"
 		self._lives = 1
 		self._nTowerRewardAmount = math.floor( self._nTowerRewardAmount * 0.5 )
 		self._nTowerScalingRewardPerRound = math.floor( self._nTowerScalingRewardPerRound * 0.5 )
 		startingGold = math.floor(500 / playerCount)
 	end
+	-- Set to level 1
+	difficultyAbility:SetLevel( 1 )
 
 	for nPlayerID = 0, DOTA_MAX_TEAM_PLAYERS-1 do
 		if PlayerResource:HasSelectedHero( nPlayerID ) then

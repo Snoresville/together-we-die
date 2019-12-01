@@ -30,7 +30,7 @@
        <Label hittest="false" id="RoundDescriptionLabel" class="HoldoutLabelHeader" text=""/>
      </Panel>
 
-     <Panel id="DifficultyPanel" hittest="false" class="Visible">
+     <Panel id="DifficultyPanel" hittest="false" class="">
       <Label hittest="false" id="DifficultyLabel" class="HoldoutLabelHeader" text="#DOTA_HUD_Difficulty"/>
       <Button id="EasyButton" class="DifficultyButton" onactivate="SelectDifficulty(1);">
         <Label text="#DOTA_HUD_Difficulty_Easy" />
