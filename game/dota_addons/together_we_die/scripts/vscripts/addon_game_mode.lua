@@ -257,7 +257,6 @@ function CHoldoutGameMode:OnGoldInterval()
 end
 
 function CHoldoutGameMode:_GameStartCheck()
-	self:_CheckForAlliance()
 	self:_CalculateAndApplyDifficulty()
 
 	self._gameStartChecked = true
@@ -284,6 +283,9 @@ function CHoldoutGameMode:_BeginGameSetup()
 			courier:SetOwner( player )
 		end
 	end
+
+	-- Check for any alliance types
+	self:_CheckForAlliance()
 end
 
 function CHoldoutGameMode:_CalculateAndApplyDifficulty()
