@@ -188,9 +188,9 @@ end
 function CHoldoutGameMode:OnGameRulesStateChange()
 	local nNewState = GameRules:State_Get()
 	if nNewState == DOTA_GAMERULES_STATE_STRATEGY_TIME then
-		self.ForceAssignHeroes()
+		self:ForceAssignHeroes()
 	elseif nNewState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
-		self._BeginGameSetup()
+		self:_BeginGameSetup()
 		self._flPrepTimeEnd = GameRules:GetGameTime() + self._flPrepTimeBetweenRounds
 	end
 end
