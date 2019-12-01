@@ -190,7 +190,7 @@ function CHoldoutGameMode:OnGameRulesStateChange()
 	if nNewState == DOTA_GAMERULES_STATE_STRATEGY_TIME then
 		self.ForceAssignHeroes()
 	elseif nNewState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
-		self._BeginDifficultyVote()
+		self._BeginGameSetup()
 		self._flPrepTimeEnd = GameRules:GetGameTime() + self._flPrepTimeBetweenRounds
 	end
 end
@@ -263,8 +263,27 @@ function CHoldoutGameMode:_GameStartCheck()
 	self._gameStartChecked = true
 end
 
-function CHoldoutGameMode:_BeginDifficultyVote()
+function CHoldoutGameMode:_BeginGameSetup()
+	-- Start difficulty vote
 	CustomGameEventManager:Send_ServerToAllClients( "show_difficulty_vote", {} )
+
+	-- Create courier for every player
+	for nPlayerID = 0, DOTA_MAX_TEAM_PLAYERS-1 do
+		if PlayerResource:HasSelectedHero( nPlayerID ) then
+			local player = PlayerResource:GetPlayer( nPlayerID );
+			local player_hero = player:GetAssignedHero();
+			local courier = CreateUnitByName(
+				"npc_dota_courier", -- szUnitName
+				player_hero:GetOrigin(), -- vLocation,
+				true, -- bFindClearSpace,
+				player_hero, -- hNPCOwner,
+				player, -- hUnitOwner,
+				player:GetTeamNumber() -- iTeamNumber
+			)
+			courier:SetControllableByPlayer( nPlayerID, false ) -- (playerID, bSkipAdjustingPosition)
+			courier:SetOwner( player )
+		end
+	end
 end
 
 function CHoldoutGameMode:_CalculateAndApplyDifficulty()
@@ -315,19 +334,6 @@ function CHoldoutGameMode:_CalculateAndApplyDifficulty()
 	for nPlayerID = 0, DOTA_MAX_TEAM_PLAYERS-1 do
 		if PlayerResource:HasSelectedHero( nPlayerID ) then
 			PlayerResource:ModifyGold( nPlayerID, startingGold, true, DOTA_ModifyGold_Unspecified )
-			-- Create courier
-			local player = PlayerResource:GetPlayer( nPlayerID );
-			local player_hero = player:GetAssignedHero();
-			local courier = CreateUnitByName(
-				"npc_dota_courier", -- szUnitName
-				player_hero:GetOrigin(), -- vLocation,
-				true, -- bFindClearSpace,
-				player_hero, -- hNPCOwner,
-				player, -- hUnitOwner,
-				player:GetTeamNumber() -- iTeamNumber
-			)
-			courier:SetControllableByPlayer( nPlayerID, false ) -- (playerID, bSkipAdjustingPosition)
-			courier:SetOwner( player )
 		end
 	end
 
