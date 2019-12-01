@@ -5378,73 +5378,12 @@
 			}
 		}
 	}
-
-	//=================================================================================================================
-	// Holdout: Difficulty Aura
-	//=================================================================================================================
-	"holdout_difficulty_aura"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"ability_datadriven"
-		"AbilityTextureName"			"crystal_maiden_brilliance_aura"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-
-		// Modifiers
-		//-------------------------------------------------------------------------------------------------------------
-		"Modifiers"
-		{
-			"modifier_ancient_no_death"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_MIN_HEALTH"				"1"
-				}
-			}
-
-			"modifier_holdout_difficulty_aura_aura"
-			{
-				"Passive"               "1"
-				"IsHidden"				"0"
-				"Aura"					"modifier_holdout_difficulty_aura_aura_effect"
-				"Aura_Radius"			"99999"
-				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-				"Aura_Types"			"DOTA_UNIT_TARGET_ALL"
-			}
-
-			"modifier_holdout_difficulty_aura_aura_effect"
-			{
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE"			"%damage_reduction"
-					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"			"%bonus_damage_pct"
-					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"				"%armor_bonus"
-				}
-			}
-		}
-		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage_reduction"		"-30 0 25 50"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage_pct"				"30 0 -15 -30"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"armor_bonus"				"5 0 -3 -7"
-			}
-		}
-	}
 }
+
+#base "../vscripts/lua_abilities/lua_abilities/gamemode/difficulty_lua/easy_difficulty_lua.txt"
+#base "../vscripts/lua_abilities/lua_abilities/gamemode/difficulty_lua/normal_difficulty_lua.txt"
+#base "../vscripts/lua_abilities/lua_abilities/gamemode/difficulty_lua/hard_difficulty_lua.txt"
+#base "../vscripts/lua_abilities/lua_abilities/gamemode/difficulty_lua/impossible_difficulty_lua.txt"
 
 #base "../vscripts/lua_abilities/creature_skywrath_mage_mystic_flare_lua/creature_skywrath_mage_mystic_flare_lua.txt"
 #base "../vscripts/lua_abilities/roshan_sun_strike_lua/roshan_sun_strike_lua.txt"

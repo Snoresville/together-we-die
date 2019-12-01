@@ -77,6 +77,15 @@ function CHoldoutGameMode:InitGameMode()
 	GameRules:GetGameModeEntity():SetRemoveIllusionsOnDeath( true )
 	GameRules:GetGameModeEntity():SetTopBarTeamValuesOverride( true )
 	GameRules:GetGameModeEntity():SetTopBarTeamValuesVisible( false )
+	-- Configure EXP
+	local MAX_HERO_LEVEL = 250
+	local EXP_CONST = 20
+	local xpTable = {}
+	for i = 1, MAX_HERO_LEVEL, 1 do
+		xpTable[i] = i * i * EXP_CONST
+	end
+	GameRules:GetGameModeEntity():SetUseCustomHeroLevels( true )
+	GameRules:GetGameModeEntity():SetCustomXPRequiredToReachNextLevel( xpTable )
 
 	-- Custom console commands
 	Convars:RegisterCommand( "holdout_test_round", function(...) return self:_TestRoundConsoleCommand( ... ) end, "Test a round of holdout.", FCVAR_CHEAT )
@@ -272,20 +281,24 @@ function CHoldoutGameMode:_CalculateAndApplyDifficulty()
 
 	local difficultyTitle = "DOTA_HUD_Difficulty_Easy"
 	if difficultyScore == 1 then
+		self._entAncient:AddAbility( "easy_difficulty_lua" )
 		self._nTowerRewardAmount = self._nTowerRewardAmount * 1.35
 		self._nTowerScalingRewardPerRound = self._nTowerScalingRewardPerRound * 1.35
 		startingGold = math.floor(10000 / playerCount)
 		GameRules:GetGameModeEntity():SetLoseGoldOnDeath( false )
 	elseif difficultyScore == 2 then
+		self._entAncient:AddAbility( "normal_difficulty_lua" )
 		difficultyTitle = "DOTA_HUD_Difficulty_Normal"
 		startingGold = math.floor(5000 / playerCount)
 	elseif difficultyScore == 3 then
+		self._entAncient:AddAbility( "hard_difficulty_lua" )
 		difficultyTitle = "DOTA_HUD_Difficulty_Hard"
 		self._lives = 2
 		self._nTowerRewardAmount = math.floor( self._nTowerRewardAmount * 0.75 )
 		self._nTowerScalingRewardPerRound = math.floor( self._nTowerScalingRewardPerRound * 0.75 )
 		startingGold = math.floor(2000 / playerCount)
 	elseif difficultyScore == 4 then
+		self._entAncient:AddAbility( "impossible_difficulty_lua" )
 		difficultyTitle = "DOTA_HUD_Difficulty_Impossible"
 		self._lives = 1
 		self._nTowerRewardAmount = math.floor( self._nTowerRewardAmount * 0.5 )
@@ -323,20 +336,11 @@ end
 
 function CHoldoutGameMode:_SetExpAndRespawn( difficultyScore )
 	difficultyScore = difficultyScore or 1
-	local maxHeroLevel = 250
 	local playerCount = PlayerResource:GetPlayerCountForTeam( DOTA_TEAM_GOODGUYS )
-	local expConst = math.floor((20 * difficultyScore) / playerCount)
-	local xpTable = {}
 	local goldTickTime = 0.5 * difficultyScore
 	local respawnTime = 9.5 * difficultyScore
 
-	for i = 1, maxHeroLevel, 1 do
-		xpTable[i] = i * i * expConst
-	end
-
 	GameRules:GetGameModeEntity():SetThink( "OnGoldInterval", self, goldTickTime )
-	GameRules:GetGameModeEntity():SetUseCustomHeroLevels( true )
-	GameRules:GetGameModeEntity():SetCustomXPRequiredToReachNextLevel( xpTable )
 	GameRules:GetGameModeEntity():SetFixedRespawnTime( respawnTime )
 end
 
