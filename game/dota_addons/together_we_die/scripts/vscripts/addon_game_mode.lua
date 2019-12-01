@@ -357,7 +357,6 @@ end
 
 function CHoldoutGameMode:_SetExpAndRespawn( difficultyScore )
 	difficultyScore = difficultyScore or 1
-	local playerCount = PlayerResource:GetPlayerCountForTeam( DOTA_TEAM_GOODGUYS )
 	local goldTickTime = 0.5 * difficultyScore
 	local respawnTime = 9.5 * difficultyScore
 
