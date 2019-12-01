@@ -109,9 +109,22 @@ function CHoldoutGameRound:End()
 	end
 	self._nTowersStandingGoldReward = self._gameMode:ComputeTowerBonusGold( self._nTowers, self._nTowersStanding )
 	
+	local playerCount = PlayerResource:GetPlayerCountForTeam( DOTA_TEAM_GOODGUYS )
 	for nPlayerID = 0, DOTA_MAX_TEAM_PLAYERS-1 do
 		if PlayerResource:HasSelectedHero( nPlayerID ) then
-			PlayerResource:ModifyGold( nPlayerID, self._nTowersStandingGoldReward, true, DOTA_ModifyGold_Unspecified )
+			if PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_BADGUYS then
+				-- bad guys get more gold
+				PlayerResource:ModifyGold( nPlayerID, self:GetTowersStandingGoldReward() * playerCount, true, DOTA_ModifyGold_Unspecified )
+				-- bad guys also get 3 levels per round
+				local player = PlayerResource:GetPlayer( nPlayerID )
+				local player_hero = player:GetAssignedHero()
+
+				for i = 0, 2 do
+					player_hero:HeroLevelUp(false)
+				end
+			else
+				PlayerResource:ModifyGold( nPlayerID, self:GetTowersStandingGoldReward(), true, DOTA_ModifyGold_Unspecified )
+			end
 		end
 	end
 

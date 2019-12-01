@@ -52,12 +52,7 @@ function CHoldoutGameMode:InitGameMode()
 	end
 
 	GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_GOODGUYS, 5 )
-	GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_BADGUYS, 0 )
-	for nPlayerID = 0, DOTA_MAX_TEAM_PLAYERS-1 do
-		if PlayerResource:GetPlayer( nPlayerID ) then
-			PlayerResource:SetCustomTeamAssignment( nPlayerID, DOTA_TEAM_GOODGUYS )
-		end
-	end
+	GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_BADGUYS, 1 )
 	--GameRules:SetCustomGameSetupTimeout( 0 )
 
 	self:_ReadGameConfiguration()
@@ -269,8 +264,8 @@ function CHoldoutGameMode:_BeginGameSetup()
 	-- Create courier for every player
 	for nPlayerID = 0, DOTA_MAX_TEAM_PLAYERS-1 do
 		if PlayerResource:HasSelectedHero( nPlayerID ) then
-			local player = PlayerResource:GetPlayer( nPlayerID );
-			local player_hero = player:GetAssignedHero();
+			local player = PlayerResource:GetPlayer( nPlayerID )
+			local player_hero = player:GetAssignedHero()
 			local courier = CreateUnitByName(
 				"npc_dota_courier", -- szUnitName
 				player_hero:GetOrigin(), -- vLocation,
@@ -281,6 +276,13 @@ function CHoldoutGameMode:_BeginGameSetup()
 			)
 			courier:SetControllableByPlayer( nPlayerID, false ) -- (playerID, bSkipAdjustingPosition)
 			courier:SetOwner( player )
+
+			-- Set level to 11 if it is enemy team
+			if player_hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
+				for i = 0, 9 do
+					player_hero:HeroLevelUp(false)
+				end
+			end
 		end
 	end
 
@@ -335,7 +337,12 @@ function CHoldoutGameMode:_CalculateAndApplyDifficulty()
 
 	for nPlayerID = 0, DOTA_MAX_TEAM_PLAYERS-1 do
 		if PlayerResource:HasSelectedHero( nPlayerID ) then
-			PlayerResource:ModifyGold( nPlayerID, startingGold, true, DOTA_ModifyGold_Unspecified )
+			if PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_BADGUYS then
+				-- bad guys get more gold
+				PlayerResource:ModifyGold( nPlayerID, startingGold * playerCount, true, DOTA_ModifyGold_Unspecified )
+			else
+				PlayerResource:ModifyGold( nPlayerID, startingGold, true, DOTA_ModifyGold_Unspecified )
+			end
 		end
 	end
 
