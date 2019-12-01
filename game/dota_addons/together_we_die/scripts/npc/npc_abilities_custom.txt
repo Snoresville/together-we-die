@@ -5384,6 +5384,7 @@
 #base "../vscripts/lua_abilities/gamemode/difficulty_lua/normal_difficulty_lua.txt"
 #base "../vscripts/lua_abilities/gamemode/difficulty_lua/hard_difficulty_lua.txt"
 #base "../vscripts/lua_abilities/gamemode/difficulty_lua/impossible_difficulty_lua.txt"
+#base "../vscripts/lua_abilities/gamemode/bad_guy_lua/bad_guy_lua.txt"
 
 #base "../vscripts/lua_abilities/creature_skywrath_mage_mystic_flare_lua/creature_skywrath_mage_mystic_flare_lua.txt"
 #base "../vscripts/lua_abilities/roshan_sun_strike_lua/roshan_sun_strike_lua.txt"

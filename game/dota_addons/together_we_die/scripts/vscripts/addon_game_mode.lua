@@ -299,11 +299,6 @@ function CHoldoutGameMode:_CalculateAndApplyDifficulty()
 		difficultyScore = math.floor(self:_GetDifficultyVote() / difficultyNumberOfVotes)
 	end
 
-	local difficultyAbility = self._entAncient:FindAbilityByName( "holdout_difficulty_aura" )
-	if difficultyAbility then
-		difficultyAbility:SetLevel( difficultyScore )
-	end
-
 	local playerCount = PlayerResource:GetPlayerCountForTeam( DOTA_TEAM_GOODGUYS )
 
 	local difficultyTitle = "DOTA_HUD_Difficulty_Easy"
@@ -340,6 +335,10 @@ function CHoldoutGameMode:_CalculateAndApplyDifficulty()
 			if PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_BADGUYS then
 				-- bad guys get more gold
 				PlayerResource:ModifyGold( nPlayerID, startingGold * playerCount, true, DOTA_ModifyGold_Unspecified )
+				local player = PlayerResource:GetPlayer( nPlayerID )
+				local player_hero = player:GetAssignedHero()
+				local badGuyAbility = player_hero:AddAbility( "bad_guy_lua" )
+				badGuyAbility:SetLevel( 1 )
 			else
 				PlayerResource:ModifyGold( nPlayerID, startingGold, true, DOTA_ModifyGold_Unspecified )
 			end
