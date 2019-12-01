@@ -32,7 +32,7 @@ function modifier_difficulty_lua:GetAuraSearchTeam()
 end
 
 function modifier_difficulty_lua:GetAuraSearchType()
-	return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC
+	return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_BUILDING
 end
 
 --------------------------------------------------------------------------------
