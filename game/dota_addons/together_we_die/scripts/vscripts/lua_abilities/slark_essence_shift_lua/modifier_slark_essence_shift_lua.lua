@@ -85,12 +85,16 @@ function modifier_slark_essence_shift_lua:GetModifierProcAttack_Feedback( params
 end
 
 function modifier_slark_essence_shift_lua:OnDeath( event )
-	if event.unit == nil or event.attacker == nil or event.unit:IsNull() or event.attacker:IsNull() then
+	if event.unit == nil or event.attacker == nil or event.unit:IsNull() or event.attacker:IsNull() or event.unit:IsIllusion() then
 		return
 	end
 
-	if event.unit:GetTeamNumber() ~= self:GetParent():GetTeamNumber() and self:GetParent():IsAlive() and event.attacker == self:GetParent() then
-		self:GetAbility():IncrementEssenceShiftKills()
+	if event.unit:GetTeamNumber() ~= self:GetParent():GetTeamNumber() and self:GetParent():IsAlive() and event.attacker == self:GetParent() and not self:GetParent():IsIllusion() then
+		if event.unit:IsRealHero() then
+			self:GetAbility():IncrementHeroKills()
+		else
+			self:GetAbility():IncrementEssenceShiftKills()
+		end
 
 		local permanent_agi_gain_modifier = self:GetParent():FindModifierByName( self.permanent_agi_gain_modifier_name )
 		if not permanent_agi_gain_modifier then

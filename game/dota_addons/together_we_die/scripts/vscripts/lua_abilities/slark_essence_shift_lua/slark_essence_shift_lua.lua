@@ -20,3 +20,7 @@ end
 function slark_essence_shift_lua:IncrementEssenceShiftKills()
 	self.nKills = self:GetEssenceShiftKills() + 1
 end
+
+function slark_essence_shift_lua:IncrementHeroKills()
+	self.nKills = self:GetEssenceShiftKills() + 10
+end
