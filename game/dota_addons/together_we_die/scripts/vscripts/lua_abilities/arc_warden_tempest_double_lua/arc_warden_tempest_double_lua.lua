@@ -84,7 +84,10 @@ function arc_warden_tempest_double_lua:OnSpellStart()
 		double:AddNewModifier(caster, self, "modifier_item_ultimate_scepter_consumed", nil)
 	end
 	double:AddNewModifier(caster, self, "modifier_kill", {["duration"] = duration})
-	
+
+	-- Play sound effects
+	local sound_cast = "Hero_ArcWarden.TempestDouble"
+	EmitSoundOn( sound_cast, caster )
 end
 
 arc_warden_tempest_double_lua_modifier = class({})

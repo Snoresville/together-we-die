@@ -13,11 +13,11 @@
 		"ScriptFile"					"lua_abilities/arc_warden_tempest_double_lua/arc_warden_tempest_double_lua"
 		"AbilityTextureName"			"arc_warden_tempest_double_lua"
 		"FightRecapLevel"				"2"
-		"AbilitySound"					"Hero_ArcWarden.TempestDouble"
 		"MaxLevel"						"3"
 		"precache"
 		{
 			"particle"				"particles/status_fx/status_effect_ancestral_spirit.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_arc_warden.vsndevts"
 		}
 		
 		// Ability General
