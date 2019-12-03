@@ -294,13 +294,6 @@ function CHoldoutGameMode:_BeginGameSetup()
 			)
 			courier:SetControllableByPlayer( nPlayerID, false ) -- (playerID, bSkipAdjustingPosition)
 			courier:SetOwner( player )
-
-			-- Set level to 11 if it is enemy team
-			if player_hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-				for i = 0, 9 do
-					player_hero:HeroLevelUp(false)
-				end
-			end
 		end
 	end
 
@@ -357,6 +350,13 @@ function CHoldoutGameMode:_CalculateAndApplyDifficulty()
 				local player_hero = player:GetAssignedHero()
 				local badGuyAbility = player_hero:AddAbility( "bad_guy_lua" )
 				badGuyAbility:SetLevel( 1 )
+
+				-- Set level to (16 / difficulty) if it is enemy team
+				-- If higher difficulty, bad guy starts with lower level
+				local badGuyLevel = math.floor(14 / difficultyScore)
+				for i = 0, badGuyLevel do
+					player_hero:HeroLevelUp(false)
+				end
 			else
 				PlayerResource:ModifyGold( nPlayerID, startingGold, true, DOTA_ModifyGold_Unspecified )
 			end
