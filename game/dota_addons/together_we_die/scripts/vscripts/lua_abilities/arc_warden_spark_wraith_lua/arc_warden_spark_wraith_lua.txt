@@ -1,0 +1,104 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Arc Warden: Spark Wraith
+	//=================================================================================================================
+	"arc_warden_spark_wraith_lua"
+	{
+		// Ability Technical Aspect
+		// base script folder	: scripts/vscripts
+		// base texture folder	: resource/flash3/images/spellicons
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"lua_abilities/arc_warden_spark_wraith_lua/arc_warden_spark_wraith_lua"
+		"AbilityTextureName"			"arc_warden_spark_wraith_lua"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"4"
+		"precache"
+		{
+			"particle"				"particles/units/heroes/hero_arc_warden/arc_warden_wraith.vpcf"
+			"particle"				"particles/units/heroes/hero_arc_warden/arc_warden_wraith_prj_model.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_arc_warden.vsndevts"
+		}
+		
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+
+		// Ability Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"2000"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		"AbilityCastGestureSlot"		"DEFAULT"
+
+		// Ability Resource
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"80"
+		"AbilityCooldown"				"4.0 4.0 4.0 4.0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"radius"						"375"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"activation_delay"				"2.0"
+			}			
+			"03"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"duration"						"50"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"wraith_speed"					"400"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"spark_damage"					"100 170 240 310"
+			}
+			"06"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"think_interval"				"0.2"
+			}
+			"07"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"wraith_vision_radius"					"300"
+			}  
+			"08"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"wraith_vision_duration"				"3.34"
+			}
+			"09"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"ministun_duration"				"0.4 0.5 0.6 0.7"
+			}
+			"10"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"move_speed_slow_pct"				"100"
+			}
+			"11"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"agi_multiplier"					"2.0 2.5 3.0 3.5"
+			}
+		}
+	}
+}
