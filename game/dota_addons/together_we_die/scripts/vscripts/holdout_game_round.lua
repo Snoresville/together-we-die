@@ -114,7 +114,9 @@ function CHoldoutGameRound:End()
 		if PlayerResource:HasSelectedHero( nPlayerID ) then
 			if PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_BADGUYS then
 				-- bad guys get more gold
-				PlayerResource:ModifyGold( nPlayerID, self:GetTowersStandingGoldReward() * 2 * playerCount, true, DOTA_ModifyGold_Unspecified )
+				local badGuyGoldPerRound = 1500
+				local badGuyGold = self._nRoundNumber * badGuyGoldPerRound + self:GetTowersStandingGoldReward() * 2 * playerCount
+				PlayerResource:ModifyGold( nPlayerID, badGuyGold, true, DOTA_ModifyGold_Unspecified )
 				-- bad guys also get 15 levels per round
 				local levels_to_give = math.floor(15 / math.max(playerCount, 1))
 				local player = PlayerResource:GetPlayer( nPlayerID )
