@@ -30,6 +30,14 @@ function modifier_arc_warden_spark_wraith_lua:OnCreated( kv )
 	self:StartIntervalThink( self.activation_delay )
 end
 
+-- OnDestroy
+function modifier_arc_warden_spark_wraith_lua:OnDestroy()
+	if not IsServer() then return end
+	-- stop sound
+	StopSoundOn( self.sound_loop, self:GetParent() )
+	self:GetParent():ForceKill( false )
+end
+
 --------------------------------------------------------------------------------
 -- Graphics & Animations
 function modifier_arc_warden_spark_wraith_lua:GetEffectName()
@@ -59,16 +67,18 @@ function modifier_arc_warden_spark_wraith_lua:OnIntervalThink()
 		)
 
 		if #enemies ~= 0 then
+			if self.caster == nil then
+				self:OnDestroy()
+				return
+			end
+
 			for _,enemy in pairs(enemies) do
 				self:SendProjectile( enemy )
 			end
 	
 			-- Play Sound Effects
 			EmitSoundOnLocationWithCaster( self:GetParent():GetOrigin(), "Hero_ArcWarden.SparkWraith.Activate", self.caster )
-			-- Remove thinker
-			-- stop sound
-			StopSoundOn( self.sound_loop, self:GetParent() )
-			UTIL_Remove( self:GetParent() )
+			self:OnDestroy()
 		end
 	else
 		self.activated = true
@@ -77,12 +87,12 @@ function modifier_arc_warden_spark_wraith_lua:OnIntervalThink()
 end
 --------------------------------------------------------------------------------
 function modifier_arc_warden_spark_wraith_lua:SendProjectile( target )
-	local projectile_name = "particles/units/heroes/hero_arc_warden/arc_warden_wraith_prj_model.vpcf"
+	local projectile_name = "particles/units/heroes/hero_arc_warden/arc_warden_wraith_prj.vpcf"
 
 	-- create projectile
 	local info = {
 		Target = target,
-		Source = self.caster,
+		Source = self:GetParent(),
 		Ability = self:GetAbility(),	
 		
 		EffectName = projectile_name,

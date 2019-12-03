@@ -17,7 +17,7 @@
 		"precache"
 		{
 			"particle"				"particles/units/heroes/hero_arc_warden/arc_warden_wraith.vpcf"
-			"particle"				"particles/units/heroes/hero_arc_warden/arc_warden_wraith_prj_model.vpcf"
+			"particle"				"particles/units/heroes/hero_arc_warden/arc_warden_wraith_prj.vpcf"
 			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_arc_warden.vsndevts"
 		}
 		
