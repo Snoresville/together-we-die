@@ -88,7 +88,7 @@ function CHoldoutGameRound:End()
 
 	for _,unit in pairs( FindUnitsInRadius( DOTA_TEAM_BADGUYS, Vector( 0, 0, 0 ), nil, FIND_UNITS_EVERYWHERE, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false )) do
 		-- Make sure not tower, hero or owned by non-bot players
-		if not (unit:IsTower() or unit:IsRealHero() or unit:IsOwnedByAnyPlayer()) then
+		if not (unit:IsTower() or unit:IsRealHero() or unit:IsOther() or unit:IsOwnedByAnyPlayer()) then
 			UTIL_RemoveImmediate( unit )
 		end
 	end
@@ -180,7 +180,7 @@ end
 function CHoldoutGameRound:OnNPCSpawned( event )
 	local spawnedUnit = EntIndexToHScript( event.entindex )
 	-- Make sure not hero and not owned by any non-bots players
-	if not spawnedUnit or spawnedUnit:IsRealHero() or spawnedUnit:IsOwnedByAnyPlayer() or spawnedUnit:IsPhantom() or spawnedUnit:GetClassname() == "npc_dota_thinker" or spawnedUnit:GetUnitName() == "" then
+	if not spawnedUnit or spawnedUnit:IsRealHero() or spawnedUnit:IsOther() or spawnedUnit:IsOwnedByAnyPlayer() or spawnedUnit:IsPhantom() or spawnedUnit:GetClassname() == "npc_dota_thinker" or spawnedUnit:GetUnitName() == "" then
 		return
 	end
 
@@ -311,7 +311,7 @@ function CHoldoutGameRound:ApplyVisionToRemainingEnemies()
 	if #enemies > 0 then
 		for _,enemy in pairs(enemies) do
 			-- Make sure enemy is not a real hero and also not owned by a non-bot player
-			if enemy ~= nil and not enemy:IsRealHero() and not enemy:IsOwnedByAnyPlayer() then
+			if enemy ~= nil and not enemy:IsRealHero() and not enemy:IsOwnedByAnyPlayer() and not enemy:IsOther() then
 				enemy:AddNewModifier( enemy, nil, "modifier_razor_link_vision", { duration = -1 } )
 			end
 		end
