@@ -43,21 +43,18 @@ function arc_warden_spark_wraith_lua:OnProjectileHit( target, location )
 		ability = self, --Optional.
 	}
 	ApplyDamage(damageTable)
+	-- mini stun
+	target:Interrupt()
 
 	self:PlayEffects1( target )
 end
 --------------------------------------------------------------------------------
 function arc_warden_spark_wraith_lua:PlayEffects1( target )
 	-- Get Resources
-	local particle_cast = "particles/units/heroes/hero_arc_warden/arc_warden_wraith_prj_elec_hit.vpcf"
 	local sound_cast = "Hero_ArcWarden.SparkWraith.Damage"
 
 	-- Create Sound
 	EmitSoundOn( sound_cast, target )
-
-	-- Create Particle
-	local effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_ABSORIGIN_FOLLOW, target )
-	ParticleManager:ReleaseParticleIndex( effect_cast )
 end
 
 --------------------------------------------------------------------------------
