@@ -7,18 +7,38 @@
 	"RewardForTowersStanding"		"1"
 	"TowerRewardAmount"				"300"
 	"TowerScalingRewardPerRound"	"75"
-	
-	"ItemDrops"
+
+	"TieredItemDrops"
 	{
-		"HealingSalve"
+		// Round 1 - 5
+		"TierOne"
 		{
-			"Item"					"item_flask2"
-			"Chance"				"2"
+			"HealingSalve"
+			{
+				"Item"					"item_flask2"
+				"Chance"				"20"
+			}
+			"Clarity"
+			{
+				"Item"					"item_greater_clarity"
+				"Chance"				"20"
+			}
 		}
-		"Clarity"
+		// Round 6 - 10
+		"TierTwo"
 		{
-			"Item"					"item_greater_clarity"
-			"Chance"				"2"
+		}
+		// Round 11 - 15
+		"TierThree"
+		{
+		}
+		// Round 16 - 20
+		"TierFour"
+		{
+		}
+		// Round 21 onwards
+		"TierFive"
+		{
 		}
 	}
 	

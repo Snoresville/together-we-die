@@ -118,7 +118,7 @@ function CHoldoutGameMode:_ReadGameConfiguration()
 	self._flItemExpireTime = tonumber( kv.ItemExpireTime or 10.0 )
 
 	self:_ReadRandomSpawnsConfiguration( kv["RandomSpawns"] )
-	self:_ReadLootItemDropsConfiguration( kv["ItemDrops"] )
+	self._kvLootTieredDrops = kv["TieredItemDrops"]
 	self:_ReadRoundConfigurations( kv )
 end
 
@@ -161,6 +161,24 @@ function CHoldoutGameMode:_ReadLootItemDropsConfiguration( kvLootDrops )
 		})
 	end
 end
+
+function CHoldoutGameMode:_ReadRoundLootItemDropsConfiguration( roundNumber )
+	if type( self._kvLootTieredDrops ) ~= "table" then
+		return
+	end
+	if roundNumber < 6 then
+		self:_ReadLootItemDropsConfiguration( self._kvLootTieredDrops["TierOne"] )
+	elseif roundNumber < 11 then
+		self:_ReadLootItemDropsConfiguration( self._kvLootTieredDrops["TierTwo"] )
+	elseif roundNumber < 16 then
+		self:_ReadLootItemDropsConfiguration( self._kvLootTieredDrops["TierThree"] )
+	elseif roundNumber < 21 then
+		self:_ReadLootItemDropsConfiguration( self._kvLootTieredDrops["TierFour"] )
+	else
+		self:_ReadLootItemDropsConfiguration( self._kvLootTieredDrops["TierFive"] )
+	end
+end
+
 
 
 -- Set number of rounds without requiring index in text file
@@ -531,6 +549,8 @@ function CHoldoutGameMode:_ThinkPrepTime()
 			GameRules:SetGameWinner( DOTA_TEAM_GOODGUYS )
 			return false
 		end
+		-- Read item drop config
+		self:_ReadRoundLootItemDropsConfiguration( self._nRoundNumber )
 		self._currentRound = self._vRounds[ self._nRoundNumber ]
 		self._currentRound:Begin()
 		self:_NotifyClientOfRoundStart()
@@ -686,8 +706,10 @@ end
 
 
 function CHoldoutGameMode:CheckForLootItemDrop( killedUnit )
+	-- check round number _nRoundNumber
+	local upperBound = 1000
 	for _,itemDropInfo in pairs( self._vLootItemDropsList ) do
-		if RollPercentage( itemDropInfo.nChance ) then
+		if self:RollDropChance( itemDropInfo.nChance, upperBound ) then
 			local newItem = CreateItem( itemDropInfo.szItemName, nil, nil )
 			newItem:SetPurchaseTime( 0 )
 			if newItem:IsPermanent() and newItem:GetShareability() == ITEM_FULLY_SHAREABLE then
@@ -699,6 +721,13 @@ function CHoldoutGameMode:CheckForLootItemDrop( killedUnit )
 	end
 end
 
+function CHoldoutGameMode:RollDropChance( chance, upperBound )
+	local rand = math.random()
+	if rand<chance/upperBound then
+		return true
+	end
+	return false
+end
 
 function CHoldoutGameMode:ComputeTowerBonusGold( nTowersTotal, nTowersStanding )
 	local nRewardPerTower = self._nTowerRewardAmount + self._nTowerScalingRewardPerRound * (self._nRoundNumber - 1)
