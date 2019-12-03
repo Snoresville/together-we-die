@@ -37,12 +37,12 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage_reduction"		"-80"
+				"damage_reduction"		"-60"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_damage_pct"	"100"
+				"bonus_damage_pct"	"50"
 			}
 			"03"
 			{
