@@ -717,6 +717,9 @@ function CHoldoutGameMode:CheckForLootItemDrop( killedUnit )
 			end
 			local drop = CreateItemOnPositionSync( killedUnit:GetAbsOrigin(), newItem )
 			drop.Holdout_IsLootDrop = true
+
+			-- exit loop
+			break
 		end
 	end
 end

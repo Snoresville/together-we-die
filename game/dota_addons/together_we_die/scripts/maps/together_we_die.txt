@@ -26,17 +26,17 @@
 			"VambraceRecipe"
 			{
 				"Item"					"item_recipe_vambrace"
-				"Chance"				"8"
+				"Chance"				"5"
 			}
 			"ImpClaw"
 			{
 				"Item"					"item_imp_claw"
-				"Chance"				"8"
+				"Chance"				"5"
 			}
 			"RoyalJelly"
 			{
 				"Item"					"item_royal_jelly"
-				"Chance"				"8"
+				"Chance"				"5"
 			}
 			"MangoTree"
 			{
@@ -46,7 +46,7 @@
 			"TomeOfAghanim"
 			{
 				"Item"					"item_tome_of_aghanim"
-				"Chance"				"5"
+				"Chance"				"3"
 			}
 		}
 		// Round 6 - 10
@@ -55,22 +55,22 @@
 			"MindBreaker"
 			{
 				"Item"					"item_mind_breaker"
-				"Chance"				"8"
+				"Chance"				"3"
 			}
 			"CraggyCoat"
 			{
 				"Item"					"item_craggy_coat"
-				"Chance"				"8"
+				"Chance"				"5"
 			}
 			"VampireFangs"
 			{
 				"Item"					"item_vampire_fangs"
-				"Chance"				"8"
+				"Chance"				"5"
 			}
 			"Prism"
 			{
 				"Item"					"item_spell_prism"
-				"Chance"				"8"
+				"Chance"				"5"
 			}
 		}
 		// Round 11 - 15
@@ -79,12 +79,12 @@
 			"PhoenixAsh"
 			{
 				"Item"					"item_phoenix_ash"
-				"Chance"				"8"
+				"Chance"				"3"
 			}
 			"DesolatorTwo"
 			{
 				"Item"					"item_desolator_2"
-				"Chance"				"8"
+				"Chance"				"3"
 			}
 		}
 		// Round 16 - 20
