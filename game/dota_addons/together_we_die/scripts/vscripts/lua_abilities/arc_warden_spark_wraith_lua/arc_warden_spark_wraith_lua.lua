@@ -1,5 +1,7 @@
 arc_warden_spark_wraith_lua = class({})
+LinkLuaModifier( "modifier_arc_warden_spark_wraith_lua_thinker", "lua_abilities/arc_warden_spark_wraith_lua/modifier_arc_warden_spark_wraith_lua_thinker", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_arc_warden_spark_wraith_lua", "lua_abilities/arc_warden_spark_wraith_lua/modifier_arc_warden_spark_wraith_lua", LUA_MODIFIER_MOTION_NONE )
+
 
 --------------------------------------------------------------------------------
 
@@ -18,7 +20,7 @@ function arc_warden_spark_wraith_lua:OnSpellStart()
 	CreateModifierThinker(
 		caster,
 		self,
-		"modifier_arc_warden_spark_wraith_lua",
+		"modifier_arc_warden_spark_wraith_lua_thinker",
 		{ duration = duration },
 		point,
 		caster:GetTeamNumber(),
@@ -32,12 +34,15 @@ end
 function arc_warden_spark_wraith_lua:OnProjectileHit( target, location )
 	if not target then return end
 
-	local damage = self:GetSpecialValueFor( "spark_damage" ) + self:GetSpecialValueFor( "agi_multiplier" ) * self:GetCaster():GetAgility()
+	local caster = self:GetCaster()
+
+	local damage = self:GetSpecialValueFor( "spark_damage" ) + self:GetSpecialValueFor( "agi_multiplier" ) * caster:GetAgility()
+	local duration = self:GetSpecialValueFor( "ministun_duration" )
 
 	-- precache damage
 	local damageTable = {
 		victim = target,
-		attacker = self:GetCaster(),
+		attacker = caster,
 		damage = damage,
 		damage_type = self:GetAbilityDamageType(),
 		ability = self, --Optional.
@@ -45,6 +50,13 @@ function arc_warden_spark_wraith_lua:OnProjectileHit( target, location )
 	ApplyDamage(damageTable)
 	-- mini stun
 	target:Interrupt()
+	-- Add slow
+	target:AddNewModifier(
+		caster, -- player source
+		self, -- ability source
+		"modifier_arc_warden_spark_wraith_lua", -- modifier name
+		{ duration = duration } -- kv
+	)
 
 	self:PlayEffects1( target )
 end
