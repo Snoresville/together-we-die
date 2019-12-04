@@ -1,0 +1,90 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Phantom Lancer: Spirit Lance
+	//=================================================================================================================
+	"phantom_lancer_spirit_lance_lua"
+	{
+		// Ability Technical Aspect
+		// base script folder	: scripts/vscripts
+		// base texture folder	: resource/flash3/images/spellicons
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"lua_abilities/phantom_lancer_spirit_lance_lua/phantom_lancer_spirit_lance_lua"
+		"AbilityTextureName"			"phantom_lancer_spirit_lance_lua"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"4"
+		"precache"
+		{
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_chaos_knight.vsndevts"
+			"particle"					"particles/units/heroes/hero_phantom_lancer/phantomlancer_spiritlance_projectile.vpcf"
+			"particle"					"particles/units/heroes/hero_chaos_knight/chaos_knight_bolt_msg.vpcf"
+		}
+
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+
+
+		// Ability Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"525 600 675 750"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+
+		// Ability Resource
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"7.0 7.0 7.0 7.0"
+		"AbilityManaCost"				"110 120 130 140"
+
+		// Damage
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"lance_damage"				"100 150 200 250"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"lance_speed"				"1000 1000 1000 1000"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"3.25"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"movement_speed_pct"		"-10 -18 -26 -34"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"fake_lance_distance"		"675"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"agi_multiplier"			"2.0 2.5 3.0 3.5"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"275"
+			}
+		}	
+	}
+}
