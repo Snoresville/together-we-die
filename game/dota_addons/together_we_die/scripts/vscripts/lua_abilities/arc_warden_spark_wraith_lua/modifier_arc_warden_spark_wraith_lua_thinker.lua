@@ -24,7 +24,6 @@ function modifier_arc_warden_spark_wraith_lua_thinker:OnCreated( kv )
 	self.wraith_speed = self:GetAbility():GetSpecialValueFor( "wraith_speed" )
 	self.wraith_vision_radius = self:GetAbility():GetSpecialValueFor( "wraith_vision_radius" )
 	self.sound_loop = "Hero_ArcWarden.SparkWraith.Loop"
-	self.caster = self:GetCaster()
 	EmitSoundOn( self.sound_loop, self:GetParent() )
 
 	self:StartIntervalThink( self.activation_delay )
@@ -67,17 +66,12 @@ function modifier_arc_warden_spark_wraith_lua_thinker:OnIntervalThink()
 		)
 
 		if #enemies ~= 0 then
-			if self.caster == nil then
-				self:OnDestroy()
-				return
-			end
-
 			for _,enemy in pairs(enemies) do
 				self:SendProjectile( enemy )
 			end
 	
 			-- Play Sound Effects
-			EmitSoundOnLocationWithCaster( self:GetParent():GetOrigin(), "Hero_ArcWarden.SparkWraith.Activate", self.caster )
+			EmitSoundOn( "Hero_ArcWarden.SparkWraith.Activate", self:GetParent() )
 			self:OnDestroy()
 		end
 	else
@@ -104,7 +98,7 @@ function modifier_arc_warden_spark_wraith_lua_thinker:SendProjectile( target )
 
 		bProvidesVision = true,                           -- Optional
 		iVisionRadius = self.wraith_vision_radius,                              -- Optional
-		iVisionTeamNumber = self.caster:GetTeamNumber(),        -- Optional
+		iVisionTeamNumber = self:GetParent():GetTeamNumber(),        -- Optional
 	}
 	ProjectileManager:CreateTrackingProjectile(info)	
 end
