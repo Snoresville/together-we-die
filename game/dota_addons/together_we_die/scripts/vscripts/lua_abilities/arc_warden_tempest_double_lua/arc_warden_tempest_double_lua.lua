@@ -23,67 +23,82 @@ function arc_warden_tempest_double_lua:OnSpellStart()
 		damage_flags = DOTA_DAMAGE_FLAG_HPLOSS + DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS, --Optional.
 	}
 	ApplyDamage(damageTable)
-	local double = CreateUnitByName( caster:GetUnitName(), spawn_location, true, caster, caster:GetOwner(), caster:GetTeamNumber())
-	double:SetControllableByPlayer(caster:GetPlayerID(), false)
 
-	local caster_level = caster:GetLevel()
-	for i = 2, caster_level do
-		double:HeroLevelUp(false)
-	end
+	local modifyDouble = function ( double )
+		double:SetOwner( caster )
+		double:SetControllableByPlayer( caster:GetPlayerID(), false )
+		double:SetPlayerID( caster:GetPlayerID() )
 
-	local maxAbilities = caster:GetAbilityCount()
+		local caster_level = caster:GetLevel()
+		for i = 2, caster_level do
+			double:HeroLevelUp(false)
+		end
 
-	for ability_id = 0, maxAbilities do
-		local ability = caster:GetAbilityByIndex(ability_id)
-		if ability then
-			local doubleAbility = double:GetAbilityByIndex(ability_id)
-			local abilityLevel = ability:GetLevel()
-			if doubleAbility then
-				doubleAbility:SetLevel(abilityLevel)
-				if doubleAbility:GetName() == "arc_warden_tempest_double_lua" then
-					doubleAbility:SetActivated(false)
-				end
-			else
-				-- Add ability
-				local abilityName = ability:GetAbilityName()
-				local newAbility = double:AddAbility(abilityName)
-				newAbility:SetLevel(abilityLevel)
+		local maxAbilities = caster:GetAbilityCount()
 
-				if newAbility:GetName() == "arc_warden_tempest_double_lua" then
-					newAbility:SetActivated(false)
+		for ability_id = 0, maxAbilities do
+			local ability = caster:GetAbilityByIndex(ability_id)
+			if ability then
+				local doubleAbility = double:GetAbilityByIndex(ability_id)
+				local abilityLevel = ability:GetLevel()
+				if doubleAbility then
+					doubleAbility:SetLevel(abilityLevel)
+					if doubleAbility:GetName() == "arc_warden_tempest_double_lua" then
+						doubleAbility:SetActivated(false)
+					end
+				else
+					-- Add ability
+					local abilityName = ability:GetAbilityName()
+					local newAbility = double:AddAbility(abilityName)
+					newAbility:SetLevel(abilityLevel)
+
+					if newAbility:GetName() == "arc_warden_tempest_double_lua" then
+						newAbility:SetActivated(false)
+					end
 				end
 			end
 		end
-	end
 
 
-	for item_id = 0, 5 do
-		local item_in_caster = caster:GetItemInSlot(item_id)
-		if item_in_caster ~= nil then
-			local item_name = item_in_caster:GetName()
-			if not (item_name == "item_aegis" or item_name == "item_smoke_of_deceit" or item_name == "item_ward_observer" or item_name == "item_ward_sentry" or item_name == "item_rapier" or item_name == "item_recipe_rapier" or item_name == "item_dredged_trident" or item_name == "item_recipe_dredged_trident") then
-				local item_created = CreateItem( item_in_caster:GetName(), double, double)
-				double:AddItem(item_created)
-				item_created:SetCurrentCharges(item_in_caster:GetCurrentCharges()) 
+		for item_id = 0, 5 do
+			local item_in_caster = caster:GetItemInSlot(item_id)
+			if item_in_caster ~= nil then
+				local item_name = item_in_caster:GetName()
+				if not (item_name == "item_aegis" or item_name == "item_smoke_of_deceit" or item_name == "item_ward_observer" or item_name == "item_ward_sentry" or item_name == "item_rapier" or item_name == "item_recipe_rapier" or item_name == "item_dredged_trident" or item_name == "item_recipe_dredged_trident") then
+					local item_created = CreateItem( item_in_caster:GetName(), double, double)
+					double:AddItem(item_created)
+					item_created:SetCurrentCharges(item_in_caster:GetCurrentCharges()) 
+				end
 			end
 		end
+
+		double:SetHealth(caster:GetHealth())
+
+		double:SetMaximumGoldBounty(0)
+		double:SetMinimumGoldBounty(0)
+		double:SetDeathXP(0)
+		double:SetAbilityPoints(0) 
+
+		double:SetHasInventory(false)
+		double:SetCanSellItems(false)
+
+		double:AddNewModifier(caster, self, "arc_warden_tempest_double_lua_modifier", nil)
+		if hasScepter then
+			double:AddNewModifier(caster, self, "modifier_item_ultimate_scepter_consumed", nil)
+		end
+		double:AddNewModifier(caster, self, "modifier_kill", {["duration"] = duration})
 	end
 
-	double:SetHealth(caster:GetHealth())
-
-	double:SetMaximumGoldBounty(0)
-	double:SetMinimumGoldBounty(0)
-	double:SetDeathXP(0)
-	double:SetAbilityPoints(0) 
-
-	double:SetHasInventory(false)
-	double:SetCanSellItems(false)
-
-	double:AddNewModifier(caster, self, "arc_warden_tempest_double_lua_modifier", nil)
-	if hasScepter then
-		double:AddNewModifier(caster, self, "modifier_item_ultimate_scepter_consumed", nil)
-	end
-	double:AddNewModifier(caster, self, "modifier_kill", {["duration"] = duration})
+	-- Create unit
+	local double = CreateUnitByNameAsync(
+		caster:GetUnitName(), -- szUnitName
+		spawn_location, -- vLocation,
+		true, -- bFindClearSpace,
+		caster, -- hNPCOwner,
+		nil, -- hUnitOwner,
+		caster:GetTeamNumber(), -- iTeamNumber
+		modifyDouble
+	)
 
 	-- Play sound effects
 	local sound_cast = "Hero_ArcWarden.TempestDouble"
