@@ -182,7 +182,7 @@ end
 function CHoldoutGameRound:OnNPCSpawned( event )
 	local spawnedUnit = EntIndexToHScript( event.entindex )
 	-- Make sure not hero and not owned by any non-bots players
-	if not spawnedUnit or spawnedUnit:IsRealHero() or spawnedUnit:IsOther() or spawnedUnit:IsOwnedByAnyPlayer() or spawnedUnit:IsPhantom() or spawnedUnit:GetClassname() == "npc_dota_thinker" or spawnedUnit:GetUnitName() == "" then
+	if not spawnedUnit or spawnedUnit:IsRealHero() or spawnedUnit:IsOwnedByAnyPlayer() or spawnedUnit:IsPhantom() or spawnedUnit:GetClassname() == "npc_dota_thinker" or spawnedUnit:GetUnitName() == "" then
 		return
 	end
 
@@ -309,11 +309,9 @@ function CHoldoutGameRound:_CheckForGoldBagDrop( killedUnit )
 end
 
 function CHoldoutGameRound:ApplyVisionToRemainingEnemies()
-	local enemies = FindUnitsInRadius( DOTA_TEAM_GOODGUYS, Vector( 0, 0, 0 ), nil, FIND_UNITS_EVERYWHERE, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_INVULNERABLE, 0, false )
-	if #enemies > 0 then
-		for _,enemy in pairs(enemies) do
-			-- Make sure enemy is not a real hero and also not owned by a non-bot player
-			if enemy ~= nil and not enemy:IsRealHero() and not enemy:IsOwnedByAnyPlayer() and not enemy:IsOther() then
+	if self:GetRemainingUnits() > 0 then
+		for i, enemy in pairs( self._vEnemiesRemaining ) do
+			if enemy ~= nil then
 				enemy:AddNewModifier( enemy, nil, "modifier_razor_link_vision", { duration = -1 } )
 			end
 		end
