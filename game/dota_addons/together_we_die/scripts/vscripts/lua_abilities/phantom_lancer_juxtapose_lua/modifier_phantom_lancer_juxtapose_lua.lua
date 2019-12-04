@@ -71,55 +71,68 @@ function modifier_phantom_lancer_juxtapose_lua:OnAttackLanded( params )
 					local modifier_parent = self:GetParent()
 					local unit_name = self.original_hero:GetUnitName()
 					local origin = target:GetAbsOrigin() + RandomVector(100)
-					local illusion = CreateUnitByName( unit_name, origin, true, modifier_parent, nil, modifier_parent:GetTeamNumber() )
-					illusion:SetOwner( self.original_hero )
-					illusion:SetControllableByPlayer( modifier_parent:GetPlayerID(), false )
+					local modifyIllusion = function ( illusion )
+						illusion:SetOwner( self.original_hero )
+						illusion:SetControllableByPlayer( modifier_parent:GetPlayerID(), false )
+						illusion:SetPlayerID( modifier_parent:GetPlayerID() )
 
-					-- Set the unit as an illusion
-					-- modifier_illusion controls many illusion properties like +Green damage not adding to the unit damage, not being able to cast spells and the team-only blue particle
-					illusion:AddNewModifier(self.original_hero, self.original_ability, "modifier_illusion", { duration = self.illusion_duration, outgoing_damage = self.illusion_outgoing_damage, incoming_damage = self.illusion_incoming_damage })
-					illusion:AddNewModifier(self.original_hero, self.original_ability, "modifier_phantom_lancer_juxtapose_illusion_lua", { duration = self.illusion_duration })
-					-- Without MakeIllusion the unit counts as a hero, e.g. if it dies to neutrals it says killed by neutrals, it respawns, etc.
-					illusion:MakeIllusion()
+						-- Set the unit as an illusion
+						-- modifier_illusion controls many illusion properties like +Green damage not adding to the unit damage, not being able to cast spells and the team-only blue particle
+						illusion:AddNewModifier(self.original_hero, self.original_ability, "modifier_illusion", { duration = self.illusion_duration, outgoing_damage = self.illusion_outgoing_damage, incoming_damage = self.illusion_incoming_damage })
+						illusion:AddNewModifier(self.original_hero, self.original_ability, "modifier_phantom_lancer_juxtapose_illusion_lua", { duration = self.illusion_duration })
+						-- Without MakeIllusion the unit counts as a hero, e.g. if it dies to neutrals it says killed by neutrals, it respawns, etc.
+						illusion:MakeIllusion()
 
-					-- Level Up the unit to the casters level
-					local casterLevel = self.original_hero:GetLevel()
-					for i = 2, casterLevel do
-						illusion:HeroLevelUp(false)
-					end
+						-- Level Up the unit to the casters level
+						local casterLevel = self.original_hero:GetLevel()
+						for i = 2, casterLevel do
+							illusion:HeroLevelUp(false)
+						end
 
-					-- Set the skill points to 0 and learn the skills of the caster
-					illusion:SetAbilityPoints(0)
+						-- Set the skill points to 0 and learn the skills of the caster
+						illusion:SetAbilityPoints(0)
 
-					local maxAbilities = self.original_hero:GetAbilityCount()
+						local maxAbilities = self.original_hero:GetAbilityCount()
 
-					for ability_id = 0, maxAbilities do
-						local ability = self.original_hero:GetAbilityByIndex(ability_id)
-						if ability then
-							local abilityLevel = ability:GetLevel()
-							if abilityLevel ~= 0 then
-								local illusionAbility = illusion:GetAbilityByIndex(ability_id)
-								if illusionAbility then
-									illusionAbility:SetLevel(abilityLevel)
-								else
-									-- Add ability
-									local abilityName = ability:GetAbilityName()
-									local newAbility = illusion:AddAbility(abilityName)
-									newAbility:SetLevel(abilityLevel)
+						for ability_id = 0, maxAbilities do
+							local ability = self.original_hero:GetAbilityByIndex(ability_id)
+							if ability then
+								local abilityLevel = ability:GetLevel()
+								if abilityLevel ~= 0 then
+									local illusionAbility = illusion:GetAbilityByIndex(ability_id)
+									if illusionAbility then
+										illusionAbility:SetLevel(abilityLevel)
+									else
+										-- Add ability
+										local abilityName = ability:GetAbilityName()
+										local newAbility = illusion:AddAbility(abilityName)
+										newAbility:SetLevel(abilityLevel)
+									end
 								end
+							end
+						end
+
+						-- Recreate the items of the caster
+						for itemSlot=0,5 do
+							local item = self.original_hero:GetItemInSlot(itemSlot)
+							if item ~= nil then
+								local itemName = item:GetName()
+								local newItem = CreateItem(itemName, illusion, illusion)
+								illusion:AddItem(newItem)
 							end
 						end
 					end
 
-					-- Recreate the items of the caster
-					for itemSlot=0,5 do
-						local item = self.original_hero:GetItemInSlot(itemSlot)
-						if item ~= nil then
-							local itemName = item:GetName()
-							local newItem = CreateItem(itemName, illusion, illusion)
-							illusion:AddItem(newItem)
-						end
-					end
+					-- Create unit
+					local illusion = CreateUnitByNameAsync(
+						unit_name, -- szUnitName
+						origin, -- vLocation,
+						true, -- bFindClearSpace,
+						modifier_parent, -- hNPCOwner,
+						nil, -- hUnitOwner,
+						modifier_parent:GetTeamNumber(), -- iTeamNumber
+						modifyIllusion
+					)
 
 					self.original_ability:IncrementSpawnedIllusionsCount()
 				end
