@@ -289,7 +289,7 @@ function CHoldoutGameMode:_BeginGameSetup()
 				player_hero:GetOrigin(), -- vLocation,
 				true, -- bFindClearSpace,
 				player_hero, -- hNPCOwner,
-				player, -- hUnitOwner,
+				player_hero, -- hUnitOwner,
 				player:GetTeamNumber() -- iTeamNumber
 			)
 			courier:SetControllableByPlayer( nPlayerID, false ) -- (playerID, bSkipAdjustingPosition)
