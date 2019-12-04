@@ -30,8 +30,8 @@ function legion_commander_overwhelming_odds_lua:OnSpellStart()
 	)
 
 	-- Precache damage
-	local damage_per_unit = self:GetSpecialValueFor("damage_per_unit") + self:GetSpecialValueFor("str_multiplier_per_unit") * #enemies
-	local damage = self:GetSpecialValueFor("damage") + (caster:GetStrength() * self:GetSpecialValueFor("str_multiplier")) + damage_per_unit
+	local damage_per_unit = (self:GetSpecialValueFor("damage_per_unit") + caster:GetStrength() * self:GetSpecialValueFor( "str_multiplier_per_unit" )) * #enemies
+	local damage = self:GetSpecialValueFor("damage") + (caster:GetStrength() * self:GetSpecialValueFor( "str_multiplier" )) + damage_per_unit
 	local damageTable = {
 		attacker = caster,
 		damage = damage,
