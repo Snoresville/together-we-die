@@ -38,7 +38,7 @@
 				"Item"					"item_royal_jelly"
 				"Chance"				"8"
 			}
-			"RoyalJelly"
+			"MangoTree"
 			{
 				"Item"					"item_mango_tree"
 				"Chance"				"8"
@@ -67,7 +67,7 @@
 				"Item"					"item_vampire_fangs"
 				"Chance"				"8"
 			}
-			"VampireFangs"
+			"Prism"
 			{
 				"Item"					"item_spell_prism"
 				"Chance"				"8"
