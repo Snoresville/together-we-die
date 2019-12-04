@@ -1,0 +1,66 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Drow ranger: Multi Shot (Lua version)
+	//=================================================================================================================
+	"drow_ranger_multishot_lua"
+	{
+		// Ability Technical Aspect
+		// base script folder	: scripts/vscripts
+		// base texture folder	: resource/flash3/images/spellicons
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"lua_abilities/drow_ranger_multishot_lua/drow_ranger_multishot_lua"
+		"AbilityTextureName"			"drow_ranger_multishot_lua"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"4"
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_medusa.vsndevts"
+		}
+		
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+
+		// Ability Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.4 0.4 0.4 0.4"
+
+		// Ability Resource
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"20.0 18.0 15.0 13.0"
+
+		// Damage
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_modifier"		"-5 25 55 85"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage_modifier_tooltip"		"95 125 155 185"
+			}
+			"03"
+			{	
+				"var_type"					"FIELD_FLOAT"
+				"agi_multiplier"			"1.5"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"multi_shot_bonus_range"		"400"
+			}
+		}
+	}
+}
