@@ -24,7 +24,6 @@ function dazzle_poison_touch_lua:OnSpellStart()
 	if target:TriggerSpellAbsorb( self ) then return end
 
 	-- load data
-	local max_targets = self:GetSpecialValueFor( "targets" )
 	local distance = self:GetSpecialValueFor( "end_distance" )
 	local start_radius = self:GetSpecialValueFor( "start_radius" )
 	local end_radius = self:GetSpecialValueFor( "end_radius" )
@@ -68,13 +67,9 @@ function dazzle_poison_touch_lua:OnSpellStart()
 	}
 
 	-- create projectile
-	local counter = 0
 	for _,enemy in pairs(enemies) do
 		info.Target = enemy
 		ProjectileManager:CreateTrackingProjectile(info)
-
-		counter = counter+1
-		if counter>=max_targets then break end
 	end
 
 	-- Play effects
