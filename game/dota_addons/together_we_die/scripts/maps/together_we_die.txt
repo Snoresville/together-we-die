@@ -5,8 +5,8 @@
 	"RestoreHPAfterRound"			"0"
 	"RestoreMPAfterRound"			"0"
 	"RewardForTowersStanding"		"1"
-	"TowerRewardAmount"				"300"
-	"TowerScalingRewardPerRound"	"75"
+	"TowerRewardAmount"				"200"
+	"TowerScalingRewardPerRound"	"25"
 
 	"TieredItemDrops"
 	{
@@ -557,7 +557,7 @@
 	"Round3" // Ogres
 	{
 		"round_title"				"#DOTA_Holdout_Round_Ogre_Title"
-		"MaxGold"					"15000" //600g from gold fountain ability
+		"MaxGold"					"10000"
 		"BagCount"					"50"
 		"BagVariance"				"75"
 		"FixedXP"					"12000"
@@ -673,7 +673,7 @@
 	"Round4" // Slar*
 	{
 		"round_title"				"#DOTA_Holdout_Round_Slithereen_Title"
-		"MaxGold"					"22000"
+		"MaxGold"					"13000"
 		"BagCount"					"70"
 		"BagVariance"				"50"
 		"FixedXP"					"14500"
@@ -811,7 +811,7 @@
 	"Round5" // Trees
 	{
 		"round_title"				"#DOTA_Holdout_Round_Trees_Title"
-		"MaxGold"					"13000"
+		"MaxGold"					"10000"
 		"BagCount"					"35"
 		"BagVariance"				"50"
 		"FixedXP"					"16500"
@@ -889,7 +889,7 @@
 	"Round7" // Roshan, Leshrac
 	{
 		"round_title"				"#DOTA_Holdout_Round_Roshan_Title"
-		"MaxGold"					"19300"
+		"MaxGold"					"10000"
 		"BagCount"					"45"
 		"BagVariance"				"150"
 		"FixedXP"					"16000"
@@ -941,7 +941,7 @@
 	"Round8" // Splitters
 	{
 		"round_title"				"#DOTA_Holdout_Round_Splitter_Title"
-		"MaxGold"					"24350"
+		"MaxGold"					"15000"
 		"BagCount"					"45"
 		"BagVariance"				"40"
 		"FixedXP"					"15500"
@@ -1005,7 +1005,7 @@
 	"Round9" // Bears!
 	{
 		"round_title"				"#DOTA_Holdout_Round_BearForceOne_Title"
-		"MaxGold"					"19900"
+		"MaxGold"					"15000"
 		"BagCount"					"75"
 		"BagVariance"				"100"
 		"FixedXP"					"18000"
@@ -1174,7 +1174,7 @@
 	"Round11" // Gyrocopter
 	{
 		"round_title"				"#DOTA_Holdout_Round_Gyrocopter"
-		"MaxGold"					"22000"
+		"MaxGold"					"15000"
 		"BagCount"					"100"
 		"BagVariance"				"20"
 		"FixedXP"					"24000"
@@ -1268,7 +1268,7 @@
 	"Round12" // AA, MiniLich, Fodder
 	{
 		"round_title"				"#DOTA_Holdout_Round_StayFrosty_Title"
-		"MaxGold"					"23550"
+		"MaxGold"					"15000"
 		"BagCount"					"125"
 		"BagVariance"				"30"
 		"FixedXP"					"21500"
@@ -1411,7 +1411,7 @@
 	"Round13" // Roshan army
 	{
 		"round_title"				"#DOTA_Holdout_Round_Roshan_Army_Title"
-		"MaxGold"					"21550"
+		"MaxGold"					"15000"
 		"BagCount"					"45"
 		"BagVariance"				"30"
 		"FixedXP"					"30000"
@@ -1449,7 +1449,7 @@
 	"Round14" // Skywrath
 	{
 		"round_title"				"#DOTA_Holdout_Round_Skywrath_Title"
-		"MaxGold"					"21550"
+		"MaxGold"					"15000"
 		"BagCount"					"3"
 		"BagVariance"				"30"
 		"FixedXP"					"50000"
@@ -1479,7 +1479,7 @@
 	"Round15" // Greater Kobold
 	{
 		"round_title"				"#DOTA_Holdout_Round_Greater_Kobolds_Title"
-		"MaxGold"					"34550"
+		"MaxGold"					"20000"
 		"BagCount"					"105"
 		"BagVariance"				"30"
 		"FixedXP"					"30000"
@@ -1517,7 +1517,7 @@
 	"Round16" // Tidehunter
 	{
 		"round_title"				"#DOTA_Holdout_Round_Tidehunter_Title"
-		"MaxGold"					"35500"
+		"MaxGold"					"20000"
 		"BagCount"					"95"
 		"BagVariance"				"30"
 		"FixedXP"					"40000"
@@ -1555,7 +1555,7 @@
 	"Round17" // Tusk boss
 	{
 		"round_title"				"#DOTA_Holdout_Round_Tusk_Title"
-		"MaxGold"					"21550"
+		"MaxGold"					"20000"
 		"BagCount"					"2"
 		"BagVariance"				"30"
 		"FixedXP"					"50000"
@@ -1577,7 +1577,7 @@
 	"Round18" // Timbersaw
 	{
 		"round_title"				"#DOTA_Holdout_Round_Timbersaw_Title"
-		"MaxGold"					"31550"
+		"MaxGold"					"20000"
 		"BagCount"					"16"
 		"BagVariance"				"30"
 		"FixedXP"					"50000"
@@ -1615,7 +1615,7 @@
 	"Round19" // Roshan Army
 	{
 		"round_title"				"#DOTA_Holdout_Round_Medium_Roshan_Army_Title"
-		"MaxGold"					"35500"
+		"MaxGold"					"20000"
 		"BagCount"					"75"
 		"BagVariance"				"30"
 		"FixedXP"					"50000"
@@ -1653,7 +1653,7 @@
 	"Round20" // Bounty Hunter
 	{
 		"round_title"				"#DOTA_Holdout_Round_Hunter_Title"
-		"MaxGold"					"51550"
+		"MaxGold"					"20000"
 		"BagCount"					"2"
 		"BagVariance"				"30"
 		"FixedXP"					"80000"
@@ -1687,7 +1687,7 @@
 	"Round21" // Enigma
 	{
 		"round_title"				"#DOTA_Holdout_Round_Enigma_Title"
-		"MaxGold"					"75500"
+		"MaxGold"					"25000"
 		"BagCount"					"85"
 		"BagVariance"				"30"
 		"FixedXP"					"60000"
@@ -1718,7 +1718,7 @@
 	"Round22" // Chaos Ensues
 	{
 		"round_title"				"#DOTA_Holdout_Round_Chaos_Knight_Mage_Title"
-		"MaxGold"					"93550"
+		"MaxGold"					"25000"
 		"BagCount"					"45"
 		"BagVariance"				"30"
 		"FixedXP"					"80000"
@@ -1881,7 +1881,7 @@
 	"Round23" // Greater Ogre
 	{
 		"round_title"				"#DOTA_Holdout_Round_Greater_Ogre_Magi_Title"
-		"MaxGold"					"95500"
+		"MaxGold"					"25000"
 		"BagCount"					"85"
 		"BagVariance"				"30"
 		"FixedXP"					"60000"
@@ -1912,7 +1912,7 @@
 	"Round24" // Morphling
 	{
 		"round_title"				"#DOTA_Holdout_Round_Morphling_Title"
-		"MaxGold"					"91550"
+		"MaxGold"					"25000"
 		"BagCount"					"1"
 		"BagVariance"				"30"
 		"FixedXP"					"80000"
@@ -1928,7 +1928,7 @@
 	"Round25" // Dark willow
 	{
 		"round_title"				"#DOTA_Holdout_Round_Dark_Willow_Title"
-		"MaxGold"					"91550"
+		"MaxGold"					"25000"
 		"BagCount"					"1"
 		"BagVariance"				"30"
 		"FixedXP"					"80000"
@@ -1944,7 +1944,7 @@
 	"Round26" // Enchantress
 	{
 		"round_title"				"#DOTA_Holdout_Round_Enchantress_Title"
-		"MaxGold"					"125000"
+		"MaxGold"					"30000"
 		"BagCount"					"25"
 		"BagVariance"				"30"
 		"FixedXP"					"80000"
@@ -2107,7 +2107,7 @@
 	"Round27" // Roshan Queen
 	{
 		"round_title"				"#DOTA_Holdout_Round_Roshan_Queen_Title"
-		"MaxGold"					"91550"
+		"MaxGold"					"30000"
 		"BagCount"					"3"
 		"BagVariance"				"30"
 		"FixedXP"					"80000"
