@@ -21,16 +21,71 @@
 			"Clarity"
 			{
 				"Item"					"item_greater_clarity"
-				"Chance"				"20"
+				"Chance"				"10"
+			}
+			"VambraceRecipe"
+			{
+				"Item"					"item_recipe_vambrace"
+				"Chance"				"8"
+			}
+			"ImpClaw"
+			{
+				"Item"					"item_imp_claw"
+				"Chance"				"8"
+			}
+			"RoyalJelly"
+			{
+				"Item"					"item_royal_jelly"
+				"Chance"				"8"
+			}
+			"RoyalJelly"
+			{
+				"Item"					"item_mango_tree"
+				"Chance"				"8"
+			}
+			"TomeOfAghanim"
+			{
+				"Item"					"item_tome_of_aghanim"
+				"Chance"				"5"
 			}
 		}
 		// Round 6 - 10
 		"TierTwo"
 		{
+			"MindBreaker"
+			{
+				"Item"					"item_mind_breaker"
+				"Chance"				"8"
+			}
+			"CraggyCoat"
+			{
+				"Item"					"item_craggy_coat"
+				"Chance"				"8"
+			}
+			"VampireFangs"
+			{
+				"Item"					"item_vampire_fangs"
+				"Chance"				"8"
+			}
+			"VampireFangs"
+			{
+				"Item"					"item_spell_prism"
+				"Chance"				"8"
+			}
 		}
 		// Round 11 - 15
 		"TierThree"
 		{
+			"PhoenixAsh"
+			{
+				"Item"					"item_phoenix_ash"
+				"Chance"				"8"
+			}
+			"DesolatorTwo"
+			{
+				"Item"					"item_desolator_2"
+				"Chance"				"8"
+			}
 		}
 		// Round 16 - 20
 		"TierFour"
