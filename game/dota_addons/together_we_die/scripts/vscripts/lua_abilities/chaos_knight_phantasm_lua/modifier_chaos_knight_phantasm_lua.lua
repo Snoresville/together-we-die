@@ -204,7 +204,6 @@ function modifier_chaos_knight_phantasm_lua:CreateIllusionAndAdd( caster, locati
 		-- make illusion
 		illusion:MakeIllusion()
 		illusion:SetControllableByPlayer( caster:GetPlayerID(), false ) -- (playerID, bSkipAdjustingPosition)
-		illusion:SetOwner( caster )
 		illusion:SetPlayerID( caster:GetPlayerID() )
 
 		-- Add illusion modifier
@@ -227,7 +226,7 @@ function modifier_chaos_knight_phantasm_lua:CreateIllusionAndAdd( caster, locati
 		location, -- vLocation,
 		false, -- bFindClearSpace,
 		caster, -- hNPCOwner,
-		nil, -- hUnitOwner,
+		caster:GetPlayerOwner(), -- hUnitOwner,
 		caster:GetTeamNumber(), -- iTeamNumber
 		modifyIllusion
 	)

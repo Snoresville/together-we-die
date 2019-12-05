@@ -58,12 +58,12 @@ function modifier_dark_willow_bedlam_lua:OnCreated( kv )
 		self.position,
 		true,
 		self.parent,
-		self.parent:GetOwner(),
+		self.parent:GetPlayerOwner(),
 		self.parent:GetTeamNumber()
 	)
 	self.wisp:SetForwardVector( self.facing )
 	self.wisp:AddNewModifier(
-		self:GetCaster(), -- player source
+		self.parent, -- player source
 		self:GetAbility(), -- ability source
 		"modifier_wisp_ambient", -- modifier name
 		{} -- kv
@@ -71,7 +71,7 @@ function modifier_dark_willow_bedlam_lua:OnCreated( kv )
 
 	-- add attack modifier
 	self.wisp:AddNewModifier(
-		self:GetCaster(), -- player source
+		self.parent, -- player source
 		self:GetAbility(), -- ability source
 		"modifier_dark_willow_bedlam_lua_attack", -- modifier name
 		{ duration = kv.duration } -- kv

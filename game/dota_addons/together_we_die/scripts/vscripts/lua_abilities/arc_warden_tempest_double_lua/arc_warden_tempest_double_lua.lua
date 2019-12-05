@@ -25,7 +25,6 @@ function arc_warden_tempest_double_lua:OnSpellStart()
 	ApplyDamage(damageTable)
 
 	local modifyDouble = function ( double )
-		double:SetOwner( caster )
 		double:SetControllableByPlayer( caster:GetPlayerID(), false )
 		double:SetPlayerID( caster:GetPlayerID() )
 
@@ -95,7 +94,7 @@ function arc_warden_tempest_double_lua:OnSpellStart()
 		spawn_location, -- vLocation,
 		true, -- bFindClearSpace,
 		caster, -- hNPCOwner,
-		nil, -- hUnitOwner,
+		caster:GetPlayerOwner(), -- hUnitOwner,
 		caster:GetTeamNumber(), -- iTeamNumber
 		modifyDouble
 	)

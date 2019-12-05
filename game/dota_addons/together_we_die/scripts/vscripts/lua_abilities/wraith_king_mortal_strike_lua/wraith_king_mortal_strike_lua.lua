@@ -40,7 +40,7 @@ function wraith_king_mortal_strike_lua:OnSpellStart()
 			caster:GetOrigin(), -- vLocation,
 			true, -- bFindClearSpace,
 			caster, -- hNPCOwner,
-			caster:GetOwner(), -- hUnitOwner,
+			caster:GetPlayerOwner(), -- hUnitOwner,
 			caster:GetTeamNumber() -- iTeamNumber
 		)
 
@@ -49,8 +49,7 @@ function wraith_king_mortal_strike_lua:OnSpellStart()
 		summoned_unit:SetBaseMaxHealth( skeleton_damage * 3 )
 
 		-- dominate units
-		summoned_unit:SetControllableByPlayer( caster:GetPlayerID(), false ) -- (playerID, bSkipAdjustingPosition)
-		summoned_unit:SetOwner( caster )
+		summoned_unit:SetControllableByPlayer( caster:GetPlayerID(), false )
 		summoned_unit:AddNewModifier( caster, self, "modifier_generic_summon_timer", {duration = unit_duration} )
 		summoned_unit:AddNewModifier( caster, self, "modifier_wraith_king_mortal_strike_lua_spawn", {} )
 

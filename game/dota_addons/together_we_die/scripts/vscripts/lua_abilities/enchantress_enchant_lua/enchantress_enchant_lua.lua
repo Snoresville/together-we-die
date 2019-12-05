@@ -58,11 +58,12 @@ function enchantress_enchant_lua:OnSpellStart()
 	else
 		local duration = self:GetSpecialValueFor( "dominate_duration" )
 
-		local dominated_creature = CreateUnitByName( target:GetUnitName(), target:GetOrigin(), true, caster, caster:GetOwner(), caster:GetTeamNumber() )
+		local dominated_creature = CreateUnitByName( target:GetUnitName(), target:GetOrigin(), true, caster, caster:GetPlayerOwner(), caster:GetTeamNumber() )
 		if dominated_creature ~= nil then
 			local intellect = caster:GetIntellect()
 			local health = intellect * self:GetSpecialValueFor( "health_int_multiplier" )
 			local damage = intellect * self:GetSpecialValueFor( "damage_int_multiplier" )
+			dominated_creature:SetControllableByPlayer( caster:GetPlayerID(), false )
 			dominated_creature:SetBaseDamageMax( damage )
 			dominated_creature:SetBaseDamageMin( damage )
 			dominated_creature:SetBaseMaxHealth( health )

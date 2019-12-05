@@ -39,7 +39,7 @@ function dark_willow_terrorize_lua:OnAbilityPhaseStart()
 		caster:GetOrigin(),
 		true,
 		caster,
-		caster:GetOwner(),
+		caster:GetPlayerOwner(),
 		caster:GetTeamNumber()
 	)
 	self.wisp:AddNewModifier(
