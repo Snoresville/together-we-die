@@ -27,18 +27,16 @@ end
 
 function modifier_timbersaw_reactive_armor_lua_stack:OnCreated( kv )
 	-- references
-	self.str_bonus = self:GetAbility():GetSpecialValueFor( "str_multiplier" ) * self:GetParent():GetStrength()
-	self.stack_regen = self:GetAbility():GetSpecialValueFor( "bonus_hp_regen" ) + self.str_bonus
-	self.stack_armor = self:GetAbility():GetSpecialValueFor( "bonus_armor" ) + self.str_bonus/40
-	self.stack_limit = math.floor(self:GetAbility():GetSpecialValueFor( "stack_limit" ) + self.str_bonus)
+	self.stack_regen = self:GetAbility():GetSpecialValueFor( "bonus_hp_regen" ) + self:GetAbility():GetSpecialValueFor( "regen_str_multiplier" ) * self:GetParent():GetStrength()
+	self.stack_armor = self:GetAbility():GetSpecialValueFor( "bonus_armor" ) + self:GetAbility():GetSpecialValueFor( "armor_str_multiplier" ) * self:GetParent():GetStrength()
+	self.stack_limit = math.floor(self:GetAbility():GetSpecialValueFor( "stack_limit" ) + self:GetAbility():GetSpecialValueFor( "stack_str_multiplier" ) * self:GetParent():GetStrength())
 end
 
 function modifier_timbersaw_reactive_armor_lua_stack:OnRefresh( kv )
 	-- references
-	self.str_bonus = self:GetAbility():GetSpecialValueFor( "str_multiplier" ) * self:GetParent():GetStrength()
-	self.stack_regen = self:GetAbility():GetSpecialValueFor( "bonus_hp_regen" ) + self.str_bonus
-	self.stack_armor = self:GetAbility():GetSpecialValueFor( "bonus_armor" ) + self.str_bonus/40
-	self.stack_limit = math.floor(self:GetAbility():GetSpecialValueFor( "stack_limit" ) + self.str_bonus)
+	self.stack_regen = self:GetAbility():GetSpecialValueFor( "bonus_hp_regen" ) + self:GetAbility():GetSpecialValueFor( "regen_str_multiplier" ) * self:GetParent():GetStrength()
+	self.stack_armor = self:GetAbility():GetSpecialValueFor( "bonus_armor" ) + self:GetAbility():GetSpecialValueFor( "armor_str_multiplier" ) * self:GetParent():GetStrength()
+	self.stack_limit = math.floor(self:GetAbility():GetSpecialValueFor( "stack_limit" ) + self:GetAbility():GetSpecialValueFor( "stack_str_multiplier" ) * self:GetParent():GetStrength())
 	if self:GetStackCount()<self.stack_limit then
 		self:IncrementStackCount()
 	end
@@ -54,7 +52,7 @@ function modifier_timbersaw_reactive_armor_lua_stack:DeclareFunctions()
 end
 
 function modifier_timbersaw_reactive_armor_lua_stack:GetModifierPhysicalArmorBonus()
-	return self:GetStackCount() * self.stack_armor
+	return math.floor(self:GetStackCount() * self.stack_armor)
 end
 function modifier_timbersaw_reactive_armor_lua_stack:GetModifierConstantHealthRegen()
 	return self:GetStackCount() * self.stack_regen
