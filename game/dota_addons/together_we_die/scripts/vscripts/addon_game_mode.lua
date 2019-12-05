@@ -61,7 +61,7 @@ function CHoldoutGameMode:InitGameMode()
 	GameRules:SetHeroRespawnEnabled( true )
 	GameRules:SetUseUniversalShopMode( true )
 	--GameRules:SetHeroSelectionTime( 30.0 )
-	GameRules:SetStrategyTime( 10.0 )
+	GameRules:SetStrategyTime( 8.0 )
 	-- GameRules:SetShowcaseTime( 0.0 )
 	GameRules:SetPreGameTime( 5.0 )
 	GameRules:SetPostGameTime( 60.0 )
@@ -200,7 +200,13 @@ end
 -- When game state changes set state in script
 function CHoldoutGameMode:OnGameRulesStateChange()
 	local nNewState = GameRules:State_Get()
-	if nNewState == DOTA_GAMERULES_STATE_STRATEGY_TIME then
+	if nNewState == DOTA_GAMERULES_STATE_HERO_SELECTION then
+		-- Check if there are enemies
+		local enemyCount = PlayerResource:GetPlayerCountForTeam( DOTA_TEAM_BADGUYS )
+		if enemyCount == 0 then
+			GameRules:SetShowcaseTime( 0.0 )
+		end
+	elseif nNewState == DOTA_GAMERULES_STATE_STRATEGY_TIME then
 		self:ForceAssignHeroes()
 	elseif nNewState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
 		self:_BeginGameSetup()
