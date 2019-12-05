@@ -1028,4 +1028,25 @@
 
 		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
 	}
+
+	"npc_dota_hero_snapfire_holdout"
+	{
+		"override_hero"				"npc_dota_hero_snapfire"
+		"Ability1"					"snapfire_scatterblast_lua"
+		"Ability2"					"snapfire_firesnap_cookie_lua"
+		"Ability3"					"snapfire_lil_shredder_lua"
+		"Ability4"		""
+		"Ability5"		""
+		"Ability6"					"snapfire_mortimer_kisses_lua"
+		"Ability10"		""
+		"Ability11"		""
+		"Ability12"		""
+		"Ability13"		""
+		"Ability14"		""
+		"Ability15"		""
+		"Ability16"		""
+		"Ability17"		""
+
+		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
+	}
 }
