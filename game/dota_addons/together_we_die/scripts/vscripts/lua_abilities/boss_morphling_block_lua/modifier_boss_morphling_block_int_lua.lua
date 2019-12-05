@@ -53,7 +53,7 @@ function modifier_boss_morphling_block_int_lua:GetModifierIncomingDamage_Percent
 		else
 			if attacker:IsRealHero() and attacker:IsAlive() then
 				-- Heal morphling if is hero
-				local healHealth = parent:GetMaxHealth() * 0.05
+				local healHealth = parent:GetMaxHealth() * 0.01
 				parent:Heal( healHealth, parent )
 			end
 
