@@ -114,8 +114,8 @@ function CHoldoutGameRound:End()
 		if PlayerResource:HasSelectedHero( nPlayerID ) then
 			if PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_BADGUYS then
 				-- bad guys get more gold
-				local badGuyGoldPerRound = 1500
-				local badGuyGold = self._nRoundNumber * badGuyGoldPerRound + self:GetTowersStandingGoldReward() * 2 * playerCount
+				local badGuyGoldPerRound = 500
+				local badGuyGold = self._nRoundNumber * badGuyGoldPerRound + self:GetTowersStandingGoldReward() * 2
 				PlayerResource:ModifyGold( nPlayerID, badGuyGold, true, DOTA_ModifyGold_Unspecified )
 				-- bad guys also get 15 levels per round
 				local levels_to_give = math.floor(15 / math.max(playerCount, 1))
@@ -223,15 +223,11 @@ function CHoldoutGameRound:OnEntityKilled( event )
 				playerStats.nDeathsThisRound = playerStats.nDeathsThisRound + 1
 				if PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_GOODGUYS then
 					-- bad guys get level for each hero death
-					local levels_to_give = 3
 					for xPlayerID = 0, DOTA_MAX_TEAM_PLAYERS-1 do
 						if PlayerResource:HasSelectedHero( xPlayerID ) and PlayerResource:GetTeam( xPlayerID ) == DOTA_TEAM_BADGUYS then
 							local player = PlayerResource:GetPlayer( xPlayerID )
 							local player_hero = player:GetAssignedHero()
-
-							for i = 1, levels_to_give do
-								player_hero:HeroLevelUp(false)
-							end
+							player_hero:HeroLevelUp(false)
 						end
 					end
 				end
