@@ -12,6 +12,8 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"FightRecapLevel"				"1"
+		"MaxLevel"						"3"
+		"HasScepterUpgrade"			"1"
 		"ScriptFile"					"lua_abilities/sven_gods_strength_lua/sven_gods_strength_lua"
 		
 		// Casting
