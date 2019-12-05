@@ -91,22 +91,23 @@ function modifier_dark_willow_bramble_maze_lua_bramble:OnIntervalThink()
 		false	-- bool, can grow cache
 	)
 
-	local target = nil
-	for _,enemy in pairs(enemies) do
-		-- root all enemies
-		enemy:AddNewModifier(
-			self:GetCaster(), -- player source
-			self:GetAbility(), -- ability source
-			"modifier_dark_willow_bramble_maze_lua_debuff", -- modifier name
-			{
-				duration = self.root,
-				damage = self.damage,
-			} -- kv
-		)
-		break
+	-- Attempt to root if there are enemies
+	if #enemies ~= 0 then
+		for _,enemy in pairs(enemies) do
+			-- root all enemies
+			enemy:AddNewModifier(
+				self:GetCaster(), -- player source
+				self:GetAbility(), -- ability source
+				"modifier_dark_willow_bramble_maze_lua_debuff", -- modifier name
+				{
+					duration = self.root,
+					damage = self.damage,
+				} -- kv
+			)
+		end
+	
+		self:Destroy()
 	end
-
-	self:Destroy()
 end
 
 --------------------------------------------------------------------------------
