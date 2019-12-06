@@ -1,5 +1,6 @@
 invoker_emp_lua = class({})
 LinkLuaModifier( "modifier_invoker_emp_lua_thinker", "lua_abilities/invoker_emp_lua/modifier_invoker_emp_lua_thinker", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_invoker_emp_lua", "lua_abilities/invoker_emp_lua/modifier_invoker_emp_lua", LUA_MODIFIER_MOTION_NONE )
 
 --------------------------------------------------------------------------------
 -- Custom KV
