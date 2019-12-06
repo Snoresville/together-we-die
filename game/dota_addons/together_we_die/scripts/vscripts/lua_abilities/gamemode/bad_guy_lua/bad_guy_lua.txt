@@ -42,7 +42,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_damage_pct"	"50"
+				"bonus_damage_pct"	"35"
 			}
 			"03"
 			{
