@@ -49,7 +49,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"absorption_tooltip"		"95"
+				"absorption_tooltip"		"90"
 			}
 			"03"
 			{
