@@ -15,6 +15,7 @@ end
 function modifier_invoker_emp_lua_thinker:OnCreated( kv )
 	if IsServer() then
 		self.burn = self:GetAbility():GetOrbSpecialValueFor("mana_burned","w") + self:GetCaster():GetIntellect() * self:GetAbility():GetOrbSpecialValueFor( "int_multiplier", "w")
+		self.leak_duration = self:GetAbility():GetSpecialValueFor("leak_duration")
 		self.radius = self:GetAbility():GetSpecialValueFor("area_of_effect")
 		self.damage_pct = self:GetAbility():GetOrbSpecialValueFor("damage_per_mana_pct","w")/100
 		self.restore_pct = self:GetAbility():GetSpecialValueFor("restore_per_mana_pct")/100
@@ -57,9 +58,14 @@ function modifier_invoker_emp_lua_thinker:OnDestroy( kv )
 			-- damage based on mana burned
 			damageTable.victim = enemy
 			damageTable.damage = mana_burn * self.damage_pct
-			print(self.damage_pct)
-			print (damageTable.damage)
 			ApplyDamage(damageTable)
+
+			enemy:AddNewModifier(
+				self:GetCaster(),
+				self:GetAbility(), 
+				"modifier_invoker_emp_lua", 
+				{duration = self.leak_duration}
+			)
 
 			-- sum mana burned
 			burned = burned + mana_burn
