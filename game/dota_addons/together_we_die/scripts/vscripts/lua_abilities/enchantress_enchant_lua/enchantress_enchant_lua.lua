@@ -57,12 +57,11 @@ function enchantress_enchant_lua:OnSpellStart()
 		EmitSoundOn( sound_cast, target )
 	else
 		local duration = self:GetSpecialValueFor( "dominate_duration" )
+		local intellect = caster:GetIntellect()
+		local health = intellect * self:GetSpecialValueFor( "health_int_multiplier" )
+		local damage = intellect * self:GetSpecialValueFor( "damage_int_multiplier" )
 
-		local dominated_creature = CreateUnitByName( target:GetUnitName(), target:GetOrigin(), true, caster, caster:GetPlayerOwner(), caster:GetTeamNumber() )
-		if dominated_creature ~= nil then
-			local intellect = caster:GetIntellect()
-			local health = intellect * self:GetSpecialValueFor( "health_int_multiplier" )
-			local damage = intellect * self:GetSpecialValueFor( "damage_int_multiplier" )
+		local createDominatedCreature = function ( dominated_creature )
 			dominated_creature:SetControllableByPlayer( caster:GetPlayerID(), false )
 			dominated_creature:SetBaseDamageMax( damage )
 			dominated_creature:SetBaseDamageMin( damage )
@@ -74,6 +73,17 @@ function enchantress_enchant_lua:OnSpellStart()
 				{ duration = duration } -- kv
 			)
 		end
+
+		-- Create unit
+		CreateUnitByNameAsync(
+			target:GetUnitName(), -- szUnitName
+			target:GetOrigin(), -- vLocation,
+			true, -- bFindClearSpace,
+			caster, -- hNPCOwner,
+			caster:GetPlayerOwner(), -- hUnitOwner,
+			caster:GetTeamNumber(), -- iTeamNumber
+			createDominatedCreature
+		)
 
 		-- dispel target (bad)
 		target:Purge( true, false, false, false, false )
