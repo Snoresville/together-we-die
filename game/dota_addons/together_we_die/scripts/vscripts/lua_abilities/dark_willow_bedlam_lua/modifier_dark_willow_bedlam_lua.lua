@@ -61,6 +61,8 @@ function modifier_dark_willow_bedlam_lua:OnCreated( kv )
 		self.parent:GetPlayerOwner(),
 		self.parent:GetTeamNumber()
 	)
+	self.wisp:SetControllableByPlayer( self.parent:GetPlayerID(), false ) -- (playerID, bSkipAdjustingPosition)
+	self.wisp:SetOwner( self.parent )
 	self.wisp:SetForwardVector( self.facing )
 	self.wisp:AddNewModifier(
 		self.parent, -- player source

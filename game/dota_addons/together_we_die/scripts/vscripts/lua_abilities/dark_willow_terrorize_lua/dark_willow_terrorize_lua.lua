@@ -42,6 +42,8 @@ function dark_willow_terrorize_lua:OnAbilityPhaseStart()
 		caster:GetPlayerOwner(),
 		caster:GetTeamNumber()
 	)
+	self.wisp:SetControllableByPlayer( caster:GetPlayerID(), false ) -- (playerID, bSkipAdjustingPosition)
+	self.wisp:SetOwner( caster ) 
 	self.wisp:AddNewModifier(
 		caster, -- player source
 		self, -- ability source
