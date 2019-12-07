@@ -299,7 +299,7 @@ function CHoldoutGameMode:_BeginGameSetup()
 				player:GetTeamNumber() -- iTeamNumber
 			)
 			courier:SetControllableByPlayer( nPlayerID, false ) -- (playerID, bSkipAdjustingPosition)
-			courier:SetOwner( player )
+			courier:SetOwner( player_hero )
 		end
 	end
 
@@ -719,7 +719,7 @@ function CHoldoutGameMode:CheckForLootItemDrop( killedUnit )
 			local newItem = CreateItem( itemDropInfo.szItemName, nil, nil )
 			newItem:SetPurchaseTime( 0 )
 			if newItem:IsPermanent() and newItem:GetShareability() == ITEM_FULLY_SHAREABLE then
-				item:SetStacksWithOtherOwners( true )
+				newItem:SetStacksWithOtherOwners( true )
 			end
 			local drop = CreateItemOnPositionSync( killedUnit:GetAbsOrigin(), newItem )
 			drop.Holdout_IsLootDrop = true
