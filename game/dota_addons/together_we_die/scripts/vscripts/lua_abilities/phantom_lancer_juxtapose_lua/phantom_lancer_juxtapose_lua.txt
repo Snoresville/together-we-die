@@ -39,13 +39,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_illusions"			"1 2 3"
-				"LinkedSpecialBonus"		"special_bonus_unique_phantom_lancer_3"
+				"max_illusions"			"2 4 6"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"hero_proc_chance"		"20 25 30"
+				"hero_proc_chance"		"25"
 			}
 			"03"
 			{
