@@ -55,7 +55,8 @@ function modifier_slark_essence_shift_lua:GetModifierProcAttack_Feedback( params
 	if IsServer() and (not self:GetParent():PassivesDisabled()) then
 		-- filter enemy
 		local target = params.target
-		if target:IsIllusion() then
+		-- Make sure attacker isn't illusion AND that the target isn't a building
+		if self:GetParent():IsIllusion() or target:IsBuilding() then
 			return
 		end
 
