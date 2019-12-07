@@ -255,7 +255,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"attack_rate_multiplier"	"2.0 3.0 4.0"
+				"attack_rate_multiplier"	"2.0 2.5 3.0"
 			}
 			"02"
 			{
@@ -266,7 +266,7 @@
 			"06"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"cooldown_scepter"	"40"
+				"cooldown_scepter"	"50"
 				"RequiresScepter"		"1"
 			}
 		}
