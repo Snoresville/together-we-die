@@ -44,6 +44,7 @@ function furion_force_of_nature_lua:OnSpellStart()
 		local hTreant = CreateUnitByName( "npc_dota_furion_holdout_treant_" .. abilityLevel, vTargetPosition, true, self:GetCaster(), self:GetCaster():GetPlayerOwner(), self:GetCaster():GetTeamNumber() )
 		if hTreant ~= nil then
 			hTreant:SetControllableByPlayer( self:GetCaster():GetPlayerID(), false )
+			hTreant:SetOwner( self:GetCaster() )
 			local treant_max_dmg = hTreant:GetBaseDamageMax() + treant_int_buff
 			local treant_min_dmg = hTreant:GetBaseDamageMin() + treant_int_buff
 			local treant_hp = hTreant:GetBaseMaxHealth() + treant_int_buff * 3
