@@ -159,6 +159,13 @@ function CHoldoutGameRound:IsFinished()
 		return true
 	end
 
+	-- Remove units if they're somehow still in memory
+	for i, unit in pairs( self._vEnemiesRemaining ) do
+		if unit == nil or unit:IsNull() or unit:GetUnitName() == "" then
+			table.remove( self._vEnemiesRemaining, i )
+		end
+	end
+
 	if not self._lastEnemiesRemaining == nEnemiesRemaining then
 		self._lastEnemiesRemaining = nEnemiesRemaining
 		print ( string.format( "%d enemies remaining in the round...", #self._vEnemiesRemaining ) )
@@ -307,7 +314,7 @@ end
 function CHoldoutGameRound:ApplyVisionToRemainingEnemies()
 	if self:GetRemainingUnits() > 0 then
 		for i, enemy in pairs( self._vEnemiesRemaining ) do
-			if enemy ~= nil then
+			if enemy ~= nil and not enemy:IsNull() and enemy:GetUnitName() ~= "" then
 				enemy:AddNewModifier( enemy, nil, "modifier_razor_link_vision", { duration = -1 } )
 			end
 		end
