@@ -49,11 +49,10 @@ function enchantress_impetus_lua:OnOrbImpact( params )
 	-- load data
 	local distance_cap = self:GetSpecialValueFor("distance_cap")
 	local distance_dmg = self:GetSpecialValueFor("distance_damage_pct")
-	local int_multiplier = self:GetSpecialValueFor("int_multiplier")
 	
 	-- calculate distance & damage
 	local distance = math.min( (caster:GetOrigin()-target:GetOrigin()):Length2D(), distance_cap )
-	local damage = distance_dmg/100 * distance * math.max(int_multiplier * self:GetCaster():GetIntellect(), 1) -- ensure it is always at least 1
+	local damage = distance_dmg/100 * distance + (self:GetSpecialValueFor("int_multiplier") * self:GetCaster():GetIntellect())/100 * distance
 
 	local search = self:GetSpecialValueFor( "radius" )
 	targets = FindUnitsInRadius(
