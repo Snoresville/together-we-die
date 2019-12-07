@@ -63,6 +63,7 @@ function enchantress_enchant_lua:OnSpellStart()
 
 		local createDominatedCreature = function ( dominated_creature )
 			dominated_creature:SetControllableByPlayer( caster:GetPlayerID(), false )
+			dominated_creature:SetOwner( caster )
 			dominated_creature:SetBaseDamageMax( damage )
 			dominated_creature:SetBaseDamageMin( damage )
 			dominated_creature:SetBaseMaxHealth( health )
