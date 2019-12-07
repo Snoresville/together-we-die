@@ -65,7 +65,7 @@ if IsServer() then
 				target:Purge( false, true, false, false, false )
 				-- apply buff
 				target:AddNewModifier(
-					self:GetCaster(),
+					caster,
 					self:GetAbility(), 
 					self.cooldown_modifier_name, 
 					{
