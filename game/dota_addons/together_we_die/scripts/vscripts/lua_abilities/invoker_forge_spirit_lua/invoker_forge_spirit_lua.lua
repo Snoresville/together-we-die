@@ -17,6 +17,7 @@ function invoker_forge_spirit_lua:OnSpellStart()
 	local forged_spirit = CreateUnitByName( "npc_dota_invoker_forged_spirit", caster:GetOrigin(), true, caster, caster:GetPlayerOwner(), caster:GetTeamNumber() )
 	if forged_spirit ~= nil then
 		forged_spirit:SetControllableByPlayer( caster:GetPlayerID(), false )
+		forged_spirit:SetOwner( caster )
 		forged_spirit:SetBaseDamageMax( spirit_damage )
 		forged_spirit:SetBaseDamageMin( spirit_damage )
 		forged_spirit:SetBaseMaxHealth( health )
