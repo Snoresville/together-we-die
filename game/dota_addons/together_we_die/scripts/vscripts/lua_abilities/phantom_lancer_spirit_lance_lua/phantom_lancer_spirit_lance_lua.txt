@@ -16,9 +16,8 @@
 		"MaxLevel"						"4"
 		"precache"
 		{
-			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_chaos_knight.vsndevts"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_phantom_lancer.vsndevts"
 			"particle"					"particles/units/heroes/hero_phantom_lancer/phantomlancer_spiritlance_projectile.vpcf"
-			"particle"					"particles/units/heroes/hero_chaos_knight/chaos_knight_bolt_msg.vpcf"
 		}
 
 		// Ability General
@@ -40,7 +39,7 @@
 
 		// Ability Resource
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"7.0 7.0 7.0 7.0"
+		"AbilityCooldown"				"8.0"
 		"AbilityManaCost"				"110 120 130 140"
 
 		// Damage
@@ -77,13 +76,38 @@
 			}
 			"06"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"agi_multiplier"			"2.0 2.5 3.0 3.5"
+				"var_type"					"FIELD_INTEGER"
+				"illusion_duration"			"5"
 			}
 			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"275"
+				"illusion_outgoing_damage"	"-70"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"illusion_outgoing_damage_tooltip"	"30"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"illusion_incoming_damage"	"250"
+			}
+			"10"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_targets"				"3"
+			}
+			"11"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"agi_multiplier"			"2.0 2.5 3.0 3.5"
+			}
+			"12"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"225"
 			}
 		}	
 	}
