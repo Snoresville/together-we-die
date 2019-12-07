@@ -64,7 +64,7 @@ function outworld_devourer_sanitys_eclipse_lua:OnSpellStart()
 			damageTable.victim = enemy
 			damageTable.damage = caster_int * self:GetSpecialValueFor("int_multiplier")
 			-- additional damage if hero and have intelligence 
-			if enemy.GetIntellect then
+			if enemy:IsRealHero() and enemy.GetIntellect then
 				-- get damage
 				local enemy_int = enemy:GetIntellect()
 				damageTable.damage = damageTable.damage + math.max( caster_int-enemy_int, 0 ) * int_mult
