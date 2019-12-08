@@ -5507,7 +5507,7 @@
 	//=================================================================================================================
 	// Ability: Dazzle Shallow Grave
 	//=================================================================================================================
-	"item_spell_dazzle_shallow_grave"
+	"item_spell_dazzle_shallow_grave_lua"
 	{
 		"ID"							"1123"
 
@@ -5515,7 +5515,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_spell_dazzle_shallow_grave"
+		"AbilityTextureName"			"item_spell_dazzle_shallow_grave_lua"
 		"ItemKillable"					"0"
 
 		// Stats
@@ -5540,7 +5540,7 @@
 			{
 				"ScriptFile" "holdout_give_spell.lua"
 				"Function"   "GiveSpell"
-				"spell_name_to_give"	"dazzle_shallow_grave"
+				"spell_name_to_give"	"dazzle_shallow_grave_lua"
 			}
 			"SpendCharge"
 			{}

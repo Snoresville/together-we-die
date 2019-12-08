@@ -127,7 +127,7 @@
 		"item"		"item_spell_tidehunter_anchor_smash"
 		"item"		"item_spell_tidehunter_ravage"
 		"item"		"item_spell_dazzle_poison_touch_lua"
-		"item"		"item_spell_dazzle_shallow_grave"
+		"item"		"item_spell_dazzle_shallow_grave_lua"
 		"item"		"item_spell_dazzle_shadow_wave_lua"
 		"item"		"item_spell_dazzle_bad_juju"
 		"item"		"item_spell_crystal_maiden_freezing_field_lua"
