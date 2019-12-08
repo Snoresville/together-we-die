@@ -1,4 +1,5 @@
-LinkLuaModifier( "arc_warden_tempest_double_lua_modifier", "lua_abilities/arc_warden_tempest_double_lua/arc_warden_tempest_double_lua.lua", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_arc_warden_tempest_double_lua", "lua_abilities/arc_warden_tempest_double_lua/modifier_arc_warden_tempest_double_lua.lua", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_arc_warden_tempest_double_lua_permanent", "lua_abilities/arc_warden_tempest_double_lua/modifier_arc_warden_tempest_double_lua_permanent.lua", LUA_MODIFIER_MOTION_NONE )
 
 arc_warden_tempest_double_lua = class({})
 
@@ -33,7 +34,7 @@ function arc_warden_tempest_double_lua:OnSpellStart()
 			double:HeroLevelUp(false)
 		end
 
-		local maxAbilities = caster:GetAbilityCount()
+		local maxAbilities = caster:GetAbilityCount() - 1
 
 		for ability_id = 0, maxAbilities do
 			local ability = caster:GetAbilityByIndex(ability_id)
@@ -81,11 +82,13 @@ function arc_warden_tempest_double_lua:OnSpellStart()
 		double:SetHasInventory(false)
 		double:SetCanSellItems(false)
 
-		double:AddNewModifier(caster, self, "arc_warden_tempest_double_lua_modifier", nil)
+		double:AddNewModifier(caster, self, "modifier_arc_warden_tempest_double_lua_permanent", {})
+		double:AddNewModifier(caster, self, "modifier_arc_warden_tempest_double_lua", {
+			duration = duration
+		})
 		if hasScepter then
 			double:AddNewModifier(caster, self, "modifier_item_ultimate_scepter_consumed", nil)
 		end
-		double:AddNewModifier(caster, self, "modifier_kill", {["duration"] = duration})
 	end
 
 	-- Create unit
@@ -102,60 +105,4 @@ function arc_warden_tempest_double_lua:OnSpellStart()
 	-- Play sound effects
 	local sound_cast = "Hero_ArcWarden.TempestDouble"
 	EmitSoundOn( sound_cast, caster )
-end
-
-arc_warden_tempest_double_lua_modifier = class({})
-
-function arc_warden_tempest_double_lua_modifier:DeclareFunctions()
-	return {MODIFIER_PROPERTY_SUPER_ILLUSION, MODIFIER_PROPERTY_ILLUSION_LABEL, MODIFIER_PROPERTY_IS_ILLUSION, MODIFIER_EVENT_ON_DEATH, MODIFIER_EVENT_ON_RESPAWN, MODIFIER_EVENT_ON_TAKEDAMAGE}
-end
-
-function arc_warden_tempest_double_lua_modifier:GetIsIllusion()
-	return true
-end
-
-function arc_warden_tempest_double_lua_modifier:GetModifierSuperIllusion()
-	return true
-end
-
-function arc_warden_tempest_double_lua_modifier:GetModifierIllusionLabel()
-	return true
-end
-
-function arc_warden_tempest_double_lua_modifier:OnTakeDamage( event )
-	if not event.unit:IsAlive() and event.unit == self:GetParent() then
-		event.unit:MakeIllusion()
-	end
-end
-
-function arc_warden_tempest_double_lua_modifier:OnDeath(event)
-	if event.unit == self:GetParent() then
-		event.unit:MakeIllusion()
-	end
-end
-
-function arc_warden_tempest_double_lua_modifier:OnRespawn(event)
-	if event.unit == self:GetParent() then
-		event.unit:MakeIllusion()
-	end
-end
-
-function arc_warden_tempest_double_lua_modifier:GetStatusEffectName()
-	return "particles/status_fx/status_effect_ancestral_spirit.vpcf"
-end
-
-function arc_warden_tempest_double_lua_modifier:IsHidden()
-	return true
-end
-
-function arc_warden_tempest_double_lua_modifier:IsPurgable()
-	return false
-end
-
-function arc_warden_tempest_double_lua_modifier:RemoveOnDeath()
-	return false
-end
-
-function arc_warden_tempest_double_lua_modifier:GetAttributes()
-	return MODIFIER_ATTRIBUTE_PERMANENT
 end
