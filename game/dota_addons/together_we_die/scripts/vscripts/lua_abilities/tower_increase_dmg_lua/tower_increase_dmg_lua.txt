@@ -51,6 +51,11 @@
 				"var_type"						"FIELD_INTEGER"
 				"damage_per_stack"				"500"
 			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"mana_loss_per_stack"				"100"
+			}
 		}
 	}
 }
