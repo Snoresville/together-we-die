@@ -5605,7 +5605,7 @@
 	//=================================================================================================================
 	// Ability: Dazzle Bad juju
 	//=================================================================================================================
-	"item_spell_dazzle_bad_juju"
+	"item_spell_dazzle_bad_juju_lua"
 	{
 		"ID"							"1125"
 
@@ -5613,7 +5613,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_spell_dazzle_bad_juju"
+		"AbilityTextureName"			"item_spell_dazzle_bad_juju_lua"
 		"ItemKillable"					"0"
 
 		// Stats
@@ -5638,7 +5638,7 @@
 			{
 				"ScriptFile" "holdout_give_spell.lua"
 				"Function"   "GiveSpell"
-				"spell_name_to_give"	"dazzle_bad_juju"
+				"spell_name_to_give"	"dazzle_bad_juju_lua"
 			}
 			"SpendCharge"
 			{}

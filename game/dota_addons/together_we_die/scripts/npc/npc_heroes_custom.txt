@@ -293,6 +293,7 @@
 		"Ability3"				"dazzle_shadow_wave_lua"
 		"Ability4"		""
 		"Ability5"		""
+		"Ability6"				"dazzle_bad_juju_lua"
 		"Ability10"		""
 		"Ability11"		""
 		"Ability12"		""

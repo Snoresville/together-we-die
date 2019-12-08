@@ -1,0 +1,70 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Dazzle: Bad Juju (Lua version)
+	//=================================================================================================================
+	"dazzle_bad_juju_lua"
+	{
+		// Ability Technical Aspect
+		// base script folder	: scripts/vscripts
+		// base texture folder	: resource/flash3/images/spellicons
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"lua_abilities/dazzle_bad_juju_lua/dazzle_bad_juju_lua"
+		"AbilityTextureName"			"dazzle_bad_juju_lua"
+		"FightRecapLevel"				"2"
+		"MaxLevel"						"3"
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_dazzle.vsndevts"
+			"particle"	"particles/units/heroes/hero_dazzle/dazzle_armor_enemy.vpcf"
+		}
+		
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+		// Ability Casting
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Ability Resource
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Damage
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{	
+				"var_type"					"FIELD_INTEGER"
+				"cooldown_reduction"		"20 40 60"
+			}
+			"02"
+			{	
+				"var_type"					"FIELD_FLOAT"
+				"armor_reduction"			"2.0 2.5 3.0"
+			}
+			"03"
+			{	
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"8.0"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"1200"
+			}
+			"05"
+			{	
+				"var_type"					"FIELD_FLOAT"
+				"int_multiplier"			"0.01"
+			}
+		}
+	}
+}

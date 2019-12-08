@@ -129,7 +129,7 @@
 		"item"		"item_spell_dazzle_poison_touch_lua"
 		"item"		"item_spell_dazzle_shallow_grave_lua"
 		"item"		"item_spell_dazzle_shadow_wave_lua"
-		"item"		"item_spell_dazzle_bad_juju"
+		"item"		"item_spell_dazzle_bad_juju_lua"
 		"item"		"item_spell_crystal_maiden_freezing_field_lua"
 		"item"		"item_spell_bristleback_viscous_nasal_goo_lua"
 		"item"		"item_spell_bristleback_quill_spray_lua"
