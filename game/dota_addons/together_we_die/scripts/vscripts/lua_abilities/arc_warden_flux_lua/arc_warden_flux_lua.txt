@@ -1,0 +1,88 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Arc Warden: Flux (Lua version)
+	//=================================================================================================================
+	"arc_warden_flux_lua"
+	{
+		// Ability Technical Aspect
+		// base script folder	: scripts/vscripts
+		// base texture folder	: resource/flash3/images/spellicons
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"lua_abilities/arc_warden_flux_lua/arc_warden_flux_lua"
+		"AbilityTextureName"			"arc_warden_flux_lua"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"4"
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_arc_warden.vsndevts"
+			"particle"	"particles/units/heroes/hero_arc_warden/arc_warden_flux_tgt.vpcf"
+		}
+		
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+
+		// Ability Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"500 600 700 800"
+        "AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+        "AbilityCastAnimation"		    "ACT_DOTA_CAST_ABILITY_1"
+
+		// Ability Resource
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"16.0"
+		"AbilityManaCost"				"75"
+
+		// Damage
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+            {
+            	"var_type"						"FIELD_FLOAT"
+            	"duration"						"6.0"
+            }
+            "02"
+            {
+            	"var_type"						"FIELD_INTEGER"
+            	"damage_per_second"				"15 30 45 60"
+            }
+            "03"
+            {
+            	"var_type"						"FIELD_INTEGER"
+            	"search_radius"					"225"
+            }
+            "04"
+            {
+            	"var_type"						"FIELD_FLOAT"
+            	"think_interval"				"0.5"
+            }
+            "05"
+            {
+            	"var_type"						"FIELD_INTEGER"
+            	"move_speed_slow_pct"				"20 30 40 50"
+            }
+            "06"
+            {
+                "var_type"						"FIELD_INTEGER"
+                "radius"					    "275"
+            }
+            "07"
+            {
+            	"var_type"						"FIELD_FLOAT"
+            	"agi_multiplier"				"3.0 3.5 4.0 4.5"
+            }
+		}
+	}
+}
