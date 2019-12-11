@@ -13,6 +13,8 @@ function spectre_einherjar_lua:OnSpellStart()
     end
 
     local modifyEinherjar = function(illusion)
+        -- set health
+        illusion:SetHealth(caster:GetHealth())
         -- set facing
         illusion:SetForwardVector(caster:GetForwardVector())
 
