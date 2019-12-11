@@ -1052,4 +1052,23 @@
 
 		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
 	}
+
+    "npc_dota_hero_spectre_holdout"
+	{
+		"override_hero"				"npc_dota_hero_spectre"
+		"Ability3"					"spectre_dispersion_lua"
+		"Ability4"		""
+		"Ability5"		""
+		"Ability6"					"spectre_einherjar_lua"
+		"Ability10"		""
+		"Ability11"		""
+		"Ability12"		""
+		"Ability13"		""
+		"Ability14"		""
+		"Ability15"		""
+		"Ability16"		""
+		"Ability17"		""
+
+		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
+	}
 }
