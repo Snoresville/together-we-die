@@ -5101,7 +5101,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"lifesteal"					"800"
+				"lifesteal"					"50"
 			}		
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
