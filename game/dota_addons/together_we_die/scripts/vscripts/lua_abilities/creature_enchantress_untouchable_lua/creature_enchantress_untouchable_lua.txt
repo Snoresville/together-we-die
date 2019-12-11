@@ -48,12 +48,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor_reduction"		"-10"
+				"armor_reduction"		"-15"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"slow_duration"			"6"
+				"slow_duration"			"8"
 			}
 		}
 	}
