@@ -117,8 +117,8 @@ function CHoldoutGameRound:End()
 				local badGuyGoldPerRound = 500
 				local badGuyGold = self._nRoundNumber * badGuyGoldPerRound + self:GetTowersStandingGoldReward()
 				PlayerResource:ModifyGold( nPlayerID, badGuyGold, true, DOTA_ModifyGold_Unspecified )
-				-- bad guys also get 15 levels per round
-				local levels_to_give = math.floor(15 / math.max(playerCount, 1))
+				-- bad guys also get 10 levels per round
+				local levels_to_give = math.floor(10 / math.max(playerCount, 1))
 				local player = PlayerResource:GetPlayer( nPlayerID )
 				local player_hero = player:GetAssignedHero()
 
