@@ -42,7 +42,7 @@ function modifier_spectre_dispersion_lua:DeclareFunctions()
 end
 
 function modifier_spectre_dispersion_lua:GetModifierIncomingDamage_Percentage(params)
-    if not IsServer() or self:GetParent():PassivesDisabled() or self:GetParent():GetTeamNumber() == params.attacker:GetTeamNumber() or self:FlagExist( params.damage_flags, DOTA_DAMAGE_FLAG_REFLECTION ) then
+    if not IsServer() or self:GetParent():PassivesDisabled() or self:GetParent():GetTeamNumber() == params.attacker:GetTeamNumber() or self:FlagExist(params.damage_flags, DOTA_DAMAGE_FLAG_REFLECTION) then
         return 0
     end
 
@@ -51,7 +51,7 @@ function modifier_spectre_dispersion_lua:GetModifierIncomingDamage_Percentage(pa
     local reduction = math.min(self.damage_reflection_pct + math.floor(parent:GetAgility() * self.agi_multiplier), MAX_REDUCTION)
 
     -- Reflect all that damage back to everyone in the vicinity
-    local damageToDeal = params.original_damage * (reduction/100)
+    local damageToDeal = params.original_damage * (reduction / 100)
     local damageType = params.damage_type
     local damageTable = {
         attacker = parent,
@@ -61,21 +61,21 @@ function modifier_spectre_dispersion_lua:GetModifierIncomingDamage_Percentage(pa
     }
     -- find enemies
     local enemies = FindUnitsInRadius(
-            parent:GetTeamNumber(),	-- int, your team number
-            parent:GetOrigin(),	-- point, center point
-            parent,	-- handle, cacheUnit. (not known)
-            self.radius,	-- float, radius. or use FIND_UNITS_EVERYWHERE
-            DOTA_UNIT_TARGET_TEAM_ENEMY,	-- int, team filter
-            DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	-- int, type filter
-            DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,	-- int, flag filter
-            0,	-- int, order filter
-            false	-- bool, can grow cache
+            parent:GetTeamNumber(), -- int, your team number
+            parent:GetOrigin(), -- point, center point
+            parent, -- handle, cacheUnit. (not known)
+            self.radius, -- float, radius. or use FIND_UNITS_EVERYWHERE
+            DOTA_UNIT_TARGET_TEAM_ENEMY, -- int, team filter
+            DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, -- int, type filter
+            DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, -- int, flag filter
+            0, -- int, order filter
+            false    -- bool, can grow cache
     )
 
     -- damage
-    for _,enemy in pairs(enemies) do
+    for _, enemy in pairs(enemies) do
         damageTable.victim = enemy
-        ApplyDamage( damageTable )
+        ApplyDamage(damageTable)
     end
 
     return -reduction
@@ -84,7 +84,7 @@ end
 function modifier_spectre_dispersion_lua:PlayEffects(target)
     local particle_cast = "particles/units/heroes/hero_spectre/spectre_dispersion.vpcf"
 
-    local effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
+    local effect_cast = ParticleManager:CreateParticle(particle_cast, PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
     ParticleManager:SetParticleControlEnt(
             effect_cast,
             0,
@@ -106,12 +106,15 @@ function modifier_spectre_dispersion_lua:PlayEffects(target)
 end
 
 -- Helper: Flag operations
-function modifier_spectre_dispersion_lua:FlagExist(a,b)--Bitwise Exist
-    local p,c,d=1,0,b
-    while a>0 and b>0 do
-        local ra,rb=a%2,b%2
-        if ra+rb>1 then c=c+p end
-        a,b,p=(a-ra)/2,(b-rb)/2,p*2
+function modifier_spectre_dispersion_lua:FlagExist(a, b)
+    --Bitwise Exist
+    local p, c, d = 1, 0, b
+    while a > 0 and b > 0 do
+        local ra, rb = a % 2, b % 2
+        if ra + rb > 1 then
+            c = c + p
+        end
+        a, b, p = (a - ra) / 2, (b - rb) / 2, p * 2
     end
-    return c==d
+    return c == d
 end
