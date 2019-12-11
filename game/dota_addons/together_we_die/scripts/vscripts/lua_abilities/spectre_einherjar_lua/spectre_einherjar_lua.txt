@@ -48,7 +48,7 @@
 			"01"
             {
             	"var_type"					"FIELD_FLOAT"
-            	"duration"					"10.0 20.0 30.0"
+            	"duration"					"30.0"
             }
             "02"
             {
@@ -83,7 +83,7 @@
             "08"
             {
                 "var_type"					"FIELD_FLOAT"
-                "agi_multiplier"			"4.0 6.0 8.0"
+                "agi_multiplier"			"2.0 3.0 4.0"
             }
             "09"
             {
