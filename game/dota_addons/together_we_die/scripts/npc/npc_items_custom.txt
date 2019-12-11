@@ -1870,7 +1870,7 @@
 	//=================================================================================================================
 	// Ability: Spectre Dispersion
 	//=================================================================================================================
-	"item_spell_spectre_dispersion"
+	"item_spell_spectre_dispersion_lua"
 	{
 		"ID"							"1046"
 
@@ -1878,7 +1878,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_spell_spectre_dispersion"
+		"AbilityTextureName"			"item_spell_spectre_dispersion_lua"
 		"ItemKillable"					"0"
 
 		// Stats
@@ -1903,7 +1903,7 @@
 			{
 				"ScriptFile" "holdout_give_spell.lua"
 				"Function"   "GiveSpell"
-				"spell_name_to_give"	"spectre_dispersion"
+				"spell_name_to_give"	"spectre_dispersion_lua"
 			}
 			"SpendCharge"
 			{}

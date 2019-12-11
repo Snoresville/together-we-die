@@ -22,7 +22,7 @@
 		"item"		"item_spell_ogre_magi_ignite_lua"
 		"item"		"item_spell_ogre_magi_bloodlust_lua"
 		"item"		"item_spell_ogre_magi_multicast_lua"
-		"item"		"item_spell_spectre_dispersion"
+		"item"		"item_spell_spectre_dispersion_lua"
 		"item"		"item_spell_earthshaker_fissure_lua"
 		"item"		"item_spell_earthshaker_enchant_totem"
 		"item"		"item_spell_earthshaker_aftershock_lua"
