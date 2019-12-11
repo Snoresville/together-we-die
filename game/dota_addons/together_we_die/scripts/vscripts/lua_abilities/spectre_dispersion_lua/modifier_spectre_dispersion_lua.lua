@@ -51,7 +51,7 @@ function modifier_spectre_dispersion_lua:GetModifierIncomingDamage_Percentage(pa
     local reduction = math.min(self.damage_reflection_pct + math.floor(parent:GetAgility() * self.agi_multiplier), MAX_REDUCTION)
 
     -- Reflect all that damage back to everyone in the vicinity
-    local damageToDeal = params.original_damage * (reduction / 100)
+    local damageToDeal = math.floor(params.original_damage * (reduction / 100))
     local damageType = params.damage_type
     local damageTable = {
         attacker = parent,
