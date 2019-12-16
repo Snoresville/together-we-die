@@ -54,7 +54,7 @@
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"mana_loss_per_stack"				"100"
+				"mana_loss_per_stack"				"200"
 			}
 		}
 	}

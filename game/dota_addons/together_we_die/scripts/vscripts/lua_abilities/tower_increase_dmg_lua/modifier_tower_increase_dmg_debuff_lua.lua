@@ -13,6 +13,10 @@ end
 function modifier_tower_increase_dmg_debuff_lua:IsPurgable()
 	return false
 end
+
+function modifier_tower_increase_dmg_debuff_lua:RemoveOnDeath()
+	return false
+end
 --------------------------------------------------------------------------------
 
 function modifier_tower_increase_dmg_debuff_lua:OnCreated( kv )
