@@ -5451,7 +5451,9 @@
 #base "../vscripts/lua_abilities/ogre_magi_unrefined_fireblast_lua/ogre_magi_unrefined_fireblast_lua.txt"
 #base "../vscripts/lua_abilities/ogre_magi_multicast_lua/ogre_magi_multicast_lua.txt"
 
+#base "../vscripts/lua_abilities/windranger_shackleshot_lua/windranger_shackleshot_lua.txt"
 #base "../vscripts/lua_abilities/windranger_powershot_lua/windranger_powershot_lua.txt"
+#base "../vscripts/lua_abilities/windranger_windrun_lua/windranger_windrun_lua.txt"
 #base "../vscripts/lua_abilities/windranger_focus_fire_lua/windranger_focus_fire_lua.txt"
 
 #base "../vscripts/lua_abilities/dazzle_poison_touch_lua/dazzle_poison_touch_lua.txt"

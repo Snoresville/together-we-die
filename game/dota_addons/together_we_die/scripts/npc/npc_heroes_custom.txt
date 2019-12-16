@@ -62,7 +62,9 @@
 	"npc_dota_hero_windrunner_holdout"
 	{
 		"override_hero"			"npc_dota_hero_windrunner"
+		"Ability1"              "windranger_shackleshot_lua"
 		"Ability2"				"windranger_powershot_lua"
+		"Ability3"              "windranger_windrun_lua"
 		"Ability4"		""
 		"Ability5"		""
 		"Ability6"				"windranger_focus_fire_lua"
