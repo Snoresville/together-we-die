@@ -20,8 +20,6 @@ end
 function wraith_king_mortal_strike_lua:OnSpellStart()
 	-- unit identifier
 	caster = self:GetCaster()
-	target = self:GetCursorTarget()
-	point = self:GetCursorPosition()
 
 	-- get resources
 	local skeleton_damage = caster:GetStrength() * self:GetSpecialValueFor( "str_multiplier" )
@@ -50,6 +48,7 @@ function wraith_king_mortal_strike_lua:OnSpellStart()
 
 		-- dominate units
 		summoned_unit:SetControllableByPlayer( caster:GetPlayerID(), false )
+		summoned_unit:SetOwner( caster )
 		summoned_unit:AddNewModifier( caster, self, "modifier_generic_summon_timer", {duration = unit_duration} )
 		summoned_unit:AddNewModifier( caster, self, "modifier_wraith_king_mortal_strike_lua_spawn", {} )
 
