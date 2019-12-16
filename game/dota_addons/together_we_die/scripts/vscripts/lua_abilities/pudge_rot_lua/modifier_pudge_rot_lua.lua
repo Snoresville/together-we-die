@@ -47,6 +47,7 @@ function modifier_pudge_rot_lua:OnCreated(kv)
     self.rot_damage = self:GetAbility():GetSpecialValueFor("rot_damage")
     self.rot_tick = self:GetAbility():GetSpecialValueFor("rot_tick")
     self.self_damage_multiplier = self:GetAbility():GetSpecialValueFor("self_damage_multiplier")
+    self.str_multiplier = self:GetAbility():GetSpecialValueFor("str_multiplier")
 
     if IsServer() then
         if self:GetParent() == self:GetCaster() then
@@ -96,14 +97,14 @@ end
 
 function modifier_pudge_rot_lua:OnIntervalThink()
     if IsServer() then
-        local flDamagePerTick = self.rot_tick * (self.rot_damage + (self:GetCaster():GetStrength() * self:GetAbility():GetSpecialValueFor("str_multiplier")))
+        local flDamagePerTick = self.rot_tick * (self.rot_damage + (self:GetCaster():GetStrength() * self.str_multiplier))
 
         if self:GetCaster():IsAlive() then
             local damage = {
                 victim = self:GetParent(),
                 attacker = self:GetCaster(),
                 damage = flDamagePerTick,
-                damage_type = self:GetAbilityDamageType(),
+                damage_type = self:GetAbility():GetAbilityDamageType(),
                 ability = self:GetAbility()
             }
 
