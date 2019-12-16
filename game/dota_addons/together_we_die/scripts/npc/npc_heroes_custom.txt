@@ -651,9 +651,11 @@
 	{
 		"override_hero"					"npc_dota_hero_skeleton_king"
 		"Ability1"				"wraith_king_wraithfire_blast_lua"
+		"Ability2"              "wraith_king_vampiric_aura_lua"
 		"Ability3"				"wraith_king_mortal_strike_lua"
 		"Ability4"		""
 		"Ability5"		""
+		"Ability6"              "wraith_king_reincarnation_lua"
 		"Ability10"		""
 		"Ability11"		""
 		"Ability12"		""

@@ -5534,7 +5534,9 @@
 #base "../vscripts/lua_abilities/phantom_lancer_juxtapose_lua/phantom_lancer_juxtapose_lua.txt"
 
 #base "../vscripts/lua_abilities/wraith_king_wraithfire_blast_lua/wraith_king_wraithfire_blast_lua.txt"
+#base "../vscripts/lua_abilities/wraith_king_vampiric_aura_lua/wraith_king_vampiric_aura_lua.txt"
 #base "../vscripts/lua_abilities/wraith_king_mortal_strike_lua/wraith_king_mortal_strike_lua.txt"
+#base "../vscripts/lua_abilities/wraith_king_reincarnation_lua/wraith_king_reincarnation_lua.txt"
 
 #base "../vscripts/lua_abilities/huskar_inner_vitality_lua/huskar_inner_vitality_lua.txt"
 #base "../vscripts/lua_abilities/huskar_burning_spear_lua/huskar_burning_spear_lua.txt"

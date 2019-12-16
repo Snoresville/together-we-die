@@ -99,7 +99,7 @@
 		"item"		"item_spell_lina_dragon_slave_lua"
 		"item"		"item_spell_lina_light_strike_array_lua"
 		"item"		"item_spell_lina_laguna_blade_lua"
-		"item"		"item_spell_skeleton_king_reincarnation"
+		"item"		"item_spell_wraith_king_reincarnation_lua"
 		"item"		"item_spell_summoning_stone_lua"
 		"item"		"item_spell_omniknight_purification_lua"
 		"item"		"item_spell_omniknight_repel_lua"
