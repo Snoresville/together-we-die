@@ -34,7 +34,7 @@ function ogre_magi_unrefined_fireblast_lua:OnSpellStart()
 
 	-- load data
 	local duration = self:GetSpecialValueFor( "stun_duration" )
-	local damage = self:GetSpecialValueFor( "fireblast_damage" ) + (self:GetCaster():GetIntellect() * self:GetSpecialValueFor( "int_multiplier" ))
+	local damage = self:GetSpecialValueFor( "fireblast_damage" ) + self:GetCaster():GetIntellect() * self:GetSpecialValueFor( "int_multiplier" ) + self:GetCaster():GetMana()
 
 	-- Apply damage
 	local damageTable = {
