@@ -80,7 +80,7 @@ function modifier_roshan_sun_strike_lua_thinker:PlayEffects1()
 	ParticleManager:ReleaseParticleIndex( effect_cast )
 
 	-- Create Sound
-	EmitSoundOnLocationForAllies( self:GetParent():GetOrigin(), sound_cast, self:GetCaster() )
+	EmitSoundOnLocationWithCaster( self:GetParent():GetOrigin(), sound_cast, self:GetCaster() )
 end
 
 function modifier_roshan_sun_strike_lua_thinker:PlayEffects2()
