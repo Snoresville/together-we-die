@@ -4071,7 +4071,7 @@
 		"Ability3"					"creature_greater_armor_reduction_aura"			// Ability 3.
 		"Ability4"					"roshan_sun_strike_lua"			// Ability 4.
 		"Ability5"					"creature_split_queen_roshan"			// Ability 5.
-		"Ability6"					"creature_disable_healing_aura_lua"			// Ability 6 - Extra.
+		"Ability6"					""			// Ability 6 - Extra.
 		"Ability7"					""			// Ability 7 - Extra.
 
 		// Armor
@@ -4085,8 +4085,8 @@
 		"AttackDamageMin"			"13000"		// Damage range min.
 		"AttackDamageMax"			"15000"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"				"0.1"			// Speed of attack.
-		"AttackAnimationPoint"		"0.1"		// Normalized time in animation cycle to attack.
+		"AttackRate"				"0.3"			// Speed of attack.
+		"AttackAnimationPoint"		"0.25"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
 		"AttackRange"				"128"		// Range within a target can be attacked.
 		"ProjectileModel"			"particles/base_attacks/ranged_goodguy.vpcf" // Particle system model for projectile.
@@ -4196,8 +4196,8 @@
 		"AttackDamageMin"			"12000"		// Damage range min.
 		"AttackDamageMax"			"17000"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"				"0.1"			// Speed of attack.
-		"AttackAnimationPoint"		"0.1"		// Normalized time in animation cycle to attack.
+		"AttackRate"				"0.2"			// Speed of attack.
+		"AttackAnimationPoint"		"0.2"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
 		"AttackRange"				"128"		// Range within a target can be attacked.
 		"ProjectileModel"			"particles/base_attacks/ranged_goodguy.vpcf" // Particle system model for projectile.
@@ -4284,7 +4284,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"creature_chaos_knight_chaos_strike"	// Ability 1.
-		"Ability2"					"roshan_defective_aura_lua"			// Ability 2.
+		"Ability2"					"creature_bleeding_bash_lua"			// Ability 2.
 		"Ability3"					"roshan_sun_strike_lua"			// Ability 3.
 		"Ability4"					"creature_pure_strike_lua"			// Ability 4.
 		"Ability5"					"roshan_last_word_lua"			// Ability 5.
@@ -4301,10 +4301,10 @@
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"3000"		// Damage range min.
-		"AttackDamageMax"			"8500"		// Damage range max.
+		"AttackDamageMax"			"9500"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"				"0.02"			// Speed of attack.
-		"AttackAnimationPoint"		"0.05"		// Normalized time in animation cycle to attack.
+		"AttackRate"				"0.25"			// Speed of attack.
+		"AttackAnimationPoint"		"0.25"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
 		"AttackRange"				"128"		// Range within a target can be attacked.
 		"ProjectileModel"			"particles/base_attacks/ranged_goodguy.vpcf" // Particle system model for projectile.
