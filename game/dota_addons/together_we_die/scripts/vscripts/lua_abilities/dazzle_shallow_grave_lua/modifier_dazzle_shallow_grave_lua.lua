@@ -29,11 +29,17 @@ end
 function modifier_dazzle_shallow_grave_lua:DeclareFunctions()
 	local funcs = {
 		MODIFIER_PROPERTY_MIN_HEALTH,
+		MODIFIER_PROPERTY_EXTRA_HEALTH_BONUS,
 	}
 
 	return funcs
 end
+
 function modifier_dazzle_shallow_grave_lua:GetMinHealth()
+	return self.min_health
+end
+
+function modifier_dazzle_shallow_grave_lua:GetModifierExtraHealthBonus()
 	return self.min_health
 end
 
