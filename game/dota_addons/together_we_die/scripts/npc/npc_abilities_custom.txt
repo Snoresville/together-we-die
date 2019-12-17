@@ -5434,6 +5434,7 @@
 #base "../vscripts/lua_abilities/crystal_maiden_arcane_aura_lua/crystal_maiden_arcane_aura_lua.txt"
 #base "../vscripts/lua_abilities/crystal_maiden_freezing_field_lua/crystal_maiden_freezing_field_lua.txt"
 
+#base "../vscripts/lua_abilities/drow_ranger_frost_arrows_lua/drow_ranger_frost_arrows_lua.txt"
 #base "../vscripts/lua_abilities/drow_ranger_multishot_lua/drow_ranger_multishot_lua.txt"
 #base "../vscripts/lua_abilities/drow_ranger_agility_strike_lua/drow_ranger_agility_strike_lua.txt"
 
