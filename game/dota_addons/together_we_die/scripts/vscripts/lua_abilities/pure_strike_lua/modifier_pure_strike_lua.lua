@@ -40,7 +40,7 @@ function modifier_pure_strike_lua:DeclareFunctions()
 end
 
 function modifier_pure_strike_lua:GetModifierProcAttack_BonusDamage_Pure( params )
-	if IsServer() and (not self:GetParent():PassivesDisabled()) and self:GetAbility():IsCooldownReady() then
+	if IsServer() and (not self:GetParent():PassivesDisabled()) and self:GetAbility():IsFullyCastable() then
 		if self:RollChance( self.crit_chance ) then
 			local damage_bonus = math.floor(self.pri_attr_multiplier * self:GetParent():GetPrimaryStatValue())
 			self.record = params.record

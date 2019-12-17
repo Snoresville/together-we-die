@@ -41,7 +41,7 @@ function modifier_drow_ranger_agility_strike_lua:DeclareFunctions()
 end
 
 function modifier_drow_ranger_agility_strike_lua:GetModifierPreAttack_CriticalStrike( params )
-	if IsServer() and not self:GetParent():PassivesDisabled() and self:GetAbility():IsCooldownReady() then
+	if IsServer() and not self:GetParent():PassivesDisabled() and self:GetAbility():IsFullyCastable() then
 		if self:RollChance( self.crit_chance ) then
 			local crit_bonus = 100 + self.agi_multiplier * self:GetCaster():GetAgility()
 			self.record = params.record

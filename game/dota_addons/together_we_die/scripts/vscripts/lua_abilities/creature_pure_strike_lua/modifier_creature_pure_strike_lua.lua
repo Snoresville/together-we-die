@@ -38,7 +38,7 @@ function modifier_creature_pure_strike_lua:DeclareFunctions()
 end
 
 function modifier_creature_pure_strike_lua:GetModifierProcAttack_BonusDamage_Pure( params )
-	if IsServer() and (not self:GetParent():PassivesDisabled()) and self:GetAbility():IsCooldownReady() then
+	if IsServer() and (not self:GetParent():PassivesDisabled()) and self:GetAbility():IsFullyCastable() then
 		local damage_bonus = self:GetParent():GetAverageTrueAttackDamage( params.target ) * self.multiplier
 		self.record = params.record
 		-- cooldown

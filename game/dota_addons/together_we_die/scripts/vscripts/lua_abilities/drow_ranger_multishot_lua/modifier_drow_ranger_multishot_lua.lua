@@ -81,7 +81,7 @@ function modifier_drow_ranger_multishot_lua:OnAttack( params )
 	if self.parent:PassivesDisabled() then return end
 
 	-- not proc if on cooldown
-	if not self:GetAbility():IsCooldownReady() then return end
+	if not self:GetAbility():IsFullyCastable() then return end
 
 	-- not proc if attack can't use attack modifiers
 	if not params.process_procs then return end

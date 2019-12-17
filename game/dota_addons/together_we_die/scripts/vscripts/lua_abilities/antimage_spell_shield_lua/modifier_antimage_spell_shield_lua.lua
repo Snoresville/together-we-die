@@ -27,7 +27,7 @@ function modifier_antimage_spell_shield_lua:GetModifierMagicalResistanceBonus( p
 end
 function modifier_antimage_spell_shield_lua:GetAbsorbSpell( params )
 	if IsServer() then
-		if not self:GetParent():PassivesDisabled() and self:GetAbility():IsCooldownReady() then
+		if not self:GetParent():PassivesDisabled() and self:GetAbility():IsFullyCastable() then
 			self:PlayEffects( true )
 			return 1
 		end
@@ -42,7 +42,7 @@ function modifier_antimage_spell_shield_lua:GetReflectSpell( params )
 			return 0
 		end
 
-		if not self:GetParent():PassivesDisabled() and self:GetAbility():IsCooldownReady() then
+		if not self:GetParent():PassivesDisabled() and self:GetAbility():IsFullyCastable() then
 			-- use resources
 			self:GetAbility():UseResources( true, false, true )
 			self.reflect = true

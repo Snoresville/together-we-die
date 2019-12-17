@@ -53,7 +53,7 @@ end
 function modifier_axe_counter_helix_lua:OnAttackLanded( params )
 	local abilityCaster = self:GetCaster()
 	local selfAbility = self:GetAbility()
-	if IsServer() and (not abilityCaster:PassivesDisabled()) and selfAbility:IsCooldownReady()  then
+	if IsServer() and (not abilityCaster:PassivesDisabled()) and selfAbility:IsFullyCastable()  then
 		if params.attacker:IsOther() then return end
 		if abilityCaster == params.target then
 			-- roll dice

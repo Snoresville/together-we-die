@@ -63,7 +63,7 @@ function modifier_item_heart_of_tarrasque_lua:GetModifierBonusStats_Strength( pa
 end
 
 function modifier_item_heart_of_tarrasque_lua:GetModifierHealthRegenPercentage( params )
-	if IsServer() and not self:GetParent():PassivesDisabled() and self:GetAbility():IsCooldownReady() then
+	if IsServer() and not self:GetParent():PassivesDisabled() and self:GetAbility():IsFullyCastable() then
 		return self.health_regen_rate
 	end
 
@@ -71,7 +71,7 @@ function modifier_item_heart_of_tarrasque_lua:GetModifierHealthRegenPercentage( 
 end
 
 function modifier_item_heart_of_tarrasque_lua:GetModifierHPRegenAmplify_Percentage( params )
-	if IsServer() and not self:GetParent():PassivesDisabled() and self:GetAbility():IsCooldownReady() then
+	if IsServer() and not self:GetParent():PassivesDisabled() and self:GetAbility():IsFullyCastable() then
 		return self.hp_regen_amp
 	end
 

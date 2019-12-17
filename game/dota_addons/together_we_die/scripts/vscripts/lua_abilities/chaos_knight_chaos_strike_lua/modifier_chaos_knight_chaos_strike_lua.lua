@@ -47,7 +47,7 @@ function modifier_chaos_knight_chaos_strike_lua:DeclareFunctions()
 end
 
 function modifier_chaos_knight_chaos_strike_lua:GetModifierPreAttack_CriticalStrike( params )
-	if IsServer() and (not self:GetParent():PassivesDisabled()) and self:GetAbility():IsCooldownReady() then
+	if IsServer() and (not self:GetParent():PassivesDisabled()) and self:GetAbility():IsFullyCastable() then
 		self.record = params.record
 		-- cooldown
 		self:GetAbility():UseResources( false, false, true )

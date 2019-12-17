@@ -38,7 +38,7 @@ end
 -- OnThink
 function modifier_creature_bounty_hunter_invisibility_lua:OnIntervalThink()
 	local bounty_hunter = self:GetParent()
-	if bounty_hunter:IsAlive() and not bounty_hunter:PassivesDisabled() and self:GetAbility():IsCooldownReady() then
+	if bounty_hunter:IsAlive() and not bounty_hunter:PassivesDisabled() and self:GetAbility():IsFullyCastable() then
 		bounty_hunter:AddNewModifier(
 			bounty_hunter, -- player source
 			self:GetAbility(), -- ability source

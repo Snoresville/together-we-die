@@ -40,7 +40,7 @@ function modifier_roshan_sun_strike_lua:OnIntervalThink()
 
 	local modifierParent = self:GetParent()
 	local selfAbility = self:GetAbility()
-	if modifierParent:IsAlive() and not modifierParent:PassivesDisabled() and selfAbility:IsCooldownReady() then
+	if modifierParent:IsAlive() and not modifierParent:PassivesDisabled() and selfAbility:IsFullyCastable() then
 		local enemies = FindUnitsInRadius(
 			modifierParent:GetTeamNumber(),	-- int, your team number
 			modifierParent:GetOrigin(),	-- point, center point
