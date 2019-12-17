@@ -5443,7 +5443,9 @@
 #base "../vscripts/lua_abilities/lina_laguna_blade_lua/lina_laguna_blade_lua.txt"
 
 #base "../vscripts/lua_abilities/centaur_warrunner_hoof_stomp_lua/centaur_warrunner_hoof_stomp_lua.txt"
+#base "../vscripts/lua_abilities/centaur_warrunner_double_edge_lua/centaur_warrunner_double_edge_lua.txt"
 #base "../vscripts/lua_abilities/centaur_warrunner_return_lua/centaur_warrunner_return_lua.txt"
+#base "../vscripts/lua_abilities/centaur_warrunner_stampede_lua/centaur_warrunner_stampede_lua.txt"
 
 #base "../vscripts/lua_abilities/ogre_magi_fireblast_lua/ogre_magi_fireblast_lua.txt"
 #base "../vscripts/lua_abilities/ogre_magi_ignite_lua/ogre_magi_ignite_lua.txt"

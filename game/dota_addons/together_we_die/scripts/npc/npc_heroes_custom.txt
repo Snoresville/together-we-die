@@ -41,9 +41,11 @@
 		"AttributeStrengthGain" "5.5"
 
 		"Ability1"				"centaur_warrunner_hoof_stomp_lua"
+		"Ability2"              "centaur_warrunner_double_edge_lua"
 		"Ability3"				"centaur_warrunner_return_lua"
 		"Ability4"		""
 		"Ability5"		""
+		"Ability6"              "centaur_warrunner_stampede_lua"
 		"Ability10"		""
 		"Ability11"		""
 		"Ability12"		""
