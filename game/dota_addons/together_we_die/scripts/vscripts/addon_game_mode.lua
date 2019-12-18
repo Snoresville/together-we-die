@@ -23,7 +23,7 @@ end
 -- Precache resources
 function Precache( context )
 	--PrecacheResource( "particle", "particles/generic_gameplay/winter_effects_hero.vpcf", context )
-	PrecacheResource( "particle", "particles/items2_fx/veil_of_discord.vpcf", context )	
+	PrecacheResource( "particle", "particles/items2_fx/veil_of_discord.vpcf", context )
 	-- PrecacheResource( "particle_folder", "particles/frostivus_gameplay", context )
 	PrecacheItemByNameSync( "item_tombstone", context )
 	PrecacheItemByNameSync( "item_bag_of_gold", context )
@@ -283,7 +283,7 @@ end
 
 function CHoldoutGameMode:_BeginGameSetup()
 	-- Start difficulty vote
-	CustomGameEventManager:Send_ServerToAllClients( "show_difficulty_vote", {} )
+	CustomGameEventManager:Send_ServerToTeam( DOTA_TEAM_GOODGUYS, "show_difficulty_vote", {} )
 
 	-- Create courier for every player
 	for nPlayerID = 0, DOTA_MAX_TEAM_PLAYERS-1 do
@@ -453,7 +453,7 @@ function CHoldoutGameMode:_CheckForAlliance()
 					foundAllianceHeroes["female"][nPlayerID] = hero:entindex()
 					allianceCount["female"] = allianceCount["female"] + 1
 				end
-		
+
 				if warriorAllianceHeroes[heroName] then
 					foundAllianceHeroes["warrior"][nPlayerID] = hero:entindex()
 					allianceCount["warrior"] = allianceCount["warrior"] + 1
@@ -526,7 +526,7 @@ function CHoldoutGameMode:_CheckForDefeat()
 				self._currentRound:End()
 				self._currentRound = nil
 			end
-		
+
 			for _,item in pairs( Entities:FindAllByClassname( "dota_item_drop")) do
 				local containedItem = item:GetContainedItem()
 				if containedItem then
@@ -534,7 +534,7 @@ function CHoldoutGameMode:_CheckForDefeat()
 				end
 				UTIL_RemoveImmediate( item )
 			end
-		
+
 			self._flPrepTimeEnd = GameRules:GetGameTime() + self._flPrepTimeBetweenRounds
 			self:_RefreshPlayers()
 			self:_RespawnBuildings( true )
@@ -706,7 +706,7 @@ function CHoldoutGameMode:OnEntityKilled( event )
 		local tombstone = SpawnEntityFromTableSynchronous( "dota_item_tombstone_drop", {} )
 		tombstone:SetContainedItem( newItem )
 		tombstone:SetAngles( 0, RandomFloat( 0, 360 ), 0 )
-		FindClearSpaceForUnit( tombstone, killedUnit:GetAbsOrigin(), true )	
+		FindClearSpaceForUnit( tombstone, killedUnit:GetAbsOrigin(), true )
 	end
 end
 
@@ -864,7 +864,7 @@ function CHoldoutGameMode:_SendRoundDataToClient()
 	if self._flPrepTimeEnd then
 		netTable["prep_time_left"] = self._flPrepTimeEnd - GameRules:GetGameTime()
 	end
-	
+
 	netTable["enemies_killed"] = 0
 	netTable["enemies_total"] = 1
 
