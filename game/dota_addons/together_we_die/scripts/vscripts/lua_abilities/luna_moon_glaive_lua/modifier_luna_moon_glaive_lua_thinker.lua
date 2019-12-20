@@ -94,7 +94,6 @@ function modifier_luna_moon_glaive_lua_thinker:GetModifierProjectileSpeedBonus()
 end
 
 function modifier_luna_moon_glaive_lua_thinker:GetAttackSound()
-	print("here")
 	return "Hero_Luna.MoonGlaive.Impact"
 end
 
