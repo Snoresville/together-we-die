@@ -17,6 +17,7 @@ end
 --------------------------------------------------------------------------------
 -- Initializations
 function modifier_base_stats_lua:OnCreated( kv )
+	if not IsServer() then return end
 	-- references
 	self.str_buff = self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_strength_lua", {})
 	self.agi_buff = self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_agility_lua", {})

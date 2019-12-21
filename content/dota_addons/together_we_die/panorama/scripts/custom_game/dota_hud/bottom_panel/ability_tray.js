@@ -19,6 +19,8 @@ var unitMana;
 // Throttle for "slow" updates to ability panels
 var slowThrottle = 0;
 
+var MAX_ABILITIES_DISPLAY = 26;
+
 // ------------------------------------------------------------- //
 // --------------------- Meta-Panel Actions -------------------- //
 // ------------------------------------------------------------- //
@@ -100,7 +102,7 @@ function UpdateAbilityList()
     }
 
 	// clear any remaining panels
-	for ( var i = nUsedPanels; i < 11; ++i )
+	for ( var i = nUsedPanels; i < MAX_ABILITIES_DISPLAY; ++i )
 	{
 		//$.Msg("action_bar.js UpdateAbilityList | Attempting to hide a panel")
         var panelToHide = AbilityPanels[i].panel;
@@ -117,7 +119,7 @@ function UpdateAbilityPanels(doSlowUpdate) {
     queryUnit = Players.GetLocalPlayerPortraitUnit();
     unitMana = Entities.GetMana( queryUnit );
 
-    for (var i=0; i<11; i++) {
+    for (var i=0; i< MAX_ABILITIES_DISPLAY; i++) {
         if (doSlowUpdate){
             AbilityPanels[i].SlowUpdate();
         }
@@ -141,7 +143,7 @@ function PeriodicAbilityPanelUpdate() {
 function CreateAbilityPanels()
 {
     $.GetContextPanel().RemoveAndDeleteChildren();
-    for (var i=0; i<11; i++)
+    for (var i=0; i<MAX_ABILITIES_DISPLAY; i++)
     {
         var newPanel = new AbilitySlot($.GetContextPanel(), i);
         AbilityPanels.push(newPanel);

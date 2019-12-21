@@ -15,7 +15,8 @@
 
 .AbilityPanel
 {
-	margin: 2px;
+	margin: 0;
+	max-width: 40px;
 }
 
 .AbilityPanel.no_ability
