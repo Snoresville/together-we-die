@@ -65,7 +65,7 @@
 			"04"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"int_multiplier"	"0.005 0.01 0.015 0.02"
+				"int_multiplier"	"0.01 0.015 0.02 0.025"
 			}
 			"05"
 			{
