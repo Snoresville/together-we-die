@@ -1279,8 +1279,8 @@
 			"WaitForTime"			"20"
 			
 			"NPCName"				"npc_dota_creature_ancient_apparition"
-			"TotalUnitsToSpawn"		"6"
-			"UnitsPerSpawn"			"2"
+			"TotalUnitsToSpawn"		"4"
+			"UnitsPerSpawn"			"1"
 			"SpawnInterval"			"25"
 			"DontGiveGoal"			"1"
 		}
