@@ -51,37 +51,3 @@ function HideRoundStart()
 }
 
 GameEvents.Subscribe( "round_started", OnRoundStarted );
-
-// Returns a reference to the dota hud panel
-function GetHud(){
-    var panel = $.GetContextPanel().GetParent();
-    for(var i = 0; i < 100; i++) {
-        if(panel.id != "Hud") {
-            panel = panel.GetParent();
-        } else {
-            break;
-        }
-    };
-    return panel
-}
-
-(function()
-{
-	var hudRoot = GetHud();
-	var customHudContents = $("#CustomHudContents");
-	var inventory = hudRoot.FindChildTraverse("inventory");
-	var inventoryTpScroll = hudRoot.FindChildTraverse("inventory_tpscroll_container");
-	inventory.SetParent(customHudContents);
-	inventory.style.horizontalAlign = "left";
-	inventory.style.verticalAlign = "center";
-	inventory.style.zIndex = "20";
-	inventoryTpScroll.SetParent(customHudContents);
-	inventoryTpScroll.style.horizontalAlign = "left";
-	inventoryTpScroll.style.verticalAlign = "center";
-	inventoryTpScroll.style.marginTop = "200px";
-
-	var rightFlare = hudRoot.FindChildTraverse("right_flare");
-	if (rightFlare) {
-		rightFlare.RemoveAndDeleteChildren();
-	}
-})();

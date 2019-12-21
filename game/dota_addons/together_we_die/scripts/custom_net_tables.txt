@@ -7,5 +7,6 @@
 		"holdout_scores",	
 		"game_end",
 		"restart_votes",
+		"containers_lua",
 	]
 }

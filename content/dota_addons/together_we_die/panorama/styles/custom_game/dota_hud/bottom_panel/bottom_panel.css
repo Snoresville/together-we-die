@@ -1,0 +1,573 @@
+.RootLayout
+{
+    width: 100%;
+    height: 40%;
+    z-index: -1;
+    align: middle bottom;
+}
+
+#CustomCenterBlock
+{
+    flow-children: down;
+    align: middle bottom;
+    width: fit-children;
+    height: fit-children;
+}
+
+#MainBody
+{
+    flow-children: right;
+    margin-left: 3px;
+    align: middle bottom;
+    min-width: 350px;
+    width: fit-children;
+    height: 225px;
+    border-radius: 2px;
+    padding-top: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-bottom: 2px;
+}
+
+#MainBodyBackground
+{
+    height: 80%;
+    width: 100%;
+    vertical-align: bottom;
+    margin-right: -100%;
+    background-color: #23232aee;
+    border-radius: 2px;
+    z-index: -1;
+}
+
+#RHS
+{
+    flow-children: down;
+    min-width: 1000px;
+    height: 100%;
+    margin-left: 2px;
+    z-index: 1;
+}
+
+#RHSBackground
+{
+    background-color: #2d2d36ee;
+    border-radius: 2px;
+    z-index: -1;
+    margin-left: 2px;
+    width: 1000px;
+    height: 80%;
+    vertical-align: bottom;
+    margin-right: -1000px;
+}
+
+#LHS
+{
+    height: 80%;
+    vertical-align: bottom;
+    background-color: #2D2D36ee;
+    border-radius: 2px;
+    box-shadow: 0px 2px 6px #0000007a;
+    margin-right: 2px;
+}
+
+#TopPart
+{
+    width: 100%;
+    height: 154px;
+    z-index: 0;
+    align: middle bottom;
+    flow-children: right;
+}
+
+#BottomPart
+{
+    align: middle bottom;
+    width: fit-children;
+    flow-children: right;
+    z-index: 1;
+    margin-top: -80px;
+    background-color: #222222ee;
+    border: 2px solid #444488;
+    border-radius: 8px;
+}
+
+#BotPart
+{
+    width: 100%;
+    height: 65px;
+    flow-children: down;
+    align: left bottom;
+    margin-top: 5px;
+}
+
+#NamePortraitBox
+{
+    width: 186px;
+    height: 225px;
+    margin-top: 4px;
+}
+
+#CustomPortraitBox
+{
+    width: 100%;
+    height: 100%;
+    margin-right: 12px;
+    margin-left: 12px;
+}
+
+
+/* ------------------------------------------------------------------------------------------ */
+/* ----------------------------------------  Stat Boxes ------------------------------------- */
+/* ------------------------------------------------------------------------------------------ */
+
+.StatColumn
+{
+    width: 90px;
+    height: 80%;
+    vertical-align: bottom;
+    margin-top: 4px;
+    margin-left: 4px;
+    margin-right: -6px;
+    margin-bottom: -10px;
+    flow-children: down;
+}
+
+.HeroStatColumn
+{
+    width: 70px;
+    height: 80%;
+    margin-top: 0px;
+    margin-left: 4px;
+    margin-right: 4px;
+    margin-bottom: -10px;
+    vertical-align: bottom;
+    flow-children: down;
+}
+
+.StatBox
+{
+    width: 100%;
+    height: fill-parent-flow(1);
+    max-height: 40px;
+    margin-bottom: 1px;
+    /* border: 2px solid #444488aa; */
+    /* border-radius: 8px; */
+    background-size: 24% 80%;
+    background-repeat: no-repeat;
+    background-position: 0% 40%;
+    /* background-color: #111111ee; */
+    flow-children: right;
+    wash-color: #FFFFFF;
+}
+
+.HeroStatBox
+{
+    width: 100%;
+    height: fill-parent-flow(1);
+    margin: 1px;
+    padding-top: 4px;
+    /* border: 2px solid #444488aa; */
+    /* border-radius: 8px; */
+    background-size: 30% 60%;
+    background-repeat: no-repeat;
+    background-position: 5% 40%;
+    /* background-color: #111111ee; */
+    flow-children: down;
+}
+
+#AbilityBuffContainer
+{
+    width: fit-children;
+    align: middle top;
+    height: 100%;
+    flow-children: right;
+    margin-top: 6px;
+
+}
+
+#BuffDebuffContainer
+{
+    width: 100%;
+    flow-children: right;
+    height: fit-children;
+    margin-top: 0px;
+    margin-bottom: -90px;
+    transition: width 0.25s linear 0s;
+}
+
+#BuffDebuffContainer.HalfWidth
+{
+    width: 50%;
+}
+
+#MoveContainer
+{
+    background-image: url("file://{images}/icons/movespeed.png");
+}
+
+/* --------------------------------------------------------------*/
+/* ------------- Attack types for different weapons -------------*/
+/* --------------------------------------------------------------*/
+
+#AttackContainer
+{
+    background-image: url("file://{images}/icons/melee_attack.png");
+}
+
+#AttackContainer.Ranged
+{
+    background-image: url("file://{images}/icons/ranged_attack.png");
+}
+
+#AttackContainer.NoAttack
+{
+    background-image: url("file://{images}/icons/no_attack.png");
+}
+
+/* --------------------------------------------------------------*/
+/* ------------- Armour types for different armours -------------*/
+/* --------------------------------------------------------------*/
+
+#ArmorContainer
+{
+    background-image: url("file://{images}/icons/armour.png");
+}
+
+/* --------------------------------------------------------------*/
+/* ------------------ Other Icon containers  --------------------*/
+/* --------------------------------------------------------------*/
+
+
+#StrContainer
+{
+    background-image: url("s2r://panorama/images/primary_attribute_icons/primary_attribute_icon_strength_psd.vtex");
+}
+
+#AgiContainer
+{
+    background-image: url("s2r://panorama/images/primary_attribute_icons/primary_attribute_icon_agility_psd.vtex");
+}
+
+#IntContainer
+{
+    background-image: url("s2r://panorama/images/primary_attribute_icons/primary_attribute_icon_intelligence_psd.vtex");
+}
+
+.MainLabel,
+.MainStatLabel
+{
+    font-size: 16px;
+    text-shadow: 0px 0px 2px 1.0 #000000;
+    color: #ccccdd;
+    align: left middle;
+    margin-left: 30px;
+    margin-right: 5%;
+    margin-top: 1px;
+    text-align: left;
+}
+
+.MainStatLabel
+{
+    font-size: 18px;
+}
+
+.SecondaryLabel,
+.SecondaryStatLabel
+{
+    font-size: 12px;
+    text-shadow: 0px 0px 2px 1.0 #000000;
+    color: #1eb980;
+    margin-right: 4px;
+    align: middle middle;
+    margin-top: -8px;
+    text-align: right;
+    width: 100%;
+}
+
+.SecondaryStatLabel
+{
+    align: middle middle;
+    margin-top: 0px;
+    text-align: left;
+}
+
+.Negative.SecondaryLabel
+{
+    color: #ff6859;
+}
+.Negative.SecondaryStatLabel
+{
+    color: #ff6859;
+}
+
+
+.Debuff.MainStatLabel
+{
+    color: #ff6859;
+}
+.Buff.MainStatLabel
+{
+    color: #1eb980;
+}
+
+.HeroStatBox .MainLabel
+{
+    font-size: 15px;
+    margin-right: 2%;
+}
+
+.HeroStatBox .SecondaryLabel
+{
+    font-size: 13px;
+}
+
+.MainLabel.FullBox
+{
+    font-size: 18px;
+    margin-top: 8px;
+    height: 100%;
+    width: 100%;
+}
+
+.HeroStatBox .MainLabel.FullBox
+{
+    font-size: 18px;
+    margin-top: 5px;
+    margin-right: 6%;
+}
+
+#StatDivider
+{
+    width: 1px;
+    height: 100%;
+    margin-left: -2px;
+    margin-top: 12px;
+    margin-right: 4px;
+    background-color: #33333Dee;
+    vertical-align: bottom;
+    margin-bottom: -12px;
+}
+
+// --------------------------------------------------------- //
+// ------------------------ Health, Mana ------------------- //
+// --------------------------------------------------------- //
+
+#HealthContainer,
+#ManaContainer
+{
+    width: 100%;
+    border: 1px solid black;
+    height: 28px;
+    background-color: #22222288;
+    margin-right: 8px;
+    margin-left: 4px;
+}
+
+#HealthLabel,
+#ManaLabel
+{
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+    width: 100%;
+    margin-top: 1px;
+    margin-bottom: 2px;
+    horizontal-align: center;
+    text-shadow: 1px 1px 0px 2.0 #000000;
+    z-index: 5;
+    font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
+}
+
+#HealthBarProgress
+{
+    border-radius: 3px;
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #425d25  ), color-stop( 0.2, #5BA539 ), color-stop( .5, #4D9030), to( #425d25) );
+    height: 100%;
+}
+
+.ColorBlindModeEnabled #HealthBarProgress
+{
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #658fdf  ), color-stop( 0.2, #a4caff ), color-stop( .5, #3f6fcb), to( #2c56ab ) );
+}
+#ManaBarProgress
+{
+    border-radius: 3px;
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #2b4287 ), color-stop( 0.2, #4165ce ), color-stop( .5, #4a73ea), to( #2b4287 ) );
+    height: 100%;
+}
+
+.Dead #HealthRegenLabel,
+.Dead #HealthLabel
+{
+    color: #C23339;
+}
+
+
+#HealthRegenLabel
+{
+    color: #3ED038;
+    align: right middle;
+    font-size: 14px;
+    z-index: 5;
+    font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
+    margin-right: 4px;
+}
+
+#ManaRegenLabel
+{
+    color: #83C2FE;
+    align: right middle;
+    z-index: 5;
+    font-size: 14px;
+    font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
+    margin-right: 4px;
+}
+
+
+/* --------------------------------------------------------------*/
+/* -------------------- Buff and Debuff Tray --------------------*/
+/* --------------------------------------------------------------*/
+
+.BuffPanel
+{
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: #AAAAAA66;
+    border: 1px solid #444444;
+}
+
+#BuffBorder
+{
+    width: 100%;
+    height: 100%;
+    background-color: green;
+    opacity: 1;
+    z-index: 1;
+}
+
+.debuff #BuffBorder
+{
+    background-color: red;
+}
+
+#BuffImage
+{
+    width: 32px;
+    height: 32px;
+    align: center center;
+    z-index: 2;
+}
+
+#BuffStacks
+{
+    width: 100%;
+    height: 100%;
+    align: center center;
+    text-align: center;
+    color: white;
+    padding-top: 4px;
+    text-shadow: 0px 0px 0px 2.5 #000000;
+    font-size: 24px;
+    z-index: 3;
+}
+
+/* --------------------------------------------------------------*/
+/* ---------------- Portrait and Multiunit Boxes ----------------*/
+/* --------------------------------------------------------------*/
+
+#NamePortraitContainer
+{
+    height: 100%;
+}
+
+#PortraitContainer
+{
+    width: 160px;
+    height: 145px;
+    align: center bottom;
+    margin-top: 0px;
+    overflow: clip;
+}
+
+#PortraitBox
+{
+    width: 120px;
+    height: 130px;
+    align: center bottom;
+    margin-bottom: 4px;
+    border: 1px solid #888888;
+    border-radius: 2px;
+}
+
+#MultiUnitBox
+{
+    width: 100%;
+    height: 100%;
+    align: center center;
+    border: 1px solid #888888;
+    margin-bottom: 0px;
+    border-radius: 2px;
+    z-index: 2;
+}
+
+#MultiUnitContainer
+{
+    margin-top: -12px;
+    width: 160px;
+    height: 177px;
+    align: center bottom;
+    z-index: 2;
+    pre-transform-scale2d: 0.75;
+}
+
+#UnitNameContainer
+{
+    width: 90%;
+    height: 20px;
+    align: middle top;
+    margin-top: 8px;
+}
+
+#UnitName
+{
+    text-align: center;
+    color: white;
+    width: 100%;
+    font-size: 16px;
+}
+
+/* Special settings for XPContainer to fix glow */
+#XPContainer
+{
+    align: middle top;
+    height: 36px;
+    margin-top: 28px;
+    z-index: 2;
+    padding-top: 4px;
+    padding-bottom: 5px;
+    margin-bottom: 3px;
+}
+
+#XPBox
+{
+    margin-bottom: -16px;
+    margin-top: -6px;
+    align: middle bottom;
+}
+
+#XPShadow
+{
+    width: 32px;
+    height: 32px;
+    align: middle top;
+    box-shadow: #BBBBBB 0px 0px 4px 6px; // outer
+    margin-top: 5px;
+    margin-left: -3px;
+    border-radius: 25px;
+    z-index: -1;
+    blur: gaussian(5);
+    opacity: 0.8;
+}

@@ -9,3 +9,5 @@ Licensed under MIT. See LICENSE for more details.
 ## Credits
 
 A lot of spells were borrowed from [Elfansoer's library](https://github.com/Elfansoer/dota-2-lua-abilities) with some fixes and adjustments. (I should probably send PR to some of his abilities that broke)
+
+Inventory system modeled based on Almouse's library.

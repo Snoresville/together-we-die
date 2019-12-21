@@ -1,0 +1,129 @@
+<root>
+
+    <styles>
+        <!-- CSS Paths -->
+        <include src="file://{resources}/styles/custom_game/dota_hud/bottom_panel/bottom_panel.css" />
+    </styles>
+    <scripts>
+        <!-- JS Paths -->
+        <include src="file://{resources}/scripts/custom_game/util/util_sprintf.js" />  
+        <include src="file://{resources}/scripts/custom_game/dota_hud/bottom_panel/bottom_panel.js" />
+    </scripts>
+
+    <snippets>
+        <snippet name="buff">
+
+            <Panel class="BuffPanel">
+                <Panel id="BuffBorder"/>
+                <Panel id="BuffImage">
+                    <DOTAAbilityImage id="AbilityImage" />
+                    <DOTAItemImage id="ItemImage" scaling="stretch-to-fit-y-preserve-aspect" />
+                </Panel>
+                <Label id="BuffStacks"/>
+            </Panel>
+
+        </snippet>
+    </snippets>
+
+    <Panel class="RootLayout" hittest="false">
+
+        <Panel id="CustomCenterBlock" hittest="false">
+
+            <Panel id="BuffDebuffContainer"></Panel>
+
+            <Panel id="MainBody" hittest="false">
+
+                <Panel id="MainBodyBackground" hittest="false"> </Panel>
+                <Panel id="LHS">
+
+                    <Panel id="NamePortraitContainer">
+                        
+                        <Panel id="XPShadow"/>
+                        
+                        <Panel id="XPContainer" class="HeroStatBox">
+                            <DOTAXP id="XPBox">
+                                <!-- XPShadow will be moved inside here (css scoping) -->
+                            </DOTAXP>
+                        </Panel>
+
+                        <Panel id="UnitNameContainer">
+                            <Label id="UnitName"/>
+                        </Panel>
+
+                        <Panel id="PortraitContainer">
+                            <Panel id="MultiUnitContainer">
+                                <DOTAMultiUnit id="MultiUnitBox"/>
+                            </Panel>
+                            <DOTAPortrait id="PortraitBox"/>
+                        </Panel>
+
+                    </Panel>
+
+                </Panel>
+
+                <!-- Virtual panel to do the background-->
+                <Panel id="RHSBackground" hittest="false"/>
+
+                <Panel id="RHS" hittest="false">
+
+                    <Panel id="TopPart" hittest="false">
+
+                        <Panel id="HeroStatColumn" class="HeroStatColumn">
+                            <Panel id="StrContainer" class="HeroStatBox">
+                                <Label id="StrLabel" class="MainLabel"></Label>
+                                <Label id="StrSecondaryLabel" class="SecondaryLabel"></Label>
+                            </Panel>
+                            <Panel id="AgiContainer" class="HeroStatBox">
+                                <Label id="AgiLabel" class="MainLabel"></Label>
+                                <Label id="AgiSecondaryLabel" class="SecondaryLabel"></Label>
+                            </Panel>
+                            <Panel id="IntContainer" class="HeroStatBox">
+                                <Label id="IntLabel" class="MainLabel"></Label>
+                                <Label id="IntSecondaryLabel" class="SecondaryLabel"></Label>
+                            </Panel>
+                        </Panel>
+
+                        <Panel id="StatDivider"/>
+
+                        <Panel id="UnitStatColumn" class="StatColumn">
+                            <Panel id="AttackContainer" class="StatBox">
+                                <Label id="AttackLabel" class="MainStatLabel"></Label>
+                                <Label id="AttackSecondaryLabel" class="SecondaryStatLabel"></Label>
+                            </Panel>
+                            <Panel id="ArmorContainer" class="StatBox">
+                                <Label id="ArmorLabel" class="MainStatLabel"></Label>
+                                <Label id="ArmorSecondaryLabel" class="SecondaryStatLabel"></Label>
+                            </Panel>
+                            <Panel id="MoveContainer" class="StatBox">
+                                <Label id="MoveLabel" class="MainStatLabel"></Label>
+                            </Panel>
+                        </Panel>
+
+                        <Panel id="AbilityBuffContainer">
+                        </Panel>
+
+                    </Panel>
+
+                    <Panel id="BotPart">
+                        <Panel id="HealthContainer">
+                            <Label id="HealthLabel"/>
+                            <Label id="HealthRegenLabel"/>
+                            <Panel id="HealthBarProgress"/>
+                        </Panel>
+                        <Panel id="ManaContainer">
+                            <Label id="ManaLabel"/>
+                            <Label id="ManaRegenLabel"/>
+                            <Panel id="ManaBarProgress"/> 
+                        </Panel>
+
+                    </Panel>
+
+                </Panel>
+            </Panel>
+
+        </Panel>
+
+    </Panel>
+
+
+</root>

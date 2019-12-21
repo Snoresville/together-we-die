@@ -2,7 +2,9 @@
     <script>
         GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_FLYOUT_SCOREBOARD, false );
         GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ENDGAME, false );
-        GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_SHOP_SUGGESTEDITEMS, false );
+        GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_SHOP, true );
+        GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_PANEL, false );
+        GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ACTION_PANEL, false );
     </script>
     <scripts>
         <include src="file://{resources}/scripts/playertables/playertables_base.js"/>
@@ -10,6 +12,9 @@
     <Panel>
         <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/hud_main.xml"/>
         <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/barebones_notifications.xml"/>
+        <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/containers/container_base.xml"/>
+        <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/containers/dota_inventory.xml"/>
+        <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/dota_hud/bottom_panel/bottom_panel.xml"/>
         <CustomUIElement type="FlyoutScoreboard"
                          layoutfile="file://{resources}/layout/custom_game/together_we_die_scoreboard.xml"/>
     </Panel>

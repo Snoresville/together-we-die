@@ -311,6 +311,10 @@ function CHoldoutGameMode:_BeginGameSetup()
             )
             courier:SetControllableByPlayer(nPlayerID, false) -- (playerID, bSkipAdjustingPosition)
             courier:SetOwner(player_hero)
+
+            -- Set base stats
+            local base_stats = player_hero:AddAbility("base_stats_lua")
+            base_stats:SetLevel(1)
         end
     end
 
