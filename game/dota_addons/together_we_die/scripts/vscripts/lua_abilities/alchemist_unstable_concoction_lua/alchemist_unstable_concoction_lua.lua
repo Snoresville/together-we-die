@@ -173,7 +173,7 @@ function alchemist_unstable_concoction_throw_lua:OnProjectileHit_ExtraData( targ
 	local min_stun = self:GetSpecialValueFor( "min_stun" )
 	local max_stun = self:GetSpecialValueFor( "max_stun" )
 	local min_damage = self:GetSpecialValueFor( "min_damage" ) + str_bonus_dmg
-	local max_damage = self:GetSpecialValueFor( "max_damage" ) + str_bonus_dmg
+	local max_damage = self:GetSpecialValueFor( "max_damage" ) + (str_bonus_dmg * 2)
 	local radius = self:GetSpecialValueFor( "midair_explosion_radius" )
 
 	-- calculate stun and damage
