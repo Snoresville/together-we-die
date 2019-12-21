@@ -24,6 +24,7 @@ function modifier_creature_enchantress_untouchable_lua_debuff:OnCreated( kv )
 	-- references
 	self.slow = self:GetAbility():GetSpecialValueFor( "slow_attack_speed" ) -- special value
 	self.armor_reduction = self:GetAbility():GetSpecialValueFor( "armor_reduction" )
+	self:SetStackCount(1)
 end
 
 function modifier_creature_enchantress_untouchable_lua_debuff:OnRefresh( kv )

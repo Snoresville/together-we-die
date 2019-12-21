@@ -34,14 +34,6 @@ function modifier_creature_enchantress_untouchable_lua:DeclareFunctions()
 	return funcs
 end
 
-function modifier_creature_enchantress_untouchable_lua:CheckState()
-	local state = {
-		[MODIFIER_STATE_MAGIC_IMMUNE] = true,
-	}
-
-	return state
-end
-
 function modifier_creature_enchantress_untouchable_lua:OnAttackStart( params )
 	if IsServer() then
 		if params.target~=self:GetParent() then return end

@@ -1952,7 +1952,7 @@
 		"UnitMelee_1"
 		{
 			"NPCName"				"npc_dota_creature_enchantress_treant"
-			"TotalUnitsToSpawn"		"6"
+			"TotalUnitsToSpawn"		"12"
 			"UnitsPerSpawn"			"6"
 			"SpawnInterval"			"5"
 		}
@@ -1973,7 +1973,7 @@
 			"WaitForTime"			"15"
 			
 			"NPCName"				"npc_dota_creature_enchantress_treant"
-			"TotalUnitsToSpawn"		"6"
+			"TotalUnitsToSpawn"		"12"
 			"UnitsPerSpawn"			"6"
 			"SpawnInterval"			"5"
 		}

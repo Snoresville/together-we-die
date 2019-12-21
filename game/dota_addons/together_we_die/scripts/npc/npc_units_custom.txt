@@ -3747,7 +3747,7 @@
 		//----------------------------------------------------------------
 		
 		"Ability1"					"creature_enchantress_untouchable_lua"			// Ability 1.
-		"Ability2"					""			// Ability 2.
+		"Ability2"					"creature_magic_immunity_lua"			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
 		"Ability5"					""			// Ability 5.
@@ -3834,7 +3834,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"creature_enchantress_untouchable_lua"
-		"Ability2"					""
+		"Ability2"					"creature_magic_immunity_lua"
 		"Ability3"					""
 		"Ability4"					""
 
@@ -3848,8 +3848,8 @@
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"			"7000"		// Damage range min.
 		"AttackDamageMax"			"12000"		// Damage range max.	
-		"AttackRate"				"0.3"		// Speed of attack.
-		"AttackAnimationPoint"		"0.1"		// Normalized time in animation cycle to attack.
+		"AttackRate"				"0.5"		// Speed of attack.
+		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"1700"		// Range within a target can be acquired.
 		"AttackRange"				"1800"		// Range within a target can be attacked.
 		"ProjectileModel"			"particles/units/heroes/hero_enchantress/enchantress_base_attack.vpcf"
