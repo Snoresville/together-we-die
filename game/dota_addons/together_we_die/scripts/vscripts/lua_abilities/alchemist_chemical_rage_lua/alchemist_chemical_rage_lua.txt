@@ -99,7 +99,12 @@
 			"11"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"str_multiplier"		"0.1 0.2 0.3"
+				"regen_str_multiplier"		"0.4 0.6 0.8"
+			}
+            "12"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"health_str_multiplier"		"4.0 6.0 8.0"
 			}
 		}
 	}

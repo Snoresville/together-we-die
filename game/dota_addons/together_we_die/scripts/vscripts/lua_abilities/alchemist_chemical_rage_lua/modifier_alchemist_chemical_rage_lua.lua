@@ -14,101 +14,109 @@ modifier_alchemist_chemical_rage_lua = class({})
 --------------------------------------------------------------------------------
 -- Classifications
 function modifier_alchemist_chemical_rage_lua:IsHidden()
-	return false
+    return false
 end
 
 function modifier_alchemist_chemical_rage_lua:IsDebuff()
-	return false
+    return false
 end
 
 function modifier_alchemist_chemical_rage_lua:IsStunDebuff()
-	return false
+    return false
 end
 
 function modifier_alchemist_chemical_rage_lua:IsPurgable()
-	return false
+    return false
 end
 
 function modifier_alchemist_chemical_rage_lua:AllowIllusionDuplicate()
-	return true
+    return true
 end
 
 --------------------------------------------------------------------------------
 -- Initializations
-function modifier_alchemist_chemical_rage_lua:OnCreated( kv )
-	-- references
-	self.str_multiplier = self:GetAbility():GetSpecialValueFor( "str_multiplier" )
-	self.bat = self:GetAbility():GetSpecialValueFor( "base_attack_time" )
-	self.health = self:GetAbility():GetSpecialValueFor( "bonus_health" ) + (self:GetParent():GetStrength() * self.str_multiplier)
-	self.health_regen = self:GetAbility():GetSpecialValueFor( "bonus_health_regen" ) + (self:GetParent():GetStrength() * self.str_multiplier)
-	self.mana_regen = self:GetAbility():GetSpecialValueFor( "bonus_mana_regen" ) + (self:GetParent():GetStrength() * self.str_multiplier)
-	self.movespeed = self:GetAbility():GetSpecialValueFor( "bonus_movespeed" )
+function modifier_alchemist_chemical_rage_lua:OnCreated(kv)
+    -- references
+    self.str_multiplier = self:GetAbility():GetSpecialValueFor("str_multiplier")
+    self.health_str_multiplier = self:GetAbility():GetSpecialValueFor("health_str_multiplier")
+    self.bat = self:GetAbility():GetSpecialValueFor("base_attack_time")
+    self.health = self:GetAbility():GetSpecialValueFor("bonus_health") + (self:GetParent():GetStrength() * self.health_str_multiplier)
+    self.health_regen = self:GetAbility():GetSpecialValueFor("bonus_health_regen") + (self:GetParent():GetStrength() * self.str_multiplier)
+    self.mana_regen = self:GetAbility():GetSpecialValueFor("bonus_mana_regen") + (self:GetParent():GetStrength() * self.str_multiplier)
+    self.movespeed = self:GetAbility():GetSpecialValueFor("bonus_movespeed")
 
-	if not IsServer() then return end
+    if not IsServer() then
+        return
+    end
 
-	-- disjoint & purge
-	ProjectileManager:ProjectileDodge( self:GetParent() )
-	self:GetParent():Purge( false, true, false, false, false )
+    -- disjoint & purge
+    ProjectileManager:ProjectileDodge(self:GetParent())
+    self:GetParent():Purge(false, true, false, false, false)
 
-	-- play effects
-	self:PlayEffects()
+    -- play effects
+    self:PlayEffects()
 end
 
-function modifier_alchemist_chemical_rage_lua:OnRefresh( kv )
-	-- references
-	self.str_multiplier = self:GetAbility():GetSpecialValueFor( "str_multiplier" )
-	self.bat = self:GetAbility():GetSpecialValueFor( "base_attack_time" )
-	self.health = self:GetAbility():GetSpecialValueFor( "bonus_health" ) + (self:GetParent():GetStrength() * self.str_multiplier)
-	self.health_regen = self:GetAbility():GetSpecialValueFor( "bonus_health_regen" ) + (self:GetParent():GetStrength() * self.str_multiplier)
-	self.mana_regen = self:GetAbility():GetSpecialValueFor( "bonus_mana_regen" ) + (self:GetParent():GetStrength() * self.str_multiplier)
-	self.movespeed = self:GetAbility():GetSpecialValueFor( "bonus_movespeed" )
+function modifier_alchemist_chemical_rage_lua:OnRefresh(kv)
+    -- references
+    self.str_multiplier = self:GetAbility():GetSpecialValueFor("str_multiplier")
+    self.health_str_multiplier = self:GetAbility():GetSpecialValueFor("health_str_multiplier")
+    self.bat = self:GetAbility():GetSpecialValueFor("base_attack_time")
+    self.health = self:GetAbility():GetSpecialValueFor("bonus_health") + (self:GetParent():GetStrength() * self.health_str_multiplier)
+    self.health_regen = self:GetAbility():GetSpecialValueFor("bonus_health_regen") + (self:GetParent():GetStrength() * self.str_multiplier)
+    self.mana_regen = self:GetAbility():GetSpecialValueFor("bonus_mana_regen") + (self:GetParent():GetStrength() * self.str_multiplier)
+    self.movespeed = self:GetAbility():GetSpecialValueFor("bonus_movespeed")
 
-	if not IsServer() then return end
+    if not IsServer() then
+        return
+    end
 
-	-- disjoint & purge
-	ProjectileManager:ProjectileDodge( self:GetParent() )
-	self:GetParent():Purge( false, true, false, false, false )
+    -- disjoint & purge
+    ProjectileManager:ProjectileDodge(self:GetParent())
+    self:GetParent():Purge(false, true, false, false, false)
 end
 
 function modifier_alchemist_chemical_rage_lua:OnRemoved()
 end
 
 function modifier_alchemist_chemical_rage_lua:OnDestroy()
-	if not IsServer() then return end
+    if not IsServer() then
+        return
+    end
 
-	-- stop effects
-	local sound_cast = "Hero_Alchemist.ChemicalRage"
-	StopSoundOn( sound_cast, self:GetParent() )
+    -- stop effects
+    local sound_cast = "Hero_Alchemist.ChemicalRage"
+    StopSoundOn(sound_cast, self:GetParent())
 end
 
 --------------------------------------------------------------------------------
 -- Modifier Effects
 function modifier_alchemist_chemical_rage_lua:DeclareFunctions()
-	local funcs = {
-	MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT,
-	MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
-	MODIFIER_PROPERTY_HEALTH_BONUS,
-	MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
-	MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT,
-	}
+    local funcs = {
+        MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT,
+        MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
+        MODIFIER_PROPERTY_HEALTH_BONUS,
+        MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
+        MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT,
+    }
 
-	return funcs
+    return funcs
 end
 
 function modifier_alchemist_chemical_rage_lua:GetModifierBaseAttackTimeConstant()
-	return self.bat
+    return self.bat
 end
 function modifier_alchemist_chemical_rage_lua:GetModifierConstantHealthRegen()
-	return self.health_regen
+    return self.health_regen
 end
 function modifier_alchemist_chemical_rage_lua:GetModifierHealthBonus()
-	return self.health
+    return self.health
 end
 function modifier_alchemist_chemical_rage_lua:GetModifierConstantManaRegen()
-	return self.mana_regen
+    return self.mana_regen
 end
 function modifier_alchemist_chemical_rage_lua:GetModifierMoveSpeedBonus_Constant()
-	return self.movespeed
+    return self.movespeed
 end
 -- --------------------------------------------------------------------------------
 -- -- Status Effects
@@ -128,28 +136,28 @@ end
 --------------------------------------------------------------------------------
 -- Graphics & Animations
 function modifier_alchemist_chemical_rage_lua:GetHeroEffectName()
-	return "particles/units/heroes/hero_alchemist/alchemist_chemical_rage_hero_effect.vpcf"
+    return "particles/units/heroes/hero_alchemist/alchemist_chemical_rage_hero_effect.vpcf"
 end
 
 function modifier_alchemist_chemical_rage_lua:PlayEffects()
-	-- Get Resources
-	local particle_cast = "particles/units/heroes/hero_alchemist/alchemist_chemical_rage.vpcf"
-	local sound_cast = "Hero_Alchemist.ChemicalRage"
+    -- Get Resources
+    local particle_cast = "particles/units/heroes/hero_alchemist/alchemist_chemical_rage.vpcf"
+    local sound_cast = "Hero_Alchemist.ChemicalRage"
 
-	-- Create Particle
-	-- local effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_NAME, hOwner )
-	local effect_cast = assert(loadfile("lua_abilities/rubick_spell_steal_lua/rubick_spell_steal_lua_arcana"))(self, particle_cast, PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
+    -- Create Particle
+    -- local effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_NAME, hOwner )
+    local effect_cast = assert(loadfile("lua_abilities/rubick_spell_steal_lua/rubick_spell_steal_lua_arcana"))(self, particle_cast, PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
 
-	-- buff particle
-	self:AddParticle(
-		effect_cast,
-		false, -- bDestroyImmediately
-		false, -- bStatusEffect
-		-1, -- iPriority
-		false, -- bHeroEffect
-		false -- bOverheadEffect
-	)
+    -- buff particle
+    self:AddParticle(
+            effect_cast,
+            false, -- bDestroyImmediately
+            false, -- bStatusEffect
+            -1, -- iPriority
+            false, -- bHeroEffect
+            false -- bOverheadEffect
+    )
 
-	-- Create Sound
-	EmitSoundOn( sound_cast, self:GetParent() )
+    -- Create Sound
+    EmitSoundOn(sound_cast, self:GetParent())
 end
