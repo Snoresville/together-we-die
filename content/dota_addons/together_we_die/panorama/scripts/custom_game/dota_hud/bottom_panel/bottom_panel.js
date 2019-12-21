@@ -411,7 +411,7 @@ function PerformUpdateForQueryUnit(queryUnit) {
     UpdateHeroStatsPanel( queryUnit );
     UpdateBuffTray();
 
-    unitNameLabel.text = "Bottom Panel";
+    unitNameLabel.text = $.Localize("bottom_panel_info");
 }
 
 function UpdateAbilityTray( queryUnit )
@@ -541,9 +541,10 @@ function BuildArmorTooltipForUnit(queryUnit, hero)
     // Tooltip
 
     // Damage reduction
+    var reduction;
     if(armor >= 0) {
         // Positive armor - damage reduction
-        var reduction = (0.05 * armor) / (1 + (0.05 * armor)) * 100;
+        reduction = (0.05 * armor) / (1 + (0.05 * armor)) * 100;
         if(reduction >= 1) {
             reduction = "<font color='#1eb980'>"+reduction.toFixed(0)+"%</font>"; // lol typecasting
         } else {
@@ -551,7 +552,7 @@ function BuildArmorTooltipForUnit(queryUnit, hero)
         }
     } else {
         // Negative armor - damage amplification
-        var reduction = (1-(Math.pow(0.94, -armor)))*100;
+        reduction = (1-(Math.pow(0.94, -armor)))*100;
         if(reduction >= 1) {
             reduction = "<font color='#ff6859'>-" + reduction.toFixed(0) + "%</font>";
         } else {
