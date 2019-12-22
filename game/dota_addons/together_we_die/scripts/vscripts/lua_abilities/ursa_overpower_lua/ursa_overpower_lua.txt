@@ -29,6 +29,8 @@
 
 		// Ability Casting
 		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_3"
+        "AbilityCastGestureSlot"		"DEFAULT"
 		"AbilityCastRange"				"0"
 		"AbilityCastPoint"				"0.3"
 		"AbilityDuration"				"15.0"
