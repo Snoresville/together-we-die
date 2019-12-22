@@ -22,7 +22,7 @@ function modifier_axe_counter_helix_lua:OnCreated( kv )
 		self.damageTable = {
 			-- victim = target,
 			attacker = self:GetCaster(),
-			damage_type = DAMAGE_TYPE_PURE,
+			damage_type = self:GetAbility():GetAbilityDamageType(),
 			ability = self:GetAbility(), --Optional.
 			damage_flags = DOTA_DAMAGE_FLAG_NONE, --Optional.
 		}
