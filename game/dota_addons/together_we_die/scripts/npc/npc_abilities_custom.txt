@@ -5653,3 +5653,9 @@
 
 #base "../vscripts/lua_abilities/spectre_dispersion_lua/spectre_dispersion_lua.txt"
 #base "../vscripts/lua_abilities/spectre_einherjar_lua/spectre_einherjar_lua.txt"
+
+#base "../vscripts/lua_abilities/puck_illusory_orb_lua/puck_illusory_orb_lua.txt"
+#base "../vscripts/lua_abilities/puck_ethereal_jaunt_lua/puck_ethereal_jaunt_lua.txt"
+#base "../vscripts/lua_abilities/puck_waning_rift_lua/puck_waning_rift_lua.txt"
+#base "../vscripts/lua_abilities/puck_phase_shift_lua/puck_phase_shift_lua.txt"
+#base "../vscripts/lua_abilities/puck_dream_coil_lua/puck_dream_coil_lua.txt"
