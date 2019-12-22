@@ -5651,6 +5651,7 @@
 #base "../vscripts/lua_abilities/snapfire_lil_shredder_lua/snapfire_lil_shredder_lua.txt"
 #base "../vscripts/lua_abilities/snapfire_mortimer_kisses_lua/snapfire_mortimer_kisses_lua.txt"
 
+#base "../vscripts/lua_abilities/spectre_desolate_lua/spectre_desolate_lua.txt"
 #base "../vscripts/lua_abilities/spectre_dispersion_lua/spectre_dispersion_lua.txt"
 #base "../vscripts/lua_abilities/spectre_einherjar_lua/spectre_einherjar_lua.txt"
 

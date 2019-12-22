@@ -1,0 +1,71 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Slardar: Bash of the Deep (Lua version)
+	//=================================================================================================================
+	"spectre_desolate_lua"
+	{
+		// Ability Technical Aspect
+		// base script folder	: scripts/vscripts
+		// base texture folder	: resource/flash3/images/spellicons
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"lua_abilities/spectre_desolate_lua/spectre_desolate_lua"
+		"AbilityTextureName"			"spectre_desolate_lua"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"4"
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_spectre.vsndevts"
+	//		"particle"	"particles/units/heroes/hero_<hero>/<hero>_<ability>.vpcf"
+		}
+		
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+
+		// Ability Casting
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Ability Resource
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Damage
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hits_required"			"6"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"armor_reduction"			"2 4 6 8"
+			}
+            "03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"vision"		        "325"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"2.5"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"agi_multiplier"		"0.1 0.15 0.2 0.25"
+			}
+		}
+	}
+}
