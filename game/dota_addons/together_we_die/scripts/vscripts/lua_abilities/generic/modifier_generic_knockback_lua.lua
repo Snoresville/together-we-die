@@ -25,17 +25,22 @@ function modifier_generic_knockback_lua:OnCreated( kv )
 			-- kv.tree_destroy_radius (hull-radius), can be null if -1 
 			-- kv.IsStun (false)
 			-- kv.IsFlail (true)
-			-- kv.IsPurgable() // later 
+			-- kv.IsBackwards (true)
+			-- kv.IsPurgable() // later
 			-- kv.IsMultiple() // later
 
 		-- references
 		self.distance = kv.distance or 0
 		self.height = kv.height or -1
 		self.duration = kv.duration or 0
+		if kv.IsBackwards then self.backwards = kv.IsBackwards==1 else self.backwards = true end
 		if kv.direction_x and kv.direction_y then
 			self.direction = Vector(kv.direction_x,kv.direction_y,0):Normalized()
 		else
 			self.direction = -(self:GetParent():GetForwardVector())
+		end
+		if not self.backwards then
+			self.direction = -(self.direction)
 		end
 		self.tree = kv.tree_destroy_radius or self:GetParent():GetHullRadius()
 

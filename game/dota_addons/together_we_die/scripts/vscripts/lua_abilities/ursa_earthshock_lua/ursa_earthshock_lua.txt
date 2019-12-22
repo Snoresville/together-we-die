@@ -63,6 +63,11 @@
 				"var_type"					"FIELD_FLOAT"
 				"agi_multiplier"			"1.5 2.5 3.5 4.5"
 			}
+            "04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"hop_distance"			    "250"
+			}
 		}
 	}
 }
