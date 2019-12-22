@@ -409,7 +409,7 @@ function CHoldoutGameMode:OnHeroLevelUp(event)
     local heroLevel = hero:GetLevel()
     local abilityPointsToGive = 0
 
-    if (heroLevel % 2 == 0) then
+    if (heroLevel % 3 == 0) then
         abilityPointsToGive = 1
     end
     hero:SetAbilityPoints(unspendAP + abilityPointsToGive)
