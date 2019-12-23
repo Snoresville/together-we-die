@@ -134,6 +134,7 @@
 	{
 		"override_hero"			"npc_dota_hero_juggernaut"
 		"Ability1"				"juggernaut_blade_fury_lua"
+		"Ability3"				"juggernaut_blade_dance_lua"
 		"Ability4"				"holdout_omnislash"
 		"Ability5"		""
 		"Ability10"		""

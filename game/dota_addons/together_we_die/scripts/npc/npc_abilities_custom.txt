@@ -5552,6 +5552,7 @@
 #base "../vscripts/lua_abilities/huskar_life_break_lua/huskar_life_break_lua.txt"
 
 #base "../vscripts/lua_abilities/juggernaut_blade_fury_lua/juggernaut_blade_fury_lua.txt"
+#base "../vscripts/lua_abilities/juggernaut_blade_dance_lua/juggernaut_blade_dance_lua.txt"
 
 #base "../vscripts/lua_abilities/ursa_earthshock_lua/ursa_earthshock_lua.txt"
 #base "../vscripts/lua_abilities/ursa_overpower_lua/ursa_overpower_lua.txt"
