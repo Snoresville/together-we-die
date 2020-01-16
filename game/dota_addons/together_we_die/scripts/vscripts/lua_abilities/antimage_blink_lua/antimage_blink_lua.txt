@@ -53,6 +53,26 @@
 				"var_type"				"FIELD_INTEGER"
 				"min_blink_range"		"200"
 			}
+            "03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"illusion_duration"		"5"
+			}
+            "04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"illusion_outgoing_damage"		"-50"
+			}
+            "05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"illusion_incoming_damage"		"300"
+			}
+            "06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"agi_multiplier"		"1.5 2.0 2.5 3.0"
+			}
 		}
 	}
 }
