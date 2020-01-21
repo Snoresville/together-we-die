@@ -5444,7 +5444,7 @@
 		//----------------------------------------------------------------
 		
 		"Ability1"					"furion_sprout"			// Ability 1.
-		"Ability2"					"creature_force_of_nature"			// Ability 2.
+		"Ability2"					"creature_furion_force_of_nature_lua"			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
 		"Ability5"					""			// Ability 5.
@@ -5542,10 +5542,10 @@
 			{
 				"Ability1"				
 				{
-					"Name"				"creature_force_of_nature"
+					"Name"				"creature_furion_force_of_nature_lua"
 					"UseOnTrees"		"1"
 					"AOE"				"1"
-					"Radius"			"100"
+					"Radius"			"225"
 				}
 				"Ability2"				
 				{
@@ -6469,7 +6469,7 @@
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"1.55"		// Speed of attack.
 		"AttackAnimationPoint"		"0.467"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
+		"AttackAcquisitionRange"	"2500"		// Range within a target can be acquired.
 		"AttackRange"				"100"		// Range within a target can be attacked.
 		"ProjectileModel"			""			// Particle system model for projectile.
 		"ProjectileSpeed"			""			// Speed of projectile.

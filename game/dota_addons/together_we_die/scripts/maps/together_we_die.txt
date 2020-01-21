@@ -811,7 +811,7 @@
 	"Round5" // Trees
 	{
 		"round_title"				"#DOTA_Holdout_Round_Trees_Title"
-		"MaxGold"					"10000"
+		"MaxGold"					"22000"
 		"BagCount"					"35"
 		"BagVariance"				"50"
 		"FixedXP"					"16500"
@@ -848,23 +848,30 @@
 		"Unit5"
 		{
 			"NPCName"				"npc_dota_creature_king_treant"
-			"TotalUnitsToSpawn"		"10"
+			"TotalUnitsToSpawn"		"8"
 			"UnitsPerSpawn"			"2"
-			"SpawnInterval"			"10"
+			"SpawnInterval"			"8"
 		}
 		"Unit6"
 		{
 			"NPCName"				"npc_dota_creature_king_treant"
-			"TotalUnitsToSpawn"		"10"
+			"TotalUnitsToSpawn"		"8"
 			"UnitsPerSpawn"			"2"
-			"SpawnInterval"			"10"
+			"SpawnInterval"			"12"
 		}
 		"Unit7"
 		{
 			"NPCName"				"npc_dota_creature_king_treant"
-			"TotalUnitsToSpawn"		"10"
+			"TotalUnitsToSpawn"		"8"
 			"UnitsPerSpawn"			"2"
-			"SpawnInterval"			"10"
+			"SpawnInterval"			"12"
+		}
+        "Unit8"
+		{
+			"NPCName"				"npc_dota_creature_forest_prophet"
+			"TotalUnitsToSpawn"		"9"
+			"UnitsPerSpawn"			"3"
+			"SpawnInterval"			"8"
 		}
 	}
 	
