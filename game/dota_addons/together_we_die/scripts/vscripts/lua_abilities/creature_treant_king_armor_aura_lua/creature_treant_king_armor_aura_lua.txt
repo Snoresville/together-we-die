@@ -1,0 +1,57 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Treant King: Living Armor Aura
+	//=================================================================================================================
+	"creature_treant_king_armor_aura_lua"
+	{
+		// Ability Technical Aspect
+		// base script folder	: scripts/vscripts
+		// base texture folder	: resource/flash3/images/spellicons
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"lua_abilities/creature_treant_king_armor_aura_lua/creature_treant_king_armor_aura_lua"
+		"AbilityTextureName"			"creature_treant_king_armor_aura_lua"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_treant/treant_livingarmor.vpcf"
+		}
+		
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Ability Casting
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Ability Resource
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Damage
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_health_regen"			"30"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_armor"					"15"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"radius"			            "500"
+			}
+		}
+	}
+}

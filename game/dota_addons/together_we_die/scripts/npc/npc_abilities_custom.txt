@@ -5410,6 +5410,7 @@
 #base "../vscripts/lua_abilities/creature_ogre_magi_multicast_lua/creature_ogre_magi_multicast_lua.txt"
 #base "../vscripts/lua_abilities/creature_bleeding_bash_lua/creature_bleeding_bash_lua.txt"
 #base "../vscripts/lua_abilities/creature_magic_immunity_lua/creature_magic_immunity_lua.txt"
+#base "../vscripts/lua_abilities/creature_treant_king_armor_aura_lua/creature_treant_king_armor_aura_lua.txt"
 
 #base "../vscripts/lua_abilities/summoning_stone_lua/summoning_stone_lua.txt"
 #base "../vscripts/lua_abilities/pure_strike_lua/pure_strike_lua.txt"

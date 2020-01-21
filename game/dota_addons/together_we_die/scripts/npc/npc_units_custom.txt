@@ -5327,8 +5327,8 @@
 		}
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"treant_living_armor"	// Ability 1.
-		"Ability2"					"generic_gold_bag_fountain_200"			// Ability 2.
+		"Ability1"					"creature_treant_king_armor_aura_lua"	        // Ability 1.
+		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
 		"Ability5"					""			// Ability 5.
@@ -5338,7 +5338,7 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"20"			// Physical protection.
+		"ArmorPhysical"				"10"			// Physical protection.
 		"MagicalResistance"			"45"		// Magical protection (percentage).
 
 		// Attack
@@ -5357,8 +5357,8 @@
 		// Bounty
 		//----------------------------------------------------------------
 		"BountyXP"					"200"		// Experience earn.
-		"BountyGoldMin"				"105"		// Gold earned min.
-		"BountyGoldMax"				"125"		// Gold earned max.
+		"BountyGoldMin"				"0"		// Gold earned min.
+		"BountyGoldMax"				"0"		// Gold earned max.
 
 		// Bounds
 		//----------------------------------------------------------------
@@ -5374,7 +5374,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"7500"		// Base health.
+		"StatusHealth"				"6500"		// Base health.
 		"StatusHealthRegen"			"80"		// Health regeneration rate.
 		"StatusMana"				"5000"		// Base mana.
 		"StatusManaRegen"			"15"			// Mana regeneration rate.
@@ -5414,11 +5414,6 @@
 
 			"DefensiveAbilities"
 			{
-				"Ability1"				
-				{
-					"Name"				"treant_living_armor"
-					"Buff"				"1"
-				}
 			}
 
 			"AttachWearables"
