@@ -47,7 +47,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"repel_chance"				"7"
+				"repel_chance"				"10 15 20 25"
 			}
 			"03"
 			{
