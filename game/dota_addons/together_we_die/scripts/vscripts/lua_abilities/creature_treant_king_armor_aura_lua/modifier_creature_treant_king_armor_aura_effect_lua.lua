@@ -1,14 +1,3 @@
--- Created by Elfansoer
---[[
-Ability checklist (erase if done/checked):
-- Scepter Upgrade
-- Break behavior
-- Linken/Reflect behavior
-- Spell Immune/Invulnerable/Invisible behavior
-- Illusion behavior
-- Stolen behavior
-]]
---------------------------------------------------------------------------------
 modifier_creature_treant_king_armor_aura_effect_lua = class({})
 
 --------------------------------------------------------------------------------
@@ -26,22 +15,16 @@ function modifier_creature_treant_king_armor_aura_effect_lua:IsPurgable()
 end
 --------------------------------------------------------------------------------
 -- Initializations
-function modifier_creature_treant_king_armor_aura_effect_lua:OnCreated(kv)
+function modifier_creature_treant_king_armor_aura_effect_lua:OnCreated()
     -- references
     self.armor = self:GetAbility():GetSpecialValueFor("bonus_armor")
     self.regen = self:GetAbility():GetSpecialValueFor("bonus_health_regen")
 end
 
-function modifier_creature_treant_king_armor_aura_effect_lua:OnRefresh(kv)
+function modifier_creature_treant_king_armor_aura_effect_lua:OnRefresh()
     -- references
     self.armor = self:GetAbility():GetSpecialValueFor("bonus_armor")
     self.regen = self:GetAbility():GetSpecialValueFor("bonus_health_regen")
-end
-
-function modifier_creature_treant_king_armor_aura_effect_lua:OnRemoved()
-end
-
-function modifier_creature_treant_king_armor_aura_effect_lua:OnDestroy()
 end
 
 --------------------------------------------------------------------------------

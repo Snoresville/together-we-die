@@ -493,38 +493,6 @@
 			}
 		}
 	}
-	
-	//=================================================================================================================
-	// Treant Protector: Living Armor
-	//=================================================================================================================
-	"treant_living_armor"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage_count"		"8 12 16 20"
-				"LinkedSpecialBonus"	"special_bonus_unique_treant"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"health_regen"		"15 25 35 50"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage_block"		"80 150 250 400"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"15.0"
-			}
-
-		}
-	}
 
 	"slark_shadow_dance"
 	{

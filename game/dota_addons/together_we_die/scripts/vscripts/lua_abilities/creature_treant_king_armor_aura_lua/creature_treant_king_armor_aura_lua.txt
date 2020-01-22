@@ -22,10 +22,12 @@
 		// Ability General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 
 		// Ability Casting
 		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"400"
 
 		// Ability Resource
 		//-------------------------------------------------------------------------------------------------------------
@@ -50,7 +52,7 @@
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"radius"			            "500"
+				"radius"			            "400"
 			}
 		}
 	}
