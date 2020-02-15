@@ -22,6 +22,7 @@ end
 -- Initializations
 function modifier_lion_finger_of_death_lua_stack:OnCreated( kv )
 	-- references
+	self:SetStackCount(1)
 end
 
 function modifier_lion_finger_of_death_lua_stack:OnRefresh( kv )
