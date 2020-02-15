@@ -71,6 +71,7 @@ function CHoldoutGameMode:InitGameMode()
     GameRules:GetGameModeEntity():SetRemoveIllusionsOnDeath(true)
     GameRules:GetGameModeEntity():SetTopBarTeamValuesOverride(true)
     GameRules:GetGameModeEntity():SetTopBarTeamValuesVisible(false)
+    GameRules:GetGameModeEntity():SetFreeCourierModeEnabled(true)
     -- Configure EXP
     local MAX_HERO_LEVEL = 350
     local EXP_CONST = 20
@@ -295,28 +296,6 @@ end
 function CHoldoutGameMode:_BeginGameSetup()
     -- Start difficulty vote
     CustomGameEventManager:Send_ServerToTeam(DOTA_TEAM_GOODGUYS, "show_difficulty_vote", {})
-
-    -- Create courier for every player
-    for nPlayerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
-        if PlayerResource:HasSelectedHero(nPlayerID) then
-            local player = PlayerResource:GetPlayer(nPlayerID)
-            local player_hero = player:GetAssignedHero()
-            local courier = CreateUnitByName(
-                    "npc_dota_courier", -- szUnitName
-                    player_hero:GetOrigin(), -- vLocation,
-                    true, -- bFindClearSpace,
-                    player_hero, -- hNPCOwner,
-                    player_hero, -- hUnitOwner,
-                    player:GetTeamNumber() -- iTeamNumber
-            )
-            courier:SetControllableByPlayer(nPlayerID, false) -- (playerID, bSkipAdjustingPosition)
-            courier:SetOwner(player_hero)
-
-            -- Set base stats
-            local base_stats = player_hero:AddAbility("base_stats_lua")
-            base_stats:SetLevel(1)
-        end
-    end
 
     -- Check for any alliance types
     self:_CheckForAlliance()
