@@ -25,6 +25,10 @@ function modifier_axe_berserkers_call_lua:IsPurgable()
 	return true
 end
 
+function modifier_axe_berserkers_call_lua:GetAttributes()
+	return MODIFIER_ATTRIBUTE_MULTIPLE
+end
+
 --------------------------------------------------------------------------------
 -- Initializations
 function modifier_axe_berserkers_call_lua:OnCreated( kv )
