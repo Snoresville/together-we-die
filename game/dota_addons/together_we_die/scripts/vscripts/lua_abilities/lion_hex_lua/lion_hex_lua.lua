@@ -16,7 +16,7 @@ function lion_hex_lua:OnSpellStart()
 	local duration = self:GetSpecialValueFor("duration")
 
 	local search = self:GetSpecialValueFor( "radius" )
-	targets = FindUnitsInRadius(
+	local targets = FindUnitsInRadius(
 		caster:GetTeamNumber(),	-- int, your team number
 		target:GetOrigin(),	-- point, center point
 		target,	-- handle, cacheUnit. (not known)
