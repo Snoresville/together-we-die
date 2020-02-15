@@ -13,8 +13,6 @@ modifier_ogre_magi_multicast_lua = class({})
 modifier_ogre_magi_multicast_lua.singles = {
 	["ogre_magi_fireblast_lua"] = true,
 	["ogre_magi_unrefined_fireblast_lua"] = true,
-	["ogre_magi_fireblast"] = true,
-	["ogre_magi_unrefined_fireblast"] = true,
 }
 modifier_ogre_magi_multicast_lua.banned = {
 	["item_blink"] = true,
