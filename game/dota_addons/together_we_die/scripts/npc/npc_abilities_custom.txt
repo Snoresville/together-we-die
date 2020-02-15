@@ -5355,6 +5355,9 @@
 #base "../vscripts/lua_abilities/creature_treant_king_armor_aura_lua/creature_treant_king_armor_aura_lua.txt"
 #base "../vscripts/lua_abilities/creature_furion_force_of_nature_lua/creature_furion_force_of_nature_lua.txt"
 
+#base "../vscripts/lua_abilities/special/drow_ranger/special_frost_arrow_agi_multiplier_lua.txt"
+#base "../vscripts/lua_abilities/special/drow_ranger/special_multishot_agi_multiplier_lua.txt"
+
 #base "../vscripts/lua_abilities/summoning_stone_lua/summoning_stone_lua.txt"
 #base "../vscripts/lua_abilities/pure_strike_lua/pure_strike_lua.txt"
 #base "../vscripts/lua_abilities/intelligence_magic_scale_lua/intelligence_magic_scale_lua.txt"
