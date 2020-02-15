@@ -4,7 +4,17 @@ LinkLuaModifier( "modifier_generic_silenced_lua", "lua_abilities/generic/modifie
 LinkLuaModifier( "modifier_drow_ranger_mind_break_lua", "lua_abilities/drow_ranger_mind_break_lua/modifier_drow_ranger_mind_break_lua", LUA_MODIFIER_MOTION_NONE )
 
 --------------------------------------------------------------------------------
--- Passive Modifier
-function drow_ranger_mind_break_lua:GetIntrinsicModifierName()
-	return "modifier_drow_ranger_mind_break_lua"
+-- Ability Start
+function drow_ranger_mind_break_lua:OnSpellStart()
+	-- unit identifier
+	local caster = self:GetCaster()
+	local duration = self:GetSpecialValueFor("duration")
+
+	-- self buff
+	caster:AddNewModifier(
+			caster, -- player source
+			self, -- ability source
+			"modifier_drow_ranger_mind_break_lua", -- modifier name
+			{ duration = duration } -- kv
+	)
 end
