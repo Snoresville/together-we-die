@@ -5605,3 +5605,7 @@
 #base "../vscripts/lua_abilities/puck_waning_rift_lua/puck_waning_rift_lua.txt"
 #base "../vscripts/lua_abilities/puck_phase_shift_lua/puck_phase_shift_lua.txt"
 #base "../vscripts/lua_abilities/puck_dream_coil_lua/puck_dream_coil_lua.txt"
+
+#base "../vscripts/lua_abilities/lifestealer_rage_lua/lifestealer_rage_lua.txt"
+#base "../vscripts/lua_abilities/lifestealer_feast_lua/lifestealer_feast_lua.txt"
+#base "../vscripts/lua_abilities/lifestealer_open_wounds_lua/lifestealer_open_wounds_lua.txt"
