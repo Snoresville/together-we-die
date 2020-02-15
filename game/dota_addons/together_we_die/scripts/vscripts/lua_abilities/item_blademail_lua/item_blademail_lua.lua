@@ -9,7 +9,7 @@ function item_blademail_lua:GetIntrinsicModifierName()
 end
 
 -- Ability Start
-function axe_berserkers_call_lua:OnSpellStart()
+function item_blademail_lua:OnSpellStart()
     -- unit identifier
     local caster = self:GetCaster()
     local duration = self:GetSpecialValueFor("duration")
