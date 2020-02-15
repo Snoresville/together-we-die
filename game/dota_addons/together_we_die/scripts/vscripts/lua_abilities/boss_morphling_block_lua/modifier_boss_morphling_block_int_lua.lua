@@ -48,7 +48,7 @@ function modifier_boss_morphling_block_int_lua:GetModifierIncomingDamage_Percent
 		local reduction = -100
 
 		-- allow only int hero to deal damage
-		if attacker:IsBuilding() or attacker:IsRealHero() and attacker:GetPrimaryAttribute() == 2 then
+		if attacker:IsBuilding() or attacker:IsRealHero() and attacker:GetPrimaryAttribute() == DOTA_ATTRIBUTE_INTELLECT then
 			reduction = 0
 		else
 			if attacker:IsRealHero() and attacker:IsAlive() then
