@@ -5573,6 +5573,7 @@
 
 #base "../vscripts/lua_abilities/legion_commander_overwhelming_odds_lua/legion_commander_overwhelming_odds_lua.txt"
 #base "../vscripts/lua_abilities/legion_commander_press_the_attack_lua/legion_commander_press_the_attack_lua.txt"
+#base "../vscripts/lua_abilities/legion_commander_moment_of_courage_lua/legion_commander_moment_of_courage_lua.txt"
 #base "../vscripts/lua_abilities/legion_commander_duel_lua/legion_commander_duel_lua.txt"
 
 #base "../vscripts/lua_abilities/vengefulspirit_magic_missile_lua/vengefulspirit_magic_missile_lua.txt"
