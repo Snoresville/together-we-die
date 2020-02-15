@@ -84,7 +84,7 @@ function modifier_drow_ranger_multishot_lua:OnAttack( params )
 	if not self:GetAbility():IsFullyCastable() then return end
 
 	-- not proc if attack can't use attack modifiers
-	if not params.process_procs then return end
+	--if not params.process_procs then return end
 
 	-- not proc on multi shot attacks, even if it can use attack modifier, to avoid endless recursive call and crash
 	if self.multi_shot then return end

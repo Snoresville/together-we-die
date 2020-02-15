@@ -5385,6 +5385,7 @@
 
 #base "../vscripts/lua_abilities/drow_ranger_frost_arrows_lua/drow_ranger_frost_arrows_lua.txt"
 #base "../vscripts/lua_abilities/drow_ranger_multishot_lua/drow_ranger_multishot_lua.txt"
+#base "../vscripts/lua_abilities/drow_ranger_mind_break_lua/drow_ranger_mind_break_lua.txt"
 #base "../vscripts/lua_abilities/drow_ranger_agility_strike_lua/drow_ranger_agility_strike_lua.txt"
 
 #base "../vscripts/lua_abilities/lina_dragon_slave_lua/lina_dragon_slave_lua.txt"
