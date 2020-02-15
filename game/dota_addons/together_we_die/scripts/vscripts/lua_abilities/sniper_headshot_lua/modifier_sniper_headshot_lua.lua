@@ -54,7 +54,7 @@ function modifier_sniper_headshot_lua:GetModifierProcAttack_BonusDamage_Physical
 			local headshotDamage = self:GetAbility():GetAbilityDamage() + (attackerAgility * self.agi_multiplier)
 			params.target:AddNewModifier(
 				self:GetParent(), -- player source
-				self, -- ability source
+				self:GetAbility(), -- ability source
 				"modifier_sniper_headshot_lua_slow", -- modifier name
 				{ 
 					duration = self.slow_duration,
@@ -68,7 +68,7 @@ function modifier_sniper_headshot_lua:GetModifierProcAttack_BonusDamage_Physical
 			-- knockback
 			params.target:AddNewModifier(
 				self:GetParent(), -- player source
-				self, -- ability source
+				self:GetAbility(), -- ability source
 				"modifier_generic_knockback_lua", -- modifier name
 				{
 					duration = self.slow_duration,
