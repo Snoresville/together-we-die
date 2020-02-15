@@ -76,6 +76,16 @@
 		"ItemPurchasable"				"0"
 	}
 
+    "item_blade_mail"
+	{
+		"ItemPurchasable"				"0"
+	}
+    "item_recipe_blade_mail"
+	{
+		"ItemPurchasable"				"0"
+		"ItemRecipe"					"0"
+	}
+
 	//=================================================================================================================
 	// Greater Clarity
 	//=================================================================================================================
@@ -12124,3 +12134,5 @@
 
 #base "../vscripts/lua_abilities/item_assault_lua/item_assault_lua.txt"
 #base "../vscripts/lua_abilities/item_assault_lua/item_assault2_lua.txt"
+
+#base "../vscripts/lua_abilities/item_blademail_lua/item_blademail_lua.txt"
