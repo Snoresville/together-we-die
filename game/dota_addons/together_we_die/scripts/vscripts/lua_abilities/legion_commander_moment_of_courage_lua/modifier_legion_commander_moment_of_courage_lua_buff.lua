@@ -95,7 +95,8 @@ function modifier_legion_commander_moment_of_courage_lua_buff:OnTakeDamage( para
             local heal = params.damage * (self.hp_leech_percent + math.floor(self:GetParent():GetStrength() * self.str_multiplier))/100
             self:GetParent():Heal( heal, self:GetAbility() )
             self:PlayEffects()
-            self:OnDestroy()
+            -- Remove after activating
+            self:Destroy()
         end
     end
 end
