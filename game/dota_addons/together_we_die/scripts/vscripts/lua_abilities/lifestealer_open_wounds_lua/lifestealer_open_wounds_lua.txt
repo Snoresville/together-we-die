@@ -23,7 +23,7 @@
 		// Ability General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
@@ -77,6 +77,11 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"str_multiplier"		"0.15 0.3 0.45 0.6"
+			}
+            "07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"325"
 			}
 		}
 	}
