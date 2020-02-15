@@ -13,8 +13,10 @@
 		"BaseClass"						"item_lua"
 		"ScriptFile"					"lua_abilities/item_blademail_lua/item_blademail_lua"
 		"AbilityTextureName"			"item_blade_mail"
-		"precache"
+        "precache"
 		{
+			"soundfile"	"soundevents/game_sounds_items.vsndevts"
+			"particle"	"particles/items_fx/blademail.vpcf"
 		}
 
 		"ItemCost"						"7200"
@@ -29,8 +31,10 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 
-		// Ability Resource
+        // Ability Resource
 		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"15"
+		"AbilityManaCost"				"50"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------

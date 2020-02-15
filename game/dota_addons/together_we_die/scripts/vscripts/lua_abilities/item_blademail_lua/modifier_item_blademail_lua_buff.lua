@@ -7,7 +7,7 @@ function modifier_item_blademail_lua_buff:IsHidden()
 end
 
 function modifier_item_blademail_lua_buff:IsDebuff()
-    return true
+    return false
 end
 
 function modifier_item_blademail_lua_buff:IsPurgable()
@@ -18,16 +18,17 @@ end
 -- Initializations
 function modifier_item_blademail_lua_buff:OnCreated(kv)
     -- references
-    self.primary_attr_multiplier = self:GetAbility():GetSpecialValueFor( "primary_attr_multiplier" )
+    self.primary_attr_multiplier = self:GetAbility():GetSpecialValueFor("primary_attr_multiplier")
+    self:PlayEffect1()
 end
 
 function modifier_item_blademail_lua_buff:OnRefresh(kv)
     -- references
-    self.primary_attr_multiplier = self:GetAbility():GetSpecialValueFor( "primary_attr_multiplier" )
+    self.primary_attr_multiplier = self:GetAbility():GetSpecialValueFor("primary_attr_multiplier")
 end
 
 function modifier_item_blademail_lua_buff:OnDestroy(kv)
-
+    self:PlayEffect3()
 end
 
 function modifier_item_blademail_lua_buff:GetAttributes()
@@ -46,7 +47,9 @@ end
 
 function modifier_item_blademail_lua_buff:GetModifierIncomingDamage_Percentage(params)
     if IsServer() then
-        if self:FlagExist(params.damage_flags, DOTA_DAMAGE_FLAG_REFLECTION) then return end
+        if self:FlagExist(params.damage_flags, DOTA_DAMAGE_FLAG_REFLECTION) then
+            return
+        end
 
         local caster = self:GetCaster()
         local bmAttacker = params.attacker
@@ -63,13 +66,40 @@ function modifier_item_blademail_lua_buff:GetModifierIncomingDamage_Percentage(p
                 damage_flags = DOTA_DAMAGE_FLAG_REFLECTION,
                 ability = self:GetAbility()
             }
+            self:PlayEffect2(bmAttacker)
 
-            ApplyDamage( damage )
+            ApplyDamage(damage)
         end
 
-		return reduction
+        return reduction
     end
 end
+
+--------------------------------------------------------------------------------
+-- Graphics & Animations
+function modifier_item_blademail_lua_buff:GetEffectName()
+    return "particles/items_fx/blademail.vpcf"
+end
+
+function modifier_item_blademail_lua_buff:GetEffectAttachType()
+    return PATTACH_OVERHEAD_FOLLOW
+end
+
+function modifier_item_blademail_lua_buff:PlayEffect1()
+    local sound_cast = "DOTA_Item.BladeMail.Activate"
+    EmitSoundOn(sound_cast, self:GetCaster())
+end
+
+function modifier_item_blademail_lua_buff:PlayEffect2(target)
+    local sound_cast = "DOTA_Item.BladeMail.Damage"
+    EmitSoundOn(sound_cast, target)
+end
+
+function modifier_item_blademail_lua_buff:PlayEffect3()
+    local sound_cast = "DOTA_Item.BladeMail.Deactivate"
+    EmitSoundOn(sound_cast, self:GetCaster())
+end
+
 
 -- Helper: Flag operations
 function modifier_item_blademail_lua_buff:FlagExist(a, b)
