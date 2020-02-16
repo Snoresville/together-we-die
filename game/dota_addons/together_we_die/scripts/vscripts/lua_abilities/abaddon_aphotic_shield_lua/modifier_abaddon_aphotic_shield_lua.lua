@@ -87,8 +87,8 @@ end
 
 function modifier_abaddon_aphotic_shield_lua:GetModifierIncomingDamage_Percentage(params)
     if IsServer() then
-        -- check if borrow time is active
-        if self:GetParent():HasModifier("modifier_abaddon_borrow_time_lua") then
+        -- check if borrow time buff is active
+        if self:GetParent():HasModifier("modifier_abaddon_borrow_time_lua_buff") then
             return
         end
 

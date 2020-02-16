@@ -14,6 +14,7 @@
 		"AbilityTextureName"			"abaddon_borrow_time_lua"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"3"
+		"HasScepterUpgrade"						"3"
 		"precache"
 		{
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_abaddon.vsndevts"
