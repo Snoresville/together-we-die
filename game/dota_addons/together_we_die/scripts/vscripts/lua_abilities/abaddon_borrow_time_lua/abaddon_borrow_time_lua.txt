@@ -1,0 +1,78 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Abaddon: Borrow Time
+	//=================================================================================================================
+	"abaddon_borrow_time_lua"
+	{
+		// Ability Technical Aspect
+		// base script folder	: scripts/vscripts
+		// base texture folder	: resource/flash3/images/spellicons
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"lua_abilities/abaddon_borrow_time_lua/abaddon_borrow_time_lua"
+		"AbilityTextureName"			"abaddon_borrow_time_lua"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"3"
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_abaddon.vsndevts"
+			"particle"	"particles/units/heroes/hero_abaddon/abaddon_borrowed_time.vpcf"
+		}
+		
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+		// Ability Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityCastGestureSlot"		"ABSOLUTE"
+		"AbilityCastRange"				"500"
+		"AbilityCastPoint"				"0.4"
+
+		// Ability Resource
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"90.0 60.0 30.0"
+		"AbilityManaCost"				"0 0 0"
+
+		// Damage
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+            "01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"hp_threshold"				"400 2000 4000"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"4.0 5.0 6.0"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration_scepter"			"6.0 8.0 10.0"
+				"RequiresScepter"	"1"
+			}
+            "04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"			    "325"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"str_multiplier"		"4.0 6.0 8.0"
+			}
+		}
+	}
+}

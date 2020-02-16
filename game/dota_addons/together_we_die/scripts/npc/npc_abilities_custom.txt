@@ -5623,3 +5623,7 @@
 #base "../vscripts/lua_abilities/lifestealer_rage_lua/lifestealer_rage_lua.txt"
 #base "../vscripts/lua_abilities/lifestealer_feast_lua/lifestealer_feast_lua.txt"
 #base "../vscripts/lua_abilities/lifestealer_open_wounds_lua/lifestealer_open_wounds_lua.txt"
+
+#base "../vscripts/lua_abilities/abaddon_mist_coil_lua/abaddon_mist_coil_lua.txt"
+#base "../vscripts/lua_abilities/abaddon_aphotic_shield_lua/abaddon_aphotic_shield_lua.txt"
+#base "../vscripts/lua_abilities/abaddon_borrow_time_lua/abaddon_borrow_time_lua.txt"
