@@ -5423,6 +5423,8 @@
 #base "../vscripts/lua_abilities/dazzle_bad_juju_lua/dazzle_bad_juju_lua.txt"
 
 #base "../vscripts/lua_abilities/phantom_assassin_stifling_dagger_lua/phantom_assassin_stifling_dagger_lua.txt"
+#base "../vscripts/lua_abilities/phantom_assassin_phantom_strike_lua/phantom_assassin_phantom_strike_lua.txt"
+#base "../vscripts/lua_abilities/phantom_assassin_blur_lua/phantom_assassin_blur_lua.txt"
 #base "../vscripts/lua_abilities/phantom_assassin_coup_de_grace_lua/phantom_assassin_coup_de_grace_lua.txt"
 
 #base "../vscripts/lua_abilities/luna_lucent_beam_lua/luna_lucent_beam_lua.txt"
