@@ -5357,6 +5357,14 @@
 
 #base "../vscripts/lua_abilities/special/drow_ranger/special_frost_arrow_agi_multiplier_lua.txt"
 #base "../vscripts/lua_abilities/special/drow_ranger/special_multishot_agi_multiplier_lua.txt"
+#base "../vscripts/lua_abilities/special/lina/special_dragon_slave_int_multiplier_lua.txt"
+#base "../vscripts/lua_abilities/special/lina/special_fiery_soul_duration_lua.txt"
+#base "../vscripts/lua_abilities/special/lina/special_fiery_soul_int_multiplier_lua.txt"
+#base "../vscripts/lua_abilities/special/lina/special_fiery_soul_max_stacks_lua.txt"
+#base "../vscripts/lua_abilities/special/lina/special_laguna_blade_int_multiplier_lua.txt"
+#base "../vscripts/lua_abilities/special/lina/special_laguna_blade_no_delay_lua.txt"
+#base "../vscripts/lua_abilities/special/lina/special_light_strike_array_int_multiplier_lua.txt"
+#base "../vscripts/lua_abilities/special/lina/special_light_strike_array_radius_lua.txt"
 
 #base "../vscripts/lua_abilities/summoning_stone_lua/summoning_stone_lua.txt"
 #base "../vscripts/lua_abilities/pure_strike_lua/pure_strike_lua.txt"

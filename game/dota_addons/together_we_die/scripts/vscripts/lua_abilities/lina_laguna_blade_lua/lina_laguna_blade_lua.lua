@@ -48,6 +48,12 @@ function lina_laguna_blade_lua:OnSpellStart()
 	-- load data
 	local delay = self:GetSpecialValueFor( "damage_delay" )
 
+	-- Talent tree
+	local special_laguna_blade_no_delay_lua = caster:FindAbilityByName( "special_laguna_blade_no_delay_lua" )
+	if ( special_laguna_blade_no_delay_lua and special_laguna_blade_no_delay_lua:GetLevel() ~= 0 ) then
+		delay = delay + special_laguna_blade_no_delay_lua:GetSpecialValueFor( "value" )
+	end
+
 	-- add modfier
 	target:AddNewModifier(
 		caster, -- player source

@@ -70,7 +70,16 @@ function lina_dragon_slave_lua:OnProjectileHitHandle( target, location, projecti
 	if not target then return end
 
 	local eCaster = self:GetCaster()
-	local damageToInflict = self:GetAbilityDamage() + (eCaster:GetIntellect() * self:GetSpecialValueFor("int_multiplier"))
+
+	local int_multiplier = self:GetSpecialValueFor("int_multiplier")
+
+	-- Talent tree
+	local special_dragon_slave_int_multiplier_lua = eCaster:FindAbilityByName( "special_dragon_slave_int_multiplier_lua" )
+	if ( special_dragon_slave_int_multiplier_lua and special_dragon_slave_int_multiplier_lua:GetLevel() ~= 0 ) then
+		int_multiplier = int_multiplier + special_dragon_slave_int_multiplier_lua:GetSpecialValueFor( "value" )
+	end
+
+	local damageToInflict = self:GetAbilityDamage() + (eCaster:GetIntellect() * int_multiplier)
 
 	-- apply damage
 	local damageTable = {

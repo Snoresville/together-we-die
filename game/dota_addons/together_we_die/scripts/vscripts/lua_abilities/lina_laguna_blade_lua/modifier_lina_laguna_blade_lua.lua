@@ -32,8 +32,17 @@ function modifier_lina_laguna_blade_lua:OnCreated( kv )
 	-- references
 	local eCaster = self:GetCaster()
 	local eAbility = self:GetAbility()
-	self.damage = self:GetAbility():GetSpecialValueFor( "damage" ) + (eCaster:GetIntellect() * eAbility:GetSpecialValueFor("int_multiplier"))
-	if self:GetCaster():HasScepter() then
+	self.int_multiplier = eAbility:GetSpecialValueFor("int_multiplier")
+
+	-- Talent tree
+	local special_laguna_blade_int_multiplier_lua = eCaster:FindAbilityByName( "special_laguna_blade_int_multiplier_lua" )
+	if ( special_laguna_blade_int_multiplier_lua and special_laguna_blade_int_multiplier_lua:GetLevel() ~= 0 ) then
+		self.int_multiplier = self.int_multiplier + special_laguna_blade_int_multiplier_lua:GetSpecialValueFor( "value" )
+	end
+
+	self.damage = self:GetAbility():GetSpecialValueFor( "damage" ) + (eCaster:GetIntellect() * self.int_multiplier)
+
+	if eCaster:HasScepter() then
 		self.type = DAMAGE_TYPE_PURE
 	else
 		self.type = DAMAGE_TYPE_MAGICAL

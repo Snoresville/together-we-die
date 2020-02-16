@@ -51,6 +51,7 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"light_strike_array_aoe"	"225"
+				"LinkedSpecialBonus"		"special_light_strike_array_radius_lua"
 			}
 			
 			"02"
@@ -68,12 +69,12 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"light_strike_array_damage"	"80 120 160 200"
-				"LinkedSpecialBonus"		"special_bonus_unique_lina_3"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_FLOAT"
 				"int_multiplier"				"2.0 2.5 3.0 3.5"
+				"LinkedSpecialBonus"		"special_light_strike_array_int_multiplier_lua"
 			}
 		}
 	}

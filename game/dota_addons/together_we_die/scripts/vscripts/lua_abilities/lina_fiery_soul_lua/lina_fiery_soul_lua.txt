@@ -52,16 +52,19 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"fiery_soul_max_stacks"		"3"
+				"LinkedSpecialBonus"        "special_fiery_soul_max_stacks_lua"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"fiery_soul_stack_duration"			"10"
+				"LinkedSpecialBonus"			"special_fiery_soul_duration_lua"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_FLOAT"
 				"int_multiplier"			"0.25 0.5 0.75 1.0"
+				"LinkedSpecialBonus"			"special_fiery_soul_int_multiplier_lua"
 			}
 		}
 	}

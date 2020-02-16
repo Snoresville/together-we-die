@@ -209,14 +209,14 @@
 		"Ability4"		""
 		"Ability5"		""
 		"Ability6"					"lina_laguna_blade_lua"
-		"Ability10"		""
-		"Ability11"		""
-		"Ability12"		""
-		"Ability13"		""
-		"Ability14"		""
-		"Ability15"		""
-		"Ability16"		""
-		"Ability17"		""
+		"Ability10"		"special_fiery_soul_duration_lua"
+		"Ability11"		"special_dragon_slave_int_multiplier_lua"
+		"Ability12"		"special_fiery_soul_int_multiplier_lua"
+		"Ability13"		"special_light_strike_array_int_multiplier_lua"
+		"Ability14"		"special_light_strike_array_radius_lua"
+		"Ability15"		"special_laguna_blade_no_delay_lua"
+		"Ability16"		"special_fiery_soul_max_stacks_lua"
+		"Ability17"		"special_laguna_blade_int_multiplier_lua"
 
 		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
 	}

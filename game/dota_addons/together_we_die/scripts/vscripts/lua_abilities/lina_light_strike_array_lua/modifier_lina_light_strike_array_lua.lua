@@ -27,9 +27,21 @@ function modifier_lina_light_strike_array_lua:OnCreated( kv )
 	-- references
 	local eCaster = self:GetCaster()
 	local eAbility = self:GetAbility()
+	local int_multiplier = eAbility:GetSpecialValueFor("int_multiplier")
+
+	-- Talent tree
+	local special_light_strike_array_int_multiplier_lua = eCaster:FindAbilityByName( "special_light_strike_array_int_multiplier_lua" )
+	if ( special_light_strike_array_int_multiplier_lua and special_light_strike_array_int_multiplier_lua:GetLevel() ~= 0 ) then
+		int_multiplier = int_multiplier + special_light_strike_array_int_multiplier_lua:GetSpecialValueFor( "value" )
+	end
 	self.stun = eAbility:GetSpecialValueFor( "light_strike_array_stun_duration" )
-	self.damage = eAbility:GetSpecialValueFor( "light_strike_array_damage" ) + (eCaster:GetIntellect() * eAbility:GetSpecialValueFor("int_multiplier"))
+	self.damage = eAbility:GetSpecialValueFor( "light_strike_array_damage" ) + (eCaster:GetIntellect() * int_multiplier)
 	self.radius = eAbility:GetSpecialValueFor( "light_strike_array_aoe" )
+	-- Talent tree
+	local special_light_strike_array_radius_lua = eCaster:FindAbilityByName( "special_light_strike_array_radius_lua" )
+	if ( special_light_strike_array_radius_lua and special_light_strike_array_radius_lua:GetLevel() ~= 0 ) then
+		self.radius = self.radius + special_light_strike_array_radius_lua:GetSpecialValueFor( "value" )
+	end
 
 	if not IsServer() then return end
 	-- play effects

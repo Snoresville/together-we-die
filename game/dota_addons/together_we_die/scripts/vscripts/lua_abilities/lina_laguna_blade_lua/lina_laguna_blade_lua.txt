@@ -63,11 +63,13 @@
 			{
 				"var_type"					"FIELD_FLOAT"
 				"damage_delay"				"0.25"
+				"LinkedSpecialBonus"			"special_laguna_blade_no_delay_lua"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
 				"int_multiplier"				"10.0 20.0 30.0 40.0 50.0"
+				"LinkedSpecialBonus"			"special_laguna_blade_int_multiplier_lua"
 			}
 		}
 	}
