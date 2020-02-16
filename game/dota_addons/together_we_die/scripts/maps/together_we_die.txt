@@ -23,30 +23,35 @@
 				"Item"					"item_greater_clarity"
 				"Chance"				"10"
 			}
-			"VambraceRecipe"
+			"Vambrace"
 			{
-				"Item"					"item_recipe_vambrace"
+				"Item"					"item_vambrace"
 				"Chance"				"5"
 			}
 			"ImpClaw"
 			{
 				"Item"					"item_imp_claw"
-				"Chance"				"5"
+				"Chance"				"4"
 			}
 			"RoyalJelly"
 			{
 				"Item"					"item_royal_jelly"
-				"Chance"				"5"
+				"Chance"				"4"
 			}
 			"MangoTree"
 			{
 				"Item"					"item_mango_tree"
-				"Chance"				"8"
+				"Chance"				"5"
 			}
 			"TomeOfAghanim"
 			{
 				"Item"					"item_tome_of_aghanim"
 				"Chance"				"3"
+			}
+            "EnchantedQuiver"
+			{
+				"Item"					"item_enchanted_quiver"
+				"Chance"				"2"
 			}
 		}
 		// Round 6 - 10
@@ -65,12 +70,22 @@
 			"VampireFangs"
 			{
 				"Item"					"item_vampire_fangs"
-				"Chance"				"5"
+				"Chance"				"6"
 			}
 			"Prism"
 			{
 				"Item"					"item_spell_prism"
-				"Chance"				"5"
+				"Chance"				"4"
+			}
+            "NinjaGear"
+			{
+				"Item"					"item_ninja_gear"
+				"Chance"				"2"
+			}
+            "SpiderLegs"
+			{
+				"Item"					"item_spider_legs"
+				"Chance"				"1"
 			}
 		}
 		// Round 11 - 15
@@ -85,6 +100,31 @@
 			{
 				"Item"					"item_desolator_2"
 				"Chance"				"3"
+			}
+            "IllusionistsCape"
+			{
+				"Item"					"item_illusionsts_cape"
+				"Chance"				"3"
+			}
+            "HavocHammer"
+			{
+				"Item"					"item_havoc_hammer"
+				"Chance"				"3"
+			}
+            "Trident"
+			{
+				"Item"					"item_trident"
+				"Chance"				"3"
+			}
+            "SpiderLegs"
+			{
+				"Item"					"item_spider_legs"
+				"Chance"				"4"
+			}
+            "HelmOfTheUndying"
+			{
+				"Item"					"item_helm_of_the_undying"
+				"Chance"				"2"
 			}
 		}
 		// Round 16 - 20
