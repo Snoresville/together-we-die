@@ -52,7 +52,7 @@ function modifier_abaddon_borrow_time_lua_buff:GetModifierIncomingDamage_Percent
         local caster = self:GetCaster()
         local damageTaken = params.original_damage
 
-        local heal_amount = damageTaken + caster:GetStrength() * self.str_multiplier
+        local heal_amount = math.floor(damageTaken + math.floor(caster:GetStrength() * self.str_multiplier))
         self:GetParent():Heal(heal_amount, caster)
 
         return -reduction

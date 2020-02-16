@@ -55,9 +55,9 @@ function modifier_item_blademail_lua_buff:GetModifierIncomingDamage_Percentage(p
         local bmAttacker = params.attacker
         local reduction = 0 -- no reduction
         local damageType = params.damage_type
-        local totalDamage = math.floor(params.original_damage + caster:GetPrimaryStatValue() * self.primary_attr_multiplier)
+        local totalDamage = math.floor(params.original_damage + math.floor(caster:GetPrimaryStatValue() * self.primary_attr_multiplier))
 
-        if self:GetCaster():IsAlive() then
+        if caster:IsAlive() then
             local damage = {
                 victim = bmAttacker,
                 attacker = caster,
