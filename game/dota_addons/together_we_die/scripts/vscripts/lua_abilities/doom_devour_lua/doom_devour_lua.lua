@@ -30,7 +30,7 @@ function doom_devour_lua:OnSpellStart()
 	-- load data
 	local duration = self:GetSpecialValueFor( "devour_time" )
 	local radius = self:GetSpecialValueFor( "radius" )
-	local damage = self:GetSpecialValueFor( "str_multiplier" )
+	local damage = caster:GetStrength() * self:GetSpecialValueFor( "str_multiplier" )
 
 	-- Find Units in Radius
 	local targets = FindUnitsInRadius(
@@ -49,8 +49,8 @@ function doom_devour_lua:OnSpellStart()
 	self.damageTable = {
 		attacker = caster,
 		damage = damage,
-		damage_type = self:GetAbility():GetAbilityDamageType(),
-		ability = self:GetAbility(), --Optional.
+		damage_type = self:GetAbilityDamageType(),
+		ability = self, --Optional.
 	}
 
 	for _,devourTarget in pairs(targets) do
