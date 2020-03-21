@@ -5627,3 +5627,8 @@
 #base "../vscripts/lua_abilities/abaddon_mist_coil_lua/abaddon_mist_coil_lua.txt"
 #base "../vscripts/lua_abilities/abaddon_aphotic_shield_lua/abaddon_aphotic_shield_lua.txt"
 #base "../vscripts/lua_abilities/abaddon_borrow_time_lua/abaddon_borrow_time_lua.txt"
+
+#base "../vscripts/lua_abilities/doom_devour_lua/doom_devour_lua.txt"
+#base "../vscripts/lua_abilities/doom_infernal_blade_lua/doom_infernal_blade_lua.txt"
+#base "../vscripts/lua_abilities/doom_scorched_earth_lua/doom_scorched_earth_lua.txt"
+#base "../vscripts/lua_abilities/doom_doom_lua/doom_doom_lua.txt"
