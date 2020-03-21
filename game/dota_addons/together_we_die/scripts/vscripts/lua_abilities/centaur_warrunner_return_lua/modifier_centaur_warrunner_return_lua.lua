@@ -6,6 +6,10 @@ function modifier_centaur_warrunner_return_lua:IsHidden()
 	return true
 end
 
+function modifier_centaur_warrunner_return_lua:IsDebuff()
+	return false
+end
+
 function modifier_centaur_warrunner_return_lua:IsPurgable()
 	return false
 end
@@ -14,100 +18,47 @@ end
 -- Initializations
 function modifier_centaur_warrunner_return_lua:OnCreated( kv )
 	-- references
-	self.base_damage = self:GetAbility():GetSpecialValueFor( "return_damage" ) -- special value
-	self.strength_pct = self:GetAbility():GetSpecialValueFor( "strength_pct" ) -- special value
+	self.radius = self:GetAbility():GetSpecialValueFor( "radius" ) -- special value
 end
 
 function modifier_centaur_warrunner_return_lua:OnRefresh( kv )
 	-- references
-	self.base_damage = self:GetAbility():GetSpecialValueFor( "return_damage" ) -- special value
-	self.strength_pct = self:GetAbility():GetSpecialValueFor( "strength_pct" ) -- special value
-end
-
-function modifier_centaur_warrunner_return_lua:OnDestroy( kv )
-
+	self.radius = self:GetAbility():GetSpecialValueFor( "radius" ) -- special value
 end
 
 --------------------------------------------------------------------------------
--- Modifier Effects
-function modifier_centaur_warrunner_return_lua:DeclareFunctions()
-	local funcs = {
-		MODIFIER_EVENT_ON_ATTACKED,
-	}
-
-	return funcs
-end
-function modifier_centaur_warrunner_return_lua:OnAttacked( params )
-	local abilityParent = self:GetParent()
-	if IsServer() and (not abilityParent:PassivesDisabled()) and abilityParent == params.target and abilityParent:GetTeamNumber()~=params.attacker:GetTeamNumber() then
-		if abilityParent:IsIllusion() then
-			return
-		end
-		if params.attacker == abilityParent or self:FlagExist( params.damage_flags, DOTA_DAMAGE_FLAG_REFLECTION ) then
-			return
-		end
-
-		-- get damage
-		local damage = self.base_damage + abilityParent:GetStrength()*(self.strength_pct/100)
-
-		-- Apply Damage
-		local damageTable = {
-			victim = params.attacker,
-			attacker = abilityParent,
-			damage = damage,
-			damage_type = DAMAGE_TYPE_PHYSICAL,
-			damage_flags = DOTA_DAMAGE_FLAG_REFLECTION,
-			ability = self:GetAbility(), --Optional.
-		}
-		ApplyDamage(damageTable)
-
-		-- Play effects
-		if params.attacker:IsConsideredHero() then
-			self:PlayEffects( params.attacker )
-		end
-	end
+-- Aura
+function modifier_centaur_warrunner_return_lua:IsAura()
+	return (not self:GetCaster():PassivesDisabled())
 end
 
--- Helper: Flag operations
-function modifier_centaur_warrunner_return_lua:FlagExist(a,b)--Bitwise Exist
-	local p,c,d=1,0,b
-	while a>0 and b>0 do
-		local ra,rb=a%2,b%2
-		if ra+rb>1 then c=c+p end
-		a,b,p=(a-ra)/2,(b-rb)/2,p*2
-	end
-	return c==d
+function modifier_centaur_warrunner_return_lua:GetModifierAura()
+	return "modifier_centaur_warrunner_return_lua_effect"
+end
+
+function modifier_centaur_warrunner_return_lua:GetAuraRadius()
+	return self.radius
+end
+
+function modifier_centaur_warrunner_return_lua:GetAuraSearchTeam()
+	return DOTA_UNIT_TARGET_TEAM_FRIENDLY
+end
+
+function modifier_centaur_warrunner_return_lua:GetAuraSearchType()
+	return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_BUILDING
 end
 
 --------------------------------------------------------------------------------
--- Graphics & Animations
--- function modifier_centaur_warrunner_return_lua:GetEffectName()
--- 	return "particles/string/here.vpcf"
--- end
+function modifier_centaur_warrunner_return_lua:GetAuraEntityReject(hEntity)
+	if self:GetCaster() == hEntity then
+		return false
+	end
 
--- function modifier_centaur_warrunner_return_lua:GetEffectAttachType()
--- 	return PATTACH_ABSORIGIN_FOLLOW
--- end
-function modifier_centaur_warrunner_return_lua:PlayEffects( target )
-	local particle_cast = "particles/units/heroes/hero_centaur/centaur_return.vpcf"
+	-- Talent tree for return Aura mode
+	local special_return_aura_lua = self:GetCaster():FindAbilityByName( "special_return_aura_lua" )
+	if ( special_return_aura_lua and special_return_aura_lua:GetLevel() ~= 0 ) then
+		return false
+	end
 
-	local effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
-	ParticleManager:SetParticleControlEnt(
-		effect_cast,
-		0,
-		self:GetParent(),
-		PATTACH_POINT_FOLLOW,
-		"attach_hitloc",
-		self:GetParent():GetOrigin(), -- unknown
-		true -- unknown, true
-	)
-	ParticleManager:SetParticleControlEnt(
-		effect_cast,
-		1,
-		target,
-		PATTACH_POINT_FOLLOW,
-		"attach_hitloc",
-		target:GetOrigin(), -- unknown
-		true -- unknown, true
-	)
+	return true
 end

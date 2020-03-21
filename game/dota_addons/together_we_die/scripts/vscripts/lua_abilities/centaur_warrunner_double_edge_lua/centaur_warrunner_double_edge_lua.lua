@@ -13,8 +13,22 @@ function centaur_warrunner_double_edge_lua:OnSpellStart()
     end
 
     -- load data
-    local damage = self:GetSpecialValueFor("edge_damage") + caster:GetStrength() * self:GetSpecialValueFor("str_multiplier")
+    local str_multiplier = self:GetSpecialValueFor("str_multiplier")
+
+    -- Talent tree
+    local special_double_edge_str_multiplier_lua = caster:FindAbilityByName( "special_double_edge_str_multiplier_lua" )
+    if ( special_double_edge_str_multiplier_lua and special_double_edge_str_multiplier_lua:GetLevel() ~= 0 ) then
+        str_multiplier = str_multiplier + special_double_edge_str_multiplier_lua:GetSpecialValueFor( "value" )
+    end
+
+    local damage = self:GetSpecialValueFor("edge_damage") + caster:GetStrength() * str_multiplier
     local radius = self:GetSpecialValueFor("radius")
+
+    -- Talent tree
+    local special_double_edge_radius_lua = caster:FindAbilityByName( "special_double_edge_radius_lua" )
+    if ( special_double_edge_radius_lua and special_double_edge_radius_lua:GetLevel() ~= 0 ) then
+        radius = radius + special_double_edge_radius_lua:GetSpecialValueFor( "value" )
+    end
 
     -- Find Units in Radius
     local enemies = FindUnitsInRadius(

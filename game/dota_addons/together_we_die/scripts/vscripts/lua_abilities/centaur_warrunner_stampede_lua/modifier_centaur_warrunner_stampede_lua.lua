@@ -22,6 +22,7 @@ function modifier_centaur_warrunner_stampede_lua:OnCreated(kv)
     self.slow_duration = self:GetAbility():GetSpecialValueFor("slow_duration") -- special value
     self.damage_reduction = self:GetAbility():GetSpecialValueFor("damage_reduction") -- special value
     self.has_scepter = self:GetCaster():HasScepter()
+    local caster = self:GetCaster()
     local base_damage = self:GetAbility():GetSpecialValueFor("base_damage") -- special value
     local strength_pct = self:GetAbility():GetSpecialValueFor("strength_damage") -- special value
 
@@ -30,11 +31,16 @@ function modifier_centaur_warrunner_stampede_lua:OnCreated(kv)
 
     -- Start interval
     if IsServer() then
+        -- Talent tree
+        local special_stampede_str_multiplier_lua = caster:FindAbilityByName( "special_stampede_str_multiplier_lua" )
+        if ( special_stampede_str_multiplier_lua and special_stampede_str_multiplier_lua:GetLevel() ~= 0 ) then
+            strength_pct = strength_pct + special_stampede_str_multiplier_lua:GetSpecialValueFor( "value" )
+        end
         -- Apply Damage
         self.damageTable = {
             -- victim = target,
             attacker = self:GetParent(),
-            damage = base_damage + self:GetCaster():GetStrength() * strength_pct,
+            damage = base_damage + caster:GetStrength() * strength_pct,
             damage_type = self:GetAbility():GetAbilityDamageType(),
             ability = self:GetAbility(), --Optional.
         }
@@ -53,16 +59,22 @@ function modifier_centaur_warrunner_stampede_lua:OnRefresh(kv)
     self.slow_duration = self:GetAbility():GetSpecialValueFor("slow_duration") -- special value
     self.damage_reduction = self:GetAbility():GetSpecialValueFor("damage_reduction") -- special value
     self.has_scepter = self:GetCaster():HasScepter()
+    local caster = self:GetCaster()
     local base_damage = self:GetAbility():GetSpecialValueFor("base_damage") -- special value
     local strength_pct = self:GetAbility():GetSpecialValueFor("strength_damage") -- special value
 
     -- Start interval
     if IsServer() then
+        -- Talent tree
+        local special_stampede_str_multiplier_lua = caster:FindAbilityByName( "special_stampede_str_multiplier_lua" )
+        if ( special_stampede_str_multiplier_lua and special_stampede_str_multiplier_lua:GetLevel() ~= 0 ) then
+            strength_pct = strength_pct + special_stampede_str_multiplier_lua:GetSpecialValueFor( "value" )
+        end
         -- Apply Damage
         self.damageTable = {
             -- victim = target,
             attacker = self:GetParent(),
-            damage = base_damage + self:GetParent():GetStrength() * strength_pct,
+            damage = base_damage + caster:GetStrength() * strength_pct,
             damage_type = self:GetAbility():GetAbilityDamageType(),
             ability = self:GetAbility(), --Optional.
         }

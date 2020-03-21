@@ -54,11 +54,13 @@
 			{
 				"var_type"						"FIELD_INTEGER"
 				"radius"						"275"
+				"LinkedSpecialBonus"    "special_double_edge_radius_lua"
 			}
             "03"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"str_multiplier"					"2.5 3.5 4.5 5.5"
+				"str_multiplier"					"2.5 4.5 6.5 8.5"
+				"LinkedSpecialBonus"    "special_double_edge_str_multiplier_lua"
 			}
 		}
 	}

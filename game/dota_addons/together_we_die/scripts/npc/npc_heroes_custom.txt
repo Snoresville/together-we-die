@@ -46,14 +46,14 @@
 		"Ability4"		""
 		"Ability5"		""
 		"Ability6"              "centaur_warrunner_stampede_lua"
-		"Ability10"		""
-		"Ability11"		""
-		"Ability12"		""
-		"Ability13"		""
-		"Ability14"		""
-		"Ability15"		""
-		"Ability16"		""
-		"Ability17"		""
+		"Ability10"		"special_hoof_stomp_radius_lua"
+		"Ability11"		"special_double_edge_radius_lua"
+		"Ability12"		"special_hoof_stomp_str_multiplier_lua"
+		"Ability13"		"special_double_edge_str_multiplier_lua"
+		"Ability14"		"special_hoof_stomp_stun_duration_lua"
+		"Ability15"		"special_return_str_multiplier_lua"
+		"Ability16"		"special_return_aura_lua"
+		"Ability17"		"special_stampede_str_multiplier_lua"
 
 		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
 	}

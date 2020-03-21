@@ -59,12 +59,13 @@
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"strength_damage"	"4.0 6.0 8.0"
+				"strength_damage"	"6.0 10.0 14.0"
+				"LinkedSpecialBonus"    "special_stampede_str_multiplier_lua"
 			}
 			"04"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"slow_duration"		"1.8"
+				"slow_duration"		"2.0"
 			}
 			"05"
 			{
@@ -79,7 +80,7 @@
 			"07"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"cooldown_scepter"			"90 75 60"
+				"cooldown_scepter"			"75 60 30"
 			}
 			"08"
 			{

@@ -4,8 +4,25 @@ LinkLuaModifier( "modifier_generic_stunned_lua", "lua_abilities/generic/modifier
 function centaur_warrunner_hoof_stomp_lua:OnSpellStart()
 	-- get references
 	local radius = self:GetSpecialValueFor("radius")
-	local damage = self:GetSpecialValueFor( "stomp_damage" ) + (self:GetCaster():GetStrength() * self:GetSpecialValueFor( "str_multiplier" ))
+	local caster = self:GetCaster()
+	local str_multiplier = self:GetSpecialValueFor( "str_multiplier" )
+	local damage = self:GetSpecialValueFor( "stomp_damage" ) + (caster:GetStrength() * str_multiplier)
 	local stun_duration = self:GetSpecialValueFor("stun_duration")
+	-- Talent tree
+	local special_hoof_stomp_str_multiplier_lua = caster:FindAbilityByName( "special_hoof_stomp_str_multiplier_lua" )
+	if ( special_hoof_stomp_str_multiplier_lua and special_hoof_stomp_str_multiplier_lua:GetLevel() ~= 0 ) then
+		str_multiplier = str_multiplier + special_hoof_stomp_str_multiplier_lua:GetSpecialValueFor( "value" )
+	end
+	-- Talent tree
+	local special_hoof_stomp_radius_lua = caster:FindAbilityByName( "special_hoof_stomp_radius_lua" )
+	if ( special_hoof_stomp_radius_lua and special_hoof_stomp_radius_lua:GetLevel() ~= 0 ) then
+		radius = radius + special_hoof_stomp_radius_lua:GetSpecialValueFor( "value" )
+	end
+	-- Talent tree
+	local special_hoof_stomp_stun_duration_lua = caster:FindAbilityByName( "special_hoof_stomp_stun_duration_lua" )
+	if ( special_hoof_stomp_stun_duration_lua and special_hoof_stomp_stun_duration_lua:GetLevel() ~= 0 ) then
+		stun_duration = stun_duration + special_hoof_stomp_stun_duration_lua:GetSpecialValueFor( "value" )
+	end
 
 	-- find affected units
 	local enemies = FindUnitsInRadius(
