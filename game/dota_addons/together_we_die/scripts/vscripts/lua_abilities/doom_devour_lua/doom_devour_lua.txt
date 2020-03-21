@@ -23,10 +23,11 @@
 		// Ability General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CUSTOM"
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 
 		// Ability Casting
@@ -49,7 +50,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"25 50 75 100"
+				"bonus_gold"			"10 15 20 25"
 			}
 			"02"
 			{
@@ -69,12 +70,17 @@
             "05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"regen_str_multiplier"					"2.0 3.0 4.0 5.0"
+				"regen_str_multiplier"					"1.0 1.5 2.0 2.5"
 			}
             "06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"gold_str_multiplier"					"6.0 8.0 10.0 12.0"
+				"gold_str_multiplier"					"0.1 0.2 0.3 0.4"
+			}
+            "07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"str_multiplier"					"3.0 5.0 7.0 9.0"
 			}
 		}
 	}

@@ -16,23 +16,6 @@ doom_devour_lua_slot2 = class({})
 LinkLuaModifier( "modifier_doom_devour_lua", "lua_abilities/doom_devour_lua/modifier_doom_devour_lua", LUA_MODIFIER_MOTION_NONE )
 
 --------------------------------------------------------------------------------
--- Ability Cast Filter
-function doom_devour_lua:CastFilterResultTarget( hTarget )
-	local nResult = UnitFilter(
-		hTarget,
-		DOTA_UNIT_TARGET_TEAM_ENEMY,
-		DOTA_UNIT_TARGET_CREEP,
-		DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS + DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO,
-		self:GetCaster():GetTeamNumber()
-	)
-	if nResult ~= UF_SUCCESS then
-		return nResult
-	end
-
-	return UF_SUCCESS
-end
-
---------------------------------------------------------------------------------
 -- AOE Radius
 function doom_devour_lua:GetAOERadius()
 	return self:GetSpecialValueFor( "radius" )
@@ -47,6 +30,7 @@ function doom_devour_lua:OnSpellStart()
 	-- load data
 	local duration = self:GetSpecialValueFor( "devour_time" )
 	local radius = self:GetSpecialValueFor( "radius" )
+	local damage = self:GetSpecialValueFor( "str_multiplier" )
 
 	-- Find Units in Radius
 	local targets = FindUnitsInRadius(
@@ -55,19 +39,27 @@ function doom_devour_lua:OnSpellStart()
 			nil,	-- handle, cacheUnit. (not known)
 			radius,	-- float, radius. or use FIND_UNITS_EVERYWHERE
 			DOTA_UNIT_TARGET_TEAM_ENEMY,	-- int, team filter
-			DOTA_UNIT_TARGET_CREEP,	-- int, type filter
-			DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS + DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS,	-- int, flag filter
+			DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	-- int, type filter
+			DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS,	-- int, flag filter
 			0,	-- int, order filter
 			false	-- bool, can grow cache
 	)
+
+	-- damage target
+	self.damageTable = {
+		attacker = caster,
+		damage = damage,
+		damage_type = self:GetAbility():GetAbilityDamageType(),
+		ability = self:GetAbility(), --Optional.
+	}
 
 	for _,devourTarget in pairs(targets) do
 		-- Play effects and no draw
 		self:PlayEffects( devourTarget )
 		devourTarget:SetOrigin( devourTarget:GetOrigin() + Vector( 0, 0, -200 ) )
 
-		-- kill target
-		devourTarget:Kill( self, caster )
+		self.damageTable.victim = devourTarget
+		ApplyDamage( self.damageTable )
 
 		-- add modifier
 		caster:AddNewModifier(
