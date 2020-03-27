@@ -50,7 +50,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"primary_attr_multiplier"			"0.5"
+				"primary_attr_multiplier"			"1.5"
 			}
 			"04"
 			{
