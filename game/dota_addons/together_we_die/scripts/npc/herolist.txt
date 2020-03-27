@@ -25,7 +25,6 @@
 	"npc_dota_hero_sniper"			"1"
 	"npc_dota_hero_dark_willow"	"1"
 	"npc_dota_hero_mars"	"1"
-	"npc_dota_hero_riki"		"1"
 	"npc_dota_hero_earthshaker"		"1"
 	"npc_dota_hero_lion"			"1"
 	"npc_dota_hero_luna"			"1"
