@@ -50,7 +50,7 @@
 			"03"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"regen_str_multiplier"			"0.5 1.0 1.5 2.0"
+				"regen_str_multiplier"			"0.5 1.25 2.0 2.75"
 			}
 			"04"
 			{
