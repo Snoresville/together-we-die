@@ -11,7 +11,12 @@
 		"override_hero"			"npc_dota_hero_axe"
 
 		"AttributeBaseStrength" "35"
-		"AttributeStrengthGain" "3.2"
+		"AttributeBaseAgility"  "0"
+		"AttributeBaseIntelligence"  "0"
+		"AttributeStrengthGain" "15.0"
+		"AttributeAgilityGain" "5.0"
+		"AttributeIntelligenceGain" "5.0"
+		"MovementSpeed"		"250"
 		
 		"Ability1"				"axe_berserkers_call_lua"
 		"Ability2"				"axe_battle_rage"
@@ -37,8 +42,13 @@
 	{
 		"override_hero"			"npc_dota_hero_centaur"
 
-		"AttributeBaseStrength" "35"
-		"AttributeStrengthGain" "5.5"
+        "AttributeBaseStrength" "35"
+		"AttributeBaseAgility"  "0"
+		"AttributeBaseIntelligence"  "0"
+		"AttributeStrengthGain" "25.0"
+		"AttributeAgilityGain" "0.0"
+		"AttributeIntelligenceGain" "0.0"
+		"MovementSpeed"		"250"
 
 		"Ability1"				"centaur_warrunner_hoof_stomp_lua"
 		"Ability2"              "centaur_warrunner_double_edge_lua"
@@ -64,6 +74,15 @@
 	"npc_dota_hero_windrunner_holdout"
 	{
 		"override_hero"			"npc_dota_hero_windrunner"
+
+		"AttributeBaseStrength" "0"
+		"AttributeBaseAgility"  "0"
+		"AttributeBaseIntelligence"  "35"
+		"AttributeStrengthGain" "5.0"
+		"AttributeAgilityGain" "5.0"
+		"AttributeIntelligenceGain" "15.0"
+		"MovementSpeed"		"250"
+
 		"Ability1"              "windranger_shackleshot_lua"
 		"Ability2"				"windranger_powershot_lua"
 		"Ability3"              "windranger_windrun_lua"
@@ -87,6 +106,15 @@
 	"npc_dota_hero_omniknight_holdout"
 	{
 		"override_hero"			"npc_dota_hero_omniknight"
+
+        "AttributeBaseStrength" "35"
+		"AttributeBaseAgility"  "0"
+		"AttributeBaseIntelligence"  "0"
+		"AttributeStrengthGain" "15.0"
+		"AttributeAgilityGain" "5.0"
+		"AttributeIntelligenceGain" "5.0"
+		"MovementSpeed"		"250"
+
 		"Ability1"				"omniknight_purification_lua"
 		"Ability2"				"omniknight_repel_lua"
 		"Ability3"				"omniknight_degen_aura_lua"
@@ -111,6 +139,15 @@
 	"npc_dota_hero_drow_ranger_holdout"
 	{
 		"override_hero"			"npc_dota_hero_drow_ranger"
+
+		"AttributeBaseStrength" "0"
+		"AttributeBaseAgility"  "35"
+		"AttributeBaseIntelligence"  "0"
+		"AttributeStrengthGain" "5.0"
+		"AttributeAgilityGain" "15.0"
+		"AttributeIntelligenceGain" "5.0"
+		"MovementSpeed"		"250"
+
 		"Ability1"              "drow_ranger_frost_arrows_lua"
 		"Ability2"              "drow_ranger_mind_break_lua"
 		"Ability3"				"drow_ranger_multishot_lua"
@@ -134,6 +171,15 @@
 	"npc_dota_hero_juggernaut_holdout"
 	{
 		"override_hero"			"npc_dota_hero_juggernaut"
+
+		"AttributeBaseStrength" "0"
+		"AttributeBaseAgility"  "35"
+		"AttributeBaseIntelligence"  "0"
+		"AttributeStrengthGain" "5.0"
+		"AttributeAgilityGain" "15.0"
+		"AttributeIntelligenceGain" "5.0"
+		"MovementSpeed"		"250"
+
 		"Ability1"				"juggernaut_blade_fury_lua"
 		"Ability3"				"juggernaut_blade_dance_lua"
 		"Ability4"				"holdout_omnislash"
@@ -155,6 +201,15 @@
 	"npc_dota_hero_sven_holdout"
 	{
 		"override_hero"			"npc_dota_hero_sven"
+
+        "AttributeBaseStrength" "35"
+		"AttributeBaseAgility"  "0"
+		"AttributeBaseIntelligence"  "0"
+		"AttributeStrengthGain" "15.0"
+		"AttributeAgilityGain" "7.5"
+		"AttributeIntelligenceGain" "2.5"
+		"MovementSpeed"		"250"
+
 		"Ability1"				"sven_storm_bolt_lua"
 		"Ability2"				"sven_great_cleave_lua"
 		"Ability3"				"sven_warcry_lua"
@@ -178,6 +233,15 @@
 	"npc_dota_hero_legion_commander_holdout"
 	{
 		"override_hero"			"npc_dota_hero_legion_commander"
+
+        "AttributeBaseStrength" "35"
+		"AttributeBaseAgility"  "0"
+		"AttributeBaseIntelligence"  "0"
+		"AttributeStrengthGain" "15.0"
+		"AttributeAgilityGain" "5.0"
+		"AttributeIntelligenceGain" "5.0"
+		"MovementSpeed"		"250"
+
 		"Ability1"		"legion_commander_overwhelming_odds_lua"
 		"Ability2"		"legion_commander_press_the_attack_lua"
 		"Ability3"		"legion_commander_moment_of_courage_lua"
@@ -202,6 +266,14 @@
 	"npc_dota_hero_lina_holdout"
 	{
 		"override_hero"				"npc_dota_hero_lina"
+
+		"AttributeBaseStrength" "0"
+		"AttributeBaseAgility"  "0"
+		"AttributeBaseIntelligence"  "35"
+		"AttributeStrengthGain" "5.0"
+		"AttributeAgilityGain" "5.0"
+		"AttributeIntelligenceGain" "15.0"
+		"MovementSpeed"		"250"
 		
 		"Ability1"					"lina_dragon_slave_lua"
 		"Ability2"					"lina_light_strike_array_lua"
@@ -227,6 +299,14 @@
 	"npc_dota_hero_crystal_maiden_holdout"
 	{
 		"override_hero"				"npc_dota_hero_crystal_maiden"
+
+		"AttributeBaseStrength" "0"
+		"AttributeBaseAgility"  "0"
+		"AttributeBaseIntelligence"  "35"
+		"AttributeStrengthGain" "5.0"
+		"AttributeAgilityGain" "5.0"
+		"AttributeIntelligenceGain" "15.0"
+		"MovementSpeed"		"250"
 		
 		"Ability1"					"crystal_maiden_frostbite_lua"
 		"Ability2"					"crystal_maiden_crystal_nova_lua"
@@ -253,6 +333,14 @@
 	{
 		"override_hero"				"npc_dota_hero_queenofpain"
 
+		"AttributeBaseStrength" "0"
+		"AttributeBaseAgility"  "0"
+		"AttributeBaseIntelligence"  "35"
+		"AttributeStrengthGain" "5.0"
+		"AttributeAgilityGain" "5.0"
+		"AttributeIntelligenceGain" "15.0"
+		"MovementSpeed"		"250"
+
 		"Ability1"					"queen_of_pain_shadow_strike_lua"
 		"Ability2"					"queen_of_pain_blink_lua"
 		"Ability3"					"queen_of_pain_scream_of_pain_lua"
@@ -277,6 +365,15 @@
 	"npc_dota_hero_tinker_holdout"
 	{
 		"override_hero"			"npc_dota_hero_tinker"
+
+		"AttributeBaseStrength" "0"
+		"AttributeBaseAgility"  "0"
+		"AttributeBaseIntelligence"  "35"
+		"AttributeStrengthGain" "0.0"
+		"AttributeAgilityGain" "5.0"
+		"AttributeIntelligenceGain" "20.0"
+		"MovementSpeed"		"250"
+
 		"Ability1"				"tinker_laser_lua"
 		"Ability2"				"tinker_heat_seeking_missile_lua"
 		"Ability3"				"tinker_march_of_the_machines_lua"
@@ -296,6 +393,15 @@
 	"npc_dota_hero_dazzle_holdout"
 	{
 		"override_hero"			"npc_dota_hero_dazzle"
+
+		"AttributeBaseStrength" "0"
+		"AttributeBaseAgility"  "0"
+		"AttributeBaseIntelligence"  "35"
+		"AttributeStrengthGain" "5.0"
+		"AttributeAgilityGain" "5.0"
+		"AttributeIntelligenceGain" "15.0"
+		"MovementSpeed"		"250"
+
 		"Ability1"				"dazzle_poison_touch_lua"
 		"Ability2"				"dazzle_shallow_grave_lua"
 		"Ability3"				"dazzle_shadow_wave_lua"
@@ -316,6 +422,15 @@
 	"npc_dota_hero_phanthom_assassin_holdout"
 	{
 		"override_hero"			"npc_dota_hero_phantom_assassin"
+
+		"AttributeBaseStrength" "0"
+		"AttributeBaseAgility"  "35"
+		"AttributeBaseIntelligence"  "0"
+		"AttributeStrengthGain" "5.0"
+		"AttributeAgilityGain" "15.0"
+		"AttributeIntelligenceGain" "5.0"
+		"MovementSpeed"		"250"
+
 		"Ability1"				"phantom_assassin_stifling_dagger_lua"
 		"Ability2"		    "phantom_assassin_phantom_strike_lua"
 		"Ability3"		    "phantom_assassin_blur_lua"
@@ -337,6 +452,14 @@
 	{
 		"override_hero"			"npc_dota_hero_phantom_lancer"
 
+		"AttributeBaseStrength" "0"
+		"AttributeBaseAgility"  "35"
+		"AttributeBaseIntelligence"  "0"
+		"AttributeStrengthGain" "0.0"
+		"AttributeAgilityGain" "25.0"
+		"AttributeIntelligenceGain" "0.0"
+		"MovementSpeed"		"250"
+
 		"Ability1"				"phantom_lancer_spirit_lance_lua"
 		"Ability4"		""
 		"Ability5"		""
@@ -350,15 +473,20 @@
 		"Ability16"		""
 		"Ability17"		""
 
-		"AttributeBaseAgility" 	"42"
-		"AttributeAgilityGain" 	"5.6"
-
 		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
 	}
 
 	"npc_dota_hero_luna_holdout"
 	{
 		"override_hero"				"npc_dota_hero_luna"
+
+		"AttributeBaseStrength" "0"
+		"AttributeBaseAgility"  "35"
+		"AttributeBaseIntelligence"  "0"
+		"AttributeStrengthGain" "5.0"
+		"AttributeAgilityGain" "15.0"
+		"AttributeIntelligenceGain" "5.0"
+		"MovementSpeed"		"250"
 		
 		"Ability1"					"luna_lucent_beam_lua"
 		"Ability2"					"luna_moon_glaive_lua"
@@ -381,6 +509,14 @@
 	"npc_dota_hero_dark_willow_holdout"
 	{
 		"override_hero"				"npc_dota_hero_dark_willow"
+
+		"AttributeBaseStrength" "0"
+		"AttributeBaseAgility"  "0"
+		"AttributeBaseIntelligence"  "35"
+		"AttributeStrengthGain" "5.0"
+		"AttributeAgilityGain" "5.0"
+		"AttributeIntelligenceGain" "15.0"
+		"MovementSpeed"		"250"
 		
 		"Ability1"					"dark_willow_bramble_maze_lua"
 		"Ability2"					"dark_willow_shadow_realm_lua"
@@ -403,6 +539,14 @@
 	"npc_dota_hero_leshrac_holdout"
 	{
 		"override_hero"				"npc_dota_hero_leshrac"
+
+		"AttributeBaseStrength" "0"
+		"AttributeBaseAgility"  "0"
+		"AttributeBaseIntelligence"  "35"
+		"AttributeStrengthGain" "5.0"
+		"AttributeAgilityGain" "5.0"
+		"AttributeIntelligenceGain" "15.0"
+		"MovementSpeed"		"250"
 
 		"Ability1"					"leshrac_split_earth_lua"
 		"Ability2"					"leshrac_diabolic_edict_lua"
@@ -428,6 +572,15 @@
 	"npc_dota_hero_lion_holdout"
 	{
 		"override_hero"			"npc_dota_hero_lion"
+
+		"AttributeBaseStrength" "0"
+		"AttributeBaseAgility"  "0"
+		"AttributeBaseIntelligence"  "35"
+		"AttributeStrengthGain" "5.0"
+		"AttributeAgilityGain" "5.0"
+		"AttributeIntelligenceGain" "15.0"
+		"MovementSpeed"		"250"
+
 		"Ability1"				"lion_earth_spike_lua"
 		"Ability2"				"lion_hex_lua"
 		"Ability3"				"lion_mana_drain_lua"
@@ -453,6 +606,15 @@
 	"npc_dota_hero_furion_holdout"
 	{
 		"override_hero"			"npc_dota_hero_furion"
+
+		"AttributeBaseStrength" "0"
+		"AttributeBaseAgility"  "0"
+		"AttributeBaseIntelligence"  "35"
+		"AttributeStrengthGain" "5.0"
+		"AttributeAgilityGain" "5.0"
+		"AttributeIntelligenceGain" "15.0"
+		"MovementSpeed"		"250"
+
 		"Ability3"				"furion_force_of_nature_lua"
 		"Ability4"		""
 		"Ability5"		""
@@ -475,6 +637,15 @@
 	"npc_dota_hero_earthshaker_holdout"
 	{
 		"override_hero"			"npc_dota_hero_earthshaker"
+
+        "AttributeBaseStrength" "35"
+		"AttributeBaseAgility"  "0"
+		"AttributeBaseIntelligence"  "0"
+		"AttributeStrengthGain" "17.5"
+		"AttributeAgilityGain" "0.0"
+		"AttributeIntelligenceGain" "7.5"
+		"MovementSpeed"		"250"
+
 		"Ability1"				"earthshaker_fissure_lua"
 		"Ability3"				"earthshaker_aftershock_lua"
 		"Ability4"		""
@@ -495,6 +666,15 @@
 	"npc_dota_hero_arc_warden_holdout"
 	{
 		"override_hero"			"npc_dota_hero_arc_warden"
+
+		"AttributeBaseStrength" "0"
+		"AttributeBaseAgility"  "35"
+		"AttributeBaseIntelligence"  "0"
+		"AttributeStrengthGain" "5.0"
+		"AttributeAgilityGain" "15.0"
+		"AttributeIntelligenceGain" "5.0"
+		"MovementSpeed"		"250"
+
 		"Ability1"              "arc_warden_flux_lua"
 		"Ability3"				"arc_warden_spark_wraith_lua"
 		"Ability5"		""
@@ -514,6 +694,15 @@
 	"npc_dota_hero_sniper_holdout"
 	{
 		"override_hero"			"npc_dota_hero_sniper"
+
+		"AttributeBaseStrength" "0"
+		"AttributeBaseAgility"  "35"
+		"AttributeBaseIntelligence"  "0"
+		"AttributeStrengthGain" "0.0"
+		"AttributeAgilityGain" "20.0"
+		"AttributeIntelligenceGain" "5.0"
+		"MovementSpeed"		"250"
+
 		"Ability1"				"sniper_shrapnel_lua"
 		"Ability2"				"sniper_headshot_lua"
 		"Ability3"				"sniper_take_aim_lua"
@@ -535,6 +724,15 @@
 	"npc_dota_hero_mars_holdout"
 	{
 		"override_hero"			"npc_dota_hero_mars"
+
+        "AttributeBaseStrength" "35"
+		"AttributeBaseAgility"  "0"
+		"AttributeBaseIntelligence"  "0"
+		"AttributeStrengthGain" "15.0"
+		"AttributeAgilityGain" "5.0"
+		"AttributeIntelligenceGain" "5.0"
+		"MovementSpeed"		"250"
+
 		"Ability1"				"mars_spear_of_mars_lua"
 		"Ability2"				"mars_gods_rebuke_lua"
 		"Ability4"		""
@@ -555,6 +753,15 @@
 	"npc_dota_hero_pudge_holdout"
 	{
 		"override_hero"			"npc_dota_hero_pudge"
+
+        "AttributeBaseStrength" "35"
+		"AttributeBaseAgility"  "0"
+		"AttributeBaseIntelligence"  "0"
+		"AttributeStrengthGain" "25.0"
+		"AttributeAgilityGain" "0.0"
+		"AttributeIntelligenceGain" "0.0"
+		"MovementSpeed"		"250"
+
 		"Ability1"				"pudge_meat_hook_lua"
 		"Ability2"				"pudge_rot_lua"
 		"Ability3"				"pudge_flesh_heap_lua"
@@ -576,6 +783,15 @@
 	"npc_dota_hero_sand_king_holdout"
 	{
 		"override_hero"			"npc_dota_hero_sand_king"
+
+        "AttributeBaseStrength" "35"
+		"AttributeBaseAgility"  "0"
+		"AttributeBaseIntelligence"  "0"
+		"AttributeStrengthGain" "15.0"
+		"AttributeAgilityGain" "5.0"
+		"AttributeIntelligenceGain" "5.0"
+		"MovementSpeed"		"250"
+
 		"Ability1"				"sand_king_burrowstrike_lua"
 		"Ability2"				"sand_king_sand_storm_lua"
 		"Ability3"				"sand_king_caustic_finale_lua"
@@ -597,6 +813,15 @@
 	"npc_dota_hero_alchemist_holdout"
 	{
 		"override_hero"				"npc_dota_hero_alchemist"
+
+        "AttributeBaseStrength" "35"
+		"AttributeBaseAgility"  "0"
+		"AttributeBaseIntelligence"  "0"
+		"AttributeStrengthGain" "15.0"
+		"AttributeAgilityGain" "5.0"
+		"AttributeIntelligenceGain" "5.0"
+		"MovementSpeed"		"250"
+
 		"Ability1"					"alchemist_acid_spray_lua"
 		"Ability2"					"alchemist_unstable_concoction_lua"
 		"Ability3"					"alchemist_greevils_greed_lua"
@@ -618,6 +843,15 @@
 	"npc_dota_hero_ogre_magi_holdout"
 	{
 		"override_hero"					"npc_dota_hero_ogre_magi"
+
+		"AttributeBaseStrength" "0"
+		"AttributeBaseAgility"  "0"
+		"AttributeBaseIntelligence"  "35"
+		"AttributeStrengthGain" "5.0"
+		"AttributeAgilityGain" "5.0"
+		"AttributeIntelligenceGain" "15.0"
+		"MovementSpeed"		"250"
+
 		"Ability1"				"ogre_magi_fireblast_lua"
 		"Ability2"				"ogre_magi_ignite_lua"
 		"Ability3"				"ogre_magi_bloodlust_lua"
@@ -639,6 +873,15 @@
 	"npc_dota_hero_bristleback_holdout"
 	{
 		"override_hero"					"npc_dota_hero_bristleback"
+
+        "AttributeBaseStrength" "35"
+		"AttributeBaseAgility"  "0"
+		"AttributeBaseIntelligence"  "0"
+		"AttributeStrengthGain" "15.0"
+		"AttributeAgilityGain" "5.0"
+		"AttributeIntelligenceGain" "5.0"
+		"MovementSpeed"		"250"
+
 		"Ability1"				"bristleback_viscous_nasal_goo_lua"
 		"Ability2"				"bristleback_quill_spray_lua"
 		"Ability3"				"bristleback_bristleback_lua"
@@ -660,6 +903,15 @@
 	"npc_dota_hero_skeleton_king_holdout"
 	{
 		"override_hero"					"npc_dota_hero_skeleton_king"
+
+        "AttributeBaseStrength" "35"
+		"AttributeBaseAgility"  "0"
+		"AttributeBaseIntelligence"  "0"
+		"AttributeStrengthGain" "15.0"
+		"AttributeAgilityGain" "5.0"
+		"AttributeIntelligenceGain" "5.0"
+		"MovementSpeed"		"250"
+
 		"Ability1"				"wraith_king_wraithfire_blast_lua"
 		"Ability2"              "wraith_king_vampiric_aura_lua"
 		"Ability3"				"wraith_king_mortal_strike_lua"
@@ -681,6 +933,15 @@
 	"npc_dota_hero_huskar_holdout"
 	{
 		"override_hero"					"npc_dota_hero_huskar"
+
+        "AttributeBaseStrength" "35"
+		"AttributeBaseAgility"  "0"
+		"AttributeBaseIntelligence"  "0"
+		"AttributeStrengthGain" "15.0"
+		"AttributeAgilityGain" "5.0"
+		"AttributeIntelligenceGain" "5.0"
+		"MovementSpeed"		"250"
+
 		"Ability1"				"huskar_inner_vitality_lua"
 		"Ability2"				"huskar_burning_spear_lua"
 		"Ability3"				"huskar_berserkers_blood_lua"
@@ -702,6 +963,15 @@
 	"npc_dota_hero_ursa_holdout"
 	{
 		"override_hero"					"npc_dota_hero_ursa"
+
+		"AttributeBaseStrength" "0"
+		"AttributeBaseAgility"  "35"
+		"AttributeBaseIntelligence"  "0"
+		"AttributeStrengthGain" "5.0"
+		"AttributeAgilityGain" "15.0"
+		"AttributeIntelligenceGain" "5.0"
+		"MovementSpeed"		"250"
+
 		"Ability1"				"ursa_earthshock_lua"
 		"Ability2"				"ursa_overpower_lua"
 		"Ability3"				"ursa_fury_swipes_lua"
@@ -723,6 +993,15 @@
 	"npc_dota_hero_slark_holdout"
 	{
 		"override_hero"					"npc_dota_hero_slark"
+
+		"AttributeBaseStrength" "0"
+		"AttributeBaseAgility"  "35"
+		"AttributeBaseIntelligence"  "0"
+		"AttributeStrengthGain" "5.0"
+		"AttributeAgilityGain" "15.0"
+		"AttributeIntelligenceGain" "5.0"
+		"MovementSpeed"		"250"
+
 		"Ability1"				"slark_dark_pact_lua"
 		"Ability3"				"slark_essence_shift_lua"
 		"Ability4"		""
@@ -743,6 +1022,15 @@
 	"npc_dota_hero_viper_holdout"
 	{
 		"override_hero"					"npc_dota_hero_viper"
+
+		"AttributeBaseStrength" "0"
+		"AttributeBaseAgility"  "35"
+		"AttributeBaseIntelligence"  "0"
+		"AttributeStrengthGain" "5.0"
+		"AttributeAgilityGain" "15.0"
+		"AttributeIntelligenceGain" "5.0"
+		"MovementSpeed"		"250"
+
 		"Ability1"				"viper_poison_attack_lua"
 		"Ability2"				"viper_nethertoxin_lua"
 		"Ability3"				"viper_corrosive_skin_lua"
@@ -764,6 +1052,15 @@
 	"npc_dota_hero_medusa_holdout"
 	{
 		"override_hero"				"npc_dota_hero_medusa"
+
+		"AttributeBaseStrength" "0"
+		"AttributeBaseAgility"  "35"
+		"AttributeBaseIntelligence"  "0"
+		"AttributeStrengthGain" "0.0"
+		"AttributeAgilityGain" "17.5"
+		"AttributeIntelligenceGain" "7.5"
+		"MovementSpeed"		"250"
+
 		"Ability1"				"medusa_mystic_snake_lua"
 		"Ability2"				"medusa_mana_shield_lua"
 		"Ability3"				"medusa_split_shot_lua"
@@ -785,6 +1082,15 @@
 	"npc_dota_hero_silencer_holdout"
 	{
 		"override_hero"				"npc_dota_hero_silencer"
+
+		"AttributeBaseStrength" "0"
+		"AttributeBaseAgility"  "0"
+		"AttributeBaseIntelligence"  "35"
+		"AttributeStrengthGain" "5.0"
+		"AttributeAgilityGain" "5.0"
+		"AttributeIntelligenceGain" "15.0"
+		"MovementSpeed"		"250"
+
 		"Ability1"				"silencer_arcane_curse_lua"
 		"Ability2"				"silencer_glaives_of_wisdom_lua"
 		"Ability3"				"silencer_last_word_lua"
@@ -806,6 +1112,15 @@
 	"npc_dota_hero_skywrath_mage_holdout"
 	{
 		"override_hero"				"npc_dota_hero_skywrath_mage"
+
+		"AttributeBaseStrength" "0"
+		"AttributeBaseAgility"  "0"
+		"AttributeBaseIntelligence"  "35"
+		"AttributeStrengthGain" "2.5"
+		"AttributeAgilityGain" "5.0"
+		"AttributeIntelligenceGain" "17.5"
+		"MovementSpeed"		"250"
+
 		"Ability1"				"skywrath_mage_arcane_bolt_lua"
 		"Ability2"				"skywrath_mage_concussive_shot_lua"
 		"Ability3"				"skywrath_mage_ancient_seal_lua"
@@ -827,6 +1142,15 @@
 	"npc_dota_hero_shredder_holdout"
 	{
 		"override_hero"				"npc_dota_hero_shredder"
+
+        "AttributeBaseStrength" "35"
+		"AttributeBaseAgility"  "0"
+		"AttributeBaseIntelligence"  "0"
+		"AttributeStrengthGain" "15.0"
+		"AttributeAgilityGain" "5.0"
+		"AttributeIntelligenceGain" "5.0"
+		"MovementSpeed"		"250"
+
 		"Ability1"				"timbersaw_whirling_death_lua"
 		"Ability2"				"timbersaw_timber_chain_lua"
 		"Ability3"				"timbersaw_reactive_armor_lua"
@@ -849,6 +1173,15 @@
 	"npc_dota_hero_slardar_holdout"
 	{
 		"override_hero"				"npc_dota_hero_slardar"
+
+        "AttributeBaseStrength" "35"
+		"AttributeBaseAgility"  "0"
+		"AttributeBaseIntelligence"  "0"
+		"AttributeStrengthGain" "15.0"
+		"AttributeAgilityGain" "5.0"
+		"AttributeIntelligenceGain" "5.0"
+		"MovementSpeed"		"250"
+
 		"Ability1"				"slardar_guardian_sprint_lua"
 		"Ability2"				"slardar_slithereen_crush_lua"
 		"Ability3"				"slardar_bash_of_the_deep_lua"
@@ -870,6 +1203,15 @@
 	"npc_dota_hero_invoker_holdout"
 	{
 		"override_hero"				"npc_dota_hero_invoker"
+
+		"AttributeBaseStrength" "0"
+		"AttributeBaseAgility"  "0"
+		"AttributeBaseIntelligence"  "35"
+		"AttributeStrengthGain" "5.0"
+		"AttributeAgilityGain" "5.0"
+		"AttributeIntelligenceGain" "15.0"
+		"MovementSpeed"		"250"
+
 		"Ability1"				"invoker_quas_lua"
 		"Ability2"				"invoker_wex_lua"
 		"Ability3"				"invoker_exort_lua"
@@ -901,6 +1243,15 @@
 	"npc_dota_hero_dragon_knight_holdout"
 	{
 		"override_hero"				"npc_dota_hero_dragon_knight"
+
+        "AttributeBaseStrength" "35"
+		"AttributeBaseAgility"  "0"
+		"AttributeBaseIntelligence"  "0"
+		"AttributeStrengthGain" "15.0"
+		"AttributeAgilityGain" "5.0"
+		"AttributeIntelligenceGain" "5.0"
+		"MovementSpeed"		"250"
+
 		"Ability1"					"dragon_knight_breathe_fire_lua"
 		"Ability2"					"dragon_knight_dragon_tail_lua"
 		"Ability3"					"dragon_knight_dragon_blood_lua"
@@ -922,6 +1273,15 @@
 	"npc_dota_hero_antimage_holdout"
 	{
 		"override_hero"				"npc_dota_hero_antimage"
+
+		"AttributeBaseStrength" "0"
+		"AttributeBaseAgility"  "35"
+		"AttributeBaseIntelligence"  "0"
+		"AttributeStrengthGain" "5.0"
+		"AttributeAgilityGain" "15.0"
+		"AttributeIntelligenceGain" "5.0"
+		"MovementSpeed"		"250"
+
 		"Ability1"					"antimage_mana_break_lua"
 		"Ability2"					"antimage_blink_lua"
 		"Ability3"					"antimage_spell_shield_lua"
@@ -943,6 +1303,15 @@
 	"npc_dota_hero_enchantress_holdout"
 	{
 		"override_hero"				"npc_dota_hero_enchantress"
+
+		"AttributeBaseStrength" "0"
+		"AttributeBaseAgility"  "0"
+		"AttributeBaseIntelligence"  "35"
+		"AttributeStrengthGain" "5.0"
+		"AttributeAgilityGain" "5.0"
+		"AttributeIntelligenceGain" "15.0"
+		"MovementSpeed"		"250"
+
 		"Ability1"					"enchantress_untouchable_lua"
 		"Ability2"					"enchantress_enchant_lua"
 		"Ability3"					"enchantress_natures_attendants_lua"
@@ -964,6 +1333,15 @@
 	"npc_dota_hero_vengefulspirit_holdout"
 	{
 		"override_hero"				"npc_dota_hero_vengefulspirit"
+
+		"AttributeBaseStrength" "0"
+		"AttributeBaseAgility"  "35"
+		"AttributeBaseIntelligence"  "0"
+		"AttributeStrengthGain" "5.0"
+		"AttributeAgilityGain" "15.0"
+		"AttributeIntelligenceGain" "5.0"
+		"MovementSpeed"		"250"
+
 		"Ability1"					"vengefulspirit_magic_missile_lua"
 		"Ability2"					"vengefulspirit_wave_of_terror_lua"
 		"Ability3"					"vengefulspirit_command_aura_lua"
@@ -985,6 +1363,15 @@
 	"npc_dota_hero_bane_holdout"
 	{
 		"override_hero"				"npc_dota_hero_bane"
+
+		"AttributeBaseStrength" "0"
+		"AttributeBaseAgility"  "0"
+		"AttributeBaseIntelligence"  "35"
+		"AttributeStrengthGain" "5.0"
+		"AttributeAgilityGain" "5.0"
+		"AttributeIntelligenceGain" "15.0"
+		"MovementSpeed"		"250"
+
 		"Ability1"					"bane_enfeeble_lua"
 		"Ability2"					"bane_brain_sap_lua"
 		"Ability3"					"bane_nightmare_lua"
@@ -1006,6 +1393,15 @@
 	"npc_dota_hero_chaos_knight_holdout"
 	{
 		"override_hero"				"npc_dota_hero_chaos_knight"
+
+        "AttributeBaseStrength" "35"
+		"AttributeBaseAgility"  "0"
+		"AttributeBaseIntelligence"  "0"
+		"AttributeStrengthGain" "15.0"
+		"AttributeAgilityGain" "5.0"
+		"AttributeIntelligenceGain" "5.0"
+		"MovementSpeed"		"250"
+
 		"Ability1"					"chaos_knight_chaos_bolt_lua"
 		"Ability2"					"chaos_knight_reality_rift_lua"
 		"Ability3"					"chaos_knight_chaos_strike_lua"
@@ -1027,6 +1423,15 @@
 	"npc_dota_hero_obsidian_destroyer_holdout"
 	{
 		"override_hero"				"npc_dota_hero_obsidian_destroyer"
+
+		"AttributeBaseStrength" "0"
+		"AttributeBaseAgility"  "0"
+		"AttributeBaseIntelligence"  "35"
+		"AttributeStrengthGain" "5.0"
+		"AttributeAgilityGain" "5.0"
+		"AttributeIntelligenceGain" "15.0"
+		"MovementSpeed"		"250"
+
 		"Ability1"					"outworld_devourer_arcane_orb_lua"
 		"Ability2"					"outworld_devourer_astral_imprisonment_lua"
 		"Ability3"					"outworld_devourer_equilibrium_lua"
@@ -1048,6 +1453,15 @@
 	"npc_dota_hero_snapfire_holdout"
 	{
 		"override_hero"				"npc_dota_hero_snapfire"
+
+        "AttributeBaseStrength" "35"
+		"AttributeBaseAgility"  "0"
+		"AttributeBaseIntelligence"  "0"
+		"AttributeStrengthGain" "15.0"
+		"AttributeAgilityGain" "5.0"
+		"AttributeIntelligenceGain" "5.0"
+		"MovementSpeed"		"250"
+
 		"Ability1"					"snapfire_scatterblast_lua"
 		"Ability2"					"snapfire_firesnap_cookie_lua"
 		"Ability3"					"snapfire_lil_shredder_lua"
@@ -1069,6 +1483,15 @@
     "npc_dota_hero_spectre_holdout"
 	{
 		"override_hero"				"npc_dota_hero_spectre"
+
+		"AttributeBaseStrength" "0"
+		"AttributeBaseAgility"  "35"
+		"AttributeBaseIntelligence"  "0"
+		"AttributeStrengthGain" "5.0"
+		"AttributeAgilityGain" "15.0"
+		"AttributeIntelligenceGain" "5.0"
+		"MovementSpeed"		"250"
+
 		"Ability2"                  "spectre_desolate_lua"
 		"Ability3"					"spectre_dispersion_lua"
 		"Ability4"		""
@@ -1089,6 +1512,15 @@
     "npc_dota_hero_puck_holdout"
 	{
 		"override_hero"				"npc_dota_hero_puck"
+
+		"AttributeBaseStrength" "0"
+		"AttributeBaseAgility"  "0"
+		"AttributeBaseIntelligence"  "35"
+		"AttributeStrengthGain" "5.0"
+		"AttributeAgilityGain" "5.0"
+		"AttributeIntelligenceGain" "15.0"
+		"MovementSpeed"		"250"
+
 		"Ability1"					"puck_illusory_orb_lua"
 		"Ability2"					"puck_waning_rift_lua"
 		"Ability3"					"puck_phase_shift_lua"
@@ -1110,6 +1542,15 @@
 	"npc_dota_hero_life_stealer_holdout"
     {
     	"override_hero"				"npc_dota_hero_life_stealer"
+
+        "AttributeBaseStrength" "35"
+		"AttributeBaseAgility"  "0"
+		"AttributeBaseIntelligence"  "0"
+		"AttributeStrengthGain" "15.0"
+		"AttributeAgilityGain" "5.0"
+		"AttributeIntelligenceGain" "5.0"
+		"MovementSpeed"		"250"
+
     	"Ability1"					"lifestealer_rage_lua"
     	"Ability2"					"lifestealer_feast_lua"
     	"Ability3"					"lifestealer_open_wounds_lua"
@@ -1130,6 +1571,15 @@
     "npc_dota_hero_abaddon_holdout"
     {
     	"override_hero"				"npc_dota_hero_abaddon"
+
+        "AttributeBaseStrength" "35"
+		"AttributeBaseAgility"  "0"
+		"AttributeBaseIntelligence"  "0"
+		"AttributeStrengthGain" "15.0"
+		"AttributeAgilityGain" "5.0"
+		"AttributeIntelligenceGain" "5.0"
+		"MovementSpeed"		"250"
+
     	"Ability1"					"abaddon_mist_coil_lua"
     	"Ability2"					"abaddon_aphotic_shield_lua"
     	"Ability4"		            ""
@@ -1150,6 +1600,15 @@
     "npc_dota_hero_doom_bringer_holdout"
     {
     	"override_hero"				"npc_dota_hero_doom_bringer"
+
+        "AttributeBaseStrength" "35"
+		"AttributeBaseAgility"  "0"
+		"AttributeBaseIntelligence"  "0"
+		"AttributeStrengthGain" "15.0"
+		"AttributeAgilityGain" "5.0"
+		"AttributeIntelligenceGain" "5.0"
+		"MovementSpeed"		"250"
+
     	"Ability1"					"doom_devour_lua"
     	"Ability2"					"doom_infernal_blade_lua"
     	"Ability3"                  "doom_scorched_earth_lua"
