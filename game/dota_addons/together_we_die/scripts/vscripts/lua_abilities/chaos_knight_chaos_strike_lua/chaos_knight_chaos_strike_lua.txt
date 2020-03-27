@@ -57,12 +57,12 @@
 			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"min_str_multiplier"			"0.1"
+				"min_str_multiplier"			"0.2"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"max_str_multiplier"			"0.4"
+				"max_str_multiplier"			"0.5"
 			}
 		}
 	}

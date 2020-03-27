@@ -81,12 +81,12 @@
 			"07"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"int_multiplier"			"4.0 6.0 8.0 10.0 12.0"
+				"int_multiplier"			"6.0 8.0 12.0 14.0 16.0"
 			}
 			"08"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"int_multiplier_per_stack"	"0.02"
+				"int_multiplier_per_stack"	"0.03"
 			}
 		}
 	}

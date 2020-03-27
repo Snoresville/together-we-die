@@ -81,7 +81,7 @@
 			"06"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"agi_multiplier"			"7.5 9.5 11.5"
+				"agi_multiplier"			"9.5 12.5 15.5"
 			}
 		}
 	}

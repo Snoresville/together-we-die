@@ -74,7 +74,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"heal_str_multiplier"		"1.5 2.5 3.5 4.5"
+				"heal_str_multiplier"		"1.5 3.5 5.5 7.5"
 			}
 		}
 	}
