@@ -76,7 +76,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"int_multiplier"		"1.5 2.5 3.5"
+				"int_multiplier"		"3.5 6.5 9.5"
 			}
 		}
 	}
