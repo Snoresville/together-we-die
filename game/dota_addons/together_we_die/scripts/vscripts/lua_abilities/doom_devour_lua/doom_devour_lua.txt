@@ -60,7 +60,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"regen"					"5 10 15 20"
+				"regen"					"1 2 3 4"
 			}
             "04"
 			{
@@ -70,7 +70,7 @@
             "05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"regen_str_multiplier"					"1.0 1.5 2.0 2.5"
+				"regen_str_multiplier"					"0.1 0.2 0.3 0.4"
 			}
             "06"
 			{
