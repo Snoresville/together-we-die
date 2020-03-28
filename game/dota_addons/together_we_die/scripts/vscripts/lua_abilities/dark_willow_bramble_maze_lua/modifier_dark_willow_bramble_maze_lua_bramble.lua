@@ -73,7 +73,7 @@ function modifier_dark_willow_bramble_maze_lua_bramble:OnIntervalThink()
 		self.delay = true
 
 		-- start search interval
-		local interval = 0.03
+		local interval = 0.04
 		self:StartIntervalThink( interval )
 		return
 	end
@@ -94,19 +94,19 @@ function modifier_dark_willow_bramble_maze_lua_bramble:OnIntervalThink()
 	-- Attempt to root if there are enemies
 	if #enemies ~= 0 then
 		for _,enemy in pairs(enemies) do
-			-- root all enemies
-			enemy:AddNewModifier(
-				self:GetCaster(), -- player source
-				self:GetAbility(), -- ability source
-				"modifier_dark_willow_bramble_maze_lua_debuff", -- modifier name
-				{
-					duration = self.root,
-					damage = self.damage,
-				} -- kv
-			)
+			if not enemy:HasModifier("modifier_dark_willow_bramble_maze_lua_debuff") then
+				-- root all enemies that are not rooted
+				enemy:AddNewModifier(
+						self:GetCaster(), -- player source
+						self:GetAbility(), -- ability source
+						"modifier_dark_willow_bramble_maze_lua_debuff", -- modifier name
+						{
+							duration = self.root,
+							damage = self.damage,
+						} -- kv
+				)
+			end
 		end
-	
-		self:Destroy()
 	end
 end
 
