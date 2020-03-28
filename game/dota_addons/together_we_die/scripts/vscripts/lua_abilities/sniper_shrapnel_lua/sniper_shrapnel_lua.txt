@@ -36,9 +36,8 @@
 
 		// Ability Resource
 		//-------------------------------------------------------------------------------------------------------------
-		//"AbilityCooldown"				"55"
-		"AbilityCooldown"				"10"
-		"AbilityManaCost"				"50"
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"70"
 
 		// Damage
 		//-------------------------------------------------------------------------------------------------------------
@@ -88,12 +87,12 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"charge_restore_time"	"55"
+				"charge_restore_time"	"30"
 			}
 			"09"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"agi_multiplier"			"1.5 2.5 3.5 4.5"
+				"agi_multiplier"			"1.0 2.0 3.0 4.0"
 			}
 		}
 	}
