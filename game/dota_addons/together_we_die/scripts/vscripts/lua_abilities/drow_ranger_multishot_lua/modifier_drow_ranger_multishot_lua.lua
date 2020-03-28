@@ -37,6 +37,11 @@ function modifier_drow_ranger_multishot_lua:OnCreated( kv )
 	self.use_modifier = true
 
 	if not IsServer() then return end
+	-- Talent tree
+	local special_multishot_agi_multiplier_lua = self:GetCaster():FindAbilityByName( "special_multishot_agi_multiplier_lua" )
+	if ( special_multishot_agi_multiplier_lua and special_multishot_agi_multiplier_lua:GetLevel() ~= 0 ) then
+		self.agi_multiplier = self.agi_multiplier + special_multishot_agi_multiplier_lua:GetSpecialValueFor( "value" )
+	end
 	self.projectile_name = self.parent:GetRangedProjectileName()
 	self.projectile_speed = self.parent:GetProjectileSpeed()
 end
@@ -47,6 +52,11 @@ function modifier_drow_ranger_multishot_lua:OnRefresh( kv )
 	self.bonus_range = self:GetAbility():GetSpecialValueFor( "multi_shot_bonus_range" )
 	self.agi_multiplier = self:GetAbility():GetSpecialValueFor( "agi_multiplier" )
 	if not IsServer() then return end
+	-- Talent tree
+	local special_multishot_agi_multiplier_lua = self:GetCaster():FindAbilityByName( "special_multishot_agi_multiplier_lua" )
+	if ( special_multishot_agi_multiplier_lua and special_multishot_agi_multiplier_lua:GetLevel() ~= 0 ) then
+		self.agi_multiplier = self.agi_multiplier + special_multishot_agi_multiplier_lua:GetSpecialValueFor( "value" )
+	end
 end
 
 function modifier_drow_ranger_multishot_lua:OnRemoved()

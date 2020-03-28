@@ -27,7 +27,14 @@ function modifier_drow_ranger_frost_arrows_lua:OnCreated(kv)
     if not IsServer() then
         return
     end
-    local damage = self:GetCaster():GetAgility() * self:GetAbility():GetSpecialValueFor("agi_multiplier")
+    local caster = self:GetCaster()
+    self.agi_multiplier = self:GetAbility():GetSpecialValueFor("agi_multiplier")
+    -- Talent tree
+    local special_frost_arrow_agi_multiplier_lua = caster:FindAbilityByName( "special_frost_arrow_agi_multiplier_lua" )
+    if ( special_frost_arrow_agi_multiplier_lua and special_frost_arrow_agi_multiplier_lua:GetLevel() ~= 0 ) then
+        self.agi_multiplier = self.agi_multiplier + special_frost_arrow_agi_multiplier_lua:GetSpecialValueFor( "value" )
+    end
+    local damage = caster:GetAgility() * self.agi_multiplier
     -- precache damage
     self.damageTable = {
         victim = self:GetParent(),
