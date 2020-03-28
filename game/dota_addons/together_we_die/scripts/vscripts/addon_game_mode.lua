@@ -74,7 +74,7 @@ function CHoldoutGameMode:InitGameMode()
     GameRules:GetGameModeEntity():SetFreeCourierModeEnabled(true)
     -- Configure EXP
     local MAX_HERO_LEVEL = 350
-    local EXP_CONST = 30
+    local EXP_CONST = 60
     local xpTable = {}
     for i = 1, MAX_HERO_LEVEL, 1 do
         xpTable[i] = i * i * EXP_CONST
@@ -387,7 +387,7 @@ function CHoldoutGameMode:OnHeroLevelUp(event)
     local unspendAP = hero:GetAbilityPoints()
     local heroLevel = hero:GetLevel()
     local abilityPointsToGive = 0
-    local apEveryXLevel = 6
+    local apEveryXLevel = 4
 
     if (heroLevel % apEveryXLevel == 0) then
         abilityPointsToGive = 1
