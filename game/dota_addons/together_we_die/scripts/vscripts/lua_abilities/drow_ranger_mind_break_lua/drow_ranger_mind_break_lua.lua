@@ -10,6 +10,10 @@ function drow_ranger_mind_break_lua:OnSpellStart()
 	local caster = self:GetCaster()
 	local duration = self:GetSpecialValueFor("duration")
 
+	local special_mind_break_duration_lua = caster:FindAbilityByName("special_mind_break_duration_lua")
+	if (special_mind_break_duration_lua and special_mind_break_duration_lua:GetLevel() ~= 0) then
+		duration = duration + special_mind_break_duration_lua:GetSpecialValueFor("value")
+	end
 	-- self buff
 	caster:AddNewModifier(
 			caster, -- player source

@@ -46,6 +46,7 @@
 			{
 				"var_type"						"FIELD_FLOAT"
 				"silence_duration"					"2.75"
+				"LinkedSpecialBonus"		"special_mind_break_silence_duration_lua"
 			}
 			"02"
 			{
@@ -55,17 +56,18 @@
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"knockback_distance"		"250"
+				"knockback_distance"		"200"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"knockback_agi_multiplier"			"0.05 0.1 0.15 0.2"
+				"knockback_agi_multiplier"			"0.1"
 			}
             "05"
 			{
 				"var_type"					"FIELD_FLOAT"
 				"duration"			        "4.0 4.5 5.0 5.5"
+				"LinkedSpecialBonus"		"special_mind_break_duration_lua"
 			}
 		}
 	}

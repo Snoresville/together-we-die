@@ -57,6 +57,11 @@ function modifier_drow_ranger_multishot_lua:OnRefresh( kv )
 	if ( special_multishot_agi_multiplier_lua and special_multishot_agi_multiplier_lua:GetLevel() ~= 0 ) then
 		self.agi_multiplier = self.agi_multiplier + special_multishot_agi_multiplier_lua:GetSpecialValueFor( "value" )
 	end
+	-- Talent tree
+	local special_multishot_damage_modifier_lua = self:GetCaster():FindAbilityByName( "special_multishot_damage_modifier_lua" )
+	if ( special_multishot_damage_modifier_lua and special_multishot_damage_modifier_lua:GetLevel() ~= 0 ) then
+		self.damage_modifier = self.damage_modifier + special_multishot_damage_modifier_lua:GetSpecialValueFor( "value" )
+	end
 end
 
 function modifier_drow_ranger_multishot_lua:OnRemoved()

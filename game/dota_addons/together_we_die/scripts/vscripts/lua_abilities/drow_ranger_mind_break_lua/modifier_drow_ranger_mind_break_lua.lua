@@ -58,18 +58,24 @@ function modifier_drow_ranger_mind_break_lua:OnAttackLanded(params)
     end
 
     local attackerAgility = self.parent:GetAgility()
+
+    local silence_duration = self.silence_duration
+    local special_mind_break_silence_duration_lua = self:GetParent():FindAbilityByName("special_mind_break_silence_duration_lua")
+    if (special_mind_break_silence_duration_lua and special_mind_break_silence_duration_lua:GetLevel() ~= 0) then
+        silence_duration = silence_duration + special_mind_break_silence_duration_lua:GetSpecialValueFor("value")
+    end
     params.target:AddNewModifier(
             self:GetParent(), -- player source
             self:GetAbility(), -- ability source
             "modifier_generic_silenced_lua", -- modifier name
             {
-                duration = self.silence_duration,
+                duration = silence_duration,
             } -- kv
     )
 
     -- knockback
     local enemyOrigin = params.target:GetOrigin()
-    local attackerOrigin =self:GetParent():GetOrigin()
+    local attackerOrigin = self:GetParent():GetOrigin()
     params.target:AddNewModifier(
             self.parent, -- player source
             self:GetAbility(), -- ability source

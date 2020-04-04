@@ -45,11 +45,13 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"damage_modifier"		"-5 25 55 85"
+				"LinkedSpecialBonus"			"special_multishot_damage_modifier_lua"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
 				"damage_modifier_tooltip"		"95 125 155 185"
+				"LinkedSpecialBonus"			"special_multishot_damage_modifier_lua"
 			}
 			"03"
 			{	

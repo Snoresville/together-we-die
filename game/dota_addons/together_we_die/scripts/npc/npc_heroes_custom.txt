@@ -156,12 +156,12 @@
 		"Ability6"				"drow_ranger_agility_strike_lua"
 		"Ability10"		"special_frost_arrow_agi_multiplier_lua"
 		"Ability11"		"special_multishot_agi_multiplier_lua"
-		"Ability12"		""
-		"Ability13"		""
-		"Ability14"		""
-		"Ability15"		""
-		"Ability16"		""
-		"Ability17"		""
+		"Ability12"		"special_frost_arrow_bite_interval_lua"
+		"Ability13"		"special_frost_arrow_movement_lua"
+		"Ability14"		"special_mind_break_silence_duration_lua"
+		"Ability15"		"special_mind_break_duration_lua"
+		"Ability16"		"special_multishot_damage_modifier_lua"
+		"Ability17"		"special_agility_strike_chance_lua"
 		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
 	}
 

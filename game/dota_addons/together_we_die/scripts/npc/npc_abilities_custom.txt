@@ -5356,7 +5356,13 @@
 #base "../vscripts/lua_abilities/creature_furion_force_of_nature_lua/creature_furion_force_of_nature_lua.txt"
 
 #base "../vscripts/lua_abilities/special/drow_ranger/special_frost_arrow_agi_multiplier_lua.txt"
+#base "../vscripts/lua_abilities/special/drow_ranger/special_frost_arrow_bite_interval_lua.txt"
+#base "../vscripts/lua_abilities/special/drow_ranger/special_frost_arrow_movement_lua.txt"
+#base "../vscripts/lua_abilities/special/drow_ranger/special_mind_break_silence_duration_lua.txt"
+#base "../vscripts/lua_abilities/special/drow_ranger/special_mind_break_duration_lua.txt"
 #base "../vscripts/lua_abilities/special/drow_ranger/special_multishot_agi_multiplier_lua.txt"
+#base "../vscripts/lua_abilities/special/drow_ranger/special_multishot_damage_modifier_lua.txt"
+#base "../vscripts/lua_abilities/special/drow_ranger/special_agility_strike_chance_lua.txt"
 #base "../vscripts/lua_abilities/special/lina/special_dragon_slave_int_multiplier_lua.txt"
 #base "../vscripts/lua_abilities/special/lina/special_fiery_soul_duration_lua.txt"
 #base "../vscripts/lua_abilities/special/lina/special_fiery_soul_int_multiplier_lua.txt"

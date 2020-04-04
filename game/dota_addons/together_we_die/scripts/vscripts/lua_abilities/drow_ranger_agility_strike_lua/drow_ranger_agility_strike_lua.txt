@@ -44,7 +44,8 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"crit_chance"				"15 20 25"
+				"crit_chance"				"10 15 20"
+				"LinkedSpecialBonus"		"special_agility_strike_chance_lua"
 			}
 			"02"
 			{

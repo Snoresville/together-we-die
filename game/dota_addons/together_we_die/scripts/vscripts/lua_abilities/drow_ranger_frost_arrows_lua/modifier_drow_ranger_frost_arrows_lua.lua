@@ -24,11 +24,16 @@ function modifier_drow_ranger_frost_arrows_lua:OnCreated(kv)
     -- references
     self.slow = self:GetAbility():GetSpecialValueFor("frost_arrows_movement_speed")
     self.frost_arrows_bite_interval = self:GetAbility():GetSpecialValueFor("frost_arrows_bite_interval")
+    self.agi_multiplier = self:GetAbility():GetSpecialValueFor("agi_multiplier")
     if not IsServer() then
         return
     end
     local caster = self:GetCaster()
-    self.agi_multiplier = self:GetAbility():GetSpecialValueFor("agi_multiplier")
+    -- Talent tree
+    local special_frost_arrow_movement_lua = caster:FindAbilityByName( "special_frost_arrow_movement_lua" )
+    if ( special_frost_arrow_movement_lua and special_frost_arrow_movement_lua:GetLevel() ~= 0 ) then
+        self.slow = self.slow + special_frost_arrow_movement_lua:GetSpecialValueFor( "value" )
+    end
     -- Talent tree
     local special_frost_arrow_agi_multiplier_lua = caster:FindAbilityByName( "special_frost_arrow_agi_multiplier_lua" )
     if ( special_frost_arrow_agi_multiplier_lua and special_frost_arrow_agi_multiplier_lua:GetLevel() ~= 0 ) then
@@ -41,11 +46,16 @@ function modifier_drow_ranger_frost_arrows_lua:OnCreated(kv)
         attacker = self:GetCaster(),
         damage = damage,
         damage_type = self:GetAbility():GetAbilityDamageType(),
-        ability = self, --Optional.
+        ability = self:GetAbility(), --Optional.
     }
 
+    local interval = self.frost_arrows_bite_interval
+    local special_frost_arrow_bite_interval_lua = caster:FindAbilityByName("special_frost_arrow_bite_interval_lua")
+    if (special_frost_arrow_bite_interval_lua and special_frost_arrow_bite_interval_lua:GetLevel() ~= 0) then
+        interval = interval + special_frost_arrow_bite_interval_lua:GetSpecialValueFor("value")
+    end
     -- Start interval
-    self:StartIntervalThink(self.frost_arrows_bite_interval)
+    self:StartIntervalThink(interval)
 end
 
 function modifier_drow_ranger_frost_arrows_lua:OnRefresh(kv)
