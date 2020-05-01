@@ -1,0 +1,63 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Riki: Permanent Invisibility (Lua version)
+	//=================================================================================================================
+	"riki_permanent_invisibility_lua"
+	{
+		// Ability Technical Aspect
+		// base script folder	: scripts/vscripts
+		// base texture folder	: resource/flash3/images/spellicons
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"lua_abilities/riki_permanent_invisibility_lua/riki_permanent_invisibility_lua"
+		"AbilityTextureName"			"riki_permanent_invisibility_lua"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"6"
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_bristleback.vsndevts"
+			"particle"	"particles/units/heroes/hero_riki/riki_backstab.vpcf"
+		}
+		
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Ability Casting
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Ability Resource
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Damage
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"ability_reveal"				"1 1 1 1 1 0"
+			}
+            "02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"attack_reveal"				    "1 1 1 1 1 0"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"reactivation_time"				"5.0 4.0 3.0 2.0 1.0 0.0"
+			}
+			"03"
+			{
+			    "var_type"                      "FIELD_INTEGER"
+			    "true_sight_immune"             "0 0 0 0 0 0"
+			}
+		}
+	}
+}

@@ -5646,3 +5646,6 @@
 #base "../vscripts/lua_abilities/doom_infernal_blade_lua/doom_infernal_blade_lua.txt"
 #base "../vscripts/lua_abilities/doom_scorched_earth_lua/doom_scorched_earth_lua.txt"
 #base "../vscripts/lua_abilities/doom_doom_lua/doom_doom_lua.txt"
+
+#base "../vscripts/lua_abilities/riki_permanent_invisibility_lua/riki_permanent_invisibility_lua.txt"
+#base "../vscripts/lua_abilities/riki_backstab_lua/riki_backstab_lua.txt"
