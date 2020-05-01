@@ -1,0 +1,54 @@
+<root>
+    <styles>
+        <include src="file://{resources}/styles/dotastyles.css"/>
+        <include src="file://{resources}/styles/hudstyles.css"/>
+        <include src="file://{resources}/styles/custom_game/dota_hud/spells_menu/main.css"/>
+    </styles>
+    <scripts>
+        <include src="file://{resources}/scripts/custom_game/dota_hud/spells_menu/heroes.js"/>
+    </scripts>
+
+    <snippets>
+        <snippet name="hero">
+            <Panel class="HeroPanel">
+                <Button id="HeroPanelButton" onactivate="OpenSpellsListForHero()">
+                    <Panel id="HeroBorder"/>
+                    <Panel id="HeroImage">
+                        <DOTAHeroImage id="HeroPictureImage" heroimagestyle="landscape"/>
+                    </Panel>
+                </Button>
+            </Panel>
+        </snippet>
+        <snippet name="spell">
+            <Panel class="SingleSpellPanel">
+                <Button id="SingleSpellPanelButton" onactivate="BuySpell()">
+                    <Panel id="HeroBorder"/>
+                    <Panel id="SingleSpellImage">
+                        <DOTAAbilityImage id="SingleSpellPictureImage"/>
+                    </Panel>
+                </Button>
+                <Label class="CpCostIndicator" text="#DOTA_HUD_Spells_Menu_Spell_Cost"/>
+                <Label class="CpCostIndicator" id="SpellCost" />
+            </Panel>
+        </snippet>
+    </snippets>
+
+    <Panel hittest="false" class="SpellsMenuRoot">
+        <Panel hittest="false" id="SpellsMenuContents">
+            <Panel id="SpellsMenuClose" hittest="false" class="">
+                <Button id="SpellsMenuCloseButton" onactivate="CloseSpellsMenu();">
+                    <Label text="#DOTA_HUD_Spells_Menu_Close_Button"/>
+                </Button>
+            </Panel>
+            <Panel id="SpellsMenuHeroesBlock">
+            </Panel>
+            <Panel id="SpellsMenuSpellsBlock">
+            </Panel>
+        </Panel>
+        <Panel id="SpellsMenuOpen" hittest="false" class="Visible">
+            <Button id="SpellsMenuOpenButton" onactivate="OpenSpellsMenu();">
+                <Label text="#DOTA_HUD_Spells_Menu_Open_Button"/>
+            </Button>
+        </Panel>
+    </Panel>
+</root>

@@ -61,6 +61,7 @@
     font-size: 36px;
     font-weight: bold;
     text-align: center;
+    z-index: 100;
 }
 
 .HeroImage

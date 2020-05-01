@@ -1,0 +1,91 @@
+.SpellsMenuRoot {
+    width: 100%;
+    height: 100%;
+}
+
+#SpellsMenuContents,
+#SpellsMenuOpen
+{
+    visibility: collapse;
+}
+
+#SpellsMenuContents.Visible,
+#SpellsMenuOpen.Visible
+{
+    visibility: visible;
+}
+
+#SpellsMenuContents {
+    width: 100%;
+    height: fit-children;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+#SpellsMenuClose {
+    z-index: 15;
+    height: fit-children;
+    width: 100%;
+    padding-top: 10px;
+}
+
+#SpellsMenuCloseButton {
+    align: right top;
+    z-index: 15;
+    padding: 10px;
+
+    background-color: rgba(0, 0, 0, 0.95);
+    border-radius: 15%;
+}
+
+#SpellsMenuOpen {
+    z-index: 15;
+    height: fit-children;
+    width: 100%;
+    padding-top: 10px;
+}
+
+#SpellsMenuOpenButton {
+    align: right top;
+    z-index: 15;
+    padding: 10px;
+
+    color: #FFFFFF;
+    background-color: rgb(229, 57, 53);
+    border-radius: 15%;
+}
+
+#SpellsMenuHeroesBlock {
+    width: 100%;
+    flow-children: right-wrap;
+    vertical-align: top;
+    min-height: fit-children;
+    padding: 60px 30px 40px;
+    transition: width 0.25s linear 0s;
+}
+
+#SpellsMenuSpellsBlock {
+    width: 50%;
+    height: fit-children;
+    align: center center;
+}
+
+.SingleSpellPanel {
+    flow-children: down;
+}
+
+.CpCostIndicator {
+    align: center center;
+}
+
+.HeroPanel {
+    width: 64px;
+    height: 36px;
+}
+
+#HeroImage {
+    width: 64px;
+    height: 36px;
+    align: center center;
+    z-index: 2;
+}
