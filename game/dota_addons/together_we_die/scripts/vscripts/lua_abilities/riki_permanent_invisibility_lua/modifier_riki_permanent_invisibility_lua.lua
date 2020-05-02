@@ -42,6 +42,12 @@ function modifier_riki_permanent_invisibility_lua:OnRefresh(kv)
     end
 end
 
+function modifier_riki_permanent_invisibility_lua:OnRemoved()
+    if IsServer() then
+        self:GetParent():RemoveModifierByName("modifier_riki_permanent_invisibility_lua_buff")
+    end
+end
+
 --------------------------------------------------------------------------------
 -- Modifier Effects
 function modifier_riki_permanent_invisibility_lua:DeclareFunctions()
