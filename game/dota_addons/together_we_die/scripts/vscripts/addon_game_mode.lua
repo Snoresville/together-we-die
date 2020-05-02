@@ -77,8 +77,15 @@ function CHoldoutGameMode:InitGameMode()
     local MAX_HERO_LEVEL = 350
     local EXP_CONST = 60
     local xpTable = {}
+    local xpRequired;
     for i = 1, MAX_HERO_LEVEL, 1 do
-        xpTable[i] = i * i * EXP_CONST
+        xpRequired = i * i * EXP_CONST
+
+        -- Levels above 30 will slow down significantly
+        if i >= 30 then
+            xpRequired = xpRequired * 2
+        end
+        xpTable[i] = xpRequired
     end
     GameRules:GetGameModeEntity():SetUseCustomHeroLevels(true)
     GameRules:GetGameModeEntity():SetCustomXPRequiredToReachNextLevel(xpTable)
