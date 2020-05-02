@@ -69,7 +69,46 @@ var heroes = [
             "name_id": "npc_dota_hero_antimage",
         },
         {
+            "name_id": "npc_dota_hero_arc_warden",
+        },
+        {
+            "name_id": "npc_dota_hero_drow_ranger",
+        },
+        {
+            "name_id": "npc_dota_hero_juggernaut",
+        },
+        {
+            "name_id": "npc_dota_hero_luna",
+        },
+        {
+            "name_id": "npc_dota_hero_medusa",
+        },
+        {
+            "name_id": "npc_dota_hero_phantom_assassin",
+        },
+        {
+            "name_id": "npc_dota_hero_phantom_lancer",
+        },
+        {
             "name_id": "npc_dota_hero_riki",
+        },
+        {
+            "name_id": "npc_dota_hero_slark",
+        },
+        {
+            "name_id": "npc_dota_hero_sniper",
+        },
+        {
+            "name_id": "npc_dota_hero_spectre",
+        },
+        {
+            "name_id": "npc_dota_hero_ursa",
+        },
+        {
+            "name_id": "npc_dota_hero_vengefulspirit",
+        },
+        {
+            "name_id": "npc_dota_hero_viper",
         },
     ],
     [],
@@ -434,11 +473,225 @@ var spells = {
             "cost": 2
         },
     ],
+    "npc_dota_hero_arc_warden": [
+        {
+            "spell_id": "arc_warden_flux_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "arc_warden_spark_wraith_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "arc_warden_tempest_double_lua",
+            "cost": 2
+        },
+    ],
+    "npc_dota_hero_drow_ranger": [
+        {
+            "spell_id": "drow_ranger_frost_arrows_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "drow_ranger_multishot_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "drow_ranger_mind_break_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "drow_ranger_agility_strike_lua",
+            "cost": 2
+        },
+    ],
+    "npc_dota_hero_juggernaut": [
+        {
+            "spell_id": "juggernaut_blade_fury_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "juggernaut_blade_dance_lua",
+            "cost": 1
+        },
+    ],
+    "npc_dota_hero_luna": [
+        {
+            "spell_id": "luna_lucent_beam_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "luna_moon_glaive_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "luna_lunar_blessing_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "luna_eclipse_lua",
+            "cost": 2
+        },
+    ],
+    "npc_dota_hero_medusa": [
+        {
+            "spell_id": "medusa_mystic_snake_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "medusa_mana_shield_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "medusa_split_shot_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "medusa_split_shot_uses_modifiers_lua",
+            "cost": 3
+        },
+        {
+            "spell_id": "medusa_stone_gaze_lua",
+            "cost": 2
+        },
+    ],
+    "npc_dota_hero_phantom_assassin": [
+        {
+            "spell_id": "phantom_assassin_stifling_dagger_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "phantom_assassin_phantom_strike_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "phantom_assassin_blur_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "phantom_assassin_coup_de_grace_lua",
+            "cost": 2
+        },
+    ],
+    "npc_dota_hero_phantom_lancer": [
+        {
+            "spell_id": "phantom_lancer_spirit_lance_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "phantom_lancer_juxtapose_lua",
+            "cost": 2
+        },
+    ],
     "npc_dota_hero_riki": [
         {
             "spell_id": "riki_permanent_invisibility_lua",
             "cost": 1
-        }
+        },
+        {
+            "spell_id": "riki_backstab_lua",
+            "cost": 1
+        },
+    ],
+    "npc_dota_hero_slark": [
+        {
+            "spell_id": "slark_dark_pact_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "slark_essence_shift_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "slark_shadow_dance_lua",
+            "cost": 2
+        },
+    ],
+    "npc_dota_hero_sniper": [
+        {
+            "spell_id": "sniper_shrapnel_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "sniper_take_aim_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "sniper_headshot_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "sniper_assassinate_lua",
+            "cost": 2
+        },
+    ],
+    "npc_dota_hero_spectre": [
+        {
+            "spell_id": "spectre_desolate_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "spectre_dispersion_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "spectre_einherjar_lua",
+            "cost": 2
+        },
+    ],
+    "npc_dota_hero_ursa": [
+        {
+            "spell_id": "ursa_earthshock_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "ursa_overpower_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "ursa_fury_swipes_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "ursa_enrage_lua",
+            "cost": 2
+        },
+    ],
+    "npc_dota_hero_vengefulspirit": [
+        {
+            "spell_id": "vengefulspirit_magic_missile_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "vengefulspirit_wave_of_terror_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "vengefulspirit_command_aura_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "vengefulspirit_nether_swap_lua",
+            "cost": 2
+        },
+    ],
+    "npc_dota_hero_viper": [
+        {
+            "spell_id": "viper_poison_attack_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "viper_nethertoxin_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "viper_corrosive_skin_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "viper_viper_strike_lua",
+            "cost": 2
+        },
     ],
 };
 
