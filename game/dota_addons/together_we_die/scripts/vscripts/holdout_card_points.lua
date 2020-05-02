@@ -25,7 +25,7 @@ function holdout_card_points:_SpellsMenuBuySpell(eventSourceIndex, event_data)
         else
             cardPointAbility = playerHero:AddAbility("card_points_lua")
             cardPointAbility:SetLevel(1)
-            CustomGameEventManager:Send_ServerToPlayer(player, "dota_ability_changed", {})
+            cardPointAbility:MarkAbilityButtonDirty()
         end
 
 
@@ -50,7 +50,9 @@ function holdout_card_points:_SpellsMenuBuySpell(eventSourceIndex, event_data)
         else
             -- Trying to buy
             if cardPoints >= abilityCost then
-                playerHero:AddAbility(abilityName)
+                local newAbility = playerHero:AddAbility(abilityName)
+                newAbility:SetLevel(0)
+                newAbility:MarkAbilityButtonDirty()
                 playerHero:CalculateStatBonus()
                 CustomGameEventManager:Send_ServerToPlayer(player, "dota_ability_changed", {})
                 -- Deduct card points
