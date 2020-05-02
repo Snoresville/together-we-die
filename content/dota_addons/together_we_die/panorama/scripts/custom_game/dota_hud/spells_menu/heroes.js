@@ -111,7 +111,59 @@ var heroes = [
             "name_id": "npc_dota_hero_viper",
         },
     ],
-    [],
+    [
+        {
+            "name_id": "npc_dota_hero_bane",
+        },
+        {
+            "name_id": "npc_dota_hero_crystal_maiden",
+        },
+        {
+            "name_id": "npc_dota_hero_dark_willow",
+        },
+        {
+            "name_id": "npc_dota_hero_dazzle",
+        },
+        {
+            "name_id": "npc_dota_hero_enchantress",
+        },
+        {
+            "name_id": "npc_dota_hero_leshrac",
+        },
+        {
+            "name_id": "npc_dota_hero_lina",
+        },
+        {
+            "name_id": "npc_dota_hero_lion",
+        },
+        {
+            "name_id": "npc_dota_hero_furion",
+        },
+        {
+            "name_id": "npc_dota_hero_ogre_magi",
+        },
+        {
+            "name_id": "npc_dota_hero_obsidian_destroyer",
+        },
+        {
+            "name_id": "npc_dota_hero_puck",
+        },
+        {
+            "name_id": "npc_dota_hero_queenofpain",
+        },
+        {
+            "name_id": "npc_dota_hero_silencer",
+        },
+        {
+            "name_id": "npc_dota_hero_skywrath_mage",
+        },
+        {
+            "name_id": "npc_dota_hero_tinker",
+        },
+        {
+            "name_id": "npc_dota_hero_windrunner",
+        },
+    ],
 ];
 
 var spells = {
@@ -690,6 +742,308 @@ var spells = {
         },
         {
             "spell_id": "viper_viper_strike_lua",
+            "cost": 2
+        },
+    ],
+    "npc_dota_hero_bane": [
+        {
+            "spell_id": "bane_enfeeble_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "bane_brain_sap_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "bane_nightmare_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "bane_fiends_grip_lua",
+            "cost": 2
+        },
+    ],
+    "npc_dota_hero_crystal_maiden": [
+        {
+            "spell_id": "crystal_maiden_frostbite_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "crystal_maiden_crystal_nova_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "crystal_maiden_arcane_aura_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "crystal_maiden_freezing_field_lua",
+            "cost": 2
+        },
+    ],
+    "npc_dota_hero_dark_willow": [
+        {
+            "spell_id": "dark_willow_bramble_maze_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "dark_willow_shadow_realm_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "dark_willow_cursed_crown_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "dark_willow_bedlam_lua",
+            "cost": 2
+        },
+        {
+            "spell_id": "dark_willow_terrorize_lua",
+            "cost": 2
+        },
+    ],
+    "npc_dota_hero_dazzle": [
+        {
+            "spell_id": "dazzle_poison_touch_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "dazzle_shallow_grave_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "dazzle_shadow_wave_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "dazzle_bad_juju_lua",
+            "cost": 2
+        },
+    ],
+    "npc_dota_hero_enchantress": [
+        {
+            "spell_id": "enchantress_untouchable_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "enchantress_enchant_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "enchantress_natures_attendants_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "enchantress_impetus_lua",
+            "cost": 2
+        },
+    ],
+    "npc_dota_hero_leshrac": [
+        {
+            "spell_id": "leshrac_split_earth_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "leshrac_diabolic_edict_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "leshrac_lightning_storm_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "leshrac_pulse_nova_lua",
+            "cost": 2
+        },
+    ],
+    "npc_dota_hero_lina": [
+        {
+            "spell_id": "lina_dragon_slave_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "lina_light_strike_array_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "lina_fiery_soul_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "lina_laguna_blade_lua",
+            "cost": 2
+        },
+    ],
+    "npc_dota_hero_lion": [
+        {
+            "spell_id": "lion_earth_spike_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "lion_hex_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "lion_mana_drain_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "lion_finger_of_death_lua",
+            "cost": 2
+        },
+    ],
+    "npc_dota_hero_furion": [
+        {
+            "spell_id": "furion_force_of_nature_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "furion_wrath_of_nature_lua",
+            "cost": 2
+        },
+    ],
+    "npc_dota_hero_ogre_magi": [
+        {
+            "spell_id": "ogre_magi_fireblast_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "ogre_magi_ignite_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "ogre_magi_bloodlust_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "ogre_magi_multicast_lua",
+            "cost": 2
+        },
+    ],
+    "npc_dota_hero_obsidian_destroyer": [
+        {
+            "spell_id": "outworld_devourer_arcane_orb_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "outworld_devourer_astral_imprisonment_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "outworld_devourer_equilibrium_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "outworld_devourer_sanitys_eclipse_lua",
+            "cost": 2
+        },
+    ],
+    "npc_dota_hero_puck": [
+        {
+            "spell_id": "puck_illusory_orb_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "puck_waning_rift_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "puck_phase_shift_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "puck_dream_coil_lua",
+            "cost": 2
+        },
+    ],
+    "npc_dota_hero_queenofpain": [
+        {
+            "spell_id": "queen_of_pain_shadow_strike_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "queen_of_pain_blink_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "queen_of_pain_scream_of_pain_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "queen_of_pain_sonic_wave_lua",
+            "cost": 2
+        },
+    ],
+    "npc_dota_hero_silencer": [
+        {
+            "spell_id": "silencer_arcane_curse_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "silencer_glaives_of_wisdom_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "silencer_last_word_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "silencer_global_silence_lua",
+            "cost": 2
+        },
+    ],
+    "npc_dota_hero_skywrath_mage": [
+        {
+            "spell_id": "skywrath_mage_arcane_bolt_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "skywrath_mage_concussive_shot_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "skywrath_mage_ancient_seal_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "skywrath_mage_mystic_flare_lua",
+            "cost": 2
+        },
+    ],
+    "npc_dota_hero_tinker": [
+        {
+            "spell_id": "tinker_laser_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "tinker_heat_seeking_missile_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "tinker_march_of_the_machines_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "tinker_rearm",
+            "cost": 2
+        },
+    ],
+    "npc_dota_hero_windrunner": [
+        {
+            "spell_id": "windranger_shackleshot_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "windranger_powershot_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "windranger_windrun_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "windranger_focus_fire_lua",
             "cost": 2
         },
     ],

@@ -75,11 +75,13 @@
     height: fit-children;
     align: center center;
     flow-children: right-wrap;
+    margin-top: 100px;
 }
 
 .SingleSpellPanel {
     flow-children: down;
     margin-right: 32px;
+    background-color: rgba(0, 0, 0, 0.99);
 }
 
 .CpCostIndicator {
