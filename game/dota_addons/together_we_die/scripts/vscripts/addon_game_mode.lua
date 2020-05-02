@@ -12,6 +12,7 @@ Holdout Example
 
 require("holdout_game_round")
 require("holdout_game_spawner")
+require("holdout_card_points")
 require("libraries/notifications")
 require("libraries/containers")
 
@@ -103,6 +104,9 @@ function CHoldoutGameMode:InitGameMode()
     CustomGameEventManager:RegisterListener("select_difficulty", function(...)
         return self:_PlayerDifficultySelect(...)
     end)
+
+    -- Init card points system
+    holdout_card_points:Init()
 
     -- Register OnThink with the game engine so it is called every 0.25 seconds
     GameRules:GetGameModeEntity():SetThink("OnThink", self, 0.25)

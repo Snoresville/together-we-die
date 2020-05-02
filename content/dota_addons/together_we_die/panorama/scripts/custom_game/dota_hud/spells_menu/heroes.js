@@ -4,10 +4,25 @@ var openSpellsMenu = $("#SpellsMenuOpen");
 var heroes = [
     [
         {
+            "name_id": "npc_dota_hero_abaddon"
+        },
+        {
+            "name_id": "npc_dota_hero_alchemist"
+        },
+        {
+            "name_id": "npc_dota_hero_axe"
+        },
+        {
+            "name_id": "npc_dota_hero_dragon_knight"
+        },
+        {
             "name_id": "npc_dota_hero_legion_commander"
-        }
+        },
     ],
     [
+        {
+            "name_id": "npc_dota_hero_antimage",
+        },
         {
             "name_id": "npc_dota_hero_riki",
         },
@@ -16,6 +31,52 @@ var heroes = [
 ];
 
 var spells = {
+    "npc_dota_hero_abaddon": [
+        {
+            "spell_id": "abaddon_mist_coil_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "abaddon_aphotic_shield_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "abaddon_borrow_time_lua",
+            "cost": 2
+        },
+    ],
+    "npc_dota_hero_alchemist": [
+        {
+            "spell_id": "alchemist_acid_spray_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "alchemist_unstable_concoction_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "alchemist_greevils_greed_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "alchemist_chemical_rage_lua",
+            "cost": 2
+        },
+    ],
+    "npc_dota_hero_axe": [
+        {
+            "spell_id": "axe_berserkers_call_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "axe_counter_helix_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "axe_culling_blade_lua",
+            "cost": 2
+        },
+    ],
     "npc_dota_hero_legion_commander": [
         {
             "spell_id": "legion_commander_overwhelming_odds_lua",
@@ -34,12 +95,48 @@ var spells = {
             "cost": 2
         },
     ],
+    "npc_dota_hero_dragon_knight": [
+        {
+            "spell_id": "dragon_knight_breathe_fire_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "dragon_knight_dragon_tail_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "dragon_knight_dragon_blood_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "dragon_knight_elder_dragon_form_lua",
+            "cost": 2
+        },
+    ],
+    "npc_dota_hero_antimage": [
+        {
+            "spell_id": "antimage_mana_break_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "antimage_blink_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "antimage_spell_shield_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "antimage_mana_void_lua",
+            "cost": 2
+        },
+    ],
     "npc_dota_hero_riki": [
         {
             "spell_id": "riki_permanent_invisibility_lua",
             "cost": 1
         }
-    ]
+    ],
 };
 
 
@@ -96,7 +193,8 @@ function CreateSpellsListingForHero(heroID) {
         var spellCost = spellPanel.FindChildInLayoutFile("SpellCost");
         spellCost.text = individualHeroSpell.cost;
         var spellButton = spellPanel.FindChildInLayoutFile("SingleSpellPanelButton");
-        spellButton.SetPanelEvent("onactivate", Function("BuySpell(\"" + individualHeroSpell.spell_id + "\")"));
+        var spellStringified = JSON.stringify(individualHeroSpell);
+        spellButton.SetPanelEvent("onactivate", Function("BuySpell(\'" + spellStringified + "\')"));
         // Hover events
         spellButton.SetPanelEvent("onmouseover", Function("$.DispatchEvent( \"DOTAShowAbilityTooltip\", \"" + individualHeroSpell.spell_id + "\")"));
         spellButton.SetPanelEvent("onmouseout", function () {
@@ -127,13 +225,14 @@ function CloseSpellsListingForHero() {
     spellsContainer.RemoveAndDeleteChildren();
 }
 
-function BuySpell(spellID) {
-    $.Msg("buy spell");
-    GameEvents.SendCustomGameEventToServer("spells_menu_buy_spell", {"spell_id": spellID});
+function BuySpell(spellJson) {
+    var spellObj = JSON.parse(spellJson);
+    spellObj.player_id = Game.GetLocalPlayerID();
+    GameEvents.SendCustomGameEventToServer("spells_menu_buy_spell", spellObj);
 }
 
 function BuySpellFeedback(event_data) {
-
+    CloseSpellsMenu();
 }
 
 (function () {
