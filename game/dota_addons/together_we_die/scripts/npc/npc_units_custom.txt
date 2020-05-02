@@ -1875,7 +1875,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"creature_fire_breath"	// Ability 1.
-		"Ability2"					"generic_gold_bag_fountain_500"			// Ability 2.
+		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
 		"Ability5"					""			// Ability 5.
@@ -1996,7 +1996,7 @@
 		"Ability1"					"creature_skywrath_mage_mystic_flare_lua"	// Ability 1.
 		"Ability2"					"roshan_spell_block"			// Ability 2.
 		"Ability3"					"tidehunter_kraken_shell"			// Ability 3.
-		"Ability4"					"generic_gold_bag_fountain_500"			// Ability 4.
+		"Ability4"					""			// Ability 4.
 		"Ability5"					""			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
 		"Ability7"					""			// Ability 7 - Extra.
@@ -2826,7 +2826,7 @@
 		"Ability2"					"creature_finest_warrior"			// Ability 2
 		"Ability3"					"creature_tusk_walrus_punch"			// Ability 3
 		"Ability4"					"creature_armor_reduction_aura"			// Ability 4
-		"Ability5"					"generic_gold_bag_fountain_500"
+		"Ability5"					""
 
 		// Armor
 		//----------------------------------------------------------------
@@ -3097,7 +3097,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"creature_enigma_black_hole"			// Ability 1
-		"Ability2"					"generic_gold_bag_fountain_500"			// Ability 2
+		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 
@@ -5039,7 +5039,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"creature_ogre_smash_lua"			// Ability 1
-		"Ability2"					"generic_gold_bag_fountain_200"			// Ability 2
+		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 
@@ -5172,7 +5172,7 @@
 		"Ability1"					"creature_meat_hook"			// Ability 1.
 		"Ability2"					"creature_self_haste"			// Ability 2.
 		"Ability3"					"creature_dismember"			// Ability 3.
-		"Ability4"					"pudge_gold_bag_fountain"			// Ability 4.
+		"Ability4"					""			// Ability 4.
 		"Ability5"					""			// Ability 5.
 		"Ability6"					""		// Ability 6 - Extra.
 		"Ability7"					""			// Ability 7 - Extra.
@@ -6071,7 +6071,7 @@
 		"Ability2"					"creature_spawn_broodmother_eggs"	// Ability 2
 		"Ability3"					"creature_self_haste"				// Ability 3.
 		"Ability4"					"broodmother_incapacitating_bite"	// Ability 4.
-		"Ability5"					"brood_king_gold_bag_fountain"		// Ability 5.
+		"Ability5"					""		// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
 		"Ability7"					""			// Ability 7 - Extra.
 		"Ability8"					""			// Ability 8 - Extra.
