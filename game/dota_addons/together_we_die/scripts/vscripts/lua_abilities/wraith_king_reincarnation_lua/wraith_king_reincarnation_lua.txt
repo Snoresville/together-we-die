@@ -43,7 +43,7 @@
 
 		// Ability Resource
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"120 60 30"
+		"AbilityCooldown"				"120 90 60"
 		"AbilityManaCost"				"160"
 
 		// Damage
@@ -92,12 +92,12 @@
             "08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"str_multiplier"	    "4.0 6.0 8.0"
+				"str_multiplier"	    "20.0 40.0 60.0"
 			}
             "09"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"cooldown_scepter"	    "10.0"
+				"cooldown_scepter"	    "40.0"
 			}
 		}
 	}
