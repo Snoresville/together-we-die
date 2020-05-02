@@ -77,9 +77,8 @@ function CHoldoutGameMode:InitGameMode()
     local MAX_HERO_LEVEL = 350
     local EXP_CONST = 60
     local xpTable = {}
-    local xpRequired;
     for i = 1, MAX_HERO_LEVEL, 1 do
-        xpRequired = i * i * EXP_CONST
+        local xpRequired = i * i * EXP_CONST
 
         -- Levels above 30 will slow down significantly
         if i >= 30 then
