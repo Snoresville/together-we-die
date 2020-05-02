@@ -41,6 +41,12 @@
                 </Button>
             </Panel>
             <Panel id="SpellsMenuHeroesBlock">
+                <Panel id="SpellsMenuHeroesStrengthBlock" class="SpellsMenuHeroesContents">
+                </Panel>
+                <Panel id="SpellsMenuHeroesAgilityBlock" class="SpellsMenuHeroesContents">
+                </Panel>
+                <Panel id="SpellsMenuHeroesIntelligenceBlock" class="SpellsMenuHeroesContents">
+                </Panel>
             </Panel>
             <Panel id="SpellsMenuSpellsBlock">
             </Panel>

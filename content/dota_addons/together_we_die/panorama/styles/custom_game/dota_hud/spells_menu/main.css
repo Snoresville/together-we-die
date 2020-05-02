@@ -17,7 +17,7 @@
 
 #SpellsMenuContents {
     width: 100%;
-    height: fit-children;
+    height: 100%;
     z-index: 10;
     background-color: rgba(0, 0, 0, 0.9);
 }
@@ -57,9 +57,15 @@
 
 #SpellsMenuHeroesBlock {
     width: 100%;
+    flow-children: down;
+    height: 100%;
+}
+
+.SpellsMenuHeroesContents {
+    width: 100%;
     flow-children: right-wrap;
     vertical-align: top;
-    min-height: fit-children;
+    height: fit-children;
     padding: 60px 30px 40px;
     transition: width 0.25s linear 0s;
 }
@@ -68,10 +74,12 @@
     width: 50%;
     height: fit-children;
     align: center center;
+    flow-children: right-wrap;
 }
 
 .SingleSpellPanel {
     flow-children: down;
+    margin-right: 32px;
 }
 
 .CpCostIndicator {

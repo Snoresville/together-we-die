@@ -2,41 +2,81 @@ var customSpellsMenuPanel = $("#SpellsMenuContents");
 var openSpellsMenu = $("#SpellsMenuOpen");
 
 var heroes = [
-    {
-        "name_id": "npc_dota_hero_riki",
-    },
-    {
-        "name_id": "npc_dota_hero_legion_commander"
-    }
+    [
+        {
+            "name_id": "npc_dota_hero_legion_commander"
+        }
+    ],
+    [
+        {
+            "name_id": "npc_dota_hero_riki",
+        },
+    ],
+    [],
 ];
 
 var spells = {
+    "npc_dota_hero_legion_commander": [
+        {
+            "spell_id": "legion_commander_overwhelming_odds_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "legion_commander_press_the_attack_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "legion_commander_moment_of_courage_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "legion_commander_duel_lua",
+            "cost": 2
+        },
+    ],
     "npc_dota_hero_riki": [
         {
             "spell_id": "riki_permanent_invisibility_lua",
             "cost": 1
         }
-    ],
-    "npc_dota_hero_legion_commander": []
+    ]
 };
 
 
-function CreateHeroesListing() {
-    var heroesContainer = customSpellsMenuPanel.FindChildTraverse("SpellsMenuHeroesBlock");
+function CreateHeroesListingForAll() {
+    var heroesContainer;
 
+    // Divide them into categories of Strength, Agility and Intelligence
     var heroPanel;
-    for (var i = 0; i < heroes.length; i++) {
-        heroPanel = $.CreatePanel("Panel", heroesContainer, "heroPanel" + i);
-        heroPanel.BLoadLayoutSnippet("hero");
+    for (var category = 0; category < heroes.length; category++) {
+        if (category === 0) {
+            // Strength
+            heroesContainer = customSpellsMenuPanel.FindChildTraverse("SpellsMenuHeroesStrengthBlock");
+        } else if (category === 1) {
+            // Agility
+            heroesContainer = customSpellsMenuPanel.FindChildTraverse("SpellsMenuHeroesAgilityBlock");
+        } else if (category === 2) {
+            // Intelligence
+            heroesContainer = customSpellsMenuPanel.FindChildTraverse("SpellsMenuHeroesIntelligenceBlock");
+        }
 
-        // Set the picture to display
-        var heroData = heroes[i].name_id;
-        var image = heroPanel.FindChildInLayoutFile("HeroPictureImage");
-        image.heroname = heroData;
-        // Set the onactivate
-        var heroButton = heroPanel.FindChildInLayoutFile("HeroPanelButton");
-        heroButton.SetPanelEvent("onactivate", Function("OpenSpellsListForHero(\"" + heroData + "\")"));
+        for (var i = 0; i < heroes[category].length; i++) {
+            heroPanel = $.CreatePanel("Panel", heroesContainer, "heroPanel" + i);
+            CreateHeroesListing(heroPanel, heroes[category][i]);
+        }
     }
+}
+
+function CreateHeroesListing(heroPanel, hero) {
+    heroPanel.BLoadLayoutSnippet("hero");
+
+    // Set the picture to display
+    var heroData = hero.name_id;
+    var image = heroPanel.FindChildInLayoutFile("HeroPictureImage");
+    image.heroname = heroData;
+    // Set the onactivate
+    var heroButton = heroPanel.FindChildInLayoutFile("HeroPanelButton");
+    heroButton.SetPanelEvent("onactivate", Function("OpenSpellsListForHero(\"" + heroData + "\")"));
 }
 
 function CreateSpellsListingForHero(heroID) {
@@ -59,7 +99,9 @@ function CreateSpellsListingForHero(heroID) {
         spellButton.SetPanelEvent("onactivate", Function("BuySpell(\"" + individualHeroSpell.spell_id + "\")"));
         // Hover events
         spellButton.SetPanelEvent("onmouseover", Function("$.DispatchEvent( \"DOTAShowAbilityTooltip\", \"" + individualHeroSpell.spell_id + "\")"));
-        spellButton.SetPanelEvent("onmouseout", function() { $.DispatchEvent("DOTAHideAbilityTooltip")});
+        spellButton.SetPanelEvent("onmouseout", function () {
+            $.DispatchEvent("DOTAHideAbilityTooltip")
+        });
     }
 }
 
@@ -95,7 +137,7 @@ function BuySpellFeedback(event_data) {
 }
 
 (function () {
-    CreateHeroesListing();
+    CreateHeroesListingForAll();
 
     GameEvents.Subscribe("spells_menu_buy_spell_feedback", BuySpellFeedback);
 })();
