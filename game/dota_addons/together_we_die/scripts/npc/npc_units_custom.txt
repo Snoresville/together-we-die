@@ -5172,7 +5172,7 @@
 		"Ability1"					"creature_meat_hook"			// Ability 1.
 		"Ability2"					"creature_self_haste"			// Ability 2.
 		"Ability3"					"creature_dismember"			// Ability 3.
-		"Ability4"					""			// Ability 4.
+		"Ability4"					"creature_pudge_rot_lua"			// Ability 4.
 		"Ability5"					""			// Ability 5.
 		"Ability6"					""		// Ability 6 - Extra.
 		"Ability7"					""			// Ability 7 - Extra.
