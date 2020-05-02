@@ -25,6 +25,7 @@ function holdout_card_points:_SpellsMenuBuySpell(eventSourceIndex, event_data)
         else
             cardPointAbility = playerHero:AddAbility("card_points_lua")
             cardPointAbility:SetLevel(1)
+            CustomGameEventManager:Send_ServerToPlayer(player, "dota_ability_changed", {})
         end
 
 
@@ -38,20 +39,24 @@ function holdout_card_points:_SpellsMenuBuySpell(eventSourceIndex, event_data)
                 local abilityPointsToSet = playerHero:GetAbilityPoints() + spellLevel
                 playerHero:SetAbilityPoints(abilityPointsToSet)
             end
-            playerHero:RemoveAbility(abilityName)
+            playerHero:RemoveAbilityByHandle(existingAbility)
+            playerHero:CalculateStatBonus()
+            CustomGameEventManager:Send_ServerToPlayer(player, "dota_ability_changed", {})
 
             -- Refund the card points
             cardPointAbility:SetCP(cardPoints + abilityCost)
             Notifications:Top(nPlayerID, {text="#DOTA_HUD_Spells_Menu_Successful_Refund", duration=4, style={color="green"}})
-            CustomGameEventManager:Send_ServerToPlayer(player, "spells_menu_buy_spell_feedback", {}); -- Close the menu
+            CustomGameEventManager:Send_ServerToPlayer(player, "spells_menu_buy_spell_feedback", {}) -- Close the menu
         else
             -- Trying to buy
             if cardPoints >= abilityCost then
                 playerHero:AddAbility(abilityName)
+                playerHero:CalculateStatBonus()
+                CustomGameEventManager:Send_ServerToPlayer(player, "dota_ability_changed", {})
                 -- Deduct card points
                 cardPointAbility:SetCP(cardPoints - abilityCost)
                 Notifications:Top(nPlayerID, {text="#DOTA_HUD_Spells_Menu_Successful_Purchase", duration=4, style={color="green"}})
-                CustomGameEventManager:Send_ServerToPlayer(player, "spells_menu_buy_spell_feedback", {}); -- Close the menu
+                CustomGameEventManager:Send_ServerToPlayer(player, "spells_menu_buy_spell_feedback", {}) -- Close the menu
             else
                 Notifications:Top(nPlayerID, {text="#DOTA_HUD_Spells_Menu_Insufficient_CP", duration=4, style={color="red"}})
             end
