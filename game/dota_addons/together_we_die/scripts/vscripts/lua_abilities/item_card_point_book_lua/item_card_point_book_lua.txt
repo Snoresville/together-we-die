@@ -1,0 +1,49 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Card Point Book
+	//=================================================================================================================
+	"item_card_point_book_lua"
+	{
+		// Ability Technical Aspect
+		// base script folder	: scripts/vscripts
+		// base texture folder	: resource/flash3/images/spellicons
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"1280"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"lua_abilities/item_card_point_book_lua/item_card_point_book_lua"
+		"AbilityTextureName"			"item_tome_of_aghanim"
+        "precache"
+		{
+			"soundfile"	"soundevents/game_sounds_items.vsndevts"
+		}
+
+		"ItemCost"						"10000"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+        "ItemAliases"					"tome"
+        "ItemStackable"					"1"
+        "ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"ItemDisplayCharges"			"1"
+        "ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+            "01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"card_points"			    "1"
+			}
+		}
+	}
+}

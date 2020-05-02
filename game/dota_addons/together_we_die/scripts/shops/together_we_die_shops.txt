@@ -6,6 +6,7 @@
 		"item"		"item_book_of_agility"
 		"item"		"item_book_of_intelligence"
 		"item"      "item_tome_of_xp"
+		"item"      "item_card_point_book_lua"
 	}
 
 	"attributes"
