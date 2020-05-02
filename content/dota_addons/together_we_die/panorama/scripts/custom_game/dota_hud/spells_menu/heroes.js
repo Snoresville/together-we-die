@@ -13,10 +13,55 @@ var heroes = [
             "name_id": "npc_dota_hero_axe"
         },
         {
+            "name_id": "npc_dota_hero_bristleback"
+        },
+        {
+            "name_id": "npc_dota_hero_centaur"
+        },
+        {
+            "name_id": "npc_dota_hero_doom_bringer"
+        },
+        {
             "name_id": "npc_dota_hero_dragon_knight"
         },
         {
+            "name_id": "npc_dota_hero_earthshaker"
+        },
+        {
+            "name_id": "npc_dota_hero_huskar"
+        },
+        {
             "name_id": "npc_dota_hero_legion_commander"
+        },
+        {
+            "name_id": "npc_dota_hero_life_stealer"
+        },
+        {
+            "name_id": "npc_dota_hero_mars"
+        },
+        {
+            "name_id": "npc_dota_hero_omniknight"
+        },
+        {
+            "name_id": "npc_dota_hero_pudge"
+        },
+        {
+            "name_id": "npc_dota_hero_sand_king"
+        },
+        {
+            "name_id": "npc_dota_hero_slardar"
+        },
+        {
+            "name_id": "npc_dota_hero_snapfire"
+        },
+        {
+            "name_id": "npc_dota_hero_sven"
+        },
+        {
+            "name_id": "npc_dota_hero_shredder"
+        },
+        {
+            "name_id": "npc_dota_hero_skeleton_king"
         },
     ],
     [
@@ -77,21 +122,57 @@ var spells = {
             "cost": 2
         },
     ],
-    "npc_dota_hero_legion_commander": [
+    "npc_dota_hero_bristleback": [
         {
-            "spell_id": "legion_commander_overwhelming_odds_lua",
+            "spell_id": "bristleback_viscous_nasal_goo_lua",
             "cost": 1
         },
         {
-            "spell_id": "legion_commander_press_the_attack_lua",
+            "spell_id": "bristleback_quill_spray_lua",
             "cost": 1
         },
         {
-            "spell_id": "legion_commander_moment_of_courage_lua",
+            "spell_id": "bristleback_bristleback_lua",
             "cost": 1
         },
         {
-            "spell_id": "legion_commander_duel_lua",
+            "spell_id": "bristleback_warpath_lua",
+            "cost": 2
+        },
+    ],
+    "npc_dota_hero_centaur": [
+        {
+            "spell_id": "centaur_warrunner_hoof_stomp_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "centaur_warrunner_double_edge_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "centaur_warrunner_return_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "centaur_warrunner_stampede_lua",
+            "cost": 2
+        },
+    ],
+    "npc_dota_hero_doom_bringer": [
+        {
+            "spell_id": "doom_devour_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "doom_infernal_blade_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "doom_scorched_earth_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "doom_doom_lua",
             "cost": 2
         },
     ],
@@ -110,6 +191,228 @@ var spells = {
         },
         {
             "spell_id": "dragon_knight_elder_dragon_form_lua",
+            "cost": 2
+        },
+    ],
+    "npc_dota_hero_earthshaker": [
+        {
+            "spell_id": "earthshaker_fissure_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "earthshaker_aftershock_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "earthshaker_echo_slam_lua",
+            "cost": 2
+        },
+    ],
+    "npc_dota_hero_huskar": [
+        {
+            "spell_id": "huskar_inner_vitality_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "huskar_burning_spear_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "huskar_berserkers_blood_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "huskar_life_break_lua",
+            "cost": 2
+        },
+    ],
+    "npc_dota_hero_legion_commander": [
+        {
+            "spell_id": "legion_commander_overwhelming_odds_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "legion_commander_press_the_attack_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "legion_commander_moment_of_courage_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "legion_commander_duel_lua",
+            "cost": 2
+        },
+    ],
+    "npc_dota_hero_life_stealer": [
+        {
+            "spell_id": "lifestealer_rage_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "lifestealer_feast_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "lifestealer_open_wounds_lua",
+            "cost": 1
+        },
+    ],
+    "npc_dota_hero_mars": [
+        {
+            "spell_id": "mars_spear_of_mars_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "mars_gods_rebuke_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "mars_arena_of_blood_lua",
+            "cost": 2
+        },
+    ],
+    "npc_dota_hero_omniknight": [
+        {
+            "spell_id": "omniknight_purification_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "omniknight_repel_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "omniknight_degen_aura_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "omniknight_guardian_angel_lua",
+            "cost": 2
+        },
+    ],
+    "npc_dota_hero_pudge": [
+        {
+            "spell_id": "pudge_meat_hook_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "pudge_rot_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "pudge_flesh_heap_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "pudge_dismember_lua",
+            "cost": 2
+        },
+    ],
+    "npc_dota_hero_sand_king": [
+        {
+            "spell_id": "sand_king_burrowstrike_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "sand_king_sand_storm_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "sand_king_caustic_finale_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "sand_king_epicenter_lua",
+            "cost": 2
+        },
+    ],
+    "npc_dota_hero_slardar": [
+        {
+            "spell_id": "slardar_guardian_sprint_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "slardar_slithereen_crush_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "slardar_bash_of_the_deep_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "slardar_corrosive_haze_lua",
+            "cost": 2
+        },
+    ],
+    "npc_dota_hero_snapfire": [
+        {
+            "spell_id": "snapfire_scatterblast_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "snapfire_firesnap_cookie_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "snapfire_lil_shredder_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "snapfire_mortimer_kisses_lua",
+            "cost": 2
+        },
+    ],
+    "npc_dota_hero_sven": [
+        {
+            "spell_id": "sven_storm_bolt_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "sven_great_cleave_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "sven_warcry_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "sven_gods_strength_lua",
+            "cost": 2
+        },
+    ],
+    "npc_dota_hero_shredder": [
+        {
+            "spell_id": "timbersaw_whirling_death_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "timbersaw_timber_chain_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "timbersaw_reactive_armor_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "timbersaw_chakram_lua",
+            "cost": 2
+        },
+    ],
+    "npc_dota_hero_skeleton_king": [
+        {
+            "spell_id": "wraith_king_wraithfire_blast_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "wraith_king_vampiric_aura_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "wraith_king_mortal_strike_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "wraith_king_reincarnation_lua",
             "cost": 2
         },
     ],
