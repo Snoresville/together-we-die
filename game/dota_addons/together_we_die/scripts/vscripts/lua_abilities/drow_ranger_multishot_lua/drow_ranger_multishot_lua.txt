@@ -23,6 +23,9 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 
@@ -44,25 +47,50 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_modifier"		"-5 25 55 85"
+				"damage_modifier"		"85 110 135 160"
 				"LinkedSpecialBonus"			"special_multishot_damage_modifier_lua"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"damage_modifier_tooltip"		"95 125 155 185"
+				"damage_modifier_tooltip"		"85 110 135 160"
 				"LinkedSpecialBonus"			"special_multishot_damage_modifier_lua"
 			}
 			"03"
 			{	
 				"var_type"					"FIELD_FLOAT"
-				"agi_multiplier"			"1.5"
+				"agi_multiplier"			"1.5 2.0 2.5 3.0"
 				"LinkedSpecialBonus"			"special_multishot_agi_multiplier_lua"
 			}
-			"04"
+            "04"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"multi_shot_bonus_range"		"400"
+				"var_type"					"FIELD_INTEGER"
+				"arrow_count"				"8"
+			}
+            "05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"arrow_slow_duration"		"1.25 2 2.75 3.5"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"arrow_width"					"90"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"arrow_speed"					"1200"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"arrow_range_multiplier"	"2"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"arrow_angle"					"50"
 			}
 		}
 	}

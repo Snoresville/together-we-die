@@ -27,47 +27,11 @@ end
 --------------------------------------------------------------------------------
 -- Initializations
 function modifier_drow_ranger_multishot_lua:OnCreated( kv )
-	-- references
-	self.damage_modifier = self:GetAbility():GetSpecialValueFor( "damage_modifier" )
-	self.bonus_range = self:GetAbility():GetSpecialValueFor( "multi_shot_bonus_range" )
-	self.agi_multiplier = self:GetAbility():GetSpecialValueFor( "agi_multiplier" )
-
-	self.parent = self:GetParent()
-
-	self.use_modifier = true
-
-	if not IsServer() then return end
-	-- Talent tree
-	local special_multishot_agi_multiplier_lua = self:GetCaster():FindAbilityByName( "special_multishot_agi_multiplier_lua" )
-	if ( special_multishot_agi_multiplier_lua and special_multishot_agi_multiplier_lua:GetLevel() ~= 0 ) then
-		self.agi_multiplier = self.agi_multiplier + special_multishot_agi_multiplier_lua:GetSpecialValueFor( "value" )
-	end
-	self.projectile_name = self.parent:GetRangedProjectileName()
-	self.projectile_speed = self.parent:GetProjectileSpeed()
+	self.speed = self:GetAbility():GetSpecialValueFor( "arrow_speed" )
 end
 
 function modifier_drow_ranger_multishot_lua:OnRefresh( kv )
-	-- references
-	self.damage_modifier = self:GetAbility():GetSpecialValueFor( "damage_modifier" )
-	self.bonus_range = self:GetAbility():GetSpecialValueFor( "multi_shot_bonus_range" )
-	self.agi_multiplier = self:GetAbility():GetSpecialValueFor( "agi_multiplier" )
-	if not IsServer() then return end
-	-- Talent tree
-	local special_multishot_agi_multiplier_lua = self:GetCaster():FindAbilityByName( "special_multishot_agi_multiplier_lua" )
-	if ( special_multishot_agi_multiplier_lua and special_multishot_agi_multiplier_lua:GetLevel() ~= 0 ) then
-		self.agi_multiplier = self.agi_multiplier + special_multishot_agi_multiplier_lua:GetSpecialValueFor( "value" )
-	end
-	-- Talent tree
-	local special_multishot_damage_modifier_lua = self:GetCaster():FindAbilityByName( "special_multishot_damage_modifier_lua" )
-	if ( special_multishot_damage_modifier_lua and special_multishot_damage_modifier_lua:GetLevel() ~= 0 ) then
-		self.damage_modifier = self.damage_modifier + special_multishot_damage_modifier_lua:GetSpecialValueFor( "value" )
-	end
-end
-
-function modifier_drow_ranger_multishot_lua:OnRemoved()
-end
-
-function modifier_drow_ranger_multishot_lua:OnDestroy()
+	self.speed = self:GetAbility():GetSpecialValueFor( "arrow_speed" )
 end
 
 --------------------------------------------------------------------------------
@@ -75,8 +39,6 @@ end
 function modifier_drow_ranger_multishot_lua:DeclareFunctions()
 	local funcs = {
 		MODIFIER_EVENT_ON_ATTACK,
-		MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
-		MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE,
 	}
 
 	return funcs
@@ -84,7 +46,7 @@ end
 
 function modifier_drow_ranger_multishot_lua:OnAttack( params )
 	if not IsServer() then return end
-	if params.attacker~=self.parent then return end
+	if params.attacker~=self:GetParent() then return end
 
 	-- not proc for instant attacks
 	if params.no_attack_cooldown then return end
@@ -93,144 +55,139 @@ function modifier_drow_ranger_multishot_lua:OnAttack( params )
 	if params.target:GetTeamNumber()==params.attacker:GetTeamNumber() then return end
 
 	-- not proc if break
-	if self.parent:PassivesDisabled() then return end
+	if self:GetParent():PassivesDisabled() then return end
 
 	-- not proc if on cooldown
 	if not self:GetAbility():IsFullyCastable() then return end
 
-	-- not proc if attack can't use attack modifiers
-	--if not params.process_procs then return end
-
-	-- not proc on multi shot attacks, even if it can use attack modifier, to avoid endless recursive call and crash
-	if self.multi_shot then return end
-
-	-- multi shot shot
-	if self.use_modifier then
-		self:SplitShotModifier( params.target )
-	else
-		self:SplitShotNoModifier( params.target )
-	end
+	self:InitArrow(params.target)
 
 	-- cooldown
 	self:GetAbility():UseResources( false, false, true )
 end
 
-function modifier_drow_ranger_multishot_lua:GetModifierDamageOutgoing_Percentage()
-	if not IsServer() then return end
-	
-	-- if uses modifier
-	if self.multi_shot then
-		return self.damage_modifier
-	end
+function modifier_drow_ranger_multishot_lua:InitArrow(target)
+	-- references
+	local count = self:GetAbility():GetSpecialValueFor( "arrow_count" )
+	local range = self:GetAbility():GetSpecialValueFor( "arrow_range_multiplier" )
+	self.width = self:GetAbility():GetSpecialValueFor( "arrow_width" )
+	-- self.angle = self:GetAbility():GetSpecialValueFor( "arrow_angle" )
+	self.angle = 33.33
 
-	-- if not use modifier
-	if self:GetAbility().multi_shot_attack then
-		return self.damage_modifier
-	end
-end
-
-function modifier_drow_ranger_multishot_lua:GetModifierPreAttack_BonusDamage()
 	if not IsServer() then return end
 
-	local bonus_damage = self.agi_multiplier * self.parent:GetAgility()
-	-- if uses modifier
-	if self.multi_shot then
-		return bonus_damage
+	-- none provided in kv file. shame on you volvo
+	local vision = 100
+	local delay = 0.1
+	self.max_waves = 2
+	local wave_interval = 0.25
+	self.arrow_delay = 0.033
+
+	-- calculate stuff
+	self.arrows = count/self.max_waves
+	self.wave_delay = wave_interval - self.arrow_delay*(self.arrows-1)
+
+	-- get projectile main direction
+	self.direction = target:GetOrigin()-self:GetParent():GetOrigin()
+	self.direction.z = 0
+	self.direction = self.direction:Normalized()
+
+	-- set states
+	self.state = STATE_SALVO
+	self.current_arrows = 0
+	self.current_wave = 0
+	self.frost = false
+
+	-- check frost arrows ability
+	local ability = self:GetParent():FindAbilityByName( "drow_ranger_frost_arrows_lua" )
+	if ability and ability:GetLevel()>0 then
+		self.frost = true
 	end
 
-	-- if not use modifier
-	if self:GetAbility().multi_shot_attack then
-		return bonus_damage
+	-- precache projectile
+	local caster = self:GetCaster()
+	local projectile_name
+	if self.frost then
+		projectile_name = "particles/units/heroes/hero_drow/drow_multishot_proj_linear_proj.vpcf"
+	else
+		projectile_name = "particles/units/heroes/hero_drow/drow_base_attack_linear_proj.vpcf"
 	end
+
+	self.info = {
+		Source = caster,
+		Ability = self:GetAbility(),
+		vSpawnOrigin = caster:GetAttachmentOrigin( caster:ScriptLookupAttachment( "attach_attack1" ) ),
+
+		bDeleteOnHit = true,
+
+		iUnitTargetTeam = self:GetAbility():GetAbilityTargetTeam(),
+		iUnitTargetType = self:GetAbility():GetAbilityTargetType(),
+		iUnitTargetFlags = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,
+
+		EffectName = projectile_name,
+		fDistance = caster:Script_GetAttackRange() * range,
+		fStartRadius = self.width,
+		fEndRadius = self.width,
+		-- vVelocity = projectile_direction * self.speed,
+
+		bProvidesVision = true,
+		iVisionRadius = vision,
+		iVisionTeamNumber = caster:GetTeamNumber()
+	}
+	-- ProjectileManager:CreateLinearProjectile(info)
+
+	-- Start interval
+	self:StartIntervalThink( delay )
 end
+
 --------------------------------------------------------------------------------
--- Helper
---[[
-	NOTE:
-	- PerformAttack will use projectile particle from items, even if it actually not using attack modifiers
-	- Split shot without attack modifier uses regular tracking projectile, then perform instant attacks on projectile hit
-	- Therefore, SplitShotModifier and SplitShotNoModifier are separated JUST BECAUSE of projectile effects.
-]]
-function modifier_drow_ranger_multishot_lua:SplitShotModifier( target )
-	-- get radius
-	local radius = self.parent:Script_GetAttackRange() + self.bonus_range
+-- Interval Effects
+function modifier_drow_ranger_multishot_lua:OnIntervalThink()
+	if self.current_wave > self.max_waves then
+		self:StartIntervalThink(-1)
+		return
+	end
+	-- count arrows
+	if self.current_arrows<self.arrows then
+		self:StartIntervalThink( self.arrow_delay )
+	else
+		self.current_arrows = 0
+		self.current_wave = self.current_wave+1
 
-	-- find other target units
-	local enemies = FindUnitsInRadius(
-		self.parent:GetTeamNumber(),	-- int, your team number
-		self.parent:GetOrigin(),	-- point, center point
-		nil,	-- handle, cacheUnit. (not known)
-		radius,	-- float, radius. or use FIND_UNITS_EVERYWHERE
-		DOTA_UNIT_TARGET_TEAM_ENEMY,	-- int, team filter
-		DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_COURIER,	-- int, type filter
-		DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,	-- int, flag filter
-		0,	-- int, order filter
-		false	-- bool, can grow cache
-	)
-
-	-- get targets
-	for _,enemy in pairs(enemies) do
-		-- not target itself
-		if enemy~=target then
-
-			-- perform attack
-			self.multi_shot = true
-			self.parent:PerformAttack(
-				enemy, -- hTarget
-				false, -- bUseCastAttackOrb
-				self.use_modifier, -- bProcessProcs
-				true, -- bSkipCooldown
-				false, -- bIgnoreInvis
-				true, -- bUseProjectile
-				false, -- bFakeAttack
-				false -- bNeverMiss
-			)
-			self.multi_shot = false
-		end
+		self:StartIntervalThink( self.wave_delay )
+		return
 	end
 
-	-- play effects if splitshot
-	local sound_cast = "Hero_Medusa.AttackSplit"
-	EmitSoundOn( sound_cast, self.parent )
+	-- calculate relative angle of current arrow against cast direction
+	local step = self.angle/(self.arrows-1)
+	local angle = -self.angle/2 + self.current_arrows*step
+
+	-- calculate actual direction
+	local projectile_direction = RotatePosition( Vector(0,0,0), QAngle( 0, angle, 0 ), self.direction )
+
+	-- launch projectile
+	self.info.vVelocity = projectile_direction * self.speed
+	self.info.ExtraData = {
+		frost = self.frost,
+	}
+	ProjectileManager:CreateLinearProjectile(self.info)
+
+	self:PlayEffects()
+
+	self.current_arrows = self.current_arrows+1
 end
 
-function modifier_drow_ranger_multishot_lua:SplitShotNoModifier( target )
-	-- get radius
-	local radius = self.parent:Script_GetAttackRange() + self.bonus_range
-
-	-- find other target units
-	local enemies = FindUnitsInRadius(
-		self.parent:GetTeamNumber(),	-- int, your team number
-		self.parent:GetOrigin(),	-- point, center point
-		nil,	-- handle, cacheUnit. (not known)
-		radius,	-- float, radius. or use FIND_UNITS_EVERYWHERE
-		DOTA_UNIT_TARGET_TEAM_ENEMY,	-- int, team filter
-		DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_COURIER,	-- int, type filter
-		DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,	-- int, flag filter
-		0,	-- int, order filter
-		false	-- bool, can grow cache
-	)
-
-	-- get targets
-	for _,enemy in pairs(enemies) do
-		-- not target itself
-		if enemy~=target then
-			-- launch projectile
-			local info = {
-				Target = enemy,
-				Source = self.parent,
-				Ability = self:GetAbility(),	
-				
-				EffectName = self.projectile_name,
-				iMoveSpeed = self.projectile_speed,
-				bDodgeable = true,                           -- Optional
-				-- bIsAttack = true,                                -- Optional
-			}
-			ProjectileManager:CreateTrackingProjectile(info)
-		end
+--------------------------------------------------------------------------------
+-- Graphics & Animations
+function modifier_drow_ranger_multishot_lua:PlayEffects()
+	-- Get Resources
+	local sound_cast
+	if self.frost then
+		sound_cast = "Hero_DrowRanger.Multishot.FrostArrows"
+	else
+		sound_cast = "Hero_DrowRanger.Multishot.Attack"
 	end
 
-	-- play effects if splitshot
-	local sound_cast = "Hero_Medusa.AttackSplit"
-	EmitSoundOn( sound_cast, self.parent )
+	-- Create Sound
+	EmitSoundOn( sound_cast, self:GetCaster() )
 end
