@@ -32,14 +32,7 @@ end
 
 function modifier_riki_permanent_invisibility_lua:OnRefresh(kv)
     -- references
-    self.reactivation_time = self:GetAbility():GetSpecialValueFor("reactivation_time")
-    self.ability_reveal = self:GetAbility():GetSpecialValueFor("ability_reveal")
-    self.attack_reveal = self:GetAbility():GetSpecialValueFor("attack_reveal")
-
-    if IsServer() then
-        -- Start interval
-        self:StartIntervalThink(self.reactivation_time)
-    end
+    self:OnCreated(kv)
 end
 
 function modifier_riki_permanent_invisibility_lua:OnRemoved()
