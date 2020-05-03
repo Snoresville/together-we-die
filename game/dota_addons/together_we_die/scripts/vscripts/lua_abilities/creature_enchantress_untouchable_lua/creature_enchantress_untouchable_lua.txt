@@ -44,17 +44,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"slow_attack_speed"		"-120"
+				"slow_attack_speed"		"-180"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor_reduction"		"-17"
+				"armor_reduction"		"-20"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"slow_duration"			"9"
+				"slow_duration"			"13"
 			}
 		}
 	}
