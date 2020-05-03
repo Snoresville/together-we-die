@@ -51,7 +51,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"attack_damage"			"100 200 400 700 1200"
+				"attack_damage"			"100 200 300 400 500"
 			}
 			"02"
 			{
