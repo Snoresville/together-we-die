@@ -5356,6 +5356,7 @@
 #base "../vscripts/lua_abilities/creature_treant_king_armor_aura_lua/creature_treant_king_armor_aura_lua.txt"
 #base "../vscripts/lua_abilities/creature_furion_force_of_nature_lua/creature_furion_force_of_nature_lua.txt"
 #base "../vscripts/lua_abilities/creature_pudge_rot_lua/creature_pudge_rot_lua.txt"
+#base "../vscripts/lua_abilities/creature_phantom_assassin_phantom_strike_lua/creature_phantom_assassin_phantom_strike_lua.txt"
 
 #base "../vscripts/lua_abilities/special/drow_ranger/special_frost_arrow_agi_multiplier_lua.txt"
 #base "../vscripts/lua_abilities/special/drow_ranger/special_frost_arrow_bite_interval_lua.txt"
