@@ -53,6 +53,11 @@
             	"var_type"				"FIELD_FLOAT"
             	"agi_multiplier"			"0.02"
             }
+			"04"
+            {
+            	"var_type"				"FIELD_INTEGER"
+                "max_reflection_pct"	"70 75 80 85"
+            }
 		}
 	}
 }

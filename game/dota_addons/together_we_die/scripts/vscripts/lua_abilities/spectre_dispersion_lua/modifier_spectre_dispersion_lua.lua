@@ -15,6 +15,7 @@ end
 function modifier_spectre_dispersion_lua:OnCreated(kv)
     -- references
     self.damage_reflection_pct = self:GetAbility():GetSpecialValueFor("damage_reflection_pct")
+    self.max_reflection_pct = self:GetAbility():GetSpecialValueFor("max_reflection_pct")
     self.radius = self:GetAbility():GetSpecialValueFor("radius")
     self.agi_multiplier = self:GetAbility():GetSpecialValueFor("agi_multiplier")
 
@@ -23,6 +24,7 @@ end
 function modifier_spectre_dispersion_lua:OnRefresh(kv)
     -- references
     self.damage_reflection_pct = self:GetAbility():GetSpecialValueFor("damage_reflection_pct")
+    self.max_reflection_pct = self:GetAbility():GetSpecialValueFor("max_reflection_pct")
     self.radius = self:GetAbility():GetSpecialValueFor("radius")
     self.agi_multiplier = self:GetAbility():GetSpecialValueFor("agi_multiplier")
 end
@@ -47,8 +49,7 @@ function modifier_spectre_dispersion_lua:GetModifierIncomingDamage_Percentage(pa
     end
 
     local parent = self:GetParent()
-    local MAX_REDUCTION = 99
-    local reduction = math.min(self.damage_reflection_pct + math.floor(parent:GetAgility() * self.agi_multiplier), MAX_REDUCTION)
+    local reduction = math.min(self.damage_reflection_pct + math.floor(parent:GetAgility() * self.agi_multiplier), self.max_reflection_pct)
 
     -- Reflect all that damage back to everyone in the vicinity
     local damageToDeal = math.floor(params.original_damage * (reduction / 100))
