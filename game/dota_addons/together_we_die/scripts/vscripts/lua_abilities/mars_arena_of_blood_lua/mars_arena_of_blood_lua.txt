@@ -66,7 +66,7 @@
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"spear_damage"		"150 200 250"
+				"spear_damage"		"500 1500 3000"
 			}
 			"05"
 			{
@@ -106,7 +106,7 @@
 			"12"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"str_multiplier"	"6.0 9.0 12.0"
+				"str_multiplier"	"10.0 15.0 20.0"
 			}
 		}
 	}
