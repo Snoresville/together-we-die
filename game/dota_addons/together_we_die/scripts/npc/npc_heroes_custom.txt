@@ -735,6 +735,7 @@
 
 		"Ability1"				"mars_spear_of_mars_lua"
 		"Ability2"				"mars_gods_rebuke_lua"
+		"Ability3"				"mars_bulwark_lua"
 		"Ability4"		""
 		"Ability5"		""
 		"Ability6"				"mars_arena_of_blood_lua"

@@ -359,6 +359,10 @@ var spells = {
             "cost": 1
         },
         {
+            "spell_id": "mars_bulwark_lua",
+            "cost": 1
+        },
+        {
             "spell_id": "mars_arena_of_blood_lua",
             "cost": 2
         },
