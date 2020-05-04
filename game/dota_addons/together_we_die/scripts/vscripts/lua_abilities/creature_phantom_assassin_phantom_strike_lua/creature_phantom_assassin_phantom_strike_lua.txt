@@ -67,12 +67,12 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"break_duration"			"0.8"
+				"break_duration"			"1.2"
 			}
             "05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"0.3"
+				"stun_duration"			"0.2"
 			}
 		}
 	}
