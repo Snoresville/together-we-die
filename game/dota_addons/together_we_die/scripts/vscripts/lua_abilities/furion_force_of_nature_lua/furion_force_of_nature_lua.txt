@@ -59,7 +59,12 @@
 			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"int_multiplier"				"1.5 2.0 2.5 3.0"
+				"health_int_multiplier"				"2.5 4.5 6.5 8.5"
+			}
+            "08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_int_multiplier"				"0.2 0.4 0.6 0.8"
 			}
 		}
 	}

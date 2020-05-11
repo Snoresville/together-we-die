@@ -19,6 +19,8 @@ function furion_force_of_nature_lua:OnSpellStart()
 	self.area_of_effect = self:GetSpecialValueFor( "area_of_effect" )
 	self.max_treants = self:GetSpecialValueFor( "max_treants" )
 	self.duration = self:GetSpecialValueFor( "duration" )
+	self.health_int_multiplier = self:GetSpecialValueFor( "health_int_multiplier" )
+	self.damage_int_multiplier = self:GetSpecialValueFor( "damage_int_multiplier" )
 
 	local vTargetPosition = self:GetCursorPosition()
 	local trees = GridNav:GetAllTreesAroundPoint( vTargetPosition, self.area_of_effect, true )
@@ -38,16 +40,17 @@ function furion_force_of_nature_lua:OnSpellStart()
 	end
 
 	local nTreantsToSpawn = math.min( self.max_treants, nTreeCount )
-	local treant_int_buff = self:GetCaster():GetIntellect() * self:GetSpecialValueFor( "int_multiplier" )
+	local treant_hp_buff = self:GetCaster():GetIntellect() * self.health_int_multiplier
+	local treant_dmg_buff = self:GetCaster():GetIntellect() * self.damage_int_multiplier
 	while nTreantsToSpawn > 0 do
 		local abilityLevel = self:GetLevel()
 		local hTreant = CreateUnitByName( "npc_dota_furion_holdout_treant_" .. abilityLevel, vTargetPosition, true, self:GetCaster(), self:GetCaster():GetPlayerOwner(), self:GetCaster():GetTeamNumber() )
 		if hTreant ~= nil then
 			hTreant:SetControllableByPlayer( self:GetCaster():GetPlayerID(), false )
 			hTreant:SetOwner( self:GetCaster() )
-			local treant_max_dmg = hTreant:GetBaseDamageMax() + treant_int_buff
-			local treant_min_dmg = hTreant:GetBaseDamageMin() + treant_int_buff
-			local treant_hp = hTreant:GetBaseMaxHealth() + treant_int_buff * 3
+			local treant_max_dmg = hTreant:GetBaseDamageMax() + treant_dmg_buff
+			local treant_min_dmg = hTreant:GetBaseDamageMin() + treant_dmg_buff
+			local treant_hp = hTreant:GetBaseMaxHealth() + treant_hp_buff
 			hTreant:SetBaseDamageMax( treant_max_dmg )
 			hTreant:SetBaseDamageMin( treant_min_dmg )
 			hTreant:SetBaseMaxHealth( treant_hp )
