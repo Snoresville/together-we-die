@@ -899,6 +899,10 @@ var spells = {
     ],
     "npc_dota_hero_furion": [
         {
+            "spell_id": "furion_sprout_lua",
+            "cost": 1
+        },
+        {
             "spell_id": "furion_force_of_nature_lua",
             "cost": 1
         },

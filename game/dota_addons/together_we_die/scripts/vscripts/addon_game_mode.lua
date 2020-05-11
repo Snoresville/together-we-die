@@ -13,8 +13,11 @@ Holdout Example
 require("holdout_game_round")
 require("holdout_game_spawner")
 require("holdout_card_points")
+require("stats")
 require("libraries/notifications")
 require("libraries/containers")
+
+_G.GAME_VERSION = "1.0"
 
 if CHoldoutGameMode == nil then
     CHoldoutGameMode = class({})
@@ -261,7 +264,7 @@ function CHoldoutGameMode:OnThink()
                 self._nRoundNumber = self._nRoundNumber + 1
                 if self._nRoundNumber > #self._vRounds then
                     self._nRoundNumber = 1
-                    GameRules:MakeTeamLose(DOTA_TEAM_BADGUYS)
+                    self:_SetWinner(DOTA_TEAM_GOODGUYS)
                 else
                     -- Report round status
                     self._flPrepTimeEnd = GameRules:GetGameTime() + self._flPrepTimeBetweenRounds
@@ -534,7 +537,7 @@ function CHoldoutGameMode:_CheckForDefeat()
         self._lives = self._lives - 1
         if self._lives <= 0 then
             self._entAncient:ForceKill(true)
-            GameRules:MakeTeamLose(DOTA_TEAM_GOODGUYS)
+            self:_SetWinner(DOTA_TEAM_BADGUYS)
             return
         else
             -- Restart round and respawn buildings
@@ -568,7 +571,7 @@ function CHoldoutGameMode:_ThinkPrepTime()
         end
 
         if self._nRoundNumber > #self._vRounds then
-            GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
+            self:_SetWinner(DOTA_TEAM_GOODGUYS)
             return false
         end
         -- Read item drop config
@@ -587,6 +590,15 @@ function CHoldoutGameMode:_ThinkPrepTime()
         self._vRounds[self._nRoundNumber]:Precache()
     end
     self._entPrepTimeQuest:SetTextReplaceValue(QUEST_TEXT_REPLACE_VALUE_CURRENT_VALUE, self._flPrepTimeEnd - GameRules:GetGameTime())
+end
+
+function CHoldoutGameMode:_SetWinner(team)
+    if not Gamerules:IsCheatMode() then
+        -- Send stats
+        Stats.SubmitMatch(GAME_VERSION, team, function(data)
+        end)
+    end
+    GameRules:SetGameWinner(team)
 end
 
 function CHoldoutGameMode:_ThinkLootExpiry()

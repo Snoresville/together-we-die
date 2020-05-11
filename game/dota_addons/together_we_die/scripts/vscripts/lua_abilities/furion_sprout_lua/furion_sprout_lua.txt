@@ -1,0 +1,83 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Furion: Sprout Lua
+	//=================================================================================================================
+	"furion_sprout_lua"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"FightRecapLevel"				"1"
+		"BaseClass"					"ability_lua"
+		"AbilityTextureName"				"furion_sprout_lua"
+		"ScriptFile"					"lua_abilities/furion_sprout_lua/furion_sprout_lua"
+		"FightRecapLevel"				"1"
+        "MaxLevel"						"4"
+		"precache"
+        {
+            "soundfile"	"soundevents/game_sounds_heroes/game_sounds_lone_druid.vsndevts"
+            "soundfile"	"soundevents/game_sounds_heroes/game_sounds_furion.vsndevts"
+        	"particle"	"particles/units/heroes/hero_lone_druid/lone_druid_bear_entangle.vpcf"
+        	"particle"	"particles/units/heroes/hero_furion/furion_sprout.vpcf"
+        }
+
+		// Unit Targeting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+        "SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+        "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"625 700 775 850"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"11 10 9 8"
+		"AbilityManaCost"				"100 120 140 160"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"vision_range"			"500"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3 4 5 6"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range_tooltip"				"625 700 775 850"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"radius"				"150.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"int_multiplier"		"3.0 4.0 5.0 6.0"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"interval"		        "0.2"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"root_radius"			"325.0"
+			}
+		}
+	}
+}
