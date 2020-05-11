@@ -71,6 +71,8 @@ function modifier_phantom_lancer_juxtapose_lua:OnAttackLanded( params )
 					local unit_name = self.original_hero:GetUnitName()
 					local origin = target:GetAbsOrigin() + RandomVector(100)
 					local modifyIllusion = function ( illusion )
+						illusion:SetHealth(self:GetParent():GetHealth())
+						illusion:SetMana(self:GetParent():GetMana())
 						illusion:SetControllableByPlayer( self.original_hero:GetPlayerID(), false )
 						illusion:SetPlayerID( self.original_hero:GetPlayerID() )
 
