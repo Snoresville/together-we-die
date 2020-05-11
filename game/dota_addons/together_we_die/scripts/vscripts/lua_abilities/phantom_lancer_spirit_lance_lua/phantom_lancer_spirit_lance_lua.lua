@@ -141,8 +141,6 @@ function phantom_lancer_spirit_lance_lua:CreateIllusionOnTarget( target )
 	local illusion_incoming_damage = self:GetSpecialValueFor( "illusion_incoming_damage" )
 
 	local modifyIllusion = function ( illusion )
-		illusion:SetHealth(caster:GetHealth())
-		illusion:SetMana(caster:GetMana())
 		illusion:SetControllableByPlayer( caster:GetPlayerID(), false )
 		illusion:SetPlayerID( caster:GetPlayerID() )
 
@@ -190,6 +188,10 @@ function phantom_lancer_spirit_lance_lua:CreateIllusionOnTarget( target )
 				illusion:AddItem(newItem)
 			end
 		end
+
+		-- Set health
+		illusion:SetHealth(caster:GetHealth())
+		illusion:SetMana(caster:GetMana())
 	end
 
 	local origin = target:GetAbsOrigin() + RandomVector(100)

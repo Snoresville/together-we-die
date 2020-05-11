@@ -58,8 +58,6 @@ function antimage_blink_lua:CreateIllusionOnOrigin(origin)
     local illusion_incoming_damage = self:GetSpecialValueFor("illusion_incoming_damage")
 
     local modifyIllusion = function(illusion)
-        illusion:SetHealth(caster:GetHealth())
-        illusion:SetMana(caster:GetMana())
         illusion:SetControllableByPlayer(caster:GetPlayerID(), false)
         illusion:SetPlayerID(caster:GetPlayerID())
 
@@ -107,6 +105,10 @@ function antimage_blink_lua:CreateIllusionOnOrigin(origin)
                 illusion:AddItem(newItem)
             end
         end
+
+        -- Set health
+        illusion:SetHealth(caster:GetHealth())
+        illusion:SetMana(caster:GetMana())
     end
 
     -- Create unit

@@ -20,12 +20,13 @@ function modifier_phantom_lancer_juxtapose_lua:OnCreated( kv )
 	self.illusion_duration = ability:GetSpecialValueFor( "illusion_duration" )
 	self.illusion_outgoing_damage = ability:GetSpecialValueFor( "illusion_outgoing_damage" )
 	self.illusion_incoming_damage = ability:GetSpecialValueFor( "illusion_incoming_damage" )
+	self.parent = self:GetParent()
 	if self:GetParent():IsIllusion() then
 		self.proc_chance = ability:GetSpecialValueFor( "illusion_proc_chance" )
 		self.original_hero = self:GetParent():GetPlayerOwner():GetAssignedHero()
 	else
 		self.proc_chance = ability:GetSpecialValueFor( "hero_proc_chance" )
-		self.original_hero = self:GetParent()
+		self.original_hero = self.parent
 	end
 	self.original_ability = self.original_hero:FindAbilityByName( ability:GetAbilityName() )
 end
@@ -38,6 +39,7 @@ function modifier_phantom_lancer_juxtapose_lua:OnRefresh( kv )
 	self.illusion_duration = ability:GetSpecialValueFor( "illusion_duration" )
 	self.illusion_outgoing_damage = ability:GetSpecialValueFor( "illusion_outgoing_damage" )
 	self.illusion_incoming_damage = ability:GetSpecialValueFor( "illusion_incoming_damage" )
+	self.parent = self:GetParent()
 	if self:GetParent():IsIllusion() then
 		self.proc_chance = ability:GetSpecialValueFor( "illusion_proc_chance" )
 	else
@@ -71,8 +73,6 @@ function modifier_phantom_lancer_juxtapose_lua:OnAttackLanded( params )
 					local unit_name = self.original_hero:GetUnitName()
 					local origin = target:GetAbsOrigin() + RandomVector(100)
 					local modifyIllusion = function ( illusion )
-						illusion:SetHealth(self:GetParent():GetHealth())
-						illusion:SetMana(self:GetParent():GetMana())
 						illusion:SetControllableByPlayer( self.original_hero:GetPlayerID(), false )
 						illusion:SetPlayerID( self.original_hero:GetPlayerID() )
 
@@ -128,6 +128,10 @@ function modifier_phantom_lancer_juxtapose_lua:OnAttackLanded( params )
 								illusion:AddItem(newItem)
 							end
 						end
+
+						-- Set health
+						illusion:SetHealth(self.parent:GetHealth())
+						illusion:SetMana(self.parent:GetMana())
 					end
 
 					-- Create unit

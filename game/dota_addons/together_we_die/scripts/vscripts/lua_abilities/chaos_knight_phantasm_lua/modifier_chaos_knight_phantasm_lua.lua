@@ -76,7 +76,7 @@ function modifier_chaos_knight_phantasm_lua:OnCreated( kv )
 end
 
 function modifier_chaos_knight_phantasm_lua:OnRefresh( kv )
-	
+
 end
 
 function modifier_chaos_knight_phantasm_lua:OnDestroy( kv )
@@ -137,9 +137,9 @@ function modifier_chaos_knight_phantasm_lua:PlayEffects( extra, location )
 
 		local sound_cast = "Hero_ChaosKnight.Phantasm"
 		EmitSoundOn( sound_cast, self:GetParent() )
-		
-		if extra then 
-			local sound_cast_2 = "Hero_ChaosKnight.Phantasm.Plus" 
+
+		if extra then
+			local sound_cast_2 = "Hero_ChaosKnight.Phantasm.Plus"
 			EmitSoundOn( sound_cast_2, self:GetParent() )
 		end
 end
@@ -202,8 +202,6 @@ function modifier_chaos_knight_phantasm_lua:CreateIllusionAndAdd( caster, locati
 		end
 
 		-- make illusion
-		illusion:SetHealth(caster:GetHealth())
-		illusion:SetMana(caster:GetMana())
 		illusion:MakeIllusion()
 		illusion:SetControllableByPlayer( caster:GetPlayerID(), false ) -- (playerID, bSkipAdjustingPosition)
 		illusion:SetPlayerID( caster:GetPlayerID() )
@@ -220,6 +218,10 @@ function modifier_chaos_knight_phantasm_lua:CreateIllusionAndAdd( caster, locati
 			}
 		)
 		table.insert( ability.illusions, illusion )
+
+		-- Set health
+		illusion:SetHealth(caster:GetHealth())
+		illusion:SetMana(caster:GetMana())
 	end
 
 	-- Create unit
