@@ -1074,10 +1074,23 @@ var spells = {
         },
     ],
     "strength": [],
-    "agility": [],
+    "agility": [
+        {
+            "spell_id": "pure_strike_lua",
+            "cost": 4
+        },
+    ],
     "intellect": [
         {
             "spell_id": "intelligence_magic_scale_lua",
+            "cost": 4
+        },
+        {
+            "spell_id": "summoning_stone_lua",
+            "cost": 4
+        },
+        {
+            "spell_id": "auto_laguna_blade_lua",
             "cost": 4
         },
     ],
