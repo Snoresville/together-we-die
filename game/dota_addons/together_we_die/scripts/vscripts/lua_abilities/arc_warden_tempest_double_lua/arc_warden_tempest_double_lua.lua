@@ -73,6 +73,7 @@ function arc_warden_tempest_double_lua:OnSpellStart()
 		end
 
 		double:SetHealth(caster:GetHealth())
+		double:SetMana(caster:GetMana())
 
 		double:SetMaximumGoldBounty(0)
 		double:SetMinimumGoldBounty(0)
