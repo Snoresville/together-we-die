@@ -13,7 +13,7 @@
 		"ScriptFile"					"lua_abilities/summoning_stone_lua/summoning_stone_lua"
 		"AbilityTextureName"			"summoning_stone_lua"
 		"FightRecapLevel"				"2"
-		"MaxLevel"						"11"
+		"MaxLevel"						"4"
 		
 		// Ability General
 		//-------------------------------------------------------------------------------------------------------------
@@ -43,22 +43,27 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"100 250 400 550 700 950 1100 1350 1500 1650 1800"
+				"bonus_damage"			"100 200 400 800"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"4 5 6 7 8 9 10 11 12 13 14"
+				"bonus_armor"			"4 8 12 16"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"1000 2000 3000 4000 5000 6000 7000 8000 9000 10000 12000"
+				"bonus_health"			"1000 2000 4000 8000"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"primary_stat_multiplier"			"0.01 0.012 0.014 0.016 0.018 0.02 0.022 0.024 0.026 0.028 0.03"
+				"health_int_multiplier"		"2.5 5.0 7.5 10.0"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_int_multiplier"		"0.01 0.02 0.03 0.04"
 			}
 		}
 	}
