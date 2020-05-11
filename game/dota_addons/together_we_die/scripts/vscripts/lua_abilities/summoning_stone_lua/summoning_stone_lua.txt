@@ -63,7 +63,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_int_multiplier"		"0.01 0.02 0.03 0.04"
+				"damage_int_multiplier"		"0.1 0.2 0.3 0.4"
 			}
 		}
 	}
