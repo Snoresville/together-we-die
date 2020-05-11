@@ -3,15 +3,17 @@
     height: 100%;
 }
 
+.SpellsMenuPrecache {
+    visibility: collapse;
+}
+
 #SpellsMenuContents,
-#SpellsMenuOpen
-{
+#SpellsMenuOpen {
     visibility: collapse;
 }
 
 #SpellsMenuContents.Visible,
-#SpellsMenuOpen.Visible
-{
+#SpellsMenuOpen.Visible {
     visibility: visible;
 }
 
@@ -96,6 +98,18 @@
 #HeroImage {
     width: 64px;
     height: 36px;
+    align: center center;
+    z-index: 2;
+}
+
+.SpecialPanel {
+    width: 64px;
+    height: 64px;
+}
+
+#SpecialImage {
+    width: 64px;
+    height: 64px;
     align: center center;
     z-index: 2;
 }

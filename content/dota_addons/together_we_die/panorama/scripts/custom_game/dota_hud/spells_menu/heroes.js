@@ -166,6 +166,24 @@ var heroes = [
     ],
 ];
 
+var specials = [
+    {
+        "name_id": "strength",
+        "name": "Strength",
+        "image": "strength.png"
+    },
+    {
+        "name_id": "agility",
+        "name": "Agility",
+        "image": "agility.png"
+    },
+    {
+        "name_id": "intellect",
+        "name": "Intelligence",
+        "image": "intellect.png"
+    },
+];
+
 var spells = {
     "npc_dota_hero_abaddon": [
         {
@@ -1055,6 +1073,14 @@ var spells = {
             "cost": 2
         },
     ],
+    "strength": [],
+    "agility": [],
+    "intellect": [
+        {
+            "spell_id": "intelligence_magic_scale_lua",
+            "cost": 4
+        },
+    ],
 };
 
 
@@ -1080,6 +1106,12 @@ function CreateHeroesListingForAll() {
             CreateHeroesListing(heroPanel, heroes[category][i]);
         }
     }
+
+    var specialsContainer = customSpellsMenuPanel.FindChildTraverse("SpellsMenuSpecialsBlock");
+    for (var specialCategory = 0; specialCategory < specials.length; specialCategory++) {
+        var specialPanel = $.CreatePanel("Panel", specialsContainer, "specialPanel" + specialCategory);
+        CreateSpecialsListing(specialPanel, specials[specialCategory]);
+    }
 }
 
 function CreateHeroesListing(heroPanel, hero) {
@@ -1092,6 +1124,17 @@ function CreateHeroesListing(heroPanel, hero) {
     // Set the onactivate
     var heroButton = heroPanel.FindChildInLayoutFile("HeroPanelButton");
     heroButton.SetPanelEvent("onactivate", Function("OpenSpellsListForHero(\"" + heroData + "\")"));
+}
+
+function CreateSpecialsListing(specialsPanel, special) {
+    specialsPanel.BLoadLayoutSnippet("special");
+
+    // Set the picture to display
+    var image = specialsPanel.FindChildInLayoutFile("SpecialPictureImage");
+    image.SetImage("file://{images}/spells_menu/" + special.image);
+    // Set the onactivate
+    var specialButton = specialsPanel.FindChildInLayoutFile("SpecialPanelButton");
+    specialButton.SetPanelEvent("onactivate", Function("OpenSpellsListForHero(\"" + special.name_id + "\")"));
 }
 
 function CreateSpellsListingForHero(heroID) {

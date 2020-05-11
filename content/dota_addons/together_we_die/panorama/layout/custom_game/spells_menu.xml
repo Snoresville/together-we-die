@@ -19,6 +19,16 @@
                 </Button>
             </Panel>
         </snippet>
+        <snippet name="special">
+            <Panel class="SpecialPanel">
+                <Button id="SpecialPanelButton" onactivate="OpenSpellsListForHero()">
+                    <Panel id="HeroBorder"/>
+                    <Panel id="SpecialImage">
+                        <Image id="SpecialPictureImage"/>
+                    </Panel>
+                </Button>
+            </Panel>
+        </snippet>
         <snippet name="spell">
             <Panel class="SingleSpellPanel">
                 <Button id="SingleSpellPanelButton" onactivate="BuySpell()">
@@ -28,7 +38,7 @@
                     </Panel>
                 </Button>
                 <Label class="CpCostIndicator" text="#DOTA_HUD_Spells_Menu_Spell_Cost"/>
-                <Label class="CpCostIndicator" id="SpellCost" />
+                <Label class="CpCostIndicator" id="SpellCost"/>
             </Panel>
         </snippet>
     </snippets>
@@ -47,6 +57,8 @@
                 </Panel>
                 <Panel id="SpellsMenuHeroesIntelligenceBlock" class="SpellsMenuHeroesContents">
                 </Panel>
+                <Panel id="SpellsMenuSpecialsBlock" class="SpellsMenuHeroesContents">
+                </Panel>
             </Panel>
             <Panel id="SpellsMenuSpellsBlock">
             </Panel>
@@ -55,6 +67,12 @@
             <Button id="SpellsMenuOpenButton" onactivate="OpenSpellsMenu();">
                 <Label text="#DOTA_HUD_Spells_Menu_Open_Button"/>
             </Button>
+        </Panel>
+
+        <Panel class="SpellsMenuPrecache" hittest="false">
+            <Image src="file://{images}/spells_menu/strength.png"/>
+            <Image src="file://{images}/spells_menu/agility.png"/>
+            <Image src="file://{images}/spells_menu/intellect.png"/>
         </Panel>
     </Panel>
 </root>
