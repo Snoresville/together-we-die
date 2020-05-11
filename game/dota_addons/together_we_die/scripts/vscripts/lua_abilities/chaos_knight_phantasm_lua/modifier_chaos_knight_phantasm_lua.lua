@@ -202,6 +202,8 @@ function modifier_chaos_knight_phantasm_lua:CreateIllusionAndAdd( caster, locati
 		end
 
 		-- make illusion
+		illusion:SetHealth(caster:GetHealth())
+		illusion:SetMana(caster:GetMana())
 		illusion:MakeIllusion()
 		illusion:SetControllableByPlayer( caster:GetPlayerID(), false ) -- (playerID, bSkipAdjustingPosition)
 		illusion:SetPlayerID( caster:GetPlayerID() )
