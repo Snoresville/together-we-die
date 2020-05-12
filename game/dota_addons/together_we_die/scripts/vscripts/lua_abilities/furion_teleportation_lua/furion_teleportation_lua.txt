@@ -1,0 +1,54 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Furion: Teleportation
+	//=================================================================================================================
+	"furion_teleportation_lua"
+	{
+        // General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"BaseClass"					    "ability_lua"
+		"MaxLevel"						"4"
+		"AbilityTextureName"			"furion_teleportation_lua"
+		"ScriptFile"					"lua_abilities/furion_teleportation_lua/furion_teleportation_lua"
+
+        // Unit Targeting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"3 3 3 3"
+		"AbilityCooldown"				"50 40 30 20"
+		"AbilityManaCost"				"50 50 50 50"
+
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_furion.vsndevts"
+			"particle"	"particles/units/heroes/hero_furion/furion_teleport.vpcf"
+			"particle"	"particles/units/heroes/hero_furion/furion_teleport_end.vpcf"
+			"particle"	"particles/units/heroes/hero_furion/furion_teleport_end_team.vpcf"
+		}
+			
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"int_multiplier"		"8.0 11.0 14.0 17.0"
+			}
+            "02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"		        "325"
+			}
+		}
+	}
+}

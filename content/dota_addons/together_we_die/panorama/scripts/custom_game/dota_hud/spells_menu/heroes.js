@@ -921,6 +921,10 @@ var spells = {
             "cost": 1
         },
         {
+            "spell_id": "furion_teleportation_lua",
+            "cost": 1
+        },
+        {
             "spell_id": "furion_force_of_nature_lua",
             "cost": 1
         },

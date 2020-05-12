@@ -5480,6 +5480,7 @@
 #base "../vscripts/lua_abilities/omniknight_guardian_angel_lua/omniknight_guardian_angel_lua.txt"
 
 #base "../vscripts/lua_abilities/furion_sprout_lua/furion_sprout_lua.txt"
+#base "../vscripts/lua_abilities/furion_teleportation_lua/furion_teleportation_lua.txt"
 #base "../vscripts/lua_abilities/furion_force_of_nature_lua/furion_force_of_nature_lua.txt"
 #base "../vscripts/lua_abilities/furion_wrath_of_nature_lua/furion_wrath_of_nature_lua.txt"
 

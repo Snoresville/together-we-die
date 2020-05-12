@@ -616,6 +616,7 @@
 		"MovementSpeed"		"250"
 
         "Ability1"              "furion_sprout_lua"
+        "Ability2"              "furion_teleportation_lua"
 		"Ability3"				"furion_force_of_nature_lua"
 		"Ability4"		""
 		"Ability5"		""
