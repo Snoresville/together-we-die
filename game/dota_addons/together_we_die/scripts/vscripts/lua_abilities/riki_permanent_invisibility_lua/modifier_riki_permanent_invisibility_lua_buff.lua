@@ -71,8 +71,8 @@ end
 -- Status Effects
 function modifier_riki_permanent_invisibility_lua_buff:CheckState()
 	local state = {
-		[MODIFIER_STATE_INVISIBLE] = true,
-		[MODIFIER_STATE_TRUESIGHT_IMMUNE] = self.true_sight_immuned,
+		[MODIFIER_STATE_INVISIBLE] = (not self:GetParent():PassivesDisabled()),
+		[MODIFIER_STATE_TRUESIGHT_IMMUNE] = (self.true_sight_immuned and not self:GetParent():PassivesDisabled()),
 	}
 
 	return state
