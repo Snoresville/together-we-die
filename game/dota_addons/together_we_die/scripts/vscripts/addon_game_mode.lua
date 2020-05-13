@@ -487,6 +487,7 @@ function CHoldoutGameMode:_SetWinner(team)
     if not Gamerules:IsCheatMode() then
         -- Send stats
         Stats.SubmitMatch(GAME_VERSION, self._difficultyScore, team, function(data)
+            GameRules:SetGameWinner(team)
         end)
     end
     GameRules:SetGameWinner(team)
