@@ -511,7 +511,10 @@ var spells = {
         },
         {
             "spell_id": "timbersaw_chakram_lua",
-            "cost": 2
+            "cost": 2,
+            "associated_spells": [
+                "timbersaw_return_chakram_lua"
+            ]
         },
     ],
     "npc_dota_hero_skeleton_king": [
@@ -985,7 +988,10 @@ var spells = {
     "npc_dota_hero_puck": [
         {
             "spell_id": "puck_illusory_orb_lua",
-            "cost": 1
+            "cost": 1,
+            "associated_spells": [
+                "puck_ethereal_jaunt_lua"
+            ],
         },
         {
             "spell_id": "puck_waning_rift_lua",
