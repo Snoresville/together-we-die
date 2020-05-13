@@ -23,6 +23,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 
 		// Ability Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -40,17 +41,22 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"blade_dance_crit_chance"	"25 30 35 40"
+				"blade_dance_crit_chance"	"20"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"blade_dance_crit_mult"		"180"
+				"blade_dance_crit_mult"		"250"
 			}
             "03"
 			{
+				"var_type"					"FIELD_FLOAT"
+				"crit_chance_agi_multiplier"		    "0.02 0.04 0.06 0.08"
+			}
+            "04"
+			{
 				"var_type"					"FIELD_INTEGER"
-				"agi_multiplier"		    "0.005 0.01 0.015 0.02"
+				"max_crit_chance"	        "90"
 			}
 		}
 	}
