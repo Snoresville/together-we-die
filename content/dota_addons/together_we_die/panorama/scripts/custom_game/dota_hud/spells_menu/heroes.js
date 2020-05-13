@@ -621,10 +621,6 @@ var spells = {
             "cost": 1
         },
         {
-            "spell_id": "medusa_split_shot_uses_modifiers_lua",
-            "cost": 3
-        },
-        {
             "spell_id": "medusa_stone_gaze_lua",
             "cost": 2
         },
@@ -1078,6 +1074,10 @@ var spells = {
     ],
     "strength": [],
     "agility": [
+        {
+            "spell_id": "medusa_split_shot_uses_modifiers_lua",
+            "cost": 3
+        },
         {
             "spell_id": "pure_strike_lua",
             "cost": 4

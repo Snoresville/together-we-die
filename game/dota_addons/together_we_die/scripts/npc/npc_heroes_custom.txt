@@ -1067,7 +1067,7 @@
 		"Ability1"				"medusa_mystic_snake_lua"
 		"Ability2"				"medusa_mana_shield_lua"
 		"Ability3"				"medusa_split_shot_lua"
-		"Ability4"				"medusa_split_shot_uses_modifiers_lua"
+		"Ability4"		""
 		"Ability5"		""
 		"Ability6"				"medusa_stone_gaze_lua"
 		"Ability10"		""
