@@ -132,6 +132,7 @@ function CHoldoutGameMode:_ReadGameConfiguration()
     self._bRestoreMPAfterRound = kv.RestoreMPAfterRound or false
     self._bRewardForTowersStanding = kv.RewardForTowersStanding or false
     self._bUseReactiveDifficulty = kv.UseReactiveDifficulty or false
+    self._difficultyScore = 1
 
     self._nTowerRewardAmount = tonumber(kv.TowerRewardAmount or 0)
     self._nTowerScalingRewardPerRound = tonumber(kv.TowerScalingRewardPerRound or 0)
@@ -313,34 +314,33 @@ end
 
 function CHoldoutGameMode:_CalculateAndApplyDifficulty()
     local difficultyNumberOfVotes = self:_GetDifficultyNumberOfVotes()
-    local difficultyScore = 1
     local startingGold = 0
     local difficultyAbility = nil
     if difficultyNumberOfVotes ~= 0 then
-        difficultyScore = math.floor(self:_GetDifficultyVote() / difficultyNumberOfVotes)
+        self._difficultyScore = math.floor(self:_GetDifficultyVote() / difficultyNumberOfVotes)
     end
 
     local playerCount = PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_GOODGUYS)
 
     local difficultyTitle = "DOTA_HUD_Difficulty_Easy"
-    if difficultyScore == 1 then
+    if self._difficultyScore == 1 then
         difficultyAbility = self._entAncient:AddAbility("easy_difficulty_lua")
         self._nTowerRewardAmount = self._nTowerRewardAmount * 1.35
         self._nTowerScalingRewardPerRound = self._nTowerScalingRewardPerRound * 1.35
         startingGold = math.floor(10000 / playerCount)
         GameRules:GetGameModeEntity():SetLoseGoldOnDeath(false)
-    elseif difficultyScore == 2 then
+    elseif self._difficultyScore == 2 then
         difficultyAbility = self._entAncient:AddAbility("normal_difficulty_lua")
         difficultyTitle = "DOTA_HUD_Difficulty_Normal"
         startingGold = math.floor(5000 / playerCount)
-    elseif difficultyScore == 3 then
+    elseif self._difficultyScore == 3 then
         difficultyAbility = self._entAncient:AddAbility("hard_difficulty_lua")
         difficultyTitle = "DOTA_HUD_Difficulty_Hard"
         self._lives = 2
         self._nTowerRewardAmount = math.floor(self._nTowerRewardAmount * 0.75)
         self._nTowerScalingRewardPerRound = math.floor(self._nTowerScalingRewardPerRound * 0.75)
         startingGold = math.floor(2000 / playerCount)
-    elseif difficultyScore == 4 then
+    elseif self._difficultyScore == 4 then
         difficultyAbility = self._entAncient:AddAbility("impossible_difficulty_lua")
         difficultyTitle = "DOTA_HUD_Difficulty_Impossible"
         self._lives = 1
@@ -363,7 +363,7 @@ function CHoldoutGameMode:_CalculateAndApplyDifficulty()
 
                 -- Set level to (16 / difficulty / playerCount) if it is enemy team
                 -- If higher difficulty, bad guy starts with lower level
-                local badGuyLevel = math.min(math.floor(14 / difficultyScore / playerCount), 1)
+                local badGuyLevel = math.min(math.floor(14 / self._difficultyScore / playerCount), 1)
                 for i = 0, badGuyLevel do
                     player_hero:HeroLevelUp(false)
                 end
@@ -373,7 +373,7 @@ function CHoldoutGameMode:_CalculateAndApplyDifficulty()
         end
     end
 
-    self:_SetExpAndRespawn(difficultyScore)
+    self:_SetExpAndRespawn()
 
     local event_data = {
         difficulty_title = difficultyTitle,
@@ -382,10 +382,9 @@ function CHoldoutGameMode:_CalculateAndApplyDifficulty()
     CustomGameEventManager:Send_ServerToAllClients("show_difficulty_vote_outcome", event_data)
 end
 
-function CHoldoutGameMode:_SetExpAndRespawn(difficultyScore)
-    difficultyScore = difficultyScore or 1
-    local goldTickTime = 0.5 * difficultyScore
-    local respawnTime = 9.5 * difficultyScore
+function CHoldoutGameMode:_SetExpAndRespawn()
+    local goldTickTime = 0.5 * self._difficultyScore
+    local respawnTime = 9.5 * self._difficultyScore
 
     GameRules:GetGameModeEntity():SetThink("OnGoldInterval", self, goldTickTime)
     GameRules:GetGameModeEntity():SetFixedRespawnTime(respawnTime)
@@ -487,7 +486,7 @@ end
 function CHoldoutGameMode:_SetWinner(team)
     if not Gamerules:IsCheatMode() then
         -- Send stats
-        Stats.SubmitMatch(GAME_VERSION, team, function(data)
+        Stats.SubmitMatch(GAME_VERSION, self._difficultyScore, team, function(data)
         end)
     end
     GameRules:SetGameWinner(team)

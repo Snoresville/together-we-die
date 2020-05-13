@@ -7,13 +7,14 @@ if IsInToolsMode() then
     Stats.host = "http://127.0.0.1:8080/api/v1/"
 end
 
-function Stats.SubmitMatch(version, winner, callback)
+function Stats.SubmitMatch(version, difficulty, winner, callback)
     local data = {}
     data.version = version
     data.players = {}
     data.map = GetMapName()
     data.gameLength = math.ceil(GameRules:GetGameTime())
     data.winnerTeam = winner
+    data.difficulty = difficulty
 
     for nPlayerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
         if PlayerResource:HasSelectedHero(nPlayerID) then
