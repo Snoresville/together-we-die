@@ -128,6 +128,9 @@ var heroes = [
             "name_id": "npc_dota_hero_enchantress",
         },
         {
+            "name_id": "npc_dota_hero_invoker",
+        },
+        {
             "name_id": "npc_dota_hero_leshrac",
         },
         {
@@ -854,6 +857,21 @@ var spells = {
         {
             "spell_id": "enchantress_impetus_lua",
             "cost": 2
+        },
+    ],
+    "npc_dota_hero_invoker": [
+        {
+            "spell_id": "invoker_invoke_lua",
+            "associated_learnables": [
+                "invoker_quas_lua",
+                "invoker_wex_lua",
+                "invoker_exort_lua",
+            ],
+            "associated_spells": [
+                "invoker_empty_1_lua",
+                "invoker_empty_2_lua"
+            ],
+            "cost": 5
         },
     ],
     "npc_dota_hero_leshrac": [
