@@ -86,6 +86,16 @@
 		"ItemRecipe"					"0"
 	}
 
+    "item_black_king_bar"
+	{
+		"ItemPurchasable"				"0"
+	}
+	"item_recipe_black_king_bar"
+	{
+		"ItemPurchasable"				"0"
+		"ItemRecipe"					"0"
+	}
+
     "item_tome_of_knowledge"
 	{
 		"ItemPurchasable"				"0"
