@@ -309,9 +309,6 @@ end
 function CHoldoutGameMode:_BeginGameSetup()
     -- Start difficulty vote
     CustomGameEventManager:Send_ServerToTeam(DOTA_TEAM_GOODGUYS, "show_difficulty_vote", {})
-
-    -- Check for any alliance types
-    self:_CheckForAlliance()
 end
 
 function CHoldoutGameMode:_CalculateAndApplyDifficulty()
@@ -406,111 +403,6 @@ function CHoldoutGameMode:OnHeroLevelUp(event)
         abilityPointsToGive = 1
     end
     hero:SetAbilityPoints(unspendAP + abilityPointsToGive)
-end
-
-function CHoldoutGameMode:_CheckForAlliance()
-    local MIN_COMBO_FOR_ALLIANCE = 3
-    local allianceCount = {
-        ["female"] = 0,
-        ["warrior"] = 0,
-        ["nature"] = 0,
-    }
-    local foundAllianceHeroes = {
-        ["female"] = {},
-        ["warrior"] = {},
-        ["nature"] = {},
-    }
-    local femaleAllianceHeroes = {
-        ["npc_dota_hero_phanthom_assassin"] = true,
-        ["npc_dota_hero_windrunner"] = true,
-        ["npc_dota_hero_crystal_maiden"] = true,
-        ["npc_dota_hero_drow_ranger"] = true,
-        ["npc_dota_hero_legion_commander"] = true,
-        ["npc_dota_hero_lina"] = true,
-        ["npc_dota_hero_dark_willow"] = true,
-        ["npc_dota_hero_luna"] = true,
-        ["npc_dota_hero_medusa"] = true,
-        ["npc_dota_hero_queenofpain"] = true,
-    }
-
-    local warriorAllianceHeroes = {
-        ["npc_dota_hero_legion_commander"] = true,
-        ["npc_dota_hero_mars"] = true,
-        ["npc_dota_hero_axe"] = true,
-        ["npc_dota_hero_sven"] = true,
-        ["npc_dota_hero_juggernaut"] = true,
-        ["npc_dota_hero_centaur"] = true,
-        ["npc_dota_hero_skeleton_king"] = true,
-        ["npc_dota_hero_phantom_lancer"] = true,
-        ["npc_dota_hero_sand_king"] = true,
-        ["npc_dota_hero_huskar"] = true,
-        ["npc_dota_hero_bristleback"] = true,
-    }
-
-    local natureAllianceHeroes = {
-        ["npc_dota_hero_windrunner"] = true,
-        ["npc_dota_hero_furion"] = true,
-        ["npc_dota_hero_enchantress"] = true,
-        ["npc_dota_hero_ursa"] = true,
-        ["npc_dota_hero_leshrac"] = true,
-        ["npc_dota_hero_dark_willow"] = true,
-    }
-
-    local scaleAllianceHeroes = {
-        ["npc_dota_hero_slardar"] = true,
-        ["npc_dota_hero_medusa"] = true,
-        ["npc_dota_hero_slark"] = true,
-    }
-
-    for nPlayerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
-        if PlayerResource:GetTeam(nPlayerID) == DOTA_TEAM_GOODGUYS then
-            if not PlayerResource:HasSelectedHero(nPlayerID) then
-                -- hero not selected
-            else
-                local hero = PlayerResource:GetSelectedHeroEntity(nPlayerID)
-                local heroName = hero:GetUnitName()
-
-                if femaleAllianceHeroes[heroName] then
-                    foundAllianceHeroes["female"][nPlayerID] = hero:entindex()
-                    allianceCount["female"] = allianceCount["female"] + 1
-                end
-
-                if warriorAllianceHeroes[heroName] then
-                    foundAllianceHeroes["warrior"][nPlayerID] = hero:entindex()
-                    allianceCount["warrior"] = allianceCount["warrior"] + 1
-                end
-
-                if natureAllianceHeroes[heroName] then
-                    foundAllianceHeroes["nature"][nPlayerID] = hero:entindex()
-                    allianceCount["nature"] = allianceCount["nature"] + 1
-                end
-            end
-        end
-    end
-
-    if allianceCount["female"] >= MIN_COMBO_FOR_ALLIANCE then
-        for _, hero in pairs(foundAllianceHeroes["female"]) do
-            local heroEntity = EntIndexToHScript(hero)
-            local femaleAllianceAbility = heroEntity:AddAbility("alliance_female")
-            femaleAllianceAbility:SetLevel(1)
-        end
-    end
-
-    if allianceCount["warrior"] >= MIN_COMBO_FOR_ALLIANCE then
-        for _, hero in pairs(foundAllianceHeroes["warrior"]) do
-            local heroEntity = EntIndexToHScript(hero)
-            local warriorAllianceAbility = heroEntity:AddAbility("alliance_warrior")
-            warriorAllianceAbility:SetLevel(1)
-        end
-    end
-
-    if allianceCount["nature"] >= MIN_COMBO_FOR_ALLIANCE then
-        for _, hero in pairs(foundAllianceHeroes["nature"]) do
-            local heroEntity = EntIndexToHScript(hero)
-            local natureAllianceAbility = heroEntity:AddAbility("alliance_nature")
-            natureAllianceAbility:SetLevel(1)
-        end
-    end
 end
 
 function CHoldoutGameMode:_RefreshPlayers()
