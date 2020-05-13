@@ -108,18 +108,22 @@ end
 
 --------------------------------------------------------------------------------
 -- Ability Events
-function puck_illusory_orb_lua:OnUpgrade()
+function puck_illusory_orb_lua:OnHeroCalculateStatBonus()
     if not self.jaunt then
         -- init
         self.jaunt = self:GetCaster():FindAbilityByName("puck_ethereal_jaunt_lua")
-        if not self.jaunt then
-            self.jaunt = self:GetCaster():AddAbility("puck_ethereal_jaunt_lua")
-        end
-        self.jaunt.projectiles = self.projectiles
-        self.jaunt:SetActivated(false)
-    end
 
-    self.jaunt:UpgradeAbility(true)
+        if self.jaunt ~= nil then
+            self.jaunt.projectiles = self.projectiles
+            self.jaunt:SetActivated(false)
+        end
+    end
+end
+
+function puck_illusory_orb_lua:OnUpgrade()
+    if self.jaunt and self.jaunt ~= nil then
+        self.jaunt:SetLevel(self:GetLevel())
+    end
 end
 
 --------------------------------------------------------------------------------
