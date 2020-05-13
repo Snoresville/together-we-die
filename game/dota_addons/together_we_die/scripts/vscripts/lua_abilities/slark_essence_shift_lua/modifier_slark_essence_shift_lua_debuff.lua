@@ -43,5 +43,5 @@ end
 
 function modifier_slark_essence_shift_lua_debuff:GetModifierPhysicalArmorBonus()
 	local MAX_ARMOR_REDUCTION = -150
-	return math.max(self:GetStackCount() * -self.armor_loss, MAX_ARMOR_REDUCTION)
+	return math.max(math.floor(self:GetStackCount() * -self.armor_loss), MAX_ARMOR_REDUCTION)
 end

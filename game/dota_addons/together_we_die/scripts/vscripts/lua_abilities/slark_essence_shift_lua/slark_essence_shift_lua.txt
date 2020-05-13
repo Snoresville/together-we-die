@@ -49,8 +49,8 @@
 			}
 			"02"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"armor_loss"				"1"
+				"var_type"				"FIELD_FLOAT"
+				"armor_loss"				"0.5"
 			}
 			"03"
 			{
