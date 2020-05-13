@@ -11,6 +11,7 @@ function holdout_card_points:_SpellsMenuBuySpell(eventSourceIndex, event_data)
     local nPlayerID = event_data.player_id
     local abilityName = event_data.spell_id
     local abilityCost = event_data.cost
+    local associatedAbilities = event_data.associated_spells
 
     if PlayerResource:HasSelectedHero(nPlayerID) then
         local player = PlayerResource:GetPlayer(nPlayerID)
@@ -40,6 +41,12 @@ function holdout_card_points:_SpellsMenuBuySpell(eventSourceIndex, event_data)
                 playerHero:SetAbilityPoints(abilityPointsToSet)
             end
             playerHero:RemoveAbilityByHandle(existingAbility)
+            if associatedAbilities then
+                -- Remove associated abilities
+                for _, associatedAbilityName in pairs(associatedAbilities) do
+                    playerHero:RemoveAbility(associatedAbilityName)
+                end
+            end
             playerHero:CalculateStatBonus()
             CustomGameEventManager:Send_ServerToPlayer(player, "dota_ability_changed", {})
 
@@ -53,6 +60,13 @@ function holdout_card_points:_SpellsMenuBuySpell(eventSourceIndex, event_data)
                 local newAbility = playerHero:AddAbility(abilityName)
                 newAbility:SetLevel(0)
                 newAbility:MarkAbilityButtonDirty()
+                if associatedAbilities then
+                    -- Remove associated abilities
+                    for _, associatedAbilityName in pairs(associatedAbilities) do
+                        local associatedAbility = playerHero:AddAbility(associatedAbilityName)
+                        associatedAbility:MarkAbilityButtonDirty()
+                    end
+                end
                 playerHero:CalculateStatBonus()
                 CustomGameEventManager:Send_ServerToPlayer(player, "dota_ability_changed", {})
                 -- Deduct card points

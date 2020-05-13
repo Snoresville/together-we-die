@@ -817,11 +817,10 @@ var spells = {
             "cost": 1
         },
         {
-            "spell_id": "dark_willow_bedlam_lua",
-            "cost": 2
-        },
-        {
             "spell_id": "dark_willow_terrorize_lua",
+            "associated_spells": [
+                "dark_willow_bedlam_lua"
+            ],
             "cost": 2
         },
     ],
