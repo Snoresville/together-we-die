@@ -3,104 +3,118 @@ modifier_lifestealer_rage_lua = class({})
 --------------------------------------------------------------------------------
 -- Classifications
 function modifier_lifestealer_rage_lua:IsHidden()
-	return false
+    return false
 end
 
 function modifier_lifestealer_rage_lua:IsDebuff()
-	return false
+    return false
 end
 
 function modifier_lifestealer_rage_lua:IsPurgable()
-	return false
+    return false
 end
 
 --------------------------------------------------------------------------------
 -- Initializations
-function modifier_lifestealer_rage_lua:OnCreated( kv )
-	-- references
-	self.as_bonus = self:GetAbility():GetSpecialValueFor( "attack_speed_bonus" ) + self:GetCaster():GetStrength() * self:GetAbility():GetSpecialValueFor("str_multiplier") -- special value
-	if IsServer() then
-		self:PlayEffects()
-	end
+function modifier_lifestealer_rage_lua:OnCreated(kv)
+    -- references
+    self.as_bonus = self:GetAbility():GetSpecialValueFor("attack_speed_bonus") + math.floor(self:GetCaster():GetStrength() * self:GetAbility():GetSpecialValueFor("as_str_multiplier")) -- special value
+    self.dmg_bonus = math.floor(self:GetCaster():GetStrength() * self:GetAbility():GetSpecialValueFor("dmg_str_multiplier")) -- special value
+
+    if self:GetCaster():GetStrength() > (self:GetCaster():GetIntellect() + self:GetCaster():GetAgility()) then
+        self.immunity = true
+    else
+        self.immunity = false
+    end
+
+    if IsServer() then
+        self:PlayEffects()
+    end
 end
 
-function modifier_lifestealer_rage_lua:OnRefresh( kv )
-	-- references
-	self.as_bonus = self:GetAbility():GetSpecialValueFor( "attack_speed_bonus" ) + self:GetCaster():GetStrength() * self:GetAbility():GetSpecialValueFor("str_multiplier") -- special value
+function modifier_lifestealer_rage_lua:OnRefresh(kv)
+    -- references
+    self.as_bonus = self:GetAbility():GetSpecialValueFor("attack_speed_bonus") + math.floor(self:GetCaster():GetStrength() * self:GetAbility():GetSpecialValueFor("as_str_multiplier")) -- special value
+    self.dmg_bonus = math.floor(self:GetCaster():GetStrength() * self:GetAbility():GetSpecialValueFor("dmg_str_multiplier")) -- special value
 end
 
-function modifier_lifestealer_rage_lua:OnDestroy( kv )
+function modifier_lifestealer_rage_lua:OnDestroy(kv)
 
 end
 
 --------------------------------------------------------------------------------
 -- Modifier Effects
 function modifier_lifestealer_rage_lua:DeclareFunctions()
-	local funcs = {
-		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
-	}
+    local funcs = {
+        MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
+        MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
+    }
 
-	return funcs
+    return funcs
 end
 
 function modifier_lifestealer_rage_lua:GetModifierAttackSpeedBonus_Constant()
-	return self.as_bonus
+    return self.as_bonus
+end
+
+function modifier_lifestealer_rage_lua:GetModifierPreAttack_BonusDamage(params)
+    return self.dmg_bonus
 end
 
 --------------------------------------------------------------------------------
 -- Status Effects
 function modifier_lifestealer_rage_lua:CheckState()
-	local state = {
-		[MODIFIER_STATE_MAGIC_IMMUNE] = true,
-	}
+    local state = {
+        [MODIFIER_STATE_MAGIC_IMMUNE] = self.immunity,
+    }
 
-	return state
+    return state
 end
 
 --------------------------------------------------------------------------------
 -- Graphics & Animations
 function modifier_lifestealer_rage_lua:PlayEffects()
-	-- Get Resources
-	local particle_cast = "particles/units/heroes/hero_life_stealer/life_stealer_rage.vpcf"
+    -- Get Resources
+    local particle_cast = "particles/units/heroes/hero_life_stealer/life_stealer_rage.vpcf"
 
-	-- Create Particle
-	local effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
-	ParticleManager:SetParticleControlEnt(
-		effect_cast,
-		0,
-		self:GetParent(),
-		PATTACH_POINT_FOLLOW,
-		"attach_attack1",
-		self:GetParent():GetOrigin(), -- unknown
-		true -- unknown, true
-	)
-	ParticleManager:SetParticleControlEnt(
-		effect_cast,
-		1,
-		self:GetParent(),
-		PATTACH_POINT_FOLLOW,
-		"attach_attack2",
-		self:GetParent():GetOrigin(), -- unknown
-		true -- unknown, true
-	)
-	ParticleManager:SetParticleControlEnt(
-		effect_cast,
-		2,
-		self:GetParent(),
-		PATTACH_CENTER_FOLLOW,
-		"attach_hitloc",
-		self:GetParent():GetOrigin(), -- unknown
-		true -- unknown, true
-	)
-	assert(loadfile("lua_abilities/rubick_spell_steal_lua/rubick_spell_steal_lua_color"))(self,effect_cast)
+    -- Create Particle
+    local effect_cast = ParticleManager:CreateParticle(particle_cast, PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
+    ParticleManager:SetParticleControlEnt(
+            effect_cast,
+            0,
+            self:GetParent(),
+            PATTACH_POINT_FOLLOW,
+            "attach_attack1",
+            self:GetParent():GetOrigin(), -- unknown
+            true -- unknown, true
+    )
+    ParticleManager:SetParticleControlEnt(
+            effect_cast,
+            1,
+            self:GetParent(),
+            PATTACH_POINT_FOLLOW,
+            "attach_attack2",
+            self:GetParent():GetOrigin(), -- unknown
+            true -- unknown, true
+    )
+    ParticleManager:SetParticleControlEnt(
+            effect_cast,
+            2,
+            self:GetParent(),
+            PATTACH_CENTER_FOLLOW,
+            "attach_hitloc",
+            self:GetParent():GetOrigin(), -- unknown
+            true -- unknown, true
+    )
+    assert(loadfile("lua_abilities/rubick_spell_steal_lua/rubick_spell_steal_lua_color"))(self, effect_cast)
 
-	-- buff particle
-	self:AddParticle(
-		effect_cast,
-		false,
-		false,
-		-1,
-		false,
-		false
-	)
+    -- buff particle
+    self:AddParticle(
+            effect_cast,
+            false,
+            false,
+            -1,
+            false,
+            false
+    )
 end
