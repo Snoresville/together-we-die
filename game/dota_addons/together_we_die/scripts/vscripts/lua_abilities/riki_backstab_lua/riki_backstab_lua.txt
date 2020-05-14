@@ -16,7 +16,7 @@
 		"MaxLevel"						"4"
 		"precache"
 		{
-			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_bristleback.vsndevts"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_riki.vsndevts"
 			"particle"	"particles/units/heroes/hero_riki/riki_backstab.vpcf"
 		}
 		

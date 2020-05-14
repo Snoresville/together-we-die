@@ -16,8 +16,7 @@
 		"MaxLevel"						"6"
 		"precache"
 		{
-			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_bristleback.vsndevts"
-			"particle"	"particles/units/heroes/hero_riki/riki_backstab.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_riki.vsndevts"
 		}
 		
 		// Ability General
@@ -27,6 +26,7 @@
 
 		// Ability Casting
 		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 
 		// Ability Resource
 		//-------------------------------------------------------------------------------------------------------------
