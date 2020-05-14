@@ -26,6 +26,7 @@ function holdout_card_points:_SpellsMenuBuySpell(eventSourceIndex, event_data)
             cardPoints = cardPointAbility:GetCP()
         else
             cardPointAbility = playerHero:AddAbility("card_points_lua")
+            CustomGameEventManager:Send_ServerToPlayer(player, "dota_player_learned_ability", { player = player, abilityname = "card_points_lua" })
             cardPointAbility:SetLevel(1)
             cardPointAbility:MarkAbilityButtonDirty()
         end
@@ -63,8 +64,6 @@ function holdout_card_points:_SpellsMenuBuySpell(eventSourceIndex, event_data)
                 end
             end
             playerHero:SetAbilityPoints(abilityPointsToSet)
-            playerHero:CalculateStatBonus()
-            CustomGameEventManager:Send_ServerToPlayer(player, "dota_ability_changed", {})
 
             -- Refund the card points
             cardPointAbility:SetCP(cardPoints + abilityCost)
@@ -74,6 +73,7 @@ function holdout_card_points:_SpellsMenuBuySpell(eventSourceIndex, event_data)
             -- Trying to buy
             if cardPoints >= abilityCost then
                 local newAbility = playerHero:AddAbility(abilityName)
+                CustomGameEventManager:Send_ServerToPlayer(player, "dota_player_learned_ability", { player = player, abilityname = abilityName })
                 if bit.band(newAbility:GetBehavior(), DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE) ~= 0 then
                     newAbility:SetLevel(1)
                 else
@@ -94,8 +94,6 @@ function holdout_card_points:_SpellsMenuBuySpell(eventSourceIndex, event_data)
                         associatedLearnable:MarkAbilityButtonDirty()
                     end
                 end
-                playerHero:CalculateStatBonus()
-                CustomGameEventManager:Send_ServerToPlayer(player, "dota_ability_changed", {})
                 -- Deduct card points
                 cardPointAbility:SetCP(cardPoints - abilityCost)
                 Notifications:Top(nPlayerID, { text = "#DOTA_HUD_Spells_Menu_Successful_Purchase", duration = 4, style = { color = "green" } })
@@ -104,5 +102,8 @@ function holdout_card_points:_SpellsMenuBuySpell(eventSourceIndex, event_data)
                 Notifications:Top(nPlayerID, { text = "#DOTA_HUD_Spells_Menu_Insufficient_CP", duration = 4, style = { color = "red" } })
             end
         end
+
+        playerHero:CalculateStatBonus()
+        CustomGameEventManager:Send_ServerToPlayer(player, "dota_ability_changed", { entityIndex = playerHero })
     end
 end
