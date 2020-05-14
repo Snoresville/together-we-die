@@ -661,6 +661,10 @@ var spells = {
     ],
     "npc_dota_hero_riki": [
         {
+            "spell_id": "riki_smoke_screen_lua",
+            "cost": 1
+        },
+        {
             "spell_id": "riki_permanent_invisibility_lua",
             "cost": 1
         },

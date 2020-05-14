@@ -1642,7 +1642,7 @@
 		"AttributeIntelligenceGain" "2.0"
 		"MovementSpeed"		"250"
 
-    	"Ability1"					""
+    	"Ability1"					"riki_smoke_screen_lua"
     	"Ability2"					"riki_permanent_invisibility_lua"
     	"Ability3"                  "riki_backstab_lua"
     	"Ability4"		            ""
