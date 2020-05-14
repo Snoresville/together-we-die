@@ -2181,4 +2181,64 @@
 			"UnitsPerSpawn"			"1"
 		}
 	}
+
+	"Round28" // Roshan Queen 2
+	{
+		"round_title"				"#DOTA_Holdout_Round_Roshan_Queen_Title"
+		"MaxGold"					"30000"
+		"BagCount"					"10"
+		"BagVariance"				"30"
+		"FixedXP"					"80000"
+
+		"UnitMelee_1"
+		{
+			"NPCName"				"npc_dota_creature_queen_roshan_two"
+			"TotalUnitsToSpawn"		"1"
+			"UnitsPerSpawn"			"1"
+		}
+        "Unit1"
+		{
+			"NPCName"				"npc_dota_creature_greater_ogre_magi"
+			"TotalUnitsToSpawn"		"30"
+			"UnitsPerSpawn"			"3"
+			"SpawnInterval"			"13"
+		}
+	}
+
+	"Round29" // Roshan Queen 3
+	{
+		"round_title"				"#DOTA_Holdout_Round_Roshan_Queen_Title"
+		"MaxGold"					"30000"
+		"BagCount"					"10"
+		"BagVariance"				"30"
+		"FixedXP"					"80000"
+
+		"UnitMelee_1"
+		{
+			"NPCName"				"npc_dota_creature_queen_roshan_three"
+			"TotalUnitsToSpawn"		"1"
+			"UnitsPerSpawn"			"1"
+		}
+        "Unit1"
+		{
+			"NPCName"				"npc_dota_creature_phantom_assassin"
+			"TotalUnitsToSpawn"		"12"
+			"UnitsPerSpawn"			"3"
+			"SpawnInterval"			"20"
+		}
+        "Unit2"
+		{
+			"NPCName"				"npc_dota_creature_phantom_assassin"
+			"TotalUnitsToSpawn"		"12"
+			"UnitsPerSpawn"			"3"
+			"SpawnInterval"			"20"
+		}
+        "Unit3"
+		{
+			"NPCName"				"npc_dota_creature_greater_ogre_magi"
+			"TotalUnitsToSpawn"		"32"
+			"UnitsPerSpawn"			"8"
+			"SpawnInterval"			"20"
+		}
+	}
 }

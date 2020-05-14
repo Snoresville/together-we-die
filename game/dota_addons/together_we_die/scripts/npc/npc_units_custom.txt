@@ -4205,10 +4205,10 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"roshan_overpower"	// Ability 1.
-		"Ability2"					"roshan_fury_swipes"			// Ability 2.
-		"Ability3"					"creature_greater_armor_reduction_aura"			// Ability 3.
-		"Ability4"					"roshan_sun_strike_lua"			// Ability 4.
-		"Ability5"					"creature_split_queen_roshan"			// Ability 5.
+		"Ability2"					"creature_greater_armor_reduction_aura"			// Ability 2.
+		"Ability3"					""			// Ability 3.
+		"Ability4"					""			// Ability 4.
+		"Ability5"					""			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
 		"Ability7"					""			// Ability 7 - Extra.
 
@@ -4243,7 +4243,7 @@
 
 		// Movement
 		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"			// Type of locomotion - ground, air
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
 		"MovementSpeed"				"320"		// Speed
 		"MovementTurnRate"			"1.0"		// Turning rate.
 
@@ -4292,7 +4292,7 @@
 				}
 			}
 
-			"DisableResistance"			"100.0"
+			"DisableResistance"			"80.0"
 		}
 	}
 
@@ -4315,9 +4315,9 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"creature_finest_warrior"	// Ability 1.
-		"Ability2"					"creature_greater_armor_reduction_aura"			// Ability 2.
-		"Ability3"					"roshan_sun_strike_lua"			// Ability 3.
-		"Ability4"					"creature_split_queen_roshan_two"			// Ability 4.
+		"Ability2"					"roshan_fury_swipes"			// Ability 2.
+		"Ability3"					"creature_pure_strike_lua"			// Ability 3.
+		"Ability4"					""			// Ability 4.
 		"Ability5"					""			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
 		"Ability7"					""			// Ability 7 - Extra.
@@ -4325,8 +4325,8 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"300"			// Physical protection.
-		"MagicalResistance"			"97"		// Magical protection (percentage).
+		"ArmorPhysical"				"200"			// Physical protection.
+		"MagicalResistance"			"95"		// Magical protection (percentage).
 
 		// Attack
 		//----------------------------------------------------------------
@@ -4354,14 +4354,14 @@
 
 		// Movement
 		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"			// Type of locomotion - ground, air
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
 		"MovementSpeed"				"320"		// Speed
 		"MovementTurnRate"			"1.0"		// Turning rate.
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"850000"		// Base health.
-		"StatusHealthRegen"			"6000"		// Health regeneration rate.
+		"StatusHealth"				"2850000"		// Base health.
+		"StatusHealthRegen"			"4000"		// Health regeneration rate.
 		"StatusMana"				"100000"		// Base mana.
 		"StatusManaRegen"			"1000"			// Mana regeneration rate.
 
@@ -4399,7 +4399,7 @@
 			{
 			}
 
-			"DisableResistance"			"100.0"
+			"DisableResistance"			"80.0"
 		}
 	}
 
@@ -4424,24 +4424,24 @@
 		"Ability1"					"creature_chaos_knight_chaos_strike"	// Ability 1.
 		"Ability2"					"creature_bleeding_bash_lua"			// Ability 2.
 		"Ability3"					"roshan_sun_strike_lua"			// Ability 3.
-		"Ability4"					"creature_pure_strike_lua"			// Ability 4.
-		"Ability5"					"roshan_last_word_lua"			// Ability 5.
+		"Ability4"					"roshan_last_word_lua"			// Ability 4.
+		"Ability5"					""			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
 		"Ability7"					""			// Ability 7 - Extra.
 		"Ability8"					""			// Ability 8 - Extra.
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"130"			// Physical protection.
-		"MagicalResistance"			"80"		// Magical protection (percentage).
+		"ArmorPhysical"				"150"			// Physical protection.
+		"MagicalResistance"			"90"		// Magical protection (percentage).
 
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"3000"		// Damage range min.
-		"AttackDamageMax"			"9500"		// Damage range max.
+		"AttackDamageMin"			"9000"		// Damage range min.
+		"AttackDamageMax"			"13500"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"				"0.25"			// Speed of attack.
+		"AttackRate"				"0.45"			// Speed of attack.
 		"AttackAnimationPoint"		"0.25"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
 		"AttackRange"				"128"		// Range within a target can be attacked.
@@ -4461,13 +4461,13 @@
 
 		// Movement
 		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"			// Type of locomotion - ground, air
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
 		"MovementSpeed"				"190"		// Speed
 		"MovementTurnRate"			"0.08"		// Turning rate.
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1900000"		// Base health.
+		"StatusHealth"				"2400000"		// Base health.
 		"StatusHealthRegen"			"0"		// Health regeneration rate.
 		"StatusMana"				"500000"		// Base mana.
 		"StatusManaRegen"			"1000"			// Mana regeneration rate.
@@ -4506,7 +4506,7 @@
 			{
 			}
 
-			"DisableResistance"			"33.3"
+			"DisableResistance"			"15.0"
 		}
 	}
 
