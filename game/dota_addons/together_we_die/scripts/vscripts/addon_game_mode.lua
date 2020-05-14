@@ -428,7 +428,6 @@ function CHoldoutGameMode:_CheckForDefeat()
         self._lives = self._lives - 1
         if self._lives <= 0 then
             self:_SetWinner(DOTA_TEAM_BADGUYS)
-            self._entAncient:ForceKill(true)
             return
         else
             -- Restart round and respawn buildings
@@ -491,6 +490,9 @@ function CHoldoutGameMode:_SetWinner(team)
         end)
     end
     GameRules:SetGameWinner(team)
+    if team == DOTA_TEAM_BADGUYS then
+        self._entAncient:ForceKill(true)
+    end
 end
 
 function CHoldoutGameMode:_ThinkLootExpiry()
