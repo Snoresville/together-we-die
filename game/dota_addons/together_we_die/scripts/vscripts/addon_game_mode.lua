@@ -77,14 +77,14 @@ function CHoldoutGameMode:InitGameMode()
     GameRules:GetGameModeEntity():SetTopBarTeamValuesVisible(false)
     GameRules:GetGameModeEntity():SetFreeCourierModeEnabled(true)
     -- Configure EXP
-    local MAX_HERO_LEVEL = 350
+    local MAX_HERO_LEVEL = 150
     local EXP_CONST = 60
     local xpTable = {}
     for i = 1, MAX_HERO_LEVEL, 1 do
         local xpRequired = i * i * EXP_CONST
 
         -- Levels above 30 will slow down significantly
-        if i >= 30 then
+        if i > 31 then
             xpRequired = xpRequired * 2
         end
         xpTable[i] = xpRequired
@@ -303,7 +303,6 @@ end
 
 function CHoldoutGameMode:_GameStartCheck()
     self:_CalculateAndApplyDifficulty()
-
     self._gameStartChecked = true
 end
 
@@ -483,15 +482,16 @@ function CHoldoutGameMode:_ThinkPrepTime()
 end
 
 function CHoldoutGameMode:_SetWinner(team)
-    if not Gamerules:IsCheatMode() then
+    if not GameRules:IsCheatMode() then
         -- Send stats
         Stats.SubmitMatch(GAME_VERSION, self._difficultyScore, team, function(data)
-            GameRules:SetGameWinner(team)
         end)
     end
     GameRules:SetGameWinner(team)
     if team == DOTA_TEAM_BADGUYS then
         self._entAncient:ForceKill(true)
+    else
+        GameRules:MakeTeamLose(DOTA_TEAM_BADGUYS)
     end
 end
 
