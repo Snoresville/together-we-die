@@ -427,8 +427,8 @@ function CHoldoutGameMode:_CheckForDefeat()
     if not self._entAncient or self._entAncient:GetHealth() <= 5 then
         self._lives = self._lives - 1
         if self._lives <= 0 then
-            self._entAncient:ForceKill(true)
             self:_SetWinner(DOTA_TEAM_BADGUYS)
+            self._entAncient:ForceKill(true)
             return
         else
             -- Restart round and respawn buildings
