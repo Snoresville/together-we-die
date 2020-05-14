@@ -25,7 +25,12 @@ function invoker_exort_lua:OnHeroCalculateStatBonus()
     if not self.invoke then
         -- if first time, upgrade and init Invoke
         local invoke = self:GetCaster():FindAbilityByName("invoker_invoke_lua")
-        self.invoke = invoke
+        if invoke then
+            if invoke:GetLevel() < 1 then
+                invoke:UpgradeAbility(true)
+            end
+            self.invoke = invoke
+        end
     else
         -- update status
         self.invoke:UpdateOrb("modifier_invoker_exort_lua", self:GetLevel())
