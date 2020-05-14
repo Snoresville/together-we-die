@@ -18,12 +18,13 @@
 		// Ability General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
 
 		// Ability Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"700"
+		"AbilityCastRange"				"800"
 
 		// Ability Resource
 		//-------------------------------------------------------------------------------------------------------------
@@ -38,7 +39,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"radius"					"700"
+				"radius"					"800"
 			}
 		}
 	}
