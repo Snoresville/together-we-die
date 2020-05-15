@@ -408,7 +408,7 @@ function CHoldoutGameMode:_CalculateAndApplyDifficulty()
         if PlayerResource:HasSelectedHero(nPlayerID) then
             if PlayerResource:GetTeam(nPlayerID) == DOTA_TEAM_BADGUYS then
                 -- bad guys get more gold
-                PlayerResource:ModifyGold(nPlayerID, startingGold * 2, true, DOTA_ModifyGold_Unspecified)
+                PlayerResource:ModifyGold(nPlayerID, startingGold, true, DOTA_ModifyGold_Unspecified)
                 local player = PlayerResource:GetPlayer(nPlayerID)
                 local player_hero = player:GetAssignedHero()
                 local badGuyAbility = player_hero:AddAbility("bad_guy_lua")
