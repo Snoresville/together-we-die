@@ -51,6 +51,14 @@
                 </Button>
             </Panel>
             <Panel id="SpellsMenuHeroesBlock">
+                <Panel id="SpellsMenuInfo" class="SpellsMenuHeroesContents">
+                    <Panel>
+                        <Label id="SpellsMenuTitle" text="#DOTA_HUD_Spells_Menu_Title"/>
+                    </Panel>
+                    <Panel>
+                        <Label id="SpellsMenuDescription" text="#DOTA_HUD_Spells_Menu_Description"/>
+                    </Panel>
+                </Panel>
                 <Panel id="SpellsMenuHeroesStrengthBlock" class="SpellsMenuHeroesContents">
                 </Panel>
                 <Panel id="SpellsMenuHeroesAgilityBlock" class="SpellsMenuHeroesContents">

@@ -57,6 +57,16 @@
     border-radius: 15%;
 }
 
+#SpellsMenuTitle {
+    font-size: 30px;
+    letter-spacing: 3px;
+}
+
+#SpellsMenuDescription {
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
 #SpellsMenuHeroesBlock {
     width: 100%;
     flow-children: down;
