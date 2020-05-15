@@ -3,27 +3,31 @@ modifier_tower_spawn_protection_effect = class({})
 --------------------------------------------------------------------------------
 
 function modifier_tower_spawn_protection_effect:IsDebuff()
-	return false
+    return false
 end
 
 function modifier_tower_spawn_protection_effect:IsHidden()
-	return false
+    return false
 end
 
 --------------------------------------------------------------------------------
 
-function modifier_tower_spawn_protection_effect:OnCreated( kv )
+function modifier_tower_spawn_protection_effect:OnCreated(kv)
 end
 
 --------------------------------------------------------------------------------
 
-function modifier_tower_spawn_protection_effect:OnRefresh( kv )
+function modifier_tower_spawn_protection_effect:OnRefresh(kv)
+end
+
+function modifier_tower_spawn_protection_effect:GetAttributes()
+    return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE
 end
 
 function modifier_tower_spawn_protection_effect:CheckState()
-	local state = {
-		[MODIFIER_STATE_INVULNERABLE] = true,
-	}
+    local state = {
+        [MODIFIER_STATE_INVULNERABLE] = true,
+    }
 
-	return state
+    return state
 end
