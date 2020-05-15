@@ -198,6 +198,10 @@ var spells = {
             "cost": 1
         },
         {
+            "spell_id": "abaddon_frostmourne_lua",
+            "cost": 1
+        },
+        {
             "spell_id": "abaddon_borrow_time_lua",
             "cost": 2
         },

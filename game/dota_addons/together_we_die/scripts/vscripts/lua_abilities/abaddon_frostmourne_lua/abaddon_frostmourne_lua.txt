@@ -1,0 +1,85 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Abaddon: Frostmourne (Lua version)
+	//=================================================================================================================
+	"abaddon_frostmourne_lua"
+	{
+		// Ability Technical Aspect
+		// base script folder	: scripts/vscripts
+		// base texture folder	: resource/flash3/images/spellicons
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"lua_abilities/abaddon_frostmourne_lua/abaddon_frostmourne_lua"
+		"AbilityTextureName"			"abaddon_frostmourne_lua"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"4"
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_abaddon.vsndevts"
+			"particle"	"particles/units/heroes/hero_abaddon/abaddon_frost_buff.vpcf"
+			"particle"	"particles/generic_gameplay/generic_silenced.vpcf"
+			"particle"	"particles/units/heroes/hero_abaddon/abaddon_curse_frostmourne_debuff.vpcf"
+			"particle"	"particles/units/heroes/hero_abaddon/abaddon_frost_slow.vpcf"
+			"particle"	"particles/units/heroes/hero_abaddon/abaddon_curse_counter_stack.vpcf"
+		}
+		
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+
+		// Ability Casting
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Ability Resource
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Damage
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"slow_duration"				"5"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"movement_speed"				"10 15 20 25"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"hit_count"				"4"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"curse_duration"				"4.5"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"curse_slow"				"15 30 45 60"
+			}
+			"06"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"curse_attack_speed"			"40 60 80 100"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"str_multiplier"		"0.5 1.0 1.5 2.0"
+			}
+		}
+	}
+}
