@@ -230,6 +230,10 @@ var spells = {
             "cost": 1
         },
         {
+            "spell_id": "axe_battle_rage",
+            "cost": 1
+        },
+        {
             "spell_id": "axe_counter_helix_lua",
             "cost": 1
         },
@@ -316,6 +320,10 @@ var spells = {
             "cost": 1
         },
         {
+            "spell_id": "earthshaker_enchant_totem",
+            "cost": 1
+        },
+        {
             "spell_id": "earthshaker_aftershock_lua",
             "cost": 1
         },
@@ -372,6 +380,10 @@ var spells = {
         {
             "spell_id": "lifestealer_open_wounds_lua",
             "cost": 1
+        },
+        {
+            "spell_id": "life_stealer_infest",
+            "cost": 2
         },
     ],
     "npc_dota_hero_mars": [
@@ -563,6 +575,10 @@ var spells = {
             "cost": 1
         },
         {
+            "spell_id": "arc_warden_magnetic_field",
+            "cost": 1
+        },
+        {
             "spell_id": "arc_warden_spark_wraith_lua",
             "cost": 1
         },
@@ -595,8 +611,16 @@ var spells = {
             "cost": 1
         },
         {
+            "spell_id": "juggernaut_healing_ward",
+            "cost": 1
+        },
+        {
             "spell_id": "juggernaut_blade_dance_lua",
             "cost": 1
+        },
+        {
+            "spell_id": "juggernaut_omni_slash",
+            "cost": 2
         },
     ],
     "npc_dota_hero_luna": [
@@ -659,6 +683,14 @@ var spells = {
             "cost": 1
         },
         {
+            "spell_id": "phantom_lancer_doppelwalk",
+            "cost": 1
+        },
+        {
+            "spell_id": "phantom_lancer_phantom_edge",
+            "cost": 1
+        },
+        {
             "spell_id": "phantom_lancer_juxtapose_lua",
             "cost": 2
         },
@@ -680,6 +712,10 @@ var spells = {
     "npc_dota_hero_slark": [
         {
             "spell_id": "slark_dark_pact_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "slark_pounce",
             "cost": 1
         },
         {
@@ -710,6 +746,10 @@ var spells = {
         },
     ],
     "npc_dota_hero_spectre": [
+        {
+            "spell_id": "spectre_spectral_dagger",
+            "cost": 1
+        },
         {
             "spell_id": "spectre_desolate_lua",
             "cost": 1
