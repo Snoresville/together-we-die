@@ -1585,6 +1585,7 @@
 
     	"Ability1"					"abaddon_mist_coil_lua"
     	"Ability2"					"abaddon_aphotic_shield_lua"
+    	"Ability3"					"abaddon_frostmourne_lua"
     	"Ability4"		            ""
     	"Ability5"		""
     	"Ability6"		            "abaddon_borrow_time_lua"
