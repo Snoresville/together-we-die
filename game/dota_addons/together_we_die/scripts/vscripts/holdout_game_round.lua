@@ -228,16 +228,6 @@ function CHoldoutGameRound:OnEntityKilled( event )
 			if playerStats then
 				print( "Added a death this round")
 				playerStats.nDeathsThisRound = playerStats.nDeathsThisRound + 1
-				if PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_GOODGUYS then
-					-- bad guys get level for each hero death
-					for xPlayerID = 0, DOTA_MAX_TEAM_PLAYERS-1 do
-						if PlayerResource:HasSelectedHero( xPlayerID ) and PlayerResource:GetTeam( xPlayerID ) == DOTA_TEAM_BADGUYS then
-							local player = PlayerResource:GetPlayer( xPlayerID )
-							local player_hero = player:GetAssignedHero()
-							player_hero:HeroLevelUp(false)
-						end
-					end
-				end
 			end
 		end
 	end
