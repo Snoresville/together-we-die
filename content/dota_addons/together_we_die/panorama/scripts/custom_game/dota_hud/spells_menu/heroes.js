@@ -1,5 +1,6 @@
 var customSpellsMenuPanel = $("#SpellsMenuContents");
 var openSpellsMenu = $("#SpellsMenuOpen");
+var spellsMenuCardPoints = customSpellsMenuPanel.FindChildTraverse("SpellsMenuCardIdPoints");
 
 var heroes = [
     [
@@ -1247,7 +1248,7 @@ function CreateSpellsListingForHero(heroID) {
         // Hover events
         spellButton.SetPanelEvent("onmouseover", Function("$.DispatchEvent( \"DOTAShowAbilityTooltip\", \"" + individualHeroSpell.spell_id + "\")"));
         spellButton.SetPanelEvent("onmouseout", function () {
-            $.DispatchEvent("DOTAHideAbilityTooltip")
+            $.DispatchEvent("DOTAHideAbilityTooltip");
         });
     }
 }
@@ -1282,6 +1283,11 @@ function BuySpell(spellJson) {
 
 function BuySpellFeedback(event_data) {
     CloseSpellsMenu();
+
+    // Update amount of CP
+    var nNewValue = event_data.new_card_points;
+    spellsMenuCardPoints.text = nNewValue;
+    spellsMenuCardPoints.SetAttributeInt("value", nNewValue);
 }
 
 (function () {

@@ -1,10 +1,46 @@
 holdout_card_points = class({})
 
+local cardPointsTableName = "card_points"
+
 function holdout_card_points:Init()
+    local playerIds = {}
+    local playerPoints = {}
+
+    local startingCardPoints = 0
+    for nPlayerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
+        playerIds[nPlayerID] = true
+        playerPoints[nPlayerID] = startingCardPoints
+    end
+
+    PlayerTables:CreateTable(cardPointsTableName, playerPoints, playerIds)
+
     CustomGameEventManager:RegisterListener("spells_menu_buy_spell", function(...)
         return self:_SpellsMenuBuySpell(...)
     end)
+end
 
+function holdout_card_points:_RetrieveCardPoints(nPlayerID)
+    if PlayerTables:TableExists(cardPointsTableName) then
+        return PlayerTables:GetTableValue(cardPointsTableName, nPlayerID)
+    end
+
+    return 0
+end
+
+function holdout_card_points:_SetCardPoints(nPlayerID, cardPoints)
+    if PlayerTables:TableExists(cardPointsTableName) then
+        PlayerTables:SetTableValue(cardPointsTableName, nPlayerID, cardPoints)
+    end
+end
+
+function holdout_card_points:_BuyCardPoints(nPlayerID, cardPoints)
+    if PlayerTables:TableExists(cardPointsTableName) then
+        local player = PlayerResource:GetPlayer(nPlayerID)
+        local newCardPoints = self:_RetrieveCardPoints(nPlayerID) + cardPoints
+        self:_SetCardPoints(nPlayerID, newCardPoints)
+        CustomGameEventManager:Send_ServerToPlayer(player, "spells_menu_buy_spell_feedback", { new_card_points = newCardPoints })
+        Notifications:Top(nPlayerID, { text = "#DOTA_HUD_Spells_Menu_Card_Point_Book_Used", duration = 4, style = { color = "green" } })
+    end
 end
 
 function holdout_card_points:_SpellsMenuBuySpell(eventSourceIndex, event_data)
@@ -21,16 +57,7 @@ function holdout_card_points:_SpellsMenuBuySpell(eventSourceIndex, event_data)
         local cardPointAbility;
 
         -- check for card points and retrieve
-        if playerHero:HasAbility("card_points_lua") then
-            cardPointAbility = playerHero:FindAbilityByName("card_points_lua")
-            cardPoints = cardPointAbility:GetCP()
-        else
-            cardPointAbility = playerHero:AddAbility("card_points_lua")
-            CustomGameEventManager:Send_ServerToPlayer(player, "dota_player_learned_ability", { player = player, abilityname = "card_points_lua" })
-            cardPointAbility:SetLevel(1)
-            cardPointAbility:MarkAbilityButtonDirty()
-        end
-
+        cardPoints = self:_RetrieveCardPoints(nPlayerID)
 
         -- Does the player already have the ability requested?
         if playerHero:HasAbility(abilityName) then
@@ -66,9 +93,10 @@ function holdout_card_points:_SpellsMenuBuySpell(eventSourceIndex, event_data)
             playerHero:SetAbilityPoints(abilityPointsToSet)
 
             -- Refund the card points
-            cardPointAbility:SetCP(cardPoints + abilityCost)
+            local newCardPoints = cardPoints + abilityCost
+            self:_SetCardPoints(nPlayerID, newCardPoints)
             Notifications:Top(nPlayerID, { text = "#DOTA_HUD_Spells_Menu_Successful_Refund", duration = 4, style = { color = "green" } })
-            CustomGameEventManager:Send_ServerToPlayer(player, "spells_menu_buy_spell_feedback", {}) -- Close the menu
+            CustomGameEventManager:Send_ServerToPlayer(player, "spells_menu_buy_spell_feedback", { new_card_points = newCardPoints }) -- Close the menu
         else
             -- Trying to buy
             if cardPoints >= abilityCost then
@@ -95,9 +123,10 @@ function holdout_card_points:_SpellsMenuBuySpell(eventSourceIndex, event_data)
                     end
                 end
                 -- Deduct card points
-                cardPointAbility:SetCP(cardPoints - abilityCost)
+                local newCardPoints = cardPoints - abilityCost
+                self:_SetCardPoints(nPlayerID, newCardPoints)
                 Notifications:Top(nPlayerID, { text = "#DOTA_HUD_Spells_Menu_Successful_Purchase", duration = 4, style = { color = "green" } })
-                CustomGameEventManager:Send_ServerToPlayer(player, "spells_menu_buy_spell_feedback", {}) -- Close the menu
+                CustomGameEventManager:Send_ServerToPlayer(player, "spells_menu_buy_spell_feedback", { new_card_points = newCardPoints }) -- Close the menu
             else
                 Notifications:Top(nPlayerID, { text = "#DOTA_HUD_Spells_Menu_Insufficient_CP", duration = 4, style = { color = "red" } })
             end

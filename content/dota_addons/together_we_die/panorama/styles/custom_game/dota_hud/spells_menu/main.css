@@ -24,48 +24,78 @@
     background-color: rgba(0, 0, 0, 0.9);
 }
 
+
+#SpellsMenuOpen,
 #SpellsMenuClose {
     z-index: 15;
-    height: fit-children;
+    height: 100%;
     width: 100%;
-    padding-top: 10px;
+}
+
+#SpellsMenuCloseButton,
+#SpellsMenuOpenButton {
+    align: right bottom;
+
+    margin-right: 10px;
+    margin-bottom: 110px;
+
+    z-index: 15;
+    padding: 10px;
+    border-radius: 15%;
 }
 
 #SpellsMenuCloseButton {
-    align: right top;
-    z-index: 15;
-    padding: 10px;
-
     background-color: rgba(0, 0, 0, 0.95);
-    border-radius: 15%;
-}
-
-#SpellsMenuOpen {
-    z-index: 15;
-    height: fit-children;
-    width: 100%;
-    padding-top: 10px;
 }
 
 #SpellsMenuOpenButton {
-    align: right top;
-    z-index: 15;
-    padding: 10px;
-
     color: #FFFFFF;
     background-color: rgb(229, 57, 53);
-    border-radius: 15%;
+}
+
+#SpellsMenuInfo {
+    flow-children: down-wrap;
+    width: 100%;
+    vertical-align: top;
+    height: fit-children;
+    padding: 40px 20px 30px;
+    transition: width 0.25s linear 0s;
+}
+
+.SpellsMenuHelperInfo {
+    width: 100%;
+    height: fit-children;
 }
 
 #SpellsMenuTitle {
-    font-size: 30px;
+    font-size: 38px;
     letter-spacing: 3px;
+    font-weight: bold;
 }
 
 #SpellsMenuDescription {
     font-size: 18px;
     letter-spacing: 2px;
 }
+
+.SpellsMenuHelperInfo Label {
+    width: 100%;
+}
+
+.SpellsMenuHelperCardPointsInfo {
+    margin-top: 30px;
+    flow-children: right-wrap;
+    width: 100%;
+    height: fit-children;
+}
+
+.SpellsMenuHelperCardPointsInfo Label {
+    font-size: 30px;
+    font-weight: bold;
+    width: fit-children;
+    color: #00f5ff;
+}
+
 
 #SpellsMenuHeroesBlock {
     width: 100%;
@@ -78,7 +108,7 @@
     flow-children: right-wrap;
     vertical-align: top;
     height: fit-children;
-    padding: 60px 30px 40px;
+    padding: 40px 20px 30px;
     transition: width 0.25s linear 0s;
 }
 

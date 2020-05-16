@@ -15,13 +15,15 @@ require("holdout_game_spawner")
 require("holdout_card_points")
 require("stats")
 require("libraries/notifications")
-require("libraries/containers")
+require("libraries/playertables")
 
 _G.GAME_VERSION = "1.0"
 
 if CHoldoutGameMode == nil then
     CHoldoutGameMode = class({})
     _G.CHoldoutGameMode = CHoldoutGameMode
+    -- Make card points system a global for access by items
+    _G.holdout_card_points = holdout_card_points
 end
 
 -- Precache resources
