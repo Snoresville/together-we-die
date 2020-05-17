@@ -68,10 +68,6 @@ function modifier_bristleback_bristleback_lua:GetModifierIncomingDamage_Percenta
         local attacker = params.attacker
         local reduction = 0
 
-        if attacker:IsTower() then
-            return 0
-        end
-
         if parent == attacker then
             return self.reduction_side
         end
@@ -101,7 +97,7 @@ end
 --------------------------------------------------------------------------------
 -- helper
 function modifier_bristleback_bristleback_lua:ThresholdLogic(damage)
-    self.threshold = self.threshold + damage
+    self.threshold = math.floor(self.threshold + math.floor(damage))
     if self.threshold > self.calculated_max_threshold then
         -- reset threshold
         self.threshold = 0
