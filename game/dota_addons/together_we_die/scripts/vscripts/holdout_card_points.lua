@@ -17,6 +17,15 @@ function holdout_card_points:Init()
     CustomGameEventManager:RegisterListener("spells_menu_buy_spell", function(...)
         return self:_SpellsMenuBuySpell(...)
     end)
+
+    CustomGameEventManager:RegisterListener("spells_menu_get_player_spells", function(...)
+        return self:_SpellsMenuGetSpells(...)
+    end)
+
+    CustomGameEventManager:RegisterListener("spells_menu_swap_player_spells", function(...)
+        return self:_SpellsMenuSwapAbilitiesPosition(...)
+    end)
+
 end
 
 function holdout_card_points:_RetrieveCardPoints(nPlayerID)
@@ -54,7 +63,6 @@ function holdout_card_points:_SpellsMenuBuySpell(eventSourceIndex, event_data)
         local player = PlayerResource:GetPlayer(nPlayerID)
         local playerHero = player:GetAssignedHero()
         local cardPoints = 0
-        local cardPointAbility;
 
         -- check for card points and retrieve
         cardPoints = self:_RetrieveCardPoints(nPlayerID)
@@ -133,6 +141,64 @@ function holdout_card_points:_SpellsMenuBuySpell(eventSourceIndex, event_data)
         end
 
         playerHero:CalculateStatBonus()
+        CustomGameEventManager:Send_ServerToPlayer(player, "dota_ability_changed", { entityIndex = playerHero })
+    end
+end
+
+function holdout_card_points:_SpellsMenuGetSpells(eventSourceIndex, event_data)
+    local nPlayerID = event_data.player_id
+    local player = PlayerResource:GetPlayer(nPlayerID)
+    local playerAbilities = self:_GetPlayerSpells(nPlayerID)
+
+    CustomGameEventManager:Send_ServerToPlayer(player, "spells_menu_get_player_spells_feedback", { player_abilities = playerAbilities })
+end
+
+function holdout_card_points:_GetPlayerSpells(nPlayerID)
+    local player = PlayerResource:GetPlayer(nPlayerID)
+    if player and PlayerResource:HasSelectedHero(nPlayerID) then
+        local playerHero = player:GetAssignedHero()
+        local maxAbilities = playerHero:GetAbilityCount() - 1
+
+        local playerAbilities = {}
+
+        for ability_id = 0, maxAbilities do
+            local ability = playerHero:GetAbilityByIndex(ability_id)
+            if ability then
+                local abilityLevel = ability:GetLevel()
+                -- Make sure it is not a talent and there is level
+                if ability:GetAbilityType() ~= DOTA_ABILITY_TYPE_ATTRIBUTES and ability:GetAbilityType() ~= DOTA_ABILITY_TYPE_HIDDEN then
+                    local abilityName = ability:GetAbilityName()
+                    table.insert(playerAbilities, abilityName)
+                end
+            end
+        end
+
+        return playerAbilities
+    end
+
+    return {}
+end
+
+function holdout_card_points:_SpellsMenuSwapAbilitiesPosition(eventSourceIndex, event_data)
+    local nPlayerID = event_data.player_id
+    local firstAbilityName = event_data.first_ability_name
+    local secondAbilityName = event_data.second_ability_name
+    local player = PlayerResource:GetPlayer(nPlayerID)
+
+    self:_SwapAbilitiesPosition(nPlayerID, firstAbilityName, secondAbilityName)
+
+    CustomGameEventManager:Send_ServerToPlayer(player, "spells_menu_swap_player_spells_feedback", { })
+end
+
+function holdout_card_points:_SwapAbilitiesPosition(nPlayerID, firstAbilityName, secondAbilityName)
+    local player = PlayerResource:GetPlayer(nPlayerID)
+    local playerHero = player:GetAssignedHero()
+    local firstAbility = playerHero:FindAbilityByName(firstAbilityName)
+    local secondAbility = playerHero:FindAbilityByName(secondAbilityName)
+
+    if firstAbility and secondAbility then
+        playerHero:SwapAbilities(firstAbilityName, secondAbilityName, not firstAbility:IsHidden(), not secondAbility:IsHidden())
+
         CustomGameEventManager:Send_ServerToPlayer(player, "dota_ability_changed", { entityIndex = playerHero })
     end
 end

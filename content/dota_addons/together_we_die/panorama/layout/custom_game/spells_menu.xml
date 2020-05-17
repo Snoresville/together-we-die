@@ -46,6 +46,9 @@
     <Panel hittest="false" class="SpellsMenuRoot">
         <Panel hittest="false" id="SpellsMenuContents">
             <Panel id="SpellsMenuClose" hittest="false" class="">
+                <Button id="SpellsMenuSwapSpellsButton" onactivate="OpenSpellsListingForPlayerHero();">
+                    <Label text="#DOTA_HUD_Spells_Menu_Swap_Spells_Button"/>
+                </Button>
                 <Button id="SpellsMenuCloseButton" onactivate="CloseSpellsMenu();">
                     <Label text="#DOTA_HUD_Spells_Menu_Close_Button"/>
                 </Button>

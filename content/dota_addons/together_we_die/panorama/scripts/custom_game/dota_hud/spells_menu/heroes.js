@@ -2,6 +2,9 @@ var customSpellsMenuPanel = $("#SpellsMenuContents");
 var openSpellsMenu = $("#SpellsMenuOpen");
 var spellsMenuCardPoints = customSpellsMenuPanel.FindChildTraverse("SpellsMenuCardIdPoints");
 
+var spellSwapFirstSelected = null;
+var spellSwapSecondSelected = null;
+
 var heroes = [
     [
         {
@@ -1290,8 +1293,70 @@ function BuySpellFeedback(event_data) {
     spellsMenuCardPoints.SetAttributeInt("value", nNewValue);
 }
 
+function OpenSpellsListingForPlayerHero() {
+    var event_data = {
+        player_id: Game.GetLocalPlayerID()
+    }
+    GameEvents.SendCustomGameEventToServer("spells_menu_get_player_spells", event_data);
+}
+
+function GetPlayerSpellsFeedback(event_data) {
+    // show spells
+    var playerHeroSpellsContainer = customSpellsMenuPanel.FindChildTraverse("SpellsMenuSpellsBlock");
+    // Clear children
+    CloseSpellsListingForHero();
+
+    var heroSpells = event_data.player_abilities;
+    var spellPanel;
+    for (var key in heroSpells) {
+        if (heroSpells.hasOwnProperty(key)) {
+            var individualHeroSpellName = heroSpells[key];
+            spellPanel = $.CreatePanel("Panel", playerHeroSpellsContainer, "spellPanel" + key);
+            spellPanel.BLoadLayoutSnippet("spell");
+
+            var image = spellPanel.FindChildInLayoutFile("SingleSpellPictureImage");
+            image.abilityname = individualHeroSpellName;
+            var spellCost = spellPanel.FindChildInLayoutFile("SpellCost");
+            spellCost.text = "0";
+            var spellButton = spellPanel.FindChildInLayoutFile("SingleSpellPanelButton");
+            spellButton.SetPanelEvent("onactivate", Function("SpellSwapSelect(\'" + individualHeroSpellName + "\')"));
+            // Hover events
+            spellButton.SetPanelEvent("onmouseover", Function("$.DispatchEvent( \"DOTAShowAbilityTooltip\", \"" + individualHeroSpellName + "\")"));
+            spellButton.SetPanelEvent("onmouseout", function () {
+                $.DispatchEvent("DOTAHideAbilityTooltip");
+            });
+        }
+    }
+}
+
+function SpellSwapSelect(spellName) {
+    if (spellSwapFirstSelected != null) {
+        spellSwapSecondSelected = spellName;
+
+        var playerID = Game.GetLocalPlayerID();
+        var event_data = {
+            player_id: playerID,
+            first_ability_name: spellSwapFirstSelected,
+            second_ability_name: spellSwapSecondSelected
+        };
+        GameEvents.SendCustomGameEventToServer("spells_menu_swap_player_spells", event_data);
+        // Clear selections
+        spellSwapFirstSelected = null;
+        spellSwapSecondSelected = null;
+    } else {
+        spellSwapFirstSelected = spellName;
+    }
+
+}
+
+function SwapPlayerSpellsFeedback() {
+    CloseSpellsMenu();
+}
+
 (function () {
     CreateHeroesListingForAll();
 
     GameEvents.Subscribe("spells_menu_buy_spell_feedback", BuySpellFeedback);
+    GameEvents.Subscribe("spells_menu_get_player_spells_feedback", GetPlayerSpellsFeedback);
+    GameEvents.Subscribe("spells_menu_swap_player_spells_feedback", SwapPlayerSpellsFeedback);
 })();

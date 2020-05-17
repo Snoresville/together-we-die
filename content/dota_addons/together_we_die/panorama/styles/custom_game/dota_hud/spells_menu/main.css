@@ -33,6 +33,7 @@
 }
 
 #SpellsMenuCloseButton,
+#SpellsMenuSwapSpellsButton,
 #SpellsMenuOpenButton {
     align: right bottom;
 
@@ -42,6 +43,12 @@
     z-index: 15;
     padding: 10px;
     border-radius: 15%;
+}
+
+#SpellsMenuSwapSpellsButton {
+    color: #FFFFFF;
+    background-color: rgb(229, 57, 53);
+    margin-right: 100px;
 }
 
 #SpellsMenuCloseButton {
