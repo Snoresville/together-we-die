@@ -53,6 +53,16 @@
 				"Item"					"item_enchanted_quiver"
 				"Chance"				"2"
 			}
+            "KeenOptic"
+			{
+				"Item"					"item_keen_optic"
+				"Chance"				"2"
+			}
+            "TrustyShovel"
+			{
+				"Item"					"item_trusty_shovel"
+				"Chance"				"2"
+			}
 		}
 		// Round 6 - 10
 		"TierTwo"
@@ -60,7 +70,7 @@
 			"MindBreaker"
 			{
 				"Item"					"item_mind_breaker"
-				"Chance"				"3"
+				"Chance"				"2"
 			}
 			"CraggyCoat"
 			{
@@ -70,66 +80,126 @@
 			"VampireFangs"
 			{
 				"Item"					"item_vampire_fangs"
-				"Chance"				"6"
-			}
-			"Prism"
-			{
-				"Item"					"item_spell_prism"
 				"Chance"				"4"
-			}
-            "NinjaGear"
-			{
-				"Item"					"item_ninja_gear"
-				"Chance"				"2"
 			}
             "SpiderLegs"
 			{
 				"Item"					"item_spider_legs"
+				"Chance"				"2"
+			}
+            "PhilosophersStone"
+			{
+				"Item"					"item_philosophers_stone"
 				"Chance"				"1"
+			}
+            "PupilsGift"
+			{
+				"Item"					"item_pupils_gift"
+				"Chance"				"1"
+			}
+            "QuickeningCharm"
+			{
+				"Item"					"item_quickening_charm"
+				"Chance"				"2"
 			}
 		}
 		// Round 11 - 15
 		"TierThree"
 		{
+			"Telescope"
+			{
+				"Item"					"item_spy_gadget"
+				"Chance"				"5"
+			}
 			"PhoenixAsh"
 			{
 				"Item"					"item_phoenix_ash"
 				"Chance"				"3"
 			}
-			"DesolatorTwo"
+            "HavocHammer"
 			{
-				"Item"					"item_desolator_2"
-				"Chance"				"3"
+				"Item"					"item_titan_sliver"
+				"Chance"				"2"
 			}
             "IllusionistsCape"
 			{
 				"Item"					"item_illusionsts_cape"
-				"Chance"				"3"
+				"Chance"				"1"
 			}
             "HavocHammer"
 			{
 				"Item"					"item_havoc_hammer"
-				"Chance"				"3"
-			}
-            "Trident"
-			{
-				"Item"					"item_trident"
-				"Chance"				"3"
-			}
-            "SpiderLegs"
-			{
-				"Item"					"item_spider_legs"
-				"Chance"				"4"
+				"Chance"				"1"
 			}
             "HelmOfTheUndying"
 			{
 				"Item"					"item_helm_of_the_undying"
 				"Chance"				"2"
 			}
+            "TimelessRelic"
+			{
+				"Item"					"item_timeless_relic"
+				"Chance"				"1"
+			}
+			"Prism"
+			{
+				"Item"					"item_spell_prism"
+				"Chance"				"2"
+			}
+            "NinjaGear"
+			{
+				"Item"					"item_ninja_gear"
+				"Chance"				"2"
+			}
 		}
 		// Round 16 - 20
 		"TierFour"
 		{
+            "WoodlandStriders"
+			{
+				"Item"					"item_woodland_striders"
+				"Chance"				"1"
+			}
+            "WitlessShako"
+			{
+				"Item"					"item_witless_shako"
+				"Chance"				"2"
+			}
+            "Trident"
+			{
+				"Item"					"item_trident"
+				"Chance"				"1"
+			}
+			"DesolatorTwo"
+			{
+				"Item"					"item_desolator_2"
+				"Chance"				"1"
+			}
+			"PirateHat"
+			{
+				"Item"					"item_pirate_hat"
+				"Chance"				"1"
+			}
+			"Ballista"
+			{
+				"Item"					"item_ballista"
+				"Chance"				"1"
+			}
+			"Apex"
+			{
+				"Item"					"item_apex"
+				"Chance"				"1"
+			}
+			"ForceBoots"
+			{
+				"Item"					"item_force_boots"
+				"Chance"				"1"
+			}
+			"FallenSky"
+			{
+				"Item"					"item_fallen_sky"
+				"Chance"				"1"
+			}
 		}
 		// Round 21 onwards
 		"TierFive"
