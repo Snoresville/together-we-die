@@ -11,6 +11,8 @@
 		"AbilityTextureName"					"pudge_flesh_heap_lua"
 		"ScriptFile"						"lua_abilities/pudge_flesh_heap_lua/pudge_flesh_heap_lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilityCooldown"				"4.0"
 		
 
 		// Special
@@ -20,12 +22,17 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"flesh_heap_regen_bonus"		"0.25 0.5 0.75 1.0"
+				"flesh_heap_regen_bonus"		"0.2 0.4 0.6 0.8"
 			}
 			"02"
 			{
 				"var_type"							"FIELD_FLOAT"
 				"flesh_heap_strength_buff_amount"	"0.25 0.3 0.35 0.4"
+			}
+            "03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"flesh_heap_range"				"1200"
 			}
 		}
 	}

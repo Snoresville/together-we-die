@@ -111,6 +111,10 @@ function modifier_slark_essence_shift_lua:OnDeath(event)
         return
     end
 
+    if self:GetParent():PassivesDisabled() then
+        return
+    end
+
     if event.attacker:GetTeamNumber() == self:GetParent():GetTeamNumber() and self:GetParent():IsAlive() and not self:GetParent():IsIllusion() then
         if event.attacker ~= self:GetParent() then
             if self:GetAbility():IsFullyCastable() then
