@@ -31,7 +31,6 @@ function modifier_slark_shadow_dance_lua_buff:OnRefresh(kv)
 end
 
 function modifier_slark_shadow_dance_lua_buff:OnDestroy(kv)
-
 end
 
 --------------------------------------------------------------------------------
