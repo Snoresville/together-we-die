@@ -18,13 +18,12 @@ end
 function modifier_slark_essence_shift_lua_debuff:OnCreated( kv )
 	-- references
 	self.armor_loss = self:GetAbility():GetSpecialValueFor( "armor_loss" )
-	self:IncrementStackCount()
+	self:SetStackCount(1)
 end
 
 function modifier_slark_essence_shift_lua_debuff:OnRefresh( kv )
 	-- references
 	self.armor_loss = self:GetAbility():GetSpecialValueFor( "armor_loss" )
-	self:IncrementStackCount()
 end
 
 function modifier_slark_essence_shift_lua_debuff:OnDestroy( kv )
@@ -42,6 +41,5 @@ function modifier_slark_essence_shift_lua_debuff:DeclareFunctions()
 end
 
 function modifier_slark_essence_shift_lua_debuff:GetModifierPhysicalArmorBonus()
-	local MAX_ARMOR_REDUCTION = -150
-	return math.max(math.floor(self:GetStackCount() * -self.armor_loss), MAX_ARMOR_REDUCTION)
+	return math.floor(self:GetStackCount() * -self.armor_loss)
 end
