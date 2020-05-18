@@ -14,6 +14,7 @@
 		"AbilityTextureName"			"axe_culling_blade_lua"
 		"FightRecapLevel"				"2"
 		"MaxLevel"						"3"
+		"HasScepterUpgrade"			    "1"
 		"precache"
 		{
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_axe.vsndevts"
@@ -25,7 +26,7 @@
 		// Ability General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
@@ -83,7 +84,7 @@
 			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"scepter_aoe"				"700"
+				"scepter_aoe"				"400"
 			}
 			"08"
 			{
