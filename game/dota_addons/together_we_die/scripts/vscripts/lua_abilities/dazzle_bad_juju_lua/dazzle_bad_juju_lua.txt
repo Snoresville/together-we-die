@@ -14,6 +14,7 @@
 		"AbilityTextureName"			"dazzle_bad_juju_lua"
 		"FightRecapLevel"				"2"
 		"MaxLevel"						"3"
+		"HasScepterUpgrade"			    "1"
 		"precache"
 		{
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_dazzle.vsndevts"
@@ -24,6 +25,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 
@@ -43,7 +46,7 @@
 			"01"
 			{	
 				"var_type"					"FIELD_INTEGER"
-				"cooldown_reduction"		"20 40 60"
+				"cooldown_reduction"		"20 30 40"
 			}
 			"02"
 			{	
@@ -64,6 +67,16 @@
 			{	
 				"var_type"					"FIELD_FLOAT"
 				"int_multiplier"			"0.01"
+			}
+            "06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_cooldown_reduction"		"60 70 80"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"cd_int_multiplier"			"0.03"
 			}
 		}
 	}
