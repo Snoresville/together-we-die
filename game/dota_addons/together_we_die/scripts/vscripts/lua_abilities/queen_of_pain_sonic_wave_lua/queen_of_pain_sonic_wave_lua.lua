@@ -33,9 +33,9 @@ function queen_of_pain_sonic_wave_lua:OnSpellStart()
     	bReplaceExisting = false,
     	-- fExpireTime = GameRules:GetGameTime() + 10.0,
     	
-    	iUnitTargetTeam = DOTA_UNIT_TARGET_TEAM_ENEMY,
-    	iUnitTargetFlags = DOTA_UNIT_TARGET_FLAG_NONE,
-    	iUnitTargetType = DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
+    	iUnitTargetTeam = self:GetAbilityTargetTeam(),
+    	iUnitTargetFlags = self:GetAbilityTargetFlags(),
+    	iUnitTargetType = self:GetAbilityTargetType(),
 		
 		bProvidesVision = false,
 	}
