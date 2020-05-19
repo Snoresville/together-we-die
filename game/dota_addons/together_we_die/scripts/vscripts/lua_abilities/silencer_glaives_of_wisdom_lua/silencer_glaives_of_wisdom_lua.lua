@@ -20,7 +20,7 @@ function silencer_glaives_of_wisdom_lua:GetIntrinsicModifierName()
 end
 
 function silencer_glaives_of_wisdom_lua:GetAbilityTargetFlags()
-    local targetFlags = 0
+    local targetFlags = DOTA_UNIT_TARGET_FLAG_NONE
 
     if self:GetCaster():HasScepter() then
         targetFlags = targetFlags + DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES
