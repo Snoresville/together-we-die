@@ -99,9 +99,9 @@ function modifier_generic_orb_effect_lua:OnOrder( params )
 		-- if casting other ability that cancel channel while casting this ability, turn off
 		local pass = false
 		local behavior = params.ability:GetBehavior()
-		if self:FlagExist( behavior, DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_CHANNEL ) or 
-			self:FlagExist( behavior, DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT ) or
-			self:FlagExist( behavior, DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL )
+		if self:FlagExist( behavior, DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_CHANNEL ) or
+				self:FlagExist( behavior, DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT ) or
+				self:FlagExist( behavior, DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL )
 		then
 			local pass = true -- do nothing
 		end
@@ -113,11 +113,11 @@ function modifier_generic_orb_effect_lua:OnOrder( params )
 		-- if ordering something which cancel channel, turn off
 		if self.cast then
 			if self:FlagExist( params.order_type, DOTA_UNIT_ORDER_MOVE_TO_POSITION ) or
-				self:FlagExist( params.order_type, DOTA_UNIT_ORDER_MOVE_TO_TARGET )	or
-				self:FlagExist( params.order_type, DOTA_UNIT_ORDER_ATTACK_MOVE ) or
-				self:FlagExist( params.order_type, DOTA_UNIT_ORDER_ATTACK_TARGET ) or
-				self:FlagExist( params.order_type, DOTA_UNIT_ORDER_STOP ) or
-				self:FlagExist( params.order_type, DOTA_UNIT_ORDER_HOLD_POSITION )
+					self:FlagExist( params.order_type, DOTA_UNIT_ORDER_MOVE_TO_TARGET )	or
+					self:FlagExist( params.order_type, DOTA_UNIT_ORDER_ATTACK_MOVE ) or
+					self:FlagExist( params.order_type, DOTA_UNIT_ORDER_ATTACK_TARGET ) or
+					self:FlagExist( params.order_type, DOTA_UNIT_ORDER_STOP ) or
+					self:FlagExist( params.order_type, DOTA_UNIT_ORDER_HOLD_POSITION )
 			then
 				self.cast = false
 			end
@@ -139,17 +139,18 @@ function modifier_generic_orb_effect_lua:ShouldLaunch( target )
 	-- check autocast
 	if self.ability:GetAutoCastState() then
 		-- filter whether target is valid
-		if self.ability.CastFilterResultTarget then
+		if self.ability.CastFilterResultTarget~=CDOTA_Ability_Lua.CastFilterResultTarget then
+			-- check if ability has custom target cast filter
 			if self.ability:CastFilterResultTarget( target )==UF_SUCCESS then
 				self.cast = true
 			end
 		else
 			local nResult = UnitFilter(
-				target,
-				self.ability:GetAbilityTargetTeam(),
-				self.ability:GetAbilityTargetType(),
-				self.ability:GetAbilityTargetFlags(),
-				self:GetCaster():GetTeamNumber()
+					target,
+					self.ability:GetAbilityTargetTeam(),
+					self.ability:GetAbilityTargetType(),
+					self.ability:GetAbilityTargetFlags(),
+					self:GetCaster():GetTeamNumber()
 			)
 			if nResult == UF_SUCCESS then
 				self.cast = true
