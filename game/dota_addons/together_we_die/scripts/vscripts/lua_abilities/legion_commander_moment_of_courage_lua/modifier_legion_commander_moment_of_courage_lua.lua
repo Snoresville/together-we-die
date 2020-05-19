@@ -55,14 +55,21 @@ function modifier_legion_commander_moment_of_courage_lua:OnAttacked(params)
             return
         end
 
-        abilityParent:AddNewModifier(
-                abilityParent, -- player source
-                self:GetAbility(), -- ability source
-                "modifier_legion_commander_moment_of_courage_lua_buff", -- modifier name
-                {
-                    duration = self.buff_duration,
-                } -- kv
-        )
+        local moment_of_courage_modifier = "modifier_legion_commander_moment_of_courage_lua_buff"
+        local buff_modifier = abilityParent:FindModifierByName(moment_of_courage_modifier)
+        if buff_modifier then
+            buff_modifier:IncrementStackCount()
+            buff_modifier:ForceRefresh()
+        else
+            abilityParent:AddNewModifier(
+                    abilityParent,
+                    self:GetAbility(),
+                    moment_of_courage_modifier,
+                    {
+                        duration = self.buff_duration,
+                    }
+            )
+        end
 
         -- cooldown
         self:GetAbility():UseResources( false, false, true )
