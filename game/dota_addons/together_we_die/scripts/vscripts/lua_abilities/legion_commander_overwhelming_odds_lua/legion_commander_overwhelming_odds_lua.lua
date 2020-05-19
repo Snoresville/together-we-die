@@ -22,8 +22,8 @@ function legion_commander_overwhelming_odds_lua:OnSpellStart()
 		point,	-- point, center point
 		nil,	-- handle, cacheUnit. (not known)
 		radius,	-- float, radius. or use FIND_UNITS_EVERYWHERE
-		DOTA_UNIT_TARGET_TEAM_ENEMY,	-- int, team filter
-		DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	-- int, type filter
+		self:GetAbilityTargetTeam(),	-- int, team filter
+		self:GetAbilityTargetType(),	-- int, type filter
 		0,	-- int, flag filter
 		0,	-- int, order filter
 		false	-- bool, can grow cache
