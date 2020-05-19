@@ -1126,7 +1126,7 @@ var spells = {
             "cost": 1
         },
         {
-            "spell_id": "tinker_rearm",
+            "spell_id": "tinker_rearm_lua",
             "cost": 2
         },
     ],
