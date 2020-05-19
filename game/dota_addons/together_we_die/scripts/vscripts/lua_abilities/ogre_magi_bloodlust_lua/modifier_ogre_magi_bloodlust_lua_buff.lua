@@ -31,10 +31,26 @@ function modifier_ogre_magi_bloodlust_lua_buff:OnCreated( kv )
 	-- references
 	self.model_scale = self:GetAbility():GetSpecialValueFor( "modelscale" )
 	self.ms_bonus = self:GetAbility():GetSpecialValueFor( "bonus_movement_speed" )
+	-- Talent Tree
+	local special_bloodlust_ms_lua = self:GetCaster():FindAbilityByName("special_bloodlust_ms_lua")
+	if special_bloodlust_ms_lua and special_bloodlust_ms_lua:GetLevel() ~= 0 then
+		self.ms_bonus = self.ms_bonus + special_bloodlust_ms_lua:GetSpecialValueFor("value")
+	end
 	self.as_bonus = self:GetAbility():GetSpecialValueFor( "bonus_attack_speed" )
-	self.int_multiplier = self:GetAbility():GetSpecialValueFor( "int_multiplier" )
-	self.damage_bonus = self:GetCaster():GetIntellect() * self.int_multiplier
 	self.as_self = self:GetAbility():GetSpecialValueFor( "self_bonus" )
+	-- Talent Tree
+	local special_bloodlust_as_lua = self:GetCaster():FindAbilityByName("special_bloodlust_as_lua")
+	if special_bloodlust_as_lua and special_bloodlust_as_lua:GetLevel() ~= 0 then
+		self.as_bonus = self.as_bonus + special_bloodlust_as_lua:GetSpecialValueFor("value")
+		self.as_self = self.as_self + special_bloodlust_as_lua:GetSpecialValueFor("value")
+	end
+	self.int_multiplier = self:GetAbility():GetSpecialValueFor( "int_multiplier" )
+	-- Talent Tree
+	local special_bloodlust_int_multiplier_lua = self:GetCaster():FindAbilityByName("special_bloodlust_int_multiplier_lua")
+	if special_bloodlust_int_multiplier_lua and special_bloodlust_int_multiplier_lua:GetLevel() ~= 0 then
+		self.int_multiplier = self.int_multiplier + special_bloodlust_int_multiplier_lua:GetSpecialValueFor("value")
+	end
+	self.damage_bonus = self:GetCaster():GetIntellect() * self.int_multiplier
 
 	if self:GetParent()==self:GetCaster() then
 		self.as_bonus = self.as_self

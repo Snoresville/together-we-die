@@ -64,6 +64,7 @@
 			{
 				"var_type"			"FIELD_INTEGER"
 				"slow_movement_speed_pct"		"-20 -22 -24 -26"
+				"LinkedSpecialBonus"    "special_ignite_slow_lua"
 			}
 
 			"04"
@@ -80,6 +81,7 @@
 			{
 				"var_type"			"FIELD_FLOAT"
 				"int_multiplier"	"1.5 4.0 7.5 10.0"
+				"LinkedSpecialBonus"    "special_ignite_int_multiplier_lua"
 			}
 			"07"
 			{

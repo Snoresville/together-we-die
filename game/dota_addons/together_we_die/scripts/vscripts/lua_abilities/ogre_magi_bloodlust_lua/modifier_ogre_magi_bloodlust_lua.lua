@@ -66,8 +66,8 @@ function modifier_ogre_magi_bloodlust_lua:OnIntervalThink()
 		self.caster:GetOrigin(),	-- point, center point
 		nil,	-- handle, cacheUnit. (not known)
 		self.radius,	-- float, radius. or use FIND_UNITS_EVERYWHERE
-		DOTA_UNIT_TARGET_TEAM_FRIENDLY,	-- int, team filter
-		DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO,	-- int, type filter
+		self.ability:GetAbilityTargetTeam(),	-- int, team filter
+		self.ability:GetAbilityTargetType(),	-- int, type filter
 		0,	-- int, flag filter
 		0,	-- int, order filter
 		false	-- bool, can grow cache

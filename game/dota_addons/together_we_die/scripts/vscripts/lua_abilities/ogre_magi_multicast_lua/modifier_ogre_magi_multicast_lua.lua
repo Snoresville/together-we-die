@@ -46,6 +46,7 @@ function modifier_ogre_magi_multicast_lua:OnCreated( kv )
 	self.chance_2 = self:GetAbility():GetSpecialValueFor( "multicast_2_times" ) * 100
 	self.chance_3 = self:GetAbility():GetSpecialValueFor( "multicast_3_times" ) * 100
 	self.chance_4 = self:GetAbility():GetSpecialValueFor( "multicast_4_times" ) * 100
+	self.chance_10 = self:GetAbility():GetSpecialValueFor( "multicast_10_times" )
 
 	self.buffer_range = 300
 end
@@ -55,6 +56,7 @@ function modifier_ogre_magi_multicast_lua:OnRefresh( kv )
 	self.chance_2 = self:GetAbility():GetSpecialValueFor( "multicast_2_times" ) * 100
 	self.chance_3 = self:GetAbility():GetSpecialValueFor( "multicast_3_times" ) * 100
 	self.chance_4 = self:GetAbility():GetSpecialValueFor( "multicast_4_times" ) * 100
+	self.chance_10 = self:GetAbility():GetSpecialValueFor( "multicast_10_times" )
 end
 
 function modifier_ogre_magi_multicast_lua:OnRemoved()
@@ -94,11 +96,18 @@ function modifier_ogre_magi_multicast_lua:OnAbilityFullyCast( params )
 	-- Ensure it is not a passive ability
 	if bit.band( params.ability:GetBehavior(), DOTA_ABILITY_BEHAVIOR_PASSIVE ) ~= 0 then return end
 
+	-- Talent Tree
+	local special_multicast_ten_chance_lua = self:GetCaster():FindAbilityByName("special_multicast_ten_chance_lua")
+	if special_multicast_ten_chance_lua and special_multicast_ten_chance_lua:GetLevel() ~= 0 then
+		self.chance_10 = special_multicast_ten_chance_lua:GetSpecialValueFor("value")
+	end
+
 	-- roll multicasts
 	local casts = 1
 	if RandomInt( 0,100 ) < self.chance_2 then casts = 2 end
 	if RandomInt( 0,100 ) < self.chance_3 then casts = 3 end
 	if RandomInt( 0,100 ) < self.chance_4 then casts = 4 end
+	if RandomInt( 0,100 ) < self.chance_10 then casts = 10 end
 
 	-- check delay
 	local delay = params.ability:GetSpecialValueFor( "multicast_delay" ) or 0

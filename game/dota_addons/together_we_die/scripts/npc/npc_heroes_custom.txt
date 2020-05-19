@@ -861,14 +861,14 @@
 		"Ability4"				"ogre_magi_unrefined_fireblast_lua"
 		"Ability5"		""
 		"Ability6"				"ogre_magi_multicast_lua"
-		"Ability10"		""
-		"Ability11"		""
-		"Ability12"		""
-		"Ability13"		""
-		"Ability14"		""
-		"Ability15"		""
-		"Ability16"		""
-		"Ability17"		""
+		"Ability10"		"special_bloodlust_as_lua"
+		"Ability11"		"special_ignite_int_multiplier_lua"
+		"Ability12"		"special_fireblast_int_multiplier_lua"
+		"Ability13"		"special_fireblast_radius_lua"
+		"Ability14"		"special_ignite_slow_lua"
+		"Ability15"		"special_bloodlust_ms_lua"
+		"Ability16"		"special_bloodlust_int_multiplier_lua"
+		"Ability17"		"special_multicast_ten_chance_lua"
 
 		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
 	}

@@ -66,11 +66,13 @@
 			{
 				"var_type"			"FIELD_FLOAT"
 				"int_multiplier"			"1.5 3.5 5.5 7.5"
+				"LinkedSpecialBonus"    "special_fireblast_int_multiplier_lua"
 			}
 			"05"
 			{
 				"var_type"			"FIELD_FLOAT"
 				"radius"			"225"
+				"LinkedSpecialBonus"    "special_fireblast_radius_lua"
 			}
 		}
 	}
