@@ -771,14 +771,14 @@
 		"Ability4"		""
 		"Ability5"		""
 		"Ability6"				"pudge_dismember_lua"
-		"Ability10"		""
-		"Ability11"		""
-		"Ability12"		""
-		"Ability13"		""
-		"Ability14"		""
-		"Ability15"		""
-		"Ability16"		""
-		"Ability17"		""
+		"Ability10"		"special_meat_hook_width_lua"
+		"Ability11"		"special_meat_hook_distance_lua"
+		"Ability12"		"special_flesh_heap_stack_lua"
+		"Ability13"		"special_meat_hook_speed_lua"
+		"Ability14"		"special_meat_hook_str_multiplier_lua"
+		"Ability15"		"special_dismember_str_multiplier_lua"
+		"Ability16"		"special_rot_self_damage_multiplier_lua"
+		"Ability17"		"special_rot_str_multiplier_lua"
 
 		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
 	}

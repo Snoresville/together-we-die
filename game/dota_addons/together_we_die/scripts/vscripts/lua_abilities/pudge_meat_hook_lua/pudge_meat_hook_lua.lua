@@ -23,10 +23,31 @@ function pudge_meat_hook_lua:OnSpellStart()
 		self.hVictim:InterruptMotionControllers( true )
 	end
 
-	self.hook_damage = self:GetSpecialValueFor( "hook_damage" ) + (self:GetCaster():GetStrength() * self:GetSpecialValueFor("str_multiplier"))
+	self.str_multiplier = self:GetSpecialValueFor("str_multiplier")
+	-- Talent Tree
+	local special_meat_hook_str_multiplier_lua = self:GetCaster():FindAbilityByName("special_meat_hook_str_multiplier_lua")
+	if special_meat_hook_str_multiplier_lua and special_meat_hook_str_multiplier_lua:GetLevel() ~= 0 then
+		self.str_multiplier = self.str_multiplier + special_meat_hook_str_multiplier_lua:GetSpecialValueFor("value")
+	end
+	self.hook_damage = self:GetSpecialValueFor( "hook_damage" ) + math.floor(self:GetCaster():GetStrength() * self.str_multiplier)
 	self.hook_speed = self:GetSpecialValueFor( "hook_speed" )
+	-- Talent Tree
+	local special_meat_hook_speed_lua = self:GetCaster():FindAbilityByName("special_meat_hook_speed_lua")
+	if special_meat_hook_speed_lua and special_meat_hook_speed_lua:GetLevel() ~= 0 then
+		self.hook_speed = self.hook_speed + special_meat_hook_speed_lua:GetSpecialValueFor("value")
+	end
 	self.hook_width = self:GetSpecialValueFor( "hook_width" )
+	-- Talent Tree
+	local special_meat_hook_width_lua = self:GetCaster():FindAbilityByName("special_meat_hook_width_lua")
+	if special_meat_hook_width_lua and special_meat_hook_width_lua:GetLevel() ~= 0 then
+		self.hook_width = self.hook_width + special_meat_hook_width_lua:GetSpecialValueFor("value")
+	end
 	self.hook_distance = self:GetSpecialValueFor( "hook_distance" )
+	-- Talent Tree
+	local special_meat_hook_distance_lua = self:GetCaster():FindAbilityByName("special_meat_hook_distance_lua")
+	if special_meat_hook_distance_lua and special_meat_hook_distance_lua:GetLevel() ~= 0 then
+		self.hook_distance = self.hook_distance + special_meat_hook_distance_lua:GetSpecialValueFor("value")
+	end
 	self.hook_followthrough_constant = self:GetSpecialValueFor( "hook_followthrough_constant" )
 
 	self.vision_radius = self:GetSpecialValueFor( "vision_radius" )  
@@ -96,7 +117,6 @@ function pudge_meat_hook_lua:OnProjectileHit( hTarget, vLocation )
 
 	if self.bRetracting == false then
 		if hTarget ~= nil and ( not ( hTarget:IsCreep() or hTarget:IsConsideredHero() ) ) then
-			Msg( "Target was invalid")
 			return false
 		end
 
@@ -111,8 +131,8 @@ function pudge_meat_hook_lua:OnProjectileHit( hTarget, vLocation )
 						victim = hTarget,
 						attacker = self:GetCaster(),
 						damage = self.hook_damage,
-						damage_type = DAMAGE_TYPE_PURE,		
-						ability = this
+						damage_type = self:GetAbilityDamageType(),
+						ability = self
 					}
 
 				ApplyDamage( damage )

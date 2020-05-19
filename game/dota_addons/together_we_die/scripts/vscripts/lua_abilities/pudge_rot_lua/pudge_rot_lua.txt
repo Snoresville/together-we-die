@@ -48,11 +48,13 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"str_multiplier"		"2.0 4.0 6.0 8.0"
+				"LinkedSpecialBonus"    "special_rot_str_multiplier_lua"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"self_damage_multiplier"		"0.9 0.85 0.8 0.75"
+				"LinkedSpecialBonus"    "special_rot_self_damage_multiplier_lua"
 			}
 		}
 	}

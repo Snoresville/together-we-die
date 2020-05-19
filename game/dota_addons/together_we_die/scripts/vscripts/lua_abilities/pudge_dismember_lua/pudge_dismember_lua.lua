@@ -30,8 +30,8 @@ function pudge_dismember_lua:OnAbilityPhaseStart()
 			point,	-- point, center point
 			target,	-- handle, cacheUnit. (not known)
 			search,	-- float, radius. or use FIND_UNITS_EVERYWHERE
-			DOTA_UNIT_TARGET_TEAM_ENEMY,	-- int, team filter
-			DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	-- int, type filter
+			self:GetAbilityTargetTeam(),	-- int, team filter
+			self:GetAbilityTargetType(),	-- int, type filter
 			DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,	-- int, flag filter
 			0,	-- int, order filter
 			false	-- bool, can grow cache

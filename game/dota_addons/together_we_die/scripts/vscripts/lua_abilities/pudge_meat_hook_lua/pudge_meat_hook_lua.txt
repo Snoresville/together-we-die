@@ -36,16 +36,19 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"hook_speed"			"1600.0"
+				"LinkedSpecialBonus"    "special_meat_hook_speed_lua"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"hook_width"		"100"
+				"LinkedSpecialBonus"    "special_meat_hook_width_lua"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"hook_distance"		"1000 1200 1400 1600"
+				"LinkedSpecialBonus"    "special_meat_hook_distance_lua"
 			}
 			"04"
 			{
@@ -71,6 +74,7 @@
 			{
 				"var_type"			"FIELD_FLOAT"
 				"str_multiplier"	"8.0 12.0 16.0 20.0"
+				"LinkedSpecialBonus"    "special_meat_hook_str_multiplier_lua"
 			}
 		}
 	}

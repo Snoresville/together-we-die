@@ -48,11 +48,13 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"str_multiplier"		"4.0 8.0 12.0"
+				"LinkedSpecialBonus"    "special_dismember_str_multiplier_lua"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"strength_damage_scepter"		"8.0 12.0 16.0"
+				"LinkedSpecialBonus"    "special_dismember_str_multiplier_lua"
 			}
 			"04"
 			{

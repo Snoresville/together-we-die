@@ -47,7 +47,17 @@ function modifier_pudge_rot_lua:OnCreated(kv)
     self.rot_damage = self:GetAbility():GetSpecialValueFor("rot_damage")
     self.rot_tick = self:GetAbility():GetSpecialValueFor("rot_tick")
     self.self_damage_multiplier = self:GetAbility():GetSpecialValueFor("self_damage_multiplier")
+    -- Talent Tree
+    local special_rot_self_damage_multiplier_lua = self:GetCaster():FindAbilityByName("special_rot_self_damage_multiplier_lua")
+    if special_rot_self_damage_multiplier_lua and special_rot_self_damage_multiplier_lua:GetLevel() ~= 0 then
+        self.self_damage_multiplier = self.self_damage_multiplier + special_rot_self_damage_multiplier_lua:GetSpecialValueFor("value")
+    end
     self.str_multiplier = self:GetAbility():GetSpecialValueFor("str_multiplier")
+    -- Talent Tree
+    local special_rot_str_multiplier_lua = self:GetCaster():FindAbilityByName("special_rot_str_multiplier_lua")
+    if special_rot_str_multiplier_lua and special_rot_str_multiplier_lua:GetLevel() ~= 0 then
+        self.str_multiplier = self.str_multiplier + special_rot_str_multiplier_lua:GetSpecialValueFor("value")
+    end
 
     if IsServer() then
         if self:GetParent() == self:GetCaster() then
