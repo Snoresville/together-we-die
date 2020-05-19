@@ -63,7 +63,6 @@ function modifier_viper_poison_attack_lua:OnRefresh(kv)
     self.ms_slow = self:GetAbility():GetSpecialValueFor("bonus_movement_speed")
     self.damage_pct = self:GetAbility():GetSpecialValueFor("damage")
     self.agi_multiplier = self:GetAbility():GetSpecialValueFor("agi_multiplier")
-    self:IncrementStackCount()
 end
 
 function modifier_viper_poison_attack_lua:OnRemoved()
