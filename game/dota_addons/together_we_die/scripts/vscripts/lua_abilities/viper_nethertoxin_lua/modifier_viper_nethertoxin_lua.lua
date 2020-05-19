@@ -14,7 +14,7 @@ modifier_viper_nethertoxin_lua = class({})
 --------------------------------------------------------------------------------
 -- Classifications
 function modifier_viper_nethertoxin_lua:IsHidden()
-    return false
+    return true
 end
 
 function modifier_viper_nethertoxin_lua:IsDebuff()
@@ -33,56 +33,18 @@ end
 -- Initializations
 function modifier_viper_nethertoxin_lua:OnCreated(kv)
     -- references
-    self.damage = self:GetAbility():GetSpecialValueFor("damage") + (self:GetCaster():GetAgility() * self:GetAbility():GetSpecialValueFor("agi_multiplier"))
     self.radius = self:GetAbility():GetSpecialValueFor("radius")
-    self.magic_resist = self:GetAbility():GetSpecialValueFor("magic_resistance")
-    self:SetStackCount(1)
-
-    self.owner = kv.isProvidedByAura ~= 1
 
     if not IsServer() then
         return
     end
 
-    if not self.owner then
-        -- precache damage
-        self.damageTable = {
-            victim = self:GetParent(),
-            attacker = self:GetCaster(),
-            damage = self.damage,
-            damage_type = self:GetAbility():GetAbilityDamageType(),
-            ability = self:GetAbility(), --Optional.
-        }
-        -- ApplyDamage(damageTable)
-
-        -- Start interval
-        self:StartIntervalThink(1)
-    else
-        self:PlayEffects()
-    end
-
+    self:PlayEffects()
 end
 
 function modifier_viper_nethertoxin_lua:OnRefresh(kv)
     -- references
-    self.damage = self:GetAbility():GetSpecialValueFor("damage") + (self:GetCaster():GetAgility() * self:GetAbility():GetSpecialValueFor("agi_multiplier"))
     self.radius = self:GetAbility():GetSpecialValueFor("radius")
-    self.magic_resist = self:GetAbility():GetSpecialValueFor("magic_resistance")
-
-    if not IsServer() then
-        return
-    end
-
-    if not self.owner then
-        -- precache damage
-        self.damageTable = {
-            victim = self:GetParent(),
-            attacker = self:GetCaster(),
-            damage = self.damage,
-            damage_type = self:GetAbility():GetAbilityDamageType(),
-            ability = self:GetAbility(), --Optional.
-        }
-    end
 end
 
 function modifier_viper_nethertoxin_lua:OnRemoved()
@@ -92,57 +54,17 @@ function modifier_viper_nethertoxin_lua:OnDestroy()
     if not IsServer() then
         return
     end
-    if not self.owner then
-        return
-    end
     UTIL_Remove(self:GetParent())
-end
-
---------------------------------------------------------------------------------
--- Modifier Effects
-function modifier_viper_nethertoxin_lua:DeclareFunctions()
-    local funcs = {
-        MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS
-    }
-
-    return funcs
-end
-
-function modifier_viper_nethertoxin_lua:GetModifierMagicalResistanceBonus()
-    return self.magic_resist
-end
---------------------------------------------------------------------------------
--- Status Effects
-function modifier_viper_nethertoxin_lua:CheckState()
-    local state = {
-        [MODIFIER_STATE_PASSIVES_DISABLED] = true,
-    }
-
-    return state
-end
-
---------------------------------------------------------------------------------
--- Interval Effects
-function modifier_viper_nethertoxin_lua:OnIntervalThink()
-    -- Apply damage
-    self.damageTable = self.damage * self:GetStackCount()
-    ApplyDamage(self.damageTable)
-
-    -- Play effects
-    local sound_cast = "Hero_Viper.NetherToxin.Damage"
-    EmitSoundOn(sound_cast, self:GetParent())
-
-    self:IncrementStackCount()
 end
 
 --------------------------------------------------------------------------------
 -- Aura Effects
 function modifier_viper_nethertoxin_lua:IsAura()
-    return self.owner
+    return true
 end
 
 function modifier_viper_nethertoxin_lua:GetModifierAura()
-    return "modifier_viper_nethertoxin_lua"
+    return "modifier_viper_nethertoxin_lua_debuff"
 end
 
 function modifier_viper_nethertoxin_lua:GetAuraRadius()
@@ -154,25 +76,15 @@ function modifier_viper_nethertoxin_lua:GetAuraDuration()
 end
 
 function modifier_viper_nethertoxin_lua:GetAuraSearchTeam()
-    return DOTA_UNIT_TARGET_TEAM_ENEMY
+    return self:GetAbility():GetAbilityTargetTeam()
 end
 
 function modifier_viper_nethertoxin_lua:GetAuraSearchType()
-    return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC
+    return self:GetAbility():GetAbilityTargetType()
 end
 
 --------------------------------------------------------------------------------
 -- Graphics & Animations
-function modifier_viper_nethertoxin_lua:GetEffectName()
-    if not self.owner then
-        return "particles/units/heroes/hero_viper/viper_nethertoxin_debuff.vpcf"
-    end
-end
-
-function modifier_viper_nethertoxin_lua:GetEffectAttachType()
-    return PATTACH_ABSORIGIN_FOLLOW
-end
-
 function modifier_viper_nethertoxin_lua:PlayEffects()
     -- Get Resources
     local particle_cast = "particles/units/heroes/hero_viper/viper_nethertoxin.vpcf"

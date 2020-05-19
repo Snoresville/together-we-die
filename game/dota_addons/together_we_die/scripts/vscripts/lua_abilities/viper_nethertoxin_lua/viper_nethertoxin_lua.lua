@@ -11,6 +11,7 @@ Ability checklist (erase if done/checked):
 --------------------------------------------------------------------------------
 viper_nethertoxin_lua = class({})
 LinkLuaModifier( "modifier_viper_nethertoxin_lua", "lua_abilities/viper_nethertoxin_lua/modifier_viper_nethertoxin_lua", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_viper_nethertoxin_lua_debuff", "lua_abilities/viper_nethertoxin_lua/modifier_viper_nethertoxin_lua_debuff", LUA_MODIFIER_MOTION_NONE )
 
 --------------------------------------------------------------------------------
 -- Custom KV
