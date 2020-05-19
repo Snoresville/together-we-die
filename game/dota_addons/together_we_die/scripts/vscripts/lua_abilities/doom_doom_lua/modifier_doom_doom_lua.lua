@@ -106,7 +106,6 @@ function modifier_doom_doom_lua:CheckState()
 	local state = {
 		[MODIFIER_STATE_SILENCED] = true,
 		[MODIFIER_STATE_MUTED] = true,
-		[MODIFIER_STATE_PASSIVES_DISABLED] = self.scepter,
 		[MODIFIER_STATE_SPECIALLY_DENIABLE] = self:GetParent():GetHealthPercent()<self.deniable,
 	}
 
