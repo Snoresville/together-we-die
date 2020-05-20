@@ -1,4 +1,5 @@
 tinker_heat_seeking_missile_lua = class({})
+LinkLuaModifier( "modifier_generic_stunned_lua", "lua_abilities/generic/modifier_generic_stunned_lua", LUA_MODIFIER_MOTION_NONE )
 
 --------------------------------------------------------------------------------
 -- Ability Start
@@ -8,10 +9,22 @@ function tinker_heat_seeking_missile_lua:OnSpellStart()
 
 	-- load data
 	local radius = self:GetSpecialValueFor("radius")
-	local damage = self:GetSpecialValueFor("damage") + (caster:GetIntellect() * self:GetSpecialValueFor("int_multiplier"))
+	local int_multiplier = self:GetSpecialValueFor("int_multiplier")
+	-- Talent Tree
+	local special_heat_seeking_int_multiplier_lua = self:GetCaster():FindAbilityByName("special_heat_seeking_int_multiplier_lua")
+	if special_heat_seeking_int_multiplier_lua and special_heat_seeking_int_multiplier_lua:GetLevel() ~= 0 then
+		int_multiplier = int_multiplier + special_heat_seeking_int_multiplier_lua:GetSpecialValueFor("value")
+	end
+	local damage = self:GetSpecialValueFor("damage") + (caster:GetIntellect() * int_multiplier)
 	local targets = self:GetSpecialValueFor("targets")
 	if caster:HasScepter() then
 		targets = self:GetSpecialValueFor("targets_scepter")
+	end
+	local stun_duration = 0
+	-- Talent Tree
+	local special_heat_seeking_mini_stun_lua = self:GetCaster():FindAbilityByName("special_heat_seeking_mini_stun_lua")
+	if special_heat_seeking_mini_stun_lua and special_heat_seeking_mini_stun_lua:GetLevel() ~= 0 then
+		stun_duration = special_heat_seeking_mini_stun_lua:GetSpecialValueFor("value")
 	end
 	local projectile_name = "particles/units/heroes/hero_tinker/tinker_missile.vpcf"
 	local projectile_speed = self:GetSpecialValueFor("speed")
@@ -39,6 +52,7 @@ function tinker_heat_seeking_missile_lua:OnSpellStart()
 		bDodgeable = true,
 		ExtraData = {
 			damage = damage,
+			stun_duration = stun_duration,
 		}
 	}
 	for i=1,math.min(targets,#enemies) do
@@ -66,6 +80,15 @@ function tinker_heat_seeking_missile_lua:OnProjectileHit_ExtraData( target, loca
 		ability = self
 	}
 	ApplyDamage( damage )
+
+	if extraData.stun_duration ~= 0 then
+		target:AddNewModifier(
+				self:GetCaster(), -- player source
+				self, -- ability source
+				"modifier_generic_stunned_lua", -- modifier name
+				{ duration = extraData.stun_duration } -- kv
+		)
+	end
 
 	-- effects
 	self:PlayEffects1( target )

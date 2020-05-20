@@ -80,6 +80,7 @@
 			{
 				"var_type"			"FIELD_FLOAT"
 				"int_multiplier"		"1.5 3.0 4.5 6.0"
+				"LinkedSpecialBonus"    "special_heat_seeking_int_multiplier_lua"
 			}
 		}
 	}

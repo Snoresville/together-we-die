@@ -31,7 +31,6 @@ function modifier_tinker_march_of_the_machines_lua_thinker:OnCreated( kv )
 		local machines_per_sec = self:GetAbility():GetSpecialValueFor( "machines_per_sec" ) -- special value
 		local collision_radius = self:GetAbility():GetSpecialValueFor( "collision_radius" ) -- special value
 		local splash_radius = self:GetAbility():GetSpecialValueFor( "splash_radius" ) -- special value
-		local splash_damage = self:GetAbility():GetAbilityDamage() + (self:GetCaster():GetIntellect() * self:GetAbility():GetSpecialValueFor("int_multiplier"))
 
 		-- generate Data
 		local projectile_name = "particles/econ/items/tinker/tinker_motm_rollermaw/tinker_rollermaw.vpcf"
@@ -54,9 +53,9 @@ function modifier_tinker_march_of_the_machines_lua_thinker:OnCreated( kv )
 			
 		    bDeleteOnHit = true,
 		    
-		    iUnitTargetTeam = DOTA_UNIT_TARGET_TEAM_ENEMY,
+		    iUnitTargetTeam = self:GetAbility():GetAbilityTargetTeam(),
 		    iUnitTargetFlags = DOTA_UNIT_TARGET_FLAG_NONE,
-		    iUnitTargetType = DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
+		    iUnitTargetType = self:GetAbility():GetAbilityTargetType(),
 		    
 		    EffectName = projectile_name,
 		    fDistance = distance,
@@ -66,7 +65,6 @@ function modifier_tinker_march_of_the_machines_lua_thinker:OnCreated( kv )
 
 			ExtraData = {
 				radius = splash_radius,
-				damage = splash_damage,
 			}
 		}
 

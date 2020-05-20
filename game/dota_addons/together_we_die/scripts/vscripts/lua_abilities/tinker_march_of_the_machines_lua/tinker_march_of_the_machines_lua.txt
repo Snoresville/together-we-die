@@ -28,6 +28,8 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 
 		// Ability Casting
@@ -92,6 +94,7 @@
 			{
 				"var_type"			"FIELD_FLOAT"
 				"int_multiplier"		"1.5 3.0 4.5 6.0"
+				"LinkedSpecialBonus"    "special_march_of_the_machines_int_multiplier_lua"
 			}
 		}
 	}

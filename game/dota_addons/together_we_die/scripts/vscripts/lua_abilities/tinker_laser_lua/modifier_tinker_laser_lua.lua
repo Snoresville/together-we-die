@@ -3,47 +3,49 @@ modifier_tinker_laser_lua = class({})
 --------------------------------------------------------------------------------
 -- Classifications
 function modifier_tinker_laser_lua:IsHidden()
-	return false
+    return false
 end
 
 function modifier_tinker_laser_lua:IsDebuff()
-	return true
+    return true
 end
 
 function modifier_tinker_laser_lua:IsStunDebuff()
-	return false
+    return false
 end
 
 function modifier_tinker_laser_lua:IsPurgable()
-	return true
+    return true
 end
 
 --------------------------------------------------------------------------------
 -- Initializations
-function modifier_tinker_laser_lua:OnCreated( kv )
-	-- references
-	self.miss_rate = self:GetAbility():GetSpecialValueFor( "miss_rate" )
+function modifier_tinker_laser_lua:OnCreated(kv)
+    -- references
+    if IsServer() then
+        self:SetStackCount(kv.miss_rate)
+    end
 end
 
-function modifier_tinker_laser_lua:OnRefresh( kv )
-	-- references
-	self.miss_rate = self:GetAbility():GetSpecialValueFor( "miss_rate" )
+function modifier_tinker_laser_lua:OnRefresh(kv)
+    -- references
+    self:OnCreated(kv)
 end
 
-function modifier_tinker_laser_lua:OnDestroy( kv )
+function modifier_tinker_laser_lua:OnDestroy(kv)
 
 end
 
 --------------------------------------------------------------------------------
 -- Modifier Effects
 function modifier_tinker_laser_lua:DeclareFunctions()
-	local funcs = {
-		MODIFIER_PROPERTY_MISS_PERCENTAGE,
-	}
+    local funcs = {
+        MODIFIER_PROPERTY_MISS_PERCENTAGE,
+    }
 
-	return funcs
+    return funcs
 end
 
 function modifier_tinker_laser_lua:GetModifierMiss_Percentage()
-	return self.miss_rate
+    return self:GetStackCount()
 end

@@ -1,5 +1,6 @@
 tinker_laser_lua = class({})
 LinkLuaModifier( "modifier_tinker_laser_lua", "lua_abilities/tinker_laser_lua/modifier_tinker_laser_lua", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_generic_silenced_lua", "lua_abilities/generic/modifier_generic_silenced_lua", LUA_MODIFIER_MOTION_NONE )
 
 --------------------------------------------------------------------------------
 -- Ability Phase Start
@@ -26,7 +27,26 @@ function tinker_laser_lua:OnSpellStart()
 	-- load data
 	local duration_hero = self:GetSpecialValueFor("duration_hero")
 	local duration_creep = self:GetSpecialValueFor("duration_creep")
-	local damage = self:GetSpecialValueFor("laser_damage") + (caster:GetIntellect() * self:GetSpecialValueFor("int_multiplier"))
+	local int_multiplier = self:GetSpecialValueFor("int_multiplier")
+	-- Talent Tree
+	local special_laser_int_multiplier_lua = self:GetCaster():FindAbilityByName("special_laser_int_multiplier_lua")
+	if special_laser_int_multiplier_lua and special_laser_int_multiplier_lua:GetLevel() ~= 0 then
+		int_multiplier = int_multiplier + special_laser_int_multiplier_lua:GetSpecialValueFor("value")
+	end
+	local damage = self:GetSpecialValueFor("laser_damage") + (caster:GetIntellect() * int_multiplier)
+	local silence_duration = 0
+	-- Talent Tree
+	local special_laser_silence_duration_lua = self:GetCaster():FindAbilityByName("special_laser_silence_duration_lua")
+	if special_laser_silence_duration_lua and special_laser_silence_duration_lua:GetLevel() ~= 0 then
+		silence_duration = special_laser_silence_duration_lua:GetSpecialValueFor("value")
+	end
+	-- Miss chance
+	self.miss_rate = self:GetSpecialValueFor( "miss_rate" )
+	-- Talent Tree
+	local special_laser_miss_rate_lua = self:GetCaster():FindAbilityByName("special_laser_miss_rate_lua")
+	if special_laser_miss_rate_lua and special_laser_miss_rate_lua:GetLevel() ~= 0 then
+		self.miss_rate = self.miss_rate + special_laser_miss_rate_lua:GetSpecialValueFor("value")
+	end
 
 	-- get targets
 	local targets = {}
@@ -40,7 +60,7 @@ function tinker_laser_lua:OnSpellStart()
 		-- victim = hTarget,
 		attacker = caster,
 		damage = damage,
-		damage_type = DAMAGE_TYPE_MAGICAL,
+		damage_type = self:GetAbilityDamageType(),
 		ability = self
 	}
 	for _,enemy in pairs(targets) do
@@ -57,8 +77,20 @@ function tinker_laser_lua:OnSpellStart()
 			caster, -- player source
 			self, -- ability source
 			"modifier_tinker_laser_lua", -- modifier name
-			{ duration = duration } -- kv
+			{
+				duration = duration,
+				miss_rate = self.miss_rate,
+			} -- kv
 		)
+
+		if silence_duration ~= 0 then
+			enemy:AddNewModifier(
+					caster, -- player source
+					self, -- ability source
+					"modifier_generic_silenced_lua", -- modifier name
+					{ duration = silence_duration } -- kv
+			)
+		end
 	end
 
 	-- effects
@@ -75,8 +107,8 @@ function tinker_laser_lua:Refract( targets, jumps )
 		targets[jumps]:GetOrigin(),	-- point, center point
 		nil,	-- handle, cacheUnit. (not known)
 		scepter_range,	-- float, radius. or use FIND_UNITS_EVERYWHERE
-		DOTA_UNIT_TARGET_TEAM_ENEMY,	-- int, team filter
-		DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	-- int, type filter
+		self:GetAbilityTargetTeam(),	-- int, team filter
+		self:GetAbilityTargetType(),	-- int, type filter
 		DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS,	-- int, flag filter
 		FIND_CLOSEST,	-- int, order filter
 		false	-- bool, can grow cache

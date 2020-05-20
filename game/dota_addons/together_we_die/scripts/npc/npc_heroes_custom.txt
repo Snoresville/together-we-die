@@ -380,14 +380,14 @@
 		"Ability4"		""
 		"Ability5"		""
 		"Ability6"		        "tinker_rearm_lua"
-		"Ability10"		""
-		"Ability11"		""
-		"Ability12"		""
-		"Ability13"		""
-		"Ability14"		""
-		"Ability15"		""
-		"Ability16"		""
-		"Ability17"		""
+		"Ability10"		"special_laser_miss_rate_lua"
+		"Ability11"		"special_heat_seeking_int_multiplier_lua"
+		"Ability12"		"special_laser_int_multiplier_lua"
+		"Ability13"		"special_march_of_the_machines_int_multiplier_lua"
+		"Ability14"		"special_laser_silence_duration_lua"
+		"Ability15"		"special_heat_seeking_mini_stun_lua"
+		"Ability16"		"special_march_of_the_machines_stun_duration_lua"
+		"Ability17"		"special_march_of_the_machines_disarm_duration_lua"
 		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
 	}
 
