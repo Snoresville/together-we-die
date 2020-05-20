@@ -17,7 +17,7 @@
 		{
 		}
 
-		"ItemCost"						"73950"
+		"ItemCost"						"71375‬"
 		"ItemShopTags"					"str;regen_health;health_pool"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"hot;heart of regeneration"
