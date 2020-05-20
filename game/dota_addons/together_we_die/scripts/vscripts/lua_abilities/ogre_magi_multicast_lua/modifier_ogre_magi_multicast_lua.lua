@@ -23,6 +23,7 @@ modifier_ogre_magi_multicast_lua.banned = {
 	["item_tpscroll"] = true,
 	["item_travel_boots"] = true,
 	["item_travel_boots_2"] = true,
+	["item_bag_of_gold"] = true,
 	["tinker_rearm_lua"] = true,
 }
 
