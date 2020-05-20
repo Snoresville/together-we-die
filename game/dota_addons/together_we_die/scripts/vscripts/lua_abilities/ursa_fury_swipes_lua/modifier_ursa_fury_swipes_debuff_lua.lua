@@ -20,7 +20,6 @@ function modifier_ursa_fury_swipes_debuff_lua:OnCreated( kv )
 end
 
 function modifier_ursa_fury_swipes_debuff_lua:OnRefresh( kv )
-	self:IncrementStackCount()
 end
 
 --------------------------------------------------------------------------------

@@ -23,6 +23,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
@@ -54,7 +55,7 @@
 			"03"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"agi_multiplier"				"0.1 0.15 0.2 0.25"
+				"agi_multiplier"				"0.1 0.3 0.5 0.7"
 			}
 		}
 	}
