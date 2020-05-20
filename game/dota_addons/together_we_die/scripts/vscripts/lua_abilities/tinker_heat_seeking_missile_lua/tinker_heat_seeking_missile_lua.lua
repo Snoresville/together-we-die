@@ -22,9 +22,9 @@ function tinker_heat_seeking_missile_lua:OnSpellStart()
 		caster:GetOrigin(),	-- point, center point
 		nil,	-- handle, cacheUnit. (not known)
 		radius,	-- float, radius. or use FIND_UNITS_EVERYWHERE
-		DOTA_UNIT_TARGET_TEAM_ENEMY,	-- int, team filter
-		DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	-- int, type filter
-		DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS,	-- int, flag filter
+		self:GetAbilityTargetTeam(),	-- int, team filter
+		self:GetAbilityTargetType(),	-- int, type filter
+		self:GetAbilityTargetFlags(),	-- int, flag filter
 		FIND_CLOSEST,	-- int, order filter
 		false	-- bool, can grow cache
 	)
@@ -62,7 +62,7 @@ function tinker_heat_seeking_missile_lua:OnProjectileHit_ExtraData( target, loca
 		victim = target,
 		attacker = self:GetCaster(),
 		damage = extraData.damage,
-		damage_type = DAMAGE_TYPE_MAGICAL,
+		damage_type = self:GetAbilityDamageType(),
 		ability = self
 	}
 	ApplyDamage( damage )
