@@ -15,8 +15,6 @@ end
 function modifier_vengefulspirit_command_aura_effect_lua:OnCreated( kv )
 	self.agi_multiplier = self:GetAbility():GetSpecialValueFor( "agi_multiplier" )
 	self.bonus_damage_pct = self:GetAbility():GetSpecialValueFor( "bonus_damage_pct" )
-	self:OnIntervalThink()
-	self:StartIntervalThink( 1.0 )
 end
 
 --------------------------------------------------------------------------------
@@ -24,7 +22,6 @@ end
 function modifier_vengefulspirit_command_aura_effect_lua:OnRefresh( kv )
 	self.agi_multiplier = self:GetAbility():GetSpecialValueFor( "agi_multiplier" )
 	self.bonus_damage_pct = self:GetAbility():GetSpecialValueFor( "bonus_damage_pct" )
-	self:OnIntervalThink()
 end
 
 
@@ -45,16 +42,11 @@ function modifier_vengefulspirit_command_aura_effect_lua:GetModifierBaseDamageOu
 	end
 
 	if self:GetCaster():GetTeamNumber() ~= self:GetParent():GetTeamNumber() then
-		return -self.total_bonus_damage_pct
+		return -(self.bonus_damage_pct + self.agi_multiplier * self:GetCaster():GetAgility())
 	end
 
-	return self.total_bonus_damage_pct
+	return self.bonus_damage_pct + self.agi_multiplier * self:GetCaster():GetAgility()
 end
 
-function modifier_vengefulspirit_command_aura_effect_lua:OnIntervalThink()
-	self.total_bonus_damage_pct = self.bonus_damage_pct + self.agi_multiplier * self:GetCaster():GetAgility()
-end
-
---------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 

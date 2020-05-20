@@ -21,19 +21,19 @@ end
 --------------------------------------------------------------------------------
 
 function modifier_vengefulspirit_command_aura_lua:GetAuraSearchTeam()
-	return DOTA_UNIT_TARGET_TEAM_FRIENDLY
+	return self:GetAbility():GetAbilityTargetTeam()
 end
 
 --------------------------------------------------------------------------------
 
 function modifier_vengefulspirit_command_aura_lua:GetAuraSearchType()
-	return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_CREEP-- + DOTA_UNIT_TARGET_MECHANICAL
+	return self:GetAbility():GetAbilityTargetType()
 end
 
 --------------------------------------------------------------------------------
 
 function modifier_vengefulspirit_command_aura_lua:GetAuraSearchFlags()
-	return DOTA_UNIT_TARGET_FLAG_INVULNERABLE
+	return self:GetAbility():GetAbilityTargetFlags()
 end
 
 --------------------------------------------------------------------------------
