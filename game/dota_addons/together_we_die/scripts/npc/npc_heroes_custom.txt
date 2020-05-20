@@ -10,6 +10,12 @@
 	{
 		"override_hero"			"npc_dota_hero_axe"
 
+        "AttackDamageMin"		"40"
+		"AttackDamageMax"		"40"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "150"
+		"ArmorPhysical"		    "2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttributeBaseStrength" "30"
 		"AttributeBaseAgility"  "0"
 		"AttributeBaseIntelligence"  "0"
@@ -42,6 +48,12 @@
 	{
 		"override_hero"			"npc_dota_hero_centaur"
 
+        "AttackDamageMin"		"40"
+		"AttackDamageMax"		"40"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "150"
+		"ArmorPhysical"		    "2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttributeBaseStrength" "30"
 		"AttributeBaseAgility"  "0"
 		"AttributeBaseIntelligence"  "0"
@@ -75,6 +87,12 @@
 	{
 		"override_hero"			"npc_dota_hero_windrunner"
 
+        "AttackDamageMin"		"30"
+		"AttackDamageMax"		"30"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "600"
+		"ArmorPhysical"		    "-2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttributeBaseStrength" "0"
 		"AttributeBaseAgility"  "0"
 		"AttributeBaseIntelligence"  "30"
@@ -107,6 +125,12 @@
 	{
 		"override_hero"			"npc_dota_hero_omniknight"
 
+        "AttackDamageMin"		"40"
+		"AttackDamageMax"		"40"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "150"
+		"ArmorPhysical"		    "2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttributeBaseStrength" "30"
 		"AttributeBaseAgility"  "0"
 		"AttributeBaseIntelligence"  "0"
@@ -140,6 +164,12 @@
 	{
 		"override_hero"			"npc_dota_hero_drow_ranger"
 
+        "AttackDamageMin"		"30"
+		"AttackDamageMax"		"30"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "600"
+		"ArmorPhysical"		    "-2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttributeBaseStrength" "0"
 		"AttributeBaseAgility"  "30"
 		"AttributeBaseIntelligence"  "0"
@@ -172,6 +202,12 @@
 	{
 		"override_hero"			"npc_dota_hero_juggernaut"
 
+        "AttackDamageMin"		"40"
+		"AttackDamageMax"		"40"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "150"
+		"ArmorPhysical"		    "2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttributeBaseStrength" "0"
 		"AttributeBaseAgility"  "30"
 		"AttributeBaseIntelligence"  "0"
@@ -202,6 +238,12 @@
 	{
 		"override_hero"			"npc_dota_hero_sven"
 
+        "AttackDamageMin"		"40"
+		"AttackDamageMax"		"40"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "150"
+		"ArmorPhysical"		    "2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttributeBaseStrength" "30"
 		"AttributeBaseAgility"  "0"
 		"AttributeBaseIntelligence"  "0"
@@ -234,6 +276,12 @@
 	{
 		"override_hero"			"npc_dota_hero_legion_commander"
 
+        "AttackDamageMin"		"40"
+		"AttackDamageMax"		"40"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "150"
+		"ArmorPhysical"		    "2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttributeBaseStrength" "30"
 		"AttributeBaseAgility"  "0"
 		"AttributeBaseIntelligence"  "0"
@@ -267,6 +315,12 @@
 	{
 		"override_hero"				"npc_dota_hero_lina"
 
+        "AttackDamageMin"		"30"
+		"AttackDamageMax"		"30"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "600"
+		"ArmorPhysical"		    "-2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttributeBaseStrength" "0"
 		"AttributeBaseAgility"  "0"
 		"AttributeBaseIntelligence"  "30"
@@ -300,6 +354,12 @@
 	{
 		"override_hero"				"npc_dota_hero_crystal_maiden"
 
+        "AttackDamageMin"		"30"
+		"AttackDamageMax"		"30"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "600"
+		"ArmorPhysical"		    "-2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttributeBaseStrength" "0"
 		"AttributeBaseAgility"  "0"
 		"AttributeBaseIntelligence"  "30"
@@ -333,6 +393,12 @@
 	{
 		"override_hero"				"npc_dota_hero_queenofpain"
 
+        "AttackDamageMin"		"30"
+		"AttackDamageMax"		"30"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "600"
+		"ArmorPhysical"		    "-2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttributeBaseStrength" "0"
 		"AttributeBaseAgility"  "0"
 		"AttributeBaseIntelligence"  "30"
@@ -366,6 +432,12 @@
 	{
 		"override_hero"			"npc_dota_hero_tinker"
 
+        "AttackDamageMin"		"30"
+		"AttackDamageMax"		"30"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "600"
+		"ArmorPhysical"		    "-2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttributeBaseStrength" "0"
 		"AttributeBaseAgility"  "0"
 		"AttributeBaseIntelligence"  "30"
@@ -395,6 +467,12 @@
 	{
 		"override_hero"			"npc_dota_hero_dazzle"
 
+        "AttackDamageMin"		"30"
+		"AttackDamageMax"		"30"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "600"
+		"ArmorPhysical"		    "-2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttributeBaseStrength" "0"
 		"AttributeBaseAgility"  "0"
 		"AttributeBaseIntelligence"  "30"
@@ -424,6 +502,12 @@
 	{
 		"override_hero"			"npc_dota_hero_phantom_assassin"
 
+        "AttackDamageMin"		"40"
+		"AttackDamageMax"		"40"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "150"
+		"ArmorPhysical"		    "2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttributeBaseStrength" "0"
 		"AttributeBaseAgility"  "30"
 		"AttributeBaseIntelligence"  "0"
@@ -453,6 +537,12 @@
 	{
 		"override_hero"			"npc_dota_hero_phantom_lancer"
 
+        "AttackDamageMin"		"40"
+		"AttackDamageMax"		"40"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "150"
+		"ArmorPhysical"		    "2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttributeBaseStrength" "0"
 		"AttributeBaseAgility"  "30"
 		"AttributeBaseIntelligence"  "0"
@@ -481,6 +571,12 @@
 	{
 		"override_hero"				"npc_dota_hero_luna"
 
+        "AttackDamageMin"		"30"
+		"AttackDamageMax"		"30"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "600"
+		"ArmorPhysical"		    "-2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttributeBaseStrength" "0"
 		"AttributeBaseAgility"  "30"
 		"AttributeBaseIntelligence"  "0"
@@ -511,6 +607,12 @@
 	{
 		"override_hero"				"npc_dota_hero_dark_willow"
 
+        "AttackDamageMin"		"30"
+		"AttackDamageMax"		"30"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "600"
+		"ArmorPhysical"		    "-2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttributeBaseStrength" "0"
 		"AttributeBaseAgility"  "0"
 		"AttributeBaseIntelligence"  "30"
@@ -541,6 +643,12 @@
 	{
 		"override_hero"				"npc_dota_hero_leshrac"
 
+        "AttackDamageMin"		"30"
+		"AttackDamageMax"		"30"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "600"
+		"ArmorPhysical"		    "-2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttributeBaseStrength" "0"
 		"AttributeBaseAgility"  "0"
 		"AttributeBaseIntelligence"  "30"
@@ -574,6 +682,12 @@
 	{
 		"override_hero"			"npc_dota_hero_lion"
 
+        "AttackDamageMin"		"30"
+		"AttackDamageMax"		"30"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "600"
+		"ArmorPhysical"		    "-2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttributeBaseStrength" "0"
 		"AttributeBaseAgility"  "0"
 		"AttributeBaseIntelligence"  "30"
@@ -608,6 +722,12 @@
 	{
 		"override_hero"			"npc_dota_hero_furion"
 
+        "AttackDamageMin"		"30"
+		"AttackDamageMax"		"30"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "600"
+		"ArmorPhysical"		    "-2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttributeBaseStrength" "0"
 		"AttributeBaseAgility"  "0"
 		"AttributeBaseIntelligence"  "30"
@@ -641,6 +761,12 @@
 	{
 		"override_hero"			"npc_dota_hero_earthshaker"
 
+        "AttackDamageMin"		"40"
+		"AttackDamageMax"		"40"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "150"
+		"ArmorPhysical"		    "2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttributeBaseStrength" "30"
 		"AttributeBaseAgility"  "0"
 		"AttributeBaseIntelligence"  "0"
@@ -670,6 +796,12 @@
 	{
 		"override_hero"			"npc_dota_hero_arc_warden"
 
+        "AttackDamageMin"		"30"
+		"AttackDamageMax"		"30"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "600"
+		"ArmorPhysical"		    "-2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttributeBaseStrength" "0"
 		"AttributeBaseAgility"  "30"
 		"AttributeBaseIntelligence"  "0"
@@ -698,6 +830,12 @@
 	{
 		"override_hero"			"npc_dota_hero_sniper"
 
+        "AttackDamageMin"		"30"
+		"AttackDamageMax"		"30"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "600"
+		"ArmorPhysical"		    "-2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttributeBaseStrength" "0"
 		"AttributeBaseAgility"  "30"
 		"AttributeBaseIntelligence"  "0"
@@ -728,6 +866,12 @@
 	{
 		"override_hero"			"npc_dota_hero_mars"
 
+        "AttackDamageMin"		"40"
+		"AttackDamageMax"		"40"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "150"
+		"ArmorPhysical"		    "2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttributeBaseStrength" "30"
 		"AttributeBaseAgility"  "0"
 		"AttributeBaseIntelligence"  "0"
@@ -758,6 +902,12 @@
 	{
 		"override_hero"			"npc_dota_hero_pudge"
 
+        "AttackDamageMin"		"40"
+		"AttackDamageMax"		"40"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "150"
+		"ArmorPhysical"		    "2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttributeBaseStrength" "30"
 		"AttributeBaseAgility"  "0"
 		"AttributeBaseIntelligence"  "0"
@@ -788,6 +938,12 @@
 	{
 		"override_hero"			"npc_dota_hero_sand_king"
 
+        "AttackDamageMin"		"40"
+		"AttackDamageMax"		"40"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "150"
+		"ArmorPhysical"		    "2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttributeBaseStrength" "30"
 		"AttributeBaseAgility"  "0"
 		"AttributeBaseIntelligence"  "0"
@@ -818,6 +974,12 @@
 	{
 		"override_hero"				"npc_dota_hero_alchemist"
 
+        "AttackDamageMin"		"40"
+		"AttackDamageMax"		"40"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "150"
+		"ArmorPhysical"		    "2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttributeBaseStrength" "30"
 		"AttributeBaseAgility"  "0"
 		"AttributeBaseIntelligence"  "0"
@@ -848,6 +1010,12 @@
 	{
 		"override_hero"					"npc_dota_hero_ogre_magi"
 
+        "AttackDamageMin"		"40"
+		"AttackDamageMax"		"40"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "150"
+		"ArmorPhysical"		    "2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttributeBaseStrength" "0"
 		"AttributeBaseAgility"  "0"
 		"AttributeBaseIntelligence"  "30"
@@ -878,6 +1046,12 @@
 	{
 		"override_hero"					"npc_dota_hero_bristleback"
 
+        "AttackDamageMin"		"40"
+		"AttackDamageMax"		"40"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "150"
+		"ArmorPhysical"		    "2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttributeBaseStrength" "30"
 		"AttributeBaseAgility"  "0"
 		"AttributeBaseIntelligence"  "0"
@@ -908,6 +1082,12 @@
 	{
 		"override_hero"					"npc_dota_hero_skeleton_king"
 
+        "AttackDamageMin"		"40"
+		"AttackDamageMax"		"40"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "150"
+		"ArmorPhysical"		    "2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttributeBaseStrength" "30"
 		"AttributeBaseAgility"  "0"
 		"AttributeBaseIntelligence"  "0"
@@ -938,6 +1118,12 @@
 	{
 		"override_hero"					"npc_dota_hero_huskar"
 
+        "AttackDamageMin"		"30"
+		"AttackDamageMax"		"30"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "600"
+		"ArmorPhysical"		    "-2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttributeBaseStrength" "30"
 		"AttributeBaseAgility"  "0"
 		"AttributeBaseIntelligence"  "0"
@@ -968,6 +1154,12 @@
 	{
 		"override_hero"					"npc_dota_hero_ursa"
 
+        "AttackDamageMin"		"40"
+		"AttackDamageMax"		"40"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "150"
+		"ArmorPhysical"		    "2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttributeBaseStrength" "0"
 		"AttributeBaseAgility"  "30"
 		"AttributeBaseIntelligence"  "0"
@@ -998,6 +1190,12 @@
 	{
 		"override_hero"					"npc_dota_hero_slark"
 
+        "AttackDamageMin"		"40"
+		"AttackDamageMax"		"40"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "150"
+		"ArmorPhysical"		    "2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttributeBaseStrength" "0"
 		"AttributeBaseAgility"  "30"
 		"AttributeBaseIntelligence"  "0"
@@ -1027,6 +1225,12 @@
 	{
 		"override_hero"					"npc_dota_hero_viper"
 
+        "AttackDamageMin"		"30"
+		"AttackDamageMax"		"30"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "600"
+		"ArmorPhysical"		    "-2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttributeBaseStrength" "0"
 		"AttributeBaseAgility"  "30"
 		"AttributeBaseIntelligence"  "0"
@@ -1057,6 +1261,12 @@
 	{
 		"override_hero"				"npc_dota_hero_medusa"
 
+        "AttackDamageMin"		"30"
+		"AttackDamageMax"		"30"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "600"
+		"ArmorPhysical"		    "-2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttributeBaseStrength" "0"
 		"AttributeBaseAgility"  "30"
 		"AttributeBaseIntelligence"  "0"
@@ -1087,6 +1297,12 @@
 	{
 		"override_hero"				"npc_dota_hero_silencer"
 
+        "AttackDamageMin"		"30"
+		"AttackDamageMax"		"30"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "600"
+		"ArmorPhysical"		    "-2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttributeBaseStrength" "0"
 		"AttributeBaseAgility"  "0"
 		"AttributeBaseIntelligence"  "30"
@@ -1117,6 +1333,12 @@
 	{
 		"override_hero"				"npc_dota_hero_skywrath_mage"
 
+        "AttackDamageMin"		"30"
+		"AttackDamageMax"		"30"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "600"
+		"ArmorPhysical"		    "-2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttributeBaseStrength" "0"
 		"AttributeBaseAgility"  "0"
 		"AttributeBaseIntelligence"  "30"
@@ -1147,6 +1369,12 @@
 	{
 		"override_hero"				"npc_dota_hero_shredder"
 
+        "AttackDamageMin"		"40"
+		"AttackDamageMax"		"40"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "150"
+		"ArmorPhysical"		    "2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttributeBaseStrength" "30"
 		"AttributeBaseAgility"  "0"
 		"AttributeBaseIntelligence"  "0"
@@ -1178,6 +1406,12 @@
 	{
 		"override_hero"				"npc_dota_hero_slardar"
 
+        "AttackDamageMin"		"40"
+		"AttackDamageMax"		"40"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "150"
+		"ArmorPhysical"		    "2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttributeBaseStrength" "30"
 		"AttributeBaseAgility"  "0"
 		"AttributeBaseIntelligence"  "0"
@@ -1208,6 +1442,12 @@
 	{
 		"override_hero"				"npc_dota_hero_invoker"
 
+        "AttackDamageMin"		"30"
+		"AttackDamageMax"		"30"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "600"
+		"ArmorPhysical"		    "-2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttributeBaseStrength" "0"
 		"AttributeBaseAgility"  "0"
 		"AttributeBaseIntelligence"  "30"
@@ -1248,6 +1488,12 @@
 	{
 		"override_hero"				"npc_dota_hero_dragon_knight"
 
+        "AttackDamageMin"		"40"
+		"AttackDamageMax"		"40"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "150"
+		"ArmorPhysical"		    "2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttributeBaseStrength" "30"
 		"AttributeBaseAgility"  "0"
 		"AttributeBaseIntelligence"  "0"
@@ -1278,6 +1524,12 @@
 	{
 		"override_hero"				"npc_dota_hero_antimage"
 
+        "AttackDamageMin"		"40"
+		"AttackDamageMax"		"40"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "150"
+		"ArmorPhysical"		    "2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttributeBaseStrength" "0"
 		"AttributeBaseAgility"  "30"
 		"AttributeBaseIntelligence"  "0"
@@ -1308,6 +1560,12 @@
 	{
 		"override_hero"				"npc_dota_hero_enchantress"
 
+        "AttackDamageMin"		"30"
+		"AttackDamageMax"		"30"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "600"
+		"ArmorPhysical"		    "-2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttributeBaseStrength" "0"
 		"AttributeBaseAgility"  "0"
 		"AttributeBaseIntelligence"  "30"
@@ -1338,6 +1596,12 @@
 	{
 		"override_hero"				"npc_dota_hero_vengefulspirit"
 
+        "AttackDamageMin"		"30"
+		"AttackDamageMax"		"30"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "600"
+		"ArmorPhysical"		    "-2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttributeBaseStrength" "0"
 		"AttributeBaseAgility"  "30"
 		"AttributeBaseIntelligence"  "0"
@@ -1368,6 +1632,12 @@
 	{
 		"override_hero"				"npc_dota_hero_bane"
 
+        "AttackDamageMin"		"30"
+		"AttackDamageMax"		"30"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "600"
+		"ArmorPhysical"		    "-2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttributeBaseStrength" "0"
 		"AttributeBaseAgility"  "0"
 		"AttributeBaseIntelligence"  "30"
@@ -1398,6 +1668,12 @@
 	{
 		"override_hero"				"npc_dota_hero_chaos_knight"
 
+        "AttackDamageMin"		"20"
+		"AttackDamageMax"		"60"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "150"
+		"ArmorPhysical"		    "2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttributeBaseStrength" "30"
 		"AttributeBaseAgility"  "0"
 		"AttributeBaseIntelligence"  "0"
@@ -1428,6 +1704,12 @@
 	{
 		"override_hero"				"npc_dota_hero_obsidian_destroyer"
 
+        "AttackDamageMin"		"30"
+		"AttackDamageMax"		"30"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "600"
+		"ArmorPhysical"		    "-2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttributeBaseStrength" "0"
 		"AttributeBaseAgility"  "0"
 		"AttributeBaseIntelligence"  "30"
@@ -1458,6 +1740,12 @@
 	{
 		"override_hero"				"npc_dota_hero_snapfire"
 
+        "AttackDamageMin"		"30"
+		"AttackDamageMax"		"30"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "600"
+		"ArmorPhysical"		    "-2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttributeBaseStrength" "30"
 		"AttributeBaseAgility"  "0"
 		"AttributeBaseIntelligence"  "0"
@@ -1488,6 +1776,12 @@
 	{
 		"override_hero"				"npc_dota_hero_spectre"
 
+        "AttackDamageMin"		"40"
+		"AttackDamageMax"		"40"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "150"
+		"ArmorPhysical"		    "2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttributeBaseStrength" "0"
 		"AttributeBaseAgility"  "30"
 		"AttributeBaseIntelligence"  "0"
@@ -1517,6 +1811,12 @@
 	{
 		"override_hero"				"npc_dota_hero_puck"
 
+        "AttackDamageMin"		"30"
+		"AttackDamageMax"		"30"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "600"
+		"ArmorPhysical"		    "-2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttributeBaseStrength" "0"
 		"AttributeBaseAgility"  "0"
 		"AttributeBaseIntelligence"  "30"
@@ -1547,6 +1847,12 @@
     {
     	"override_hero"				"npc_dota_hero_life_stealer"
 
+        "AttackDamageMin"		"40"
+		"AttackDamageMax"		"40"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "150"
+		"ArmorPhysical"		    "2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttributeBaseStrength" "30"
 		"AttributeBaseAgility"  "0"
 		"AttributeBaseIntelligence"  "0"
@@ -1576,6 +1882,12 @@
     {
     	"override_hero"				"npc_dota_hero_abaddon"
 
+        "AttackDamageMin"		"40"
+		"AttackDamageMax"		"40"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "150"
+		"ArmorPhysical"		    "2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttributeBaseStrength" "30"
 		"AttributeBaseAgility"  "0"
 		"AttributeBaseIntelligence"  "0"
@@ -1606,6 +1918,12 @@
     {
     	"override_hero"				"npc_dota_hero_doom_bringer"
 
+        "AttackDamageMin"		"40"
+		"AttackDamageMax"		"40"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "150"
+		"ArmorPhysical"		    "2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttributeBaseStrength" "30"
 		"AttributeBaseAgility"  "0"
 		"AttributeBaseIntelligence"  "0"
@@ -1636,6 +1954,12 @@
     {
     	"override_hero"				"npc_dota_hero_riki"
 
+        "AttackDamageMin"		"40"
+		"AttackDamageMax"		"40"
+		"AttackRate"		    "2.0"
+		"AttackRange"		    "150"
+		"ArmorPhysical"		    "2"
+        "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttributeBaseStrength" "0"
 		"AttributeBaseAgility"  "30"
 		"AttributeBaseIntelligence"  "0"
