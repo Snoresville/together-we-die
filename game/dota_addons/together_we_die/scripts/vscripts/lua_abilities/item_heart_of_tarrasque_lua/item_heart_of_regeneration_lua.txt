@@ -83,7 +83,7 @@
         "ItemResult"                    "item_heart_of_regeneration_lua"
         "ItemRequirements"
         {
-            "01"                        "item_heart_of_tarrasque_3_lua;item_heart_of_tarrasque_3_lua;item_slippers_of_halcyon;item_guardian_greaves"
+            "01"                        "item_heart_of_tarrasque_3_lua;item_heart_of_tarrasque_3_lua;item_guardian_greaves"
         }
 	}
 }

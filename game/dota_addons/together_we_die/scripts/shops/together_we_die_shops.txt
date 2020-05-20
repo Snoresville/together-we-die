@@ -130,7 +130,6 @@
 		"item"		"item_sheepstick5"
 		"item"		"item_octarine_core_lua"
 		"item"		"item_octarine_core2_lua"
-		"item"		"item_slippers_of_halcyon"
 	}
 	
 	// Level 3 - Purple Recipes

@@ -23,7 +23,6 @@
 		{
 			"item"		"item_vanguard"
 			"item"		"item_blade_mail"
-			"item"		"item_slippers_of_halcyon"					
 		}
 		
 		"#DOTA_Item_Build_Luxury"
