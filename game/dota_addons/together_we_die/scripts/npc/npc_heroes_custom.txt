@@ -19,7 +19,7 @@
 		"MovementSpeed"		"250"
 		
 		"Ability1"				"axe_berserkers_call_lua"
-		"Ability2"				"axe_battle_rage"
+		"Ability2"				"axe_battle_hunger_lua"
 		"Ability3"				"axe_counter_helix_lua"
 		"Ability4"		""
 		"Ability5"		""

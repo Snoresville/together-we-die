@@ -5514,6 +5514,7 @@
 #base "../vscripts/lua_abilities/sniper_assassinate_lua/sniper_assassinate_lua.txt"
 
 #base "../vscripts/lua_abilities/axe_berserkers_call_lua/axe_berserkers_call_lua.txt"
+#base "../vscripts/lua_abilities/axe_battle_hunger_lua/axe_battle_hunger_lua.txt"
 #base "../vscripts/lua_abilities/axe_counter_helix_lua/axe_counter_helix_lua.txt"
 #base "../vscripts/lua_abilities/axe_culling_blade_lua/axe_culling_blade_lua.txt"
 

@@ -234,7 +234,7 @@ var spells = {
             "cost": 1
         },
         {
-            "spell_id": "axe_battle_rage",
+            "spell_id": "axe_battle_hunger_lua",
             "cost": 1
         },
         {

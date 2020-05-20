@@ -1,0 +1,91 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Axe: Battle Hunger (Lua version)
+	//=================================================================================================================
+	"axe_battle_hunger_lua"
+	{
+		// Ability Technical Aspect
+		// base script folder	: scripts/vscripts
+		// base texture folder	: resource/flash3/images/spellicons
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"lua_abilities/axe_battle_hunger_lua/axe_battle_hunger_lua"
+		"AbilityTextureName"			"axe_battle_hunger_lua"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"4"
+		"HasScepterUpgrade"			"1"
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_axe.vsndevts"
+			"particle"	"particles/units/heroes/hero_axe/axe_battle_hunger.vpcf"
+		}
+		
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+
+		// Ability Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_2"
+        "AbilityCastGestureSlot"		"DEFAULT"
+
+		// Ability Resource
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"20.0 15.0 10.0 5.0"
+		"AbilityManaCost"				"50 60 70 80"		
+
+		// Damage
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"12.0"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"slow"						"-12"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"speed_bonus"						"12"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_per_second"			"16 24 32 40"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_reduction_scepter"	"30"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"	                "425"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"str_multiplier"	        "1.0 2.0 3.0 4.0"
+			}
+		}
+	}
+}
