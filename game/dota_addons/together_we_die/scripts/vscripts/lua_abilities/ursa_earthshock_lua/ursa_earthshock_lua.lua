@@ -45,9 +45,9 @@ function ursa_earthshock_lua:ActivateSpellMechanics()
             caster:GetOrigin(),
             nil,
             slow_radius,
-            DOTA_UNIT_TARGET_TEAM_ENEMY,
-            DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
-            DOTA_UNIT_TARGET_FLAG_NONE,
+            self:GetAbilityTargetTeam(),
+            self:GetAbilityTargetType(),
+            self:GetAbilityTargetFlags(),
             FIND_ANY_ORDER,
             false
     )
