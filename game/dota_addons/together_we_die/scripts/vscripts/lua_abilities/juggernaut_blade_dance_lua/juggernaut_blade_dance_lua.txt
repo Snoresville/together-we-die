@@ -46,7 +46,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"blade_dance_crit_mult"		"250"
+				"blade_dance_crit_mult"		"275 300 325 350"
 			}
             "03"
 			{
