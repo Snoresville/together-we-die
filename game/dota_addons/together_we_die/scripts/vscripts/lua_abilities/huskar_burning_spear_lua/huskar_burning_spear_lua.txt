@@ -60,17 +60,19 @@
 			"03"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"str_multiplier"				"0.5 0.75 1.0 1.25"
+				"str_multiplier"				"0.5 1.0 1.5 2.0"
+				"LinkedSpecialBonus"            "special_burning_spear_str_multiplier_lua"
 			}
 			"04"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"radius"						"150 175 200 225"
+				"radius"						"150"
 			}
             "05"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"self_dmg_str_multiplier"				"0.1 0.2 0.3 0.4"
+				"self_dmg_multiplier"				"1.0 0.95 0.9 0.85"
+				"LinkedSpecialBonus"            "special_burning_spear_self_dmg_multiplier_lua"
 			}
 		}
 	}

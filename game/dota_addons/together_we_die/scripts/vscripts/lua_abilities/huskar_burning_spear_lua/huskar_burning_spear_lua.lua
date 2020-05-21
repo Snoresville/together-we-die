@@ -52,12 +52,15 @@ function huskar_burning_spear_lua:GetProjectileName()
 end
 
 function huskar_burning_spear_lua:OnOrbFire(params)
-    local self_dmg_str_multiplier = self:GetSpecialValueFor("self_dmg_str_multiplier")
+    local str_multiplier = self:GetSpecialValueFor("str_multiplier")
+    local base_dps = self:GetSpecialValueFor("burn_damage")
+    local total_dps = base_dps + self:GetCaster():GetStrength() * str_multiplier
+    local self_dmg = total_dps * self:GetSpecialValueFor("self_dmg_multiplier")
     -- health cost
     local damageTable = {
         victim = self:GetCaster(),
         attacker = self:GetCaster(),
-        damage = self:GetSpecialValueFor("health_cost") + (self:GetCaster():GetStrength() * self_dmg_str_multiplier),
+        damage = self:GetSpecialValueFor("health_cost") + self_dmg,
         damage_type = DAMAGE_TYPE_PURE,
         ability = self, --Optional.
         damage_flags = DOTA_DAMAGE_FLAG_NON_LETHAL + DOTA_DAMAGE_FLAG_HPLOSS + DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS, --Optional.
