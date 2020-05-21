@@ -36,9 +36,9 @@ function abaddon_mist_coil_lua:OnSpellStart()
             target:GetOrigin(),	-- point, center point
             nil,	-- handle, cacheUnit. (not known)
             radius,	-- float, radius. or use FIND_UNITS_EVERYWHERE
-            DOTA_UNIT_TARGET_TEAM_BOTH,	-- int, team filter
-            DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	-- int, type filter
-            DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS,	-- int, flag filter
+            self:GetAbilityTargetTeam(),	-- int, team filter
+            self:GetAbilityTargetType(),	-- int, type filter
+            self:GetAbilityTargetFlags(),	-- int, flag filter
             0,	-- int, order filter
             false	-- bool, can grow cache
     )
