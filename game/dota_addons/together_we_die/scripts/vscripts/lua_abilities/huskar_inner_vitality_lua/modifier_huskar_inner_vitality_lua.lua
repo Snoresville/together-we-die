@@ -32,6 +32,12 @@ function modifier_huskar_inner_vitality_lua:OnCreated(kv)
     self.heal_base = self:GetAbility():GetSpecialValueFor("heal")
     self.str_multiplier = self:GetAbility():GetSpecialValueFor("str_multiplier")
     self.hurt_str_multiplier = self:GetAbility():GetSpecialValueFor("hurt_str_multiplier")
+    -- Talent Tree
+    local special_inner_vitality_str_multiplier_lua = self:GetCaster():FindAbilityByName("special_inner_vitality_str_multiplier_lua")
+    if special_inner_vitality_str_multiplier_lua and special_inner_vitality_str_multiplier_lua:GetLevel() ~= 0 then
+        self.str_multiplier = self.str_multiplier + special_inner_vitality_str_multiplier_lua:GetSpecialValueFor("value")
+        self.hurt_str_multiplier = self.hurt_str_multiplier + special_inner_vitality_str_multiplier_lua:GetSpecialValueFor("value")
+    end
     self.hurt_threshold = self:GetAbility():GetSpecialValueFor("hurt_percent") * 100
 end
 
@@ -40,6 +46,12 @@ function modifier_huskar_inner_vitality_lua:OnRefresh(kv)
     self.heal_base = self:GetAbility():GetSpecialValueFor("heal")
     self.str_multiplier = self:GetAbility():GetSpecialValueFor("str_multiplier")
     self.hurt_str_multiplier = self:GetAbility():GetSpecialValueFor("hurt_str_multiplier")
+    -- Talent Tree
+    local special_inner_vitality_str_multiplier_lua = self:GetCaster():FindAbilityByName("special_inner_vitality_str_multiplier_lua")
+    if special_inner_vitality_str_multiplier_lua and special_inner_vitality_str_multiplier_lua:GetLevel() ~= 0 then
+        self.str_multiplier = self.str_multiplier + special_inner_vitality_str_multiplier_lua:GetSpecialValueFor("value")
+        self.hurt_str_multiplier = self.hurt_str_multiplier + special_inner_vitality_str_multiplier_lua:GetSpecialValueFor("value")
+    end
     self.hurt_threshold = self:GetAbility():GetSpecialValueFor("hurt_percent") * 100
 end
 

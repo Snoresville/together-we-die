@@ -87,8 +87,14 @@ end
 function modifier_huskar_berserkers_blood_lua:GetModifierConstantHealthRegen()
 	if self:GetParent():PassivesDisabled() then return 0 end
 	-- interpolate missing health
+	local total_str_multiplier = self.str_multiplier
+	-- Talent Tree
+	local special_berserkers_blood_str_multiplier_lua = self:GetCaster():FindAbilityByName("special_berserkers_blood_str_multiplier_lua")
+	if special_berserkers_blood_str_multiplier_lua and special_berserkers_blood_str_multiplier_lua:GetLevel() ~= 0 then
+		total_str_multiplier = total_str_multiplier + special_berserkers_blood_str_multiplier_lua:GetSpecialValueFor("value")
+	end
 	local pct = math.max((self:GetParent():GetHealthPercent()-self.max_threshold)/self.range,0)
-	return (1-pct)*(self.maximum_hp_regen + (self:GetParent():GetStrength() * self.str_multiplier))
+	return (1-pct)*(self.maximum_hp_regen + (self:GetParent():GetStrength() * total_str_multiplier))
 end
 
 function modifier_huskar_berserkers_blood_lua:GetModifierModelScale()

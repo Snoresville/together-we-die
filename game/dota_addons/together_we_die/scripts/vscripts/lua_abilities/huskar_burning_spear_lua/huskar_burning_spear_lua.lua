@@ -55,7 +55,13 @@ function huskar_burning_spear_lua:OnOrbFire(params)
     local str_multiplier = self:GetSpecialValueFor("str_multiplier")
     local base_dps = self:GetSpecialValueFor("burn_damage")
     local total_dps = base_dps + self:GetCaster():GetStrength() * str_multiplier
-    local self_dmg = total_dps * self:GetSpecialValueFor("self_dmg_multiplier")
+    local self_dmg_multiplier = self:GetSpecialValueFor("self_dmg_multiplier")
+    -- Talent Tree
+    local special_burning_spear_self_dmg_multiplier_lua = self:GetCaster():FindAbilityByName("special_burning_spear_self_dmg_multiplier_lua")
+    if special_burning_spear_self_dmg_multiplier_lua and special_burning_spear_self_dmg_multiplier_lua:GetLevel() ~= 0 then
+        self_dmg_multiplier = self_dmg_multiplier + special_burning_spear_self_dmg_multiplier_lua:GetSpecialValueFor("value")
+    end
+    local self_dmg = total_dps * self_dmg_multiplier
     -- health cost
     local damageTable = {
         victim = self:GetCaster(),

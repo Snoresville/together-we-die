@@ -37,8 +37,30 @@ function modifier_huskar_life_break_lua:OnCreated(kv)
     if self:GetParent():HasScepter() then
         self.damage_pct = self:GetAbility():GetSpecialValueFor("health_damage_scepter")
     end
+    -- Talent Tree
+    local special_life_break_health_damage_lua = self:GetCaster():FindAbilityByName("special_life_break_health_damage_lua")
+    if special_life_break_health_damage_lua and special_life_break_health_damage_lua:GetLevel() ~= 0 then
+        self.damage_pct = self.damage_pct + special_life_break_health_damage_lua:GetSpecialValueFor("value")
+    end
     self.cost_pct = self:GetAbility():GetSpecialValueFor("health_cost_percent")
-    self.str_damage = self:GetAbility():GetSpecialValueFor("str_multiplier") * self:GetCaster():GetStrength()
+    -- Talent Tree
+    local special_life_break_health_cost_reduction_lua = self:GetCaster():FindAbilityByName("special_life_break_health_cost_reduction_lua")
+    if special_life_break_health_cost_reduction_lua and special_life_break_health_cost_reduction_lua:GetLevel() ~= 0 then
+        self.cost_pct = self.cost_pct + special_life_break_health_cost_reduction_lua:GetSpecialValueFor("value")
+    end
+    local str_multiplier = self:GetAbility():GetSpecialValueFor("str_multiplier")
+    -- Talent Tree
+    local special_life_break_str_multiplier_lua = self:GetCaster():FindAbilityByName("special_life_break_str_multiplier_lua")
+    if special_life_break_str_multiplier_lua and special_life_break_str_multiplier_lua:GetLevel() ~= 0 then
+        str_multiplier = str_multiplier + special_life_break_str_multiplier_lua:GetSpecialValueFor("value")
+    end
+    self.str_damage = str_multiplier * self:GetCaster():GetStrength()
+    self.stun_duration = 0
+    -- Talent Tree
+    local special_life_break_stun_duration_lua = self:GetCaster():FindAbilityByName("special_life_break_stun_duration_lua")
+    if special_life_break_stun_duration_lua and special_life_break_stun_duration_lua:GetLevel() ~= 0 then
+        self.stun_duration = self.stun_duration + special_life_break_stun_duration_lua:GetSpecialValueFor("value")
+    end
 
     self.close_distance = 80
     self.far_distance = 1450
@@ -111,6 +133,15 @@ function modifier_huskar_life_break_lua:OnDestroy()
                     "modifier_huskar_life_break_lua_debuff", -- modifier name
                     { duration = self:GetAbility():GetDuration() } -- kv
             )
+
+            if self.stun_duration ~= 0 then
+                enemy:AddNewModifier(
+                        self:GetCaster(), -- player source
+                        self, -- ability source
+                        "modifier_generic_stunned_lua", -- modifier name
+                        { duration = self.stun_duration } -- kv
+                )
+            end
         end
 
         -- percentage self damage

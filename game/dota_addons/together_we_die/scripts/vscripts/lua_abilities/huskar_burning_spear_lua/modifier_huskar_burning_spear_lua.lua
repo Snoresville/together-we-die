@@ -34,6 +34,11 @@ end
 function modifier_huskar_burning_spear_lua:OnCreated(kv)
     -- references
     self.str_multiplier = self:GetAbility():GetSpecialValueFor("str_multiplier")
+    -- Talent Tree
+    local special_burning_spear_str_multiplier_lua = self:GetCaster():FindAbilityByName("special_burning_spear_str_multiplier_lua")
+    if special_burning_spear_str_multiplier_lua and special_burning_spear_str_multiplier_lua:GetLevel() ~= 0 then
+        self.str_multiplier = self.str_multiplier + special_burning_spear_str_multiplier_lua:GetSpecialValueFor("value")
+    end
     self.base_dps = self:GetAbility():GetSpecialValueFor("burn_damage")
     self.total_dps = self.base_dps + self:GetCaster():GetStrength() * self.str_multiplier
 
@@ -57,6 +62,11 @@ end
 
 function modifier_huskar_burning_spear_lua:OnRefresh(kv)
     self.str_multiplier = self:GetAbility():GetSpecialValueFor("str_multiplier")
+    -- Talent Tree
+    local special_burning_spear_str_multiplier_lua = self:GetCaster():FindAbilityByName("special_burning_spear_str_multiplier_lua")
+    if special_burning_spear_str_multiplier_lua and special_burning_spear_str_multiplier_lua:GetLevel() ~= 0 then
+        self.str_multiplier = self.str_multiplier + special_burning_spear_str_multiplier_lua:GetSpecialValueFor("value")
+    end
     self.base_dps = self:GetAbility():GetSpecialValueFor("burn_damage")
     self.total_dps = self.base_dps + self:GetCaster():GetStrength() * self.str_multiplier
 

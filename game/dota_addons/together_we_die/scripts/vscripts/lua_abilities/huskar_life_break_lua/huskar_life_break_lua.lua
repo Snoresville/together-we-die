@@ -11,6 +11,7 @@ huskar_life_break_lua = class({})
 LinkLuaModifier( "modifier_huskar_life_break_lua", "lua_abilities/huskar_life_break_lua/modifier_huskar_life_break_lua", LUA_MODIFIER_MOTION_HORIZONTAL )
 LinkLuaModifier( "modifier_huskar_life_break_lua_buff", "lua_abilities/huskar_life_break_lua/modifier_huskar_life_break_lua_buff", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_huskar_life_break_lua_debuff", "lua_abilities/huskar_life_break_lua/modifier_huskar_life_break_lua_debuff", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_generic_stunned_lua", "lua_abilities/generic/modifier_generic_stunned_lua", LUA_MODIFIER_MOTION_NONE )
 local tempTable = require("util/tempTable")
 
 --------------------------------------------------------------------------------
