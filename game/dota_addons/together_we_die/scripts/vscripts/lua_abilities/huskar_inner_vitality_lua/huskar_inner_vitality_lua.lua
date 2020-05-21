@@ -56,6 +56,5 @@ function huskar_inner_vitality_lua:PlayEffects( target )
 	ParticleManager:ReleaseParticleIndex( effect_cast )
 
 	-- Create Sound
-	local sound_cast = "Hero_Huskar.Inner_Vitality"
 	EmitSoundOn( sound_cast, target )
 end

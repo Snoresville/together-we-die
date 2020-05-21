@@ -26,7 +26,7 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"	
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"					   
 
 		// Ability Casting
@@ -38,7 +38,7 @@
 		// Ability Resource
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"60 50 40 30"
-		"AbilityManaCost"				"150 200 300 500"
+		"AbilityManaCost"				"150"
 
 		// Damage
 		//-------------------------------------------------------------------------------------------------------------
@@ -55,12 +55,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"attrib_bonus"			"0.2 0.4 0.6 0.8"
+				"attrib_bonus"			"0.5 1.0 1.5 2.0"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"hurt_attrib_bonus"		"0.3 0.6 0.9 1.2"
+				"hurt_attrib_bonus"		"1.0 2.0 3.0 4.0"
 			}
 			"04"
 			{
@@ -70,12 +70,12 @@
 			"05"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"tooltip_attrib_bonus"			"20 40 60 80"
+				"tooltip_attrib_bonus"			"50 100 150 200"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"tooltip_hurt_attrib_bonus"		"30 60 90 120"
+				"tooltip_hurt_attrib_bonus"		"100 200 300 400"
 			}
 		}
 	}
