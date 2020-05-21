@@ -56,16 +56,19 @@
 			{
 				"var_type"					"FIELD_FLOAT"
 				"health_cost_percent"		"0.45 0.65 0.85"
+				"LinkedSpecialBonus"            "special_life_break_health_cost_reduction_lua"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
 				"health_damage"				"1.5 3.0 4.5"
+				"LinkedSpecialBonus"            "special_life_break_health_damage_lua"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
 				"health_damage_scepter"		"3.0 4.5 6.0"
+				"LinkedSpecialBonus"            "special_life_break_health_damage_lua"
 			}
 			"04"
 			{
@@ -74,40 +77,26 @@
 			}
 			"05"
 			{
-				"var_type"							"FIELD_INTEGER"
-				"tooltip_health_damage"				"150 300 450"
-			}
-			"06"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"tooltip_health_cost_percent"		"45 65 85"
-			}
-			"07"
-			{
 				"var_type"					"FIELD_INTEGER"
 				"movespeed"					"-40 -50 -60"
 			}
-			"08"
+			"06"
 			{
 				"var_type"					"FIELD_FLOAT"
 				"slow_durtion_tooltip"		"4 5 6"
 			}
-			"09"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"tooltip_health_damage_scepter"		"300 450 600"
-			}
-			"10"
+			"07"
 			{
 				"var_type"					"FIELD_FLOAT"
 				"cooldown_scepter"			"6"
 			}
-			"11"
+			"08"
 			{
 				"var_type"					"FIELD_FLOAT"
 				"str_multiplier"			"2.0 4.0 6.0"
+				"LinkedSpecialBonus"            "special_life_break_str_multiplier_lua"
 			}
-			"12"
+			"09"
 			{
 				"var_type"					"FIELD_FLOAT"
 				"radius"					"175.0"
