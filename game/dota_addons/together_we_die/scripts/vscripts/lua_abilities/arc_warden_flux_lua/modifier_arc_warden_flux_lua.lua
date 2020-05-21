@@ -81,7 +81,7 @@ function modifier_arc_warden_flux_lua:OnIntervalThink()
             parent, -- handle, cacheUnit. (not known)
             self.search_radius, -- float, radius. or use FIND_UNITS_EVERYWHERE
             DOTA_UNIT_TARGET_TEAM_FRIENDLY, -- int, team filter
-            DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, -- int, type filter
+            self:GetAbility():GetAbilityTargetType(), -- int, type filter
             0, -- int, flag filter
             0, -- int, order filter
             false    -- bool, can grow cache

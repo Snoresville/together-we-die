@@ -16,14 +16,14 @@ function arc_warden_flux_lua:OnSpellStart()
 	local duration = self:GetSpecialValueFor("duration")
 
 	local search = self:GetSpecialValueFor( "radius" )
-	targets = FindUnitsInRadius(
+	local targets = FindUnitsInRadius(
 		caster:GetTeamNumber(),	-- int, your team number
 		target:GetOrigin(),	-- point, center point
 		target,	-- handle, cacheUnit. (not known)
 		search,	-- float, radius. or use FIND_UNITS_EVERYWHERE
-		DOTA_UNIT_TARGET_TEAM_ENEMY,	-- int, team filter
-		DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	-- int, type filter
-		0,	-- int, flag filter
+		self:GetAbilityTargetTeam(),	-- int, team filter
+		self:GetAbilityTargetType(),	-- int, type filter
+		self:GetAbilityTargetFlags(),	-- int, flag filter
 		0,	-- int, order filter
 		false	-- bool, can grow cache
 	)
