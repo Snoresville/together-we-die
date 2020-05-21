@@ -2251,4 +2251,6 @@
 
 #base "../vscripts/lua_abilities/item_blademail_lua/item_blademail_lua.txt"
 
+#base "../vscripts/lua_abilities/item_skadi/item_skadi.txt"
+
 #base "../vscripts/lua_abilities/item_card_point_book_lua/item_card_point_book_lua.txt"
