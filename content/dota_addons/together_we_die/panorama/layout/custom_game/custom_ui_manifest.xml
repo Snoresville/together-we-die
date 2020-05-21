@@ -9,6 +9,7 @@
         <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/hud_main.xml"/>
         <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/spells_menu.xml"/>
         <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/barebones_notifications.xml"/>
+        <CustomUIElement type="GameInfo" layoutfile="file://{resources}/layout/custom_game/game_info.xml"/>
         <CustomUIElement type="FlyoutScoreboard"
                          layoutfile="file://{resources}/layout/custom_game/together_we_die_scoreboard.xml"/>
     </Panel>

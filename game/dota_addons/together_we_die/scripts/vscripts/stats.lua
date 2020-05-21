@@ -2,9 +2,10 @@ Stats = Stats or {}
 
 Stats.host = "https://twd.giantcrabby.com/api/v1/"
 Stats.keyVersion = "v1"
+Stats.topPlayersTableName = "top_players"
 
 if IsInToolsMode() then
-    Stats.host = "http://127.0.0.1:8080/api/v1/"
+    --Stats.host = "http://127.0.0.1:8080/api/v1/"
 end
 
 function Stats.SubmitMatch(version, difficulty, winner, callback)
@@ -29,6 +30,13 @@ function Stats.SubmitMatch(version, difficulty, winner, callback)
     end
 
     Stats.SendData(string.format("matches/%s", GameRules:GetMatchID()), data, callback, 30)
+end
+
+function Stats.GetTopPlayers()
+    local callback = function(response)
+        CustomGameEventManager:Send_ServerToAllClients("stats_get_top_players_stats_feedback", response)
+    end
+    Stats.RequestData("steam-players/top", callback, 30)
 end
 
 function Stats.RequestData(url, callback, rep)

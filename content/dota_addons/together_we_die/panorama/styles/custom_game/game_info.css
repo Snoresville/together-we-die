@@ -1,0 +1,75 @@
+.TogetherWeDieGameInfo {
+    flow-children: down-wrap;
+    height: fit-children;
+}
+
+#GameInfo {
+    height: fit-children;
+    flow-children: down-wrap;
+}
+
+#Title {
+    height: fit-children;
+}
+
+#TitleName {
+    font-size: 38px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    width: fit-children;
+}
+
+#Description {
+    height: fit-children;
+}
+
+#DescriptionName {
+    font-size: 18px;
+    letter-spacing: 2px;
+    width: fit-children;
+}
+
+#TopPlayersInfo {
+    margin-top: 20px;
+    flow-children: down-wrap;
+}
+
+#TopPlayersTitleName {
+    font-size: 38px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    width: fit-children;
+}
+
+#TopPlayersList {
+    height: fit-children;
+    flow-children: down-wrap;
+}
+
+.PlayerPanel {
+    height: fit-children;
+    flow-children: right-wrap;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#PlayerDisplay {
+    height: fit-children;
+    width: 96px;
+    overflow: clip;
+    flow-children: down-wrap;
+}
+
+#PlayerSteamUserAvatar {
+    width: 64px;
+    height: 64px;
+}
+
+#PlayerData {
+    margin-left: 20px;
+    flow-children: right-wrap;
+}
+
+#PlayerData Label {
+    width: fit-children;
+}
