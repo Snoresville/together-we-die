@@ -30,17 +30,17 @@ end
 function modifier_huskar_inner_vitality_lua:OnCreated(kv)
     -- references
     self.heal_base = self:GetAbility():GetSpecialValueFor("heal")
-    self.heal_attrib = self:GetAbility():GetSpecialValueFor("attrib_bonus")
-    self.heal_hurt = self:GetAbility():GetSpecialValueFor("hurt_attrib_bonus")
+    self.str_multiplier = self:GetAbility():GetSpecialValueFor("str_multiplier")
+    self.hurt_str_multiplier = self:GetAbility():GetSpecialValueFor("hurt_str_multiplier")
     self.hurt_threshold = self:GetAbility():GetSpecialValueFor("hurt_percent") * 100
 end
 
 function modifier_huskar_inner_vitality_lua:OnRefresh(kv)
     -- references
     self.heal_base = self:GetAbility():GetSpecialValueFor("heal")
-    self.heal_attrib = self:GetAbility():GetSpecialValueFor("attrib_bonus")
-    self.heal_hurt = self:GetAbility():GetSpecialValueFor("hurt_attrib_bonus")
-    self.hurt_threshold = self:GetAbility():GetSpecialValueFor("hurt_percent")
+    self.str_multiplier = self:GetAbility():GetSpecialValueFor("str_multiplier")
+    self.hurt_str_multiplier = self:GetAbility():GetSpecialValueFor("hurt_str_multiplier")
+    self.hurt_threshold = self:GetAbility():GetSpecialValueFor("hurt_percent") * 100
 end
 
 function modifier_huskar_inner_vitality_lua:OnRemoved()
@@ -60,10 +60,10 @@ function modifier_huskar_inner_vitality_lua:DeclareFunctions()
 end
 
 function modifier_huskar_inner_vitality_lua:GetModifierConstantHealthRegen()
-    local heal = self.heal_base + self.heal_attrib * self:GetCaster():GetStrength()
+    local heal = self.heal_base + self.str_multiplier * self:GetCaster():GetStrength()
 
-    if self:GetParent():GetHealthPercent() < self.hurt_threshold then
-        heal = self.heal_base + self.heal_hurt * self:GetCaster():GetStrength()
+    if math.floor(self:GetParent():GetHealthPercent()) < self.hurt_threshold then
+        heal = self.heal_base + self.hurt_str_multiplier * self:GetCaster():GetStrength()
     end
 
     return heal
