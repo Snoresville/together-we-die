@@ -5681,3 +5681,6 @@
 #base "../vscripts/lua_abilities/riki_smoke_screen_lua/riki_smoke_screen_lua.txt"
 #base "../vscripts/lua_abilities/riki_permanent_invisibility_lua/riki_permanent_invisibility_lua.txt"
 #base "../vscripts/lua_abilities/riki_backstab_lua/riki_backstab_lua.txt"
+
+#base "../vscripts/lua_abilities/lycan_summon_wolves_lua/lycan_summon_wolves_lua.txt"
+#base "../vscripts/lua_abilities/lycan_feral_impulse_lua/lycan_feral_impulse_lua.txt"

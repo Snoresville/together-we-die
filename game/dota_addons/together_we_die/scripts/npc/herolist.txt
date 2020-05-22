@@ -59,4 +59,5 @@
 	"npc_dota_hero_abaddon"    "1"
 	"npc_dota_hero_doom_bringer"    "1"
 	"npc_dota_hero_riki"            "1"
+	"npc_dota_hero_lycan"			"1"
 }
