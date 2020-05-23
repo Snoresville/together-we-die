@@ -55,7 +55,7 @@ end
 -- Critical Strike
 function modifier_lycan_wolf_mastery_lua:GetModifierPreAttack_CriticalStrike( params )
 	if IsServer() and math.random() < self:GetAbility():GetSpecialValueFor( "crit_chance" ) then
-	self:CriticalEffect()
+		self:CriticalEffect()
 		return self:GetAbility():GetSpecialValueFor( "crit_multiplier" )
 	end
 end

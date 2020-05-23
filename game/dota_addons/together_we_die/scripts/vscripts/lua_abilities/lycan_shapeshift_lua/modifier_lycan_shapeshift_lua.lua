@@ -81,7 +81,7 @@ end
 -- Revert back to human
 function modifier_lycan_shapeshift_lua:OnDestroy()
 	-- Get Resources
-    local particle_cast = "particles/units/heroes/hero_lycan/lycan_shapeshift_cast.vpcf"
+    local particle_cast = "particles/units/heroes/hero_lycan/lycan_shapeshift_revert.vpcf"
 	
 	-- Create Particle
     -- local effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_ABSORIGIN, self:GetCaster() )
