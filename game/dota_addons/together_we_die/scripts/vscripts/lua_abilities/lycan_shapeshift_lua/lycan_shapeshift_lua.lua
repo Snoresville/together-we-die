@@ -35,7 +35,7 @@ end
 
 function lycan_shapeshift_lua:ShapeshiftEffects()
 	local caster = self:GetCaster()
-	local shapeshift_duration = self:GetSpecialValueFor("duration")
+	local shapeshift_duration = self:GetSpecialValueFor("duration") + caster:GetStrength() * self:GetSpecialValueFor("duration_increase_per_strength")
 	caster:AddNewModifier(
                     caster, -- player source
                     self, -- ability source
