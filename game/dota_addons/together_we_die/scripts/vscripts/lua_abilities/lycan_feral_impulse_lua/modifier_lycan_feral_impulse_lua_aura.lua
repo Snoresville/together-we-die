@@ -13,7 +13,14 @@ end
 --------------------------------------------------------------------------------
 -- Initializations
 function modifier_lycan_feral_impulse_lua_aura:OnCreated( kv )
+	self.bonus_damage = self:GetAbility():GetSpecialValueFor( "bonus_damage" ) + self:GetCaster():GetStrength() * self:GetAbility():GetSpecialValueFor( "bonus_damage_increase_per_strength" )  -- special value
+	self.bonus_hp_regen = self:GetAbility():GetSpecialValueFor( "bonus_hp_regen" ) + self:GetCaster():GetStrength() * self:GetAbility():GetSpecialValueFor( "bonus_hp_regen_increase_per_strength" ) -- special value
 	self:StartIntervalThink(1)
+end
+
+function modifier_lycan_feral_impulse_lua_aura:OnRefresh( kv)
+	self.bonus_damage = self:GetAbility():GetSpecialValueFor( "bonus_damage" ) + self:GetCaster():GetStrength() * self:GetAbility():GetSpecialValueFor( "bonus_damage_increase_per_strength" )  -- special value
+	self.bonus_hp_regen = self:GetAbility():GetSpecialValueFor( "bonus_hp_regen" ) + self:GetCaster():GetStrength() * self:GetAbility():GetSpecialValueFor( "bonus_hp_regen_increase_per_strength" ) -- special value
 end
 
 --------------------------------------------------------------------------------
@@ -28,16 +35,13 @@ function modifier_lycan_feral_impulse_lua_aura:DeclareFunctions()
 end
 
 function modifier_lycan_feral_impulse_lua_aura:GetModifierBaseDamageOutgoing_Percentage()
-	if not IsServer() then return end
-	return self:GetAbility():GetSpecialValueFor( "bonus_damage" ) + self:GetCaster():GetStrength() * self:GetAbility():GetSpecialValueFor( "bonus_damage_increase_per_strength" )  -- special value
+	return self.bonus_damage
 end
 
 function modifier_lycan_feral_impulse_lua_aura:GetModifierConstantHealthRegen()
-	if not IsServer() then return end
-	return self:GetAbility():GetSpecialValueFor( "bonus_hp_regen" ) + self:GetCaster():GetStrength() * self:GetAbility():GetSpecialValueFor( "bonus_hp_regen_increase_per_strength" ) -- special value
+	return self.bonus_hp_regen
 end
 
 function modifier_lycan_feral_impulse_lua_aura:OnIntervalThink()
-	if not IsServer() then return end
 	self:ForceRefresh()
 end
