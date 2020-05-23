@@ -33,6 +33,17 @@ end
 function modifier_lycan_feral_impulse_lua:GetAuraSearchFlags()
 	return DOTA_UNIT_TARGET_FLAG_INVULNERABLE
 end
+
+function modifier_lycan_feral_impulse_lua:GetAuraEntityReject( hEntity )
+    if not IsServer() then return false end
+
+    -- reject if it's not under Lycan's control
+    if hEntity:GetPlayerOwnerID() ~= self:GetCaster():GetPlayerOwnerID() then
+        return true
+    end
+
+    return false
+end
 --------------------------------------------------------------------------------
 -- Initializations
 function modifier_lycan_feral_impulse_lua:OnCreated( kv )
