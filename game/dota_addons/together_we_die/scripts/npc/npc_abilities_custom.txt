@@ -5685,3 +5685,4 @@
 #base "../vscripts/lua_abilities/lycan_summon_wolves_lua/lycan_summon_wolves_lua.txt"
 #base "../vscripts/lua_abilities/lycan_feral_impulse_lua/lycan_feral_impulse_lua.txt"
 #base "../vscripts/lua_abilities/lycan_howl_lua/lycan_howl_lua.txt"
+#base "../vscripts/lua_abilities/lycan_shapeshift_lua/lycan_shapeshift_lua.txt"

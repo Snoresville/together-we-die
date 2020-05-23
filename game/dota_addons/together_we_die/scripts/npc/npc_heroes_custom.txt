@@ -2009,7 +2009,7 @@
     	"Ability3"                  "lycan_feral_impulse_lua"
     	"Ability4"		            ""
     	"Ability5"		""
-    	"Ability6"		            "doom_doom_lua"
+    	"Ability6"		            "lycan_shapeshift_lua"
     	"Ability10"		""
     	"Ability11"		""
     	"Ability12"		""
