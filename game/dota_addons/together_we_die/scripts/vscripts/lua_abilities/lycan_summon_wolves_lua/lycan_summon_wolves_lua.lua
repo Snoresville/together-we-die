@@ -25,19 +25,11 @@ function lycan_summon_wolves_lua:IncreaseMastery()
 end
 
 function lycan_summon_wolves_lua:WolfSkills(hWolf)
-	-- Gives 'abilities' based on mastery
-	if self.mastery >= 500 then
-		hWolf:AddItemByName( "item_satanic" )
-	end
-	if self.mastery >= 1000 then
-		hWolf:AddItemByName( "item_butterfly" )
-	end
-	if self.mastery >= 1500 then
-		hWolf:AddItemByName( "item_bfury" )
-	end
-	if self.mastery >= 2000 then
-		hWolf:AddItemByName( "item_greater_crit" )
-	end
+	-- Upgrades the passive wolf skill based on Mastery Stacks
+	local masteryAbility = hWolf:AddAbility("lycan_wolf_mastery_lua")
+	
+	local milestone = math.min(math.floor(self:GetMasteryStack()/500), 10)
+	masteryAbility:SetLevel(milestone)
 end
 
 function lycan_summon_wolves_lua:KillWolves()
@@ -69,7 +61,7 @@ function lycan_summon_wolves_lua:OnSpellStart()
 	local caster = self:GetCaster()
 	local fv = caster:GetForwardVector()
 	local origin = caster:GetAbsOrigin()
-	local frontPosition = origin + fv * 150
+	local frontPosition = origin + fv * 200
 	
 	-- Creating the Wolves
 	self:KillWolves()

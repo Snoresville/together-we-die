@@ -13,17 +13,7 @@ end
 --------------------------------------------------------------------------------
 -- Initializations
 function modifier_lycan_feral_impulse_lua_aura:OnCreated( kv )
-	-- references
-	self.damage = self:GetAbility():GetSpecialValueFor( "bonus_damage" ) + self:GetCaster():GetStrength() * self:GetAbility():GetSpecialValueFor( "bonus_damage_increase_per_strength" )  -- special value
-	self.hp_regen = self:GetAbility():GetSpecialValueFor( "bonus_hp_regen" ) + self:GetCaster():GetStrength() * self:GetAbility():GetSpecialValueFor( "bonus_hp_regen_increase_per_strength" ) -- special value
-	
 	self:StartIntervalThink(1)
-end
-
-function modifier_lycan_feral_impulse_lua_aura:OnRefresh( kv )
-	-- references
-	self.damage = self:GetAbility():GetSpecialValueFor( "bonus_damage" ) + self:GetCaster():GetStrength() * self:GetAbility():GetSpecialValueFor( "bonus_damage_increase_per_strength" )  -- special value
-	self.hp_regen = self:GetAbility():GetSpecialValueFor( "bonus_hp_regen" ) + self:GetCaster():GetStrength() * self:GetAbility():GetSpecialValueFor( "bonus_hp_regen_increase_per_strength" ) -- special value
 end
 
 --------------------------------------------------------------------------------
@@ -38,11 +28,11 @@ function modifier_lycan_feral_impulse_lua_aura:DeclareFunctions()
 end
 
 function modifier_lycan_feral_impulse_lua_aura:GetModifierBaseDamageOutgoing_Percentage()
-	return self.damage
+	return self:GetAbility():GetSpecialValueFor( "bonus_damage" ) + self:GetCaster():GetStrength() * self:GetAbility():GetSpecialValueFor( "bonus_damage_increase_per_strength" )  -- special value
 end
 
 function modifier_lycan_feral_impulse_lua_aura:GetModifierConstantHealthRegen()
-	return self.hp_regen
+	return self:GetAbility():GetSpecialValueFor( "bonus_hp_regen" ) + self:GetCaster():GetStrength() * self:GetAbility():GetSpecialValueFor( "bonus_hp_regen_increase_per_strength" ) -- special value
 end
 
 function modifier_lycan_feral_impulse_lua_aura:OnIntervalThink()
