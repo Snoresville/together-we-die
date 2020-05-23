@@ -3,7 +3,7 @@ modifier_lycan_shapeshift_lua_speed_aura = class({})
 --------------------------------------------------------------------------------
 -- Classifications
 function modifier_lycan_shapeshift_lua_speed_aura:IsHidden()
-	return false
+	return true
 end
 
 function modifier_lycan_shapeshift_lua_speed_aura:IsDebuff()

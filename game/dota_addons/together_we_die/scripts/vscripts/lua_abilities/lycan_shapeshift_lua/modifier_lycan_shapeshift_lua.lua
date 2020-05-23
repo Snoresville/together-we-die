@@ -3,7 +3,7 @@ modifier_lycan_shapeshift_lua = class({})
 --------------------------------------------------------------------------------
 -- Classifications
 function modifier_lycan_shapeshift_lua:IsHidden()
-	return true
+	return false
 end
 
 function modifier_lycan_shapeshift_lua:IsDebuff()
