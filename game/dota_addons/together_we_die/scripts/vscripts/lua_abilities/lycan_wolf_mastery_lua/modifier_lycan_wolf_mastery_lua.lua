@@ -16,7 +16,7 @@ function modifier_lycan_wolf_mastery_lua:DeclareFunctions()
 	local funcs = {
 		MODIFIER_EVENT_ON_ATTACK_LANDED,
 		MODIFIER_PROPERTY_EVASION_CONSTANT,
-		MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT,
+		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
 		MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE,
 	}
 
@@ -47,9 +47,9 @@ function modifier_lycan_wolf_mastery_lua:LifestealEffect()
 	ParticleManager:ReleaseParticleIndex( effect_cast )
 end
 
--- Base Attack Time Decrease
-function modifier_lycan_wolf_mastery_lua:GetModifierBaseAttackTimeConstant()
-	return self:GetParent():GetBaseAttackTime() - self:GetAbility():GetSpecialValueFor( "bat_decrease" )
+-- Attack Speed Increase
+function modifier_lycan_wolf_mastery_lua:GetModifierAttackSpeedBonus_Constant()
+	return self:GetAbility():GetSpecialValueFor( "attack_speed_increase" )
 end
 
 -- Critical Strike
