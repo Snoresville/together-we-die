@@ -70,5 +70,5 @@ function modifier_lycan_wolf_mastery_lua:CriticalEffect()
 	ParticleManager:ReleaseParticleIndex( effect_cast )
 
 	-- Make some noise
-	EmitSoundOn(sound_cast, self:GetCaster())
+	EmitSoundOnLocationWithCaster(self:GetCaster():GetAbsOrigin(), sound_cast, self:GetCaster())
 end
