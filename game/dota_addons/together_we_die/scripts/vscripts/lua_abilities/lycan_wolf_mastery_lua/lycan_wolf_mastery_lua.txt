@@ -44,7 +44,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"crit_multiplier"		"100 200 300 400 500 600 700 800 900 1000"
+				"crit_multiplier"		"200 250 300 350 400 450 500 550 750 1000"
 			}
 		}
 	}

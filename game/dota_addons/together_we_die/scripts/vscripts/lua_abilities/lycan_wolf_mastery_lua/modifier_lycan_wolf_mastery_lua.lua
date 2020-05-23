@@ -11,12 +11,6 @@ function modifier_lycan_wolf_mastery_lua:IsDebuff()
 end
 
 --------------------------------------------------------------------------------
--- Initialisation
-function modifier_lycan_wolf_mastery_lua:OnCreated()
-	self:SetStackCount(self:GetAbility():GetStackCount())
-end
-
---------------------------------------------------------------------------------
 -- Modifier Effects
 function modifier_lycan_wolf_mastery_lua:DeclareFunctions()
 	local funcs = {

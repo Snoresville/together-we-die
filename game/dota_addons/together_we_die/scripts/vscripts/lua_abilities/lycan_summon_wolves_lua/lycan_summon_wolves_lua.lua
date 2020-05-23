@@ -32,7 +32,6 @@ function lycan_summon_wolves_lua:WolfSkills(hWolf)
 	
 	local milestone = math.min(math.floor(self:GetMasteryStack()/500), 10)
 	masteryAbility:SetLevel(milestone)
-	masteryAbility:SetStackCount(self:GetMasteryStack())
 end
 
 function lycan_summon_wolves_lua:KillWolves()
