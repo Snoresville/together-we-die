@@ -16,6 +16,7 @@ function modifier_lycan_feral_impulse_lua_aura:OnCreated( kv )
 	-- references
 	self.damage = self:GetAbility():GetSpecialValueFor( "bonus_damage" ) + self:GetCaster():GetStrength() * self:GetAbility():GetSpecialValueFor( "bonus_damage_increase_per_strength" )  -- special value
 	self.hp_regen = self:GetAbility():GetSpecialValueFor( "bonus_hp_regen" ) + self:GetCaster():GetStrength() * self:GetAbility():GetSpecialValueFor( "bonus_hp_regen_increase_per_strength" ) -- special value
+	
 	self:StartIntervalThink(1)
 end
 
@@ -36,11 +37,11 @@ function modifier_lycan_feral_impulse_lua_aura:DeclareFunctions()
 	return funcs
 end
 
-function modifier_lycan_feral_impulse_lua_aura:GetModifierBaseDamageOutgoing_Percentage( params )
+function modifier_lycan_feral_impulse_lua_aura:GetModifierBaseDamageOutgoing_Percentage()
 	return self.damage
 end
 
-function modifier_lycan_feral_impulse_lua_aura:GetModifierConstantHealthRegen( params )
+function modifier_lycan_feral_impulse_lua_aura:GetModifierConstantHealthRegen()
 	return self.hp_regen
 end
 
