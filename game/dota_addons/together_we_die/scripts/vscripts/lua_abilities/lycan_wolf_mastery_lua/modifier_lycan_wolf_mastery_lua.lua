@@ -29,10 +29,12 @@ function modifier_lycan_wolf_mastery_lua:GetModifierEvasion_Constant()
 end
 
 -- Lifesteal
-function modifier_lycan_wolf_mastery_lua:OnAttackLanded()
-	local heal = params.damage * (self.aura_lifesteal + math.floor(self:GetCaster():GetStrength() * self.str_multiplier))/100
-	self:GetParent():Heal( heal, self:GetAbility() )
-	self:LifestealEffect()
+function modifier_lycan_wolf_mastery_lua:OnAttackLanded(params)
+	if params.attacker == self:GetCaster() then
+		local heal = params.damage * self:GetAbility():GetSpecialValueFor( "lifesteal" )/100
+		self:GetParent():Heal( heal, self:GetAbility() )
+		self:LifestealEffect()
+	end
 end
 
 function modifier_lycan_wolf_mastery_lua:LifestealEffect()
@@ -40,14 +42,14 @@ function modifier_lycan_wolf_mastery_lua:LifestealEffect()
 	local particle_cast = "particles/units/heroes/hero_skeletonking/wraith_king_vampiric_aura_lifesteal.vpcf"
 
 	-- play effects
-	local effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_ABSORIGIN_FOLLOW, target )
-	ParticleManager:SetParticleControl( effect_cast, 1, target:GetOrigin() )
+	local effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_ABSORIGIN_FOLLOW, self:GetCaster() )
+	ParticleManager:SetParticleControl( effect_cast, 1, self:GetCaster():GetAbsOrigin() )
 	ParticleManager:ReleaseParticleIndex( effect_cast )
 end
 
 -- Base Attack Time Decrease
 function modifier_lycan_wolf_mastery_lua:GetModifierBaseAttackTimeConstant()
-	return self:GetAbility():GetSpecialValueFor( "bat_decrease" )
+	return self:GetParent():GetBaseAttackTime() - self:GetAbility():GetSpecialValueFor( "bat_decrease" )
 end
 
 -- Critical Strike

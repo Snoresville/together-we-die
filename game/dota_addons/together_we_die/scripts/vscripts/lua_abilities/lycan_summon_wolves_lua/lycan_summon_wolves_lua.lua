@@ -9,6 +9,8 @@ function lycan_summon_wolves_lua:GetIntrinsicModifierName()
 end
 
 function lycan_summon_wolves_lua:GetMasteryStack()
+	if not IsServer() then return end
+	
 	if self.mastery == nil then
         self.mastery = 0
     end
