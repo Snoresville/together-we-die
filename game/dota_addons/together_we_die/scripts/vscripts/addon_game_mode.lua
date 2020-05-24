@@ -364,6 +364,8 @@ end
 function CHoldoutGameMode:_BeginGameSetup()
     -- Start difficulty vote
     CustomGameEventManager:Send_ServerToTeam(DOTA_TEAM_GOODGUYS, "show_difficulty_vote", {})
+    -- Get top player stats
+    Stats.GetTopPlayers()
 end
 
 function CHoldoutGameMode:_CalculateAndApplyDifficulty()

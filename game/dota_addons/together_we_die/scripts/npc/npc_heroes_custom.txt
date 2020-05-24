@@ -1138,14 +1138,14 @@
 		"Ability4"		""
 		"Ability5"		""
 		"Ability6"				"huskar_life_break_lua"
-		"Ability10"		""
-		"Ability11"		""
-		"Ability12"		""
-		"Ability13"		""
-		"Ability14"		""
-		"Ability15"		""
-		"Ability16"		""
-		"Ability17"		""
+		"Ability10"		"special_berserkers_blood_str_multiplier_lua"
+		"Ability11"		"special_burning_spear_str_multiplier_lua"
+		"Ability12"		"special_burning_spear_self_dmg_multiplier_lua"
+		"Ability13"		"special_inner_vitality_str_multiplier_lua"
+		"Ability14"		"special_life_break_health_damage_lua"
+		"Ability15"		"special_life_break_str_multiplier_lua"
+		"Ability16"		"special_life_break_health_cost_reduction_lua"
+		"Ability17"		"special_life_break_stun_duration_lua"
 
 		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
 	}

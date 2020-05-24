@@ -41,7 +41,8 @@ function modifier_abaddon_borrow_time_lua:OnTakeDamage(params)
         return
     end
 
-    if self:GetParent():GetHealth() < self.threshold then
+    -- If next damage is going to burst through, then just activate
+    if math.floor(self:GetParent():GetHealth() - params.damage) < self.threshold then
         -- automatically cast it when below threshold
         self:GetAbility():CastAbility()
     end

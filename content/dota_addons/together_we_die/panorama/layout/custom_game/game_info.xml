@@ -1,0 +1,43 @@
+<root>
+    <styles>
+        <include src="file://{resources}/styles/dotastyles.css"/>
+        <include src="file://{resources}/styles/hudstyles.css"/>
+        <include src="file://{resources}/styles/custom_game/game_info.css"/>
+    </styles>
+    <scripts>
+        <include src="file://{resources}/scripts/custom_game/dota_hud/game_info.js"/>
+    </scripts>
+    <snippets>
+        <snippet name="player">
+            <Panel class="PlayerPanel">
+                <Panel id="PlayerDisplay">
+                    <DOTAAvatarImage id="PlayerSteamUserAvatar" steamid="" />
+                    <DOTAUserName id="PlayerSteamUserName" steamid="" />
+                </Panel>
+                <Panel id="PlayerData">
+                    <Label id="PlayerWinsInfo" text="#DOTA_HUD_Top_Players_Wins_Info" />
+                    <Label id="PlayerWins" text="0" />
+                </Panel>
+            </Panel>
+        </snippet>
+    </snippets>
+    <Panel class="TogetherWeDieGameInfo">
+        <Panel id="GameInfo">
+            <Panel id="Title">
+                <Label id="TitleName" text="#DOTA_HUD_Addon_Name"/>
+            </Panel>
+            <Panel id="Description">
+                <Label id="DescriptionName" text="#DOTA_HUD_Addon_Description"/>
+            </Panel>
+        </Panel>
+        <Panel id="TopPlayersInfo">
+            <Panel id="TopPlayersTitle">
+                <Label id="TopPlayersTitleName" text="#DOTA_HUD_Top_Players"/>
+            </Panel>
+            <Panel id="TopPlayersList">
+
+            </Panel>
+        </Panel>
+    </Panel>
+</root>
+

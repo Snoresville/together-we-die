@@ -14,35 +14,45 @@ modifier_huskar_inner_vitality_lua = class({})
 --------------------------------------------------------------------------------
 -- Classifications
 function modifier_huskar_inner_vitality_lua:IsHidden()
-	return false
+    return false
 end
 
 function modifier_huskar_inner_vitality_lua:IsDebuff()
-	return false
+    return false
 end
 
 function modifier_huskar_inner_vitality_lua:IsPurgable()
-	return true
+    return true
 end
 
 --------------------------------------------------------------------------------
 -- Initializations
-function modifier_huskar_inner_vitality_lua:OnCreated( kv )
-	-- references
-	self.heal_base = self:GetAbility():GetSpecialValueFor( "heal" )
-	self.heal_attrib = self:GetAbility():GetSpecialValueFor( "attrib_bonus" )
-	self.heal_hurt = self:GetAbility():GetSpecialValueFor( "hurt_attrib_bonus" )
-	self.hurt_threshold = self:GetAbility():GetSpecialValueFor( "hurt_percent" ) * 100
-	self.caster_strength = self:GetCaster():GetStrength()
+function modifier_huskar_inner_vitality_lua:OnCreated(kv)
+    -- references
+    self.heal_base = self:GetAbility():GetSpecialValueFor("heal")
+    self.str_multiplier = self:GetAbility():GetSpecialValueFor("str_multiplier")
+    self.hurt_str_multiplier = self:GetAbility():GetSpecialValueFor("hurt_str_multiplier")
+    -- Talent Tree
+    local special_inner_vitality_str_multiplier_lua = self:GetCaster():FindAbilityByName("special_inner_vitality_str_multiplier_lua")
+    if special_inner_vitality_str_multiplier_lua and special_inner_vitality_str_multiplier_lua:GetLevel() ~= 0 then
+        self.str_multiplier = self.str_multiplier + special_inner_vitality_str_multiplier_lua:GetSpecialValueFor("value")
+        self.hurt_str_multiplier = self.hurt_str_multiplier + special_inner_vitality_str_multiplier_lua:GetSpecialValueFor("value")
+    end
+    self.hurt_threshold = self:GetAbility():GetSpecialValueFor("hurt_percent") * 100
 end
 
-function modifier_huskar_inner_vitality_lua:OnRefresh( kv )
-	-- references
-	self.heal_base = self:GetAbility():GetSpecialValueFor( "heal" )
-	self.heal_attrib = self:GetAbility():GetSpecialValueFor( "attrib_bonus" )
-	self.heal_hurt = self:GetAbility():GetSpecialValueFor( "hurt_attrib_bonus" )
-	self.hurt_threshold = self:GetAbility():GetSpecialValueFor( "hurt_percent" )
-	self.caster_strength = self:GetCaster():GetStrength()
+function modifier_huskar_inner_vitality_lua:OnRefresh(kv)
+    -- references
+    self.heal_base = self:GetAbility():GetSpecialValueFor("heal")
+    self.str_multiplier = self:GetAbility():GetSpecialValueFor("str_multiplier")
+    self.hurt_str_multiplier = self:GetAbility():GetSpecialValueFor("hurt_str_multiplier")
+    -- Talent Tree
+    local special_inner_vitality_str_multiplier_lua = self:GetCaster():FindAbilityByName("special_inner_vitality_str_multiplier_lua")
+    if special_inner_vitality_str_multiplier_lua and special_inner_vitality_str_multiplier_lua:GetLevel() ~= 0 then
+        self.str_multiplier = self.str_multiplier + special_inner_vitality_str_multiplier_lua:GetSpecialValueFor("value")
+        self.hurt_str_multiplier = self.hurt_str_multiplier + special_inner_vitality_str_multiplier_lua:GetSpecialValueFor("value")
+    end
+    self.hurt_threshold = self:GetAbility():GetSpecialValueFor("hurt_percent") * 100
 end
 
 function modifier_huskar_inner_vitality_lua:OnRemoved()
@@ -54,31 +64,31 @@ end
 --------------------------------------------------------------------------------
 -- Modifier Effects
 function modifier_huskar_inner_vitality_lua:DeclareFunctions()
-	local funcs = {
-		MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
-	}
+    local funcs = {
+        MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
+    }
 
-	return funcs
+    return funcs
 end
 
 function modifier_huskar_inner_vitality_lua:GetModifierConstantHealthRegen()
-	local heal = self.heal_base + self.heal_attrib*self.caster_strength
+    local heal = self.heal_base + self.str_multiplier * self:GetCaster():GetStrength()
 
-	if self:GetParent():GetHealthPercent()<self.hurt_threshold then
-		heal = self.heal_base + self.heal_hurt*self.caster_strength
-	end
+    if math.floor(self:GetParent():GetHealthPercent()) < self.hurt_threshold then
+        heal = self.heal_base + self.hurt_str_multiplier * self:GetCaster():GetStrength()
+    end
 
-	return heal
+    return heal
 end
 
 --------------------------------------------------------------------------------
 -- Graphics & Animations
 function modifier_huskar_inner_vitality_lua:GetEffectName()
-	return "particles/units/heroes/hero_huskar/huskar_inner_vitality.vpcf"
+    return "particles/units/heroes/hero_huskar/huskar_inner_vitality.vpcf"
 end
 
 function modifier_huskar_inner_vitality_lua:GetEffectAttachType()
-	return PATTACH_ABSORIGIN_FOLLOW
+    return PATTACH_ABSORIGIN_FOLLOW
 end
 
 -- function modifier_huskar_inner_vitality_lua:GetStatusEffectName()

@@ -27,6 +27,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
@@ -59,12 +60,19 @@
 			"03"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"str_multiplier"				"0.5 0.75 1.0 1.25"
+				"str_multiplier"				"0.5 1.0 1.5 2.0"
+				"LinkedSpecialBonus"            "special_burning_spear_str_multiplier_lua"
 			}
 			"04"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"radius"						"150 175 200 225"
+				"radius"						"150"
+			}
+            "05"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"self_dmg_multiplier"				"1.0 0.95 0.9 0.85"
+				"LinkedSpecialBonus"            "special_burning_spear_self_dmg_multiplier_lua"
 			}
 		}
 	}

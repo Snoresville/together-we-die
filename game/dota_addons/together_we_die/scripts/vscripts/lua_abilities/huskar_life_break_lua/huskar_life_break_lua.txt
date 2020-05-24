@@ -14,6 +14,7 @@
 		"AbilityTextureName"			"huskar_life_break_lua"
 		"FightRecapLevel"				"2"
 		"MaxLevel"						"3"
+		"HasScepterUpgrade"				"1"
 		"precache"
 		{
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_huskar.vsndevts"
@@ -26,8 +27,8 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"		
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
@@ -36,11 +37,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"550"
 		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityDuration"				"4 5 6"
 
 		// Ability Resource
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"12"
+		"AbilityCooldown"				"16"
 		"AbilityManaCost"				"0"
 
 		// Damage
@@ -53,17 +55,20 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"health_cost_percent"		"0.34 0.39 0.44"
+				"health_cost_percent"		"0.45 0.65 0.85"
+				"LinkedSpecialBonus"            "special_life_break_health_cost_reduction_lua"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"health_damage"				"0.34 0.39 0.44"
+				"health_damage"				"1.5 3.0 4.5"
+				"LinkedSpecialBonus"            "special_life_break_health_damage_lua"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"health_damage_scepter"		"0.65"
+				"health_damage_scepter"		"3.0 4.5 6.0"
+				"LinkedSpecialBonus"            "special_life_break_health_damage_lua"
 			}
 			"04"
 			{
@@ -72,43 +77,29 @@
 			}
 			"05"
 			{
-				"var_type"							"FIELD_INTEGER"
-				"tooltip_health_damage"				"34 38 42"
-			}
-			"06"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"tooltip_health_cost_percent"		"34 38 42"
-			}
-			"07"
-			{
 				"var_type"					"FIELD_INTEGER"
 				"movespeed"					"-40 -50 -60"
 			}
-			"08"
+			"06"
 			{
 				"var_type"					"FIELD_FLOAT"
 				"slow_durtion_tooltip"		"4 5 6"
 			}
+			"07"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"cooldown_scepter"			"6"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"str_multiplier"			"2.0 4.0 6.0"
+				"LinkedSpecialBonus"            "special_life_break_str_multiplier_lua"
+			}
 			"09"
 			{
-				"var_type"							"FIELD_INTEGER"
-				"tooltip_health_damage_scepter"		"65"
-			}
-			"10"
-			{
 				"var_type"					"FIELD_FLOAT"
-				"cooldown_scepter"			"4"
-			}
-			"11"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"str_multiplier"			"3.5 4.5 5.5"
-			}
-			"12"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"radius"					"175.0 225.0 275.0"
+				"radius"					"175.0"
 			}
 		}
 	}
