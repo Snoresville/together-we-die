@@ -16,11 +16,11 @@ function modifier_lycan_feral_impulse_lua:GetModifierAura()
 	return "modifier_lycan_feral_impulse_lua_aura"
 end
 
-function modifier_imba_feral_impulse_aura:GetEffectName()
+function modifier_lycan_feral_impulse_lua:GetEffectName()
 	return "particles/auras/aura_feral_impulse.vpcf"
 end
 
-function modifier_imba_feral_impulse_aura:GetEffectAttachType()
+function modifier_lycan_feral_impulse_lua:GetEffectAttachType()
 	return PATTACH_ABSORIGIN_FOLLOW
 end
 
