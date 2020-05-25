@@ -13,6 +13,13 @@
 		
 		"AbilityCastRange"				"1200"
 		
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"particle"					"particles/auras/aura_feral_impulse.vpcf"
+		}
+		
 		// Casting
 		"AbilitySpecial"
 		{

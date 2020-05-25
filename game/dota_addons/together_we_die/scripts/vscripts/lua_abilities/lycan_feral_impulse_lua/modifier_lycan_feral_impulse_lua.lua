@@ -16,6 +16,14 @@ function modifier_lycan_feral_impulse_lua:GetModifierAura()
 	return "modifier_lycan_feral_impulse_lua_aura"
 end
 
+function modifier_imba_feral_impulse_aura:GetEffectName()
+	return "particles/auras/aura_feral_impulse.vpcf"
+end
+
+function modifier_imba_feral_impulse_aura:GetEffectAttachType()
+	return PATTACH_ABSORIGIN_FOLLOW
+end
+
 function modifier_lycan_feral_impulse_lua:GetAuraRadius()
 	return self.aura_radius
 end
