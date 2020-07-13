@@ -36,19 +36,19 @@ function modifier_lycan_shapeshift_lua:GetModifierAura()
 end
 
 function modifier_lycan_shapeshift_lua:GetAuraRadius()
-	return 99999
+	return FIND_UNITS_EVERYWHERE
 end
 
 function modifier_lycan_shapeshift_lua:GetAuraSearchTeam()
-	return DOTA_UNIT_TARGET_TEAM_FRIENDLY
+	return self:GetAbility():GetAbilityTargetTeam()
 end
 
 function modifier_lycan_shapeshift_lua:GetAuraSearchType()
-	return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC
+	return self:GetAbility():GetAbilityTargetType()
 end
 
 function modifier_lycan_shapeshift_lua:GetAuraSearchFlags()
-	return DOTA_UNIT_TARGET_FLAG_INVULNERABLE
+	return self:GetAbility():GetAbilityTargetFlags()
 end
 
 function modifier_lycan_shapeshift_lua:GetAuraEntityReject( hEntity )
