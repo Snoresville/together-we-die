@@ -41,6 +41,9 @@ var heroes = [
             "name_id": "npc_dota_hero_life_stealer"
         },
         {
+            "name_id": "npc_dota_hero_lycan"
+        },
+        {
             "name_id": "npc_dota_hero_mars"
         },
         {
