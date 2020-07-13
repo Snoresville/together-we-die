@@ -390,6 +390,24 @@ var spells = {
             "cost": 2
         },
     ],
+    "npc_dota_hero_lycan": [
+        {
+            "spell_id": "lycan_summon_wolves_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "lycan_howl_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "lycan_feral_impulse_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "lycan_shapeshift_lua",
+            "cost": 2
+        },
+    ],
     "npc_dota_hero_mars": [
         {
             "spell_id": "mars_spear_of_mars_lua",
