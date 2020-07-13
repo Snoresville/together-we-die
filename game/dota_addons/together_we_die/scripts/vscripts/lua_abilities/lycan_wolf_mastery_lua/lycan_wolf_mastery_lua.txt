@@ -9,7 +9,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"lycan_wolf_mastery_lua"
 		"FightRecapLevel"				"1"
-		"MaxLevel"						"10"
+		"MaxLevel"						"4"
 		
 		"precache"
 		{
@@ -24,27 +24,27 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"lifesteal"				"10 20 30 40 50 60 70 80 90 100"
+				"lifesteal"				"10 20 30 40"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"evasion"				"7 14 21 28 35 42 49 56 63 70"
+				"evasion"				"10 15 20 25"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"attack_speed_increase"	"50 100 150 200 250 300 350 400 450 500"
+				"attack_speed_increase"	"50 100 150 200"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"crit_chance"			"10 15 20 25 30 35 40 45 50 55"
+				"crit_chance"			"30"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"crit_multiplier"		"100 200 300 400 500 600 700 800 900 1000"
+				"crit_multiplier"		"150 200 250 300"
 			}
 		}
 	}

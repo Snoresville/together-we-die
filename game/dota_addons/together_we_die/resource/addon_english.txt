@@ -3414,10 +3414,9 @@
 		"DOTA_Tooltip_ability_lycan_summon_wolves_lua_wolf_bat"							"BASE ATTACK TIME:"
 		"DOTA_Tooltip_ability_lycan_summon_wolves_lua_wolf_damage"						"DAMAGE:"
 		"DOTA_Tooltip_ability_lycan_summon_wolves_lua_wolf_hp"							"HP:"
-		"DOTA_Tooltip_ability_lycan_summon_wolves_lua_wolf_hp_per_strength"				"HP INCREASE PER STRENGTH:"
-		"DOTA_Tooltip_ability_lycan_summon_wolves_lua_wolf_armor_per_agility"			"ARMOR INCREASE PER AGILITY:"
-		"DOTA_Tooltip_ability_lycan_summon_wolves_lua_wolf_duration_per_intelligence"	"DURATION INCREASE PER INTELLIGENCE:"
-		"DOTA_Tooltip_ability_lycan_summon_wolves_lua_wolf_damage_per_stack"			"DAMAGE INCREASE PER STACK:"
+		"DOTA_Tooltip_ability_lycan_summon_wolves_lua_wolf_hp_per_str"				"HP INCREASE PER STR:"
+		"DOTA_Tooltip_ability_lycan_summon_wolves_lua_wolf_armor_per_str"			"ARMOR INCREASE PER STR:"
+		"DOTA_Tooltip_ability_lycan_summon_wolves_lua_wolf_dmg_per_str"			    "DAMAGE INCREASE PER STR:"
 		
 		"DOTA_Tooltip_modifier_lycan_summon_wolves_lua_visuals"								"Mastery Stacks"
 		"DOTA_Tooltip_modifier_lycan_summon_wolves_lua_visuals_Description"					"Total amount of kills by wolves."
@@ -3473,9 +3472,6 @@
 		"DOTA_Tooltip_ability_lycan_wolf_mastery_lua_attack_speed_increase"				"ATTACK SPEED INCREASE:"
 		"DOTA_Tooltip_ability_lycan_wolf_mastery_lua_crit_chance"						"%CRIT CHANCE:"
 		"DOTA_Tooltip_ability_lycan_wolf_mastery_lua_crit_multiplier"					"%CRIT MULTIPLIER:"
-		
-		"DOTA_Tooltip_modifier_lycan_wolf_mastery_lua"									"Wolf Mastery"
-		"DOTA_Tooltip_modifier_lycan_wolf_mastery_lua_Description"						"Oh god oh fuck"
 
 		"DOTA_Tooltip_ability_special_frost_arrow_agi_multiplier_lua"			"Frost Arrow +{s:value} AGI Multiplier"
 		"DOTA_Tooltip_ability_special_frost_arrow_bite_interval_lua"			    "Frostbite Interval {s:value}"
