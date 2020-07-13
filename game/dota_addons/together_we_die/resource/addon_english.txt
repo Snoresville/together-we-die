@@ -1748,7 +1748,14 @@
 		"DOTA_Tooltip_modifier_boss_morphling_block_agi_lua_Description"		"Only heroes with agility as their primary attribute is able to damage this unit"
 		"DOTA_Tooltip_modifier_boss_morphling_block_int_lua"					"Intelligence Only"
 		"DOTA_Tooltip_modifier_boss_morphling_block_int_lua_Description"		"Only heroes with intelligence as their primary attribute is able to damage this unit"
-	
+
+	    "DOTA_Tooltip_ability_perfect_stance_lua"							"Perfect Stance"
+	    "DOTA_Tooltip_ability_perfect_stance_lua_Description"							"Strongest warrior will adopt the most perfect stance, granting immunity against physical forms of harm. This form also deflects some damage back to the attacker.\n\n<font color='#70EA72'>Perfect Stance will only work if and only if the owner's Strength is greater than Agility and Intelligence.</font>"
+	    "DOTA_Tooltip_ability_perfect_stance_lua_physical_damage_reduction"							"%PHYSICAL DMG REDUCTION:"
+	    "DOTA_Tooltip_ability_perfect_stance_lua_physical_deflection"							"%PHYSICAL DMG DEFLECTION:"
+	    "DOTA_Tooltip_modifier_perfect_stance_lua"							"Perfect Stance"
+	    "DOTA_Tooltip_modifier_perfect_stance_lua_Description"							"Resisting physical damage and deflecting a portion of the damage back to the attacker."
+
 		"DOTA_Tooltip_ability_intelligence_magic_scale_lua"						"Intelligence Magic Scale"
 		"DOTA_Tooltip_ability_intelligence_magic_scale_lua_Description"			"Greatly increases the hero's ability damage potential. Grants the hero additional magic damage based on their intelligence but at the cost of reducing both their health and mana pool, and increasing the cooldown time of their spells."
 		"DOTA_Tooltip_ability_intelligence_magic_scale_lua_Lore"				"Through activating the 400 IQ of Twitch chat's backseat gamers, the hero is able to achieve full magic damage potential. Legend has it that Twitch chat people are all immortal rank and possess a refined intellect."

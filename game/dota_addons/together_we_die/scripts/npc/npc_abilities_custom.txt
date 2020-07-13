@@ -5413,6 +5413,7 @@
 #base "../vscripts/lua_abilities/special/huskar/special_life_break_health_cost_reduction_lua.txt"
 #base "../vscripts/lua_abilities/special/huskar/special_life_break_stun_duration_lua.txt"
 
+#base "../vscripts/lua_abilities/perfect_stance_lua/perfect_stance_lua.txt"
 #base "../vscripts/lua_abilities/pure_strike_lua/pure_strike_lua.txt"
 #base "../vscripts/lua_abilities/medusa_split_shot_uses_modifiers_lua/medusa_split_shot_uses_modifiers_lua.txt"
 #base "../vscripts/lua_abilities/summoning_stone_lua/summoning_stone_lua.txt"

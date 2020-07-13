@@ -1148,7 +1148,12 @@ var spells = {
             "cost": 2
         },
     ],
-    "strength": [],
+    "strength": [
+        {
+            "spell_id": "perfect_stance_lua",
+            "cost": 4
+        }
+    ],
     "agility": [
         {
             "spell_id": "medusa_split_shot_uses_modifiers_lua",
