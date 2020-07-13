@@ -1,0 +1,92 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Lycan: Summon Wolves Lua
+	//=================================================================================================================
+	"lycan_summon_wolves_lua"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"					"ability_lua"
+		"AbilityTextureName"				"lycan_summon_wolves"
+		"ScriptFile"					"lua_abilities/lycan_summon_wolves_lua/lycan_summon_wolves_lua"
+		"MaxLevel"						"4"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastRange"				"200"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30.0 30.0 30.0 30.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"145"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"wolf_index"				"1 2 3 4"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"wolf_duration"				"60.0"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"wolf_bat"					"2.0 1.9 1.8 1.7"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"wolf_damage"				"26 34 42 50"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"wolf_hp"					"350 400 450 500"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wolf_count"			"2 2 2 2"
+				"LinkedSpecialBonus"	"special_bonus_unique_lycan_2"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"extra_wolves_from_strength"			"125"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wolf_hp_per_strength"			"1 2 3 4"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"wolf_armor_per_agility"			"0.025 0.05 0.075 0.1"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"wolf_duration_per_intelligence"			"0.02 0.03 0.04 0.05"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wolf_damage_per_stack"			"1 2 3 4"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+}
