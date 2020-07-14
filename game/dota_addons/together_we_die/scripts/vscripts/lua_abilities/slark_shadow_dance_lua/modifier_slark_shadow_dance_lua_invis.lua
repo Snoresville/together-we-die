@@ -68,20 +68,38 @@ function modifier_slark_shadow_dance_lua_invis:PlayEffects()
     -- Get Resources
     local particle_cast = "particles/units/heroes/hero_slark/slark_shadow_dance.vpcf"
     local sound_cast = "Hero_Slark.ShadowDance"
-
-    -- Create Particle
-    local effect_cast = ParticleManager:CreateParticle(particle_cast, PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
-    ParticleManager:SetParticleControlEnt(effect_cast, 1, self:GetParent(), PATTACH_POINT_FOLLOW, nil, self:GetParent():GetAbsOrigin(), true)
-    ParticleManager:SetParticleControlEnt(effect_cast, 3, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_eyeL", self:GetParent():GetAbsOrigin(), true)
-    ParticleManager:SetParticleControlEnt(effect_cast, 4, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_eyeR", self:GetParent():GetAbsOrigin(), true)
-    self:AddParticle(effect_cast, false, false, -1, false, false)
+    local caster = self:GetParent()
 
     EmitSoundOn(sound_cast, self:GetParent())
+
+    -- create modifier thinker
+    self.thinker = CreateModifierThinker(
+            caster,
+            self:GetAbility(),
+            "modifier_slark_shadow_dance_lua_thinker",
+            { },
+            caster:GetAbsOrigin(),
+            caster:GetTeamNumber(),
+            false
+    )
+
+    -- Create Particle
+    local effect_cast = ParticleManager:CreateParticle(particle_cast, PATTACH_ABSORIGIN_FOLLOW, caster)
+    ParticleManager:SetParticleControlEnt(effect_cast, 1, caster, PATTACH_POINT_FOLLOW, nil, caster:GetAbsOrigin(), true)
+    ParticleManager:SetParticleControlEnt(effect_cast, 3, caster, PATTACH_POINT_FOLLOW, "attach_eyeL", self:GetParent():GetAbsOrigin(), true)
+    ParticleManager:SetParticleControlEnt(effect_cast, 4, caster, PATTACH_POINT_FOLLOW, "attach_eyeR", self:GetParent():GetAbsOrigin(), true)
+    self:AddParticle(effect_cast, false, false, -1, false, false)
+
+    EmitSoundOn(sound_cast, caster)
 end
 
 function modifier_slark_shadow_dance_lua_invis:StopEffects()
     local sound_cast = "Hero_Slark.ShadowDance"
     StopSoundOn(sound_cast, self:GetParent())
+
+    if self.thinker ~= nil then
+        self.thinker:ForceKill(false)
+    end
 end
 
 function modifier_slark_shadow_dance_lua_invis:GetStatusEffectName()
