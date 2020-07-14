@@ -13,7 +13,7 @@ function dazzle_shadow_wave_lua:OnSpellStart()
     local jumps = self:GetSpecialValueFor("max_targets")
     local int_multiplier = self:GetSpecialValueFor("int_multiplier")
     -- Talent tree
-    local special_shadow_wave_int_multiplier_lua = self:GetParent():FindAbilityByName("special_shadow_wave_int_multiplier_lua")
+    local special_shadow_wave_int_multiplier_lua = caster:FindAbilityByName("special_shadow_wave_int_multiplier_lua")
     if (special_shadow_wave_int_multiplier_lua and special_shadow_wave_int_multiplier_lua:GetLevel() ~= 0) then
         int_multiplier = int_multiplier + special_shadow_wave_int_multiplier_lua:GetSpecialValueFor("value")
     end
