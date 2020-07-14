@@ -3544,6 +3544,8 @@
 		"DOTA_Tooltip_ability_special_life_break_stun_duration_lua"			"Life Break +{s:value}s Stun Duration"
 
 		"DOTA_Tooltip_ability_special_shadow_wave_int_multiplier_lua"			"Shadow Wave +{s:value} INT Multiplier"
+		"DOTA_Tooltip_ability_special_poison_touch_silence_lua"			"Poison Touch Causes Silence"
+		"DOTA_Tooltip_ability_special_poison_touch_periodic_stun_lua"			"Poison Touch +{s:value}s Periodic Mini-Stun"
 		"DOTA_Tooltip_ability_special_bad_juju_max_cdr_lua"			"Bad Juju +{s:value}% Max CDR"
 	}
 }
