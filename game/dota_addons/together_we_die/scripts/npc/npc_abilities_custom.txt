@@ -5413,6 +5413,7 @@
 #base "../vscripts/lua_abilities/special/huskar/special_life_break_health_cost_reduction_lua.txt"
 #base "../vscripts/lua_abilities/special/huskar/special_life_break_stun_duration_lua.txt"
 
+#base "../vscripts/lua_abilities/perfect_stance_lua/perfect_stance_lua.txt"
 #base "../vscripts/lua_abilities/pure_strike_lua/pure_strike_lua.txt"
 #base "../vscripts/lua_abilities/medusa_split_shot_uses_modifiers_lua/medusa_split_shot_uses_modifiers_lua.txt"
 #base "../vscripts/lua_abilities/summoning_stone_lua/summoning_stone_lua.txt"
@@ -5689,3 +5690,9 @@
 #base "../vscripts/lua_abilities/riki_smoke_screen_lua/riki_smoke_screen_lua.txt"
 #base "../vscripts/lua_abilities/riki_permanent_invisibility_lua/riki_permanent_invisibility_lua.txt"
 #base "../vscripts/lua_abilities/riki_backstab_lua/riki_backstab_lua.txt"
+
+#base "../vscripts/lua_abilities/lycan_summon_wolves_lua/lycan_summon_wolves_lua.txt"
+#base "../vscripts/lua_abilities/lycan_feral_impulse_lua/lycan_feral_impulse_lua.txt"
+#base "../vscripts/lua_abilities/lycan_howl_lua/lycan_howl_lua.txt"
+#base "../vscripts/lua_abilities/lycan_shapeshift_lua/lycan_shapeshift_lua.txt"
+#base "../vscripts/lua_abilities/lycan_wolf_mastery_lua/lycan_wolf_mastery_lua.txt"

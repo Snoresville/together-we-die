@@ -1,0 +1,82 @@
+"DOTAAbilities"
+{
+	"lycan_shapeshift_lua"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"AbilityTextureName"			"lycan_shapeshift"
+		"MaxLevel"						"3"
+		"ScriptFile"					"lua_abilities/lycan_shapeshift_lua/lycan_shapeshift_lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"2"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_lycan.vsndevts"		
+			"particle"		"particles/units/heroes/hero_lycan/lycan_shapeshift_buff.vpcf"
+			"particle"		"particles/units/heroes/hero_lycan/lycan_shapeshift_cast.vpcf"
+			"particle"		"particles/units/heroes/hero_lycan/lycan_shapeshift_revert.vpcf"
+			"model"			"models/heroes/lycan/lycan_wolf.vmdl"	
+		}
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"120 90 60"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100"		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"22"
+				"LinkedSpecialBonus"		"special_bonus_unique_lycan_1"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"speed"				"650"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_night_vision"		"1000"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"transformation_time"		"1.8"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_chance"			"40"
+				"LinkedSpecialBonus"		"special_bonus_unique_lycan_5"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_multiplier"		"250 375 500"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration_increase_per_strength"	"0.03 0.07 0.1"
+			}
+		}
+	}
+}

@@ -41,6 +41,9 @@ var heroes = [
             "name_id": "npc_dota_hero_life_stealer"
         },
         {
+            "name_id": "npc_dota_hero_lycan"
+        },
+        {
             "name_id": "npc_dota_hero_mars"
         },
         {
@@ -387,6 +390,24 @@ var spells = {
         },
         {
             "spell_id": "life_stealer_infest",
+            "cost": 2
+        },
+    ],
+    "npc_dota_hero_lycan": [
+        {
+            "spell_id": "lycan_summon_wolves_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "lycan_howl_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "lycan_feral_impulse_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "lycan_shapeshift_lua",
             "cost": 2
         },
     ],
@@ -1148,7 +1169,12 @@ var spells = {
             "cost": 2
         },
     ],
-    "strength": [],
+    "strength": [
+        {
+            "spell_id": "perfect_stance_lua",
+            "cost": 4
+        }
+    ],
     "agility": [
         {
             "spell_id": "medusa_split_shot_uses_modifiers_lua",

@@ -1,0 +1,51 @@
+"DOTAAbilities"
+{
+	"lycan_wolf_mastery_lua"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"lua_abilities/lycan_wolf_mastery_lua/lycan_wolf_mastery_lua"												
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"lycan_wolf_mastery_lua"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"4"
+		
+		"precache"
+		{
+			"particle"					"particles/units/heroes/hero_skeletonking/wraith_king_vampiric_aura_lifesteal.vpcf"
+			"particle" 					"particles/units/heroes/hero_brewmaster/brewmaster_drunken_brawler_crit.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_brewmaster.vsndevts"
+		}
+		
+		// Casting
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lifesteal"				"10 20 30 40"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"evasion"				"10 15 20 25"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"attack_speed_increase"	"50 100 150 200"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"crit_chance"			"30"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"crit_multiplier"		"150 200 250 300"
+			}
+		}
+	}
+}
