@@ -46,6 +46,12 @@ function modifier_dazzle_poison_touch_lua:OnCreated(kv)
     if not IsServer() then
         return
     end
+    -- Talent tree
+    local special_poison_touch_int_multiplier_lua = eCaster:FindAbilityByName("special_poison_touch_int_multiplier_lua")
+    if (special_poison_touch_int_multiplier_lua and special_poison_touch_int_multiplier_lua:GetLevel() ~= 0) then
+        damage = damage + special_poison_touch_int_multiplier_lua:GetSpecialValueFor("value")
+    end
+
     self.silenced = false
     -- Talent tree
     local special_poison_touch_silence_lua = eCaster:FindAbilityByName("special_poison_touch_silence_lua")

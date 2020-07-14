@@ -5413,6 +5413,8 @@
 #base "../vscripts/lua_abilities/special/huskar/special_life_break_health_cost_reduction_lua.txt"
 #base "../vscripts/lua_abilities/special/huskar/special_life_break_stun_duration_lua.txt"
 #base "../vscripts/lua_abilities/special/dazzle/special_shadow_wave_int_multiplier_lua.txt"
+#base "../vscripts/lua_abilities/special/dazzle/special_poison_touch_int_multiplier_lua.txt"
+#base "../vscripts/lua_abilities/special/dazzle/special_poison_touch_duration_lua.txt"
 #base "../vscripts/lua_abilities/special/dazzle/special_shadow_wave_shallow_grave_lua.txt"
 #base "../vscripts/lua_abilities/special/dazzle/special_shadow_wave_poison_touch_lua.txt"
 #base "../vscripts/lua_abilities/special/dazzle/special_poison_touch_silence_lua.txt"

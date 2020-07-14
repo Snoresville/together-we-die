@@ -83,6 +83,7 @@
 			{	
 				"var_type"			"FIELD_FLOAT"
 				"duration"		"4 5 6 7"
+				"LinkedSpecialBonus"    "special_poison_touch_duration_lua"
 			}
 			"08"
 			{	
@@ -93,6 +94,7 @@
 			{	
 				"var_type"			"FIELD_FLOAT"
 				"int_multiplier"	"1.5 2.5 3.5 4.5"
+				"LinkedSpecialBonus"    "special_poison_touch_int_multiplier_lua"
 			}
 		}
 	}

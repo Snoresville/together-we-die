@@ -89,6 +89,11 @@ function dazzle_poison_touch_lua:OnProjectileHit(target, location)
 
     -- get data
     local duration = self:GetSpecialValueFor("duration")
+    -- Talent tree
+    local special_poison_touch_duration_lua = self:GetCaster():FindAbilityByName("special_poison_touch_duration_lua")
+    if (special_poison_touch_duration_lua and special_poison_touch_duration_lua:GetLevel() ~= 0) then
+        duration = duration + special_poison_touch_duration_lua:GetSpecialValueFor("value")
+    end
 
     -- add debuff
     target:AddNewModifier(
