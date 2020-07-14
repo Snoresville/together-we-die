@@ -41,9 +41,9 @@ function dazzle_poison_touch_lua:OnSpellStart()
 		start_radius,	-- fStartRadius
 		end_radius,	-- fEndRadius
 		nil,	-- hCacheUnit
-		DOTA_UNIT_TARGET_TEAM_ENEMY,	-- nTeamFilter
-		DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	-- nTypeFilter
-		0,	-- nFlagFilter
+		self:GetAbilityTargetTeam(),	-- nTeamFilter
+		self:GetAbilityTargetType(),	-- nTypeFilter
+		self:GetAbilityTargetFlags(),	-- nFlagFilter
 		FIND_CLOSEST,	-- nOrderFilter
 		false	-- bCanGrowCache
 	)
