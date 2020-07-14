@@ -492,8 +492,8 @@
 		"Ability12"		""
 		"Ability13"		""
 		"Ability14"		""
-		"Ability15"		""
-		"Ability16"		""
+		"Ability15"		"special_poison_touch_silence_lua"
+		"Ability16"		"special_poison_touch_periodic_stun_lua"
 		"Ability17"		"special_bad_juju_max_cdr_lua"
 		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
 	}
