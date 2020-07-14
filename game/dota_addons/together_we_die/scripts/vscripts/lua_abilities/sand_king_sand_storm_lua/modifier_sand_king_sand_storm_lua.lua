@@ -33,7 +33,7 @@ function modifier_sand_king_sand_storm_lua:OnCreated( kv )
 			-- victim = target,
 			attacker = self:GetParent(),
 			damage = self.damage * self.interval,
-			damage_type = DAMAGE_TYPE_MAGICAL,
+			damage_type = self:GetAbility():GetAbilityDamageType(),
 			ability = self:GetAbility(), --Optional.
 		}
 
@@ -101,8 +101,8 @@ function modifier_sand_king_sand_storm_lua:OnIntervalThink()
 		self:GetParent():GetOrigin(),	-- point, center point
 		nil,	-- handle, cacheUnit. (not known)
 		self.radius,	-- float, radius. or use FIND_UNITS_EVERYWHERE
-		DOTA_UNIT_TARGET_TEAM_ENEMY,	-- int, team filter
-		DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	-- int, type filter
+		self:GetAbility():GetAbilityTargetTeam(),	-- int, team filter
+		self:GetAbility():GetAbilityTargetType(),	-- int, type filter
 		0,	-- int, flag filter
 		0,	-- int, order filter
 		false	-- bool, can grow cache
