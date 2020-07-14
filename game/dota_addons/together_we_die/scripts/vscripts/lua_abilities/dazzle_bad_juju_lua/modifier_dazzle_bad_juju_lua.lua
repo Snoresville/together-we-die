@@ -23,6 +23,13 @@ function modifier_dazzle_bad_juju_lua:OnCreated(kv)
     self.cd_int_multiplier = self:GetAbility():GetSpecialValueFor("cd_int_multiplier")
     self.duration = self:GetAbility():GetSpecialValueFor("duration")
     self.radius = self:GetAbility():GetSpecialValueFor("radius")
+
+    if not IsServer() then
+        return
+    end
+    local interval = 1
+    -- Start interval
+    self:StartIntervalThink(interval)
 end
 
 function modifier_dazzle_bad_juju_lua:OnRefresh(kv)
@@ -52,11 +59,30 @@ function modifier_dazzle_bad_juju_lua:DeclareFunctions()
 end
 
 function modifier_dazzle_bad_juju_lua:GetModifierPercentageCooldown()
+    if IsServer() then
+        self:UpdateMaxCdr()
+    end
+
     if not self:GetCaster():PassivesDisabled() then
-        return math.min(math.floor(self:GetParent():GetIntellect() * self.cd_int_multiplier) + self.cooldown_reduction, self.max_cooldown_reduction)
+        return self:GetStackCount()
     end
 
     return 0
+end
+
+function modifier_dazzle_bad_juju_lua:OnIntervalThink()
+    self:UpdateMaxCdr()
+end
+
+function modifier_dazzle_bad_juju_lua:UpdateMaxCdr()
+    local max_cooldown_reduction = self.max_cooldown_reduction
+    -- Talent tree
+    local special_bad_juju_max_cdr_lua = self:GetParent():FindAbilityByName("special_bad_juju_max_cdr_lua")
+    if (special_bad_juju_max_cdr_lua and special_bad_juju_max_cdr_lua:GetLevel() ~= 0) then
+        max_cooldown_reduction = max_cooldown_reduction + special_bad_juju_max_cdr_lua:GetSpecialValueFor("value")
+    end
+    self:SetStackCount(math.min(math.floor(self:GetParent():GetIntellect() * self.cd_int_multiplier) + self.cooldown_reduction, max_cooldown_reduction))
+    self:ForceRefresh()
 end
 
 function modifier_dazzle_bad_juju_lua:OnAbilityFullyCast(params)

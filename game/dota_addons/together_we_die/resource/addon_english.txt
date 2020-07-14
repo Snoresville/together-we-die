@@ -3542,5 +3542,7 @@
 		"DOTA_Tooltip_ability_special_life_break_str_multiplier_lua"			"Life Break +{s:value} STR Multiplier"
 		"DOTA_Tooltip_ability_special_life_break_health_cost_reduction_lua"			"Life Break {s:value} HP Cost Multiplier"
 		"DOTA_Tooltip_ability_special_life_break_stun_duration_lua"			"Life Break +{s:value}s Stun Duration"
+
+		"DOTA_Tooltip_ability_special_bad_juju_max_cdr_lua"			"Bad Juju +{s:value}% Max CDR"
 	}
 }
