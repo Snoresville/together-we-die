@@ -1,5 +1,8 @@
 dazzle_shadow_wave_lua = class({})
 LinkLuaModifier("modifier_dazzle_shadow_wave_lua", "lua_abilities/dazzle_shadow_wave_lua/modifier_dazzle_shadow_wave_lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_dazzle_poison_touch_lua", "lua_abilities/dazzle_poison_touch_lua/modifier_dazzle_poison_touch_lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_dazzle_shallow_grave_lua", "lua_abilities/dazzle_shallow_grave_lua/modifier_dazzle_shallow_grave_lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_generic_stunned_lua", "lua_abilities/generic/modifier_generic_stunned_lua", LUA_MODIFIER_MOTION_NONE)
 
 --------------------------------------------------------------------------------
 -- Ability Start
@@ -18,6 +21,20 @@ function dazzle_shadow_wave_lua:OnSpellStart()
         int_multiplier = int_multiplier + special_shadow_wave_int_multiplier_lua:GetSpecialValueFor("value")
     end
     self.damage = self:GetSpecialValueFor("damage") + (caster:GetIntellect() * int_multiplier)
+    -- Talent tree (Shadow wave applies shallow grave on friendly targeted units)
+    self.special_shadow_wave_shallow_grave_lua = 0
+    local special_shadow_wave_shallow_grave_lua = caster:FindAbilityByName("special_shadow_wave_shallow_grave_lua")
+    self.shallow_grave = caster:FindAbilityByName("dazzle_shallow_grave_lua")
+    if (special_shadow_wave_shallow_grave_lua and special_shadow_wave_shallow_grave_lua:GetLevel() ~= 0 and self.shallow_grave and self.shallow_grave:GetLevel() > 0) then
+        self.special_shadow_wave_shallow_grave_lua = special_shadow_wave_shallow_grave_lua:GetSpecialValueFor("value")
+    end
+    -- Talent tree (Shadow wave applies poison touch on nearby enemy units)
+    self.special_shadow_wave_poison_touch_lua = 0
+    local special_shadow_wave_poison_touch_lua = caster:FindAbilityByName("special_shadow_wave_poison_touch_lua")
+    self.poison_touch = caster:FindAbilityByName("dazzle_poison_touch_lua")
+    if (special_shadow_wave_poison_touch_lua and special_shadow_wave_poison_touch_lua:GetLevel() ~= 0 and self.poison_touch and self.poison_touch:GetLevel() > 0) then
+        self.special_shadow_wave_poison_touch_lua = special_shadow_wave_poison_touch_lua:GetSpecialValueFor("value")
+    end
 
     -- precache damage
     self.damageTable = {
@@ -43,6 +60,16 @@ end
 function dazzle_shadow_wave_lua:Jump(jumps, source, target)
     -- Heal
     source:Heal(self.damage, self)
+    -- Talent tree
+    if self.special_shadow_wave_shallow_grave_lua ~= 0 then
+        -- add shallow grave
+        source:AddNewModifier(
+                self:GetCaster(), -- player source
+                self.shallow_grave, -- ability source
+                "modifier_dazzle_shallow_grave_lua", -- modifier name
+                { duration = self.special_shadow_wave_shallow_grave_lua } -- kv
+        )
+    end
 
     -- Find enemy nearby
     local enemies = FindUnitsInRadius(
@@ -61,6 +88,16 @@ function dazzle_shadow_wave_lua:Jump(jumps, source, target)
     for _, enemy in pairs(enemies) do
         self.damageTable.victim = enemy
         ApplyDamage(self.damageTable)
+        -- Talent tree
+        if self.special_shadow_wave_poison_touch_lua ~= 0 then
+            -- add poison touch
+            enemy:AddNewModifier(
+                    self:GetCaster(), -- player source
+                    self.poison_touch, -- ability source
+                    "modifier_dazzle_poison_touch_lua", -- modifier name
+                    { duration = self.special_shadow_wave_poison_touch_lua } -- kv
+            )
+        end
 
         -- Play effects
         self:PlayEffects2(enemy)
