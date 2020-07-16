@@ -55,7 +55,6 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"slow_movement_speed"	"-15 -20 -25 -30"
-				"LinkedSpecialBonus"	"special_bonus_unique_sniper_5"
 			}
 			"02"
 			{
@@ -66,12 +65,12 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"shrapnel_damage"		"15 35 55 75"
-				"LinkedSpecialBonus"	"special_bonus_unique_sniper_1"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"duration"				"10.0"
+				"LinkedSpecialBonus"	"special_shrapnel_duration_lua"
 			}
 			"05"
 			{
@@ -87,7 +86,6 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"max_charges"			"3"
-				"LinkedSpecialBonus"	"special_bonus_unique_sniper_2"
 			}
 			"08"
 			{
@@ -98,6 +96,7 @@
 			{
 				"var_type"					"FIELD_FLOAT"
 				"agi_multiplier"			"1.0 2.0 3.0 4.0"
+				"LinkedSpecialBonus"        "special_shrapnel_agi_multiplier_lua"
 			}
 		}
 	}

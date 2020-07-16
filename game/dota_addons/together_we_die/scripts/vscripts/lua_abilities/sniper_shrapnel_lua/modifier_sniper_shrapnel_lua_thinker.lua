@@ -40,11 +40,16 @@ function modifier_sniper_shrapnel_lua_thinker:OnCreated( kv )
 	-- references
 	self.delay = self:GetAbility():GetSpecialValueFor( "damage_delay" ) -- special value
 	self.radius = self:GetAbility():GetSpecialValueFor( "radius" ) -- special value
-	self.duration = self:GetAbility():GetSpecialValueFor( "duration" ) -- special value
 
 	self.start = false
 
 	if IsServer() then
+		self.duration = self:GetAbility():GetSpecialValueFor( "duration" ) -- special value
+		-- Talent Tree
+		local special_shrapnel_duration_lua = self:GetCaster():FindAbilityByName("special_shrapnel_duration_lua")
+		if special_shrapnel_duration_lua and special_shrapnel_duration_lua:GetLevel() ~= 0 then
+			self.duration = self.duration + special_shrapnel_duration_lua:GetSpecialValueFor("value")
+		end
 		self.direction = (self:GetParent():GetOrigin()-self:GetCaster():GetOrigin()):Normalized()
 
 		-- Start interval

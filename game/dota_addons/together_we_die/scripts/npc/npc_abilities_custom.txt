@@ -5421,7 +5421,13 @@
 #base "../vscripts/lua_abilities/special/dazzle/special_poison_touch_periodic_stun_lua.txt"
 #base "../vscripts/lua_abilities/special/dazzle/special_bad_juju_max_cdr_lua.txt"
 #base "../vscripts/lua_abilities/special/sniper/special_take_aim_attack_range_lua.txt"
+#base "../vscripts/lua_abilities/special/sniper/special_shrapnel_agi_multiplier_lua.txt"
 #base "../vscripts/lua_abilities/special/sniper/special_take_aim_agi_multiplier_lua.txt"
+#base "../vscripts/lua_abilities/special/sniper/special_headshot_agi_multiplier_lua.txt"
+#base "../vscripts/lua_abilities/special/sniper/special_shrapnel_duration_lua.txt"
+#base "../vscripts/lua_abilities/special/sniper/special_assassinate_agi_multiplier_lua.txt"
+#base "../vscripts/lua_abilities/special/sniper/special_headshot_silence_lua.txt"
+#base "../vscripts/lua_abilities/special/sniper/special_assassinate_cast_time_lua.txt"
 
 #base "../vscripts/lua_abilities/perfect_stance_lua/perfect_stance_lua.txt"
 #base "../vscripts/lua_abilities/pure_strike_lua/pure_strike_lua.txt"

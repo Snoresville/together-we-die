@@ -851,13 +851,13 @@
 		"Ability5"		""
 		"Ability6"				"sniper_assassinate_lua"
 		"Ability10"		"special_take_aim_attack_range_lua"
-		"Ability11"		""
+		"Ability11"		"special_shrapnel_agi_multiplier_lua"
 		"Ability12"		"special_take_aim_agi_multiplier_lua"
-		"Ability13"		""
-		"Ability14"		""
-		"Ability15"		""
-		"Ability16"		""
-		"Ability17"		""
+		"Ability13"		"special_headshot_agi_multiplier_lua"
+		"Ability14"		"special_shrapnel_duration_lua"
+		"Ability15"		"special_assassinate_agi_multiplier_lua"
+		"Ability16"		"special_headshot_silence_lua"
+		"Ability17"		"special_assassinate_cast_time_lua"
 
 		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
 	}
