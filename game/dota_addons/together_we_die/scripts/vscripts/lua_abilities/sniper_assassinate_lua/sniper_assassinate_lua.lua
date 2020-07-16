@@ -101,7 +101,7 @@ function sniper_assassinate_lua:OnProjectileHit_ExtraData(target, location, extr
     local caster = self:GetCaster()
     local agi_multiplier = self:GetSpecialValueFor("agi_multiplier")
     -- Talent Tree
-    local special_assassinate_agi_multiplier_lua = self:GetParent():FindAbilityByName("special_assassinate_agi_multiplier_lua")
+    local special_assassinate_agi_multiplier_lua = caster:FindAbilityByName("special_assassinate_agi_multiplier_lua")
     if special_assassinate_agi_multiplier_lua and special_assassinate_agi_multiplier_lua:GetLevel() ~= 0 then
         agi_multiplier = agi_multiplier + special_assassinate_agi_multiplier_lua:GetSpecialValueFor("value")
     end
