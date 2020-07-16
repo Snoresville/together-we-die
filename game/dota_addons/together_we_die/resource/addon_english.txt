@@ -911,7 +911,7 @@
 		"DOTA_Tooltip_ability_queen_of_pain_scream_of_pain_lua_area_of_effect"				"RADIUS:"
 		"DOTA_Tooltip_ability_queen_of_pain_scream_of_pain_lua_int_multiplier"				"INT MULTIPLIER:"
 		"DOTA_Tooltip_ability_queen_of_pain_blink_lua"										"Blink"
-		"DOTA_Tooltip_ability_queen_of_pain_blink_lua_Description"							"Short distance teleportation that allows Queen of Pain to move in and out of combat. <font color='#70EA72'>After blinking in, let out a scream of pain.</font>"
+		"DOTA_Tooltip_ability_queen_of_pain_blink_lua_Description"							"Short distance teleportation that allows Queen of Pain to move in and out of combat. \n\n<font color='#70EA72'>After blinking in, let out a scream of pain.</font>"
 		"DOTA_Tooltip_ability_queen_of_pain_blink_lua_Lore"									"The Secret Queen lives up to her title, making her pain impossible to escape."
 		"DOTA_Tooltip_ability_queen_of_pain_blink_lua_Note0"									"You can use Blink to dodge incoming projectiles."
 		"DOTA_Tooltip_ability_queen_of_pain_blink_lua_blink_range"							"RANGE:"
@@ -3112,7 +3112,7 @@
 		"DOTA_Tooltip_modifier_snapfire_scatterblast_lua_Description"		"Slowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
 
 		"DOTA_Tooltip_ability_snapfire_firesnap_cookie_lua"				"Firesnap Cookie"
-		"DOTA_Tooltip_ability_snapfire_firesnap_cookie_lua_Description"	"Snapfire feeds a potent cookie to Mortimer or an ally, causing them to hop a short distance. The hopping unit stuns and damages enemies in the landing zone."
+		"DOTA_Tooltip_ability_snapfire_firesnap_cookie_lua_Description"	"Snapfire feeds a potent cookie to Mortimer or an ally, causing them to hop a short distance. The hopping unit stuns and damages enemies in the landing zone.\n\n<font color='#70EA72'>Upon landing, scatterblast will be shot at all enemies caught in the landing zone.</font>"
 		"DOTA_Tooltip_ability_snapfire_firesnap_cookie_lua_Note0"		"The cookie projectile has a speed of %projectile_speed%."
 		"DOTA_Tooltip_ability_snapfire_firesnap_cookie_lua_Lore"			"With the help of a secret mixture that pairs Beadie's baking skills with her passion for black powder, these battle biscuits pack a punch."
 		"DOTA_Tooltip_ability_snapfire_firesnap_cookie_lua_jump_horizontal_distance"	"HOP DISTANCE:"

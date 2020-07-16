@@ -12,6 +12,7 @@ Ability checklist (erase if done/checked):
 --------------------------------------------------------------------------------
 snapfire_scatterblast_lua = class({})
 LinkLuaModifier("modifier_snapfire_scatterblast_lua", "lua_abilities/snapfire_scatterblast_lua/modifier_snapfire_scatterblast_lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_generic_stunned_lua", "lua_abilities/generic/modifier_generic_stunned_lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_generic_custom_indicator", "lua_abilities/generic/modifier_generic_custom_indicator", LUA_MODIFIER_MOTION_NONE)
 
 --------------------------------------------------------------------------------
@@ -164,13 +165,23 @@ function snapfire_scatterblast_lua:OnProjectileHit_ExtraData(target, location, e
     }
     ApplyDamage(damageTable)
 
-    -- debuff
-    target:AddNewModifier(
-            caster, -- player source
-            self, -- ability source
-            "modifier_snapfire_scatterblast_lua", -- modifier name
-            { duration = slow } -- kv
-    )
+    if point_blank then
+        -- stun
+        target:AddNewModifier(
+                caster, -- player source
+                self, -- ability source
+                "modifier_generic_stunned_lua", -- modifier name
+                { duration = slow } -- kv
+        )
+    else
+        -- debuff
+        target:AddNewModifier(
+                caster, -- player source
+                self, -- ability source
+                "modifier_snapfire_scatterblast_lua", -- modifier name
+                { duration = slow } -- kv
+        )
+    end
 
     -- effect
     self:PlayEffects(target, point_blank)
