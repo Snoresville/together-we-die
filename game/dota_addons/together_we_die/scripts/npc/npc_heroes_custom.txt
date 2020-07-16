@@ -1764,10 +1764,10 @@
 		"Ability11"		""
 		"Ability12"		""
 		"Ability13"		""
-		"Ability14"		""
-		"Ability15"		""
+		"Ability14"		"special_mortimer_kisses_str_multiplier_lua"
+		"Ability15"		"special_mortimer_kisses_burn_str_multiplier_lua"
 		"Ability16"		""
-		"Ability17"		""
+		"Ability17"		"special_mortimer_kisses_barrage_lua"
 
 		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
 	}
