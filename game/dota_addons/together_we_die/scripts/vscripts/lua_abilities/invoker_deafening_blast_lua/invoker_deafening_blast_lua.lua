@@ -33,9 +33,9 @@ function invoker_deafening_blast_lua:OnSpellStart()
 		bDeleteOnHit = false,
     	bReplaceExisting = false,
     	
-    	iUnitTargetTeam = DOTA_UNIT_TARGET_TEAM_ENEMY,
-    	iUnitTargetFlags = DOTA_UNIT_TARGET_FLAG_NONE,
-    	iUnitTargetType = DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
+    	iUnitTargetTeam = self:GetAbilityTargetTeam(),
+    	iUnitTargetFlags = self:GetAbilityTargetFlags(),
+    	iUnitTargetType = self:GetAbilityTargetType(),
 		
 		bProvidesVision = false,
 	}
