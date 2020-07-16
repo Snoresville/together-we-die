@@ -1763,7 +1763,7 @@
 		"Ability10"		""
 		"Ability11"		""
 		"Ability12"		""
-		"Ability13"		""
+		"Ability13"		"special_lil_shredder_buffed_attacks_lua"
 		"Ability14"		"special_mortimer_kisses_str_multiplier_lua"
 		"Ability15"		"special_mortimer_kisses_burn_str_multiplier_lua"
 		"Ability16"		"special_lil_shredder_bat_lua"

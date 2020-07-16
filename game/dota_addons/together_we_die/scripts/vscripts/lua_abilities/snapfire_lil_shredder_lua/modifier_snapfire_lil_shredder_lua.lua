@@ -33,7 +33,6 @@ end
 -- Initializations
 function modifier_snapfire_lil_shredder_lua:OnCreated(kv)
     -- references
-    self.attacks = self:GetAbility():GetSpecialValueFor("buffed_attacks")
     self.damage = self:GetAbility():GetSpecialValueFor("damage") + self:GetCaster():GetStrength() * self:GetAbility():GetSpecialValueFor("str_multiplier")
     self.as_bonus = self:GetAbility():GetSpecialValueFor("attack_speed_bonus")
     self.range_bonus = self:GetAbility():GetSpecialValueFor("attack_range_bonus")
@@ -47,6 +46,12 @@ function modifier_snapfire_lil_shredder_lua:OnCreated(kv)
 
     if not IsServer() then
         return
+    end
+    self.attacks = self:GetAbility():GetSpecialValueFor("buffed_attacks")
+    -- Talent Tree
+    local special_lil_shredder_buffed_attacks_lua = self:GetCaster():FindAbilityByName("special_lil_shredder_buffed_attacks_lua")
+    if special_lil_shredder_buffed_attacks_lua and special_lil_shredder_buffed_attacks_lua:GetLevel() ~= 0 then
+        self.attacks = self.attacks + special_lil_shredder_buffed_attacks_lua:GetSpecialValueFor("value")
     end
     self:SetStackCount(self:GetStackCount() + self.attacks)
 

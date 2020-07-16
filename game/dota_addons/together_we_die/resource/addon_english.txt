@@ -3125,12 +3125,13 @@
 		"dota_hud_error_cookie_target_is_channeling"				"Target Is Channeling"
 
 		"DOTA_Tooltip_ability_snapfire_lil_shredder_lua"				"Lil' Shredder"
-		"DOTA_Tooltip_ability_snapfire_lil_shredder_lua_Description"	"Snapfire heats up her mounted turret to rapidly fire %buffed_attacks% fixed-damage attacks. Each attack slows the enemy's attack speed and reduces the enemy's armor. Provides bonus attack range for the duration. \n\n<font color='#70EA72'>After an enemy gains 5 stacks of debuff, they will be completely disarmed.</font>"
+		"DOTA_Tooltip_ability_snapfire_lil_shredder_lua_Description"	"Snapfire heats up her mounted turret to rapidly fire several fixed-damage attacks. Each attack slows the enemy's attack speed and reduces the enemy's armor. Provides bonus attack range for the duration. \n\n<font color='#70EA72'>After an enemy gains 5 stacks of debuff, they will be completely disarmed.</font>"
 		"DOTA_Tooltip_ability_snapfire_lil_shredder_lua_Note0"			"Attack modifiers have a chance to proc on Lil' Shredder attacks."
 		"DOTA_Tooltip_ability_snapfire_lil_shredder_lua_Lore"			"Beadie constantly tinkers with a design she first dreamed up plotting an exodus from her old gang."
 		//"DOTA_Tooltip_ability_snapfire_lil_shredder_attack_speed_bonus"	"BONUS ATTACK SPEED:"
 		//"DOTA_Tooltip_ability_snapfire_lil_shredder_buff_duration_tooltip"	"BUFF DURATION:"
 		"DOTA_Tooltip_ability_snapfire_lil_shredder_lua_attack_range_bonus"	"BONUS RANGE:"
+		"DOTA_Tooltip_ability_snapfire_lil_shredder_lua_buffed_attacks"	"BUFFED ATTACKS:"
 		"DOTA_Tooltip_ability_snapfire_lil_shredder_lua_damage"		"FIXED DAMAGE PER SHOT:"
 		"DOTA_Tooltip_ability_snapfire_lil_shredder_lua_base_attack_time"	"BASE ATTACK TIME:"
 		"DOTA_Tooltip_ability_snapfire_lil_shredder_lua_attack_speed_slow_per_stack"	"ATTACK SLOW PER STACK:"
@@ -3562,6 +3563,7 @@
 		"DOTA_Tooltip_ability_special_headshot_silence_lua"			"Headshot Applies {s:value}s Silence"
 		"DOTA_Tooltip_ability_special_assassinate_cast_time_lua"			"No Assassinate Cast Time"
 
+		"DOTA_Tooltip_ability_special_lil_shredder_buffed_attacks_lua"			"Lil Shredder +{s:value} Buffed Attacks"
 		"DOTA_Tooltip_ability_special_mortimer_kisses_str_multiplier_lua"			"Mortimer Kisses +{s:value} STR Multiplier"
 		"DOTA_Tooltip_ability_special_mortimer_kisses_burn_str_multiplier_lua"			"Mortimer Kisses Burn +{s:value} STR Multiplier"
 		"DOTA_Tooltip_ability_special_lil_shredder_bat_lua"			"   Lil Shredder BAT {s:value}s"

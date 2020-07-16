@@ -5428,6 +5428,7 @@
 #base "../vscripts/lua_abilities/special/sniper/special_assassinate_agi_multiplier_lua.txt"
 #base "../vscripts/lua_abilities/special/sniper/special_headshot_silence_lua.txt"
 #base "../vscripts/lua_abilities/special/sniper/special_assassinate_cast_time_lua.txt"
+#base "../vscripts/lua_abilities/special/snapfire/special_lil_shredder_buffed_attacks_lua.txt"
 #base "../vscripts/lua_abilities/special/snapfire/special_mortimer_kisses_str_multiplier_lua.txt"
 #base "../vscripts/lua_abilities/special/snapfire/special_mortimer_kisses_burn_str_multiplier_lua.txt"
 #base "../vscripts/lua_abilities/special/snapfire/special_lil_shredder_bat_lua.txt"
