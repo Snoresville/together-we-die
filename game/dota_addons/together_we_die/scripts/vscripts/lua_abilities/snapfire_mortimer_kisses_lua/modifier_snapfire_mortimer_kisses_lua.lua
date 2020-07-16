@@ -56,8 +56,15 @@ function modifier_snapfire_mortimer_kisses_lua:OnCreated(kv)
         self.talent_multi_barrage = true
     end
 
+    self.projectile_count = self:GetAbility():GetSpecialValueFor("projectile_count")
+    -- Talent Tree
+    local special_mortimer_kisses_count_lua = self:GetCaster():FindAbilityByName("special_mortimer_kisses_count_lua")
+    if special_mortimer_kisses_count_lua and special_mortimer_kisses_count_lua:GetLevel() ~= 0 then
+        self.projectile_count = self.projectile_count + special_mortimer_kisses_count_lua:GetSpecialValueFor("value")
+    end
+
     -- load data
-    local interval = self:GetAbility():GetDuration() / self:GetAbility():GetSpecialValueFor("projectile_count") + 0.01 -- so it only have 8 projectiles instead of 9
+    local interval = self:GetAbility():GetDuration() / self.projectile_count + 0.01 -- so it only have 8 projectiles instead of 9
     self:SetValidTarget(Vector(kv.pos_x, kv.pos_y, 0))
     local projectile_name = "particles/units/heroes/hero_snapfire/snapfire_lizard_blobs_arced.vpcf"
     local projectile_start_radius = 0

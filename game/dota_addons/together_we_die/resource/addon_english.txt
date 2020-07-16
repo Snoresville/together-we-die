@@ -3100,12 +3100,12 @@
 
 		// SNAPFIRE
 		"DOTA_Tooltip_ability_snapfire_scatterblast_lua"					"Scatterblast"
-		"DOTA_Tooltip_ability_snapfire_scatterblast_lua_Description"		"Snapfire unloads with a wide blast that damages and slows enemies in a cone. Enemies caught at point-blank range take an extra %point_blank_dmg_bonus_pct%%% damage."
+		"DOTA_Tooltip_ability_snapfire_scatterblast_lua_Description"		"Snapfire unloads with a wide blast that damages and slows enemies in a cone. Enemies caught at point-blank range take extra damage <font color='#70EA72'>and gets stunned</font>."
 		"DOTA_Tooltip_ability_snapfire_scatterblast_lua_Lore"				"A favorite from her collection, Beadie crafted Ol' Rackatee as her first line of defense when she ventured into the Outlands."
 		"DOTA_Tooltip_ability_snapfire_scatterblast_lua_damage"				"DAMAGE:"
 		"DOTA_Tooltip_ability_snapfire_scatterblast_lua_debuff_duration"	"SLOW DURATION:"
 		"DOTA_Tooltip_ability_snapfire_scatterblast_lua_point_blank_range"	"POINT-BLANK RANGE:"
-		//"DOTA_Tooltip_ability_snapfire_scatterblast_point_blank_dmg_bonus_pct"	"%POINT BLANK BONUS DMG:"
+		"DOTA_Tooltip_ability_snapfire_scatterblast_lua_point_blank_dmg_bonus_pct"	"%POINT BLANK BONUS DMG:"
 		"DOTA_Tooltip_ability_snapfire_scatterblast_lua_movement_slow_pct"	"%MOVEMENT SLOW:"
 		"DOTA_Tooltip_ability_snapfire_scatterblast_lua_str_multiplier"		"STR MULTIPLIER:"
 		"DOTA_Tooltip_modifier_snapfire_scatterblast_lua"					"Scatterblast Slow"
@@ -3563,6 +3563,9 @@
 		"DOTA_Tooltip_ability_special_headshot_silence_lua"			"Headshot Applies {s:value}s Silence"
 		"DOTA_Tooltip_ability_special_assassinate_cast_time_lua"			"No Assassinate Cast Time"
 
+		"DOTA_Tooltip_ability_special_scatterblast_dmg_bonus_pct_lua"			"Scatterblast +{s:value}% DMG Bonus"
+		"DOTA_Tooltip_ability_special_scatterblast_str_multiplier_lua"			"Scatterblast +{s:value} STR Multiplier"
+		"DOTA_Tooltip_ability_special_mortimer_kisses_count_lua"			"+{s:value} Mortimer Kisses Launched"
 		"DOTA_Tooltip_ability_special_lil_shredder_buffed_attacks_lua"			"Lil Shredder +{s:value} Buffed Attacks"
 		"DOTA_Tooltip_ability_special_mortimer_kisses_str_multiplier_lua"			"Mortimer Kisses +{s:value} STR Multiplier"
 		"DOTA_Tooltip_ability_special_mortimer_kisses_burn_str_multiplier_lua"			"Mortimer Kisses Burn +{s:value} STR Multiplier"

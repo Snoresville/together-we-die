@@ -55,6 +55,7 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"projectile_count"		"8"
+				"LinkedSpecialBonus"    "special_mortimer_kisses_count_lua"
 			}
 			"02"
 			{
