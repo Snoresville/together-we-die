@@ -36,13 +36,14 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_attack_range"			"100 200 300 400"
-				"LinkedSpecialBonus"			"special_bonus_unique_sniper_6"
+				"bonus_attack_range"			"25 50 75 125"
+				"LinkedSpecialBonus"			"special_take_aim_attack_range_lua"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"agi_multiplier"			"0.3 0.5 0.7 1.0"
+				"agi_multiplier"			"0.1 0.2 0.3 0.4"
+				"LinkedSpecialBonus"			"special_take_aim_agi_multiplier_lua"
 			}
 		}
 	}
