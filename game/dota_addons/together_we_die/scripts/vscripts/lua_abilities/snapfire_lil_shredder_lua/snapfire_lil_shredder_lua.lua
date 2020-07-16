@@ -22,7 +22,7 @@ function snapfire_lil_shredder_lua:OnSpellStart()
 	-- load data
 	local duration = self:GetDuration()
 
-	-- addd buff
+	-- add buff
 	caster:AddNewModifier(
 		caster, -- player source
 		self, -- ability source

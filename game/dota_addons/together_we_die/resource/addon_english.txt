@@ -3125,7 +3125,7 @@
 		"dota_hud_error_cookie_target_is_channeling"				"Target Is Channeling"
 
 		"DOTA_Tooltip_ability_snapfire_lil_shredder_lua"				"Lil' Shredder"
-		"DOTA_Tooltip_ability_snapfire_lil_shredder_lua_Description"	"Snapfire heats up her mounted turret to rapidly fire %buffed_attacks% fixed-damage attacks. <font color='#70EA72'>Also fires additional shots at all enemies nearby.</font> Each attack slows the enemy's attack speed. Provides bonus attack range for the duration."
+		"DOTA_Tooltip_ability_snapfire_lil_shredder_lua_Description"	"Snapfire heats up her mounted turret to rapidly fire %buffed_attacks% fixed-damage attacks. Each attack slows the enemy's attack speed and reduces the enemy's armor. Provides bonus attack range for the duration. \n\n<font color='#70EA72'>After an enemy gains 5 stacks of debuff, they will be completely disarmed.</font>"
 		"DOTA_Tooltip_ability_snapfire_lil_shredder_lua_Note0"			"Sets %base_attack_time% base attack rate for the duration."
 		"DOTA_Tooltip_ability_snapfire_lil_shredder_lua_Note1"			"Attack modifiers have a chance to proc on Lil' Shredder attacks."
 		"DOTA_Tooltip_ability_snapfire_lil_shredder_lua_Lore"			"Beadie constantly tinkers with a design she first dreamed up plotting an exodus from her old gang."
@@ -3136,10 +3136,11 @@
 		"DOTA_Tooltip_ability_snapfire_lil_shredder_lua_attack_speed_slow_per_stack"	"ATTACK SLOW PER STACK:"
 		"DOTA_Tooltip_ability_snapfire_lil_shredder_lua_slow_duration"	"ATTACK SLOW DURATION:"
 		"DOTA_Tooltip_ability_snapfire_lil_shredder_lua_str_multiplier"	"STR MULTIPLIER:"
+		"DOTA_Tooltip_ability_snapfire_lil_shredder_lua_armor_str_multiplier"	"ARMOR STR MULTIPLIER:"
 		"DOTA_Tooltip_modifier_snapfire_lil_shredder_lua"				"Lil' Shredder"
 		"DOTA_Tooltip_modifier_snapfire_lil_shredder_lua_Description"	"Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% and applying attack speed reduction to the target on hit."
 		"DOTA_Tooltip_modifier_snapfire_lil_shredder_lua_debuff"				"Lil' Shredder"
-		"DOTA_Tooltip_modifier_snapfire_lil_shredder_lua_debuff_Description"	"This unit has reduced attack speed."
+		"DOTA_Tooltip_modifier_snapfire_lil_shredder_lua_debuff_Description"	"This unit has reduced attack speed of %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% and armor %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%."
 
 		"DOTA_Tooltip_ability_snapfire_mortimer_kisses_lua"					"Mortimer Kisses"
 		"DOTA_Tooltip_ability_snapfire_mortimer_kisses_lua_Description"		"Snapfire's friend launches a barrage of firespit globs over %duration_tooltip% seconds. Globs cause impact damage and create pools of firespit, which slow and apply damage over time. Snapfire has a reduced turn rate for the duration and a minimum launch range of %min_range%. Each glob can be targeted with a right click."
