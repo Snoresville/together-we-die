@@ -25,10 +25,10 @@ function modifier_sniper_shrapnel_lua_thinker:GetAuraDuration()
 	return 0.5
 end
 function modifier_sniper_shrapnel_lua_thinker:GetAuraSearchTeam()
-	return DOTA_UNIT_TARGET_TEAM_ENEMY
+	return self:GetAbility():GetAbilityTargetTeam()
 end
 function modifier_sniper_shrapnel_lua_thinker:GetAuraSearchType()
-	return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC
+	return self:GetAbility():GetAbilityTargetType()
 end
 function modifier_sniper_shrapnel_lua_thinker:GetAttributes()
 	return MODIFIER_ATTRIBUTE_MULTIPLE
@@ -40,8 +40,6 @@ function modifier_sniper_shrapnel_lua_thinker:OnCreated( kv )
 	-- references
 	self.delay = self:GetAbility():GetSpecialValueFor( "damage_delay" ) -- special value
 	self.radius = self:GetAbility():GetSpecialValueFor( "radius" ) -- special value
-	self.damage = self:GetAbility():GetSpecialValueFor( "shrapnel_damage" ) + (self:GetCaster():GetAgility() * self:GetAbility():GetSpecialValueFor( "agi_multiplier" )) -- special value
-	self.aura_stick = self:GetAbility():GetSpecialValueFor( "slow_duration" ) -- special value
 	self.duration = self:GetAbility():GetSpecialValueFor( "duration" ) -- special value
 
 	self.start = false

@@ -30,7 +30,7 @@ function modifier_sniper_shrapnel_lua:OnCreated( kv )
 			victim = self:GetParent(),
 			attacker = self.caster,
 			damage = self.damage,
-			damage_type = DAMAGE_TYPE_MAGICAL,
+			damage_type = self:GetAbility():GetAbilityDamageType(),
 			ability = self:GetAbility(), --Optional.
 		}
 

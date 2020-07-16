@@ -1,13 +1,6 @@
 sniper_shrapnel_lua = class({})
 LinkLuaModifier( "modifier_sniper_shrapnel_lua", "lua_abilities/sniper_shrapnel_lua/modifier_sniper_shrapnel_lua", LUA_MODIFIER_MOTION_NONE )
-LinkLuaModifier( "modifier_sniper_shrapnel_lua_charges", "lua_abilities/sniper_shrapnel_lua/modifier_sniper_shrapnel_lua_charges", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_sniper_shrapnel_lua_thinker", "lua_abilities/sniper_shrapnel_lua/modifier_sniper_shrapnel_lua_thinker", LUA_MODIFIER_MOTION_NONE )
-
---------------------------------------------------------------------------------
--- Passive Modifier
-function sniper_shrapnel_lua:GetIntrinsicModifierName()
-	return "modifier_sniper_shrapnel_lua_charges"
-end
 
 --------------------------------------------------------------------------------
 -- Custom KV
