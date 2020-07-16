@@ -3564,6 +3564,7 @@
 
 		"DOTA_Tooltip_ability_special_mortimer_kisses_str_multiplier_lua"			"Mortimer Kisses +{s:value} STR Multiplier"
 		"DOTA_Tooltip_ability_special_mortimer_kisses_burn_str_multiplier_lua"			"Mortimer Kisses Burn +{s:value} STR Multiplier"
+		"DOTA_Tooltip_ability_special_lil_shredder_bat_lua"			"   Lil Shredder BAT {s:value}s"
 		"DOTA_Tooltip_ability_special_mortimer_kisses_barrage_lua"			"Mortimer Kisses Barrage"
 	}
 }

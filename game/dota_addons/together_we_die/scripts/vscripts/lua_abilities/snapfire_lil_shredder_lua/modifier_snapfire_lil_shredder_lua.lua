@@ -38,6 +38,10 @@ function modifier_snapfire_lil_shredder_lua:OnCreated(kv)
     self.as_bonus = self:GetAbility():GetSpecialValueFor("attack_speed_bonus")
     self.range_bonus = self:GetAbility():GetSpecialValueFor("attack_range_bonus")
     self.bat = self:GetAbility():GetSpecialValueFor("base_attack_time")
+    -- Talent Tree
+    if self:GetCaster():GetModifierStackCount("modifier_snapfire_lil_shredder_bat_lua", self:GetCaster()) ~= 0 then
+        self.bat = self.bat - (self:GetCaster():GetModifierStackCount("modifier_snapfire_lil_shredder_bat_lua", self:GetCaster()) / 10)
+    end
     self.slow = self:GetAbility():GetSpecialValueFor("slow_duration")
     self.debuff_modifier_name = "modifier_snapfire_lil_shredder_lua_debuff"
 
@@ -78,7 +82,6 @@ function modifier_snapfire_lil_shredder_lua:DeclareFunctions()
         MODIFIER_EVENT_ON_ATTACK,
         MODIFIER_EVENT_ON_ATTACK_LANDED,
         MODIFIER_EVENT_ON_ATTACK_RECORD_DESTROY,
-
         MODIFIER_PROPERTY_PROJECTILE_NAME,
         MODIFIER_PROPERTY_OVERRIDE_ATTACK_DAMAGE,
         MODIFIER_PROPERTY_ATTACK_RANGE_BONUS,
