@@ -60,7 +60,7 @@
 			"04"
 			{
 			    "var_type"					"FIELD_FLOAT"
-			    "cdr_int_multiplier"			"0.01"
+			    "cdr_int_multiplier"			"0.015"
 			}
             "05"
 			{
