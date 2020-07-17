@@ -70,7 +70,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"primary_attr_multiplier"			"0.04"
+				"primary_attr_multiplier"			"0.02"
 			}
 		}
 	}
