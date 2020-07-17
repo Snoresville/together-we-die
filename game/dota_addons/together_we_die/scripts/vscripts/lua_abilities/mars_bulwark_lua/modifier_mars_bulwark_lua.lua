@@ -94,6 +94,11 @@ function modifier_mars_bulwark_lua:GetModifierPhysical_ConstantBlock(params)
         return 0
     end
 
+    -- cancel if bulwark isnt skilled
+    if self:GetAbility():GetLevel() == 0 then
+        return
+    end
+
     -- cancel if break
     if params.target:PassivesDisabled() then
         return 0
