@@ -58,7 +58,7 @@ function modifier_perfect_stance_lua:GetModifierPhysical_ConstantBlock(params)
     end
 
     if self:FlagExist(params.damage_flags, DOTA_DAMAGE_FLAG_REFLECTION) then
-        return
+        return 0
     end
 
     -- cancel if strength is not the greatest attribute
