@@ -1,6 +1,7 @@
 invoker_cold_snap_lua = class({})
 LinkLuaModifier( "modifier_invoker_cold_snap_lua", "lua_abilities/invoker_cold_snap_lua/modifier_invoker_cold_snap_lua", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_generic_stunned_lua", "lua_abilities/generic/modifier_generic_stunned_lua", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_generic_silenced_lua", "lua_abilities/generic/modifier_generic_silenced_lua", LUA_MODIFIER_MOTION_NONE )
 
 --------------------------------------------------------------------------------
 -- AOE Radius
@@ -18,7 +19,7 @@ function invoker_cold_snap_lua:OnSpellStart()
 	local search = self:GetSpecialValueFor( "radius" )
 
 	-- logic
-	targets = FindUnitsInRadius(
+	local targets = FindUnitsInRadius(
 		caster:GetTeamNumber(),	-- int, your team number
 		target:GetOrigin(),	-- point, center point
 		target,	-- handle, cacheUnit. (not known)
@@ -30,6 +31,13 @@ function invoker_cold_snap_lua:OnSpellStart()
 		false	-- bool, can grow cache
 	)
 
+	-- Talent Tree
+	local silence_duration = 0
+	local special_cold_snap_silence_lua = caster:FindAbilityByName("special_cold_snap_silence_lua")
+	if special_cold_snap_silence_lua and special_cold_snap_silence_lua:GetLevel() ~= 0 then
+		silence_duration = special_cold_snap_silence_lua:GetSpecialValueFor("value")
+	end
+
 	for _,enemy in pairs(targets) do
 		enemy:AddNewModifier(
 			caster, -- player source
@@ -37,6 +45,16 @@ function invoker_cold_snap_lua:OnSpellStart()
 			"modifier_invoker_cold_snap_lua", -- modifier name
 			{ duration = duration } -- kv
 		)
+		if silence_duration ~= 0 then
+			enemy:AddNewModifier(
+					caster, -- player source
+					self, -- ability source
+					"modifier_generic_silenced_lua", -- modifier name
+					{
+						duration = silence_duration,
+					} -- kv
+			)
+		end
 		self:PlayEffects( enemy )
 	end
 end

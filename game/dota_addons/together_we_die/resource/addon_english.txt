@@ -2723,6 +2723,7 @@
 		"DOTA_Tooltip_ability_invoker_sun_strike_lua_delay"								"DELAY:"
 		"DOTA_Tooltip_ability_invoker_sun_strike_lua_damage"							"DAMAGE (<font color='#cabe68'>EXORT</font>):\n"
 		"DOTA_Tooltip_ability_invoker_sun_strike_lua_int_multiplier"					"INT MULTIPLIER (<font color='#cabe68'>EXORT</font>):\n"
+		"DOTA_Tooltip_ability_invoker_sun_strike_lua_scepter_max_targets"				"<font color='#70EA72'>SCEPTER MAX TARGETS:</font>"
 		"DOTA_Tooltip_ability_invoker_sun_strike_lua_aghanim_description"				"Cataclysm. Sunstrike no longer requires a target and will now hit all targets across the entire map."
 		"DOTA_Tooltip_ability_invoker_forge_spirit_lua"									"Forge Spirit"
 		"DOTA_Tooltip_ability_invoker_forge_spirit_lua_Description"						"Invoker forges a spirit embodying the strength of fire and fortitude of ice. Damage, mana, and armor are based on the level of <font color='#cabe68'>Exort</font> while attack range, health, and duration are based on the level of <font color='#7998b5'>Quas</font>. The elemental's scorching attack is capable of melting the armor of enemy heroes."
@@ -3571,5 +3572,14 @@
 		"DOTA_Tooltip_ability_special_mortimer_kisses_burn_str_multiplier_lua"			"Mortimer Kisses Burn +{s:value} STR Multiplier"
 		"DOTA_Tooltip_ability_special_lil_shredder_bat_lua"			"   Lil Shredder BAT {s:value}s"
 		"DOTA_Tooltip_ability_special_mortimer_kisses_barrage_lua"			"Mortimer Kisses Barrage"
+
+		"DOTA_Tooltip_ability_special_cold_snap_silence_lua"			"Cold Snap Applies {s:value}s Silence"
+		"DOTA_Tooltip_ability_special_deafening_blast_instant_redial_lua"			"Deafening Blast Aghanim Redial"
+		"DOTA_Tooltip_ability_special_exort_amp_lua"			"Exort Provides Magic Amp"
+		"DOTA_Tooltip_ability_special_quas_multiply_stats_lua"			"Quas Stats Multiplied By {s:value}"
+		"DOTA_Tooltip_ability_special_quas_hp_lua"			"Quas Provides HP"
+		"DOTA_Tooltip_ability_special_wex_cdr_lua"			"Wex Provides CDR"
+		"DOTA_Tooltip_ability_special_sun_strike_stun_lua"			"Sun Strike Applies {s:value}s Stun"
+		"DOTA_Tooltip_ability_special_sun_strike_barrage_lua"			"Sun Strike Barrage"
 	}
 }

@@ -27,17 +27,18 @@ end
 
 function modifier_invoker_sun_strike_lua_thinker:OnDestroy(kv)
     if IsServer() then
+        local caster = self:GetCaster()
         -- Damage enemies
         local damageTable = {
             -- victim = target,
-            attacker = self:GetCaster(),
+            attacker = caster,
             -- damage = self.damage,
             damage_type = self:GetAbility():GetAbilityDamageType(),
             ability = self:GetAbility(), --Optional.
         }
 
         local enemies = FindUnitsInRadius(
-                self:GetCaster():GetTeamNumber(), -- int, your team number
+                caster:GetTeamNumber(), -- int, your team number
                 self:GetParent():GetOrigin(), -- point, center point
                 nil, -- handle, cacheUnit. (not known)
                 self.radius, -- float, radius. or use FIND_UNITS_EVERYWHERE
@@ -48,10 +49,29 @@ function modifier_invoker_sun_strike_lua_thinker:OnDestroy(kv)
                 false    -- bool, can grow cache
         )
 
+        -- Talent tree
+        local special_sun_strike_stun_lua = caster:FindAbilityByName("special_sun_strike_stun_lua")
+        local stun_duration = 0
+        if (special_sun_strike_stun_lua and special_sun_strike_stun_lua:GetLevel() ~= 0) then
+            stun_duration = special_sun_strike_stun_lua:GetSpecialValueFor("value")
+        end
+
         for _, enemy in pairs(enemies) do
             damageTable.victim = enemy
             damageTable.damage = self.damage / #enemies
             ApplyDamage(damageTable)
+
+            if stun_duration ~= 0 then
+                -- stun
+                enemy:AddNewModifier(
+                        caster, -- player source
+                        self:GetAbility(), -- ability source
+                        "modifier_generic_stunned_lua", -- modifier name
+                        {
+                            duration = stun_duration,
+                        }
+                )
+            end
         end
 
         -- Play effects

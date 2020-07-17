@@ -57,6 +57,16 @@
 				"var_type"					"FIELD_FLOAT"
 				"int_multiplier"			"0.015 0.02 0.025 0.03 0.035 0.04 0.045"
 			}
+			"04"
+			{
+			    "var_type"					"FIELD_FLOAT"
+			    "cdr_int_multiplier"			"0.01"
+			}
+            "05"
+			{
+			    "var_type"					"FIELD_FLOAT"
+			    "max_cdr"			        "99.9"
+			}
 		}
 	}
 }

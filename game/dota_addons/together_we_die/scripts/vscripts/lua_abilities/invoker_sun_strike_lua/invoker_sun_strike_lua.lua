@@ -1,5 +1,6 @@
 invoker_sun_strike_lua = class({})
 LinkLuaModifier("modifier_invoker_sun_strike_lua_thinker", "lua_abilities/invoker_sun_strike_lua/modifier_invoker_sun_strike_lua_thinker", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_generic_stunned_lua", "lua_abilities/generic/modifier_generic_stunned_lua", LUA_MODIFIER_MOTION_NONE)
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -61,6 +62,12 @@ end
 function invoker_sun_strike_lua:OnSpellStart()
     -- unit identifier
     local caster = self:GetCaster()
+    -- Talent tree
+    self.talent_multi_barrage = false
+    local special_sun_strike_barrage_lua = caster:FindAbilityByName("special_sun_strike_barrage_lua")
+    if (special_sun_strike_barrage_lua and special_sun_strike_barrage_lua:GetLevel() ~= 0) then
+        self.talent_multi_barrage = true
+    end
 
     if self:GetCaster():HasScepter() then
         local enemies = FindUnitsInRadius(
@@ -78,7 +85,7 @@ function invoker_sun_strike_lua:OnSpellStart()
         local scepter_max_targets = self:GetSpecialValueFor("scepter_max_targets")
         local count = 0
         for _, enemy in pairs(enemies) do
-            self:SunStrikeLoc(caster, enemy:GetOrigin(), true)
+            self:CreateSunStrike(caster, enemy:GetOrigin(), true)
             count = count + 1
 
             if count >= scepter_max_targets then
@@ -86,9 +93,22 @@ function invoker_sun_strike_lua:OnSpellStart()
             end
         end
     else
-        self:SunStrikeLoc(caster, self:GetCursorPosition(), false)
+        self:CreateSunStrike(caster, self:GetCursorPosition(), false)
     end
 
+end
+
+function invoker_sun_strike_lua:CreateSunStrike(caster, point, visible)
+    -- Talent tree
+    if self.talent_multi_barrage then
+        local inner = Vector(200, 0, 0)
+        for i = 0, 3 do
+            local location = RotatePosition(Vector(0, 0, 0), QAngle(0, 90 * i, 0), inner)
+            self:SunStrikeLoc(caster, point + location, visible)
+        end
+    end
+
+    self:SunStrikeLoc(caster, point, visible)
 end
 
 function invoker_sun_strike_lua:SunStrikeLoc(caster, point, visible)
@@ -96,6 +116,7 @@ function invoker_sun_strike_lua:SunStrikeLoc(caster, point, visible)
     local delay = self:GetSpecialValueFor("delay")
     local vision_distance = self:GetSpecialValueFor("vision_distance")
     local vision_duration = self:GetSpecialValueFor("vision_duration")
+
     -- create modifier thinker
     CreateModifierThinker(
             caster,
