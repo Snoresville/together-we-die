@@ -5446,6 +5446,7 @@
 #base "../vscripts/lua_abilities/special/invoker/special_sun_strike_barrage_lua.txt"
 
 #base "../vscripts/lua_abilities/perfect_stance_lua/perfect_stance_lua.txt"
+#base "../vscripts/lua_abilities/maple_shield_lua/maple_shield_lua.txt"
 #base "../vscripts/lua_abilities/pure_strike_lua/pure_strike_lua.txt"
 #base "../vscripts/lua_abilities/medusa_split_shot_uses_modifiers_lua/medusa_split_shot_uses_modifiers_lua.txt"
 #base "../vscripts/lua_abilities/summoning_stone_lua/summoning_stone_lua.txt"

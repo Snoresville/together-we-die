@@ -1756,6 +1756,18 @@
 	    "DOTA_Tooltip_modifier_perfect_stance_lua"							"Perfect Stance"
 	    "DOTA_Tooltip_modifier_perfect_stance_lua_Description"							"Resisting physical damage and deflecting a portion of the damage back to the attacker."
 
+	    "DOTA_Tooltip_ability_maple_shield_lua"							"Maple Shield"
+	    "DOTA_Tooltip_ability_maple_shield_lua_Description"             "By copying Maple's Shield technique, the warrior's health and armor is greatly increased. However, this is done so at the cost of the warrior's cooldown and movespeed. In addition, <font color='#70EA72'>the warrior is unable to attack</font>. \n\n All allies within the shield range will have their <font color='#70EA72'>damage received redirected to the warrior</font>."
+	    "DOTA_Tooltip_ability_maple_shield_lua_Note0"                   "If break is applied, all health and armor buffs, as well as cooldown increment and movespeed debuffs, are removed."
+	    "DOTA_Tooltip_ability_maple_shield_lua_Lore"                    "What do you mean by she's ungillable? Just kill her already!"
+	    "DOTA_Tooltip_ability_maple_shield_lua_armor_str_multiplier"    "ARMOR STR MULTIPLIER:"
+	    "DOTA_Tooltip_ability_maple_shield_lua_hp_str_multiplier"    "HP STR MULTIPLIER:"
+	    "DOTA_Tooltip_ability_maple_shield_lua_speed_cap"    "MAX MOVESPEED:"
+	    "DOTA_Tooltip_ability_maple_shield_lua_cooldown_increment"    "%CD INCREMENT:"
+	    "DOTA_Tooltip_ability_maple_shield_lua_aura_radius"    "SHIELD RADIUS:"
+	    "DOTA_Tooltip_modifier_maple_shield_lua_aura"							"Maple Shield Redirection"
+        "DOTA_Tooltip_modifier_maple_shield_lua_aura_Description"				"All damage received are redirected to the bearer of the Maple Shield ability."
+
 		"DOTA_Tooltip_ability_intelligence_magic_scale_lua"						"Intelligence Magic Scale"
 		"DOTA_Tooltip_ability_intelligence_magic_scale_lua_Description"			"Greatly increases the hero's ability damage potential. Grants the hero additional magic damage based on their intelligence but at the cost of reducing both their health and mana pool, and increasing the cooldown time of their spells."
 		"DOTA_Tooltip_ability_intelligence_magic_scale_lua_Lore"				"Through activating the 400 IQ of Twitch chat's backseat gamers, the hero is able to achieve full magic damage potential. Legend has it that Twitch chat people are all immortal rank and possess a refined intellect."

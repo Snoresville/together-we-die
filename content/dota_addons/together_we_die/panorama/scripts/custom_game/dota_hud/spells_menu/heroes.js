@@ -1173,6 +1173,10 @@ var spells = {
         {
             "spell_id": "perfect_stance_lua",
             "cost": 4
+        },
+        {
+            "spell_id": "maple_shield_lua",
+            "cost": 4
         }
     ],
     "agility": [
