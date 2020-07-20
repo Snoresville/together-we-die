@@ -55,16 +55,17 @@ function modifier_ursa_fury_swipes_lua:GetModifierProcAttack_BonusDamage_Physica
             target = params.unit
         end
 
+        if not target:IsAlive() or target:IsNull() then return end
+
         -- get modifier stack
         local stack = 0
-        local modifierStack
-        if target:HasModifier("modifier_ursa_fury_swipes_debuff_lua") then
-            modifierStack = target:FindModifierByName("modifier_ursa_fury_swipes_debuff_lua")
-            modifierStack:IncrementStackCount()
-            modifierStack:ForceRefresh()
+        local modifier_stack = target:FindModifierByName("modifier_ursa_fury_swipes_debuff_lua")
+        if modifier_stack then
+            modifier_stack:IncrementStackCount()
+            modifier_stack:ForceRefresh()
         else
             -- add stack modifier
-            modifierStack = target:AddNewModifier(
+            modifier_stack = target:AddNewModifier(
                     self:GetParent(),
                     self:GetAbility(),
                     "modifier_ursa_fury_swipes_debuff_lua",
@@ -73,12 +74,16 @@ function modifier_ursa_fury_swipes_lua:GetModifierProcAttack_BonusDamage_Physica
         end
 
         -- get stack number
-        stack = modifierStack:GetStackCount()
+        if modifier_stack then
+            stack = modifier_stack:GetStackCount()
 
-        self:PlayEffects(target)
+            self:PlayEffects(target)
 
-        -- return damage bonus
-        return stack * (self.damage_per_stack + self:GetCaster():GetAgility() * self.agi_multiplier)
+            -- return damage bonus
+            return stack * (self.damage_per_stack + self:GetCaster():GetAgility() * self.agi_multiplier)
+        end
+
+        return 0
     end
 end
 
