@@ -14,23 +14,27 @@ function modifier_sniper_shrapnel_lua:IsPurgable()
     return false
 end
 
+function modifier_sniper_shrapnel_lua:GetAttributes()
+    return MODIFIER_ATTRIBUTE_MULTIPLE
+end
+
 --------------------------------------------------------------------------------
 -- Initializations
 function modifier_sniper_shrapnel_lua:OnCreated(kv)
     -- references
-    self.caster = self:GetAbility():GetCaster()
+    self.caster = self:GetCaster()
     self.agi_multiplier = self:GetAbility():GetSpecialValueFor("agi_multiplier")
     self.ms_slow = self:GetAbility():GetSpecialValueFor("slow_movement_speed") -- special value
 
     local interval = 1
 
     if IsServer() then
-		-- Talent Tree
-		local special_shrapnel_agi_multiplier_lua = self.caster:FindAbilityByName("special_shrapnel_agi_multiplier_lua")
-		if special_shrapnel_agi_multiplier_lua and special_shrapnel_agi_multiplier_lua:GetLevel() ~= 0 then
-			self.agi_multiplier = self.agi_multiplier + special_shrapnel_agi_multiplier_lua:GetSpecialValueFor("value")
-		end
-		self.damage = self:GetAbility():GetSpecialValueFor("shrapnel_damage") + (self.caster:GetAgility() * self.agi_multiplier) -- special value
+        -- Talent Tree
+        local special_shrapnel_agi_multiplier_lua = self.caster:FindAbilityByName("special_shrapnel_agi_multiplier_lua")
+        if special_shrapnel_agi_multiplier_lua and special_shrapnel_agi_multiplier_lua:GetLevel() ~= 0 then
+            self.agi_multiplier = self.agi_multiplier + special_shrapnel_agi_multiplier_lua:GetSpecialValueFor("value")
+        end
+        self.damage = self:GetAbility():GetSpecialValueFor("shrapnel_damage") + (self.caster:GetAgility() * self.agi_multiplier) -- special value
         -- precache damage
         self.damageTable = {
             victim = self:GetParent(),
@@ -70,7 +74,5 @@ end
 --------------------------------------------------------------------------------
 -- Interval Effects
 function modifier_sniper_shrapnel_lua:OnIntervalThink()
-    -- if self.caster:IsAlive() then
     ApplyDamage(self.damageTable)
-    -- end
 end
