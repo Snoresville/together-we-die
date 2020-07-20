@@ -99,6 +99,9 @@
 		"npc_dota_creature_boss_dark_willow"		"Dark Willow"
 		"npc_dota_creature_enchantress"				"Spirit Of Woods"
 		"npc_dota_creature_enchantress_treant"		"Minion"
+		"npc_dota_creature_baby_slark"		        "Baby Of Depths"
+		"npc_dota_creature_boss_slark"		        "King Of Depths"
+		"npc_dota_creature_boss_naga"		        "Queen Of Depths"
 
 		"npc_dota_furion_holdout_treant_1"		    "Basic Treant"
 		"npc_dota_furion_holdout_treant_2"		    "Treant 2"
@@ -327,6 +330,7 @@
 		"DOTA_Holdout_Round_Morphling_Title"			"Adaptive Resistance"
 		"DOTA_Holdout_Round_Dark_Willow_Title"			"Biggest Oversight"
 		"DOTA_Holdout_Round_Enchantress_Title"			"The Tree Spirit Speaks"
+		"DOTA_Holdout_Round_Slark_Naga_Title"		    "Depth Rises"
 		"DOTA_Holdout_Round_Roshan_Queen_Title"			"Roshan Queen"
 
 		"DOTA_Tooltip_ability_item_greater_clarity"						"Greater Clarity"
@@ -1017,6 +1021,32 @@
 	
 		"DOTA_Tooltip_modifier_creature_skywrath_mage_mystic_flare_lua"					"Mystic Flare"
 		"DOTA_Tooltip_modifier_creature_skywrath_mage_mystic_flare_lua_Description"		"Unit is receiving massive damage from Skywrath Mage's mystic flare."
+
+		"DOTA_Tooltip_ability_creature_naga_siren_song_of_the_siren_lua"					"Song Of The Siren"
+		"DOTA_Tooltip_ability_creature_naga_siren_song_of_the_siren_lua_Description"		"All enemies in range of the Queen Of Depths are put into a magical stasis where they cannot act and are vulnerable to attacks. She will quickly regenerate while the enemies are stunned."
+        "DOTA_Tooltip_ability_creature_naga_siren_song_of_the_siren_lua_Lore"				"Slithice's powerful voice enchants leagues of opponents, while calling her Slithereen kin in a time of need."
+		"DOTA_Tooltip_ability_creature_naga_siren_song_of_the_siren_lua_Note0"				"Doesn't affect Spell Immune units."
+		"DOTA_Tooltip_ability_creature_naga_siren_song_of_the_siren_lua_Note1"				"The area of the song follows the Queen Of Depths, so if she moves far enough away from affected units, they will wake up."
+		"DOTA_Tooltip_ability_creature_naga_siren_song_of_the_siren_lua_duration"			"DURATION:"
+		"DOTA_Tooltip_ability_creature_naga_siren_song_of_the_siren_lua_radius"				"RADIUS:"
+		"DOTA_Tooltip_ability_creature_naga_siren_song_of_the_siren_lua_regen_rate"         "%HP REGEN RATE:"
+        "DOTA_Tooltip_modifier_creature_naga_siren_song_of_the_siren_lua_debuff"			"Song of the Siren"
+		"DOTA_Tooltip_modifier_creature_naga_siren_song_of_the_siren_lua_debuff_Description"	"Stunned."
+        "DOTA_Tooltip_modifier_creature_naga_siren_song_of_the_siren_lua"			"Song of the Siren"
+		"DOTA_Tooltip_modifier_creature_naga_siren_song_of_the_siren_lua_Description"	"Putting enemies in stunned state"
+
+		"DOTA_Tooltip_ability_creature_slark_essence_shift_lua"								"Essence Shift"
+		"DOTA_Tooltip_ability_creature_slark_essence_shift_lua_Description"					"Slark steals the life essence of enemies with his attacks, draining each of their armor and stats, converting them to bonus armor and attack speed for himself."
+		"DOTA_Tooltip_ability_creature_slark_essence_shift_lua_Lore"							"With each strike at his adversaries, Slark's knowledge of their weaknesses improves."
+		"DOTA_Tooltip_ability_creature_slark_essence_shift_lua_armor_gain"						"ARMOR GAINED:"
+		"DOTA_Tooltip_ability_creature_slark_essence_shift_lua_as_gain"						"ATTACK SPEED GAINED:"
+		"DOTA_Tooltip_ability_creature_slark_essence_shift_lua_stat_loss"					"STAT LOSS:"
+		"DOTA_Tooltip_ability_creature_slark_essence_shift_lua_armor_loss"					"ARMOR LOSS:"
+		"DOTA_Tooltip_ability_creature_slark_essence_shift_lua_duration"						"DURATION:"
+		"DOTA_Tooltip_modifier_creature_slark_essence_shift_lua_stack"							"Essence Shift"
+		"DOTA_Tooltip_modifier_creature_slark_essence_shift_lua_stack_Description"				"Stealing %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% armor."
+		"DOTA_Tooltip_modifier_creature_slark_essence_shift_lua_debuff"			"Essence Shift"
+		"DOTA_Tooltip_modifier_creature_slark_essence_shift_lua_debuff_Description"	"Losing %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% armor and %dMODIFIER_PROPERTY_STATS_AGILITY_BONUS% stats."
 
 		//LINA
 		"DOTA_Tooltip_ability_lina_dragon_slave_lua"										"Dragon Slave"
