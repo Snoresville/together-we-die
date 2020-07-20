@@ -4,7 +4,7 @@ modifier_roshan_defective_aura_lua = class({})
 --------------------------------------------------------------------------------
 -- Classifications
 function modifier_roshan_defective_aura_lua:IsHidden()
-	return true
+	return self:GetParent():GetHealthPercent() > self.hp_percent
 end
 
 function modifier_roshan_defective_aura_lua:IsDebuff()
@@ -16,7 +16,7 @@ function modifier_roshan_defective_aura_lua:IsPurgable()
 end
 
 function modifier_roshan_defective_aura_lua:IsAura()
-	return true
+	return not self:GetParent():PassivesDisabled() and self:GetParent():GetHealthPercent() <= self.hp_percent
 end
 
 --------------------------------------------------------------------------------
@@ -29,31 +29,24 @@ end
 
 --------------------------------------------------------------------------------
 function modifier_roshan_defective_aura_lua:GetAuraRadius()
-	return FIND_UNITS_EVERYWHERE
+	return self.radius
 end
 
 function modifier_roshan_defective_aura_lua:GetAuraSearchTeam()
-	return DOTA_UNIT_TARGET_TEAM_ENEMY
+	return self:GetAbility():GetAbilityTargetTeam()
 end
 
 function modifier_roshan_defective_aura_lua:GetAuraSearchType()
-	return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC
+	return self:GetAbility():GetAbilityTargetType()
 end
 --------------------------------------------------------------------------------
 
 function modifier_roshan_defective_aura_lua:OnCreated( kv )
-	if IsServer() and self:GetParent() ~= self:GetCaster() then
-		self:StartIntervalThink( 0.5 )
-	end
+	self.radius = self:GetAbility():GetSpecialValueFor("radius")
+	self.hp_percent = self:GetAbility():GetSpecialValueFor("hp_percent")
 end
 
 --------------------------------------------------------------------------------
 
 function modifier_roshan_defective_aura_lua:OnRefresh( kv )
-end
-
-function modifier_roshan_defective_aura_lua:OnIntervalThink()
-	if self:GetCaster() ~= self:GetParent() and self:GetCaster():IsAlive() then
-		self:Destroy()
-	end
 end

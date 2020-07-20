@@ -1,35 +1,27 @@
 "DOTAAbilities"
 {
 	//=================================================================================================================
-	// roshan: Sun Strike (Lua version)
+	// Roshan: Summon creatures from the shadow realm (Lua version)
 	//=================================================================================================================
-	"roshan_sun_strike_lua"
+	"roshan_shadow_summon_lua"
 	{
 		// Ability Technical Aspect
 		// base script folder	: scripts/vscripts
 		// base texture folder	: resource/flash3/images/spellicons
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_lua"
-		"ScriptFile"					"lua_abilities/roshan_sun_strike_lua/roshan_sun_strike_lua"
-		"AbilityTextureName"			"roshan_sun_strike_lua"
+		"ScriptFile"					"lua_abilities/roshan_shadow_summon_lua/roshan_shadow_summon_lua"
+		"AbilityTextureName"			"roshan_shadow_summon_lua"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
 		"precache"
 		{
-			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
-			"particle"	"particles/units/heroes/hero_invoker/invoker_sun_strike.vpcf"
-			"particle"	"particles/units/heroes/hero_invoker/invoker_sun_strike_team.vpcf"
 		}
 		
 		// Ability General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
-        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-        "AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 
 		// Ability Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -38,7 +30,7 @@
 
 		// Ability Resource
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"15"
+		"AbilityCooldown"				"90"
 
 		// Damage
 		//-------------------------------------------------------------------------------------------------------------
@@ -49,28 +41,13 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"delay"					"1.4"
+				"var_type"				"FIELD_INTEGER"
+				"hp_percent"				"15"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"area_of_effect"		"225"
-			}
-			"03"
-			{
 				"var_type"				"FIELD_FLOAT"
-				"damage"				"9000"
-			}
-            "04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"primary_stat_multiplier"				"30"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"hp_percent"				"35"
+				"invulnerability_duration"				"20"
 			}
 		}
 	}

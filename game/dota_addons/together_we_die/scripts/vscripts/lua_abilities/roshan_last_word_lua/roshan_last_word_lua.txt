@@ -19,10 +19,14 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        "AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 
 		// Ability Resource
 		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"              "800"
 
 		// Damage
 		//-------------------------------------------------------------------------------------------------------------
@@ -40,6 +44,16 @@
 			{
 				"var_type"			"FIELD_FLOAT"
 				"stun_duration"		"0.15"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"		    "800"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"hp_percent"		"60"
 			}
 		}
 	}

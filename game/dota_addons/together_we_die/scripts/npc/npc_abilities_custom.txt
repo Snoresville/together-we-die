@@ -5329,9 +5329,11 @@
 #base "../vscripts/lua_abilities/gamemode/bad_guy_lua/bad_guy_lua.txt"
 
 #base "../vscripts/lua_abilities/creature_skywrath_mage_mystic_flare_lua/creature_skywrath_mage_mystic_flare_lua.txt"
+#base "../vscripts/lua_abilities/roshan_defense_shell_lua/roshan_defense_shell_lua.txt"
 #base "../vscripts/lua_abilities/roshan_sun_strike_lua/roshan_sun_strike_lua.txt"
 #base "../vscripts/lua_abilities/roshan_defective_aura_lua/roshan_defective_aura_lua.txt"
 #base "../vscripts/lua_abilities/roshan_last_word_lua/roshan_last_word_lua.txt"
+#base "../vscripts/lua_abilities/roshan_shadow_summon_lua/roshan_shadow_summon_lua.txt"
 #base "../vscripts/lua_abilities/creature_ogre_smash_lua/creature_ogre_smash_lua.txt"
 #base "../vscripts/lua_abilities/creature_pure_strike_lua/creature_pure_strike_lua.txt"
 #base "../vscripts/lua_abilities/creature_chaos_protect_light_lua/creature_chaos_protect_light_lua.txt"
