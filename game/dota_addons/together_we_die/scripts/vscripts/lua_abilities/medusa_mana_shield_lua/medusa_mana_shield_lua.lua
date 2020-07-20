@@ -11,20 +11,16 @@ Ability checklist (erase if done/checked):
 --------------------------------------------------------------------------------
 medusa_mana_shield_lua = class({})
 LinkLuaModifier( "modifier_medusa_mana_shield_lua", "lua_abilities/medusa_mana_shield_lua/modifier_medusa_mana_shield_lua", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier("modifier_medusa_mana_shield_hp_regen_lua", "lua_abilities/medusa_mana_shield_lua/modifier_medusa_mana_shield_hp_regen_lua", LUA_MODIFIER_MOTION_NONE)
 
+--------------------------------------------------------------------------------
+-- Passive Modifier
+function medusa_mana_shield_lua:GetIntrinsicModifierName()
+	return "modifier_medusa_mana_shield_hp_regen_lua"
+end
 --------------------------------------------------------------------------------
 -- Ability Start
 function medusa_mana_shield_lua:OnSpellStart()
-	-- unit identifier
-	local caster = self:GetCaster()
-	local target = self:GetCursorTarget()
-	local point = self:GetCursorPosition()
-
-	-- load data
-	local value1 = self:GetSpecialValueFor("some_value")
-
-	-- logic
-
 end
 --------------------------------------------------------------------------------
 -- Toggle

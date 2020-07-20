@@ -1281,14 +1281,14 @@
 		"Ability4"		""
 		"Ability5"		""
 		"Ability6"				"medusa_stone_gaze_lua"
-		"Ability10"		""
-		"Ability11"		""
-		"Ability12"		""
-		"Ability13"		""
-		"Ability14"		""
-		"Ability15"		""
-		"Ability16"		""
-		"Ability17"		""
+		"Ability10"		"special_split_shot_damage_lua"
+		"Ability11"		"special_split_shot_procs_mystic_snake_lua"
+		"Ability12"		"special_mystic_snake_silence_lua"
+		"Ability13"		"special_mystic_snake_stun_lua"
+		"Ability14"		"special_mana_shield_hp_regen_lua"
+		"Ability15"		"special_stone_gaze_agi_multiplier_lua"
+		"Ability16"		"special_split_shot_no_limit_lua"
+		"Ability17"		"special_stone_gaze_passive_lua"
 
 		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
 	}

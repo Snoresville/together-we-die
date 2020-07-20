@@ -36,6 +36,7 @@ function modifier_medusa_stone_gaze_lua_debuff:OnCreated( kv )
 	self.slow = -self:GetAbility():GetSpecialValueFor( "slow" )
 	self.stun_duration = self:GetAbility():GetSpecialValueFor( "stone_duration" )
 	self.face_duration = self:GetAbility():GetSpecialValueFor( "face_duration" )
+	self.agi_multiplier = self:GetAbility():GetSpecialValueFor( "agi_multiplier" )
 	self.physical_bonus = self:GetAbility():GetSpecialValueFor( "bonus_physical_damage" )
 	self.radius = self:GetAbility():GetSpecialValueFor( "radius" )
 
@@ -48,6 +49,12 @@ function modifier_medusa_stone_gaze_lua_debuff:OnCreated( kv )
 	self.interval = 0.03
 
 	if not IsServer() then return end
+	-- Talent Tree
+	local special_stone_gaze_agi_multiplier_lua = self:GetCaster():FindAbilityByName("special_stone_gaze_agi_multiplier_lua")
+	if special_stone_gaze_agi_multiplier_lua and special_stone_gaze_agi_multiplier_lua:GetLevel() ~= 0 then
+		self.agi_multiplier = self.agi_multiplier + special_stone_gaze_agi_multiplier_lua:GetSpecialValueFor("value")
+	end
+	self.physical_bonus = self.physical_bonus + math.floor(self:GetCaster():GetAgility() * self.agi_multiplier)
 	self.center_unit = EntIndexToHScript( kv.center_unit )
 
 	-- play effects

@@ -2418,13 +2418,13 @@
 		"DOTA_Tooltip_ability_medusa_mystic_snake_lua_stone_form_scepter_increment"	"SCEPTER DURATION BOUNCE INCREASE:"
 		"DOTA_Tooltip_ability_medusa_mystic_snake_lua_aghanim_description"			"Causes Mystic Snake to turn enemies hit into stone. Stone duration increases with each bounce of the Mystic Snake."
 		"DOTA_Tooltip_ability_medusa_mana_shield_lua"								"Mana Shield"
-		"DOTA_Tooltip_ability_medusa_mana_shield_lua_Description"					"Creates a shield that absorbs %absorption_tooltip%%% of incoming damage in exchange for Medusa's mana."
+		"DOTA_Tooltip_ability_medusa_mana_shield_lua_Description"					"Creates a shield that absorbs %absorption_tooltip%%% of incoming damage in exchange for Medusa's mana.\n\n<font color='#70EA72'>Forces a cooldown of %force_cooldown_duration%s if mana shield is broken.</font>"
 		"DOTA_Tooltip_ability_medusa_mana_shield_lua_Lore"							"While Medusa was not gifted with eternal life upon birth, her curse bestowed her with impressive defensive powers."
 		"DOTA_Tooltip_ability_medusa_mana_shield_lua_Note0"							"Absorbs damage before any damage reduction takes place, meaning that armor will not reduce the amount of mana needed to absorb damage."
 		"DOTA_Tooltip_ability_medusa_mana_shield_lua_damage_per_mana"				"DAMAGE PER MANA:"
 		"DOTA_Tooltip_ability_medusa_mana_shield_lua_agi_multiplier"				"AGI MULTIPLIER:"
 		"DOTA_Tooltip_ability_medusa_stone_gaze_lua"								"Stone Gaze"
-		"DOTA_Tooltip_ability_medusa_stone_gaze_lua_Description"					"Any enemy units looking at Medusa will have their movement and attack speed slowed.  If 2 seconds of total time is accumulated looking at Medusa while Stone Gaze is active, that unit will turn to stone.  Petrified units are stunned, and take bonus physical damage."
+		"DOTA_Tooltip_ability_medusa_stone_gaze_lua_Description"					"Any enemy units looking at Medusa will have their movement and attack speed slowed. If 2 seconds of total time is accumulated looking at Medusa while Stone Gaze is active, that unit will turn to stone.  Petrified units are stunned, and take bonus physical damage."
 		"DOTA_Tooltip_ability_medusa_stone_gaze_lua_Lore"							"The beauty of Medusa is legendary."
 		"DOTA_Tooltip_ability_medusa_stone_gaze_lua_Note1"							"Regardless of when a unit receives the Stone Gaze buff while the ability is active on Medusa, it will still receive the full debuff duration."
 		"DOTA_Tooltip_ability_medusa_stone_gaze_lua_radius"							"RADIUS:"
@@ -2432,7 +2432,8 @@
 		"DOTA_Tooltip_ability_medusa_stone_gaze_lua_bonus_physical_damage"			"%BONUS PHYSICAL DAMAGE:"
 		"DOTA_Tooltip_ability_medusa_stone_gaze_lua_duration"						"DURATION:"
 		"DOTA_Tooltip_ability_medusa_stone_gaze_lua_stone_duration"					"STONE DURATION:"
-		
+		"DOTA_Tooltip_ability_medusa_stone_gaze_lua_agi_multiplier"					"AGI MULTIPLIER:"
+
 		"DOTA_Tooltip_modifier_medusa_mana_shield_lua"							"Mana Shield"
 		"DOTA_Tooltip_modifier_medusa_mana_shield_lua_Description"				"Some of the damage taken by Medusa is dealt to her mana pool."
 		"DOTA_Tooltip_modifier_medusa_stone_gaze_lua"							"Stone Gaze"
@@ -3593,5 +3594,14 @@
 		"DOTA_Tooltip_ability_special_wex_cdr_lua"			"Wex Provides CDR"
 		"DOTA_Tooltip_ability_special_sun_strike_stun_lua"			"Sun Strike Applies {s:value}s Stun"
 		"DOTA_Tooltip_ability_special_sun_strike_barrage_lua"			"Sun Strike Barrage"
+
+		"DOTA_Tooltip_ability_special_split_shot_damage_lua"			"Split Shot +{s:value}% Damage"
+		"DOTA_Tooltip_ability_special_split_shot_procs_mystic_snake_lua"			"Split Shot Procs {s:value}% Mystic Snake"
+		"DOTA_Tooltip_ability_special_mystic_snake_silence_lua"			"Mystic Snake Applies {s:value}s Silence"
+		"DOTA_Tooltip_ability_special_mystic_snake_stun_lua"			"Mystic Snake Applies {s:value}s Stun"
+		"DOTA_Tooltip_ability_special_mana_shield_hp_regen_lua"			"Mana Shield Provides HP Regen"
+		"DOTA_Tooltip_ability_special_stone_gaze_agi_multiplier_lua"			"Stone Gaze +{s:value}s AGI Multiplier"
+		"DOTA_Tooltip_ability_special_split_shot_no_limit_lua"			"Split Shot No Limit"
+		"DOTA_Tooltip_ability_special_stone_gaze_passive_lua"			"Passive Stone Gaze"
 	}
 }
