@@ -19,17 +19,13 @@ end
 --------------------------------------------------------------------------------
 
 function modifier_roshan_defective_aura_effect_lua:CheckState()
-    local state = {}
-
-    if self:GetCaster():PassivesDisabled() then
-        state = {
-            [MODIFIER_STATE_MUTED] = true,
-            [MODIFIER_STATE_INVISIBLE] = false,
-            [MODIFIER_STATE_BLOCK_DISABLED] = true,
-            [MODIFIER_STATE_EVADE_DISABLED] = true,
-            [MODIFIER_STATE_PASSIVES_DISABLED] = true,
-        }
-    end
+    local state = {
+        [MODIFIER_STATE_MUTED] = true,
+        [MODIFIER_STATE_INVISIBLE] = false,
+        [MODIFIER_STATE_BLOCK_DISABLED] = true,
+        [MODIFIER_STATE_EVADE_DISABLED] = true,
+        [MODIFIER_STATE_PASSIVES_DISABLED] = true,
+    }
 
     return state
 end

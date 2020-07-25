@@ -1,21 +1,21 @@
 --------------------------------------------------------------------------------
-modifier_roshan_defective_aura_lua = class({})
+modifier_roshan_armor_reverse_aura_lua = class({})
 
 --------------------------------------------------------------------------------
 -- Classifications
-function modifier_roshan_defective_aura_lua:IsHidden()
+function modifier_roshan_armor_reverse_aura_lua:IsHidden()
 	return not self:GetParent():PassivesDisabled() and self:GetParent():GetHealthPercent() > self.hp_percent
 end
 
-function modifier_roshan_defective_aura_lua:IsDebuff()
+function modifier_roshan_armor_reverse_aura_lua:IsDebuff()
 	return false
 end
 
-function modifier_roshan_defective_aura_lua:IsPurgable()
+function modifier_roshan_armor_reverse_aura_lua:IsPurgable()
 	return false
 end
 
-function modifier_roshan_defective_aura_lua:IsAura()
+function modifier_roshan_armor_reverse_aura_lua:IsAura()
 	return not self:GetParent():PassivesDisabled() and self:GetParent():GetHealthPercent() <= self.hp_percent
 end
 
@@ -23,30 +23,30 @@ end
 -- Initializations
 --------------------------------------------------------------------------------
 
-function modifier_roshan_defective_aura_lua:GetModifierAura()
-	return "modifier_roshan_defective_aura_effect_lua"
+function modifier_roshan_armor_reverse_aura_lua:GetModifierAura()
+	return "modifier_roshan_armor_reverse_aura_lua_effect"
 end
 
 --------------------------------------------------------------------------------
-function modifier_roshan_defective_aura_lua:GetAuraRadius()
+function modifier_roshan_armor_reverse_aura_lua:GetAuraRadius()
 	return self.radius
 end
 
-function modifier_roshan_defective_aura_lua:GetAuraSearchTeam()
+function modifier_roshan_armor_reverse_aura_lua:GetAuraSearchTeam()
 	return self:GetAbility():GetAbilityTargetTeam()
 end
 
-function modifier_roshan_defective_aura_lua:GetAuraSearchType()
+function modifier_roshan_armor_reverse_aura_lua:GetAuraSearchType()
 	return self:GetAbility():GetAbilityTargetType()
 end
 --------------------------------------------------------------------------------
 
-function modifier_roshan_defective_aura_lua:OnCreated( kv )
+function modifier_roshan_armor_reverse_aura_lua:OnCreated( kv )
 	self.radius = self:GetAbility():GetSpecialValueFor("radius")
 	self.hp_percent = self:GetAbility():GetSpecialValueFor("hp_percent")
 end
 
 --------------------------------------------------------------------------------
 
-function modifier_roshan_defective_aura_lua:OnRefresh( kv )
+function modifier_roshan_armor_reverse_aura_lua:OnRefresh( kv )
 end

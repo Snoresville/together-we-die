@@ -4209,19 +4209,19 @@
 		"Ability3"					"roshan_last_word_lua"			// Ability 3.
 		"Ability4"					"roshan_defense_shell_lua"			// Ability 4.
 		"Ability5"					"roshan_shadow_summon_lua"			// Ability 5.
-		"Ability6"					""			// Ability 6 - Extra.
-		"Ability7"					""			// Ability 7 - Extra.
+		"Ability6"					"roshan_armor_reverse_aura_lua"			// Ability 6 - Extra.
+		"Ability7"					"roshan_god_lua"			// Ability 7 - Extra.
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"300"			// Physical protection.
-		"MagicalResistance"			"98"		// Magical protection (percentage).
+		"ArmorPhysical"				"900"			// Physical protection.
+		"MagicalResistance"			"99"		// Magical protection (percentage).
 
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"27000"		// Damage range min.
-		"AttackDamageMax"			"29000"		// Damage range max.
+		"AttackDamageMax"			"32000"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"0.3"			// Speed of attack.
 		"AttackAnimationPoint"		"0.25"		// Normalized time in animation cycle to attack.
@@ -4249,8 +4249,8 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"4000000"		// Base health.
-		"StatusHealthRegen"			"3000"		// Health regeneration rate.
+		"StatusHealth"				"50000000"		// Base health.
+		"StatusHealthRegen"			"5000"		// Health regeneration rate.
 		"StatusMana"				"50000"		// Base mana.
 		"StatusManaRegen"			"1000"			// Mana regeneration rate.
 

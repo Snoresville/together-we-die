@@ -3,7 +3,7 @@ modifier_roshan_sun_strike_lua = class({})
 --------------------------------------------------------------------------------
 -- Classifications
 function modifier_roshan_sun_strike_lua:IsHidden()
-    return self:GetParent():GetHealthPercent() > self.hp_percent
+    return not self:GetParent():PassivesDisabled() and self:GetParent():GetHealthPercent() > self.hp_percent
 end
 
 function modifier_roshan_sun_strike_lua:IsPurgable()
