@@ -26,6 +26,9 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+        "AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 
 		// Ability Casting
@@ -58,6 +61,16 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"damage"				"9000"
+			}
+            "04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"primary_stat_multiplier"				"30"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_percent"				"80"
 			}
 		}
 	}

@@ -1,0 +1,63 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Roshan Armor Reverse Aura
+	//=================================================================================================================
+	"roshan_armor_reverse_aura_lua"
+	{
+		// Ability Technical Aspect
+		// base script folder	: scripts/vscripts
+		// base texture folder	: resource/flash3/images/spellicons
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"lua_abilities/roshan_armor_reverse_aura_lua/roshan_armor_reverse_aura_lua"
+		"AbilityTextureName"			"item_assault"
+		"FightRecapLevel"				"2"
+		"MaxLevel"						"1"
+		
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+
+		// Ability Resource
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"              "1200"
+
+		// Damage
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+            "01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"1200"
+			}
+            "02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_percent"			"70"
+			}
+            "03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_positive_armor"	"40"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_negative_armor"	"-30"
+			}
+            "05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"missing_percent"			"1.0"
+			}
+		}
+	}
+}

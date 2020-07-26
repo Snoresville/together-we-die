@@ -49,7 +49,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"armor_reduction"			"2 4 6 8"
+				"armor_reduction"			"-5 -10 -15 -20"
 			}
             "03"
 			{
@@ -59,12 +59,12 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"2.5"
+				"duration"				"2.75"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"agi_multiplier"		"0.1 0.15 0.2 0.25"
+				"agi_multiplier"		"0.03 0.06 0.09 0.12"
 			}
 		}
 	}

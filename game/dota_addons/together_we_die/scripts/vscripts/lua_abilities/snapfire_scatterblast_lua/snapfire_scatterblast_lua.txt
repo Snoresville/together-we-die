@@ -94,11 +94,13 @@
 			{
 				"var_type"					"FIELD_FLOAT"
 				"point_blank_dmg_bonus_pct"	"200.0"
+				"LinkedSpecialBonus"    "special_scatterblast_dmg_bonus_pct_lua"
 			}
 			"09"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"str_multiplier"		"2.0 5.5 9.0 12.5"
+				"LinkedSpecialBonus"    "special_scatterblast_str_multiplier_lua"
 			}
 		}
 	}

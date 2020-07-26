@@ -1,0 +1,60 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Spectre: Dispersion (Lua version)
+	//=================================================================================================================
+	"roshan_defense_shell_lua"
+	{
+		// Ability Technical Aspect
+		// base script folder	: scripts/vscripts
+		// base texture folder	: resource/flash3/images/spellicons
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"lua_abilities/roshan_defense_shell_lua/roshan_defense_shell_lua"
+		"AbilityTextureName"			"roshan_defense_shell_lua"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		"precache"
+		{
+		}
+		
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+
+		// Ability Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"900"
+
+		// Ability Resource
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+            {
+            	"var_type"				"FIELD_INTEGER"
+                "damage_reduction"	    "-80"
+            }
+			"02"
+            {
+            	"var_type"				"FIELD_INTEGER"
+                "break_damage_reduction"	    "-40"
+            }
+            "03"
+            {
+            	"var_type"				"FIELD_INTEGER"
+            	"radius"			    "900"
+            }
+            "04"
+            {
+            	"var_type"				"FIELD_INTEGER"
+            	"hp_percent"			 "90"
+            }
+		}
+	}
+}

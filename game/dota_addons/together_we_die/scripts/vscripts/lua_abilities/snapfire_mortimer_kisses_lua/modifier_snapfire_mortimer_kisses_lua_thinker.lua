@@ -73,11 +73,11 @@ function modifier_snapfire_mortimer_kisses_lua_thinker:GetAuraDuration()
 end
 
 function modifier_snapfire_mortimer_kisses_lua_thinker:GetAuraSearchTeam()
-	return DOTA_UNIT_TARGET_TEAM_ENEMY
+	return self:GetAbility():GetAbilityTargetTeam()
 end
 
 function modifier_snapfire_mortimer_kisses_lua_thinker:GetAuraSearchType()
-	return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC
+	return self:GetAbility():GetAbilityTargetType()
 end
 
 function modifier_snapfire_mortimer_kisses_lua_thinker:PlayEffects( time )

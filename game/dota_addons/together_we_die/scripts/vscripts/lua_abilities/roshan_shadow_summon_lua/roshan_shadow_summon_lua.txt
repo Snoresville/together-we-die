@@ -1,0 +1,54 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Roshan: Summon creatures from the shadow realm (Lua version)
+	//=================================================================================================================
+	"roshan_shadow_summon_lua"
+	{
+		// Ability Technical Aspect
+		// base script folder	: scripts/vscripts
+		// base texture folder	: resource/flash3/images/spellicons
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"lua_abilities/roshan_shadow_summon_lua/roshan_shadow_summon_lua"
+		"AbilityTextureName"			"roshan_shadow_summon_lua"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		"precache"
+		{
+		}
+		
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Ability Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0.05"
+
+		// Ability Resource
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"90"
+
+		// Damage
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_percent"				"15"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"invulnerability_duration"				"20"
+			}
+		}
+	}
+}

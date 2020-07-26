@@ -57,6 +57,10 @@ function modifier_perfect_stance_lua:GetModifierPhysical_ConstantBlock(params)
         return 0
     end
 
+    if self:FlagExist(params.damage_flags, DOTA_DAMAGE_FLAG_REFLECTION) then
+        return 0
+    end
+
     -- cancel if strength is not the greatest attribute
     if self:GetParent():GetStrength() <= (self:GetParent():GetIntellect() + self:GetParent():GetAgility()) then
         return 0
@@ -80,4 +84,18 @@ function modifier_perfect_stance_lua:GetModifierPhysical_ConstantBlock(params)
     ApplyDamage(damageTable)
 
     return math.floor(reduction * params.damage / 100)
+end
+
+-- Helper: Flag operations
+function modifier_perfect_stance_lua:FlagExist(a, b)
+    --Bitwise Exist
+    local p, c, d = 1, 0, b
+    while a > 0 and b > 0 do
+        local ra, rb = a % 2, b % 2
+        if ra + rb > 1 then
+            c = c + p
+        end
+        a, b, p = (a - ra) / 2, (b - rb) / 2, p * 2
+    end
+    return c == d
 end

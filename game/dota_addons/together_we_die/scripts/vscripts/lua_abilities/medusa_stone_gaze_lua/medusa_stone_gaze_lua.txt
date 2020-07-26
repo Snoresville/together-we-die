@@ -27,8 +27,10 @@
 		// Ability General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 
@@ -83,6 +85,12 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"bonus_physical_damage"		"40 60 80"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"agi_multiplier"		    "0.02"
+				"LinkedSpecialBonus"        "special_stone_gaze_agi_multiplier_lua"
 			}
 		}
 	}

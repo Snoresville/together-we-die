@@ -453,11 +453,17 @@ function CHoldoutGameMode:OnHeroLevelUp(event)
     local heroLevel = hero:GetLevel()
     local abilityPointsToGive = 0
     local apEveryXLevel = 4
+    local cardPointsToGive = 0
+    local cpEveryXLevel = 10
 
     if (heroLevel % apEveryXLevel == 0) then
         abilityPointsToGive = 1
+        hero:SetAbilityPoints(unspendAP + abilityPointsToGive)
     end
-    hero:SetAbilityPoints(unspendAP + abilityPointsToGive)
+    if (heroLevel % cpEveryXLevel == 0) then
+        cardPointsToGive = 1
+        holdout_card_points:_BuyCardPoints(hero:GetPlayerID(), cardPointsToGive)
+    end
 end
 
 function CHoldoutGameMode:_RefreshPlayers()

@@ -20,13 +20,15 @@
 			"particle"	"particles/units/heroes/hero_snapfire/hero_snapfire_shells_projectile.vpcf"
 			"particle"	"particles/units/heroes/hero_snapfire/hero_snapfire_shells_buff.vpcf"
 			"particle"	"particles/units/heroes/hero_snapfire/hero_snapfire_slow_debuff.vpcf"
-			"particle"	"particles/units/heroes/hero_sniper/sniper_headshot_slow.vpcf"
 		}
 		
 		// Ability General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_COURIER"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 
 
@@ -58,7 +60,8 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"buffed_attacks"			"6 8 10 12"
+				"buffed_attacks"			"5 6 7 8"
+				"LinkedSpecialBonus"    "special_lil_shredder_buffed_attacks_lua"
 			}
 			"03"
 			{
@@ -68,7 +71,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"attack_range_bonus"		"75 150 225 300"
+				"attack_range_bonus"		"50 100 150 200"
 			}
 			"05"
 			{
@@ -79,6 +82,7 @@
 			{
 				"var_type"					"FIELD_FLOAT"
 				"base_attack_time"			"1.0"
+				"LinkedSpecialBonus"    "special_lil_shredder_bat_lua"
 			}
 			"07"
 			{
@@ -94,6 +98,11 @@
 			{
 				"var_type"					"FIELD_FLOAT"
 				"str_multiplier"			"1.0 2.5 4.0 5.5"
+			}
+            "10"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"armor_str_multiplier"			"0.01"
 			}
 		}
 	}

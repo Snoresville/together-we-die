@@ -1,0 +1,57 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Slark: Shadow Dance (Lua version)
+	//=================================================================================================================
+	"creature_slark_shadow_dance_lua"
+	{
+		// Ability Technical Aspect
+		// base script folder	: scripts/vscripts
+		// base texture folder	: resource/flash3/images/spellicons
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"lua_abilities/creature_slark_shadow_dance_lua/creature_slark_shadow_dance_lua"
+		"AbilityTextureName"			"slark_shadow_dance_lua"
+		"FightRecapLevel"				"2"
+		"MaxLevel"						"1"
+
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_slark.vsndevts"
+			"particle"	"particles/units/heroes/hero_slark/slark_shadow_dance.vpcf"
+			"particle"	"particles/status_fx/status_effect_slark_shadow_dance.vpcf"
+			"particle"	"particles/units/heroes/hero_slark/slark_shadow_dance_dummy.vpcf"
+		}
+		
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+		// Ability Casting
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Ability Resource
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Damage
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_regen_pct"			"15"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"						"325"
+			}
+		}
+	}
+}

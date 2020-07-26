@@ -163,13 +163,10 @@ function holdout_card_points:_GetPlayerSpells(nPlayerID)
 
         for ability_id = 0, maxAbilities do
             local ability = playerHero:GetAbilityByIndex(ability_id)
-            if ability then
-                local abilityLevel = ability:GetLevel()
-                -- Make sure it is not a talent and there is level
-                if ability:GetAbilityType() ~= DOTA_ABILITY_TYPE_ATTRIBUTES and ability:GetAbilityType() ~= DOTA_ABILITY_TYPE_HIDDEN then
-                    local abilityName = ability:GetAbilityName()
-                    table.insert(playerAbilities, abilityName)
-                end
+            -- Make sure it is not a talent and there is level
+            if ability and not ability:IsAttributeBonus() and not ability:IsHidden() then
+                local abilityName = ability:GetAbilityName()
+                table.insert(playerAbilities, abilityName)
             end
         end
 

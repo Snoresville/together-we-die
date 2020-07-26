@@ -14,73 +14,88 @@ modifier_snapfire_mortimer_kisses_lua = class({})
 --------------------------------------------------------------------------------
 -- Classifications
 function modifier_snapfire_mortimer_kisses_lua:IsHidden()
-	return false
+    return false
 end
 
 function modifier_snapfire_mortimer_kisses_lua:IsDebuff()
-	return false
+    return false
 end
 
 function modifier_snapfire_mortimer_kisses_lua:IsStunDebuff()
-	return false
+    return false
 end
 
 function modifier_snapfire_mortimer_kisses_lua:IsPurgable()
-	return false
+    return false
 end
 
 --------------------------------------------------------------------------------
 -- Initializations
-function modifier_snapfire_mortimer_kisses_lua:OnCreated( kv )
-	-- references
-	self.min_range = self:GetAbility():GetSpecialValueFor( "min_range" )
-	self.max_range = self:GetAbility():GetCastRange( Vector(0,0,0), nil )
-	self.range = self.max_range-self.min_range
-	
-	self.min_travel = self:GetAbility():GetSpecialValueFor( "min_lob_travel_time" )
-	self.max_travel = self:GetAbility():GetSpecialValueFor( "max_lob_travel_time" )
-	self.travel_range = self.max_travel-self.min_travel
-	
-	self.projectile_speed = self:GetAbility():GetSpecialValueFor( "projectile_speed" )
-	local projectile_vision = self:GetAbility():GetSpecialValueFor( "projectile_vision" )
-	
-	self.turn_rate = self:GetAbility():GetSpecialValueFor( "turn_rate" )
+function modifier_snapfire_mortimer_kisses_lua:OnCreated(kv)
+    -- references
+    self.min_range = self:GetAbility():GetSpecialValueFor("min_range")
+    self.max_range = self:GetAbility():GetCastRange(Vector(0, 0, 0), nil)
+    self.range = self.max_range - self.min_range
 
-	if not IsServer() then return end
+    self.min_travel = self:GetAbility():GetSpecialValueFor("min_lob_travel_time")
+    self.max_travel = self:GetAbility():GetSpecialValueFor("max_lob_travel_time")
+    self.travel_range = self.max_travel - self.min_travel
 
-	-- load data
-	local interval = self:GetAbility():GetDuration()/self:GetAbility():GetSpecialValueFor( "projectile_count" ) + 0.01 -- so it only have 8 projectiles instead of 9
-	self:SetValidTarget( Vector( kv.pos_x, kv.pos_y, 0 ) )
-	local projectile_name = "particles/units/heroes/hero_snapfire/snapfire_lizard_blobs_arced.vpcf"
-	local projectile_start_radius = 0
-	local projectile_end_radius = 0
+    self.projectile_speed = self:GetAbility():GetSpecialValueFor("projectile_speed")
+    local projectile_vision = self:GetAbility():GetSpecialValueFor("projectile_vision")
 
-	-- precache projectile
-	self.info = {
-		-- Target = target,
-		Source = self:GetCaster(),
-		Ability = self:GetAbility(),	
-		
-		EffectName = projectile_name,
-		iMoveSpeed = self.projectile_speed,
-		bDodgeable = false,                           -- Optional
-	
-		vSourceLoc = self:GetCaster():GetOrigin(),                -- Optional (HOW)
-		
-		bDrawsOnMinimap = false,                          -- Optional
-		bVisibleToEnemies = true,                         -- Optional
-		bProvidesVision = true,                           -- Optional
-		iVisionRadius = projectile_vision,                              -- Optional
-		iVisionTeamNumber = self:GetCaster():GetTeamNumber()        -- Optional
-	}
+    self.turn_rate = self:GetAbility():GetSpecialValueFor("turn_rate")
 
-	-- Start interval
-	self:StartIntervalThink( interval )
-	self:OnIntervalThink()
+    if not IsServer() then
+        return
+    end
+    self.talent_multi_barrage = false
+    -- Talent Tree
+    local special_mortimer_kisses_barrage_lua = self:GetCaster():FindAbilityByName("special_mortimer_kisses_barrage_lua")
+    if special_mortimer_kisses_barrage_lua and special_mortimer_kisses_barrage_lua:GetLevel() ~= 0 then
+        self.talent_multi_barrage = true
+    end
+
+    self.projectile_count = self:GetAbility():GetSpecialValueFor("projectile_count")
+    -- Talent Tree
+    local special_mortimer_kisses_count_lua = self:GetCaster():FindAbilityByName("special_mortimer_kisses_count_lua")
+    if special_mortimer_kisses_count_lua and special_mortimer_kisses_count_lua:GetLevel() ~= 0 then
+        self.projectile_count = self.projectile_count + special_mortimer_kisses_count_lua:GetSpecialValueFor("value")
+    end
+
+    -- load data
+    local interval = self:GetAbility():GetDuration() / self.projectile_count + 0.01 -- so it only have 8 projectiles instead of 9
+    self:SetValidTarget(Vector(kv.pos_x, kv.pos_y, 0))
+    local projectile_name = "particles/units/heroes/hero_snapfire/snapfire_lizard_blobs_arced.vpcf"
+    local projectile_start_radius = 0
+    local projectile_end_radius = 0
+
+    -- precache projectile
+    self.info = {
+        -- Target = target,
+        Source = self:GetCaster(),
+        Ability = self:GetAbility(),
+
+        EffectName = projectile_name,
+        iMoveSpeed = self.projectile_speed,
+        bDodgeable = false, -- Optional
+
+        vSourceLoc = self:GetCaster():GetOrigin(), -- Optional (HOW)
+
+        bDrawsOnMinimap = false, -- Optional
+        bVisibleToEnemies = true, -- Optional
+        bProvidesVision = true, -- Optional
+        iVisionRadius = projectile_vision, -- Optional
+        iVisionTeamNumber = self:GetCaster():GetTeamNumber()        -- Optional
+    }
+
+    -- Start interval
+    self:StartIntervalThink(interval)
+    self:OnIntervalThink()
 end
 
-function modifier_snapfire_mortimer_kisses_lua:OnRefresh( kv )
-	
+function modifier_snapfire_mortimer_kisses_lua:OnRefresh(kv)
+
 end
 
 function modifier_snapfire_mortimer_kisses_lua:OnRemoved()
@@ -92,100 +107,131 @@ end
 --------------------------------------------------------------------------------
 -- Modifier Effects
 function modifier_snapfire_mortimer_kisses_lua:DeclareFunctions()
-	local funcs = {
-		MODIFIER_EVENT_ON_ORDER,
+    local funcs = {
+        MODIFIER_EVENT_ON_ORDER,
 
-		MODIFIER_PROPERTY_MOVESPEED_LIMIT,
-		MODIFIER_PROPERTY_TURN_RATE_PERCENTAGE,
-	}
+        MODIFIER_PROPERTY_MOVESPEED_LIMIT,
+        MODIFIER_PROPERTY_TURN_RATE_PERCENTAGE,
+    }
 
-	return funcs
+    return funcs
 end
 
-function modifier_snapfire_mortimer_kisses_lua:OnOrder( params )
-	if params.unit~=self:GetParent() then return end
+function modifier_snapfire_mortimer_kisses_lua:OnOrder(params)
+    if params.unit ~= self:GetParent() then
+        return
+    end
 
-	-- right click, switch position
-	if 	params.order_type==DOTA_UNIT_ORDER_MOVE_TO_POSITION then
-		self:SetValidTarget( params.new_pos )
-	elseif 
-		params.order_type==DOTA_UNIT_ORDER_MOVE_TO_TARGET or
-		params.order_type==DOTA_UNIT_ORDER_ATTACK_TARGET
-	then
-		self:SetValidTarget( params.target:GetOrigin() )
+    -- right click, switch position
+    if params.order_type == DOTA_UNIT_ORDER_MOVE_TO_POSITION then
+        self:SetValidTarget(params.new_pos)
+    elseif
+    params.order_type == DOTA_UNIT_ORDER_MOVE_TO_TARGET or
+            params.order_type == DOTA_UNIT_ORDER_ATTACK_TARGET
+    then
+        self:SetValidTarget(params.target:GetOrigin())
 
-	-- stop or hold
-	elseif 
-		params.order_type==DOTA_UNIT_ORDER_STOP or
-		params.order_type==DOTA_UNIT_ORDER_HOLD_POSITION
-	then
-		self:Destroy()
-	end
+        -- stop or hold
+    elseif
+    params.order_type == DOTA_UNIT_ORDER_STOP or
+            params.order_type == DOTA_UNIT_ORDER_HOLD_POSITION
+    then
+        self:Destroy()
+    end
 end
 
 function modifier_snapfire_mortimer_kisses_lua:GetModifierMoveSpeed_Limit()
-	return 0.1
+    return 0.1
 end
 
 function modifier_snapfire_mortimer_kisses_lua:GetModifierTurnRate_Percentage()
-	return -self.turn_rate
+    return -self.turn_rate
 end
 
 --------------------------------------------------------------------------------
 -- Status Effects
 function modifier_snapfire_mortimer_kisses_lua:CheckState()
-	local state = {
-		[MODIFIER_STATE_DISARMED] = true,
-	}
+    local state = {
+        [MODIFIER_STATE_DISARMED] = true,
+    }
 
-	return state
+    return state
 end
 
 --------------------------------------------------------------------------------
 -- Interval Effects
 function modifier_snapfire_mortimer_kisses_lua:OnIntervalThink()
-	-- create target thinker
-	local thinker = CreateModifierThinker(
-		self:GetParent(), -- player source
-		self:GetAbility(), -- ability source
-		"modifier_snapfire_mortimer_kisses_lua_thinker", -- modifier name
-		{ travel_time = self.travel_time }, -- kv
-		self.target,
-		self:GetParent():GetTeamNumber(),
-		false
-	)
+    -- create target thinker
+    local thinker = CreateModifierThinker(
+            self:GetParent(), -- player source
+            self:GetAbility(), -- ability source
+            "modifier_snapfire_mortimer_kisses_lua_thinker", -- modifier name
+            { travel_time = self.travel_time }, -- kv
+            self.target,
+            self:GetParent():GetTeamNumber(),
+            false
+    )
 
-	-- set projectile
-	self.info.iMoveSpeed = self.vector:Length2D()/self.travel_time
-	self.info.Target = thinker
+    -- set projectile
+    self.info.iMoveSpeed = self.vector:Length2D() / self.travel_time
+    self.info.Target = thinker
 
-	-- launch projectile
-	ProjectileManager:CreateTrackingProjectile( self.info )
+    -- launch projectile
+    ProjectileManager:CreateTrackingProjectile(self.info)
 
-	-- create FOW
-	AddFOWViewer( self:GetParent():GetTeamNumber(), thinker:GetOrigin(), 100, 1, false )
+    -- create FOW
+    AddFOWViewer(self:GetParent():GetTeamNumber(), thinker:GetOrigin(), 100, 1, false)
 
-	-- play sound
-	local sound_cast = "Hero_Snapfire.MortimerBlob.Launch"
-	EmitSoundOn( sound_cast, self:GetParent() )
+    --------------------------------------------------------------------------------
+    -- Talent Tree - init multi locations
+    if self.talent_multi_barrage then
+        local inner = Vector(200, 0, 0)
+        for i = 0, 3 do
+            local location = RotatePosition(Vector(0, 0, 0), QAngle(0, 90 * i, 0), inner)
+            thinker = CreateModifierThinker(
+                    self:GetParent(), -- player source
+                    self:GetAbility(), -- ability source
+                    "modifier_snapfire_mortimer_kisses_lua_thinker", -- modifier name
+                    {
+                        travel_time = self.travel_time
+                    }, -- kv
+                    self.target + location,
+                    self:GetParent():GetTeamNumber(),
+                    false
+            )
+
+            -- set projectile
+            self.info.Target = thinker
+
+            -- launch projectile
+            ProjectileManager:CreateTrackingProjectile(self.info)
+
+            -- create FOW
+            AddFOWViewer(self:GetParent():GetTeamNumber(), thinker:GetOrigin(), 100, 1, false)
+        end
+    end
+
+    -- play sound
+    local sound_cast = "Hero_Snapfire.MortimerBlob.Launch"
+    EmitSoundOn(sound_cast, self:GetParent())
 end
 
 --------------------------------------------------------------------------------
 -- Helper
-function modifier_snapfire_mortimer_kisses_lua:SetValidTarget( location )
-	local origin = self:GetParent():GetOrigin()
-	local vec = location-origin
-	local direction = vec
-	direction.z = 0
-	direction = direction:Normalized()
+function modifier_snapfire_mortimer_kisses_lua:SetValidTarget(location)
+    local origin = self:GetParent():GetOrigin()
+    local vec = location - origin
+    local direction = vec
+    direction.z = 0
+    direction = direction:Normalized()
 
-	if vec:Length2D()<self.min_range then
-		vec = direction * self.min_range
-	elseif vec:Length2D()>self.max_range then
-		vec = direction * self.max_range
-	end
+    if vec:Length2D() < self.min_range then
+        vec = direction * self.min_range
+    elseif vec:Length2D() > self.max_range then
+        vec = direction * self.max_range
+    end
 
-	self.target = GetGroundPosition( origin + vec, nil )
-	self.vector = vec
-	self.travel_time = (vec:Length2D()-self.min_range)/self.range * self.travel_range + self.min_travel
+    self.target = GetGroundPosition(origin + vec, nil)
+    self.vector = vec
+    self.travel_time = (vec:Length2D() - self.min_range) / self.range * self.travel_range + self.min_travel
 end

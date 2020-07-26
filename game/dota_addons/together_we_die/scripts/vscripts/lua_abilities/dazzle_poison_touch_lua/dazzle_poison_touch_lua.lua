@@ -10,149 +10,159 @@ Ability checklist (erase if done/checked):
 ]]
 --------------------------------------------------------------------------------
 dazzle_poison_touch_lua = class({})
-LinkLuaModifier( "modifier_dazzle_poison_touch_lua", "lua_abilities/dazzle_poison_touch_lua/modifier_dazzle_poison_touch_lua", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier("modifier_dazzle_poison_touch_lua", "lua_abilities/dazzle_poison_touch_lua/modifier_dazzle_poison_touch_lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_generic_stunned_lua", "lua_abilities/generic/modifier_generic_stunned_lua", LUA_MODIFIER_MOTION_NONE)
 
 --------------------------------------------------------------------------------
 -- Ability Start
 function dazzle_poison_touch_lua:OnSpellStart()
-	-- unit identifier
-	local caster = self:GetCaster()
-	local target = self:GetCursorTarget()
-	local origin = caster:GetOrigin()
+    -- unit identifier
+    local caster = self:GetCaster()
+    local target = self:GetCursorTarget()
+    local origin = caster:GetOrigin()
 
-	-- cancel if linken
-	if target:TriggerSpellAbsorb( self ) then return end
+    -- cancel if linken
+    if target:TriggerSpellAbsorb(self) then
+        return
+    end
 
-	-- load data
-	local distance = self:GetSpecialValueFor( "end_distance" )
-	local start_radius = self:GetSpecialValueFor( "start_radius" )
-	local end_radius = self:GetSpecialValueFor( "end_radius" )
+    -- load data
+    local distance = self:GetSpecialValueFor("end_distance")
+    local start_radius = self:GetSpecialValueFor("start_radius")
+    local end_radius = self:GetSpecialValueFor("end_radius")
 
-	-- get direction
-	local direction = target:GetOrigin()-origin
-	direction.z = 0
-	direction = direction:Normalized()
+    -- get direction
+    local direction = target:GetOrigin() - origin
+    direction.z = 0
+    direction = direction:Normalized()
 
-	local enemies = self:FindUnitsInCone(
-		caster:GetTeamNumber(),	-- nTeamNumber
-		target:GetOrigin(),	-- vCenterPos
-		caster:GetOrigin(),	-- vStartPos
-		caster:GetOrigin() + direction*distance,	-- vEndPos
-		start_radius,	-- fStartRadius
-		end_radius,	-- fEndRadius
-		nil,	-- hCacheUnit
-		DOTA_UNIT_TARGET_TEAM_ENEMY,	-- nTeamFilter
-		DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	-- nTypeFilter
-		0,	-- nFlagFilter
-		FIND_CLOSEST,	-- nOrderFilter
-		false	-- bCanGrowCache
-	)
+    local enemies = self:FindUnitsInCone(
+            caster:GetTeamNumber(), -- nTeamNumber
+            target:GetOrigin(), -- vCenterPos
+            caster:GetOrigin(), -- vStartPos
+            caster:GetOrigin() + direction * distance, -- vEndPos
+            start_radius, -- fStartRadius
+            end_radius, -- fEndRadius
+            nil, -- hCacheUnit
+            self:GetAbilityTargetTeam(), -- nTeamFilter
+            self:GetAbilityTargetType(), -- nTypeFilter
+            self:GetAbilityTargetFlags(), -- nFlagFilter
+            FIND_CLOSEST, -- nOrderFilter
+            false    -- bCanGrowCache
+    )
 
-	-- projectile data
-	local projectile_name = "particles/units/heroes/hero_dazzle/dazzle_poison_touch.vpcf"
-	local projectile_speed = self:GetSpecialValueFor( "projectile_speed" )
+    -- projectile data
+    local projectile_name = "particles/units/heroes/hero_dazzle/dazzle_poison_touch.vpcf"
+    local projectile_speed = self:GetSpecialValueFor("projectile_speed")
 
-	-- precache projectile
-	local info = {
-		-- Target = target,
-		Source = caster,
-		Ability = self,	
-		
-		EffectName = projectile_name,
-		iMoveSpeed = projectile_speed,
-		bDodgeable = true,                           -- Optional
-	
-		bVisibleToEnemies = true,                         -- Optional
-		bProvidesVision = false,                           -- Optional
-	}
+    -- precache projectile
+    local info = {
+        -- Target = target,
+        Source = caster,
+        Ability = self,
 
-	-- create projectile
-	for _,enemy in pairs(enemies) do
-		info.Target = enemy
-		ProjectileManager:CreateTrackingProjectile(info)
-	end
+        EffectName = projectile_name,
+        iMoveSpeed = projectile_speed,
+        bDodgeable = true, -- Optional
 
-	-- Play effects
-	local sound_cast = "Hero_Dazzle.Poison_Cast"
-	EmitSoundOn( sound_cast, caster )
+        bVisibleToEnemies = true, -- Optional
+        bProvidesVision = false, -- Optional
+    }
+
+    -- create projectile
+    for _, enemy in pairs(enemies) do
+        info.Target = enemy
+        ProjectileManager:CreateTrackingProjectile(info)
+    end
+
+    -- Play effects
+    local sound_cast = "Hero_Dazzle.Poison_Cast"
+    EmitSoundOn(sound_cast, caster)
 end
 
 --------------------------------------------------------------------------------
 -- Projectile
-function dazzle_poison_touch_lua:OnProjectileHit( target, location )
-	if not target then return end
+function dazzle_poison_touch_lua:OnProjectileHit(target, location)
+    if not target then
+        return
+    end
 
-	-- get data
-	local duration = self:GetSpecialValueFor( "duration" )
+    -- get data
+    local duration = self:GetSpecialValueFor("duration")
+    -- Talent tree
+    local special_poison_touch_duration_lua = self:GetCaster():FindAbilityByName("special_poison_touch_duration_lua")
+    if (special_poison_touch_duration_lua and special_poison_touch_duration_lua:GetLevel() ~= 0) then
+        duration = duration + special_poison_touch_duration_lua:GetSpecialValueFor("value")
+    end
 
-	-- add debuff
-	target:AddNewModifier(
-		self:GetCaster(), -- player source
-		self, -- ability source
-		"modifier_dazzle_poison_touch_lua", -- modifier name
-		{ duration = duration } -- kv
-	)
+    -- add debuff
+    target:AddNewModifier(
+            self:GetCaster(), -- player source
+            self, -- ability source
+            "modifier_dazzle_poison_touch_lua", -- modifier name
+            { duration = duration } -- kv
+    )
 
-	-- Play effects
-	local sound_target = "Hero_Dazzle.Poison_Touch"
-	EmitSoundOn( sound_target, target )
+    -- Play effects
+    local sound_target = "Hero_Dazzle.Poison_Touch"
+    EmitSoundOn(sound_target, target)
 end
 
 --------------------------------------------------------------------------------
 -- Helper
-function dazzle_poison_touch_lua:FindUnitsInCone( nTeamNumber, vCenterPos, vStartPos, vEndPos, fStartRadius, fEndRadius, hCacheUnit, nTeamFilter, nTypeFilter, nFlagFilter, nOrderFilter, bCanGrowCache )
-	-- vCenterPos is used to determine searching center (FIND_CLOSEST will refer to units closest to vCenterPos)
+function dazzle_poison_touch_lua:FindUnitsInCone(nTeamNumber, vCenterPos, vStartPos, vEndPos, fStartRadius, fEndRadius, hCacheUnit, nTeamFilter, nTypeFilter, nFlagFilter, nOrderFilter, bCanGrowCache)
+    -- vCenterPos is used to determine searching center (FIND_CLOSEST will refer to units closest to vCenterPos)
 
-	-- get cast direction and length distance
-	local direction = vEndPos-vStartPos
-	direction.z = 0
+    -- get cast direction and length distance
+    local direction = vEndPos - vStartPos
+    direction.z = 0
 
-	local distance = direction:Length2D()
-	direction = direction:Normalized()
+    local distance = direction:Length2D()
+    direction = direction:Normalized()
 
-	-- get max radius circle search
-	local big_radius = distance + math.max(fStartRadius, fEndRadius)
+    -- get max radius circle search
+    local big_radius = distance + math.max(fStartRadius, fEndRadius)
 
-	-- find enemies closest to primary target within max radius
-	local units = FindUnitsInRadius(
-		nTeamNumber,	-- int, your team number
-		vCenterPos,	-- point, center point
-		nil,	-- handle, cacheUnit. (not known)
-		big_radius,	-- float, radius. or use FIND_UNITS_EVERYWHERE
-		nTeamFilter,	-- int, team filter
-		nTypeFilter,	-- int, type filter
-		nFlagFilter,	-- int, flag filter
-		nOrderFilter,	-- int, order filter
-		bCanGrowCache	-- bool, can grow cache
-	)
+    -- find enemies closest to primary target within max radius
+    local units = FindUnitsInRadius(
+            nTeamNumber, -- int, your team number
+            vCenterPos, -- point, center point
+            nil, -- handle, cacheUnit. (not known)
+            big_radius, -- float, radius. or use FIND_UNITS_EVERYWHERE
+            nTeamFilter, -- int, team filter
+            nTypeFilter, -- int, type filter
+            nFlagFilter, -- int, flag filter
+            nOrderFilter, -- int, order filter
+            bCanGrowCache    -- bool, can grow cache
+    )
 
-	-- Filter within cone
-	local targets = {}
-	for _,unit in pairs(units) do
+    -- Filter within cone
+    local targets = {}
+    for _, unit in pairs(units) do
 
-		-- get unit vector relative to vStartPos
-		local vUnitPos = unit:GetOrigin()-vStartPos
+        -- get unit vector relative to vStartPos
+        local vUnitPos = unit:GetOrigin() - vStartPos
 
-		-- get projection scalar of vUnitPos onto direction using dot-product
-		local fProjection = vUnitPos.x*direction.x + vUnitPos.y*direction.y + vUnitPos.z*direction.z
+        -- get projection scalar of vUnitPos onto direction using dot-product
+        local fProjection = vUnitPos.x * direction.x + vUnitPos.y * direction.y + vUnitPos.z * direction.z
 
-		-- clamp projected scalar to [0,distance]
-		fProjection = math.max(math.min(fProjection,distance),0)
-		
-		-- get projected vector of vUnitPos onto direction
-		local vProjection = direction*fProjection
+        -- clamp projected scalar to [0,distance]
+        fProjection = math.max(math.min(fProjection, distance), 0)
 
-		-- calculate distance between vUnitPos and the projected vector
-		local fUnitRadius = (vUnitPos - vProjection):Length2D()
+        -- get projected vector of vUnitPos onto direction
+        local vProjection = direction * fProjection
 
-		-- calculate interpolated search radius at projected vector
-		local fInterpRadius = (fProjection/distance)*(fEndRadius-fStartRadius) + fStartRadius
+        -- calculate distance between vUnitPos and the projected vector
+        local fUnitRadius = (vUnitPos - vProjection):Length2D()
 
-		-- if unit is within distance, add them
-		if fUnitRadius<=fInterpRadius then
-			table.insert( targets, unit )
-		end
-	end
+        -- calculate interpolated search radius at projected vector
+        local fInterpRadius = (fProjection / distance) * (fEndRadius - fStartRadius) + fStartRadius
 
-	return targets
+        -- if unit is within distance, add them
+        if fUnitRadius <= fInterpRadius then
+            table.insert(targets, unit)
+        end
+    end
+
+    return targets
 end

@@ -55,6 +55,7 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"projectile_count"		"8"
+				"LinkedSpecialBonus"    "special_mortimer_kisses_count_lua"
 			}
 			"02"
 			{
@@ -144,12 +145,14 @@
 			"19"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"str_multiplier"		"6.0 9.0 12.0"
+				"str_multiplier"		"6.0 12.0 18.0"
+				"LinkedSpecialBonus"    "special_mortimer_kisses_str_multiplier_lua"
 			}
 			"20"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"burn_str_multiplier"	"2.0 3.0 4.0"
+				"LinkedSpecialBonus"    "special_mortimer_kisses_burn_str_multiplier_lua"
 			}
 		}
 	}

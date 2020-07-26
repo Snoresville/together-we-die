@@ -1,13 +1,6 @@
 sniper_shrapnel_lua = class({})
 LinkLuaModifier( "modifier_sniper_shrapnel_lua", "lua_abilities/sniper_shrapnel_lua/modifier_sniper_shrapnel_lua", LUA_MODIFIER_MOTION_NONE )
-LinkLuaModifier( "modifier_sniper_shrapnel_lua_charges", "lua_abilities/sniper_shrapnel_lua/modifier_sniper_shrapnel_lua_charges", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_sniper_shrapnel_lua_thinker", "lua_abilities/sniper_shrapnel_lua/modifier_sniper_shrapnel_lua_thinker", LUA_MODIFIER_MOTION_NONE )
-
---------------------------------------------------------------------------------
--- Passive Modifier
-function sniper_shrapnel_lua:GetIntrinsicModifierName()
-	return "modifier_sniper_shrapnel_lua_charges"
-end
 
 --------------------------------------------------------------------------------
 -- Custom KV
@@ -22,13 +15,19 @@ function sniper_shrapnel_lua:OnSpellStart()
 	-- unit identifier
 	local caster = self:GetCaster()
 	local point = self:GetCursorPosition()
+	local total_duration = self:GetSpecialValueFor( "damage_delay" ) + self:GetSpecialValueFor( "duration" )
+	-- Talent Tree
+	local special_shrapnel_duration_lua = self:GetCaster():FindAbilityByName("special_shrapnel_duration_lua")
+	if special_shrapnel_duration_lua and special_shrapnel_duration_lua:GetLevel() ~= 0 then
+		total_duration = total_duration + special_shrapnel_duration_lua:GetSpecialValueFor("value")
+	end
 
 	-- logic
 	CreateModifierThinker(
 		caster,
 		self,
 		"modifier_sniper_shrapnel_lua_thinker",
-		{},
+		{duration = total_duration},
 		point,
 		caster:GetTeamNumber(),
 		false

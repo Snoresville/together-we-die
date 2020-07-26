@@ -55,9 +55,9 @@ function modifier_pudge_flesh_heap_lua:OnDeath(event)
         return
     end
 
-    if event.attacker:GetTeamNumber() == self:GetParent():GetTeamNumber() and self:GetParent():IsAlive() then
+    if event.attacker:GetTeamNumber() == self:GetParent():GetTeamNumber() and event.unit:GetTeamNumber() ~= self:GetParent():GetTeamNumber() and self:GetParent():IsAlive() and not self:GetParent():IsIllusion() then
         if event.attacker ~= self:GetParent() then
-            if self:GetAbility():IsFullyCastable() then
+            if self:GetAbility():GetLevel() ~= 0 and self:GetAbility():IsFullyCastable() then
                 -- Check range
                 self.flesh_heap_range = self:GetAbility():GetSpecialValueFor("flesh_heap_range")
                 local vToParent = self:GetParent():GetOrigin() - event.unit:GetOrigin()

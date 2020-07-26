@@ -22,8 +22,10 @@
 		
 		// Ability General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        "AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 
 		// Ability Casting
@@ -78,7 +80,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"knockback_duration"	"0.25 0.5 0.75 1.0 1.25 1.5 1.75 2.0"
+				"knockback_duration"	"0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9"
 				"levelkey"				"quaslevel"
 			}
 			"08"
@@ -96,7 +98,8 @@
 			"10"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"int_multiplier"		"2.25 3.0 3.75 4.5 5.25 6.0 6.75 7.5"
+				"int_multiplier"		"2.0 4.0 6.0 8.0 10.0 12.0 14.0 16.0"
+				"levelkey"				"exortlevel"
 			}
 			"11"
 			{

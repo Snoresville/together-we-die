@@ -2236,7 +2236,50 @@
 		}
 	}
 
-	"Round27" // Roshan Queen
+    "Round27" // Depths of Sea
+	{
+		"round_title"				"#DOTA_Holdout_Round_Slark_Naga_Title"
+		"MaxGold"					"50000"
+		"BagCount"					"30"
+		"BagVariance"				"30"
+		"FixedXP"					"90000"
+
+        "Unit1"
+		{
+			"NPCName"				"npc_dota_creature_baby_slark"
+			"TotalUnitsToSpawn"		"32"
+			"UnitsPerSpawn"			"16"
+			"SpawnInterval"			"12"
+		}
+        "Unit2"
+		{
+			"NPCName"				"npc_dota_creature_baby_slark"
+			"TotalUnitsToSpawn"		"32"
+			"UnitsPerSpawn"			"16"
+			"SpawnInterval"			"12"
+		}
+        "Unit3"
+		{
+			"NPCName"				"npc_dota_creature_baby_slark"
+			"TotalUnitsToSpawn"		"32"
+			"UnitsPerSpawn"			"16"
+			"SpawnInterval"			"12"
+		}
+		"UnitMelee_1"
+		{
+			"NPCName"				"npc_dota_creature_boss_slark"
+			"TotalUnitsToSpawn"		"1"
+			"UnitsPerSpawn"			"1"
+		}
+		"UnitMelee_2"
+		{
+			"NPCName"				"npc_dota_creature_boss_naga"
+			"TotalUnitsToSpawn"		"1"
+			"UnitsPerSpawn"			"1"
+		}
+	}
+
+	"Round28" // Roshan Queen
 	{
 		"round_title"				"#DOTA_Holdout_Round_Roshan_Queen_Title"
 		"MaxGold"					"30000"
@@ -2249,66 +2292,6 @@
 			"NPCName"				"npc_dota_creature_queen_roshan"
 			"TotalUnitsToSpawn"		"1"
 			"UnitsPerSpawn"			"1"
-		}
-	}
-
-	"Round28" // Roshan Queen 2
-	{
-		"round_title"				"#DOTA_Holdout_Round_Roshan_Queen_Title"
-		"MaxGold"					"30000"
-		"BagCount"					"10"
-		"BagVariance"				"30"
-		"FixedXP"					"80000"
-
-		"UnitMelee_1"
-		{
-			"NPCName"				"npc_dota_creature_queen_roshan_two"
-			"TotalUnitsToSpawn"		"1"
-			"UnitsPerSpawn"			"1"
-		}
-        "Unit1"
-		{
-			"NPCName"				"npc_dota_creature_greater_ogre_magi"
-			"TotalUnitsToSpawn"		"30"
-			"UnitsPerSpawn"			"3"
-			"SpawnInterval"			"13"
-		}
-	}
-
-	"Round29" // Roshan Queen 3
-	{
-		"round_title"				"#DOTA_Holdout_Round_Roshan_Queen_Title"
-		"MaxGold"					"30000"
-		"BagCount"					"10"
-		"BagVariance"				"30"
-		"FixedXP"					"80000"
-
-		"UnitMelee_1"
-		{
-			"NPCName"				"npc_dota_creature_queen_roshan_three"
-			"TotalUnitsToSpawn"		"1"
-			"UnitsPerSpawn"			"1"
-		}
-        "Unit1"
-		{
-			"NPCName"				"npc_dota_creature_phantom_assassin"
-			"TotalUnitsToSpawn"		"12"
-			"UnitsPerSpawn"			"3"
-			"SpawnInterval"			"20"
-		}
-        "Unit2"
-		{
-			"NPCName"				"npc_dota_creature_phantom_assassin"
-			"TotalUnitsToSpawn"		"12"
-			"UnitsPerSpawn"			"3"
-			"SpawnInterval"			"20"
-		}
-        "Unit3"
-		{
-			"NPCName"				"npc_dota_creature_greater_ogre_magi"
-			"TotalUnitsToSpawn"		"32"
-			"UnitsPerSpawn"			"8"
-			"SpawnInterval"			"20"
 		}
 	}
 }

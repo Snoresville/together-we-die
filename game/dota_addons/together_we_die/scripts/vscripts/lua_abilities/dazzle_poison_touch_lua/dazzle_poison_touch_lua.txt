@@ -28,6 +28,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
@@ -82,6 +83,7 @@
 			{	
 				"var_type"			"FIELD_FLOAT"
 				"duration"		"4 5 6 7"
+				"LinkedSpecialBonus"    "special_poison_touch_duration_lua"
 			}
 			"08"
 			{	
@@ -92,6 +94,7 @@
 			{	
 				"var_type"			"FIELD_FLOAT"
 				"int_multiplier"	"1.5 2.5 3.5 4.5"
+				"LinkedSpecialBonus"    "special_poison_touch_int_multiplier_lua"
 			}
 		}
 	}
