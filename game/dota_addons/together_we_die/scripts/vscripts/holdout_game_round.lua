@@ -83,20 +83,8 @@ function CHoldoutGameRound:End()
     end
     self._vEventHandles = {}
 
-    local enemies = FindUnitsInRadius(
-            DOTA_TEAM_BADGUYS,
-            Vector(0, 0, 0),
-            nil,
-            FIND_UNITS_EVERYWHERE,
-            DOTA_UNIT_TARGET_TEAM_FRIENDLY,
-            DOTA_UNIT_TARGET_ALL,
-            DOTA_UNIT_TARGET_FLAG_INVULNERABLE + DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD,
-            FIND_ANY_ORDER,
-            false
-    )
-
-    for _, unit in pairs(enemies) do
-        -- Make sure not tower, hero or owned by non-bot players
+    -- Remove units
+    for _, unit in pairs(self._vEnemiesRemaining) do
         if not (unit:IsTower() or unit:IsRealHero() or unit:IsOther() or unit:IsOwnedByAnyPlayer()) then
             UTIL_RemoveImmediate(unit)
         end
