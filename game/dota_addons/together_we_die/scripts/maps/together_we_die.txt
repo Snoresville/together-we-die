@@ -204,6 +204,16 @@
 		// Round 21 onwards
 		"TierFive"
 		{
+            "ExpBook"
+			{
+				"Item"					"item_tome_of_xp"
+				"Chance"				"3"
+			}
+            "ExpBook"
+			{
+				"Item"					"item_card_point_book_lua"
+				"Chance"				"1"
+			}
 		}
 	}
 	
