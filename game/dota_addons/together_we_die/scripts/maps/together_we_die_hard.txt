@@ -420,8 +420,69 @@
 			"UnitsPerSpawn"			"2"
 		}
 	}
+
+	"Round2" // Lina and crystal maiden
+	{
+		"round_title"				"#DOTA_Holdout_Round_Sisters_Title"
+		"MaxGold"					"5500"
+		"BagCount"					"60"
+		"BagVariance"				"30"
+		"FixedXP"					"5500"
+
+		"Unit1"
+		{
+			"NPCName"				"npc_dota_creature_lina"
+			"TotalUnitsToSpawn"		"20"
+			"UnitsPerSpawn"			"10"
+			"SpawnInterval"			"5"
+		}
+		"Unit2"
+		{
+			"NPCName"				"npc_dota_creature_lina"
+			"TotalUnitsToSpawn"		"20"
+			"UnitsPerSpawn"			"10"
+			"SpawnInterval"			"5"
+		}
+		"Unit3"
+		{
+			"NPCName"				"npc_dota_creature_lina"
+			"TotalUnitsToSpawn"		"20"
+			"UnitsPerSpawn"			"10"
+			"SpawnInterval"			"5"
+		}
+		"Unit4"
+		{
+			"NPCName"				"npc_dota_creature_crystal_maiden"
+			"TotalUnitsToSpawn"		"20"
+			"UnitsPerSpawn"			"10"
+			"SpawnInterval"			"5"
+		}
+		"Unit5"
+		{
+			"NPCName"				"npc_dota_creature_crystal_maiden"
+			"TotalUnitsToSpawn"		"20"
+			"UnitsPerSpawn"			"10"
+			"SpawnInterval"			"5"
+		}
+		"Unit6"
+		{
+		    "WaitForTime"			"20"
+
+			"NPCName"				"npc_dota_creature_crystal_maiden"
+			"TotalUnitsToSpawn"		"15"
+			"UnitsPerSpawn"			"15"
+		}
+		"Unit7"
+		{
+		    "WaitForTime"			"20"
+
+			"NPCName"				"npc_dota_creature_lina"
+			"TotalUnitsToSpawn"		"15"
+			"UnitsPerSpawn"			"15"
+		}
+	}
 	
-	"Round2" // Ogres
+	"Round3" // Ogres
 	{
 		"round_title"				"#DOTA_Holdout_Round_Ogre_Title"
 		"MaxGold"					"15000"
@@ -545,7 +606,7 @@
 		}
 	}
 	
-	"Round3" // Slark
+	"Round4" // Slark
 	{
 		"round_title"				"#DOTA_Holdout_Round_Slithereen_Title"
 		"MaxGold"					"15000"
@@ -683,7 +744,7 @@
 		}
 	}
 	
-	"Round4" // Roshan, Leshrac
+	"Round5" // Roshan, Leshrac
 	{
 		"round_title"				"#DOTA_Holdout_Round_Roshan_Title"
 		"MaxGold"					"10000"
@@ -735,7 +796,7 @@
 		}
 	}
 	
-	"Round5" // Splitters
+	"Round6" // Splitters
 	{
 		"round_title"				"#DOTA_Holdout_Round_Splitter_Title"
 		"MaxGold"					"15000"
@@ -799,7 +860,7 @@
 		}
 	}
 	
-	"Round6" // Bears!
+	"Round7" // Bears!
 	{
 		"round_title"				"#DOTA_Holdout_Round_BearForceOne_Title"
 		"MaxGold"					"18000"
@@ -896,7 +957,7 @@
 		}
 	}
 	
-	"Round7" // Puuuuuuuuudge
+	"Round8" // Puuuuuuuuudge
 	{
 		"round_title"				"#DOTA_Holdout_Round_Pudge_Title"
 		"MaxGold"					"0" // 10500 in gold bag fountain
@@ -939,7 +1000,7 @@
 		}
 	}
 	
-	"Round8" // Gyrocopter
+	"Round9" // Gyrocopter
 	{
 		"round_title"				"#DOTA_Holdout_Round_Gyrocopter"
 		"MaxGold"					"15000"
@@ -1040,7 +1101,7 @@
 		}
 	}
 	
-	"Round9" // AA, MiniLich, Fodder
+	"Round10" // AA, MiniLich, Fodder
 	{
 		"round_title"				"#DOTA_Holdout_Round_StayFrosty_Title"
 		"MaxGold"					"15000"
@@ -1183,7 +1244,7 @@
 		}
 	}	
 
-	"Round10" // Roshan army
+	"Round11" // Roshan army
 	{
 		"round_title"				"#DOTA_Holdout_Round_Roshan_Army_Title"
 		"MaxGold"					"15000"
@@ -1221,7 +1282,7 @@
 		}
 	}
 
-	"Round11" // Skywrath
+	"Round12" // Skywrath
 	{
 		"round_title"				"#DOTA_Holdout_Round_Skywrath_Title"
 		"MaxGold"					"15000"
@@ -1249,7 +1310,7 @@
 		}
 	}
 
-	"Round12" // Greater Kobold
+	"Round13" // Greater Kobold
 	{
 		"round_title"				"#DOTA_Holdout_Round_Greater_Kobolds_Title"
 		"MaxGold"					"20000"
@@ -1287,7 +1348,7 @@
 		}
 	}
 
-	"Round13" // Tidehunter
+	"Round14" // Tidehunter
 	{
 		"round_title"				"#DOTA_Holdout_Round_Tidehunter_Title"
 		"MaxGold"					"20000"
@@ -1325,7 +1386,7 @@
 		}
 	}
 
-	"Round14" // Tusk boss
+	"Round15" // Tusk boss
 	{
 		"round_title"				"#DOTA_Holdout_Round_Tusk_Title"
 		"MaxGold"					"20000"
@@ -1347,7 +1408,7 @@
 		}
 	}
 
-	"Round15" // Timbersaw
+	"Round16" // Timbersaw
 	{
 		"round_title"				"#DOTA_Holdout_Round_Timbersaw_Title"
 		"MaxGold"					"30000"
@@ -1392,7 +1453,7 @@
 		}
 	}
 
-	"Round16" // Roshan Army
+	"Round17" // Roshan Army
 	{
 		"round_title"				"#DOTA_Holdout_Round_Medium_Roshan_Army_Title"
 		"MaxGold"					"20000"
@@ -1430,7 +1491,7 @@
 		}
 	}
 
-	"Round17" // Bounty Hunter
+	"Round18" // Bounty Hunter
 	{
 		"round_title"				"#DOTA_Holdout_Round_Hunter_Title"
 		"MaxGold"					"40000"
@@ -1485,7 +1546,7 @@
 		}
 	}
 
-	"Round18" // Enigma
+	"Round19" // Enigma
 	{
 		"round_title"				"#DOTA_Holdout_Round_Enigma_Title"
 		"MaxGold"					"35000"
@@ -1523,7 +1584,7 @@
 		}
 	}
 
-	"Round19" // Chaos Ensues
+	"Round20" // Chaos Ensues
 	{
 		"round_title"				"#DOTA_Holdout_Round_Chaos_Knight_Mage_Title"
 		"MaxGold"					"35000"
@@ -1686,7 +1747,7 @@
 		}
 	}
 
-	"Round20" // Greater Ogre
+	"Round21" // Greater Ogre
 	{
 		"round_title"				"#DOTA_Holdout_Round_Greater_Ogre_Magi_Title"
 		"MaxGold"					"35000"
@@ -1724,7 +1785,7 @@
 		}
 	}
 
-	"Round21" // Morphling
+	"Round22" // Morphling
 	{
 		"round_title"				"#DOTA_Holdout_Round_Morphling_Title"
 		"MaxGold"					"25000"
@@ -1746,7 +1807,7 @@
 		}
 	}
 
-	"Round22" // Dark willow
+	"Round23" // Dark willow
 	{
 		"round_title"				"#DOTA_Holdout_Round_Dark_Willow_Title"
 		"MaxGold"					"25000"
@@ -1768,7 +1829,7 @@
 		}
 	}
 
-	"Round23" // Enchantress
+	"Round24" // Enchantress
 	{
 		"round_title"				"#DOTA_Holdout_Round_Enchantress_Title"
 		"MaxGold"					"30000"
@@ -1931,7 +1992,7 @@
 		}
 	}
 
-    "Round24" // Depths of Sea
+    "Round25" // Depths of Sea
 	{
 		"round_title"				"#DOTA_Holdout_Round_Slark_Naga_Title"
 		"MaxGold"					"50000"
@@ -1980,7 +2041,7 @@
 		}
 	}
 
-	"Round25" // Roshan Queen
+	"Round26" // Roshan Queen
 	{
 		"round_title"				"#DOTA_Holdout_Round_Roshan_Queen_Title"
 		"MaxGold"					"30000"

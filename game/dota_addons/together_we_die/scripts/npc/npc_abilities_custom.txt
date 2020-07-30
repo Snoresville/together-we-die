@@ -2239,6 +2239,8 @@
 #base "../vscripts/lua_abilities/creature_poison_spears_lua/creature_greater_poison_spears_lua.txt"
 #base "../vscripts/lua_abilities/creature_healing_aura_lua/creature_healing_aura_lua.txt"
 #base "../vscripts/lua_abilities/creature_acid_death_lua/creature_acid_death_lua.txt"
+#base "../vscripts/lua_abilities/creature_lina_light_strike_array_lua/creature_lina_light_strike_array_lua.txt"
+#base "../vscripts/lua_abilities/creature_crystal_maiden_crystal_nova_lua/creature_crystal_maiden_crystal_nova_lua.txt"
 #base "../vscripts/lua_abilities/tower_spawn_protection/tower_spawn_protection.txt"
 #base "../vscripts/lua_abilities/tower_increase_dmg_lua/tower_increase_dmg_lua.txt"
 #base "../vscripts/lua_abilities/creature_dark_willow_shadow_realm_lua/creature_dark_willow_shadow_realm_lua.txt"
