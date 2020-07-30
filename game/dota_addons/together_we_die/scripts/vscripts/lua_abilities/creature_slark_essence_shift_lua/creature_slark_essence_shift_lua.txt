@@ -45,7 +45,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"armor_gain"			"2.0"
+				"armor_gain"			"3.0"
 			}
 			"02"
 			{
@@ -55,7 +55,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"armor_loss"				"0.5"
+				"armor_loss"				"3.0"
 			}
 			"04"
 			{
@@ -65,7 +65,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"60"
+				"duration"				"12"
 			}
 			"06"
 			{
