@@ -1,19 +1,8 @@
--- Created by Elfansoer
---[[
-Ability checklist (erase if done/checked):
-- Scepter Upgrade
-- Break behavior
-- Linken/Reflect behavior
-- Spell Immune/Invulnerable/Invisible behavior
-- Illusion behavior
-- Stolen behavior
-]]
---------------------------------------------------------------------------------
-modifier_creature_skywrath_mage_mystic_flare_lua_thinker = class({})
+modifier_creature_skywrath_mage_multi_mystic_flare_lua_thinker = class({})
 
 --------------------------------------------------------------------------------
 -- Initializations
-function modifier_creature_skywrath_mage_mystic_flare_lua_thinker:OnCreated(kv)
+function modifier_creature_skywrath_mage_multi_mystic_flare_lua_thinker:OnCreated(kv)
     -- references
     local interval = self:GetAbility():GetSpecialValueFor("damage_interval")
     self.damage = self:GetAbility():GetSpecialValueFor("damage")
@@ -40,10 +29,10 @@ function modifier_creature_skywrath_mage_mystic_flare_lua_thinker:OnCreated(kv)
     end
 end
 
-function modifier_creature_skywrath_mage_mystic_flare_lua_thinker:OnRemoved()
+function modifier_creature_skywrath_mage_multi_mystic_flare_lua_thinker:OnRemoved()
 end
 
-function modifier_creature_skywrath_mage_mystic_flare_lua_thinker:OnDestroy()
+function modifier_creature_skywrath_mage_multi_mystic_flare_lua_thinker:OnDestroy()
     if IsServer() then
         UTIL_Remove(self:GetParent())
     end
@@ -51,7 +40,7 @@ end
 
 --------------------------------------------------------------------------------
 -- Interval Effects
-function modifier_creature_skywrath_mage_mystic_flare_lua_thinker:OnIntervalThink()
+function modifier_creature_skywrath_mage_multi_mystic_flare_lua_thinker:OnIntervalThink()
     -- find heroes
     local heroes = FindUnitsInRadius(
             self:GetCaster():GetTeamNumber(), -- int, your team number
@@ -77,7 +66,7 @@ end
 
 --------------------------------------------------------------------------------
 -- Graphics & Animations
-function modifier_creature_skywrath_mage_mystic_flare_lua_thinker:PlayEffects(radius, duration, interval)
+function modifier_creature_skywrath_mage_multi_mystic_flare_lua_thinker:PlayEffects(radius, duration, interval)
     -- Get Resources
     local particle_cast = "particles/units/heroes/hero_skywrath_mage/skywrath_mage_mystic_flare_ambient.vpcf"
     local sound_cast = "Hero_SkywrathMage.MysticFlare"

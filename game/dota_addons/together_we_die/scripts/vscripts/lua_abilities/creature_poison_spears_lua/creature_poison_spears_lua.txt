@@ -1,25 +1,34 @@
-"DOTAAbilites"
+"DOTAAbilities"
 {
 	//=================================================================================================================
-	// Hard Difficulty (Lua version)
+	// Creature: Poison Spears (Lua version)
 	//=================================================================================================================
-	"hard_difficulty_lua"
+	"creature_poison_spears_lua"
 	{
 		// Ability Technical Aspect
 		// base script folder	: scripts/vscripts
 		// base texture folder	: resource/flash3/images/spellicons
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_lua"
-		"ScriptFile"					"lua_abilities/gamemode/difficulty_lua/difficulty_lua"
-		"AbilityTextureName"			"hard_difficulty_lua"
+		"ScriptFile"					"lua_abilities/creature_poison_spears_lua/creature_poison_spears_lua"
+		"AbilityTextureName"			"creature_poison_spears_lua"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_viper.vsndevts"
+			"particle"	"particles/units/heroes/hero_viper/viper_poison_debuff.vpcf"
+		}
 		
 		// Ability General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 
 		// Ability Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -36,13 +45,28 @@
 		{
 			"01"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"armor_bonus"		"-4"
+				"var_type"				"FIELD_INTEGER"
+				"slow_attack_speed"		"-30"
 			}
 			"02"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"exp_boost"		    "-30"
+				"var_type"				"FIELD_INTEGER"
+				"duration"			    "7"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_move_speed"		"-20"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dps"		            "14"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"tick_interval"		    "0.5"
 			}
 		}
 	}

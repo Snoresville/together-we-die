@@ -1,16 +1,16 @@
 "DOTAAbilities"
 {
 	//=================================================================================================================
-	// Skywrath Mage: Mystic Flare (Lua version)
+	// Skywrath Mage: Multi Mystic Flare (Lua version)
 	//=================================================================================================================
-	"creature_skywrath_mage_mystic_flare_lua"
+	"creature_skywrath_mage_multi_mystic_flare_lua"
 	{
 		// Ability Technical Aspect
 		// base script folder	: scripts/vscripts
 		// base texture folder	: resource/flash3/images/spellicons
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_lua"
-		"ScriptFile"					"lua_abilities/creature_skywrath_mage_mystic_flare_lua/creature_skywrath_mage_mystic_flare_lua"
+		"ScriptFile"					"lua_abilities/creature_skywrath_mage_multi_mystic_flare_lua/creature_skywrath_mage_multi_mystic_flare_lua"
 		"AbilityTextureName"			"skywrath_mage_mystic_flare_lua"
 		"FightRecapLevel"				"2"
 		"MaxLevel"						"1"
@@ -27,7 +27,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 
 		// Ability Casting
@@ -37,8 +37,8 @@
 
 		// Ability Resource
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"12.0"
-		"AbilityManaCost"				"5000"
+		"AbilityCooldown"				"18.0"
+		"AbilityManaCost"				"9000"
 
 		// Damage
 		//-------------------------------------------------------------------------------------------------------------
@@ -55,12 +55,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"2.5"
+				"duration"				"6.5"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"1500"
+				"damage"				"5000"
 			}
 			"04"
 			{

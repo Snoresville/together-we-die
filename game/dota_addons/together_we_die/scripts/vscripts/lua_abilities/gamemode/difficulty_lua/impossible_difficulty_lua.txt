@@ -37,22 +37,12 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage_reduction"		"50"
+				"armor_bonus"		"-8"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_damage_pct"	"-30"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"armor_bonus"		"-7"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"exp_boost"		"-60"
+				"exp_boost"		    "-70"
 			}
 		}
 	}

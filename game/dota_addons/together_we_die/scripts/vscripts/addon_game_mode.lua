@@ -113,7 +113,6 @@ function CHoldoutGameMode:InitGameMode()
     GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_BADGUYS, 1)
     --GameRules:SetCustomGameSetupTimeout( 0 )
 
-    self:_ReadGameConfiguration()
     GameRules:SetTimeOfDay(0.75)
     GameRules:SetStartingGold(0)
     GameRules:SetHeroRespawnEnabled(true)
@@ -179,7 +178,18 @@ end
 
 -- Read and assign configurable keyvalues if applicable
 function CHoldoutGameMode:_ReadGameConfiguration()
-    local kv = LoadKeyValues("scripts/maps/" .. GetMapName() .. ".txt")
+    local configName = GetMapName()
+
+    if self._difficultyScore == 3 then
+        configName = configName .. "_hard"
+    end
+
+    -- TODO: Add impossible and change to _impossible
+    if self._difficultyScore == 4 then
+        configName = configName .. "_hard"
+    end
+
+    local kv = LoadKeyValues("scripts/maps/" .. configName .. ".txt")
     kv = kv or {} -- Handle the case where there is not keyvalues file
 
     self._bAlwaysShowPlayerGold = kv.AlwaysShowPlayerGold or false
@@ -187,7 +197,6 @@ function CHoldoutGameMode:_ReadGameConfiguration()
     self._bRestoreMPAfterRound = kv.RestoreMPAfterRound or false
     self._bRewardForTowersStanding = kv.RewardForTowersStanding or false
     self._bUseReactiveDifficulty = kv.UseReactiveDifficulty or false
-    self._difficultyScore = 1
 
     self._nTowerRewardAmount = tonumber(kv.TowerRewardAmount or 0)
     self._nTowerScalingRewardPerRound = tonumber(kv.TowerScalingRewardPerRound or 0)
@@ -304,10 +313,6 @@ function CHoldoutGameMode:OnThink()
         if self._flPrepTimeEnd ~= nil then
             self:_ThinkPrepTime()
         elseif self._currentRound ~= nil then
-            if not self._gameStartChecked then
-                self:_GameStartCheck()
-            end
-
             self._currentRound:Think()
             if self._currentRound:IsFinished() then
                 self._currentRound:End()
@@ -358,12 +363,16 @@ end
 
 function CHoldoutGameMode:_GameStartCheck()
     self:_CalculateAndApplyDifficulty()
+    self:_ReadGameConfiguration()
     self._gameStartChecked = true
 end
 
 function CHoldoutGameMode:_BeginGameSetup()
     -- Start difficulty vote
     CustomGameEventManager:Send_ServerToTeam(DOTA_TEAM_GOODGUYS, "show_difficulty_vote", {})
+    -- Set default waiting params
+    self._flPrepTimeBetweenRounds = 12.0
+    self._flItemExpireTime = 10.0
     -- Get top player stats
     Stats.GetTopPlayers()
 end
@@ -371,7 +380,8 @@ end
 function CHoldoutGameMode:_CalculateAndApplyDifficulty()
     local difficultyNumberOfVotes = self:_GetDifficultyNumberOfVotes()
     local startingGold = 0
-    local difficultyAbility = nil
+    local difficultyAbility
+    self._difficultyScore = 1
     if difficultyNumberOfVotes ~= 0 then
         self._difficultyScore = math.floor(self:_GetDifficultyVote() / difficultyNumberOfVotes)
     end
@@ -381,8 +391,6 @@ function CHoldoutGameMode:_CalculateAndApplyDifficulty()
     local difficultyTitle = "DOTA_HUD_Difficulty_Easy"
     if self._difficultyScore == 1 then
         difficultyAbility = self._entAncient:AddAbility("easy_difficulty_lua")
-        self._nTowerRewardAmount = self._nTowerRewardAmount * 1.35
-        self._nTowerScalingRewardPerRound = self._nTowerScalingRewardPerRound * 1.35
         startingGold = math.floor(15000 / playerCount)
         GameRules:GetGameModeEntity():SetLoseGoldOnDeath(false)
     elseif self._difficultyScore == 2 then
@@ -393,15 +401,11 @@ function CHoldoutGameMode:_CalculateAndApplyDifficulty()
         difficultyAbility = self._entAncient:AddAbility("hard_difficulty_lua")
         difficultyTitle = "DOTA_HUD_Difficulty_Hard"
         self._lives = 2
-        self._nTowerRewardAmount = math.floor(self._nTowerRewardAmount * 0.75)
-        self._nTowerScalingRewardPerRound = math.floor(self._nTowerScalingRewardPerRound * 0.75)
         startingGold = math.floor(4000 / playerCount)
     elseif self._difficultyScore == 4 then
         difficultyAbility = self._entAncient:AddAbility("impossible_difficulty_lua")
         difficultyTitle = "DOTA_HUD_Difficulty_Impossible"
         self._lives = 1
-        self._nTowerRewardAmount = math.floor(self._nTowerRewardAmount * 0.5)
-        self._nTowerScalingRewardPerRound = math.floor(self._nTowerScalingRewardPerRound * 0.5)
         startingGold = math.floor(1000 / playerCount)
     end
     -- Set to level 1
@@ -516,11 +520,11 @@ end
 
 function CHoldoutGameMode:_ThinkPrepTime()
     if GameRules:GetGameTime() >= self._flPrepTimeEnd then
-        self._flPrepTimeEnd = nil
-        if self._entPrepTimeQuest then
-            UTIL_RemoveImmediate(self._entPrepTimeQuest)
-            self._entPrepTimeQuest = nil
+        if not self._gameStartChecked then
+            self:_GameStartCheck()
         end
+
+        self._flPrepTimeEnd = nil
 
         if self._nRoundNumber > #self._vRounds then
             self:_SetWinner(DOTA_TEAM_GOODGUYS)
@@ -534,14 +538,9 @@ function CHoldoutGameMode:_ThinkPrepTime()
         return
     end
 
-    if not self._entPrepTimeQuest then
-        self._entPrepTimeQuest = SpawnEntityFromTableSynchronous("quest", { name = "PrepTime", title = "#DOTA_Quest_Holdout_PrepTime" })
-        self._entPrepTimeQuest:SetTextReplaceValue(QUEST_TEXT_REPLACE_VALUE_ROUND, self._nRoundNumber)
-        self._entPrepTimeQuest:SetTextReplaceString(self:GetDifficultyString())
-
+    if self._gameStartChecked then
         self._vRounds[self._nRoundNumber]:Precache()
     end
-    self._entPrepTimeQuest:SetTextReplaceValue(QUEST_TEXT_REPLACE_VALUE_CURRENT_VALUE, self._flPrepTimeEnd - GameRules:GetGameTime())
 end
 
 function CHoldoutGameMode:_SetWinner(team)

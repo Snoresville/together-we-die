@@ -1,31 +1,41 @@
-"DOTAAbilites"
+"DOTAAbilities"
 {
 	//=================================================================================================================
-	// Hard Difficulty (Lua version)
+	// Creature: Rage (Lua version)
 	//=================================================================================================================
-	"hard_difficulty_lua"
+	"creature_rage_lua"
 	{
 		// Ability Technical Aspect
 		// base script folder	: scripts/vscripts
 		// base texture folder	: resource/flash3/images/spellicons
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_lua"
-		"ScriptFile"					"lua_abilities/gamemode/difficulty_lua/difficulty_lua"
-		"AbilityTextureName"			"hard_difficulty_lua"
+		"ScriptFile"					"lua_abilities/creature_rage_lua/creature_rage_lua"
+		"AbilityTextureName"			"lifestealer_rage_lua"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_life_stealer.vsndevts"
+			"particle"	"particles/units/heroes/hero_life_stealer/life_stealer_rage.vpcf"
+		}
 		
 		// Ability General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 
 		// Ability Casting
 		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0"
+		"AbilityDuration"				"5"
 
 		// Ability Resource
 		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"15"
+		"AbilityManaCost"				"60"
 
 		// Damage
 		//-------------------------------------------------------------------------------------------------------------
@@ -36,13 +46,8 @@
 		{
 			"01"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"armor_bonus"		"-4"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"exp_boost"		    "-30"
+				"var_type"				"FIELD_INTEGER"
+				"attack_speed_bonus"	"300"
 			}
 		}
 	}
