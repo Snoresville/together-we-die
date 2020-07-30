@@ -4548,6 +4548,7 @@
 #base "../vscripts/lua_abilities/gamemode/difficulty_lua/impossible_difficulty_lua.txt"
 #base "../vscripts/lua_abilities/gamemode/bad_guy_lua/bad_guy_lua.txt"
 
+#base "../vscripts/lua_abilities/creature_skywrath_mage_arcane_bolt_lua/creature_skywrath_mage_arcane_bolt_lua.txt"
 #base "../vscripts/lua_abilities/creature_skywrath_mage_mystic_flare_lua/creature_skywrath_mage_mystic_flare_lua.txt"
 #base "../vscripts/lua_abilities/creature_skywrath_mage_multi_mystic_flare_lua/creature_skywrath_mage_multi_mystic_flare_lua.txt"
 #base "../vscripts/lua_abilities/roshan_defense_shell_lua/roshan_defense_shell_lua.txt"

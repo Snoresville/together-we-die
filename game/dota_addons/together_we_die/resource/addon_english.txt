@@ -309,6 +309,13 @@
 		"DOTA_Tooltip_modifier_creature_rage_lua"                            "Rage"
 		"DOTA_Tooltip_modifier_creature_rage_lua_Description"               "Gained %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% attack speed. Magic immuned."
 
+        "DOTA_Tooltip_ability_creature_skywrath_mage_arcane_bolt_lua"					"Arcane Bolt"
+		"DOTA_Tooltip_ability_creature_skywrath_mage_arcane_bolt_lua_Description"		"Skywrath Mage launches a slow-moving bolt of arcane magic, dealing damage to an enemy unit."
+		"DOTA_Tooltip_ability_creature_skywrath_mage_arcane_bolt_lua_Lore"				"Within the Ghastly Eyrie's endless intrigue, only the clever and calm can hope to survive."
+		"DOTA_Tooltip_ability_creature_skywrath_mage_arcane_bolt_lua_Note0"				"The projectile moves very slowly (500 ms), providing 325 vision around it.  Upon impact, it will reveal the target area for 3.34 seconds."
+		"DOTA_Tooltip_ability_creature_skywrath_mage_arcane_bolt_lua_Note1"				"Arcane Bolt cannot be disjointed."
+		"DOTA_Tooltip_ability_creature_skywrath_mage_arcane_bolt_lua_bolt_damage"		"BASE DAMAGE:"
+
 		"DOTA_Tooltip_ability_creature_skywrath_mage_mystic_flare_lua"					"Mystic Flare"
 		"DOTA_Tooltip_ability_creature_skywrath_mage_mystic_flare_lua_Description"		"Skywrath Mage uses his ultimate magical ability to conjure a precise and violent mystical field that lays waste to his adversaries. Deals massive damage distributed evenly among any Heroes in the area over %duration% seconds."
 		"DOTA_Tooltip_ability_creature_skywrath_mage_mystic_flare_lua_Lore"				"Only the most practiced of Skywrath sorcerers could hope to shape the skies into such a storm."

@@ -2316,7 +2316,7 @@
 		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_skywrath_mage.vsndevts"
 		"SoundSet"					"Hero_SkywrathMage"					// Name of sound set.
 		"ModelScale"				"1.85"
-		"Level"						"1"
+		"Level"						"10"
 		"ConsideredHero"			"1"
 
 		"precache"
@@ -2327,10 +2327,10 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"creature_skywrath_mage_mystic_flare_lua"	// Ability 1.
-		"Ability2"					"creature_skywrath_mage_multi_mystic_flare_lua"			// Ability 2.
-		"Ability3"					"creature_magic_immunity_lua"			// Ability 3.
-		"Ability4"					""			// Ability 4.
+		"Ability1"					"creature_skywrath_mage_arcane_bolt_lua"	// Ability 1.
+		"Ability2"					"creature_skywrath_mage_mystic_flare_lua"			// Ability 2.
+		"Ability3"					"creature_skywrath_mage_multi_mystic_flare_lua"			// Ability 3.
+		"Ability4"					"creature_magic_immunity_lua"			// Ability 4.
 		"Ability5"					""			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
 		"Ability7"					""			// Ability 7 - Extra.
@@ -2413,12 +2413,19 @@
 			{
 				"Ability1"
 				{
-					"Name"				"creature_skywrath_mage_mystic_flare_lua"
+					"Name"				"creature_skywrath_mage_arcane_bolt_lua"
 					"AOE"				"1"
 					"Radius"			"225"
 					"MinimumTargets"	"1"
 				}
 				"Ability2"
+				{
+					"Name"				"creature_skywrath_mage_mystic_flare_lua"
+					"AOE"				"1"
+					"Radius"			"225"
+					"MinimumTargets"	"1"
+				}
+				"Ability3"
 				{
 				    "Name"              "creature_skywrath_mage_multi_mystic_flare_lua"
 					"AOE"				"1"
