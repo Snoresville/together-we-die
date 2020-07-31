@@ -322,7 +322,7 @@
 		"UnitRanged_1a"
 		{
 			"WaitForTime"			"10"
-			"NPCName"				"npc_dota_creature_gnoll_assassin"
+			"NPCName"				"npc_dota_creature_gnoll_assassin_hard"
             "TotalUnitsToSpawn"		"24"
 			"UnitsPerSpawn"			"6"
 			"SpawnInterval"			"15"
@@ -331,7 +331,7 @@
 		"UnitRanged_1b"
 		{
 			"WaitForTime"			"10"
-			"NPCName"				"npc_dota_creature_gnoll_assassin"
+			"NPCName"				"npc_dota_creature_gnoll_assassin_hard"
             "TotalUnitsToSpawn"		"24"
 			"UnitsPerSpawn"			"6"
 			"SpawnInterval"			"15"
