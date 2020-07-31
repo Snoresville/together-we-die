@@ -77,6 +77,7 @@
 		"npc_dota_creature_large_spirit_bear"		"Large Spirit Bear"
 		"npc_dota_creature_bear_chieftain"			"Bear Chieftan"
 		"npc_dota_creature_big_bear"				"Enraged Bear"
+		"npc_dota_creature_ursa_boss"				"Ursa Bear"
 		"npc_dota_creature_ancient_apparition"		"Ice Apparition"
 		"npc_dota_creature_snow_creep_melee"		"Snow Satyr"
 		"npc_dota_creature_minor_lich"				"Minor Frost Lich"
