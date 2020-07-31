@@ -13,81 +13,81 @@ modifier_creature_skywrath_mage_mystic_flare_lua_thinker = class({})
 
 --------------------------------------------------------------------------------
 -- Initializations
-function modifier_creature_skywrath_mage_mystic_flare_lua_thinker:OnCreated( kv )
-	-- references
-	local interval = self:GetAbility():GetSpecialValueFor( "damage_interval" )
-	self.damage = self:GetAbility():GetSpecialValueFor( "damage" )
-	self.radius = self:GetAbility():GetSpecialValueFor( "radius" )
+function modifier_creature_skywrath_mage_mystic_flare_lua_thinker:OnCreated(kv)
+    -- references
+    local interval = self:GetAbility():GetSpecialValueFor("damage_interval")
+    self.damage = self:GetAbility():GetSpecialValueFor("damage")
+    self.radius = self:GetAbility():GetSpecialValueFor("radius")
 
-	if IsServer() then
-		-- precache damage
-		self.damage = self.damage*interval/kv.duration
-		self.damageTable = {
-			-- victim = target,
-			attacker = self:GetCaster(),
-			-- damage = damage,
-			damage_type = self:GetAbility():GetAbilityDamageType(),
-			ability = self:GetAbility(), --Optional.
-			-- damage_flags = DOTA_DAMAGE_FLAG_NONE, --Optional.
-		}
+    if IsServer() then
+        -- precache damage
+        self.damage = self.damage * interval
+        self.damageTable = {
+            -- victim = target,
+            attacker = self:GetCaster(),
+            -- damage = damage,
+            damage_type = self:GetAbility():GetAbilityDamageType(),
+            ability = self:GetAbility(), --Optional.
+            -- damage_flags = DOTA_DAMAGE_FLAG_NONE, --Optional.
+        }
 
-		-- Start interval
-		self:StartIntervalThink( interval )
-		self:OnIntervalThink()
+        -- Start interval
+        self:StartIntervalThink(interval)
+        self:OnIntervalThink()
 
-		-- play effects
-		self:PlayEffects( self.radius, kv.duration, interval )
-	end
+        -- play effects
+        self:PlayEffects(self.radius, kv.duration, interval)
+    end
 end
 
 function modifier_creature_skywrath_mage_mystic_flare_lua_thinker:OnRemoved()
 end
 
 function modifier_creature_skywrath_mage_mystic_flare_lua_thinker:OnDestroy()
-	if IsServer() then
-		UTIL_Remove( self:GetParent() )
-	end
+    if IsServer() then
+        UTIL_Remove(self:GetParent())
+    end
 end
 
 --------------------------------------------------------------------------------
 -- Interval Effects
 function modifier_creature_skywrath_mage_mystic_flare_lua_thinker:OnIntervalThink()
-	-- find heroes
-	local heroes = FindUnitsInRadius(
-		self:GetCaster():GetTeamNumber(),	-- int, your team number
-		self:GetParent():GetOrigin(),	-- point, center point
-		nil,	-- handle, cacheUnit. (not known)
-		self.radius,	-- float, radius. or use FIND_UNITS_EVERYWHERE
-		DOTA_UNIT_TARGET_TEAM_ENEMY,	-- int, team filter
-		DOTA_UNIT_TARGET_HERO,	-- int, type filter
-		0,	-- int, flag filter
-		0,	-- int, order filter
-		false	-- bool, can grow cache
-	)
+    -- find heroes
+    local heroes = FindUnitsInRadius(
+            self:GetCaster():GetTeamNumber(), -- int, your team number
+            self:GetParent():GetOrigin(), -- point, center point
+            nil, -- handle, cacheUnit. (not known)
+            self.radius, -- float, radius. or use FIND_UNITS_EVERYWHERE
+            self:GetAbility():GetAbilityTargetTeam(), -- int, team filter
+            self:GetAbility():GetAbilityTargetType(), -- int, type filter
+            self:GetAbility():GetAbilityTargetFlags(), -- int, flag filter
+            0, -- int, order filter
+            false    -- bool, can grow cache
+    )
 
-	if #heroes<1 then return end
-	for _,hero in pairs(heroes) do
-		self.damageTable.victim = hero
-		if hero:IsRealHero() then
-			self.damageTable.damage = (self.damage + (hero:GetStrength() * 8))/#heroes
-			ApplyDamage( self.damageTable )
-		end
-	end
+    if #heroes < 1 then
+        return
+    end
+    for _, hero in pairs(heroes) do
+        self.damageTable.victim = hero
+        self.damageTable.damage = self.damage / #heroes
+        ApplyDamage(self.damageTable)
+    end
 end
 
 --------------------------------------------------------------------------------
 -- Graphics & Animations
-function modifier_creature_skywrath_mage_mystic_flare_lua_thinker:PlayEffects( radius, duration, interval )
-	-- Get Resources
-	local particle_cast = "particles/units/heroes/hero_skywrath_mage/skywrath_mage_mystic_flare_ambient.vpcf"
-	local sound_cast = "Hero_SkywrathMage.MysticFlare"
+function modifier_creature_skywrath_mage_mystic_flare_lua_thinker:PlayEffects(radius, duration, interval)
+    -- Get Resources
+    local particle_cast = "particles/units/heroes/hero_skywrath_mage/skywrath_mage_mystic_flare_ambient.vpcf"
+    local sound_cast = "Hero_SkywrathMage.MysticFlare"
 
-	-- Create Particle
-	local effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_ABSORIGIN, self:GetParent() )
-	ParticleManager:SetParticleControl( effect_cast, 1, Vector( radius, duration, interval ) )
-	assert(loadfile("lua_abilities/rubick_spell_steal_lua/rubick_spell_steal_lua_color"))(self,effect_cast)
-	ParticleManager:ReleaseParticleIndex( effect_cast )
+    -- Create Particle
+    local effect_cast = ParticleManager:CreateParticle(particle_cast, PATTACH_ABSORIGIN, self:GetParent())
+    ParticleManager:SetParticleControl(effect_cast, 1, Vector(radius, duration, interval))
+    assert(loadfile("lua_abilities/rubick_spell_steal_lua/rubick_spell_steal_lua_color"))(self, effect_cast)
+    ParticleManager:ReleaseParticleIndex(effect_cast)
 
-	-- Create Sound
-	EmitSoundOn( sound_cast, self:GetParent() )
+    -- Create Sound
+    EmitSoundOn(sound_cast, self:GetParent())
 end

@@ -1,12 +1,12 @@
 "dota_holdout"
 {
 	"PrepTimeBetweenRounds"			"15"
-	"ItemExpireTime"				"10"
+	"ItemExpireTime"				"8"
 	"RestoreHPAfterRound"			"0"
 	"RestoreMPAfterRound"			"0"
 	"RewardForTowersStanding"		"1"
-	"TowerRewardAmount"				"250"
-	"TowerScalingRewardPerRound"	"25"
+	"TowerRewardAmount"				"200"
+	"TowerScalingRewardPerRound"	"30"
 
 	"TieredItemDrops"
 	{
@@ -204,16 +204,6 @@
 		// Round 21 onwards
 		"TierFive"
 		{
-            "ExpBook"
-			{
-				"Item"					"item_tome_of_xp"
-				"Chance"				"3"
-			}
-            "ExpBook"
-			{
-				"Item"					"item_card_point_book_lua"
-				"Chance"				"1"
-			}
 		}
 	}
 	
@@ -298,75 +288,75 @@
 	"Round1" // Kobolds
 	{
 		"round_title"				"#DOTA_Holdout_Round_Kobolds_Title"
-		"MaxGold"					"6500"
+		"MaxGold"					"4500"
 		"BagCount"					"60"
 		"BagVariance"				"30"
 		"FixedXP"					"5500"
 		
 		// Stage 1 ================================================
-		"UnitFodder_1a" // Duration 80s - Continues with UnitFodderGrouped_2a & 3a to 120s total
+		"UnitFodder_1a"
 		{
-			"NPCName"				"npc_dota_creature_kobold_tunneler"
-			"TotalUnitsToSpawn"		"64"
-			"UnitsPerSpawn"			"8"
+			"NPCName"				"npc_dota_creature_kobold_tunneler_hard"
+			"TotalUnitsToSpawn"		"48"
+			"UnitsPerSpawn"			"12"
 			"SpawnInterval"			"5"
 		}
 		
-		"UnitFodder_1b" // Duration 80s - Continues with UnitFodderGrouped_2b & 3b to 120s total
+		"UnitFodder_1b"
 		{
-			"NPCName"				"npc_dota_creature_kobold_tunneler"
-			"TotalUnitsToSpawn"		"64"
-			"UnitsPerSpawn"			"8"
+			"NPCName"				"npc_dota_creature_kobold_tunneler_hard"
+			"TotalUnitsToSpawn"		"48"
+			"UnitsPerSpawn"			"12"
 			"SpawnInterval"			"5"
 		}
 		
-		"UnitFodder_1c" // Duration 90s + 30s
+		"UnitFodder_1c"
 		{
-			"WaitForTime"			"30"
-			"NPCName"				"npc_dota_creature_kobold_tunneler"
-			"TotalUnitsToSpawn"		"45"
-			"UnitsPerSpawn"			"5"
+			"WaitForTime"			"10"
+			"NPCName"				"npc_dota_creature_kobold_tunneler_hard"
+			"TotalUnitsToSpawn"		"48"
+			"UnitsPerSpawn"			"12"
 			"SpawnInterval"			"5"
 		}
 		
-		"UnitRanged_1a" // Duration 60s + 30s
+		"UnitRanged_1a"
 		{
-			"WaitForTime"			"30"
-			"NPCName"				"npc_dota_creature_gnoll_assassin"
-			"TotalUnitsToSpawn"		"20"
-			"UnitsPerSpawn"			"5"
+			"WaitForTime"			"10"
+			"NPCName"				"npc_dota_creature_gnoll_assassin_hard"
+            "TotalUnitsToSpawn"		"24"
+			"UnitsPerSpawn"			"6"
 			"SpawnInterval"			"15"
 		}
 		
-		"UnitRanged_1b" // Duration 60s + 30s
+		"UnitRanged_1b"
 		{
-			"WaitForTime"			"30"
-			"NPCName"				"npc_dota_creature_gnoll_assassin"
-			"TotalUnitsToSpawn"		"20"
-			"UnitsPerSpawn"			"5"
+			"WaitForTime"			"10"
+			"NPCName"				"npc_dota_creature_gnoll_assassin_hard"
+            "TotalUnitsToSpawn"		"24"
+			"UnitsPerSpawn"			"6"
 			"SpawnInterval"			"15"
 		}
 		
 		// Stage 2 ================================================
-		"UnitFodderGrouped_2a" // Duration 20s
+		"UnitFodderGrouped_2a"
 		{
 			"WaitForUnit"			"UnitFodder_1a"
-			"WaitForTime"			"12"
+			"WaitForTime"			"10"
 			
-			"NPCName"				"npc_dota_creature_kobold_tunneler"
-			"TotalUnitsToSpawn"		"16"
-			"UnitsPerSpawn"			"8"
+			"NPCName"				"npc_dota_creature_kobold_tunneler_hard"
+			"TotalUnitsToSpawn"		"48"
+			"UnitsPerSpawn"			"12"
 			"SpawnInterval"			"10"
 		}
 		
-		"UnitFodderGrouped_2b" // Duration 20s
+		"UnitFodderGrouped_2b"
 		{
 			"WaitForUnit"			"UnitFodder_1b"
-			"WaitForTime"			"12"
+			"WaitForTime"			"10"
 			
-			"NPCName"				"npc_dota_creature_kobold_tunneler"
-			"TotalUnitsToSpawn"		"16"
-			"UnitsPerSpawn"			"8"
+			"NPCName"				"npc_dota_creature_kobold_tunneler_hard"
+			"TotalUnitsToSpawn"		"48"
+			"UnitsPerSpawn"			"12"
 			"SpawnInterval"			"10"
 		}
 		
@@ -375,8 +365,8 @@
 			"GroupWithUnit"			"UnitFodderGrouped_2a"
 			
 			"NPCName"				"npc_dota_creature_troll_healer"
-			"TotalUnitsToSpawn"		"1"
-			"UnitsPerSpawn"			"1"
+			"TotalUnitsToSpawn"		"2"
+			"UnitsPerSpawn"			"2"
 		}
 		
 		"UnitHealer_2b"
@@ -384,32 +374,32 @@
 			"GroupWithUnit"			"UnitFodderGrouped_2b"
 			
 			"NPCName"				"npc_dota_creature_troll_healer"
-			"TotalUnitsToSpawn"		"1"
-			"UnitsPerSpawn"			"1"
+			"TotalUnitsToSpawn"		"2"
+			"UnitsPerSpawn"			"2"
 		}
 		
 		
 		// Stage 3 ================================================
-		"UnitFodderGrouped_3a" // Duration 20s
+		"UnitFodderGrouped_3a"
 		{
 			"WaitForUnit"			"UnitFodderGrouped_2a"
 			"WaitForTime"			"10"
 			
-			"NPCName"				"npc_dota_creature_kobold_tunneler"
-			"TotalUnitsToSpawn"		"16"
-			"UnitsPerSpawn"			"8"
-			"SpawnInterval"			"10"
+			"NPCName"				"npc_dota_creature_kobold_tunneler_hard"
+			"TotalUnitsToSpawn"		"48"
+			"UnitsPerSpawn"			"12"
+			"SpawnInterval"			"5"
 		}
 		
-		"UnitFodderGrouped_3b" // Duration 20s
+		"UnitFodderGrouped_3b"
 		{
 			"WaitForUnit"			"UnitFodderGrouped_2b"
 			"WaitForTime"			"10"
 			
-			"NPCName"				"npc_dota_creature_kobold_tunneler"
-			"TotalUnitsToSpawn"		"16"
-			"UnitsPerSpawn"			"8"
-			"SpawnInterval"			"10"
+			"NPCName"				"npc_dota_creature_kobold_tunneler_hard"
+			"TotalUnitsToSpawn"		"48"
+			"UnitsPerSpawn"			"12"
+			"SpawnInterval"			"5"
 		}
 		
 		"UnitHealer_3a"
@@ -417,8 +407,8 @@
 			"GroupWithUnit"			"UnitFodderGrouped_3a"
 			
 			"NPCName"				"npc_dota_creature_troll_healer"
-			"TotalUnitsToSpawn"		"1"
-			"UnitsPerSpawn"			"1"
+			"TotalUnitsToSpawn"		"2"
+			"UnitsPerSpawn"			"2"
 		}
 		
 		"UnitHealer_3b"
@@ -426,259 +416,77 @@
 			"GroupWithUnit"			"UnitFodderGrouped_3b"
 			
 			"NPCName"				"npc_dota_creature_troll_healer"
-			"TotalUnitsToSpawn"		"1"
-			"UnitsPerSpawn"			"1"
+			"TotalUnitsToSpawn"		"2"
+			"UnitsPerSpawn"			"2"
 		}
 	}
-	
-	"Round2" // Corpselords, Volatile Zombies
-	{
-		"round_title"				"#DOTA_Holdout_Round_Zombies_Title"
-		"MaxGold"					"11150"
-		"BagCount"					"70"
-		"BagVariance"				"30"
-		"FixedXP"					"8500"
-		
-		// Stage 1 ================================================
-		"UnitZombie_1a"
-		{
-			"NPCName"				"npc_dota_creature_basic_zombie"
-			"TotalUnitsToSpawn"		"36"
-			"UnitsPerSpawn"			"12"
-			"SpawnInterval"			"5"
-		}
-		
-		"UnitZombieExploding"
-		{
-			"GroupWithUnit"			"UnitZombie_1a"
-			
-			"NPCName"				"npc_dota_creature_basic_zombie_exploding"
-			"TotalUnitsToSpawn"		"6"
-			"UnitsPerSpawn"			"3"
-		}
-		
-		"UnitZombie_1b"
-		{
-			"NPCName"				"npc_dota_creature_basic_zombie"
-			"TotalUnitsToSpawn"		"36"
-			"UnitsPerSpawn"			"12"
-			"SpawnInterval"			"5"
-		}
-		
-		"UnitZombieExploding"
-		{
-			"GroupWithUnit"			"UnitZombie_1b"
-			
-			"NPCName"				"npc_dota_creature_basic_zombie_exploding"
-			"TotalUnitsToSpawn"		"6"
-			"UnitsPerSpawn"			"3"
-		}
-		
-		// Stage 2 ================================================
-		"UnitZombie_2a"
-		{
-			"WaitForUnit"			"UnitZombie_1a"
-			"WaitForTime"			"5"
-			
-			"NPCName"				"npc_dota_creature_basic_zombie"
-			"TotalUnitsToSpawn"		"36"
-			"UnitsPerSpawn"			"12"
-			"SpawnInterval"			"6"
-		}
-		
-		"UnitZombieCorpseLord_2a"
-		{
-			"GroupWithUnit"			"UnitZombie_2a"
-			
-			"NPCName"				"npc_dota_creature_corpselord"
-			"TotalUnitsToSpawn"		"8"
-			"UnitsPerSpawn"			"2"
-		}
-		
-		"UnitZombieExploding_2a"
-		{
-			"GroupWithUnit"			"UnitZombie_2a"
-			
-			"NPCName"				"npc_dota_creature_basic_zombie_exploding"
-			"TotalUnitsToSpawn"		"6"
-			"UnitsPerSpawn"			"3"
-		}
-		
-		// Stage 3 ================================================
 
-		"UnitZombie_3a"
+	"Round2" // Lina and crystal maiden
+	{
+		"round_title"				"#DOTA_Holdout_Round_Sisters_Title"
+		"MaxGold"					"5500"
+		"BagCount"					"60"
+		"BagVariance"				"30"
+		"FixedXP"					"5500"
+
+		"Unit1"
 		{
-			"WaitForUnit"			"UnitZombie_2a"
-			"WaitForTime"			"5"
-			
-			"NPCName"				"npc_dota_creature_basic_zombie"
-			"TotalUnitsToSpawn"		"36"
-			"UnitsPerSpawn"			"12"
-			"SpawnInterval"			"6"
-		}
-		
-		"UnitZombie_3b"
-		{
-			"WaitForUnit"			"UnitZombie_2a"			
-			"WaitForTime"			"10"
-			
-			"NPCName"				"npc_dota_creature_basic_zombie"
-			"TotalUnitsToSpawn"		"36"
-			"UnitsPerSpawn"			"12"
-			"SpawnInterval"			"6"
-		}
-		
-		// Stage 5 ================================================
-		"UnitZombie_5a"
-		{
-			"WaitForUnit"			"UnitZombie_3a"
-			"WaitForTime"			"5"
-			
-			"NPCName"				"npc_dota_creature_basic_zombie"
-			"TotalUnitsToSpawn"		"3"
-			"UnitsPerSpawn"			"3"
-			//"SpawnInterval"			"25"
-			
-			"SpawnerName"			"spawner1"
-			"Waypoint"				"path_invader1_1"
-		}
-		
-		"UnitZombieCorpseLord_5a"
-		{
-			"GroupWithUnit"			"UnitZombie_5a"
-			
-			"NPCName"				"npc_dota_creature_corpselord"
-			"TotalUnitsToSpawn"		"2"
-			"UnitsPerSpawn"			"2"
-			
-			"SpawnerName"			"spawner1"
-			"Waypoint"				"path_invader1_1"
-		}
-		
-		"UnitZombie_5b"
-		{
-			"WaitForUnit"			"UnitZombie_3a"
-			"WaitForTime"			"5"
-			
-			"NPCName"				"npc_dota_creature_basic_zombie"
-			"TotalUnitsToSpawn"		"3"
-			"UnitsPerSpawn"			"3"
-			
-			"SpawnerName"			"spawner2"
-			"Waypoint"				"path_invader2_1"
-		}
-		
-		"UnitZombieCorpseLord_5b"
-		{
-			"GroupWithUnit"			"UnitZombie_5b"
-			
-			"NPCName"				"npc_dota_creature_corpselord"
-			"TotalUnitsToSpawn"		"1"
-			"UnitsPerSpawn"			"1"
-			
-			"SpawnerName"			"spawner2"
-			"Waypoint"				"path_invader2_1"
-		}
-		
-		"UnitZombie_5c"
-		{
-			"WaitForUnit"			"UnitZombie_3a"
-			"WaitForTime"			"5"
-			
-			"NPCName"				"npc_dota_creature_basic_zombie"
-			"TotalUnitsToSpawn"		"3"
-			"UnitsPerSpawn"			"3"
-			
-			"SpawnerName"			"spawner3"
-			"Waypoint"				"path_invader3_1"
-		}
-		
-		"UnitZombieCorpseLord_5c"
-		{
-			"GroupWithUnit"			"UnitZombie_5c"
-			
-			"NPCName"				"npc_dota_creature_corpselord"
-			"TotalUnitsToSpawn"		"1"
-			"UnitsPerSpawn"			"1"
-			
-			"SpawnerName"			"spawner3"
-			"Waypoint"				"path_invader3_1"
-		}
-		
-		"UnitZombie_5d"
-		{
-			"WaitForUnit"			"UnitZombie_3a"
-			"WaitForTime"			"5"
-			
-			"NPCName"				"npc_dota_creature_basic_zombie"
-			"TotalUnitsToSpawn"		"3"
-			"UnitsPerSpawn"			"3"
-			
-			"SpawnerName"			"spawner4"
-			"Waypoint"				"path_invader4_1"
-		}
-		
-		"UnitZombieCorpseLord_5d"
-		{
-			"GroupWithUnit"			"UnitZombie_5d"
-			
-			"NPCName"				"npc_dota_creature_corpselord"
-			"TotalUnitsToSpawn"		"1"
-			"UnitsPerSpawn"			"1"
-			
-			"SpawnerName"			"spawner4"
-			"Waypoint"				"path_invader4_1"
-		}
-		
-		// Stage Finale ================================================
-		"UnitZombieSupport_Finale"
-		{
-			"WaitForUnit"			"UnitZombie_5a"
-			"WaitForTime"			"5"
-			
-			"NPCName"				"npc_dota_creature_basic_zombie"
+			"NPCName"				"npc_dota_creature_lina"
 			"TotalUnitsToSpawn"		"20"
 			"UnitsPerSpawn"			"10"
-			"SpawnInterval"			"8"
+			"SpawnInterval"			"5"
 		}
-		
-		"UnitZombieCorpseLord_Finale"
+		"Unit2"
 		{
-			"WaitForUnit"			"UnitZombie_5a"
-			"GroupWithUnit"			"UnitZombieSupport_Finale"
-			
-			"NPCName"				"npc_dota_creature_corpselord"
-			"TotalUnitsToSpawn"		"2"
-			"UnitsPerSpawn"			"1"
-		}
-		
-		"UnitZombieSupport_Finale_b"
-		{
-			"WaitForUnit"			"UnitZombie_5a"
-			"WaitForTime"			"5"
-			
-			"NPCName"				"npc_dota_creature_basic_zombie"
+			"NPCName"				"npc_dota_creature_lina"
 			"TotalUnitsToSpawn"		"20"
 			"UnitsPerSpawn"			"10"
-			"SpawnInterval"			"8"
+			"SpawnInterval"			"5"
 		}
-		
-		"UnitZombieCorpseLord_Finale_b"
+		"Unit3"
 		{
-			"WaitForUnit"			"UnitZombie_5a"
-			"GroupWithUnit"			"UnitZombieSupport_Finale_b"
-			
-			"NPCName"				"npc_dota_creature_corpselord"
-			"TotalUnitsToSpawn"		"2"
-			"UnitsPerSpawn"			"1"
+			"NPCName"				"npc_dota_creature_lina"
+			"TotalUnitsToSpawn"		"20"
+			"UnitsPerSpawn"			"10"
+			"SpawnInterval"			"5"
+		}
+		"Unit4"
+		{
+			"NPCName"				"npc_dota_creature_crystal_maiden"
+			"TotalUnitsToSpawn"		"20"
+			"UnitsPerSpawn"			"10"
+			"SpawnInterval"			"5"
+		}
+		"Unit5"
+		{
+			"NPCName"				"npc_dota_creature_crystal_maiden"
+			"TotalUnitsToSpawn"		"20"
+			"UnitsPerSpawn"			"10"
+			"SpawnInterval"			"5"
+		}
+		"Unit6"
+		{
+		    "WaitForTime"			"20"
+
+			"NPCName"				"npc_dota_creature_crystal_maiden"
+			"TotalUnitsToSpawn"		"15"
+			"UnitsPerSpawn"			"15"
+		}
+		"Unit7"
+		{
+		    "WaitForTime"			"20"
+
+			"NPCName"				"npc_dota_creature_lina"
+			"TotalUnitsToSpawn"		"15"
+			"UnitsPerSpawn"			"15"
 		}
 	}
 	
 	"Round3" // Ogres
 	{
 		"round_title"				"#DOTA_Holdout_Round_Ogre_Title"
-		"MaxGold"					"10000"
-		"BagCount"					"50"
+		"MaxGold"					"15000"
+		"BagCount"					"60"
 		"BagVariance"				"75"
 		"FixedXP"					"12000"
 		
@@ -686,9 +494,9 @@
 		"UnitMelee_1" // Duration 20s
 		{
 			"NPCName"				"npc_dota_creature_ogre_melee"
-			"TotalUnitsToSpawn"		"4"
-			"UnitsPerSpawn"			"4"
-			"SpawnInterval"			"10"
+			"TotalUnitsToSpawn"		"12"
+			"UnitsPerSpawn"			"6"
+			"SpawnInterval"			"5"
 		}
 		
 		"UnitRanged_1"
@@ -696,7 +504,7 @@
 			"GroupWithUnit"			"UnitMelee_1"
 			
 			"NPCName"				"npc_dota_creature_ogre_magi"
-			"TotalUnitsToSpawn"		"4"
+			"TotalUnitsToSpawn"		"8"
 			"UnitsPerSpawn"			"4"
 		}
 
@@ -705,8 +513,8 @@
 			"GroupWithUnit"			"UnitMelee_1"
 			
 			"NPCName"				"npc_dota_creature_ogre_tank"
-			"TotalUnitsToSpawn"		"6"
-			"UnitsPerSpawn"			"2"
+			"TotalUnitsToSpawn"		"2"
+			"UnitsPerSpawn"			"1"
 		}
 		
 		// Stage 2 ================================================
@@ -716,8 +524,8 @@
 			"WaitForTime"			"10"
 			
 			"NPCName"				"npc_dota_creature_ogre_melee"
-			"TotalUnitsToSpawn"		"8"
-			"UnitsPerSpawn"			"4"
+			"TotalUnitsToSpawn"		"12"
+			"UnitsPerSpawn"			"6"
 			"SpawnInterval"			"8"
 		}
 		
@@ -735,8 +543,8 @@
 			"GroupWithUnit"			"UnitMelee_2"
 			
 			"NPCName"				"npc_dota_creature_ogre_tank"
-			"TotalUnitsToSpawn"		"6"
-			"UnitsPerSpawn"			"2"
+			"TotalUnitsToSpawn"		"2"
+			"UnitsPerSpawn"			"1"
 		}
 
 		"UnitOgreTank_3"
@@ -744,8 +552,8 @@
 			"GroupWithUnit"			"UnitMelee_2"
 			
 			"NPCName"				"npc_dota_creature_ogre_tank"
-			"TotalUnitsToSpawn"		"6"
-			"UnitsPerSpawn"			"2"
+			"TotalUnitsToSpawn"		"2"
+			"UnitsPerSpawn"			"1"
 		}
 		
 		// Stage 2 Concurrent =====================================
@@ -756,7 +564,7 @@
 			
 			"NPCName"				"npc_dota_creature_ogre_melee"
 			"TotalUnitsToSpawn"		"20"
-			"UnitsPerSpawn"			"5"
+			"UnitsPerSpawn"			"10"
 			"SpawnInterval"			"10"
 		}
 		
@@ -766,13 +574,13 @@
 			
 			"NPCName"				"npc_dota_creature_ogre_magi"
 			"TotalUnitsToSpawn"		"12"
-			"UnitsPerSpawn"			"3"
+			"UnitsPerSpawn"			"6"
 		}
 		
 		"UnitMelee_2c" // Duration 100s + 30s
 		{
 			"WaitForUnit"			"UnitMelee_1"
-			"WaitForTime"			"15"
+			"WaitForTime"			"10"
 			
 			"NPCName"				"npc_dota_creature_ogre_melee"
 			"TotalUnitsToSpawn"		"16"
@@ -785,15 +593,23 @@
 			"GroupWithUnit"			"UnitMelee_2c"
 			
 			"NPCName"				"npc_dota_creature_ogre_magi"
-			"TotalUnitsToSpawn"		"15"
-			"UnitsPerSpawn"			"5"
+			"TotalUnitsToSpawn"		"16"
+			"UnitsPerSpawn"			"8"
+		}
+
+        "Unit1"
+		{
+			"NPCName"				"npc_dota_creature_greater_ogre_magi"
+			"WaitForTime"			"60"
+			"TotalUnitsToSpawn"		"1"
+			"UnitsPerSpawn"			"1"
 		}
 	}
 	
-	"Round4" // Slar*
+	"Round4" // Slark
 	{
 		"round_title"				"#DOTA_Holdout_Round_Slithereen_Title"
-		"MaxGold"					"13000"
+		"MaxGold"					"15000"
 		"BagCount"					"70"
 		"BagVariance"				"50"
 		"FixedXP"					"14500"
@@ -928,92 +744,7 @@
 		}
 	}
 	
-	"Round5" // Trees
-	{
-		"round_title"				"#DOTA_Holdout_Round_Trees_Title"
-		"MaxGold"					"22000"
-		"BagCount"					"35"
-		"BagVariance"				"50"
-		"FixedXP"					"16500"
-
-		"Unit1"
-		{
-			"NPCName"				"npc_dota_creature_forest_prophet"
-			"TotalUnitsToSpawn"		"10"
-			"UnitsPerSpawn"			"2"
-			"SpawnInterval"			"8"
-		}	
-		"Unit2"
-		{
-			"NPCName"				"npc_dota_creature_forest_prophet"
-			"TotalUnitsToSpawn"		"10"
-			"UnitsPerSpawn"			"2"
-			"SpawnInterval"			"8"
-		}	
-
-		"Unit3"
-		{
-			"NPCName"				"npc_dota_creature_forest_prophet"
-			"TotalUnitsToSpawn"		"10"
-			"UnitsPerSpawn"			"2"
-			"SpawnInterval"			"8"
-		}	
-		"Unit4"
-		{
-			"NPCName"				"npc_dota_creature_forest_prophet"
-			"TotalUnitsToSpawn"		"9"
-			"UnitsPerSpawn"			"3"
-			"SpawnInterval"			"12"
-		}	
-		"Unit5"
-		{
-			"NPCName"				"npc_dota_creature_king_treant"
-			"TotalUnitsToSpawn"		"8"
-			"UnitsPerSpawn"			"2"
-			"SpawnInterval"			"8"
-		}
-		"Unit6"
-		{
-			"NPCName"				"npc_dota_creature_king_treant"
-			"TotalUnitsToSpawn"		"8"
-			"UnitsPerSpawn"			"2"
-			"SpawnInterval"			"12"
-		}
-		"Unit7"
-		{
-			"NPCName"				"npc_dota_creature_king_treant"
-			"TotalUnitsToSpawn"		"8"
-			"UnitsPerSpawn"			"2"
-			"SpawnInterval"			"12"
-		}
-        "Unit8"
-		{
-			"NPCName"				"npc_dota_creature_forest_prophet"
-			"TotalUnitsToSpawn"		"9"
-			"UnitsPerSpawn"			"3"
-			"SpawnInterval"			"8"
-		}
-	}
-	
-	"Round6" // Broodqueen
-	{
-		"round_title"				"#DOTA_Holdout_Round_Broodking_Title"
-		"MaxGold"					"10000"
-		"BagCount"					"1"
-		"BagVariance"				"0"
-		"FixedXP"					"12500"
-
-		// Stage 1 ================================================
-		"UnitMelee_1"
-		{
-			"NPCName"				"npc_dota_creature_broodking"
-			"TotalUnitsToSpawn"		"1"
-			"UnitsPerSpawn"			"1"
-			"DontGiveGoal"    		"1"
-		}
-	}
-	
-	"Round7" // Roshan, Leshrac
+	"Round5" // Roshan, Leshrac
 	{
 		"round_title"				"#DOTA_Holdout_Round_Roshan_Title"
 		"MaxGold"					"10000"
@@ -1065,7 +796,7 @@
 		}
 	}
 	
-	"Round8" // Splitters
+	"Round6" // Splitters
 	{
 		"round_title"				"#DOTA_Holdout_Round_Splitter_Title"
 		"MaxGold"					"15000"
@@ -1129,149 +860,104 @@
 		}
 	}
 	
-	"Round9" // Bears!
+	"Round7" // Bears!
 	{
 		"round_title"				"#DOTA_Holdout_Round_BearForceOne_Title"
-		"MaxGold"					"15000"
-		"BagCount"					"75"
+		"MaxGold"					"18000"
+		"BagCount"					"60"
 		"BagVariance"				"100"
 		"FixedXP"					"18000"
 
-		// Part 1
 		"Unit1"
 		{
-			"NPCName"				"npc_dota_creature_small_spirit_bear"
-			"TotalUnitsToSpawn"		"12"
-			"UnitsPerSpawn"			"6"
-			"SpawnInterval"			"12"
+			"NPCName"				"npc_dota_creature_bear_chieftain"
+			"TotalUnitsToSpawn"		"32"
+			"UnitsPerSpawn"			"16"
+
+			"SpawnInterval"			"10"
 		}
 		"Unit2"
 		{
-			"NPCName"				"npc_dota_creature_large_spirit_bear"
-			"TotalUnitsToSpawn"		"6"
-			"UnitsPerSpawn"			"3"
-			"GroupWithUnit"			"Unit1"
-		}	
+			"NPCName"				"npc_dota_creature_bear_chieftain"
+			"TotalUnitsToSpawn"		"32"
+			"UnitsPerSpawn"			"16"
+
+			"SpawnInterval"			"10"
+		}
 		"Unit3"
 		{
-			"NPCName"				"npc_dota_creature_small_spirit_bear"
-			"TotalUnitsToSpawn"		"9"
-			"UnitsPerSpawn"			"9"
-			"SpawnInterval"			"12"
+			"NPCName"				"npc_dota_creature_bear_chieftain"
+			"TotalUnitsToSpawn"		"32"
+			"UnitsPerSpawn"			"16"
+
+			"SpawnInterval"			"10"
 		}
 		"Unit4"
 		{
-			"NPCName"				"npc_dota_creature_large_spirit_bear"
-			"TotalUnitsToSpawn"		"8"
-			"UnitsPerSpawn"			"4"
-			"GroupWithUnit"			"Unit3"
-		}	
-		
-		// Part 2
+			"NPCName"				"npc_dota_creature_bear_chieftain"
+			"TotalUnitsToSpawn"		"32"
+			"UnitsPerSpawn"			"16"
+
+			"SpawnInterval"			"10"
+		}
 		"Unit5"
 		{
-			"NPCName"				"npc_dota_creature_small_spirit_bear"
-			"TotalUnitsToSpawn"		"4"
-			"UnitsPerSpawn"			"4"
-			"SpawnInterval"			"12"
-			"WaitForUnit"			"Unit1"
+			"NPCName"				"npc_dota_creature_bear_chieftain"
+			"TotalUnitsToSpawn"		"32"
+			"UnitsPerSpawn"			"16"
+
+			"SpawnInterval"			"10"
 		}
 		"Unit6"
 		{
-			"NPCName"				"npc_dota_creature_large_spirit_bear"
-			"TotalUnitsToSpawn"		"4"
-			"UnitsPerSpawn"			"2"
-			"GroupWithUnit"			"Unit5"
-		}
-		"Unit7"
-		{
+		    "WaitForTime"			"40"
+
 			"NPCName"				"npc_dota_creature_bear_chieftain"
-			"TotalUnitsToSpawn"		"4"
-			"UnitsPerSpawn"			"2"
-			"GroupWithUnit"			"Unit5"
-		}
-		"Unit8"
-		{
-			"NPCName"				"npc_dota_creature_small_spirit_bear"
-			"TotalUnitsToSpawn"		"4"
-			"UnitsPerSpawn"			"2"
-			"SpawnInterval"			"12"
-			"WaitForUnit"			"Unit1"
-		}
-		"Unit9"
-		{
-			"NPCName"				"npc_dota_creature_large_spirit_bear"
-			"TotalUnitsToSpawn"		"8"
-			"UnitsPerSpawn"			"4"
-			"GroupWithUnit"			"Unit8"
-		}
-		"Unit10"
-		{
-			"NPCName"				"npc_dota_creature_bear_chieftain"
-			"TotalUnitsToSpawn"		"4"
-			"UnitsPerSpawn"			"2"
-			"GroupWithUnit"			"Unit8"
-		}
-		
-		"UnitBigBear_2"
-		{	
-			"WaitForUnit"			"Unit1"
-			"WaitForTime"			"10"
-			
-			"NPCName"				"npc_dota_creature_big_bear"
-			"TotalUnitsToSpawn"		"4"
-			"UnitsPerSpawn"			"4"
+			"TotalUnitsToSpawn"		"32"
+			"UnitsPerSpawn"			"32"
 		}
 
-		// Part 3
-		"Unit11"
+		"UnitMelee_1"
 		{
-			"NPCName"				"npc_dota_creature_small_spirit_bear"
-			"TotalUnitsToSpawn"		"4"
-			"UnitsPerSpawn"			"4"
-			"SpawnInterval"			"12"
-			"WaitForUnit"			"Unit5"
-		}	
-		"Unit12"
-		{
-			"NPCName"				"npc_dota_creature_large_spirit_bear"
-			"TotalUnitsToSpawn"		"4"
-			"UnitsPerSpawn"			"4"
-			"GroupWithUnit"			"Unit11"
+			"NPCName"				"npc_dota_creature_ursa_boss"
+			"TotalUnitsToSpawn"		"1"
+			"UnitsPerSpawn"			"1"
 		}
-		"Unit13"
+		"UnitMelee_2"
 		{
-			"NPCName"				"npc_dota_creature_bear_chieftain"
-			"TotalUnitsToSpawn"		"4"
-			"UnitsPerSpawn"			"4"
-			"GroupWithUnit"			"Unit11"
-		}	
-		"UnitBigBear_3"
-		{	
-			"WaitForUnit"			"Unit5"
-			
-			"NPCName"				"npc_dota_creature_big_bear"
-			"TotalUnitsToSpawn"		"3"
-			"UnitsPerSpawn"			"3"
+		    "WaitForTime"			"10"
+
+			"NPCName"				"npc_dota_creature_ursa_boss"
+			"TotalUnitsToSpawn"		"1"
+			"UnitsPerSpawn"			"1"
 		}
-		"Unit15"
+		"UnitMelee_3"
 		{
-			"NPCName"				"npc_dota_creature_small_spirit_bear"
-			"TotalUnitsToSpawn"		"3"
-			"UnitsPerSpawn"			"3"
-			"SpawnInterval"			"12"
-			"WaitForUnit"			"Unit5"
-		}	
-		"Unit16"
+		    "WaitForTime"			"20"
+
+			"NPCName"				"npc_dota_creature_ursa_boss"
+			"TotalUnitsToSpawn"		"1"
+			"UnitsPerSpawn"			"1"
+		}
+		"UnitMelee_4"
 		{
-			"NPCName"				"npc_dota_creature_large_spirit_bear"
-			"TotalUnitsToSpawn"		"3"
-			"UnitsPerSpawn"			"3"
-			"GroupWithUnit"			"Unit15"
+		    "WaitForTime"			"30"
+
+			"NPCName"				"npc_dota_creature_ursa_boss"
+			"TotalUnitsToSpawn"		"1"
+			"UnitsPerSpawn"			"1"
+		}
+		"UnitMelee_5"
+		{
+		    "WaitForTime"			"40"
+
+			"NPCName"				"npc_dota_creature_ursa_boss"
+			"TotalUnitsToSpawn"		"1"
+			"UnitsPerSpawn"			"1"
 		}
 	}
 	
-	"Round10" // Puuuuuuuuudge
+	"Round8" // Puuuuuuuuudge
 	{
 		"round_title"				"#DOTA_Holdout_Round_Pudge_Title"
 		"MaxGold"					"0" // 10500 in gold bag fountain
@@ -1296,9 +982,25 @@
 			"SpawnInterval"			"12"
 			"DontGiveGoal"    		"1"
 		}
+		"UnitMelee_3"
+		{
+			"NPCName"				"npc_dota_creature_boss_pudge"
+			"TotalUnitsToSpawn"		"4"
+			"UnitsPerSpawn"			"2"
+			"SpawnInterval"			"12"
+			"DontGiveGoal"    		"1"
+		}
+		"UnitMelee_4"
+		{
+			"NPCName"				"npc_dota_creature_boss_pudge"
+			"TotalUnitsToSpawn"		"4"
+			"UnitsPerSpawn"			"2"
+			"SpawnInterval"			"12"
+			"DontGiveGoal"    		"1"
+		}
 	}
 	
-	"Round11" // Gyrocopter
+	"Round9" // Gyrocopter
 	{
 		"round_title"				"#DOTA_Holdout_Round_Gyrocopter"
 		"MaxGold"					"15000"
@@ -1320,16 +1022,23 @@
 		{
 			"NPCName"				"npc_dota_creature_rattletrap"
 			"TotalUnitsToSpawn"		"30"
-			"UnitsPerSpawn"			"6"
+			"UnitsPerSpawn"			"10"
 			"SpawnInterval"			"16"
 			"DontGiveGoal"			"1"
 		}
-		
 		"UnitTank_2"
 		{
 			"NPCName"				"npc_dota_creature_rattletrap"
 			"TotalUnitsToSpawn"		"30"
-			"UnitsPerSpawn"			"6"
+			"UnitsPerSpawn"			"10"
+			"SpawnInterval"			"13"
+			"DontGiveGoal"			"1"
+		}
+		"UnitTank_3"
+		{
+			"NPCName"				"npc_dota_creature_rattletrap"
+			"TotalUnitsToSpawn"		"30"
+			"UnitsPerSpawn"			"10"
 			"SpawnInterval"			"13"
 			"DontGiveGoal"			"1"
 		}
@@ -1392,7 +1101,7 @@
 		}
 	}
 	
-	"Round12" // AA, MiniLich, Fodder
+	"Round10" // AA, MiniLich, Fodder
 	{
 		"round_title"				"#DOTA_Holdout_Round_StayFrosty_Title"
 		"MaxGold"					"15000"
@@ -1535,7 +1244,7 @@
 		}
 	}	
 
-	"Round13" // Roshan army
+	"Round11" // Roshan army
 	{
 		"round_title"				"#DOTA_Holdout_Round_Roshan_Army_Title"
 		"MaxGold"					"15000"
@@ -1573,7 +1282,7 @@
 		}
 	}
 
-	"Round14" // Skywrath
+	"Round12" // Skywrath
 	{
 		"round_title"				"#DOTA_Holdout_Round_Skywrath_Title"
 		"MaxGold"					"15000"
@@ -1587,23 +1296,21 @@
 			"TotalUnitsToSpawn"		"1"
 			"UnitsPerSpawn"			"1"
 		}
-		"UnitMelee_1"
+		"Unit2"
 		{
-			"NPCName"				"npc_dota_creature_boss_pudge"
+			"NPCName"				"npc_dota_creature_skywrath_mage_boss"
 			"TotalUnitsToSpawn"		"1"
 			"UnitsPerSpawn"			"1"
-			"DontGiveGoal"    		"1"
 		}
-		"UnitMelee_2"
+        "Unit3"
 		{
-			"NPCName"				"npc_dota_creature_boss_pudge"
+			"NPCName"				"npc_dota_creature_greater_skywrath_mage_boss"
 			"TotalUnitsToSpawn"		"1"
 			"UnitsPerSpawn"			"1"
-			"DontGiveGoal"    		"1"
 		}
 	}
 
-	"Round15" // Greater Kobold
+	"Round13" // Greater Kobold
 	{
 		"round_title"				"#DOTA_Holdout_Round_Greater_Kobolds_Title"
 		"MaxGold"					"20000"
@@ -1615,33 +1322,33 @@
 		{
 			"NPCName"				"npc_dota_creature_greater_kobold_tunneler"
 			"TotalUnitsToSpawn"		"40"
-			"UnitsPerSpawn"			"8"
+			"UnitsPerSpawn"			"20"
 			"SpawnInterval"			"8"
 		}
 		"Unit2"
 		{
 			"NPCName"				"npc_dota_creature_greater_kobold_tunneler"
 			"TotalUnitsToSpawn"		"36"
-			"UnitsPerSpawn"			"12"
+			"UnitsPerSpawn"			"20"
 			"SpawnInterval"			"12"
 		}
 		"Unit3"
 		{
 			"NPCName"				"npc_dota_creature_greater_kobold_tunneler"
 			"TotalUnitsToSpawn"		"40"
-			"UnitsPerSpawn"			"8"
+			"UnitsPerSpawn"			"20"
 			"SpawnInterval"			"16"
 		}
 		"Unit4"
 		{
 			"NPCName"				"npc_dota_creature_greater_gnoll_assassin"
 			"TotalUnitsToSpawn"		"20"
-			"UnitsPerSpawn"			"4"
+			"UnitsPerSpawn"			"10"
 			"SpawnInterval"			"16"
 		}
 	}
 
-	"Round16" // Tidehunter
+	"Round14" // Tidehunter
 	{
 		"round_title"				"#DOTA_Holdout_Round_Tidehunter_Title"
 		"MaxGold"					"20000"
@@ -1679,67 +1386,74 @@
 		}
 	}
 
-	"Round17" // Tusk boss
+	"Round15" // Tusk boss
 	{
 		"round_title"				"#DOTA_Holdout_Round_Tusk_Title"
 		"MaxGold"					"20000"
-		"BagCount"					"2"
+		"BagCount"					"5"
 		"BagVariance"				"30"
 		"FixedXP"					"50000"
 
 		"UnitMelee_1"
 		{
 			"NPCName"				"npc_dota_creature_tusk"
-			"TotalUnitsToSpawn"		"1"
-			"UnitsPerSpawn"			"1"
+			"TotalUnitsToSpawn"		"3"
+			"UnitsPerSpawn"			"3"
 		}
 		"UnitMelee_2"
 		{
 			"NPCName"				"npc_dota_creature_tusk"
-			"TotalUnitsToSpawn"		"1"
-			"UnitsPerSpawn"			"1"
+			"TotalUnitsToSpawn"		"3"
+			"UnitsPerSpawn"			"3"
 		}
 	}
 
-	"Round18" // Timbersaw
+	"Round16" // Timbersaw
 	{
 		"round_title"				"#DOTA_Holdout_Round_Timbersaw_Title"
-		"MaxGold"					"20000"
-		"BagCount"					"16"
+		"MaxGold"					"30000"
+		"BagCount"					"30"
 		"BagVariance"				"30"
 		"FixedXP"					"50000"
 
 		"Unit1"
 		{
 			"NPCName"				"npc_dota_creature_timbersaw"
-			"TotalUnitsToSpawn"		"4"
-			"UnitsPerSpawn"			"2"
+			"TotalUnitsToSpawn"		"12"
+			"UnitsPerSpawn"			"6"
 			"SpawnInterval"			"8"
 		}
 		"Unit2"
 		{
 			"NPCName"				"npc_dota_creature_timbersaw"
-			"TotalUnitsToSpawn"		"4"
-			"UnitsPerSpawn"			"2"
+			"TotalUnitsToSpawn"		"12"
+			"UnitsPerSpawn"			"6"
 			"SpawnInterval"			"8"
 		}
 		"Unit3"
 		{
 			"NPCName"				"npc_dota_creature_timbersaw"
-			"TotalUnitsToSpawn"		"4"
-			"UnitsPerSpawn"			"2"
+			"TotalUnitsToSpawn"		"12"
+			"UnitsPerSpawn"			"6"
 			"SpawnInterval"			"8"
 		}
 		"Unit4"
 		{
 			"NPCName"				"npc_dota_creature_timbersaw"
-			"TotalUnitsToSpawn"		"4"
-			"UnitsPerSpawn"			"2"
+			"TotalUnitsToSpawn"		"12"
+			"UnitsPerSpawn"			"6"
+			"SpawnInterval"			"8"
+		}
+		"Unit5"
+		{
+			"NPCName"				"npc_dota_creature_timbersaw"
+			"TotalUnitsToSpawn"		"12"
+			"UnitsPerSpawn"			"6"
 			"SpawnInterval"			"8"
 		}
 	}
 
-	"Round19" // Roshan Army
+	"Round17" // Roshan Army
 	{
 		"round_title"				"#DOTA_Holdout_Round_Medium_Roshan_Army_Title"
 		"MaxGold"					"20000"
@@ -1777,7 +1491,7 @@
 		}
 	}
 
-	"Round20" // Bounty Hunter
+	"Round18" // Bounty Hunter
 	{
 		"round_title"				"#DOTA_Holdout_Round_Hunter_Title"
 		"MaxGold"					"40000"
@@ -1789,47 +1503,53 @@
 		{
 			"NPCName"				"npc_dota_creature_phantom_assassin"
 			"TotalUnitsToSpawn"		"24"
-			"UnitsPerSpawn"			"4"
+			"UnitsPerSpawn"			"6"
 			"SpawnInterval"			"12"
 		}
         "Unit2"
 		{
 			"NPCName"				"npc_dota_creature_phantom_assassin"
-			"TotalUnitsToSpawn"		"12"
-			"UnitsPerSpawn"			"3"
-			"SpawnInterval"			"20"
+			"TotalUnitsToSpawn"		"24"
+			"UnitsPerSpawn"			"6"
+			"SpawnInterval"			"12"
+		}
+        "Unit3"
+		{
+			"NPCName"				"npc_dota_creature_phantom_assassin"
+			"TotalUnitsToSpawn"		"24"
+			"UnitsPerSpawn"			"6"
+			"SpawnInterval"			"12"
 		}
 		"UnitMelee_1"
 		{
 			"NPCName"				"npc_dota_creature_bounty_hunter"
-			"WaitForTime"           "40"
 			"TotalUnitsToSpawn"		"2"
 			"UnitsPerSpawn"			"2"
 		}
 		"UnitMelee_2"
 		{
 			"NPCName"				"npc_dota_creature_bounty_hunter"
-			"TotalUnitsToSpawn"		"1"
-			"UnitsPerSpawn"			"1"
+			"TotalUnitsToSpawn"		"2"
+			"UnitsPerSpawn"			"2"
 		}
 		"UnitMelee_3"
 		{
 			"NPCName"				"npc_dota_creature_bounty_hunter"
-			"TotalUnitsToSpawn"		"1"
-			"UnitsPerSpawn"			"1"
+			"TotalUnitsToSpawn"		"2"
+			"UnitsPerSpawn"			"2"
 		}
 		"UnitMelee_4"
 		{
 			"NPCName"				"npc_dota_creature_bounty_hunter"
-			"TotalUnitsToSpawn"		"1"
-			"UnitsPerSpawn"			"1"
+			"TotalUnitsToSpawn"		"2"
+			"UnitsPerSpawn"			"2"
 		}
 	}
 
-	"Round21" // Enigma
+	"Round19" // Enigma
 	{
 		"round_title"				"#DOTA_Holdout_Round_Enigma_Title"
-		"MaxGold"					"25000"
+		"MaxGold"					"35000"
 		"BagCount"					"85"
 		"BagVariance"				"30"
 		"FixedXP"					"60000"
@@ -1838,29 +1558,36 @@
 		{
 			"NPCName"				"npc_dota_creature_enigma"
 			"TotalUnitsToSpawn"		"36"
-			"UnitsPerSpawn"			"4"
+			"UnitsPerSpawn"			"12"
 			"SpawnInterval"			"12"
 		}
 		"Unit2"
 		{
 			"NPCName"				"npc_dota_creature_enigma"
 			"TotalUnitsToSpawn"		"36"
-			"UnitsPerSpawn"			"4"
+			"UnitsPerSpawn"			"12"
 			"SpawnInterval"			"10"
 		}
 		"Unit3"
 		{
 			"NPCName"				"npc_dota_creature_enigma"
 			"TotalUnitsToSpawn"		"36"
-			"UnitsPerSpawn"			"4"
+			"UnitsPerSpawn"			"12"
+			"SpawnInterval"			"9"
+		}
+		"Unit4"
+		{
+			"NPCName"				"npc_dota_creature_enigma"
+			"TotalUnitsToSpawn"		"36"
+			"UnitsPerSpawn"			"12"
 			"SpawnInterval"			"9"
 		}
 	}
 
-	"Round22" // Chaos Ensues
+	"Round20" // Chaos Ensues
 	{
 		"round_title"				"#DOTA_Holdout_Round_Chaos_Knight_Mage_Title"
-		"MaxGold"					"25000"
+		"MaxGold"					"35000"
 		"BagCount"					"45"
 		"BagVariance"				"30"
 		"FixedXP"					"80000"
@@ -1868,8 +1595,8 @@
 		"UnitMelee_1"
 		{
 			"NPCName"				"npc_dota_creature_chaos_knight"
-			"TotalUnitsToSpawn"		"4"
-			"UnitsPerSpawn"			"4"
+			"TotalUnitsToSpawn"		"8"
+			"UnitsPerSpawn"			"8"
 			"SpawnInterval"			"5"
 		}
 		
@@ -1889,8 +1616,8 @@
 			"WaitForTime"			"10"
 			
 			"NPCName"				"npc_dota_creature_chaos_knight"
-			"TotalUnitsToSpawn"		"4"
-			"UnitsPerSpawn"			"4"
+			"TotalUnitsToSpawn"		"8"
+			"UnitsPerSpawn"			"8"
 			"SpawnInterval"			"5"
 		}
 
@@ -1910,8 +1637,8 @@
 			"WaitForTime"			"10"
 			
 			"NPCName"				"npc_dota_creature_chaos_knight"
-			"TotalUnitsToSpawn"		"6"
-			"UnitsPerSpawn"			"6"
+			"TotalUnitsToSpawn"		"8"
+			"UnitsPerSpawn"			"8"
 			"SpawnInterval"			"8"
 			
 			"SpawnerName"			"spawner1"
@@ -1933,8 +1660,8 @@
 			"WaitForTime"			"10"
 			
 			"NPCName"				"npc_dota_creature_chaos_knight"
-			"TotalUnitsToSpawn"		"6"
-			"UnitsPerSpawn"			"6"
+			"TotalUnitsToSpawn"		"8"
+			"UnitsPerSpawn"			"8"
 			"SpawnInterval"			"8"
 			
 			"SpawnerName"			"spawner2"
@@ -1956,8 +1683,8 @@
 			"WaitForTime"			"10"
 			
 			"NPCName"				"npc_dota_creature_chaos_knight"
-			"TotalUnitsToSpawn"		"6"
-			"UnitsPerSpawn"			"6"
+			"TotalUnitsToSpawn"		"8"
+			"UnitsPerSpawn"			"8"
 			"SpawnInterval"			"8"
 			
 			"SpawnerName"			"spawner3"
@@ -1979,8 +1706,8 @@
 			"WaitForTime"			"10"
 			
 			"NPCName"				"npc_dota_creature_chaos_knight"
-			"TotalUnitsToSpawn"		"6"
-			"UnitsPerSpawn"			"6"
+			"TotalUnitsToSpawn"		"8"
+			"UnitsPerSpawn"			"8"
 			"SpawnInterval"			"8"
 			
 			"SpawnerName"			"spawner4"
@@ -2002,8 +1729,8 @@
 			"WaitForTime"			"10"
 			
 			"NPCName"				"npc_dota_creature_chaos_knight"
-			"TotalUnitsToSpawn"		"6"
-			"UnitsPerSpawn"			"6"
+			"TotalUnitsToSpawn"		"8"
+			"UnitsPerSpawn"			"8"
 			"SpawnInterval"			"8"
 			
 			"SpawnerName"			"spawner3_alternate"
@@ -2020,10 +1747,10 @@
 		}
 	}
 
-	"Round23" // Greater Ogre
+	"Round21" // Greater Ogre
 	{
 		"round_title"				"#DOTA_Holdout_Round_Greater_Ogre_Magi_Title"
-		"MaxGold"					"25000"
+		"MaxGold"					"35000"
 		"BagCount"					"85"
 		"BagVariance"				"30"
 		"FixedXP"					"60000"
@@ -2032,26 +1759,33 @@
 		{
 			"NPCName"				"npc_dota_creature_greater_ogre_magi"
 			"TotalUnitsToSpawn"		"30"
-			"UnitsPerSpawn"			"5"
+			"UnitsPerSpawn"			"10"
 			"SpawnInterval"			"13"
 		}
 		"Unit2"
 		{
 			"NPCName"				"npc_dota_creature_greater_ogre_magi"
 			"TotalUnitsToSpawn"		"30"
-			"UnitsPerSpawn"			"5"
+			"UnitsPerSpawn"			"10"
 			"SpawnInterval"			"13"
 		}
 		"Unit3"
 		{
 			"NPCName"				"npc_dota_creature_greater_ogre_magi"
 			"TotalUnitsToSpawn"		"30"
-			"UnitsPerSpawn"			"5"
+			"UnitsPerSpawn"			"10"
+			"SpawnInterval"			"13"
+		}
+		"Unit4"
+		{
+			"NPCName"				"npc_dota_creature_greater_ogre_magi"
+			"TotalUnitsToSpawn"		"30"
+			"UnitsPerSpawn"			"10"
 			"SpawnInterval"			"13"
 		}
 	}
 
-	"Round24" // Morphling
+	"Round22" // Morphling
 	{
 		"round_title"				"#DOTA_Holdout_Round_Morphling_Title"
 		"MaxGold"					"25000"
@@ -2059,7 +1793,13 @@
 		"BagVariance"				"30"
 		"FixedXP"					"80000"
 
-		"UnitMelee_1"
+		"Unit1"
+		{
+			"NPCName"				"npc_dota_creature_boss_morphling"
+			"TotalUnitsToSpawn"		"1"
+			"UnitsPerSpawn"			"1"
+		}
+		"Unit2"
 		{
 			"NPCName"				"npc_dota_creature_boss_morphling"
 			"TotalUnitsToSpawn"		"1"
@@ -2067,7 +1807,7 @@
 		}
 	}
 
-	"Round25" // Dark willow
+	"Round23" // Dark willow
 	{
 		"round_title"				"#DOTA_Holdout_Round_Dark_Willow_Title"
 		"MaxGold"					"25000"
@@ -2075,7 +1815,13 @@
 		"BagVariance"				"30"
 		"FixedXP"					"80000"
 
-		"UnitMelee_1"
+		"Unit1"
+		{
+			"NPCName"				"npc_dota_creature_boss_dark_willow"
+			"TotalUnitsToSpawn"		"1"
+			"UnitsPerSpawn"			"1"
+		}
+		"Unit2"
 		{
 			"NPCName"				"npc_dota_creature_boss_dark_willow"
 			"TotalUnitsToSpawn"		"1"
@@ -2083,7 +1829,7 @@
 		}
 	}
 
-	"Round26" // Enchantress
+	"Round24" // Enchantress
 	{
 		"round_title"				"#DOTA_Holdout_Round_Enchantress_Title"
 		"MaxGold"					"30000"
@@ -2094,8 +1840,8 @@
 		"UnitMelee_1"
 		{
 			"NPCName"				"npc_dota_creature_enchantress_treant"
-			"TotalUnitsToSpawn"		"12"
-			"UnitsPerSpawn"			"6"
+			"TotalUnitsToSpawn"		"24"
+			"UnitsPerSpawn"			"12"
 			"SpawnInterval"			"5"
 		}
 		
@@ -2115,8 +1861,8 @@
 			"WaitForTime"			"15"
 			
 			"NPCName"				"npc_dota_creature_enchantress_treant"
-			"TotalUnitsToSpawn"		"12"
-			"UnitsPerSpawn"			"6"
+			"TotalUnitsToSpawn"		"24"
+			"UnitsPerSpawn"			"12"
 			"SpawnInterval"			"5"
 		}
 
@@ -2136,9 +1882,9 @@
 			"WaitForTime"			"15"
 			
 			"NPCName"				"npc_dota_creature_enchantress_treant"
-			"TotalUnitsToSpawn"		"8"
-			"UnitsPerSpawn"			"8"
-			"SpawnInterval"			"8"
+			"TotalUnitsToSpawn"		"24"
+			"UnitsPerSpawn"			"12"
+			"SpawnInterval"			"5"
 			
 			"SpawnerName"			"spawner1"
 			"Waypoint"				"path_invader1_1"
@@ -2159,9 +1905,9 @@
 			"WaitForTime"			"15"
 			
 			"NPCName"				"npc_dota_creature_enchantress_treant"
-			"TotalUnitsToSpawn"		"8"
-			"UnitsPerSpawn"			"8"
-			"SpawnInterval"			"8"
+			"TotalUnitsToSpawn"		"24"
+			"UnitsPerSpawn"			"12"
+			"SpawnInterval"			"5"
 			
 			"SpawnerName"			"spawner2"
 			"Waypoint"				"path_invader2_1"
@@ -2182,9 +1928,9 @@
 			"WaitForTime"			"15"
 			
 			"NPCName"				"npc_dota_creature_enchantress_treant"
-			"TotalUnitsToSpawn"		"8"
-			"UnitsPerSpawn"			"8"
-			"SpawnInterval"			"8"
+			"TotalUnitsToSpawn"		"24"
+			"UnitsPerSpawn"			"12"
+			"SpawnInterval"			"5"
 			
 			"SpawnerName"			"spawner3"
 			"Waypoint"				"path_invader3_1"
@@ -2205,9 +1951,9 @@
 			"WaitForTime"			"15"
 			
 			"NPCName"				"npc_dota_creature_enchantress_treant"
-			"TotalUnitsToSpawn"		"16"
-			"UnitsPerSpawn"			"16"
-			"SpawnInterval"			"8"
+			"TotalUnitsToSpawn"		"24"
+			"UnitsPerSpawn"			"12"
+			"SpawnInterval"			"5"
 			
 			"SpawnerName"			"spawner4"
 			"Waypoint"				"path_invader4_1"
@@ -2218,8 +1964,8 @@
 			"GroupWithUnit"			"UnitMelee_3d"
 			
 			"NPCName"				"npc_dota_creature_enchantress"
-			"TotalUnitsToSpawn"		"1"
-			"UnitsPerSpawn"			"1"
+			"TotalUnitsToSpawn"		"2"
+			"UnitsPerSpawn"			"2"
 		}
 
 		"UnitMelee_3e"
@@ -2228,9 +1974,9 @@
 			"WaitForTime"			"15"
 			
 			"NPCName"				"npc_dota_creature_enchantress_treant"
-			"TotalUnitsToSpawn"		"16"
-			"UnitsPerSpawn"			"16"
-			"SpawnInterval"			"8"
+			"TotalUnitsToSpawn"		"24"
+			"UnitsPerSpawn"			"12"
+			"SpawnInterval"			"5"
 			
 			"SpawnerName"			"spawner3_alternate"
 			"Waypoint"				"path_invader3alt_1"
@@ -2246,7 +1992,7 @@
 		}
 	}
 
-    "Round27" // Depths of Sea
+    "Round25" // Depths of Sea
 	{
 		"round_title"				"#DOTA_Holdout_Round_Slark_Naga_Title"
 		"MaxGold"					"50000"
@@ -2287,9 +2033,15 @@
 			"TotalUnitsToSpawn"		"1"
 			"UnitsPerSpawn"			"1"
 		}
+		"UnitMelee_3"
+		{
+			"NPCName"				"npc_dota_creature_boss_naga"
+			"TotalUnitsToSpawn"		"1"
+			"UnitsPerSpawn"			"1"
+		}
 	}
 
-	"Round28" // Roshan Queen
+	"Round26" // Roshan Queen
 	{
 		"round_title"				"#DOTA_Holdout_Round_Roshan_Queen_Title"
 		"MaxGold"					"30000"
@@ -2299,6 +2051,14 @@
 
 		"UnitMelee_1"
 		{
+			"NPCName"				"npc_dota_creature_queen_roshan"
+			"TotalUnitsToSpawn"		"1"
+			"UnitsPerSpawn"			"1"
+		}
+		"UnitMelee_2"
+		{
+		    "WaitForTime"			"40"
+
 			"NPCName"				"npc_dota_creature_queen_roshan"
 			"TotalUnitsToSpawn"		"1"
 			"UnitsPerSpawn"			"1"

@@ -3,31 +3,6 @@
 "DOTAAbilities"
 {
 	"Version"		"1"
-	
-	//=================================================================================================================
-	// Elder Titan: Natural Order
-	//=================================================================================================================
-	"elder_titan_natural_order"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"radius"					"275 275 275 275"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"armor_reduction_pct"	    "3 6 9 12"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"magic_resistance_pct"		"8 16 25 33"
-			}
-		}
-	}
 
 	"juggernaut_omni_slash"
 	{

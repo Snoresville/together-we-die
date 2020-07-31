@@ -19,6 +19,7 @@ end
 --------------------------------------------------------------------------------
 -- Aura
 function modifier_creature_slark_shadow_dance_lua:IsAura()
+    -- Will not be disabled even if break
     return true
 end
 
@@ -31,11 +32,11 @@ function modifier_creature_slark_shadow_dance_lua:GetAuraRadius()
 end
 
 function modifier_creature_slark_shadow_dance_lua:GetAuraSearchTeam()
-    return DOTA_UNIT_TARGET_TEAM_FRIENDLY
+    return self:GetAbility():GetAbilityTargetTeam()
 end
 
 function modifier_creature_slark_shadow_dance_lua:GetAuraSearchType()
-    return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC
+    return self:GetAbility():GetAbilityTargetType()
 end
 
 function modifier_creature_slark_shadow_dance_lua:GetAuraDuration()
