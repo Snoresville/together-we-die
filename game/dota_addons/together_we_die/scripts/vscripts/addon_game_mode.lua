@@ -455,6 +455,7 @@ function CHoldoutGameMode:OnHeroLevelUp(event)
     -- Save current unspend AP
     local unspendAP = hero:GetAbilityPoints()
     local heroLevel = hero:GetLevel()
+    local nPlayerID = hero:GetPlayerID()
     local abilityPointsToGive = 0
     local apEveryXLevel = 4
     local cardPointsToGive = 0
@@ -464,9 +465,13 @@ function CHoldoutGameMode:OnHeroLevelUp(event)
         abilityPointsToGive = 1
         hero:SetAbilityPoints(unspendAP + abilityPointsToGive)
     end
-    if (heroLevel % cpEveryXLevel == 0) then
-        cardPointsToGive = 1
-        holdout_card_points:_BuyCardPoints(hero:GetPlayerID(), cardPointsToGive)
+    if (heroLevel % cpEveryXLevel == 0) and not hero:IsIllusion() then
+        -- Check if main/real hero
+        local mainHero = PlayerResource:GetSelectedHeroEntity(nPlayerID)
+        if mainHero == hero then
+            cardPointsToGive = 1
+            holdout_card_points:_BuyCardPoints(nPlayerID, cardPointsToGive)
+        end
     end
 end
 
