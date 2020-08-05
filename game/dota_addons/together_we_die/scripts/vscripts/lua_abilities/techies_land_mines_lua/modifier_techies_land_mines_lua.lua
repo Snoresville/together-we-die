@@ -19,6 +19,7 @@ end
 function modifier_techies_land_mines_lua:OnCreated(kv)
     self.radius = self:GetAbility():GetSpecialValueFor("radius")
     self.activation_delay = self:GetAbility():GetSpecialValueFor("activation_delay")
+    self.building_damage_pct = self:GetAbility():GetSpecialValueFor("building_damage_pct")
     self.activated = false
 
     local interval = 0.1
@@ -61,10 +62,14 @@ function modifier_techies_land_mines_lua:OnDestroy(kv)
 
     local damage = self:GetAbility():GetSpecialValueFor("damage")
     local int_multiplier = self:GetAbility():GetSpecialValueFor("int_multiplier")
-    self.damageTable.damage = damage + self:GetCaster():GetIntellect() * int_multiplier
+    local total_damage = damage + self:GetCaster():GetIntellect() * int_multiplier
 
     for _, enemy in pairs(enemies) do
         self.damageTable.victim = enemy
+        self.damageTable.damage = total_damage
+        if enemy:IsBuilding() then
+            self.damageTable.damage = self.damageTable.damage * self.building_damage_pct
+        end
         ApplyDamage(self.damageTable)
     end
     -- play explosion effects

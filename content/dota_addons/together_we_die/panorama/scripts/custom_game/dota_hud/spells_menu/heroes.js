@@ -171,6 +171,9 @@ var heroes = [
             "name_id": "npc_dota_hero_skywrath_mage",
         },
         {
+            "name_id": "npc_dota_hero_techies",
+        },
+        {
             "name_id": "npc_dota_hero_tinker",
         },
         {
@@ -1148,6 +1151,12 @@ var spells = {
         {
             "spell_id": "skywrath_mage_mystic_flare_lua",
             "cost": 2
+        },
+    ],
+    "npc_dota_hero_techies": [
+        {
+            "spell_id": "techies_land_mines_lua",
+            "cost": 1
         },
     ],
     "npc_dota_hero_tinker": [

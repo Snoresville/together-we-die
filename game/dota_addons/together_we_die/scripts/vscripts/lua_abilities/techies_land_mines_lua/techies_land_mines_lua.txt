@@ -18,8 +18,7 @@
 		"precache"
 		{
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_techies.vsndevts"
-			"particle"	"particles/units/heroes/hero_sniper/sniper_shrapnel.vpcf"
-			"particle"	"particles/units/heroes/hero_sniper/sniper_shrapnel_launch.vpcf"
+			"particle"	"particles/units/heroes/hero_techies/techies_land_mine_explode.vpcf"
 		}
 		
 		// Ability General
