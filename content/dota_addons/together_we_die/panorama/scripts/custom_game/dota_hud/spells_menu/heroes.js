@@ -132,6 +132,9 @@ var heroes = [
             "name_id": "npc_dota_hero_dazzle",
         },
         {
+            "name_id": "npc_dota_hero_disruptor",
+        },
+        {
             "name_id": "npc_dota_hero_enchantress",
         },
         {
@@ -914,6 +917,20 @@ var spells = {
         },
         {
             "spell_id": "dazzle_bad_juju_lua",
+            "cost": 2
+        },
+    ],
+    "npc_dota_hero_disruptor": [
+        {
+            "spell_id": "disruptor_thunder_strike_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "disruptor_kinetic_field_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "disruptor_static_storm_lua",
             "cost": 2
         },
     ],
