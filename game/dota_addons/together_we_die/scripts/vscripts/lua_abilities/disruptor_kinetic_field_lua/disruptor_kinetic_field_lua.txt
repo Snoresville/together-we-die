@@ -1,47 +1,42 @@
 "DOTAAbilities"
 {
 	//=================================================================================================================
-	// Dark Willow: Shadow Realm (Lua version)
+	// Disruptor: Kinetic Field (Lua version)
 	//=================================================================================================================
-	"dark_willow_shadow_realm_lua"
+	"disruptor_kinetic_field_lua"
 	{
 		// Ability Technical Aspect
 		// base script folder	: scripts/vscripts
 		// base texture folder	: resource/flash3/images/spellicons
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_lua"
-		"ScriptFile"					"lua_abilities/dark_willow_shadow_realm_lua/dark_willow_shadow_realm_lua"
-		"AbilityTextureName"			"dark_willow_shadow_realm_lua"
+		"ScriptFile"					"lua_abilities/disruptor_kinetic_field_lua/disruptor_kinetic_field_lua"
+		"AbilityTextureName"			"disruptor_kinetic_field_lua"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"4"
-
-		"HasScepterUpgrade"			    "1"
-
 		"precache"
 		{
-			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_dark_willow.vsndevts"
-			"particle"	"particles/status_fx/status_effect_dark_willow_shadow_realm.vpcf"
-			"particle"	"particles/units/heroes/hero_dark_willow/dark_willow_shadow_realm.vpcf"
-			"particle"	"particles/units/heroes/hero_dark_willow/dark_willow_shadow_attack.vpcf"
-			"particle"	"particles/units/heroes/hero_dark_willow/dark_willow_shadow_attack_dummy.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_disruptor.vsndevts"
+			"particle"	"particles/units/heroes/hero_disruptor/disruptor_kineticfield_formation.vpcf"
+			"particle"	"particles/units/heroes/hero_disruptor/disruptor_kineticfield.vpcf"
 		}
 		
 		// Ability General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 
 		// Ability Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0"
+		"AbilityCastRange"				"900 900 900 900"
+		"AbilityCastPoint"				"0.05 0.05 0.05 0.05"
+
 
 		// Ability Resource
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"13"
-		"AbilityManaCost"				"100"
+		"AbilityCooldown"				"19 16 13 10"
+		"AbilityManaCost"				"70 70 70 70"
 
 		// Damage
 		//-------------------------------------------------------------------------------------------------------------
@@ -52,28 +47,23 @@
 		{
 			"01"
 			{
-				"var_type"						"FIELD_FLOAT"
-				"duration"						"7"
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"340"
 			}
 			"02"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"damage"						"200 400 600 800"
+				"var_type"					"FIELD_FLOAT"
+				"formation_time"			"1.2 1.2 1.2 1.2"
 			}
 			"03"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"attack_range_bonus"			"600"
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"2.6 3.2 3.8 4.4"
 			}
 			"04"
 			{
-				"var_type"						"FIELD_FLOAT"
-				"max_damage_duration"			"5"
-			}
-			"05"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"int_multiplier"			    "1.5 3.5 5.5 7.5"
+				"var_type"				"FIELD_FLOAT"
+				"int_multiplier"		"0.002 0.004 0.006 0.008"
 			}
 		}
 	}

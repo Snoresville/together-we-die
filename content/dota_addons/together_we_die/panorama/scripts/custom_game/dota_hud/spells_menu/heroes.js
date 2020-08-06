@@ -132,6 +132,9 @@ var heroes = [
             "name_id": "npc_dota_hero_dazzle",
         },
         {
+            "name_id": "npc_dota_hero_disruptor",
+        },
+        {
             "name_id": "npc_dota_hero_enchantress",
         },
         {
@@ -166,6 +169,9 @@ var heroes = [
         },
         {
             "name_id": "npc_dota_hero_skywrath_mage",
+        },
+        {
+            "name_id": "npc_dota_hero_techies",
         },
         {
             "name_id": "npc_dota_hero_tinker",
@@ -917,6 +923,20 @@ var spells = {
             "cost": 2
         },
     ],
+    "npc_dota_hero_disruptor": [
+        {
+            "spell_id": "disruptor_thunder_strike_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "disruptor_kinetic_field_lua",
+            "cost": 1
+        },
+        {
+            "spell_id": "disruptor_static_storm_lua",
+            "cost": 2
+        },
+    ],
     "npc_dota_hero_enchantress": [
         {
             "spell_id": "enchantress_untouchable_lua",
@@ -1131,6 +1151,12 @@ var spells = {
         {
             "spell_id": "skywrath_mage_mystic_flare_lua",
             "cost": 2
+        },
+    ],
+    "npc_dota_hero_techies": [
+        {
+            "spell_id": "techies_land_mines_lua",
+            "cost": 1
         },
     ],
     "npc_dota_hero_tinker": [

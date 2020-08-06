@@ -1,47 +1,45 @@
 "DOTAAbilities"
 {
 	//=================================================================================================================
-	// Dark Willow: Shadow Realm (Lua version)
+	// Disruptor: Thunder Strike (Lua version)
 	//=================================================================================================================
-	"dark_willow_shadow_realm_lua"
+	"disruptor_thunder_strike_lua"
 	{
 		// Ability Technical Aspect
 		// base script folder	: scripts/vscripts
 		// base texture folder	: resource/flash3/images/spellicons
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_lua"
-		"ScriptFile"					"lua_abilities/dark_willow_shadow_realm_lua/dark_willow_shadow_realm_lua"
-		"AbilityTextureName"			"dark_willow_shadow_realm_lua"
+		"ScriptFile"					"lua_abilities/disruptor_thunder_strike_lua/disruptor_thunder_strike_lua"
+		"AbilityTextureName"			"disruptor_thunder_strike_lua"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"4"
-
-		"HasScepterUpgrade"			    "1"
-
 		"precache"
 		{
-			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_dark_willow.vsndevts"
-			"particle"	"particles/status_fx/status_effect_dark_willow_shadow_realm.vpcf"
-			"particle"	"particles/units/heroes/hero_dark_willow/dark_willow_shadow_realm.vpcf"
-			"particle"	"particles/units/heroes/hero_dark_willow/dark_willow_shadow_attack.vpcf"
-			"particle"	"particles/units/heroes/hero_dark_willow/dark_willow_shadow_attack_dummy.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_disruptor.vsndevts"
+			"particle"	"particles/units/heroes/hero_disruptor/disruptor_thunder_strike_buff.vpcf"
+			"particle"	"particles/units/heroes/hero_disruptor/disruptor_thunder_strike_bolt.vpcf"
 		}
 		
 		// Ability General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 
 		// Ability Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0"
+		"AbilityCastPoint"				"0.05 0.05 0.05 0.05"
+		"AbilityCastRange"				"800 800 800 800"
 
 		// Ability Resource
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"13"
-		"AbilityManaCost"				"100"
+		"AbilityCooldown"				"18 15 12 9"
+		"AbilityManaCost"				"130 130 130 130"
 
 		// Damage
 		//-------------------------------------------------------------------------------------------------------------
@@ -52,28 +50,28 @@
 		{
 			"01"
 			{
-				"var_type"						"FIELD_FLOAT"
-				"duration"						"7"
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"240 240 240 240"
 			}
 			"02"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"damage"						"200 400 600 800"
+				"var_type"					"FIELD_INTEGER"
+				"strikes"					"4"
 			}
 			"03"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"attack_range_bonus"			"600"
+				"var_type"					"FIELD_FLOAT"
+				"strike_interval"			"2.0 2.0 2.0 2.0"
 			}
 			"04"
 			{
-				"var_type"						"FIELD_FLOAT"
-				"max_damage_duration"			"5"
+				"var_type"					"FIELD_INTEGER"
+				"strike_damage"				"45 70 95 120"
 			}
 			"05"
 			{
-				"var_type"						"FIELD_FLOAT"
-				"int_multiplier"			    "1.5 3.5 5.5 7.5"
+				"var_type"			        "FIELD_FLOAT"
+				"int_multiplier"	        "3.0 6.0 9.0 12.0"
 			}
 		}
 	}

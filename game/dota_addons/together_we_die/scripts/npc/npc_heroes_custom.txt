@@ -218,7 +218,7 @@
 
 		"Ability1"				"juggernaut_blade_fury_lua"
 		"Ability3"				"juggernaut_blade_dance_lua"
-		"Ability4"				"holdout_omnislash"
+		"Ability4"				""
 		"Ability5"		""
 		"Ability10"		""
 		"Ability11"		""
